@@ -1,0 +1,160 @@
+// Executive shell — the production experience. Business surfaces only;
+// engineering screens live behind the Admin Console.
+import { useEffect, useRef, useState } from 'react'
+import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom'
+import { api } from '../api/client'
+import { isAdmin } from '../lib/prefs'
+
+const NAV = [
+  { to: '/', label: 'Home', icon: '⌂', end: true },
+  { to: '/dashboard', label: 'Executive Dashboard', icon: '◈' },
+  { to: '/portfolio', label: 'Portfolio', icon: '▦' },
+  { to: '/reports', label: 'Reports', icon: '▣' },
+  { to: '/copilot', label: 'AI Copilot', icon: '✦' },
+  { to: '/tasks', label: 'Tasks', icon: '☑' },
+  { to: '/notifications', label: 'Notifications', icon: '◔' },
+  { to: '/decisions', label: 'Decisions', icon: '⚖' },
+  { to: '/settings', label: 'Settings', icon: '⚙' },
+]
+
+function GlobalSearch() {
+  const [q, setQ] = useState('')
+  const [results, setResults] = useState(null)
+  const [open, setOpen] = useState(false)
+  const boxRef = useRef(null)
+  const timer = useRef(null)
+
+  useEffect(() => {
+    const close = (e) => { if (boxRef.current && !boxRef.current.contains(e.target)) setOpen(false) }
+    document.addEventListener('mousedown', close)
+    return () => document.removeEventListener('mousedown', close)
+  }, [])
+
+  function onChange(value) {
+    setQ(value)
+    clearTimeout(timer.current)
+    if (!value.trim()) { setResults(null); setOpen(false); return }
+    timer.current = setTimeout(() => {
+      api.managerSearch(value.trim())
+        .then((r) => { setResults(r.results || []); setOpen(true) })
+        .catch(() => { setResults([]); setOpen(true) })
+    }, 300)
+  }
+
+  return (
+    <div ref={boxRef} className="relative w-full max-w-md">
+      <input className="input !py-1.5 !bg-surface-overlay/50" placeholder="Search across the organization…"
+             value={q} onChange={(e) => onChange(e.target.value)}
+             onFocus={() => results && setOpen(true)} />
+      {open && (
+        <div className="absolute top-full mt-1.5 left-0 right-0 card shadow-2xl shadow-black/40 z-50 max-h-96 overflow-y-auto">
+          {(results || []).length === 0
+            ? <div className="p-4 text-sm text-slate-500">No matches for “{q}”.</div>
+            : results.map((r, i) => (
+                <div key={i} className="px-4 py-2.5 border-b border-surface-border/50 last:border-0 hover:bg-surface-overlay/60">
+                  <div className="text-sm text-slate-200">{r.title || r.name || r.summary || '—'}</div>
+                  <div className="text-xs text-slate-500 mt-0.5">
+                    {(r.kind || r.surface || '').replace(/_/g, ' ')}
+                    {r.detail ? ` · ${String(r.detail).slice(0, 90)}` : ''}
+                  </div>
+                </div>
+              ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function NotificationBell() {
+  const [unread, setUnread] = useState(0)
+  useEffect(() => {
+    let live = true
+    const load = () => api.managerNotifications(true)
+      .then((d) => live && setUnread(d.stats?.unread ?? (d.notifications || []).length))
+      .catch(() => {})
+    load()
+    const id = setInterval(load, 60000)
+    return () => { live = false; clearInterval(id) }
+  }, [])
+  return (
+    <Link to="/notifications" title="Notifications"
+          className="relative w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-slate-200 hover:bg-surface-overlay transition-colors">
+      ◔
+      {unread > 0 && (
+        <span className="absolute -top-0.5 -right-0.5 min-w-[16px] h-4 px-1 rounded-full bg-rose-500 text-white text-[10px] font-semibold flex items-center justify-center tabular-nums">
+          {unread > 99 ? '99+' : unread}
+        </span>
+      )}
+    </Link>
+  )
+}
+
+export default function ExecLayout() {
+  const [admin, setAdminState] = useState(isAdmin())
+  const navigate = useNavigate()
+  useEffect(() => {
+    const sync = () => setAdminState(isAdmin())
+    window.addEventListener('edip-admin-changed', sync)
+    return () => window.removeEventListener('edip-admin-changed', sync)
+  }, [])
+
+  return (
+    <div className="flex min-h-screen">
+      <aside className="w-[232px] shrink-0 border-r border-surface-border bg-surface-raised/50 flex flex-col
+                        max-lg:fixed max-lg:inset-y-0 max-lg:left-0 max-lg:z-40 max-lg:hidden lg:flex">
+        <button onClick={() => navigate('/')} className="px-5 py-4 border-b border-surface-border text-left">
+          <div className="text-[15px] font-bold text-slate-100 tracking-tight">Enterprise Agent</div>
+          <div className="text-[11px] text-slate-500 mt-0.5">Executive Workspace</div>
+        </button>
+        <nav className="flex-1 overflow-y-auto py-3 space-y-0.5">
+          {NAV.map((item) => (
+            <NavLink key={item.to} to={item.to} end={item.end}
+                     className={({ isActive }) => `nav-item ${isActive ? 'nav-item-active' : 'nav-item-idle'}`}>
+              <span className="w-4 text-center opacity-70">{item.icon}</span>
+              {item.label}
+            </NavLink>
+          ))}
+        </nav>
+        {admin && (
+          <div className="py-3 border-t border-surface-border">
+            <NavLink to="/admin"
+                     className={({ isActive }) => `nav-item ${isActive ? 'nav-item-active' : 'nav-item-idle'}`}>
+              <span className="w-4 text-center opacity-70">⛭</span>
+              Admin Console
+            </NavLink>
+          </div>
+        )}
+      </aside>
+
+      <div className="flex-1 min-w-0 flex flex-col">
+        <header className="h-14 shrink-0 border-b border-surface-border bg-surface-raised/30 flex items-center gap-4 px-4 lg:px-6">
+          <div className="lg:hidden text-sm font-bold text-slate-100">Enterprise Agent</div>
+          <GlobalSearch />
+          <div className="flex-1" />
+          <NotificationBell />
+          <Link to="/copilot" title="Ask the AI Copilot"
+                className="w-8 h-8 rounded-lg flex items-center justify-center text-accent hover:bg-accent/10 transition-colors">✦</Link>
+          <div className="w-8 h-8 rounded-full bg-accent/20 text-accent text-xs font-semibold flex items-center justify-center"
+               title="Executive">E</div>
+        </header>
+
+        {/* Mobile nav — the sidebar collapses into a scrollable strip */}
+        <nav className="lg:hidden flex gap-1 overflow-x-auto border-b border-surface-border px-2 py-1.5 bg-surface-raised/30">
+          {NAV.map((item) => (
+            <NavLink key={item.to} to={item.to} end={item.end}
+                     className={({ isActive }) =>
+                       `px-3 py-1.5 rounded-lg text-xs whitespace-nowrap ${
+                         isActive ? 'bg-surface-overlay text-white' : 'text-slate-400'}`}>
+              {item.label}
+            </NavLink>
+          ))}
+          {admin && <NavLink to="/admin" className="px-3 py-1.5 rounded-lg text-xs whitespace-nowrap text-slate-400">Admin</NavLink>}
+        </nav>
+
+        <main className="flex-1 min-w-0 p-4 lg:p-8 max-w-content w-full mx-auto">
+          <Outlet />
+        </main>
+      </div>
+    </div>
+  )
+}

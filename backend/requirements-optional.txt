@@ -1,0 +1,15 @@
+# Optional heavy/enterprise dependencies — the platform runs without them.
+xgboost>=2.0                 # GBM candidates (eligibility-gated: ≥1000 rows)
+lightgbm>=4.3
+catboost>=1.2
+shap>=0.45                   # tree explainability (deterministic fallback otherwise)
+mlflow>=2.12                 # experiment/registry mirror (EDIP_MLFLOW_URI)
+sentence-transformers>=2.6   # semantic embeddings (EDIP_EMBEDDING_MODEL=all-MiniLM-L6-v2)
+psycopg2-binary>=2.9         # PostgreSQL / pgvector backend (EDIP_VECTOR_BACKEND=pgvector)
+pgvector>=0.2
+redis>=5.0                   # Celery broker
+celery>=5.3                  # distributed pipeline workers (EDIP_USE_CELERY=true)
+polars>=0.20                 # accelerated frames for very large workbooks
+pyarrow>=15.0
+langgraph>=1.0               # checkpointed multi-agent analysis graph (EDIP_ORCHESTRATOR=langgraph)
+langgraph-checkpoint-sqlite>=2.0  # durable pause/resume checkpoints (lite profile)

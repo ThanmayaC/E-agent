@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme tokens — Midnight (default) and Graphite. RGB triplets so Tailwind
+   alpha modifiers (bg-surface-raised/60 etc.) keep working. Dark mode first. */
+:root,
+[data-theme='midnight'] {
+  --surface-0: 10 12 18;
+  --surface-1: 16 19 27;
+  --surface-2: 23 28 39;
+  --surface-border: 34 41 56;
+  --accent: 82 139 255;
+}
+
+[data-theme='graphite'] {
+  --surface-0: 13 13 16;
+  --surface-1: 19 19 23;
+  --surface-2: 27 27 33;
+  --surface-border: 41 41 49;
+  --accent: 110 132 255;
+}
+
+@layer base {
+  html { @apply antialiased; }
+  body { @apply bg-surface text-slate-200 font-sans; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { @apply bg-surface-border rounded-full; }
+  ::-webkit-scrollbar-track { @apply bg-transparent; }
+  :focus-visible { @apply outline outline-2 outline-accent/70 outline-offset-2; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+}
+
+@layer components {
+  .card { @apply bg-surface-raised border border-surface-border rounded-xl; }
+  .card-pad { @apply card p-5; }
+  .card-hover { @apply hover:border-accent/40 transition-colors; }
+  .h-title { @apply text-lg font-semibold text-slate-100 tracking-tight; }
+  .h-sub { @apply text-xs uppercase tracking-wider text-slate-500 font-medium; }
+  .eyebrow { @apply text-[11px] uppercase tracking-[0.14em] text-slate-500 font-medium; }
+  /* Executive numerals: large, tight, tabular — the workspace's typographic voice */
+  .metric { @apply text-[28px] leading-9 font-semibold tracking-tight text-slate-100 tabular-nums; }
+  .btn { @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium
+         bg-accent text-white hover:bg-blue-500 transition-colors disabled:opacity-40 disabled:cursor-not-allowed; }
+  .btn-ghost { @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm
+         border border-surface-border text-slate-300 hover:bg-surface-overlay transition-colors; }
+  .btn-quiet { @apply text-xs text-slate-500 hover:text-slate-300 transition-colors; }
+  .input { @apply bg-surface border border-surface-border rounded-lg px-3 py-2 text-sm
+         text-slate-200 placeholder-slate-500 focus:outline-none focus:border-accent w-full; }
+  .table-base { @apply w-full text-sm; }
+  .table-base th { @apply text-left h-sub px-3 py-2 border-b border-surface-border sticky top-0 bg-surface-raised; }
+  .table-base td { @apply px-3 py-2 border-b border-surface-border/50 text-slate-300; }
+  .nav-item { @apply flex items-center gap-3 mx-2 px-3 py-[7px] rounded-lg text-sm transition-colors; }
+  .nav-item-active { @apply text-white bg-surface-overlay; }
+  .nav-item-idle { @apply text-slate-400 hover:text-slate-200 hover:bg-surface-overlay/60; }
+}

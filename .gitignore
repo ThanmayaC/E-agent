@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+frontend/dist/
+
+# Runtime data
+data/
+backend/data/
+*.duckdb
+*.duckdb.wal
+
+# Env & IDE
+.env
+.vscode/
+.idea/
+
+# Generated samples (rebuild with scripts/generate_sample_data.py)
+sample_data/
