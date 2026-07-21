@@ -584,6 +584,32 @@ def test_search_finds_an_entity_by_its_alias(search):
     assert hits[0]["matched"] == "alias"
 
 
+def test_documents_surface_returns_chunk_passages(knowledge, organization,
+                                                  relationships, tmp_path):
+    """The documents surface reaches the *contents* of SOPs, RCAs, meetings,
+    and reports — the retrieval that makes cross-source Brain Q&A possible."""
+    from app.repositories.artifact_store import ArtifactStore
+
+    class _Docs:
+        def search(self, query, limit=8):
+            return [{"payload": {
+                "document_id": "d1", "document": "RCA-2026-03",
+                "category": "rca", "source": "enterprise-rcas",
+                "text": "Settlement success fell to 94.2% in March 2026."},
+                "score": 0.8}]
+
+    artifacts = ArtifactStore(tmp_path / "projects")
+    engine = EnterpriseSearch(knowledge, artifacts, organization,
+                              relationships, documents=_Docs())
+    outcome = engine.search("settlement", surfaces=["documents"])
+
+    assert outcome["surfaces_searched"] == ["documents"]
+    hits = outcome["results"]
+    assert hits and hits[0]["surface"] == "documents"
+    assert hits[0]["ref"] == "d1"
+    assert "rca" in hits[0]["detail"]
+
+
 def test_exact_title_matches_outrank_buried_mentions(search):
     outcome = search.search("Merchant")
     top = outcome["results"][0]

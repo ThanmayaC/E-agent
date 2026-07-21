@@ -75,7 +75,7 @@ class SynchronizationLayer:
         self.search = EnterpriseSearch(
             knowledge, store, self.organization, self.relationships,
             tasks=tasks, portfolio=portfolio, embedder=embedder,
-            vector_store_for=vector_store_for)
+            vector_store_for=vector_store_for, documents=self.documents)
         self._artifacts = store
         self._knowledge = knowledge
         self._bus = None

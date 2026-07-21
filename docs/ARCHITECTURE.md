@@ -69,6 +69,17 @@ definitions, business rules, **user clarifications** (never asked twice for
 similar data), decision history, and report history. Knowledge is injected
 into every reasoning prompt, so the system gets smarter over time.
 
+**Enterprise Knowledge Graph** (`graph.py`) — the persistent, continuously
+growing organizational graph (node-link JSON under `data/knowledge`, mirrored
+into Neo4j when `EDIP_NEO4J_URI` is set). Every project graph merges in and
+every knowledge event becomes a node linked to the entities it concerns.
+**The Decision Graph is this graph** (V2.4): a decision is a `decision` node,
+and its relations use the SDS vocabulary — `depends_on` a meeting, `implements`
+an RCA, `updates` an SOP, `affects` a product, `creates` a task — so the
+platform can reason across decision history the same way it reasons across
+entities. Decision Intelligence writes these edges through the graph's own
+`batch()` API; no second graph is introduced.
+
 ### 3. Memory — `app/memory`
 
 - **WorkingMemory** — scratch state for one agent run.
@@ -231,6 +242,53 @@ with the approval trail already working before the first email exists.
 predictions, risks, opportunities, and recommendations stay current with no
 user interaction. Each job is idempotent, bounded, and degrades to a recorded
 skip rather than an exception.
+
+**Decision Intelligence** (`intelligence.py`, V2.4) — the layer that turns the
+Brain from an information system into a *decision* system. It sits beside the
+Decision Engine, not above it: the engine executes one recommendation well;
+this layer decides *what is worth deciding about*. It reuses everything —
+observation runs as a scheduler sweep and bus subscriptions, execution goes
+through the existing Decision Engine → Action Queue, memory lives in the
+KnowledgeStore, and the Decision Graph *is* the Enterprise Knowledge Graph.
+`EDIP_DECISION_INTELLIGENCE_ENABLED=false` returns the platform to V2.3
+exactly.
+
+```
+Observe (trends · anomalies · risks · repeated RCAs · conflicting SOPs ·
+         meeting decisions · missed action items · delayed decisions ·
+         KPI deterioration · knowledge gaps)
+   → Candidate decisions (full lifecycle record, remembered by the Brain)
+   → Rank (impact · urgency · confidence · evidence · history · risk · strategy)
+   → Approve / Reject → Execute (Decision Engine → Action Queue) → Learn
+```
+
+- **Proactive detection** — a periodic sweep plus live bus subscriptions
+  (`AnomalyDetected`, `RiskIncreased`, `KPIThresholdCrossed`,
+  `GrowthRiskDetected`, `PredictionConfidenceDropped`, `PortfolioChanged`).
+  Each detector is independent and degrades to a recorded skip; one failing
+  never stops the sweep. Repeated RCAs and conflicting SOPs are found by
+  clustering document titles on shared content words, so the third RCA about
+  the same failure is noticed even when its title differs.
+- **Decision lifecycle** — every candidate is a full record: id, priority,
+  confidence, reasoning, evidence, affected products/teams, expected impact,
+  owner, status, dependencies, created-by, created-time, and a decision
+  history. Statuses are `proposed · modified · approved · rejected · executed
+  · expired · cancelled`. An equivalent *open* decision is never proposed
+  twice.
+- **Decision memory** — every transition is a learning event and each
+  creation registers the decision in the KnowledgeStore, so the Brain
+  remembers organizational decisions across sessions.
+- **Ranking** — the highest-value open decisions, scored on seven transparent
+  factors (business impact, urgency, confidence, evidence strength,
+  historical success, risk, strategic importance) whose weights are declared
+  in `RANKING_WEIGHTS`; every ranked record carries its factor breakdown.
+- **Learning without retraining** — the historical-success factor is the
+  Laplace-smoothed approval record of past decisions of the same kind. Two
+  rejected escalations lower every future escalation's rank; no model is
+  retrained, only organizational memory is consulted.
+- **Reports** — daily / weekly / monthly summaries with decision
+  effectiveness (execution rate, approval-vs-rejection confidence) and
+  recommendation outcomes, composed over the decision records.
 
 ### 9. Enterprise Knowledge Synchronization Layer — `app/sync`
 
@@ -811,3 +869,67 @@ Key principles:
   systems; Product Intelligence reads what the Brain and the intelligence
   engines already produced. Neither recomputes analytics, re-detects
   relationships, or creates a second scheduler, event bus, or approval path.
+
+## Enterprise Brain data flow (V2.3)
+
+V2.3 adds no architecture; it demonstrates the Brain end to end on a synthetic
+enterprise corpus. The path from a folder of documents (or a Microsoft 365
+mailbox/channel) to a cross-source answer is entirely the pipeline that already
+existed:
+
+```
+Synthetic corpus / Outlook / Teams
+        │  (a registered source; content-hash delta on each heartbeat)
+        ▼
+Document Intelligence      parse (.md/.xlsx/.pdf/.docx/…) → chunk → embed
+        │                  into the "_documents" vector collection
+        ├────────────►  Organizational Model   (each file → sop/rca/policy/
+        │                                        meeting/document entity)
+        │                        │
+        │                        ▼
+        │                  Enterprise Knowledge Graph  (entities + relationships)
+        ▼
+Enterprise Context (rebuilt)
+        ▲
+        │  question time — evidence gathered BEFORE the model reasons
+        │
+Copilot ─ EnterpriseSearch.documents surface ─┐
+        ─ document_chunks evidence collector ─┼─► closed evidence set
+        ─ KPIs · knowledge · relationships ───┘        │
+                                                        ▼
+                                          LLM narrates & cites → validator
+```
+
+One executive question therefore composes passages from an RCA, a meeting, a
+Teams thread, an email, the KPI workbook, a decision log, and an SOP — every
+claim tied to the document id it came from — instead of returning one file.
+
+## Autonomous daily execution (V2.3)
+
+Every simulated day the `daily_cycle` chain runs on the scheduler with no user
+present. V2.3 prepends source ingestion and drafts both an email and a Teams
+announcement:
+
+```
+process_new_sources   ingest new documents/emails/Teams  (→ SourcesProcessed)
+        ▼
+refresh_portfolio     recompute health, announce material change
+        ▼
+analyse_new_data      re-analyse projects whose data changed
+        ▼
+update_brain          continuous learning pipeline over the new analysis
+        ▼
+generate_daily_brief  today's executive brief  (→ ReportGenerated)
+        ▼
+create_tasks          new findings + approvals → executive tasks
+        ▼
+generate_recommendations   route each through the Decision Engine
+        ▼
+queue_communications  draft the brief as an email AND a Teams post
+                      → both wait in the Action Queue for human approval
+```
+
+Nothing is sent: the drafts sit in the approval layer exactly as every
+external-effect action does. The executive sees the outcome the next morning on
+the Home workspace — brief, what completed overnight, pending approvals, recent
+decisions — and approves, rejects, or asks the Brain a follow-up.

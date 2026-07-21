@@ -69,6 +69,10 @@ class OutlookEmailAdapter(EmailProvider):
         return (f"set {self._auth_env} (bearer token or "
                 f"'tenant:client_id:client_secret') to enable Outlook")
 
+    def describe(self) -> dict:
+        return {**super().describe(),
+                "capabilities": ["read", "search", "draft", "send"]}
+
     def draft(self, to: list[str], subject: str, body: str) -> dict:
         draft = {"draft_id": f"draft_{uuid.uuid4().hex[:10]}", "to": to,
                  "subject": subject, "body": body}
@@ -84,13 +88,61 @@ class OutlookEmailAdapter(EmailProvider):
         self._drafts.pop(draft_id, None)
         return result
 
+    def _mailbox_base(self) -> str:
+        """The mailbox to act on: a configured sender (app/client-credentials
+        flow) or ``/me`` (a delegated token)."""
+        sender = os.environ.get(self._sender_env, "")
+        return f"/users/{sender}" if sender else "/me"
+
+    def read_messages(self, folder: str = "inbox", top: int = 25) -> list[dict]:
+        """Read recent messages from a mail folder. A read-only view the
+        Enterprise Brain can treat as another knowledge source; it never
+        sends. Returns [] with a clear reason when Outlook is not configured."""
+        if not self.available:
+            raise ProviderNotConfigured(self.unavailable_reason)
+        client = _graph_client()
+        path = f"{self._mailbox_base()}/mailFolders/{folder}/messages"
+        messages = client.get_all(path, params={
+            "$top": min(int(top), 100),
+            "$select": "id,subject,from,receivedDateTime,bodyPreview,isRead",
+            "$orderby": "receivedDateTime desc"}, limit=int(top))
+        return [_email_summary(m) for m in messages]
+
+    def search_messages(self, query: str, top: int = 25) -> list[dict]:
+        """Search historical email by free text (Graph ``$search``)."""
+        if not self.available:
+            raise ProviderNotConfigured(self.unavailable_reason)
+        if not str(query).strip():
+            raise ValueError("a search needs a query")
+        client = _graph_client()
+        path = f"{self._mailbox_base()}/messages"
+        # $search must be quoted; Graph requires no $orderby alongside it.
+        messages = client.get_all(path, params={
+            "$search": f'"{query}"', "$top": min(int(top), 100),
+            "$select": "id,subject,from,receivedDateTime,bodyPreview"},
+            limit=int(top))
+        return [_email_summary(m) for m in messages]
+
+    def get_message(self, message_id: str) -> dict:
+        """One message with its body — for drafting a grounded reply."""
+        if not self.available:
+            raise ProviderNotConfigured(self.unavailable_reason)
+        client = _graph_client()
+        message = client.get(
+            f"{self._mailbox_base()}/messages/{message_id}",
+            params={"$select": "id,subject,from,toRecipients,"
+                               "receivedDateTime,body,bodyPreview"})
+        summary = _email_summary(message)
+        body = message.get("body") or {}
+        summary["body"] = str(body.get("content", ""))[:8000]
+        return summary
+
     def send_direct(self, to: list[str], subject: str, body: str) -> dict:
         """One approved send. The Action Queue is the only caller."""
         if not to:
             raise ValueError("email needs at least one recipient")
         client = _graph_client()
-        sender = os.environ.get(self._sender_env, "")
-        base = f"/users/{sender}" if sender else "/me"
+        base = self._mailbox_base()
         client.post(f"{base}/sendMail", {
             "message": {
                 "subject": subject[:250],
@@ -126,6 +178,49 @@ class TeamsMessagingAdapter(MessagingProvider):
             return ""
         return (f"set {self._webhook_env} to a Teams incoming-webhook URL "
                 f"to enable Teams announcements")
+
+    def describe(self) -> dict:
+        return {**super().describe(),
+                "read_available": self.read_available,
+                "read_unavailable_reason": self.read_unavailable_reason,
+                "capabilities": (["read"] if self.read_available else [])
+                + (["post"] if self.available else [])}
+
+    @property
+    def read_available(self) -> bool:
+        """Reading channels and messages needs a Graph credential, which is a
+        different capability from the outgoing webhook used to post."""
+        return bool(os.environ.get(GRAPH_AUTH_ENV))
+
+    @property
+    def read_unavailable_reason(self) -> str:
+        if self.read_available:
+            return ""
+        return (f"set {GRAPH_AUTH_ENV} to read Teams channels and messages "
+                f"(a bearer token or 'tenant:client_id:client_secret')")
+
+    def read_channels(self, team_id: str) -> list[dict]:
+        """List a team's channels — read-only, another Brain knowledge source."""
+        if not self.read_available:
+            raise ProviderNotConfigured(self.read_unavailable_reason)
+        client = _graph_client()
+        channels = client.get_all(f"/teams/{team_id}/channels",
+                                  params={"$select": "id,displayName,"
+                                                     "description"}, limit=100)
+        return [{"id": c.get("id", ""),
+                 "name": c.get("displayName", ""),
+                 "description": c.get("description", "")} for c in channels]
+
+    def read_messages(self, team_id: str, channel_id: str,
+                      top: int = 25) -> list[dict]:
+        """Read recent messages in a channel. Never posts."""
+        if not self.read_available:
+            raise ProviderNotConfigured(self.read_unavailable_reason)
+        client = _graph_client()
+        messages = client.get_all(
+            f"/teams/{team_id}/channels/{channel_id}/messages",
+            params={"$top": min(int(top), 50)}, limit=int(top))
+        return [_teams_message_summary(m) for m in messages]
 
     def post_message(self, channel: str, text: str) -> dict:
         """``channel`` may carry a webhook URL to target a different channel;
@@ -268,6 +363,33 @@ class WebhookAdapter(WebhookProvider):
         logger.info("Webhook '%s' delivered (%s)", event, response.status_code)
         return {"delivered": True, "event": event,
                 "status_code": response.status_code}
+
+
+def _email_summary(message: dict) -> dict:
+    """Normalize a Graph message into a compact, body-preview-only summary —
+    the shape the Brain and the workspace consume."""
+    sender = ((message.get("from") or {}).get("emailAddress") or {})
+    return {
+        "id": message.get("id", ""),
+        "subject": message.get("subject", ""),
+        "from": sender.get("address", "") or sender.get("name", ""),
+        "received": message.get("receivedDateTime", ""),
+        "preview": str(message.get("bodyPreview", ""))[:500],
+        "is_read": message.get("isRead"),
+        "channel": "outlook",
+    }
+
+
+def _teams_message_summary(message: dict) -> dict:
+    from_user = (((message.get("from") or {}).get("user")) or {})
+    body = (message.get("body") or {})
+    return {
+        "id": message.get("id", ""),
+        "from": from_user.get("displayName", ""),
+        "created": message.get("createdDateTime", ""),
+        "text": str(body.get("content", ""))[:2000],
+        "channel": "teams",
+    }
 
 
 def build_default_adapters() -> list[Any]:

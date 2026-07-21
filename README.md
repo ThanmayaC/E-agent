@@ -147,6 +147,15 @@ cd frontend && npm install && npm run dev          # :5173
 Generate demo workbooks: `cd backend && python scripts/generate_sample_data.py`
 then upload `sample_data/*.xlsx` in the UI.
 
+**Enterprise Brain demo (V2.3):** `cd backend && python
+scripts/bootstrap_enterprise_demo.py` generates a synthetic enterprise (SOPs,
+RCAs, policies, meetings, product docs, reports, emails, Teams, Excel KPIs),
+registers the folders as sources, and ingests everything into the Brain. Then
+ask it a cross-source question — *"Why did settlement success dip in March and
+what did we do about it?"* — and the answer combines the RCA, the incident
+meeting, the KPI numbers, the decision log, and the SOP. See
+[docs/ENTERPRISE_BRAIN.md](docs/ENTERPRISE_BRAIN.md).
+
 ## Stack
 
 **Backend** Python 3.11 · FastAPI (async) · Pandas · DuckDB · OpenPyXL ·
@@ -188,7 +197,9 @@ backend/
                     (daily_cycle, background_intelligence, monitoring)
   app/runtime       autonomous execution layer: scheduler (heartbeat), event
                     bus, triggers, goals, planning, decisions, action queue +
-                    approval layer, background intelligence
+                    approval layer, background intelligence, decision
+                    intelligence (V2.4: observe → propose → rank → decide →
+                    learn — the Brain deciding, not just informing)
   app/sync          knowledge synchronization: data-source registry (auth by
                     reference), incremental sync engine, organizational model,
                     relationship engine, refresh pipeline, enterprise search
@@ -214,7 +225,8 @@ backend/
                     brain, manager, runtime, sync, product, copilot,
                     documents, connectors)
   app/workers       optional Celery tasks
-  scripts/          sample data generator
+  scripts/          sample data generator; V2.3 enterprise corpus generator
+                    + Enterprise Brain demo bootstrap
   tests/            unit + full end-to-end integration suite
 frontend/src        Executive Experience: business-only workspace (Home,
                     Executive Dashboard, Portfolio, Reports, AI Copilot,
@@ -232,6 +244,8 @@ docs/               ARCHITECTURE.md (diagrams) · API.md · INSTALLATION.md ·
 - [Architecture, sequence & ER diagrams](docs/ARCHITECTURE.md)
 - [API reference](docs/API.md) — plus live Swagger at `/docs`
 - [Executive Experience](docs/EXECUTIVE_EXPERIENCE.md) — the production UI: executive workspace, Admin Console, routes
+- [Enterprise Brain](docs/ENTERPRISE_BRAIN.md) — V2.3: the synthetic enterprise corpus, ingestion, cross-source Q&A, and the autonomous daily cycle
+- [Decision Intelligence](docs/DECISION_INTELLIGENCE.md) — V2.4: the Brain reasoning about the organization and proposing decisions proactively — lifecycle, decision graph, ranking, learning, reports, and the executive workspace
 
 ## Testing
 

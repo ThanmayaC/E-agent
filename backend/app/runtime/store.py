@@ -18,7 +18,10 @@ from pathlib import Path
 from typing import Any, Iterator
 
 SECTIONS = ("goals", "actions", "triggers", "jobs", "plans", "decisions",
-            "executions", "events")
+            "executions", "events",
+            # V2.4 Decision Intelligence: lifecycle decision records and the
+            # observations (signals) that produced them.
+            "decision_records", "signals")
 
 
 def now_iso() -> str:

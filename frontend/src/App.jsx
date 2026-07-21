@@ -4,7 +4,14 @@ import AdminLayout from './components/AdminLayout'
 import Layout from './components/Layout'
 
 // Executive Workspace — business surfaces only
+import Cockpit from './pages/Cockpit'
 import Home from './pages/Home'
+import GraphExplorer from './pages/GraphExplorer'
+import Timeline from './pages/Timeline'
+import DecisionAnalytics from './pages/DecisionAnalytics'
+import WorkflowMonitor from './pages/WorkflowMonitor'
+import AgentActivity from './pages/AgentActivity'
+import KnowledgeGrowth from './pages/KnowledgeGrowth'
 import ExecutiveDashboard from './pages/ExecutiveDashboard'
 import Portfolio from './pages/Portfolio'
 import ProductSummary from './pages/ProductSummary'
@@ -80,7 +87,14 @@ export default function App() {
     <Routes>
       {/* Executive Workspace — the production experience */}
       <Route element={<ExecLayout />}>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Cockpit />} />
+        <Route path="/workspace" element={<Home />} />
+        <Route path="/graph" element={<GraphExplorer />} />
+        <Route path="/timeline" element={<Timeline />} />
+        <Route path="/analytics/decisions" element={<DecisionAnalytics />} />
+        <Route path="/analytics/workflows" element={<WorkflowMonitor />} />
+        <Route path="/analytics/agents" element={<AgentActivity />} />
+        <Route path="/analytics/knowledge" element={<KnowledgeGrowth />} />
         <Route path="/dashboard" element={<ExecutiveDashboard />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/portfolio/product/:productId" element={<ProductSummary />} />

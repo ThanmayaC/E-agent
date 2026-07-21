@@ -31,10 +31,16 @@ logger = get_logger(__name__)
 
 SURFACES = ("knowledge", "memory", "projects", "reports", "tasks",
             "portfolio", "business_rules", "clarifications",
-            "recommendations", "organization")
+            "recommendations", "organization", "documents")
 
 MAX_PER_SURFACE = 10
 MIN_TERM_LENGTH = 2
+# The chunk vector collection Document Intelligence embeds into. Searching it
+# is what lets an enterprise question reach SOPs, RCAs, meeting notes,
+# policies, reports, and the synthetic email/Teams corpus — the document body,
+# not just its title.
+DOCUMENT_COLLECTION = "_documents"
+DOCUMENT_CHUNK_KIND = "document_chunk"
 
 
 class EnterpriseSearch:
@@ -42,7 +48,7 @@ class EnterpriseSearch:
 
     def __init__(self, knowledge, artifacts, organization, relationships,
                  tasks=None, portfolio=None, embedder=None,
-                 vector_store_for=None):
+                 vector_store_for=None, documents=None):
         self._knowledge = knowledge
         self._artifacts = artifacts
         self._org = organization
@@ -51,6 +57,11 @@ class EnterpriseSearch:
         self._portfolio = portfolio
         self._embedder = embedder
         self._vector_store_for = vector_store_for
+        # Document Intelligence, when wired: gives the documents surface a
+        # ready-made semantic search over the chunk collection. Absent, the
+        # surface falls back to embedding here directly. Either way it degrades
+        # rather than failing.
+        self._documents = documents
 
     # -------------------------------------------------------------- search
     def search(self, query: str, surfaces: list[str] | None = None,
@@ -75,6 +86,7 @@ class EnterpriseSearch:
             "clarifications": self._search_clarifications,
             "recommendations": self._search_recommendations,
             "organization": self._search_organization,
+            "documents": self._search_documents,
         }
 
         results: list[dict] = []
@@ -234,6 +246,54 @@ class EnterpriseSearch:
             hits.append(hit)
         return [h for h in hits if h["score"] > 0]
 
+    def _search_documents(self, terms: list[str]) -> list[dict]:
+        """Semantic search over document chunks — SOPs, RCAs, meeting notes,
+        policies, reports, and the email/Teams corpus. This is the surface that
+        lets a question reach the *contents* of the enterprise's documents, not
+        just their titles. Each hit carries the matched chunk text so the
+        copilot can cite the passage it stood on."""
+        query = " ".join(terms)
+        # Prefer Document Intelligence's own search (it owns the collection and
+        # its embedder); fall back to embedding here when it is not wired.
+        matches: list[dict] = []
+        if self._documents is not None:
+            try:
+                matches = self._documents.search(query, limit=MAX_PER_SURFACE)
+            except Exception:  # noqa: BLE001 — degrade to the direct path
+                logger.exception("Document Intelligence search failed")
+                matches = []
+        if not matches and self._embedder is not None \
+                and self._vector_store_for is not None:
+            try:
+                vector = self._embedder.embed([query])[0]
+                store = self._vector_store_for(DOCUMENT_COLLECTION)
+                matches = store.search(vector, top_k=MAX_PER_SURFACE,
+                                       kind=DOCUMENT_CHUNK_KIND)
+            except Exception:  # noqa: BLE001 — documents are one surface, never all
+                logger.exception("Direct document chunk search failed")
+                return []
+
+        hits = []
+        for match in matches:
+            payload = match.get("payload") or match
+            score = float(match.get("score") or 0)
+            text = str(payload.get("text") or "")
+            if score <= 0 or not text:
+                continue
+            title = str(payload.get("document") or "").strip()
+            category = str(payload.get("category") or "document")
+            hits.append({
+                "surface": "documents",
+                "title": (title or "document")[:200],
+                "detail": f"[{category}] {text}"[:200],
+                "ref": str(payload.get("document_id") or ""),
+                "matched": "meaning", "score": round(3 + score * 5, 3),
+                "item": {"document_id": payload.get("document_id"),
+                         "document": title, "category": category,
+                         "source": payload.get("source"),
+                         "chunk": payload.get("chunk"), "text": text[:1200]}})
+        return hits
+
     def _search_semantic(self, query: str, terms: list[str]
                          ) -> tuple[list[dict], str]:
         """Vector search over the organizational model, when embeddings are
@@ -288,6 +348,12 @@ class EnterpriseSearch:
             {"surface": "organization", "available": True,
              "description": "enterprise entities, aliases, and owners",
              "semantic": self._embedder is not None},
+            {"surface": "documents",
+             "available": self._documents is not None
+             or self._embedder is not None,
+             "description": "document contents: SOPs, RCAs, meetings, "
+                            "policies, reports, emails, Teams",
+             "semantic": True},
         ]
 
 

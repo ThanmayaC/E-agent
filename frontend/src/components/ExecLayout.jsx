@@ -3,19 +3,46 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { api } from '../api/client'
-import { isAdmin } from '../lib/prefs'
+import { getTheme, isAdmin, setTheme } from '../lib/prefs'
 
+// Two groups: the core executive surfaces, and the V2.5 "Intelligence"
+// premium surfaces (graph, timeline, analytics dashboards).
 const NAV = [
-  { to: '/', label: 'Home', icon: '⌂', end: true },
+  { to: '/', label: 'Cockpit', icon: '◆', end: true },
   { to: '/dashboard', label: 'Executive Dashboard', icon: '◈' },
   { to: '/portfolio', label: 'Portfolio', icon: '▦' },
   { to: '/reports', label: 'Reports', icon: '▣' },
   { to: '/copilot', label: 'AI Copilot', icon: '✦' },
   { to: '/tasks', label: 'Tasks', icon: '☑' },
-  { to: '/notifications', label: 'Notifications', icon: '◔' },
   { to: '/decisions', label: 'Decisions', icon: '⚖' },
-  { to: '/settings', label: 'Settings', icon: '⚙' },
+  { to: '/notifications', label: 'Notifications', icon: '◔' },
 ]
+
+const NAV_INTEL = [
+  { to: '/graph', label: 'Graph Explorer', icon: '❖' },
+  { to: '/timeline', label: 'Timeline', icon: '≡' },
+  { to: '/analytics/decisions', label: 'Decision Analytics', icon: '◉' },
+  { to: '/analytics/workflows', label: 'Workflow Monitor', icon: '⟳' },
+  { to: '/analytics/agents', label: 'Agent Activity', icon: '⧉' },
+  { to: '/analytics/knowledge', label: 'Knowledge Growth', icon: '↗' },
+]
+
+const THEMES = ['midnight', 'graphite', 'daylight']
+const THEME_ICON = { midnight: '☾', graphite: '◑', daylight: '☀' }
+
+function ThemeToggle() {
+  const [theme, setThemeState] = useState(getTheme())
+  const cycle = () => {
+    const next = THEMES[(THEMES.indexOf(theme) + 1) % THEMES.length]
+    setTheme(next); setThemeState(next)
+  }
+  return (
+    <button onClick={cycle} title={`Theme: ${theme} — click to switch`}
+      className="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-slate-200 hover:bg-surface-overlay transition-colors">
+      {THEME_ICON[theme] || '☾'}
+    </button>
+  )
+}
 
 function GlobalSearch() {
   const [q, setQ] = useState('')
@@ -114,16 +141,29 @@ export default function ExecLayout() {
               {item.label}
             </NavLink>
           ))}
+          <div className="px-5 pt-4 pb-1.5 text-[10px] uppercase tracking-[0.14em] text-slate-600 font-semibold">Intelligence</div>
+          {NAV_INTEL.map((item) => (
+            <NavLink key={item.to} to={item.to}
+                     className={({ isActive }) => `nav-item ${isActive ? 'nav-item-active' : 'nav-item-idle'}`}>
+              <span className="w-4 text-center opacity-70">{item.icon}</span>
+              {item.label}
+            </NavLink>
+          ))}
         </nav>
-        {admin && (
-          <div className="py-3 border-t border-surface-border">
+        <div className="py-2 border-t border-surface-border">
+          <NavLink to="/settings"
+                   className={({ isActive }) => `nav-item ${isActive ? 'nav-item-active' : 'nav-item-idle'}`}>
+            <span className="w-4 text-center opacity-70">⚙</span>
+            Settings
+          </NavLink>
+          {admin && (
             <NavLink to="/admin"
                      className={({ isActive }) => `nav-item ${isActive ? 'nav-item-active' : 'nav-item-idle'}`}>
               <span className="w-4 text-center opacity-70">⛭</span>
               Admin Console
             </NavLink>
-          </div>
-        )}
+          )}
+        </div>
       </aside>
 
       <div className="flex-1 min-w-0 flex flex-col">
@@ -131,6 +171,7 @@ export default function ExecLayout() {
           <div className="lg:hidden text-sm font-bold text-slate-100">Enterprise Agent</div>
           <GlobalSearch />
           <div className="flex-1" />
+          <ThemeToggle />
           <NotificationBell />
           <Link to="/copilot" title="Ask the AI Copilot"
                 className="w-8 h-8 rounded-lg flex items-center justify-center text-accent hover:bg-accent/10 transition-colors">✦</Link>
@@ -140,7 +181,7 @@ export default function ExecLayout() {
 
         {/* Mobile nav — the sidebar collapses into a scrollable strip */}
         <nav className="lg:hidden flex gap-1 overflow-x-auto border-b border-surface-border px-2 py-1.5 bg-surface-raised/30">
-          {NAV.map((item) => (
+          {[...NAV, ...NAV_INTEL].map((item) => (
             <NavLink key={item.to} to={item.to} end={item.end}
                      className={({ isActive }) =>
                        `px-3 py-1.5 rounded-lg text-xs whitespace-nowrap ${
@@ -148,6 +189,7 @@ export default function ExecLayout() {
               {item.label}
             </NavLink>
           ))}
+          <NavLink to="/settings" className="px-3 py-1.5 rounded-lg text-xs whitespace-nowrap text-slate-400">Settings</NavLink>
           {admin && <NavLink to="/admin" className="px-3 py-1.5 rounded-lg text-xs whitespace-nowrap text-slate-400">Admin</NavLink>}
         </nav>
 

@@ -27,6 +27,7 @@ from app.runtime.background import BackgroundIntelligence
 from app.runtime.decisions import DecisionEngine
 from app.runtime.events import Event, EventBus
 from app.runtime.goals import GoalEngine
+from app.runtime.intelligence import DecisionIntelligence
 from app.runtime.planning import PlanningEngine
 from app.runtime.queue import ActionQueue
 from app.runtime.scheduler import EnterpriseScheduler, JobDefinition, RetryPolicy
@@ -122,6 +123,20 @@ class AutonomyRuntime:
             autonomy_threshold=settings.autonomy_confidence_threshold)
         self.triggers = TriggerEngine(self.store, self.bus, self.queue,
                                       workflows=self.workflows)
+        # V2.4 Decision Intelligence: the Brain reasoning about the
+        # organization. Observes through the existing bus and surfaces,
+        # remembers through the KnowledgeStore, executes through the
+        # existing Decision Engine → Action Queue pipeline, and writes its
+        # decisions into the Enterprise Knowledge Graph. Disabled = built
+        # but inert: state readable, nothing observes or proposes.
+        self.intelligence = DecisionIntelligence(
+            self.store, self.bus, engine=self.decisions,
+            knowledge=knowledge, graph=getattr(brain, "graph", None),
+            portfolio=portfolio, tasks=tasks,
+            documents=getattr(sync, "documents", None) if sync else None,
+            product=product,
+            enabled=settings.decision_intelligence_enabled,
+            ttl_days=settings.decision_ttl_days)
         self.background = BackgroundIntelligence(
             store=store, knowledge=knowledge, memory=memory,
             portfolio=portfolio, tasks=tasks, bus=self.bus, goals=self.goals,
@@ -147,7 +162,8 @@ class AutonomyRuntime:
             store=store, knowledge=knowledge, manager=manager,
             portfolio=portfolio, brief=brief, tasks=tasks,
             notifications=notifications, queue=self.queue, bus=self.bus,
-            decisions=self.decisions, brain=brain, orchestrator=orchestrator))
+            decisions=self.decisions, brain=brain, orchestrator=orchestrator,
+            sync=self.sync, providers=self._providers))
         self._register_v2_workflows(store, knowledge, portfolio, tasks,
                                     notifications, brief)
         self._register_executors()
@@ -497,6 +513,26 @@ class AutonomyRuntime:
                 cron=settings.v2_presentation_cron, retry=retry,
                 tags=["v2", "drafting", "weekly"]))
 
+        # ----------------------------------- V2.4 Decision Intelligence
+        # The proactive sweep and the daily decision report. Registered only
+        # when the layer is enabled — off, the platform is exactly V2.3.
+        if self.intelligence.enabled:
+            self.scheduler.register(JobDefinition(
+                "decision_observe",
+                "Detect trends, anomalies, repeated RCAs, missed items, and "
+                "knowledge gaps, and propose decisions",
+                "interval", self.intelligence.observe,
+                interval_seconds=settings.decision_observe_interval_seconds,
+                depends_on=["background_portfolio"],
+                retry=RetryPolicy(attempts=1),
+                tags=["v2.4", "decisions", "background"]))
+            self.scheduler.register(JobDefinition(
+                "decision_daily_report", "Compose the daily decision summary",
+                "cron",
+                lambda: self.intelligence.generate_scheduled_report("daily"),
+                cron=settings.decision_report_cron, retry=retry,
+                tags=["v2.4", "decisions", "daily"]))
+
         self.scheduler.register(JobDefinition(
             "learn_on_import", "Refresh the Enterprise Brain when data lands",
             "event", self.background.refresh_knowledge,
@@ -529,6 +565,7 @@ class AutonomyRuntime:
             "goals": self.goals.progress_report(),
             "plans": self.planning.stats(),
             "decisions": self.decisions.stats(),
+            "decision_intelligence": self.intelligence.status(),
             "approval_policy": self.queue.policy(),
             "synchronization": (self.sync.status() if self.sync is not None
                                 else {"enabled": False}),

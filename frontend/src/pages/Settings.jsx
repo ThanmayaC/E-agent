@@ -20,6 +20,7 @@ const NOTIFY_KINDS = [
 const THEMES = [
   ['midnight', 'Midnight', 'Deep blue-black — the default'],
   ['graphite', 'Graphite', 'Warm neutral dark'],
+  ['daylight', 'Daylight', 'Bright light theme (V2.5)'],
 ]
 
 function Toggle({ on, onChange }) {
@@ -157,7 +158,7 @@ export default function Settings() {
               </button>
             ))}
           </div>
-          <div className="text-xs text-slate-600 mt-3">Dark mode first — a light theme arrives in Version 2.</div>
+          <div className="text-xs text-slate-600 mt-3">Two dark themes and a light theme (Daylight) — switch anytime from the header too.</div>
         </Panel>
 
         <Panel title="Administration">

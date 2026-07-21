@@ -19,6 +19,7 @@ module's forecasts (validation gate and all), the Product layer's health.
 """
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -27,6 +28,9 @@ from app.core.logging import get_logger
 logger = get_logger(__name__)
 
 MAX_PER_KIND = 10
+# Figures embedded in a retrieved passage are sourced — the passage IS the
+# evidence the model was shown, so a number inside it is not an invention.
+_NUMBER_IN_TEXT = re.compile(r"-?\d[\d,]*\.?\d*")
 # Below this many evidence items, an answer's confidence is capped — a
 # conclusion drawn from almost nothing is a guess wearing a number.
 WEAK_EVIDENCE = 3
@@ -58,14 +62,23 @@ class Evidence:
 
     def numbers(self) -> set[float]:
         """Every number the evidence contains — what the validator checks a
-        model's figures against."""
+        model's figures against. This includes figures written inside a
+        retrieved passage's ``text``: a document chunk carries its numbers in
+        prose (a 94.2% success rate, a March 2026 date), and a number the model
+        quotes from the passage it was given is sourced, not invented."""
         found: set[float] = set()
         for item in self.items:
-            for value in item.values():
+            for key, value in item.items():
                 if isinstance(value, bool):
                     continue
                 if isinstance(value, (int, float)):
                     found.add(round(float(value), 4))
+                elif isinstance(value, str) and key == "text":
+                    for raw in _NUMBER_IN_TEXT.findall(value):
+                        try:
+                            found.add(round(float(raw.replace(",", "")), 4))
+                        except ValueError:
+                            continue
         return found
 
     def kpi_names(self) -> set[str]:
@@ -89,7 +102,10 @@ class EvidenceCollector:
         self._sync = sync
         self._portfolio = portfolio
         self._manager = manager
-        self._search = search
+        # The enterprise search engine. Stored under its own name so it does
+        # not shadow the ``_search`` collector method below — a shadow that
+        # silently kept enterprise-search evidence from ever reaching answers.
+        self._enterprise_search = search
 
     # ------------------------------------------------------------ collect
     def collect(self, plan, message: str = "") -> Evidence:
@@ -118,6 +134,7 @@ class EvidenceCollector:
             "tasks": lambda: self._tasks(evidence),
             "decisions": lambda: self._decisions(evidence),
             "search_results": lambda: self._search(evidence, message),
+            "document_chunks": lambda: self._document_chunks(evidence, message),
         }
         for kind in plan.evidence:
             collector = collectors.get(kind)
@@ -407,9 +424,33 @@ class EvidenceCollector:
                          f"[{hit['surface']}] {hit['title']}: {hit['detail']}",
                          {"surface": hit["surface"], "matched": hit["matched"]})
 
+    def _document_chunks(self, evidence: Evidence, message: str) -> None:
+        """Passages from the enterprise's own documents — SOPs, RCAs, meeting
+        notes, policies, reports, and the email/Teams corpus. This is what
+        lets the copilot answer *across* sources: the model receives the actual
+        passage and cites the document it came from, rather than retrieving a
+        single file. Each chunk is citable by its document id."""
+        documents = getattr(self._sync, "documents", None)
+        if documents is None:
+            raise _Unavailable("document intelligence is disabled")
+        for i, match in enumerate(documents.search(message, limit=MAX_PER_KIND)):
+            payload = match.get("payload") or match
+            text = str(payload.get("text") or "").strip()
+            if not text:
+                continue
+            document = str(payload.get("document") or "document")
+            category = str(payload.get("category") or "document")
+            evidence.add(
+                "document_chunk",
+                str(payload.get("document_id") or f"doc:{i}"),
+                f"[{category}] {document}: {text[:220]}",
+                {"document": document, "category": category,
+                 "source": payload.get("source"),
+                 "text": text[:1200]})
+
     @property
     def _search_engine(self):
-        return self._search
+        return self._enterprise_search
 
 
 class _Unavailable(RuntimeError):

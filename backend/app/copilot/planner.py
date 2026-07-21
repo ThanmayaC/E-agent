@@ -78,13 +78,18 @@ class ExecutionPlan:
 # like this." Every module named here exists; nothing is invented.
 ROUTES: dict[str, dict[str, Any]] = {
     "question": {
-        "modules": ["brain", "knowledge", "analytics", "product"],
-        "evidence": ["kpis", "knowledge", "product_health", "business_rules"],
-        "output": "answer"},
+        "modules": ["brain", "knowledge", "search", "analytics", "product"],
+        "evidence": ["document_chunks", "search_results", "kpis", "knowledge",
+                     "product_health", "business_rules"],
+        "output": "answer",
+        "notes": ["An enterprise question is answered across sources: the "
+                  "Brain retrieves passages from documents, meetings, emails, "
+                  "and Teams alongside KPIs and knowledge, and the answer "
+                  "cites each source it stood on."]},
     "analysis": {
-        "modules": ["brain", "analytics", "product", "reviews"],
-        "evidence": ["kpis", "signals", "forecasts", "product_health",
-                     "product_reviews", "quality"],
+        "modules": ["brain", "search", "analytics", "product", "reviews"],
+        "evidence": ["document_chunks", "kpis", "signals", "forecasts",
+                     "product_health", "product_reviews", "quality"],
         "output": "analysis"},
     "recommendation": {
         "modules": ["product", "recommendations", "product_portfolio",
@@ -93,8 +98,8 @@ ROUTES: dict[str, dict[str, Any]] = {
                      "business_rules", "portfolio_health"],
         "output": "recommendation_list"},
     "report": {
-        "modules": ["reports", "brain", "briefs"],
-        "evidence": ["reports", "portfolio_health"],
+        "modules": ["reports", "brain", "search", "briefs"],
+        "evidence": ["reports", "document_chunks", "portfolio_health"],
         "reports": ["report_history"],
         "output": "report_reference"},
     "comparison": {
@@ -109,9 +114,9 @@ ROUTES: dict[str, dict[str, Any]] = {
                   "gate; a low-confidence or unavailable forecast is reported "
                   "as such, never smoothed over."]},
     "explanation": {
-        "modules": ["brain", "analytics", "product", "organization"],
-        "evidence": ["signals", "kpis", "relationships", "product_health",
-                     "growth"],
+        "modules": ["brain", "search", "analytics", "product", "organization"],
+        "evidence": ["document_chunks", "search_results", "signals", "kpis",
+                     "relationships", "product_health", "growth"],
         "output": "explanation",
         "notes": ["The platform states causes only as hypotheses with "
                   "supporting and missing evidence — it does not assert why."]},

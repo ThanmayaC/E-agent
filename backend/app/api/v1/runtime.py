@@ -332,6 +332,125 @@ def decisions(status: str = "", project_id: str = "",
             "stats": c.runtime.decisions.stats()}
 
 
+# ----------------------------------------- V2.4: Decision Intelligence
+@router.get("/runtime/intelligence")
+def decision_intelligence(c: Container = Depends(container)):
+    """What the Brain is deciding about: counts, statuses, last sweep."""
+    return c.runtime.intelligence.status()
+
+
+@router.post("/runtime/intelligence/observe")
+def observe_now(c: Container = Depends(container)):
+    """Run the proactive detection sweep now, outside its schedule."""
+    return c.runtime.intelligence.observe()
+
+
+@router.get("/runtime/intelligence/decisions")
+def intelligence_decisions(status: str = "", kind: str = "",
+                           limit: int = Query(50, ge=1, le=200),
+                           c: Container = Depends(container)):
+    """Every organizational decision with its full lifecycle history."""
+    return {"decisions": c.runtime.intelligence.decisions(
+                status=status, kind=kind, limit=limit),
+            "stats": c.runtime.intelligence.stats()}
+
+
+@router.get("/runtime/intelligence/recommendations")
+def intelligence_recommendations(limit: int = Query(5, ge=1, le=25),
+                                 c: Container = Depends(container)):
+    """The highest-value open decisions, ranked, with factor breakdowns."""
+    return {"recommendations": c.runtime.intelligence.rank(limit)}
+
+
+@router.get("/runtime/intelligence/signals")
+def intelligence_signals(kind: str = "", limit: int = Query(50, ge=1, le=200),
+                         c: Container = Depends(container)):
+    """The significant observations that produced candidate decisions."""
+    return {"signals": c.runtime.intelligence.signals(kind=kind, limit=limit)}
+
+
+@router.get("/runtime/intelligence/brief")
+def intelligence_brief(c: Container = Depends(container)):
+    """The executive workspace brief: what requires attention right now."""
+    return c.runtime.intelligence.brief(queue=c.runtime.queue)
+
+
+@router.get("/runtime/intelligence/reports/{period}")
+def intelligence_report(period: str, c: Container = Depends(container)):
+    """Decision reports: daily, weekly, or monthly."""
+    try:
+        return c.runtime.intelligence.report(period)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc))
+
+
+class DecisionPropose(BaseModel):
+    action: str
+    kind: str = "recommendation"
+    reasoning: str = ""
+    priority: int = Field(3, ge=1, le=9)
+    confidence: float | None = Field(None, ge=0, le=1)
+    evidence_ids: list[str] = Field(default_factory=list)
+    affected_products: list[str] = Field(default_factory=list)
+    affected_teams: list[str] = Field(default_factory=list)
+    expected_impact: str = ""
+    owner: str = ""
+    dependencies: list[str] = Field(default_factory=list)
+    project_id: str = ""
+
+
+@router.post("/runtime/intelligence/decisions", status_code=201)
+def propose_decision(body: DecisionPropose,
+                     c: Container = Depends(container)):
+    """Propose a decision manually — same lifecycle as a detected one."""
+    try:
+        record = c.runtime.intelligence.propose(
+            body.action, kind=body.kind, reasoning=body.reasoning,
+            priority=body.priority, confidence=body.confidence,
+            evidence_ids=body.evidence_ids,
+            affected_products=body.affected_products,
+            affected_teams=body.affected_teams,
+            expected_impact=body.expected_impact, owner=body.owner,
+            dependencies=body.dependencies, project_id=body.project_id,
+            created_by="manager")
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc))
+    if record is None:
+        raise HTTPException(status_code=409,
+                            detail="An equivalent decision is already open")
+    return record
+
+
+class DecisionStatus(BaseModel):
+    status: str
+    by: str = ""
+    note: str = ""
+
+
+@router.get("/runtime/intelligence/decisions/{decision_id}")
+def get_intelligence_decision(decision_id: str,
+                              c: Container = Depends(container)):
+    record = c.runtime.intelligence.get(decision_id)
+    if record is None:
+        raise HTTPException(status_code=404, detail="Decision not found")
+    return record
+
+
+@router.patch("/runtime/intelligence/decisions/{decision_id}")
+def set_intelligence_decision_status(decision_id: str, body: DecisionStatus,
+                                     c: Container = Depends(container)):
+    """Approve, reject, cancel, or otherwise move a decision. Approval
+    executes it through the existing Decision Engine and Action Queue."""
+    try:
+        updated = c.runtime.intelligence.set_status(
+            decision_id, body.status, by=body.by, note=body.note)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc))
+    if updated is None:
+        raise HTTPException(status_code=404, detail="Decision not found")
+    return updated
+
+
 # ---------------------------------------------------------------- triggers
 class TriggerCreate(BaseModel):
     name: str

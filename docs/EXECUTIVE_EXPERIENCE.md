@@ -25,7 +25,7 @@ REST APIs (`/api/v1/manager/*`, `/api/v1/product/*`, `/api/v1/projects/*`,
 
 | Route | Page | Purpose |
 | --- | --- | --- |
-| `/` | Home | Welcome surface with a natural-language ask box that hands off to the Copilot |
+| `/` | Home | **Executive workspace (V2.4)**: the first thing a manager sees is what requires attention. Greeting + Ask-the-Brain box, Today's Executive Brief, **Top Decisions** (the Brain's ranked proposals, approve/reject inline), **Recommended Actions**, Completed Overnight, **Organizational Changes**, Critical Alerts, Pending Approvals, Today's Tasks, Recent Reports, Growth Opportunities. The decision panels are fed by `GET /runtime/intelligence/brief`; approving a decision executes it through the Decision Engine |
 | `/dashboard` | Executive Dashboard | Landing view: Today's Summary, AI Executive Brief, Critical Alerts, Portfolio Health, Top Opportunities, Products At Risk, Pending Approvals (approve/reject inline), Recent Reports, Recommended Actions, Upcoming Deadlines |
 | `/portfolio` | Portfolio | Products as executive cards — health score, growth, risk, revenue, trend, recommendations |
 | `/portfolio/product/:id` | Product Summary | Executive summary opened from a card |

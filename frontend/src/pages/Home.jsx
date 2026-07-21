@@ -1,5 +1,7 @@
-// Home — the executive's front door. A greeting, the Copilot ask bar, and
-// everything that needs attention today, at a glance.
+// Home — the executive workspace (V2.4). Not a passive dashboard: the first
+// thing an executive sees is what requires attention — today's brief, the
+// top decisions the Brain proposes, recommended actions, critical risks,
+// pending approvals, and what changed in the organization.
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { api } from '../api/client'
@@ -22,6 +24,13 @@ export default function Home() {
   const [ask, setAsk] = useState('')
   const navigate = useNavigate()
   const state = useAsync(() => api.managerWorkspace(), [refresh])
+  // The executive brief and the overnight summary are composed by the platform
+  // on its own heartbeat — the manager reads them, never generates them.
+  const brief = useAsync(() => api.dailyBrief(), [refresh])
+  const overnight = useAsync(() => api.overnightSummary(), [refresh])
+  // The Decision Intelligence brief: top decisions, recommended actions,
+  // and organizational changes — composed by the Brain, read here.
+  const intel = useAsync(() => api.intelligenceBrief().catch(() => null), [refresh])
   const reload = () => setRefresh((n) => n + 1)
 
   const goAsk = (q) => navigate('/copilot', { state: { ask: q } })
@@ -29,6 +38,8 @@ export default function Home() {
   const approve = (ref) => api.approveAction(actionId(ref), 'executive').then(reload)
   const reject = (ref) => api.rejectAction(actionId(ref), 'executive', 'rejected from Home').then(reload)
   const completeTask = (id) => api.setTaskStatus(id, 'completed').then(reload)
+  const decide = (id, status) =>
+    api.setIntelligenceDecision(id, status, 'executive', `${status} from Home`).then(reload)
 
   return (
     <AsyncSection state={state} empty="Your workspace is warming up — connect a data source under Settings.">
@@ -38,6 +49,10 @@ export default function Home() {
         const approvals = ws.pending_approvals || []
         const risks = ws.critical_risks || []
         const tasks = ws.pending_tasks || []
+        const decisions = ws.recent_decisions || []
+        const topDecisions = intel.data?.top_decisions || []
+        const recommended = intel.data?.recommended_actions || []
+        const changes = intel.data?.recent_changes || []
         return (
           <div className="space-y-6">
             {/* Hero: greeting + ask bar. The Copilot is the primary interface. */}
@@ -67,6 +82,142 @@ export default function Home() {
                 ))}
               </div>
             </section>
+
+            {/* Today's executive brief — composed overnight, read here. */}
+            <Panel title="Today's executive brief"
+                   action={<Link to="/reports" className="btn-quiet">Full brief →</Link>}>
+              {brief.loading ? <PanelEmpty text="Composing…" /> : brief.error ? (
+                <PanelEmpty text="Brief unavailable." />
+              ) : (
+                <div className="space-y-3">
+                  <p className="text-sm text-slate-300">
+                    {(brief.data?.date || summary.date) ? `For ${brief.data?.date || summary.date}. ` : ''}
+                    Portfolio health {health != null ? Math.round(health) : '—'} ·{' '}
+                    {(brief.data?.high_priority_issues ?? summary.high_priority_issues ?? 0)} high-priority issue(s) ·{' '}
+                    {summary.open_action_items ?? 0} open action item(s).
+                  </p>
+                  {(brief.data?.recommendations || []).length > 0 && (
+                    <div>
+                      <div className="eyebrow mb-1.5">Recommended focus</div>
+                      <ul className="space-y-1.5">
+                        {brief.data.recommendations.slice(0, 3).map((r, i) => (
+                          <li key={i} className="text-sm text-slate-300 flex gap-2">
+                            <Badge tone="accent">rec</Badge>
+                            <span>{r.action || r.recommendation || r.title}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              )}
+            </Panel>
+
+            {/* Decision Intelligence: what the Brain proposes, ranked. */}
+            <div className="grid gap-5 lg:grid-cols-2">
+              <Panel title="Top decisions"
+                     action={<Link to="/decisions" className="btn-quiet">All decisions →</Link>}>
+                {intel.loading ? <PanelEmpty text="Reasoning…" /> : topDecisions.length === 0 ? (
+                  <PanelEmpty text="No open decisions — the Brain has nothing urgent to propose." />
+                ) : (
+                  <ul className="space-y-3">
+                    {topDecisions.slice(0, 5).map((d) => (
+                      <li key={d.decision_id} className="text-sm">
+                        <div className="flex items-start justify-between gap-3">
+                          <div className="min-w-0">
+                            <div className="text-slate-200">
+                              <Badge tone={d.priority <= 2 ? 'danger' : 'accent'}>P{d.priority}</Badge>{' '}
+                              {d.action}
+                            </div>
+                            <div className="text-slate-500 text-xs mt-0.5 truncate">
+                              {d.kind} · confidence {Math.round((d.confidence ?? 0) * 100)}% · score {d.score}
+                              {d.status !== 'proposed' ? ` · ${d.status}` : ''}
+                            </div>
+                          </div>
+                          {(d.status === 'proposed' || d.status === 'modified') && (
+                            <span className="shrink-0 space-x-2.5 text-xs">
+                              <button onClick={() => decide(d.decision_id, 'approved')}
+                                      className="text-emerald-400 hover:underline">Approve</button>
+                              <button onClick={() => decide(d.decision_id, 'rejected')}
+                                      className="text-slate-500 hover:underline">Reject</button>
+                            </span>
+                          )}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </Panel>
+
+              <Panel title="Recommended actions">
+                {intel.loading ? <PanelEmpty text="Ranking…" /> : recommended.length === 0 ? (
+                  <PanelEmpty text="No recommendations awaiting a call." />
+                ) : (
+                  <ul className="space-y-3">
+                    {recommended.slice(0, 5).map((r) => (
+                      <li key={r.decision_id} className="text-sm">
+                        <div className="text-slate-200">{r.action}</div>
+                        {r.reasoning && (
+                          <div className="text-slate-500 text-xs mt-0.5">{r.reasoning}</div>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </Panel>
+            </div>
+
+            <div className="grid gap-5 lg:grid-cols-3">
+              <Panel title="Completed overnight"
+                     action={<Link to="/dashboard" className="btn-quiet">Activity →</Link>}>
+                {overnight.loading ? <PanelEmpty text="Loading…" /> : overnight.data ? (
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap gap-x-5 gap-y-1.5 text-sm text-slate-400">
+                      <span><span className="text-slate-100 font-semibold tabular-nums">{overnight.data.totals?.workflows ?? 0}</span> workflows</span>
+                      <span><span className="text-slate-100 font-semibold tabular-nums">{overnight.data.totals?.reports ?? 0}</span> reports</span>
+                      <span><span className="text-slate-100 font-semibold tabular-nums">{overnight.data.totals?.awaiting_approval ?? 0}</span> awaiting approval</span>
+                      <span><span className="text-slate-100 font-semibold tabular-nums">{overnight.data.totals?.notifications ?? 0}</span> alerts</span>
+                    </div>
+                    {(overnight.data.awaiting_approval || []).length > 0 && (
+                      <ul className="space-y-1.5">
+                        {overnight.data.awaiting_approval.slice(0, 3).map((a) => (
+                          <li key={a.action_id} className="text-sm text-slate-400 truncate">• {a.title}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ) : <PanelEmpty text="Nothing ran overnight yet." />}
+              </Panel>
+
+              <Panel title="Recent decisions"
+                     action={<Link to="/decisions" className="btn-quiet">All decisions →</Link>}>
+                {decisions.length === 0 ? <PanelEmpty text="No decisions recorded yet." /> : (
+                  <ul className="space-y-2.5">
+                    {decisions.slice(0, 5).map((d, i) => (
+                      <li key={i} className="text-sm">
+                        <div className="text-slate-200 truncate">{d.decision || d.title}</div>
+                        {(d.context || d.rationale) && (
+                          <div className="text-slate-500 text-xs mt-0.5 truncate">{d.context || d.rationale}</div>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </Panel>
+
+              <Panel title="Organizational changes">
+                {changes.length === 0 ? <PanelEmpty text="No recent changes recorded." /> : (
+                  <ul className="space-y-2">
+                    {changes.slice(0, 6).map((ch, i) => (
+                      <li key={i} className="text-sm text-slate-400 truncate">
+                        <span className="text-slate-200">{ch.kind}</span>
+                        <span className="text-xs text-slate-500"> · {ch.summary}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </Panel>
+            </div>
 
             <div className="grid gap-5 lg:grid-cols-3">
               <Panel title="Needs your approval"

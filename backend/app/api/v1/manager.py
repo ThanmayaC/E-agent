@@ -231,3 +231,70 @@ def integrations(c: Container = Depends(container)):
     """Future integration slots (email, calendar, meetings, messaging,
     documents, tasks) — interfaces prepared, providers arrive in V2."""
     return c.providers.describe()
+
+
+# ------------------------------------------------ Outlook / Teams (read-only)
+# Reading email and Teams is another enterprise knowledge source. These
+# surfaces never send or post — outbound stays behind the Action Queue's
+# approval layer. When a channel is not configured they answer with a clear
+# reason and an empty result, exactly as the platform degrades everywhere else.
+def _read_provider(c: Container, kind: str):
+    """The registered adapter for a provider kind, unwrapped past the
+    'available' gate the registry applies to *outbound* use — reading has its
+    own availability, so the adapter itself decides."""
+    provider = c.providers._providers.get(kind)  # noqa: SLF001 — read view
+    if provider is None:
+        raise HTTPException(status_code=404,
+                            detail=f"no {kind} provider registered")
+    return provider
+
+
+@router.get("/manager/outlook/messages")
+def outlook_messages(folder: str = Query("inbox"),
+                     top: int = Query(25, ge=1, le=100),
+                     c: Container = Depends(container)):
+    """Recent Outlook messages (read-only)."""
+    provider = _read_provider(c, "email")
+    if not getattr(provider, "available", False):
+        return {"available": False, "messages": [],
+                "reason": provider.unavailable_reason}
+    return {"available": True,
+            "messages": provider.read_messages(folder=folder, top=top)}
+
+
+@router.get("/manager/outlook/search")
+def outlook_search(q: str = Query(..., min_length=2),
+                   top: int = Query(25, ge=1, le=100),
+                   c: Container = Depends(container)):
+    """Search historical Outlook email (read-only)."""
+    provider = _read_provider(c, "email")
+    if not getattr(provider, "available", False):
+        return {"available": False, "messages": [],
+                "reason": provider.unavailable_reason}
+    return {"available": True,
+            "messages": provider.search_messages(q, top=top)}
+
+
+@router.get("/manager/teams/channels")
+def teams_channels(team_id: str = Query(...),
+                   c: Container = Depends(container)):
+    """List a team's Teams channels (read-only)."""
+    provider = _read_provider(c, "messaging")
+    if not getattr(provider, "read_available", False):
+        return {"available": False, "channels": [],
+                "reason": provider.read_unavailable_reason}
+    return {"available": True,
+            "channels": provider.read_channels(team_id)}
+
+
+@router.get("/manager/teams/messages")
+def teams_messages(team_id: str = Query(...), channel_id: str = Query(...),
+                   top: int = Query(25, ge=1, le=50),
+                   c: Container = Depends(container)):
+    """Read recent messages in a Teams channel (read-only)."""
+    provider = _read_provider(c, "messaging")
+    if not getattr(provider, "read_available", False):
+        return {"available": False, "messages": [],
+                "reason": provider.read_unavailable_reason}
+    return {"available": True,
+            "messages": provider.read_messages(team_id, channel_id, top=top)}

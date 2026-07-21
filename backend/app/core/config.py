@@ -167,6 +167,16 @@ class Settings(BaseSettings):
     # controls whether latency is sampled on the hot path.
     observability_latency_enabled: bool = True
 
+    # --- V2.4: Decision Intelligence ---
+    # The Brain reasons about the organization continuously and proposes
+    # decisions proactively. Off = V2.3 behaviour exactly: the Decision
+    # Engine still executes recommendations; nothing observes or proposes.
+    decision_intelligence_enabled: bool = True
+    decision_observe_interval_seconds: float = 900.0   # sweep: 15 min
+    decision_report_cron: str = "0 18 * * *"           # daily summary, 18:00
+    # A proposal nobody approves or rejects within this window expires.
+    decision_ttl_days: int = 14
+
     # --- V2: Autonomous workflow library (drafting cadences) ---
     # Document workflows (RCA/SOP/meeting/action items) run on document
     # change events; drafting workflows run on these crons. Every draft with

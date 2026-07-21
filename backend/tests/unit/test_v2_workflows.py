@@ -7,6 +7,7 @@ import pytest
 from app.communication.adapters import (
     OutlookEmailAdapter, SharePointDocumentAdapter, TeamsMessagingAdapter,
 )
+from app.communication.providers import ProviderNotConfigured
 from app.documents.parser import DocumentParser
 from app.documents.store import DocumentStore
 from app.documents.pipeline import DocumentIntelligence
@@ -194,6 +195,77 @@ def test_configured_adapters_report_available(monkeypatch):
     assert OutlookEmailAdapter().available
     assert TeamsMessagingAdapter().available
     assert SharePointDocumentAdapter().available
+
+
+# ------------------------------------------- Outlook / Teams read (V2.3)
+class _FakeGraph:
+    """A Microsoft Graph client that returns canned records — no network."""
+    def __init__(self, messages=None, channels=None):
+        self._messages = messages or []
+        self._channels = channels or []
+
+    def get_all(self, path, params=None, limit=500):
+        return self._messages if path.endswith("/messages") else self._channels
+
+    def get(self, path, params=None):
+        return {"id": "m1", "subject": "Settlement delay",
+                "from": {"emailAddress": {"address": "ops@skypay.com"}},
+                "receivedDateTime": "2026-03-11", "bodyPreview": "payout delayed",
+                "body": {"content": "The full email body."}}
+
+
+def test_outlook_read_and_search_normalize_messages(monkeypatch):
+    monkeypatch.setenv("EDIP_MS_GRAPH_AUTH", "token")
+    fake = _FakeGraph(messages=[{
+        "id": "m1", "subject": "Settlement delay",
+        "from": {"emailAddress": {"address": "ops@skypay.com"}},
+        "receivedDateTime": "2026-03-11", "bodyPreview": "payout delayed"}])
+    monkeypatch.setattr("app.communication.adapters._graph_client",
+                        lambda: fake)
+    adapter = OutlookEmailAdapter()
+
+    inbox = adapter.read_messages()
+    assert inbox[0]["subject"] == "Settlement delay"
+    assert inbox[0]["from"] == "ops@skypay.com"
+    assert inbox[0]["channel"] == "outlook"
+
+    found = adapter.search_messages("settlement")
+    assert found and found[0]["id"] == "m1"
+
+    full = adapter.get_message("m1")
+    assert full["body"] == "The full email body."
+
+
+def test_outlook_read_is_unavailable_without_credentials(monkeypatch):
+    monkeypatch.delenv("EDIP_MS_GRAPH_AUTH", raising=False)
+    with pytest.raises(ProviderNotConfigured):
+        OutlookEmailAdapter().read_messages()
+
+
+def test_teams_read_channels_and_messages(monkeypatch):
+    monkeypatch.setenv("EDIP_MS_GRAPH_AUTH", "token")
+    fake = _FakeGraph(
+        channels=[{"id": "c1", "displayName": "payments-incidents",
+                   "description": "incident bridge"}],
+        messages=[{"id": "t1", "from": {"user": {"displayName": "Tom"}},
+                   "createdDateTime": "2026-03-12",
+                   "body": {"content": "Declaring Sev-2 on settlement."}}])
+    monkeypatch.setattr("app.communication.adapters._graph_client",
+                        lambda: fake)
+    adapter = TeamsMessagingAdapter()
+
+    channels = adapter.read_channels("T1")
+    assert channels[0]["name"] == "payments-incidents"
+
+    messages = adapter.read_messages("T1", "c1")
+    assert messages[0]["from"] == "Tom"
+    assert "Sev-2" in messages[0]["text"]
+
+
+def test_teams_read_is_unavailable_without_credentials(monkeypatch):
+    monkeypatch.delenv("EDIP_MS_GRAPH_AUTH", raising=False)
+    with pytest.raises(ProviderNotConfigured):
+        TeamsMessagingAdapter().read_channels("T1")
 
 
 def test_approved_communications_wait_without_an_executor(queue):

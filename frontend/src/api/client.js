@@ -65,6 +65,13 @@ export const api = {
   // Enterprise knowledge (org-wide, persistent)
   knowledge: () => request('/knowledge'),
   knowledgeSearch: (q) => request(`/knowledge/search?q=${encodeURIComponent(q)}`),
+  // V2.5 Executive Experience — org-wide graph, relationships, learning stream
+  enterpriseGraph: (limit = 800) => request(`/knowledge/graph?limit=${limit}`),
+  enterpriseGraphNode: (id) => request(`/knowledge/graph/node?id=${encodeURIComponent(id)}`),
+  enterpriseGraphSearch: (q) => request(`/knowledge/graph/search?q=${encodeURIComponent(q)}`),
+  enterpriseRelationships: (kind = '', limit = 400) =>
+    request(`/knowledge/relationships?limit=${limit}${kind ? `&kind=${encodeURIComponent(kind)}` : ''}`),
+  learningHistory: (limit = 200) => request(`/learning/history?limit=${limit}`),
   addTerm: (term, definition, aliases = []) =>
     request('/knowledge/terms', { method: 'POST', body: JSON.stringify({ term, definition, aliases }) }),
   addRule: (rule, scope = 'global') =>
@@ -125,6 +132,19 @@ export const api = {
   startScheduler: () => request('/runtime/scheduler/start', { method: 'POST' }),
   stopScheduler: () => request('/runtime/scheduler/stop', { method: 'POST' }),
   runtimeExecutions: (limit = 50) => request(`/runtime/executions?limit=${limit}`),
+  // V2.4 Decision Intelligence — the Brain deciding, not just informing
+  intelligenceBrief: () => request('/runtime/intelligence/brief'),
+  intelligenceStatus: () => request('/runtime/intelligence'),
+  intelligenceDecisions: (status = '', limit = 50) =>
+    request(`/runtime/intelligence/decisions?limit=${limit}${status ? `&status=${status}` : ''}`),
+  intelligenceRecommendations: (limit = 5) => request(`/runtime/intelligence/recommendations?limit=${limit}`),
+  intelligenceSignals: (limit = 50) => request(`/runtime/intelligence/signals?limit=${limit}`),
+  setIntelligenceDecision: (id, status, by = '', note = '') =>
+    request(`/runtime/intelligence/decisions/${id}`, { method: 'PATCH', body: JSON.stringify({ status, by, note }) }),
+  proposeDecision: (payload) =>
+    request('/runtime/intelligence/decisions', { method: 'POST', body: JSON.stringify(payload) }),
+  intelligenceReport: (period = 'daily') => request(`/runtime/intelligence/reports/${period}`),
+  intelligenceObserve: () => request('/runtime/intelligence/observe', { method: 'POST' }),
   // Enterprise Copilot (organization-wide conversational surface)
   copilotChat: (message, conversation_id = '') =>
     request('/copilot/chat', { method: 'POST', body: JSON.stringify({ message, conversation_id }) }),

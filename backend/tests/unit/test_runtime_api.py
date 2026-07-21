@@ -205,6 +205,20 @@ def test_the_daily_cycle_runs_end_to_end_without_a_user(client):
     completed = [s["name"] for s in cycle["steps"]
                  if s["status"] == "completed"]
     assert {"refresh_portfolio", "generate_daily_brief"} <= set(completed)
+    # V2.3: the cycle begins by ingesting new documents/emails/Teams.
+    assert "process_new_sources" in {s["name"] for s in cycle["steps"]}
+
+
+def test_the_daily_cycle_drafts_email_and_teams_for_approval(client):
+    """Every cycle drafts the brief as an email and a Teams announcement, both
+    waiting in the Action Queue — nothing is sent without human approval."""
+    client.post("/api/v1/runtime/jobs/daily_cycle/run")
+    approvals = client.get("/api/v1/manager/workspace").json()[
+        "pending_approvals"]
+    titles = " ".join(a.get("title", "") for a in approvals)
+
+    assert "Email the executive brief" in titles
+    assert "Teams" in titles
 
 
 def test_the_autonomous_cycle_produced_a_brief_and_events(client):

@@ -49,9 +49,43 @@ class AutonomousContext:
     decisions: Any = None      # DecisionEngine
     brain: Any = None          # EnterpriseBrain
     orchestrator: Any = None   # analysis graph / legacy workflow
+    sync: Any = None           # SynchronizationLayer (documents/emails/Teams)
+    providers: Any = None      # ProviderRegistry (Outlook/Teams adapters)
 
 
 # --------------------------------------------------------------- the steps
+def _process_new_sources(context: AutonomousContext):
+    """Ingest the day's new documents, emails, and Teams messages.
+
+    The Synchronization Layer's heartbeat already syncs due sources; running it
+    here at the top of the cycle guarantees the executive brief, KPI report,
+    and recommendations that follow are computed over *today's* corpus — the
+    RCA filed overnight, the meeting notes uploaded this morning, the email
+    thread that just landed. It reuses the existing refresh pipeline; it does
+    not reimplement ingestion.
+    """
+    def step(project_id: str, prior: dict) -> dict:
+        if context.sync is None:
+            return {"skipped": "synchronization layer disabled"}
+        result = context.sync.refresh(trigger="daily_cycle")
+        documents = 0
+        if getattr(context.sync, "documents", None) is not None:
+            try:
+                documents = context.sync.documents.status().get("documents", 0)
+            except Exception:  # noqa: BLE001 — a count never fails the cycle
+                logger.exception("Reading document count failed")
+        context.bus.publish(
+            "SourcesProcessed",
+            {"status": result.get("status"),
+             "changed_records": result.get("changed_records", 0),
+             "documents_indexed": documents},
+            source="autonomous.process_new_sources")
+        return {"status": result.get("status"),
+                "changed_records": result.get("changed_records", 0),
+                "documents_indexed": documents}
+    return step
+
+
 def _refresh_portfolio(context: AutonomousContext):
     def step(project_id: str, prior: dict) -> dict:
         overview = context.portfolio.overview()
@@ -215,18 +249,37 @@ def _queue_communications(context: AutonomousContext):
     def step(project_id: str, prior: dict) -> dict:
         brief = prior.get("generate_daily_brief") or {}
         issues = brief.get("high_priority_issues") or 0
+        date = brief.get("date", "today")
+        # The daily brief is a routine communication: the executive gets an
+        # email draft and the team a Teams draft every cycle. When there are
+        # high-priority issues the email rides at a higher priority. Both are
+        # drafts — they wait in the Action Queue and are sent only on approval.
         queued = 0
-        if issues:
-            action = context.queue.submit(
-                "send_email",
-                f"Email the executive brief for {brief.get('date', 'today')}",
-                payload={"kind": "daily_brief", "date": brief.get("date"),
-                         "high_priority_issues": issues},
-                detail=f"{issues} high-priority issue(s) need the executive's "
-                       f"attention today.",
-                priority=2, source="autonomous.queue_communications",
-                source_ref=f"daily_brief:{brief.get('date', '')}")
-            queued += 1 if action else 0
+        email = context.queue.submit(
+            "send_email",
+            f"Email the executive brief for {date}",
+            payload={"kind": "daily_brief", "date": brief.get("date"),
+                     "high_priority_issues": issues},
+            detail=(f"{issues} high-priority issue(s) need the executive's "
+                    f"attention today." if issues
+                    else "Today's executive brief is ready to send."),
+            priority=2 if issues else 4,
+            source="autonomous.queue_communications",
+            source_ref=f"daily_brief:{brief.get('date', '')}")
+        queued += 1 if email else 0
+        teams = context.queue.submit(
+            "send_message",
+            f"Post the daily brief summary to Teams for {date}",
+            payload={"kind": "daily_brief_teams", "date": brief.get("date"),
+                     "channel": "",
+                     "text": (f"Daily brief for {date}: {issues} high-priority "
+                              f"issue(s) need attention." if issues
+                              else f"Daily brief for {date}: portfolio steady, "
+                                   f"no high-priority issues.")},
+            detail="A Teams announcement summarizing today's brief.",
+            priority=4, source="autonomous.queue_communications",
+            source_ref=f"daily_brief_teams:{brief.get('date', '')}")
+        queued += 1 if teams else 0
         return {"queued": queued, "pending_approval":
                 len(context.queue.pending_approvals())}
     return step
@@ -245,6 +298,10 @@ def build_autonomous_workflows(context: AutonomousContext
         autonomous=True, scope="enterprise",
         tags=["autonomous", "daily", "core"],
         steps=[
+            WorkflowStep("process_new_sources",
+                         "Ingest new documents, emails, and Teams messages "
+                         "into the Enterprise Brain",
+                         _process_new_sources(context), optional=True),
             WorkflowStep("refresh_portfolio",
                          "Recompute portfolio health and announce material "
                          "changes", _refresh_portfolio(context)),

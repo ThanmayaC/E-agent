@@ -70,6 +70,16 @@ Everything the platform does on its own is observable and controllable here.
 | GET | `/runtime/plans` | Plans (`?status=`, `?goal_id=`) with every step and its state |
 | POST | `/runtime/plans/{id}/advance` · `/replan` | Move a plan forward; revise it |
 | GET | `/runtime/decisions` | Every autonomous decision with its full pipeline trace |
+| GET | `/runtime/intelligence` | **Decision Intelligence (V2.4)** status: decision counts by lifecycle status, open count, last sweep |
+| POST | `/runtime/intelligence/observe` | Run the proactive detection sweep now (trends, anomalies, repeated RCAs, conflicting SOPs, missed items, delayed decisions, KPI deterioration, knowledge gaps) |
+| GET | `/runtime/intelligence/brief` | The executive-workspace brief: top decisions, recommended actions, critical risks, pending approvals, recent organizational changes |
+| GET | `/runtime/intelligence/decisions` | Organizational decisions with full lifecycle history (`?status=`, `?kind=`) |
+| POST | `/runtime/intelligence/decisions` | Propose a decision manually (same lifecycle as a detected one) |
+| GET | `/runtime/intelligence/decisions/{id}` | One decision record |
+| PATCH | `/runtime/intelligence/decisions/{id}` | Move a decision through its lifecycle: `{"status": "approved", "by": "ceo"}`. Approval executes it via the Decision Engine. Statuses: `proposed·modified·approved·rejected·executed·expired·cancelled` |
+| GET | `/runtime/intelligence/recommendations` | The highest-value open decisions, ranked, with per-factor breakdowns |
+| GET | `/runtime/intelligence/signals` | The significant observations that produced candidate decisions (`?kind=`) |
+| GET | `/runtime/intelligence/reports/{period}` | Decision reports: `daily` · `weekly` · `monthly` (effectiveness + recommendation outcomes) |
 | GET | `/runtime/triggers` | Rule-based automation, with fire counts |
 | POST | `/runtime/triggers` | Add a rule (no deploy). See the condition language below |
 | PATCH | `/runtime/triggers/{id}` · DELETE | Enable/disable or remove a rule |

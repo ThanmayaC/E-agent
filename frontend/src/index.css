@@ -21,6 +21,28 @@
   --accent: 110 132 255;
 }
 
+/* V2.5: Daylight — a genuine light theme. Surfaces flip via the variables;
+   the slate text scale (hardcoded across pages) is remapped to dark ink so
+   every existing surface stays legible without touching a component. */
+[data-theme='daylight'] {
+  --surface-0: 244 246 250;
+  --surface-1: 255 255 255;
+  --surface-2: 237 240 246;
+  --surface-border: 214 220 230;
+  --accent: 37 99 235;
+}
+[data-theme='daylight'] .text-slate-100 { color: #0f172a; }
+[data-theme='daylight'] .text-slate-200 { color: #1e293b; }
+[data-theme='daylight'] .text-slate-300 { color: #334155; }
+[data-theme='daylight'] .text-slate-400 { color: #475569; }
+[data-theme='daylight'] .text-slate-500 { color: #64748b; }
+[data-theme='daylight'] .text-slate-600 { color: #94a3b8; }
+[data-theme='daylight'] .metric { color: #0f172a; }
+[data-theme='daylight'] body { color: #1e293b; }
+/* Keep white button text readable on the accent fill. */
+[data-theme='daylight'] .btn { color: #fff; }
+[data-theme='daylight'] ::-webkit-scrollbar-thumb { background: #cbd5e1; }
+
 @layer base {
   html { @apply antialiased; }
   body { @apply bg-surface text-slate-200 font-sans; }
@@ -55,4 +77,23 @@
   .nav-item { @apply flex items-center gap-3 mx-2 px-3 py-[7px] rounded-lg text-sm transition-colors; }
   .nav-item-active { @apply text-white bg-surface-overlay; }
   .nav-item-idle { @apply text-slate-400 hover:text-slate-200 hover:bg-surface-overlay/60; }
+  /* V2.5: subtle grid backdrop for the flagship cockpit */
+  .grid-backdrop {
+    background-image: radial-gradient(rgb(var(--surface-border) / 0.5) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+}
+
+/* V2.5 Export → Print / Save-as-PDF: strip the shell and let a single
+   dashboard fill the page cleanly. Pages opt in by wrapping printable
+   content in `.printable`; everything marked `.no-print` is hidden. */
+@media print {
+  :root { --surface-0: 255 255 255; --surface-1: 255 255 255; --surface-2: 248 249 251; --surface-border: 226 230 238; }
+  body { background: #fff !important; color: #0f172a !important; }
+  aside, header, nav, .no-print { display: none !important; }
+  main { padding: 0 !important; max-width: none !important; }
+  .card, .card-pad { border-color: #e2e6ee !important; box-shadow: none !important; break-inside: avoid; }
+  .text-slate-100, .text-slate-200, .text-slate-300 { color: #0f172a !important; }
+  .text-slate-400, .text-slate-500 { color: #475569 !important; }
+  .metric { color: #0f172a !important; }
 }

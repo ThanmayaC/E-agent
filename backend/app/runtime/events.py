@@ -46,6 +46,7 @@ EVENT_KINDS = (
     "ActionFailed",
     "ActionEdited",       # V2: a queued draft was edited before approval
     "DocumentsUpdated",   # V2: Document Intelligence ingested changes
+    "SourcesProcessed",   # V2.3: the daily cycle ingested new documents/comms
     "AnomalyDetected",
     "PredictionConfidenceDropped",
     "RiskIncreased",
@@ -74,6 +75,11 @@ EVENT_KINDS = (
     "ScenarioSimulated",
     # Enterprise Copilot Layer
     "CopilotAnswered",
+    # V2.4: Decision Intelligence
+    "SignalDetected",          # a significant observation was detected
+    "DecisionProposed",        # a candidate decision was created
+    "DecisionStatusChanged",   # a decision moved through its lifecycle
+    "DecisionReportGenerated",  # a decision report was composed
     "JobStarted",
     "JobCompleted",
     "JobFailed",

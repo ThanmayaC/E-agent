@@ -701,6 +701,65 @@ def test_the_context_surface_explains_what_the_copilot_knows(copilot):
     assert context["provider"]["available"] is True
 
 
+# ------------------------------------------ cross-source Brain Q&A (V2.3)
+class _FakeDocuments:
+    """A stand-in for Document Intelligence's chunk search."""
+    def search(self, query, limit=8):
+        return [{"payload": {"document_id": "d1", "document": "RCA-2026-03",
+                             "category": "rca", "source": "enterprise-rcas",
+                             "chunk": 0,
+                             "text": "Settlement success fell to 94.2% in "
+                                     "March 2026 due to HDFC API timeouts."},
+                 "score": 0.9}]
+
+
+class _FakeEnterpriseSearch:
+    def search(self, query, limit=10):
+        return {"results": [{"surface": "documents", "title": "RCA-2026-03",
+                             "detail": "[rca] settlement dip", "ref": "d1",
+                             "matched": "meaning"}]}
+
+
+class _FakeSync:
+    documents = _FakeDocuments()
+
+
+def test_document_chunks_are_collected_as_citable_evidence(knowledge,
+                                                           artifacts, planner):
+    """A question pulls passages from the enterprise's documents, each citable
+    by its document id — the core of cross-source Brain Q&A."""
+    collector = EvidenceCollector(knowledge, artifacts, sync=_FakeSync())
+    evidence = collector.collect(planner.plan(_intent("question")),
+                                 "why did settlement dip in March?")
+    chunks = evidence.by_kind.get("document_chunk", [])
+    assert chunks, "no document-chunk evidence was collected"
+    assert chunks[0]["id"] == "d1"
+    assert "94.2" in chunks[0]["text"]
+
+
+def test_enterprise_search_evidence_is_not_shadowed(knowledge, artifacts,
+                                                    planner):
+    """Regression: the stored search engine used to shadow the ``_search``
+    collector method, so enterprise-search evidence silently never arrived."""
+    collector = EvidenceCollector(knowledge, artifacts,
+                                  search=_FakeEnterpriseSearch())
+    evidence = collector.collect(planner.plan(_intent("question")),
+                                 "settlement")
+    assert evidence.by_kind.get("search_result"), \
+        "enterprise-search evidence was shadowed and never collected"
+
+
+def test_numbers_inside_a_retrieved_passage_are_sourced():
+    """A figure written in a retrieved document chunk is evidence, not an
+    invention — the validator must be able to see it."""
+    evidence = Evidence()
+    evidence.add("document_chunk", "d1", "an RCA passage",
+                 {"text": "success fell to 94.2% in March 2026"})
+    numbers = evidence.numbers()
+    assert 94.2 in numbers
+    assert 2026 in numbers
+
+
 def _intent(name: str):
     """A classified intent, without going through the classifier."""
     from app.copilot.intent import Intent
