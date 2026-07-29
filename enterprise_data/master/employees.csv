@@ -18,58 +18,62 @@ EMP-1016,Deepak Patel,UPI Lite X Lead,UPI Lite X,deepak.patel@npci-demo.in,Mumba
 EMP-1017,Nandini Reddy,"Senior Product Manager, UPI Lite X",UPI Lite X,nandini.reddy@npci-demo.in,Delhi NCR Office,North,EMP-1016
 EMP-1018,Tanvi Singh,"Engineering Manager, UPI Lite X",UPI Lite X,tanvi.singh@npci-demo.in,Delhi NCR Office,North,EMP-1016
 EMP-1019,Aditi Singh,"Analyst, UPI Lite X",UPI Lite X,aditi.singh@npci-demo.in,Hyderabad Tech Centre,South,EMP-1016
-EMP-1020,Kavya Nanda,UPI Credit Lead,UPI Credit,kavya.nanda@npci-demo.in,Mumbai HQ,West,EMP-1001
-EMP-1021,Gaurav Chopra,"Product Manager, UPI Credit",UPI Credit,gaurav.chopra@npci-demo.in,Chennai Office,South,EMP-1020
-EMP-1022,Lakshmi Reddy,"Engineering Manager, UPI Credit",UPI Credit,lakshmi.reddy@npci-demo.in,Hyderabad Tech Centre,South,EMP-1020
-EMP-1023,Ishaan Verma,UPI International Lead,UPI International,ishaan.verma@npci-demo.in,Kolkata Office,East,EMP-1001
-EMP-1024,Zoya Chopra,"Senior Product Manager, UPI International",UPI International,zoya.chopra@npci-demo.in,Chennai Office,South,EMP-1023
-EMP-1025,Sunil Bose,"Product Manager, UPI International",UPI International,sunil.bose@npci-demo.in,Bengaluru Innovation Hub,South,EMP-1023
-EMP-1026,Anjali Chopra,"Engineering Manager, UPI International",UPI International,anjali.chopra@npci-demo.in,Delhi NCR Office,North,EMP-1023
-EMP-1027,Sunil Pillai,Merchant Products Lead,Merchant Products,sunil.pillai@npci-demo.in,Hyderabad Tech Centre,South,EMP-1001
-EMP-1028,Priya Agarwal,"Senior Product Manager, Merchant Products",Merchant Products,priya.agarwal@npci-demo.in,Mumbai HQ,West,EMP-1027
-EMP-1029,Nandini Rao,"Product Manager, Merchant Products",Merchant Products,nandini.rao@npci-demo.in,Chennai Office,South,EMP-1027
-EMP-1030,Naveen Krishnan,"Analyst, Merchant Products",Merchant Products,naveen.krishnan@npci-demo.in,Kolkata Office,East,EMP-1027
-EMP-1031,Deepak Rao,QR Payments Lead,QR Payments,deepak.rao@npci-demo.in,Chennai Office,South,EMP-1001
-EMP-1032,Varun Shetty,"Product Manager, QR Payments",QR Payments,varun.shetty@npci-demo.in,Kolkata Office,East,EMP-1031
-EMP-1033,Rekha Rao,Product Management Lead,Product Management,rekha.rao@npci-demo.in,Mumbai HQ,West,EMP-1001
-EMP-1034,Anjali Krishnan,"Senior Product Manager, Product Management",Product Management,anjali.krishnan@npci-demo.in,Delhi NCR Office,North,EMP-1033
-EMP-1035,Varun Nanda,"Engineering Manager, Product Management",Product Management,varun.nanda@npci-demo.in,Kolkata Office,East,EMP-1033
-EMP-1036,Divya Verma,"Analyst, Product Management",Product Management,divya.verma@npci-demo.in,Bengaluru Innovation Hub,South,EMP-1033
-EMP-1037,Deepak Menon,Product Strategy Lead,Product Strategy,deepak.menon@npci-demo.in,Mumbai HQ,West,EMP-1001
-EMP-1038,Tanvi Gupta,"Senior Product Manager, Product Strategy",Product Strategy,tanvi.gupta@npci-demo.in,Delhi NCR Office,North,EMP-1037
-EMP-1039,Vikram Singh,"Engineering Manager, Product Strategy",Product Strategy,vikram.singh@npci-demo.in,Chennai Office,South,EMP-1037
-EMP-1040,Farhan Subramanian,Product Analytics Lead,Product Analytics,farhan.subramanian@npci-demo.in,Hyderabad Tech Centre,South,EMP-1001
-EMP-1041,Suresh Bhat,"Senior Product Manager, Product Analytics",Product Analytics,suresh.bhat@npci-demo.in,Chennai Office,South,EMP-1040
-EMP-1042,Lakshmi Agarwal,Product Operations Lead,Product Operations,lakshmi.agarwal@npci-demo.in,Bengaluru Innovation Hub,South,EMP-1001
-EMP-1043,Kavya Shetty,Operations Lead,Operations,kavya.shetty@npci-demo.in,Hyderabad Tech Centre,South,EMP-1001
-EMP-1044,Kavya Subramanian,"Senior Product Manager, Operations",Operations,kavya.subramanian@npci-demo.in,Kolkata Office,East,EMP-1043
-EMP-1045,Farhan Pillai,"Product Manager, Operations",Operations,farhan.pillai@npci-demo.in,Kolkata Office,East,EMP-1043
-EMP-1046,Kavya Mahajan,"Engineering Manager, Operations",Operations,kavya.mahajan@npci-demo.in,Chennai Office,South,EMP-1043
-EMP-1047,Tanvi Nair,"Analyst, Operations",Operations,tanvi.nair@npci-demo.in,Hyderabad Tech Centre,South,EMP-1043
-EMP-1048,Karthik Mahajan,Technology Lead,Technology,karthik.mahajan@npci-demo.in,Hyderabad Tech Centre,South,EMP-1001
-EMP-1049,Gaurav Nair,"Senior Product Manager, Technology",Technology,gaurav.nair@npci-demo.in,Mumbai HQ,West,EMP-1048
-EMP-1050,Sanjay Verma,"Product Manager, Technology",Technology,sanjay.verma@npci-demo.in,Bengaluru Innovation Hub,South,EMP-1048
-EMP-1051,Aditi Sharma,Engineering Lead,Engineering,aditi.sharma@npci-demo.in,Delhi NCR Office,North,EMP-1001
-EMP-1052,Rajesh Rao,"Senior Product Manager, Engineering",Engineering,rajesh.rao@npci-demo.in,Bengaluru Innovation Hub,South,EMP-1051
-EMP-1053,Yash Singh,"Engineering Manager, Engineering",Engineering,yash.singh@npci-demo.in,Chennai Office,South,EMP-1051
-EMP-1054,Lakshmi Singh,Business Lead,Business,lakshmi.singh@npci-demo.in,Chennai Office,South,EMP-1001
-EMP-1055,Suresh Malhotra,"Senior Product Manager, Business",Business,suresh.malhotra@npci-demo.in,Delhi NCR Office,North,EMP-1054
-EMP-1056,Sunil Bhat,"Analyst, Business",Business,sunil.bhat@npci-demo.in,Hyderabad Tech Centre,South,EMP-1054
-EMP-1057,Meera Bhat,Merchant Success Lead,Merchant Success,meera.bhat@npci-demo.in,Kolkata Office,East,EMP-1001
-EMP-1058,Arjun Rao,"Senior Product Manager, Merchant Success",Merchant Success,arjun.rao@npci-demo.in,Kolkata Office,East,EMP-1057
-EMP-1059,Aditi Gupta,"Product Manager, Merchant Success",Merchant Success,aditi.gupta@npci-demo.in,Kolkata Office,East,EMP-1057
-EMP-1060,Karthik Gupta,"Engineering Manager, Merchant Success",Merchant Success,karthik.gupta@npci-demo.in,Hyderabad Tech Centre,South,EMP-1057
-EMP-1061,Meera Nair,Customer Experience Lead,Customer Experience,meera.nair@npci-demo.in,Bengaluru Innovation Hub,South,EMP-1001
-EMP-1062,Tanvi Patel,"Senior Product Manager, Customer Experience",Customer Experience,tanvi.patel@npci-demo.in,Mumbai HQ,West,EMP-1061
-EMP-1063,Meera Menon,"Product Manager, Customer Experience",Customer Experience,meera.menon@npci-demo.in,Hyderabad Tech Centre,South,EMP-1061
-EMP-1064,Tanvi Kulkarni,"Engineering Manager, Customer Experience",Customer Experience,tanvi.kulkarni@npci-demo.in,Delhi NCR Office,North,EMP-1061
-EMP-1065,Karthik Reddy,"Analyst, Customer Experience",Customer Experience,karthik.reddy@npci-demo.in,Delhi NCR Office,North,EMP-1061
-EMP-1066,Ishaan Sharma,Risk & Compliance Lead,Risk & Compliance,ishaan.sharma@npci-demo.in,Chennai Office,South,EMP-1001
-EMP-1067,Farhan Rao,"Analyst, Risk & Compliance",Risk & Compliance,farhan.rao@npci-demo.in,Kolkata Office,East,EMP-1066
-EMP-1068,Rohan Pillai,Compliance Lead,Compliance,rohan.pillai@npci-demo.in,Chennai Office,South,EMP-1001
-EMP-1069,Sanjay Patel,PSP Integration Lead,PSP Integration,sanjay.patel@npci-demo.in,Hyderabad Tech Centre,South,EMP-1001
-EMP-1070,Ritu Mahajan,"Senior Product Manager, PSP Integration",PSP Integration,ritu.mahajan@npci-demo.in,Chennai Office,South,EMP-1069
-EMP-1071,Suresh Chopra,"Product Manager, PSP Integration",PSP Integration,suresh.chopra@npci-demo.in,Bengaluru Innovation Hub,South,EMP-1069
-EMP-1072,Neha Singh,AI & Innovation Lead,AI & Innovation,neha.singh@npci-demo.in,Bengaluru Innovation Hub,South,EMP-1001
-EMP-1073,Pranav Desai,"Engineering Manager, AI & Innovation",AI & Innovation,pranav.desai@npci-demo.in,Delhi NCR Office,North,EMP-1072
-EMP-1074,Arjun Ghosh,"Analyst, AI & Innovation",AI & Innovation,arjun.ghosh@npci-demo.in,Bengaluru Innovation Hub,South,EMP-1072
+EMP-1020,Kavya Nanda,UPI 123Pay Lead,UPI 123Pay,kavya.nanda@npci-demo.in,Mumbai HQ,West,EMP-1001
+EMP-1021,Gaurav Chopra,"Product Manager, UPI 123Pay",UPI 123Pay,gaurav.chopra@npci-demo.in,Chennai Office,South,EMP-1020
+EMP-1022,Lakshmi Reddy,"Engineering Manager, UPI 123Pay",UPI 123Pay,lakshmi.reddy@npci-demo.in,Hyderabad Tech Centre,South,EMP-1020
+EMP-1023,Ishaan Verma,UPI Credit Lead,UPI Credit,ishaan.verma@npci-demo.in,Kolkata Office,East,EMP-1001
+EMP-1024,Zoya Chopra,"Senior Product Manager, UPI Credit",UPI Credit,zoya.chopra@npci-demo.in,Chennai Office,South,EMP-1023
+EMP-1025,Sunil Bose,"Product Manager, UPI Credit",UPI Credit,sunil.bose@npci-demo.in,Bengaluru Innovation Hub,South,EMP-1023
+EMP-1026,Anjali Chopra,"Engineering Manager, UPI Credit",UPI Credit,anjali.chopra@npci-demo.in,Delhi NCR Office,North,EMP-1023
+EMP-1027,Sunil Pillai,UPI International Lead,UPI International,sunil.pillai@npci-demo.in,Hyderabad Tech Centre,South,EMP-1001
+EMP-1028,Priya Agarwal,"Senior Product Manager, UPI International",UPI International,priya.agarwal@npci-demo.in,Mumbai HQ,West,EMP-1027
+EMP-1029,Nandini Rao,"Product Manager, UPI International",UPI International,nandini.rao@npci-demo.in,Chennai Office,South,EMP-1027
+EMP-1030,Naveen Krishnan,"Analyst, UPI International",UPI International,naveen.krishnan@npci-demo.in,Kolkata Office,East,EMP-1027
+EMP-1031,Deepak Rao,Merchant Products Lead,Merchant Products,deepak.rao@npci-demo.in,Chennai Office,South,EMP-1001
+EMP-1032,Varun Shetty,"Product Manager, Merchant Products",Merchant Products,varun.shetty@npci-demo.in,Kolkata Office,East,EMP-1031
+EMP-1033,Rekha Rao,QR Payments Lead,QR Payments,rekha.rao@npci-demo.in,Mumbai HQ,West,EMP-1001
+EMP-1034,Anjali Krishnan,"Senior Product Manager, QR Payments",QR Payments,anjali.krishnan@npci-demo.in,Delhi NCR Office,North,EMP-1033
+EMP-1035,Varun Nanda,"Engineering Manager, QR Payments",QR Payments,varun.nanda@npci-demo.in,Kolkata Office,East,EMP-1033
+EMP-1036,Divya Verma,"Analyst, QR Payments",QR Payments,divya.verma@npci-demo.in,Bengaluru Innovation Hub,South,EMP-1033
+EMP-1037,Deepak Menon,Product Management Lead,Product Management,deepak.menon@npci-demo.in,Mumbai HQ,West,EMP-1001
+EMP-1038,Tanvi Gupta,"Senior Product Manager, Product Management",Product Management,tanvi.gupta@npci-demo.in,Delhi NCR Office,North,EMP-1037
+EMP-1039,Vikram Singh,"Engineering Manager, Product Management",Product Management,vikram.singh@npci-demo.in,Chennai Office,South,EMP-1037
+EMP-1040,Farhan Subramanian,Product Strategy Lead,Product Strategy,farhan.subramanian@npci-demo.in,Hyderabad Tech Centre,South,EMP-1001
+EMP-1041,Suresh Bhat,"Senior Product Manager, Product Strategy",Product Strategy,suresh.bhat@npci-demo.in,Chennai Office,South,EMP-1040
+EMP-1042,Lakshmi Agarwal,Product Analytics Lead,Product Analytics,lakshmi.agarwal@npci-demo.in,Bengaluru Innovation Hub,South,EMP-1001
+EMP-1043,Kavya Shetty,Product Operations Lead,Product Operations,kavya.shetty@npci-demo.in,Hyderabad Tech Centre,South,EMP-1001
+EMP-1044,Kavya Subramanian,"Senior Product Manager, Product Operations",Product Operations,kavya.subramanian@npci-demo.in,Kolkata Office,East,EMP-1043
+EMP-1045,Farhan Pillai,"Product Manager, Product Operations",Product Operations,farhan.pillai@npci-demo.in,Kolkata Office,East,EMP-1043
+EMP-1046,Kavya Mahajan,"Engineering Manager, Product Operations",Product Operations,kavya.mahajan@npci-demo.in,Chennai Office,South,EMP-1043
+EMP-1047,Tanvi Nair,"Analyst, Product Operations",Product Operations,tanvi.nair@npci-demo.in,Hyderabad Tech Centre,South,EMP-1043
+EMP-1048,Karthik Mahajan,Operations Lead,Operations,karthik.mahajan@npci-demo.in,Hyderabad Tech Centre,South,EMP-1001
+EMP-1049,Gaurav Nair,"Senior Product Manager, Operations",Operations,gaurav.nair@npci-demo.in,Mumbai HQ,West,EMP-1048
+EMP-1050,Sanjay Verma,"Product Manager, Operations",Operations,sanjay.verma@npci-demo.in,Bengaluru Innovation Hub,South,EMP-1048
+EMP-1051,Aditi Sharma,Technology Lead,Technology,aditi.sharma@npci-demo.in,Delhi NCR Office,North,EMP-1001
+EMP-1052,Rajesh Rao,"Senior Product Manager, Technology",Technology,rajesh.rao@npci-demo.in,Bengaluru Innovation Hub,South,EMP-1051
+EMP-1053,Yash Singh,"Engineering Manager, Technology",Technology,yash.singh@npci-demo.in,Chennai Office,South,EMP-1051
+EMP-1054,Lakshmi Singh,Engineering Lead,Engineering,lakshmi.singh@npci-demo.in,Chennai Office,South,EMP-1001
+EMP-1055,Suresh Malhotra,"Senior Product Manager, Engineering",Engineering,suresh.malhotra@npci-demo.in,Delhi NCR Office,North,EMP-1054
+EMP-1056,Sunil Bhat,"Analyst, Engineering",Engineering,sunil.bhat@npci-demo.in,Hyderabad Tech Centre,South,EMP-1054
+EMP-1057,Meera Bhat,Business Lead,Business,meera.bhat@npci-demo.in,Kolkata Office,East,EMP-1001
+EMP-1058,Arjun Rao,"Senior Product Manager, Business",Business,arjun.rao@npci-demo.in,Kolkata Office,East,EMP-1057
+EMP-1059,Aditi Gupta,"Product Manager, Business",Business,aditi.gupta@npci-demo.in,Kolkata Office,East,EMP-1057
+EMP-1060,Karthik Gupta,"Engineering Manager, Business",Business,karthik.gupta@npci-demo.in,Hyderabad Tech Centre,South,EMP-1057
+EMP-1061,Meera Nair,Merchant Success Lead,Merchant Success,meera.nair@npci-demo.in,Bengaluru Innovation Hub,South,EMP-1001
+EMP-1062,Tanvi Patel,"Senior Product Manager, Merchant Success",Merchant Success,tanvi.patel@npci-demo.in,Mumbai HQ,West,EMP-1061
+EMP-1063,Meera Menon,"Product Manager, Merchant Success",Merchant Success,meera.menon@npci-demo.in,Hyderabad Tech Centre,South,EMP-1061
+EMP-1064,Tanvi Kulkarni,"Engineering Manager, Merchant Success",Merchant Success,tanvi.kulkarni@npci-demo.in,Delhi NCR Office,North,EMP-1061
+EMP-1065,Karthik Reddy,"Analyst, Merchant Success",Merchant Success,karthik.reddy@npci-demo.in,Delhi NCR Office,North,EMP-1061
+EMP-1066,Ishaan Sharma,Customer Experience Lead,Customer Experience,ishaan.sharma@npci-demo.in,Chennai Office,South,EMP-1001
+EMP-1067,Farhan Rao,"Analyst, Customer Experience",Customer Experience,farhan.rao@npci-demo.in,Kolkata Office,East,EMP-1066
+EMP-1068,Rohan Pillai,Risk & Compliance Lead,Risk & Compliance,rohan.pillai@npci-demo.in,Chennai Office,South,EMP-1001
+EMP-1069,Sanjay Patel,Compliance Lead,Compliance,sanjay.patel@npci-demo.in,Hyderabad Tech Centre,South,EMP-1001
+EMP-1070,Ritu Mahajan,"Senior Product Manager, Compliance",Compliance,ritu.mahajan@npci-demo.in,Chennai Office,South,EMP-1069
+EMP-1071,Suresh Chopra,"Product Manager, Compliance",Compliance,suresh.chopra@npci-demo.in,Bengaluru Innovation Hub,South,EMP-1069
+EMP-1072,Neha Singh,PSP Integration Lead,PSP Integration,neha.singh@npci-demo.in,Bengaluru Innovation Hub,South,EMP-1001
+EMP-1073,Pranav Desai,"Engineering Manager, PSP Integration",PSP Integration,pranav.desai@npci-demo.in,Delhi NCR Office,North,EMP-1072
+EMP-1074,Arjun Ghosh,"Analyst, PSP Integration",PSP Integration,arjun.ghosh@npci-demo.in,Bengaluru Innovation Hub,South,EMP-1072
+EMP-1075,Meera Verma,AI & Innovation Lead,AI & Innovation,meera.verma@npci-demo.in,Kolkata Office,East,EMP-1001
+EMP-1076,Rekha Krishnan,"Senior Product Manager, AI & Innovation",AI & Innovation,rekha.krishnan@npci-demo.in,Chennai Office,South,EMP-1075
+EMP-1077,Rekha Iyer,"Engineering Manager, AI & Innovation",AI & Innovation,rekha.iyer@npci-demo.in,Bengaluru Innovation Hub,South,EMP-1075
+EMP-1078,Aarav Pillai,"Analyst, AI & Innovation",AI & Innovation,aarav.pillai@npci-demo.in,Bengaluru Innovation Hub,South,EMP-1075

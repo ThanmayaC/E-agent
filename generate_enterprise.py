@@ -85,8 +85,8 @@ DEPARTMENT = "UPI Products"
 # asks the simulation to involve.
 TEAMS = [
     # product squads
-    "UPI Core", "UPI Autopay", "UPI Lite", "UPI Lite X", "UPI Credit",
-    "UPI International", "Merchant Products", "QR Payments",
+    "UPI Core", "UPI Autopay", "UPI Lite", "UPI Lite X", "UPI 123Pay",
+    "UPI Credit", "UPI International", "Merchant Products", "QR Payments",
     # functions
     "Product Management", "Product Strategy", "Product Analytics",
     "Product Operations", "Operations", "Technology", "Engineering",
@@ -139,6 +139,8 @@ PRODUCTS = [
      "small-ticket transactions."),
     ("UPI Lite X", "UPI Lite X", "Offline UPI Lite payments over NFC without "
      "an active internet connection."),
+    ("UPI 123Pay", "UPI 123Pay", "UPI for feature phones via IVR, missed-call, "
+     "sound-based and on-device app flows — no smartphone or internet needed."),
     ("UPI Credit", "UPI Credit", "Credit-line-on-UPI and RuPay credit card "
      "linkage for pay-later flows."),
     ("UPI International", "UPI International", "Cross-border UPI acceptance for "
@@ -156,8 +158,9 @@ PRODUCTS = [
 # merchant-facing features (P2M + QR + Intent + Collect + Lite + Autopay +
 # Credit) make up the ~63% remainder.
 FEATURES = [
-    ("Person to Merchant", "UPI Core", 0.375),
+    ("Person to Merchant", "UPI Core", 0.370),
     ("Person to Person", "UPI Core", 0.355),
+    ("UPI 123Pay", "UPI 123Pay", 0.005),
     ("QR Payments", "QR Payments", 0.095),
     ("Collect Requests", "UPI Core", 0.018),
     ("Intent Payments", "UPI Core", 0.028),
@@ -251,7 +254,8 @@ PAYMENT_TYPE_BY_FEATURE = {
     "Person to Merchant": "P2M", "Person to Person": "P2P",
     "QR Payments": "P2M-QR", "Collect Requests": "Collect",
     "Intent Payments": "Intent", "UPI Lite": "P2M-Lite",
-    "UPI Lite X": "P2M-LiteX-Offline", "UPI Autopay": "Mandate-Execution",
+    "UPI Lite X": "P2M-LiteX-Offline", "UPI 123Pay": "P2M-123Pay",
+    "UPI Autopay": "Mandate-Execution",
     "UPI Credit Line": "CreditLine", "RuPay Credit on UPI": "RuPayCredit",
     "UPI International": "Cross-Border",
 }
@@ -260,7 +264,8 @@ PAYMENT_TYPE_BY_FEATURE = {
 FEATURE_TICKET = {
     "Person to Merchant": 600, "Person to Person": 2450, "QR Payments": 400,
     "Collect Requests": 2200, "Intent Payments": 700, "UPI Lite": 95,
-    "UPI Lite X": 120, "UPI Autopay": 1450, "UPI Credit Line": 3100,
+    "UPI Lite X": 120, "UPI 123Pay": 210, "UPI Autopay": 1450,
+    "UPI Credit Line": 3100,
     "RuPay Credit on UPI": 2650, "UPI International": 5400,
 }
 # technical declines (rail/bank/PSP faults) and business declines (customer/limit)
@@ -548,19 +553,24 @@ KPI_HIGHER_BETTER = {
 
 # Baseline day-0 level of each KPI (kept within intelligence.py's KPI_SPEC
 # ranges so health scoring stays meaningful).
+# Day-0 = the first Monday of January 2026. Baselines are the *January 2026*
+# levels; growth (below) compounds forward so the latest day (today, ~July 2026)
+# lands on the real NPCI figures (~757M txns/day, ~731 banks). This keeps the
+# whole Jan→today window realistic and internally consistent.
 BASELINE = {
-    "UPI Transactions (M/day)": 750, "Success Rate (%)": 99.35,
-    "Settlement Success (%)": 99.55, "Technical Declines (%)": 0.45,
-    "Business Declines (%)": 0.20, "Merchant Adoption (M)": 61.5,
-    "Active Banks": 731, "Active PSPs": 58, "UPI Lite Adoption (M)": 41.5,
-    "Autopay Registrations (K/day)": 505, "Fraud Alerts": 1050,
-    "Customer Complaints": 1950, "Merchant Complaints": 210,
-    "Response Time (ms)": 735, "Risk Score": 31,
+    "UPI Transactions (M/day)": 660, "Success Rate (%)": 99.20,
+    "Settlement Success (%)": 99.45, "Technical Declines (%)": 0.55,
+    "Business Declines (%)": 0.24, "Merchant Adoption (M)": 58.0,
+    "Active Banks": 700, "Active PSPs": 55, "UPI Lite Adoption (M)": 35.0,
+    "Autopay Registrations (K/day)": 430, "Fraud Alerts": 1150,
+    "Customer Complaints": 2150, "Merchant Complaints": 235,
+    "Response Time (ms)": 760, "Risk Score": 34,
 }
-# Linear drift across the whole month (fixes land, adoption grows).
+# Monthly growth rates, compounded (see growth_mult). Calibrated so a ~7-month
+# Jan→July window lands on real July-2026 levels rather than overshooting.
 MONTH_GROWTH = {
-    "UPI Transactions (M/day)": 0.10, "Merchant Adoption (M)": 0.045,
-    "Active Banks": 0.008, "Active PSPs": 0.05, "UPI Lite Adoption (M)": 0.09,
+    "UPI Transactions (M/day)": 0.034, "Merchant Adoption (M)": 0.030,
+    "Active Banks": 0.010, "Active PSPs": 0.05, "UPI Lite Adoption (M)": 0.060,
     "Autopay Registrations (K/day)": 0.08, "Success Rate (%)": 0.002,
     "Settlement Success (%)": 0.0015, "Technical Declines (%)": -0.18,
     "Business Declines (%)": -0.12, "Customer Complaints": -0.22,
@@ -3020,6 +3030,7 @@ _PRODUCT_FEATURES = {
     "UPI Autopay": ["UPI Autopay"],
     "UPI Lite": ["UPI Lite"],
     "UPI Lite X": ["UPI Lite X"],
+    "UPI 123Pay": ["UPI 123Pay"],
     "UPI Credit": ["UPI Credit Line", "RuPay Credit on UPI"],
     "UPI International": ["UPI International"],
     "QR Payments": ["QR Payments"],
@@ -3673,15 +3684,22 @@ def write_manifest(out: Path, org: Org, ops: Ops, days: int) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Generate the synthetic NPCI UPI Products enterprise (V5.1).")
-    parser.add_argument("--days", type=int, default=180,
-                        help="business days to generate (1-180, default 180 = "
-                             "a continuous six-month operating history)")
+    parser.add_argument("--days", type=int, default=0,
+                        help="business days to generate; 0 (default) = auto: "
+                             "from --week-start through today, never into the "
+                             "future")
     parser.add_argument("--seed", type=int, default=2026,
                         help="deterministic seed (default 2026)")
     parser.add_argument("--out", default="enterprise_data",
                         help="output directory (default enterprise_data)")
-    parser.add_argument("--week-start", default="2026-06-22",
-                        help="Monday of day 1 (default 2026-06-22)")
+    parser.add_argument("--week-start", default="2026-01-05",
+                        help="Monday of day 1 (default 2026-01-05, the first "
+                             "Monday of 2026 — the operating history begins in "
+                             "January 2026)")
+    parser.add_argument("--today", default="",
+                        help="override the 'today' boundary (ISO date); default "
+                             "is the system date. No record is ever generated "
+                             "beyond this day.")
     parser.add_argument("--no-clean", action="store_true",
                         help="do not delete an existing output directory first")
     parser.add_argument("--ledger-size", type=int, default=10000,
@@ -3689,15 +3707,26 @@ def main() -> None:
                              "(default 10000)")
     args = parser.parse_args()
 
-    days = max(1, min(180, args.days))
     out = Path(args.out).resolve()
+    today = date.fromisoformat(args.today) if args.today else date.today()
     week_start = date.fromisoformat(args.week_start)
     if week_start.weekday() != 0:
-        week_start -= timedelta(days=week_start.weekday())  # snap to Monday
+        # snap FORWARD to the next Monday so the history never slips into the
+        # previous year (snapping back from 1 Jan would land in December).
+        week_start += timedelta(days=(7 - week_start.weekday()) % 7)
+    if week_start > today:
+        raise SystemExit(f"--week-start {week_start} is after today {today}: "
+                         "there is no history to generate.")
 
-    print(f"Synthetic Enterprise Generator V8.0 — {ORG_NAME} / {DEPARTMENT}")
+    # Never-future guarantee: the last generated day is clamped to `today`,
+    # regardless of --days. Default (0) spans the whole window to today.
+    max_days = (today - week_start).days + 1
+    days = max_days if args.days <= 0 else max(1, min(args.days, max_days))
+
+    print(f"Synthetic Enterprise Generator V9.0 — {ORG_NAME} / {DEPARTMENT}")
     print(f"  seed={args.seed}  days={days}  day1={week_start} -> "
-          f"{week_start + timedelta(days=days-1)}  ledger={args.ledger_size}/day")
+          f"{week_start + timedelta(days=days-1)}  (today={today}, "
+          f"no future records)  ledger={args.ledger_size}/day")
 
     if out.exists() and not args.no_clean:
         shutil.rmtree(out)

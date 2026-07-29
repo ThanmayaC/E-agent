@@ -3,66 +3,65 @@ id: RPT-D37-DAILY
 type: report
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-07-28T17:30:00
+timestamp: 2026-02-10T17:30:00
 ---
 
-# UPI Products — Daily Operations Report (Tuesday, 28 Jul 2026)
+# UPI Products — Daily Operations Report (Tuesday, 10 Feb 2026)
 
-**Report ID:** RPT-D37-DAILY  ·  **Prepared by:** Farhan Subramanian
-**Date:** Tuesday 28 Jul 2026  ·  **Day archetype:** Month-end peak
-**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 37 of 180)
+**Report ID:** RPT-D37-DAILY  ·  **Prepared by:** Lakshmi Agarwal
+**Date:** Tuesday 10 Feb 2026  ·  **Day archetype:** Weekday (steady)
+**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 37 of 206)
 
 ## Transaction summary
-The rail processed 916.6M UPI transactions on Tuesday — the month-end surge as salary and bill-pay flows land — up 126.8M on the same day last week. Success landed at 98.64% and settlement at 98.32%, held back by live issues on Amazon Pay, Axis Bank (detailed below).
+The rail processed 681.3M UPI transactions on Tuesday — a steady mid-week day — up 11.3M on the same day last week. Success landed at 99.93% and settlement at 99.57%, held back by live issues on WhatsApp Pay (detailed below).
 
 ## KPIs (today · vs yesterday / last week / month start)
-- **UPI Transactions:** 916.6  (▲124.0 d/d, ▲126.8 w/w, ▲171.7 m/m)
-- **Success Rate:** 98.64%  (▼1.33 d/d, ▼1.34 w/w, ▼0.96 m/m)
-- **Settlement Success:** 98.32%  (▼0.89 d/d, ▼1.55 w/w, ▼1.11 m/m)
-- **Technical Declines:** 0.41%  (▼0.03 d/d, ▲0.01 w/w, ▼0.04 m/m)
-- **Business Declines:** 0.24%  (▼0.03 d/d, ▲0.06 w/w, ▲0.04 m/m)
-- **Customer Complaints:** 1,927  (▼224 d/d, ▲227 w/w, ▼15 m/m)
-- **Merchant Complaints:** 314  (▼91 d/d, ▲132 w/w, ▲103 m/m)
-- **Fraud Alerts:** 955  (▼21 w/w, ▼96 m/m)
-- **Risk Score:** 27  (▼1 d/d, ▼2 w/w, ▼4 m/m)
-- **Response Time:** 703 ms  (▼23 d/d, ▲9 w/w, ▼39 m/m)
+- **UPI Transactions:** 681.3  (▲36.8 d/d, ▲11.3 w/w, ▼114.6 m/m)
+- **Success Rate:** 99.93%  (▲0.98 d/d, ▲0.39 w/w, ▲0.8 m/m)
+- **Settlement Success:** 99.57%  (▲0.86 d/d, ▲0.22 w/w, ▼0.38 m/m)
+- **Technical Declines:** 0.48%  (▼0.02 w/w, ▼0.07 m/m)
+- **Business Declines:** 0.24%  (▼0.01 d/d, ▲0.02 w/w)
+- **Customer Complaints:** 1,862  (▼74 d/d, ▲1 w/w, ▼280 m/m)
+- **Merchant Complaints:** 194  (▼2 d/d, ▼8 w/w, ▼40 m/m)
+- **Fraud Alerts:** 1,079  (▼55 d/d, ▼1 w/w, ▼81 m/m)
+- **Risk Score:** 33  (▼3 d/d, ▲2 w/w, ▼1 m/m)
+- **Response Time:** 709 ms  (▼6 d/d, ▼5 w/w, ▼44 m/m)
 
 ## Top banks (by volume)
 | Bank | Txns (M/day) | Success |
 |------|--------------|---------|
-| State Bank of India | 294.7 | 99.5% |
-| HDFC Bank | 101.1 | 99.55% |
-| Bank of Baroda | 72.7 | 99.64% |
-| Union Bank of India | 63.1 | 99.43% |
-| ICICI Bank | 56.5 | 99.4% |
+| State Bank of India | 221.8 | 99.67% |
+| HDFC Bank | 72.8 | 99.42% |
+| Bank of Baroda | 52.4 | 99.26% |
+| Union Bank of India | 46.0 | 99.63% |
+| Axis Bank | 42.0 | 99.39% |
 
 ## Top UPI apps (by volume)
 | App / PSP | Txns (M/day) | Success | Callback p95 |
 |-----------|--------------|---------|--------------|
-| PhonePe | 437.3 | 99.14% | 231 ms |
-| Google Pay | 299.4 | 99.17% | 316 ms |
-| Paytm | 73.9 | 99.06% | 192 ms |
-| Navi | 33.8 | 99.17% | 225 ms |
-| SuperMoney | 17.9 | 99.08% | 299 ms |
+| PhonePe | 325.4 | 99.51% | 198 ms |
+| Google Pay | 222.8 | 99.35% | 241 ms |
+| Paytm | 54.0 | 99.53% | 201 ms |
+| Navi | 25.0 | 99.53% | 304 ms |
+| SuperMoney | 13.3 | 99.22% | 327 ms |
 
 ## Top features (by volume)
 | Feature | Txns (M/day) |
 |---------|--------------|
-| Person to Merchant | 343.7 |
-| Person to Person | 325.4 |
-| QR Payments | 87.1 |
-| UPI Lite | 44.0 |
-| UPI Autopay | 30.2 |
+| Person to Merchant | 252.1 |
+| Person to Person | 241.9 |
+| QR Payments | 64.7 |
+| UPI Lite | 32.7 |
+| UPI Autopay | 22.5 |
 
 ## Failure analysis
-- INC-2026-27 — PSP callback latency increase on Amazon Pay (day 4 of 5); see RCA-2026-27.
-- INC-2026-02 — merchant settlement delay on Axis Bank (day 2 of 3); see RCA-2026-02.
+- INC-2026-08 — fraud / risk spike on WhatsApp Pay (day 4 of 5); see RCA-2026-08.
 
 ## Recommendations
-Stay on the open incidents: keep recovery monitoring on Amazon Pay, Axis Bank and hold the bank/PSP bridge until success clears the 99.2% floor and stays there through two clean hours.
+Stay on the open incident: keep recovery monitoring on WhatsApp Pay and hold the bank/PSP bridge until success clears the 99.2% floor and stays there through two clean hours.
 
 ## Notes
 All figures read from upi_kpis_month.xlsx; they match the day's monitoring note
-(TEAMS-D37-MON) and any meetings/emails on 28 Jul.
+(TEAMS-D37-MON) and any meetings/emails on 10 Feb.
 
-Refs: upi_kpis_month.xlsx, TEAMS-D37-MON, RPT-D36-DAILY, INC-2026-27, INC-2026-02, RCA-2026-27, RCA-2026-02
+Refs: upi_kpis_month.xlsx, TEAMS-D37-MON, RPT-D36-DAILY, INC-2026-08, RCA-2026-08

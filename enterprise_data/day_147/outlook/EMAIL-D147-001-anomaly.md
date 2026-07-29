@@ -3,28 +3,28 @@ id: EMAIL-D147-001
 type: email
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-11-15T08:40:00
+timestamp: 2026-05-31T08:40:00
 ---
 
-# [Action] UPI Autopay — fraud / risk spike on FamApp
+# [Action] UPI Lite X — merchant decline-rate spike on MetroRide, QuickBite
 
-**From:** Farhan Subramanian <farhan.subramanian@npci-demo.in>
+**From:** Lakshmi Agarwal <lakshmi.agarwal@npci-demo.in>
 **To:** upi-operations@npci-demo.in; upi-leadership@npci-demo.in
-**Cc:** Harsh Nanda, Rekha Joshi
-**Sent:** Sun 15 Nov 2026, 08:40 IST
-**Subject:** [Action] UPI Autopay fraud / risk spike flagged by the morning sweep
+**Cc:** Harsh Nanda, Deepak Patel
+**Sent:** Sun 31 May 2026, 08:40 IST
+**Subject:** [Action] UPI Lite X merchant decline-rate spike flagged by the morning sweep
 
 Team,
 
-The KPI sweep this morning flagged UPI Autopay. Success Rate at 98.57% (down 1.41 vs Sat 14 Nov),
-Technical Declines at 0.26%. Early cut points at FamApp.
+The KPI sweep this morning flagged UPI Lite X. Success Rate at 99.2% (up 0.16 vs Sat 30 May),
+Technical Declines at 0.33% (down 0.02 vs Sat 30 May). Early cut points at MetroRide, QuickBite.
 
-I have opened incident INC-2026-26 (Sev-2). Proposing the incident
+I have opened incident INC-2026-07 (Sev-3). Proposing the incident
 bridge at 09:30. Day workbook and dashboards are in RPT-D147-DAILY / upi_kpis_month.xlsx.
 
-Farhan
-Farhan Subramanian
+Lakshmi
+Lakshmi Agarwal
 Product Analytics Lead
 UPI Products, NPCI (Synthetic Demonstration)
 
-Refs: INC-2026-26, RPT-D147-DAILY, upi_kpis_month.xlsx
+Refs: INC-2026-07, RPT-D147-DAILY, upi_kpis_month.xlsx

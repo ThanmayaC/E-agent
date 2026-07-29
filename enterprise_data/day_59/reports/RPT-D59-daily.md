@@ -3,65 +3,65 @@ id: RPT-D59-DAILY
 type: report
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-08-19T17:30:00
+timestamp: 2026-03-04T17:30:00
 ---
 
-# UPI Products — Daily Operations Report (Wednesday, 19 Aug 2026)
+# UPI Products — Daily Operations Report (Wednesday, 04 Mar 2026)
 
-**Report ID:** RPT-D59-DAILY  ·  **Prepared by:** Farhan Subramanian
-**Date:** Wednesday 19 Aug 2026  ·  **Day archetype:** Weekday (steady)
-**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 59 of 180)
+**Report ID:** RPT-D59-DAILY  ·  **Prepared by:** Lakshmi Agarwal
+**Date:** Wednesday 04 Mar 2026  ·  **Day archetype:** Weekday (steady)
+**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 59 of 206)
 
 ## Transaction summary
-The rail processed 837.6M UPI transactions on Wednesday — a steady mid-week day — up 6.8M on the same day last week. Success landed at 98.8% and settlement at 99.35%, held back by live issues on ICICI Bank (detailed below).
+The rail processed 675.7M UPI transactions on Wednesday — a steady mid-week day — down 149.2M on the same day last week. Success landed at 99.84% and settlement at 99.38%, held back by live issues on Navi (detailed below).
 
 ## KPIs (today · vs yesterday / last week / month start)
-- **UPI Transactions:** 837.6  (▼12.1 d/d, ▲6.8 w/w, ▲92.7 m/m)
-- **Success Rate:** 98.8%  (▼1.18 d/d, ▼1.18 w/w, ▼0.8 m/m)
-- **Settlement Success:** 99.35%  (▲1.25 d/d, ▼0.47 w/w, ▼0.08 m/m)
-- **Technical Declines:** 0.36%  (▼0.01 w/w, ▼0.09 m/m)
-- **Business Declines:** 0.2%  (▼0.03 d/d, ▲0.02 w/w)
-- **Customer Complaints:** 1,598  (▼68 d/d, ▲65 w/w, ▼344 m/m)
-- **Merchant Complaints:** 226  (▼56 d/d, ▲64 w/w, ▲15 m/m)
-- **Fraud Alerts:** 911  (▲3 d/d, ▼19 w/w, ▼140 m/m)
-- **Risk Score:** 26  (▼5 m/m)
-- **Response Time:** 659 ms  (▲3 d/d, ▼8 w/w, ▼83 m/m)
+- **UPI Transactions:** 675.7  (▼20.9 d/d, ▼149.2 w/w, ▼120.2 m/m)
+- **Success Rate:** 99.84%  (▼0.03 d/d, ▲0.55 w/w, ▲0.71 m/m)
+- **Settlement Success:** 99.38%  (▼0.6 d/d, ▲0.03 w/w, ▼0.57 m/m)
+- **Technical Declines:** 0.44%  (▼0.17 w/w, ▼0.11 m/m)
+- **Business Declines:** 0.37%  (▲0.16 d/d, ▲0.1 w/w, ▲0.13 m/m)
+- **Customer Complaints:** 2,201  (▲574 d/d, ▼127 w/w, ▲59 m/m)
+- **Merchant Complaints:** 174  (▼2 d/d, ▼7 w/w, ▼60 m/m)
+- **Fraud Alerts:** 1,325  (▲320 d/d, ▲199 w/w, ▲165 m/m)
+- **Risk Score:** 53  (▲25 d/d, ▲16 w/w, ▲19 m/m)
+- **Response Time:** 689 ms  (▼98 w/w, ▼64 m/m)
 
 ## Top banks (by volume)
 | Bank | Txns (M/day) | Success |
 |------|--------------|---------|
-| State Bank of India | 269.3 | 99.5% |
-| HDFC Bank | 92.4 | 99.55% |
-| Bank of Baroda | 66.4 | 99.64% |
-| Union Bank of India | 57.7 | 99.43% |
-| ICICI Bank | 51.6 | 98.65% |
+| State Bank of India | 219.9 | 99.67% |
+| HDFC Bank | 72.2 | 99.42% |
+| Bank of Baroda | 52.0 | 99.26% |
+| Union Bank of India | 45.6 | 99.63% |
+| Axis Bank | 41.6 | 99.39% |
 
 ## Top UPI apps (by volume)
 | App / PSP | Txns (M/day) | Success | Callback p95 |
 |-----------|--------------|---------|--------------|
-| PhonePe | 399.6 | 99.14% | 231 ms |
-| Google Pay | 273.6 | 99.17% | 316 ms |
-| Paytm | 67.6 | 99.06% | 192 ms |
-| Navi | 30.9 | 99.17% | 225 ms |
-| SuperMoney | 16.3 | 99.08% | 299 ms |
+| PhonePe | 322.8 | 99.51% | 198 ms |
+| Google Pay | 221.0 | 99.35% | 241 ms |
+| Paytm | 53.6 | 99.53% | 201 ms |
+| Navi | 24.8 | 98.53% | 790 ms |
+| SuperMoney | 13.2 | 99.22% | 327 ms |
 
 ## Top features (by volume)
 | Feature | Txns (M/day) |
 |---------|--------------|
-| Person to Merchant | 314.1 |
-| Person to Person | 297.3 |
-| QR Payments | 79.6 |
-| UPI Lite | 40.2 |
-| UPI Autopay | 27.6 |
+| Person to Merchant | 250.0 |
+| Person to Person | 239.9 |
+| QR Payments | 64.2 |
+| UPI Lite | 32.4 |
+| UPI Autopay | 22.3 |
 
 ## Failure analysis
-- INC-2026-03 — merchant settlement delay on ICICI Bank (day 3 of 4); see RCA-2026-03.
+- INC-2026-03 — fraud / risk spike on Navi (day 1 of 3); see RCA-2026-03.
 
 ## Recommendations
-Stay on the open incident: keep recovery monitoring on ICICI Bank and hold the bank/PSP bridge until success clears the 99.2% floor and stays there through two clean hours.
+Stay on the open incident: keep recovery monitoring on Navi and hold the bank/PSP bridge until success clears the 99.2% floor and stays there through two clean hours.
 
 ## Notes
 All figures read from upi_kpis_month.xlsx; they match the day's monitoring note
-(TEAMS-D59-MON) and any meetings/emails on 19 Aug.
+(TEAMS-D59-MON) and any meetings/emails on 04 Mar.
 
 Refs: upi_kpis_month.xlsx, TEAMS-D59-MON, RPT-D58-DAILY, INC-2026-03, RCA-2026-03

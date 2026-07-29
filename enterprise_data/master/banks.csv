@@ -1,16 +1,16 @@
 bank_id,name,ifsc_prefix,region,tier
-BANK-001,State Bank of India,STAT,South,Tier 1
+BANK-001,State Bank of India,STAT,West,Tier 1
 BANK-002,HDFC Bank,HDFC,North,Tier 1
-BANK-003,ICICI Bank,ICIC,East,Tier 1
+BANK-003,ICICI Bank,ICIC,North,Tier 1
 BANK-004,Axis Bank,AXIS,North,Tier 1
-BANK-005,Punjab National Bank,PUNJ,East,Tier 1
+BANK-005,Punjab National Bank,PUNJ,Central,Tier 1
 BANK-006,Canara Bank,CANA,East,Tier 1
 BANK-007,Union Bank of India,UNIO,West,Tier 1
-BANK-008,Bank of Baroda,BANK,East,Tier 1
-BANK-009,Indian Bank,INDI,North,Tier 2
-BANK-010,IDFC First Bank,IDFC,East,Tier 2
-BANK-011,Kotak Mahindra Bank,KOTA,Central,Tier 3
-BANK-012,Yes Bank,YES,East,Tier 2
-BANK-013,IndusInd Bank,INDU,Central,Tier 3
-BANK-014,AU Small Finance Bank,AU,East,Tier 2
-BANK-015,Federal Bank,FEDE,West,Tier 3
+BANK-008,Bank of Baroda,BANK,Central,Tier 1
+BANK-009,Indian Bank,INDI,East,Tier 2
+BANK-010,IDFC First Bank,IDFC,West,Tier 3
+BANK-011,Kotak Mahindra Bank,KOTA,North,Tier 3
+BANK-012,Yes Bank,YES,East,Tier 3
+BANK-013,IndusInd Bank,INDU,North,Tier 2
+BANK-014,AU Small Finance Bank,AU,North,Tier 2
+BANK-015,Federal Bank,FEDE,East,Tier 2

@@ -1,15 +1,15 @@
 psp_id,name,sponsor_bank
-PSP-001,PhonePe,Kotak Mahindra Bank
-PSP-002,Google Pay,Kotak Mahindra Bank
-PSP-003,Paytm,Indian Bank
+PSP-001,PhonePe,IndusInd Bank
+PSP-002,Google Pay,HDFC Bank
+PSP-003,Paytm,Union Bank of India
 PSP-004,BHIM,Federal Bank
-PSP-005,Amazon Pay,Punjab National Bank
-PSP-006,CRED,Canara Bank
-PSP-007,WhatsApp Pay,Yes Bank
-PSP-008,Navi,State Bank of India
-PSP-009,FamApp,Canara Bank
-PSP-010,SuperMoney,IndusInd Bank
-PSP-011,Axis Mobile,HDFC Bank
+PSP-005,Amazon Pay,Canara Bank
+PSP-006,CRED,State Bank of India
+PSP-007,WhatsApp Pay,HDFC Bank
+PSP-008,Navi,HDFC Bank
+PSP-009,FamApp,ICICI Bank
+PSP-010,SuperMoney,IDFC First Bank
+PSP-011,Axis Mobile,Kotak Mahindra Bank
 PSP-012,YONO SBI,Union Bank of India
-PSP-013,iMobile Pay,Federal Bank
-PSP-014,HDFC MobileBanking,Canara Bank
+PSP-013,iMobile Pay,Canara Bank
+PSP-014,HDFC MobileBanking,Union Bank of India

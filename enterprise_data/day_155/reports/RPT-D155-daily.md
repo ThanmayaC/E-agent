@@ -3,65 +3,65 @@ id: RPT-D155-DAILY
 type: report
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-11-23T17:30:00
+timestamp: 2026-06-08T17:30:00
 ---
 
-# UPI Products — Daily Operations Report (Monday, 23 Nov 2026)
+# UPI Products — Daily Operations Report (Monday, 08 Jun 2026)
 
-**Report ID:** RPT-D155-DAILY  ·  **Prepared by:** Farhan Subramanian
-**Date:** Monday 23 Nov 2026  ·  **Day archetype:** Monday (ramp-up)
-**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 155 of 180)
+**Report ID:** RPT-D155-DAILY  ·  **Prepared by:** Lakshmi Agarwal
+**Date:** Monday 08 Jun 2026  ·  **Day archetype:** Monday (ramp-up)
+**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 155 of 206)
 
 ## Transaction summary
-The rail processed 988.7M UPI transactions on Monday — the Monday ramp-up after the weekend — up 37.3M on the same day last week. Success landed at 99.9% and settlement at 99.98%, held back by live issues on HDFC MobileBanking (detailed below).
+The rail processed 699.9M UPI transactions on Monday — the Monday ramp-up after the weekend — down 0.2M on the same day last week. Success held at 99.78% and settlement at 99.51%; the softest bank was IDFC First Bank at 98.92%, still comfortably inside the normal band.
 
 ## KPIs (today · vs yesterday / last week / month start)
-- **UPI Transactions:** 988.7  (▲146.6 d/d, ▲37.3 w/w, ▲243.8 m/m)
-- **Success Rate:** 99.9%  (▼0.08 d/d, ▲0.4 w/w, ▲0.3 m/m)
-- **Settlement Success:** 99.98%  (▲0.89 w/w, ▲0.55 m/m)
-- **Technical Declines:** 0.25%  (▼0.01 w/w, ▼0.2 m/m)
-- **Business Declines:** 0.14%  (▼0.01 d/d, ▼0.07 w/w, ▼0.06 m/m)
-- **Customer Complaints:** 975  (▼26 d/d, ▼226 w/w, ▼967 m/m)
-- **Merchant Complaints:** 94  (▼1 d/d, ▼17 w/w, ▼117 m/m)
-- **Fraud Alerts:** 732  (▼21 d/d, ▼146 w/w, ▼319 m/m)
-- **Risk Score:** 20  (▼2 d/d, ▼10 w/w, ▼11 m/m)
-- **Response Time:** 553 ms  (▲2 d/d, ▼9 w/w, ▼189 m/m)
+- **UPI Transactions:** 699.9  (▲99.0 d/d, ▼0.2 w/w, ▼96.0 m/m)
+- **Success Rate:** 99.78%  (▲0.67 d/d, ▲0.28 w/w, ▲0.65 m/m)
+- **Settlement Success:** 99.51%  (▼0.22 d/d, ▼0.23 w/w, ▼0.44 m/m)
+- **Technical Declines:** 0.3%  (▼0.02 w/w, ▼0.25 m/m)
+- **Business Declines:** 0.16%  (▼0.05 w/w, ▼0.08 m/m)
+- **Customer Complaints:** 1,036  (▼16 d/d, ▼61 w/w, ▼1106 m/m)
+- **Merchant Complaints:** 106  (▲1 d/d, ▼46 w/w, ▼128 m/m)
+- **Fraud Alerts:** 780  (▼8 d/d, ▼11 w/w, ▼380 m/m)
+- **Risk Score:** 21  (▼13 m/m)
+- **Response Time:** 573 ms  (▼1 d/d, ▼17 w/w, ▼180 m/m)
 
 ## Top banks (by volume)
 | Bank | Txns (M/day) | Success |
 |------|--------------|---------|
-| State Bank of India | 317.9 | 99.5% |
-| HDFC Bank | 109.1 | 99.55% |
-| Bank of Baroda | 78.4 | 99.64% |
-| Union Bank of India | 68.1 | 99.43% |
-| ICICI Bank | 61.0 | 99.4% |
+| State Bank of India | 227.8 | 99.67% |
+| HDFC Bank | 74.8 | 99.42% |
+| Bank of Baroda | 53.9 | 99.26% |
+| Union Bank of India | 47.2 | 99.63% |
+| Axis Bank | 43.1 | 99.39% |
 
 ## Top UPI apps (by volume)
 | App / PSP | Txns (M/day) | Success | Callback p95 |
 |-----------|--------------|---------|--------------|
-| PhonePe | 471.7 | 99.14% | 231 ms |
-| Google Pay | 322.9 | 99.17% | 316 ms |
-| Paytm | 79.8 | 99.06% | 192 ms |
-| Navi | 36.4 | 99.17% | 225 ms |
-| SuperMoney | 19.3 | 99.08% | 299 ms |
+| PhonePe | 334.3 | 99.51% | 198 ms |
+| Google Pay | 228.9 | 99.35% | 241 ms |
+| Paytm | 55.5 | 99.53% | 201 ms |
+| Navi | 25.7 | 99.53% | 304 ms |
+| SuperMoney | 13.6 | 99.22% | 327 ms |
 
 ## Top features (by volume)
 | Feature | Txns (M/day) |
 |---------|--------------|
-| Person to Merchant | 370.8 |
-| Person to Person | 351.0 |
-| QR Payments | 93.9 |
-| UPI Lite | 47.5 |
-| UPI Autopay | 32.6 |
+| Person to Merchant | 259.0 |
+| Person to Person | 248.5 |
+| QR Payments | 66.5 |
+| UPI Lite | 33.6 |
+| UPI Autopay | 23.1 |
 
 ## Failure analysis
-- INC-2026-06 — fraud / risk spike on HDFC MobileBanking (day 5 of 5); see RCA-2026-06.
+- No incidents open. Technical declines are within the 0.3% steady-state band; residual failures are routine bank/network timeouts.
 
 ## Recommendations
-Stay on the open incident: keep recovery monitoring on HDFC MobileBanking and hold the bank/PSP bridge until success clears the 99.2% floor and stays there through two clean hours.
+Steady state — hold the monitoring line and work down the merchant-onboarding backlog.
 
 ## Notes
 All figures read from upi_kpis_month.xlsx; they match the day's monitoring note
-(TEAMS-D155-MON) and any meetings/emails on 23 Nov.
+(TEAMS-D155-MON) and any meetings/emails on 08 Jun.
 
-Refs: upi_kpis_month.xlsx, TEAMS-D155-MON, RPT-D154-DAILY, INC-2026-06, RCA-2026-06
+Refs: upi_kpis_month.xlsx, TEAMS-D155-MON, RPT-D154-DAILY

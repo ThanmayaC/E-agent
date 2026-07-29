@@ -1,16 +1,17 @@
 series,today,forecast_next,forecast_7d,ma_7d,growth_pct
-total::sample_txns,14168.0,13693.43,10846.0,13946.71,32.7
-total::sample_value_inr,23081213.0,22393306.57,18265868.0,22595894.57,29.6
-total::success_rate,99.57,99.62,99.96,99.72,0.5
-total::avg_ticket_inr,1629.1,1633.97,1663.2,1620.76,-2.4
-feature::Person to Merchant,4432.0,4278.57,3358.0,4376.57,9.9
-feature::Person to Person,2571.0,2475.14,1900.0,2584.29,-30.4
-feature::QR Payments,1420.0,1378.29,1128.0,1372.43,34.0
-feature::Collect Requests,115.0,112.57,98.0,105.86,-44.2
-feature::Intent Payments,279.0,266.29,190.0,297.57,2.6
-feature::UPI Lite,1296.0,1246.86,952.0,1288.71,154.6
-feature::UPI Lite X,1142.0,1113.71,944.0,1115.86,873.9
-feature::UPI Autopay,1051.0,1014.0,792.0,1010.71,197.0
-feature::UPI Credit Line,909.0,882.29,722.0,880.57,519.5
-feature::RuPay Credit on UPI,636.0,623.14,546.0,586.0,406.4
-feature::UPI International,317.0,302.57,216.0,328.14,277.8
+total::sample_txns,10741.0,10917.86,11979.0,9575.43,17.6
+total::sample_value_inr,15911085.0,16171682.14,17735265.0,14045393.14,9.3
+total::success_rate,99.98,99.98,99.98,99.67,0.3
+total::avg_ticket_inr,1481.3,1481.14,1480.2,1466.84,-7.1
+feature::Person to Merchant,2963.0,2999.0,3215.0,2708.57,-10.6
+feature::Person to Person,1761.0,1781.29,1903.0,1558.43,-46.5
+feature::UPI 123Pay,27.0,27.0,27.0,22.57,-43.2
+feature::QR Payments,985.0,995.14,1056.0,923.14,19.4
+feature::Collect Requests,73.0,73.0,73.0,66.14,-55.0
+feature::Intent Payments,189.0,188.43,185.0,190.43,-14.3
+feature::UPI Lite,1029.0,1042.0,1120.0,904.86,128.2
+feature::UPI Lite X,1170.0,1208.86,1442.0,1002.86,1081.8
+feature::UPI Autopay,887.0,907.71,1032.0,752.14,179.5
+feature::UPI Credit Line,859.0,881.0,1013.0,742.14,546.1
+feature::RuPay Credit on UPI,527.0,539.0,611.0,467.71,422.2
+feature::UPI International,271.0,275.43,302.0,236.43,276.1

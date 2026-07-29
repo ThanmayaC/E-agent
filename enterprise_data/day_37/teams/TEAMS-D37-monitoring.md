@@ -3,25 +3,25 @@ id: TEAMS-D37-MON
 type: teams
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-07-28T09:30:00
+timestamp: 2026-02-10T09:30:00
 ---
 
-# Ops Monitoring — 28 Jul 2026
+# Ops Monitoring — 10 Feb 2026
 
 **Channel:** UPI Products / Ops Monitoring
-**Date:** Tuesday 28 Jul 2026 · **Day archetype:** Month-end peak
+**Date:** Tuesday 10 Feb 2026 · **Day archetype:** Weekday (steady)
 
 **Harsh Nanda** · 09:15
-Morning sweep for 28 Jul. UPI Transactions at 916.6 (up 124.0 vs Mon 27 Jul);
-Success Rate at 98.64% (down 1.33 vs Mon 27 Jul); Technical Declines at 0.41% (down 0.03 vs Mon 27 Jul);
-Business Declines at 0.24% (down 0.03 vs Mon 27 Jul). Estimated peak ~32,887 TPS.
+Morning sweep for 10 Feb. UPI Transactions at 681.3 (up 36.8 vs Mon 09 Feb);
+Success Rate at 99.93% (up 0.98 vs Mon 09 Feb); Technical Declines at 0.48%;
+Business Declines at 0.24% (down 0.01 vs Mon 09 Feb). Estimated peak ~24,444 TPS.
 
-**Farhan Subramanian** · 09:22
-Lowest bank success today: Axis Bank at 97.93%. Settlement Success
-98.32%. Complaints: customer 1,927,
-merchant 314. Full numbers in RPT-D37-DAILY and upi_kpis_month.xlsx.
+**Lakshmi Agarwal** · 09:22
+Lowest bank success today: IDFC First Bank at 98.92%. Settlement Success
+99.57%. Complaints: customer 1,862,
+merchant 194. Full numbers in RPT-D37-DAILY and upi_kpis_month.xlsx.
 
 **Harsh Nanda** · 09:30
-Open items: INC-2026-27 (PSP callback latency increase · Amazon Pay); INC-2026-02 (merchant settlement delay · Axis Bank)
+Open items: INC-2026-08 (fraud / risk spike · WhatsApp Pay)
 
-Refs: upi_kpis_month.xlsx, RPT-D37-DAILY, INC-2026-27, INC-2026-02
+Refs: upi_kpis_month.xlsx, RPT-D37-DAILY, INC-2026-08

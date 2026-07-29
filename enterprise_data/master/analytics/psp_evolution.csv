@@ -1,365 +1,421 @@
 psp,sponsor_bank,week,week_index,txns,value_inr,market_share_pct,success_rate,wow_growth_pct,new_users_k,satisfaction,is_market_leader
-Amazon Pay,Punjab National Bank,W1,1,319,506218,0.43,99.42,,0.0,97.9,False
-Amazon Pay,Punjab National Bank,W2,2,322,487964,0.44,99.1,0.9,0.6,97.6,False
-Amazon Pay,Punjab National Bank,W3,3,248,407354,0.36,99.62,-23.0,0.0,98.1,False
-Amazon Pay,Punjab National Bank,W4,4,276,408339,0.39,99.51,11.3,6.6,98.0,False
-Amazon Pay,Punjab National Bank,W5,5,249,369934,0.33,98.23,-9.8,0.0,96.7,False
-Amazon Pay,Punjab National Bank,W6,6,273,434484,0.35,99.67,9.6,5.0,98.2,False
-Amazon Pay,Punjab National Bank,W7,7,272,426720,0.37,99.61,-0.4,0.0,98.1,False
-Amazon Pay,Punjab National Bank,W8,8,309,469726,0.4,98.54,13.6,8.3,97.0,False
-Amazon Pay,Punjab National Bank,W9,9,303,439225,0.39,99.08,-1.9,0.0,97.6,False
-Amazon Pay,Punjab National Bank,W10,10,312,510976,0.37,99.06,3.0,1.7,97.6,False
-Amazon Pay,Punjab National Bank,W11,11,297,454924,0.38,99.23,-4.8,0.0,97.7,False
-Amazon Pay,Punjab National Bank,W12,12,307,539058,0.38,100.0,3.4,1.9,98.5,False
-Amazon Pay,Punjab National Bank,W13,13,320,494979,0.4,100.0,4.2,2.5,98.5,False
-Amazon Pay,Punjab National Bank,W14,14,332,507343,0.41,99.72,3.8,2.4,98.2,False
-Amazon Pay,Punjab National Bank,W15,15,334,537844,0.37,100.0,0.6,0.3,98.5,False
-Amazon Pay,Punjab National Bank,W16,16,322,468511,0.37,99.75,-3.6,0.0,98.3,False
-Amazon Pay,Punjab National Bank,W17,17,346,542185,0.41,99.19,7.5,4.6,97.7,False
-Amazon Pay,Punjab National Bank,W18,18,295,496637,0.35,99.66,-14.7,0.0,98.2,False
-Amazon Pay,Punjab National Bank,W19,19,381,610138,0.4,99.03,29.2,17.7,97.5,False
-Amazon Pay,Punjab National Bank,W20,20,330,485834,0.36,99.37,-13.4,0.0,97.9,False
-Amazon Pay,Punjab National Bank,W21,21,336,506237,0.38,100.0,1.8,1.0,98.5,False
-Amazon Pay,Punjab National Bank,W22,22,333,496108,0.37,99.66,-0.9,0.0,98.2,False
-Amazon Pay,Punjab National Bank,W23,23,383,572767,0.39,99.24,15.0,8.8,97.7,False
-Amazon Pay,Punjab National Bank,W24,24,386,609413,0.4,100.0,0.8,0.5,98.5,False
-Amazon Pay,Punjab National Bank,W25,25,360,538811,0.37,99.77,-6.7,0.0,98.3,False
-Amazon Pay,Punjab National Bank,W26,26,270,441841,0.37,99.66,5.0,2.8,98.2,False
-Axis Mobile,HDFC Bank,W1,1,457,843372,0.62,99.56,,0.0,98.1,False
-Axis Mobile,HDFC Bank,W2,2,434,709634,0.59,99.04,-5.0,0.0,97.5,False
-Axis Mobile,HDFC Bank,W3,3,404,679468,0.58,99.29,-6.9,0.0,97.8,False
-Axis Mobile,HDFC Bank,W4,4,369,622075,0.52,99.14,-8.7,0.0,97.6,False
-Axis Mobile,HDFC Bank,W5,5,391,642853,0.52,99.17,6.0,4.7,97.7,False
-Axis Mobile,HDFC Bank,W6,6,414,718160,0.53,98.42,5.9,4.7,96.9,False
-Axis Mobile,HDFC Bank,W7,7,403,594403,0.55,99.66,-2.7,0.0,98.2,False
-Axis Mobile,HDFC Bank,W8,8,440,720734,0.58,99.74,9.2,8.0,98.2,False
-Axis Mobile,HDFC Bank,W9,9,445,786458,0.57,99.02,1.1,0.9,97.5,False
-Axis Mobile,HDFC Bank,W10,10,508,799393,0.6,99.61,14.2,12.9,98.1,False
-Axis Mobile,HDFC Bank,W11,11,456,721806,0.58,99.77,-10.2,0.0,98.3,False
-Axis Mobile,HDFC Bank,W12,12,474,825145,0.58,99.62,3.9,3.4,98.1,False
-Axis Mobile,HDFC Bank,W13,13,489,857142,0.61,98.79,3.2,2.9,97.3,False
-Axis Mobile,HDFC Bank,W14,14,455,753722,0.57,99.78,-7.0,0.0,98.3,False
-Axis Mobile,HDFC Bank,W15,15,558,879294,0.62,100.0,22.6,21.1,98.5,False
-Axis Mobile,HDFC Bank,W16,16,533,859551,0.62,99.56,-4.5,0.0,98.1,False
-Axis Mobile,HDFC Bank,W17,17,487,847569,0.58,99.61,-8.6,0.0,98.1,False
-Axis Mobile,HDFC Bank,W18,18,506,888658,0.59,99.73,3.9,3.5,98.2,False
-Axis Mobile,HDFC Bank,W19,19,548,877558,0.58,99.21,8.3,7.2,97.7,False
-Axis Mobile,HDFC Bank,W20,20,516,823317,0.57,99.23,-5.8,0.0,97.7,False
-Axis Mobile,HDFC Bank,W21,21,534,841618,0.6,99.54,3.5,3.2,98.0,False
-Axis Mobile,HDFC Bank,W22,22,530,874665,0.59,99.6,-0.7,0.0,98.1,False
-Axis Mobile,HDFC Bank,W23,23,520,904715,0.53,99.45,-1.9,0.0,98.0,False
-Axis Mobile,HDFC Bank,W24,24,513,839160,0.53,100.0,-1.3,0.0,98.5,False
-Axis Mobile,HDFC Bank,W25,25,533,869021,0.55,99.6,3.9,3.2,98.1,False
-Axis Mobile,HDFC Bank,W26,26,432,822685,0.59,100.0,13.5,11.9,98.5,False
-BHIM,Federal Bank,W1,1,713,1062683,0.97,99.59,,0.0,98.1,False
-BHIM,Federal Bank,W2,2,744,1103551,1.01,98.87,4.3,6.5,97.4,False
-BHIM,Federal Bank,W3,3,734,1087636,1.06,99.16,-1.3,0.0,97.7,False
-BHIM,Federal Bank,W4,4,717,1032045,1.02,99.88,-2.3,0.0,98.4,False
-BHIM,Federal Bank,W5,5,723,1129490,0.97,99.84,0.8,1.2,98.3,False
-BHIM,Federal Bank,W6,6,795,1116116,1.02,99.6,10.0,15.3,98.1,False
-BHIM,Federal Bank,W7,7,742,1142240,1.01,99.58,-6.7,0.0,98.1,False
-BHIM,Federal Bank,W8,8,804,1180922,1.05,100.0,8.4,13.3,98.5,False
-BHIM,Federal Bank,W9,9,765,1147954,0.98,99.24,-4.9,0.0,97.7,False
-BHIM,Federal Bank,W10,10,840,1358536,1.0,99.62,9.8,14.7,98.1,False
-BHIM,Federal Bank,W11,11,818,1263685,1.03,99.58,-2.6,0.0,98.1,False
-BHIM,Federal Bank,W12,12,854,1183305,1.05,99.33,4.4,6.9,97.8,False
-BHIM,Federal Bank,W13,13,837,1262420,1.04,99.27,-2.0,0.0,97.8,False
-BHIM,Federal Bank,W14,14,824,1145036,1.02,99.43,-1.6,0.0,97.9,False
-BHIM,Federal Bank,W15,15,901,1296541,1.0,99.62,9.3,14.0,98.1,False
-BHIM,Federal Bank,W16,16,882,1258358,1.03,99.66,-2.1,0.0,98.2,False
-BHIM,Federal Bank,W17,17,890,1232364,1.06,99.17,0.9,1.4,97.7,False
-BHIM,Federal Bank,W18,18,875,1172035,1.02,99.62,-1.7,0.0,98.1,False
-BHIM,Federal Bank,W19,19,1006,1390157,1.07,99.15,15.0,24.0,97.7,False
-BHIM,Federal Bank,W20,20,943,1292157,1.04,98.86,-6.3,0.0,97.4,False
-BHIM,Federal Bank,W21,21,934,1286264,1.05,99.55,-1.0,0.0,98.1,False
-BHIM,Federal Bank,W22,22,880,1240157,0.98,99.88,-5.8,0.0,98.4,False
-BHIM,Federal Bank,W23,23,1039,1421179,1.06,99.51,18.1,28.8,98.0,False
-BHIM,Federal Bank,W24,24,970,1272916,1.01,99.91,-6.6,0.0,98.4,False
-BHIM,Federal Bank,W25,25,1067,1428092,1.09,99.92,10.0,16.4,98.4,False
-BHIM,Federal Bank,W26,26,714,941425,0.97,99.61,-6.3,0.0,98.1,False
-CRED,Canara Bank,W1,1,414,650082,0.56,99.74,,0.0,98.2,False
-CRED,Canara Bank,W2,2,441,721336,0.6,98.39,6.5,5.8,96.9,False
-CRED,Canara Bank,W3,3,433,619618,0.62,99.74,-1.8,0.0,98.2,False
-CRED,Canara Bank,W4,4,439,666028,0.62,99.78,1.4,1.3,98.3,False
-CRED,Canara Bank,W5,5,448,688295,0.6,99.77,2.1,1.9,98.3,False
-CRED,Canara Bank,W6,6,462,652332,0.59,99.75,3.1,2.8,98.2,False
-CRED,Canara Bank,W7,7,467,689588,0.64,99.77,1.1,1.1,98.3,False
-CRED,Canara Bank,W8,8,475,733265,0.62,99.8,1.7,1.6,98.3,False
-CRED,Canara Bank,W9,9,487,738074,0.62,99.45,2.5,2.3,98.0,False
-CRED,Canara Bank,W10,10,565,788911,0.67,99.79,16.0,16.1,98.3,False
-CRED,Canara Bank,W11,11,531,829432,0.67,99.78,-6.0,0.0,98.3,False
-CRED,Canara Bank,W12,12,461,677788,0.57,99.61,-13.2,0.0,98.1,False
-CRED,Canara Bank,W13,13,484,683180,0.6,99.8,5.0,4.5,98.3,False
-CRED,Canara Bank,W14,14,494,788191,0.61,99.65,2.1,1.9,98.2,False
-CRED,Canara Bank,W15,15,573,848070,0.64,99.81,16.0,15.3,98.3,False
-CRED,Canara Bank,W16,16,513,662821,0.6,99.51,-10.5,0.0,98.0,False
-CRED,Canara Bank,W17,17,523,782223,0.62,100.0,1.9,1.8,98.5,False
-CRED,Canara Bank,W18,18,534,796240,0.62,99.0,2.1,2.0,97.5,False
-CRED,Canara Bank,W19,19,608,905260,0.65,99.19,13.9,13.5,97.7,False
-CRED,Canara Bank,W20,20,534,759489,0.59,98.43,-12.2,0.0,96.9,False
-CRED,Canara Bank,W21,21,557,763896,0.63,99.18,4.3,4.0,97.7,False
-CRED,Canara Bank,W22,22,550,848846,0.61,100.0,-1.3,0.0,98.5,False
-CRED,Canara Bank,W23,23,605,906973,0.62,99.85,10.0,9.3,98.3,False
-CRED,Canara Bank,W24,24,623,881737,0.65,100.0,3.0,2.9,98.5,False
-CRED,Canara Bank,W25,25,624,919557,0.64,99.75,0.2,0.2,98.2,False
-CRED,Canara Bank,W26,26,446,552267,0.61,100.0,0.1,0.1,98.5,False
-FamApp,Canara Bank,W1,1,461,711210,0.63,99.15,,0.0,97.6,False
-FamApp,Canara Bank,W2,2,543,854178,0.73,99.82,17.8,19.6,98.3,False
-FamApp,Canara Bank,W3,3,530,910475,0.76,99.41,-2.4,0.0,97.9,False
-FamApp,Canara Bank,W4,4,497,755517,0.7,99.74,-6.2,0.0,98.2,False
-FamApp,Canara Bank,W5,5,534,784406,0.72,99.43,7.4,8.0,97.9,False
-FamApp,Canara Bank,W6,6,544,838886,0.7,99.64,1.9,2.0,98.1,False
-FamApp,Canara Bank,W7,7,521,853883,0.71,99.0,-4.2,0.0,97.5,False
-FamApp,Canara Bank,W8,8,526,762514,0.69,100.0,1.0,1.0,98.5,False
-FamApp,Canara Bank,W9,9,567,951715,0.73,99.51,7.8,8.5,98.0,False
-FamApp,Canara Bank,W10,10,642,904179,0.76,99.08,13.2,15.1,97.6,False
-FamApp,Canara Bank,W11,11,550,767317,0.69,99.84,-14.3,0.0,98.3,False
-FamApp,Canara Bank,W12,12,621,943331,0.76,98.43,12.9,14.7,96.9,False
-FamApp,Canara Bank,W13,13,588,1005322,0.73,99.45,-5.3,0.0,97.9,False
-FamApp,Canara Bank,W14,14,545,837526,0.68,99.81,-7.3,0.0,98.3,False
-FamApp,Canara Bank,W15,15,638,981439,0.71,100.0,17.1,18.2,98.5,False
-FamApp,Canara Bank,W16,16,624,910653,0.73,99.51,-2.2,0.0,98.0,False
-FamApp,Canara Bank,W17,17,595,1018861,0.71,99.53,-4.6,0.0,98.0,False
-FamApp,Canara Bank,W18,18,615,891073,0.72,99.82,3.4,3.7,98.3,False
-FamApp,Canara Bank,W19,19,696,1134652,0.74,99.08,13.2,14.6,97.6,False
-FamApp,Canara Bank,W20,20,628,977675,0.69,99.32,-9.8,0.0,97.8,False
-FamApp,Canara Bank,W21,21,648,1033384,0.73,99.66,3.2,3.5,98.2,False
-FamApp,Canara Bank,W22,22,653,983004,0.73,99.86,0.8,0.9,98.4,False
-FamApp,Canara Bank,W23,23,725,1109272,0.74,100.0,11.0,12.2,98.5,False
-FamApp,Canara Bank,W24,24,693,1085341,0.72,99.85,-4.4,0.0,98.4,False
-FamApp,Canara Bank,W25,25,680,1069263,0.7,99.78,-1.9,0.0,98.3,False
-FamApp,Canara Bank,W26,26,500,782346,0.68,99.83,2.9,3.0,98.3,False
-Google Pay,Kotak Mahindra Bank,W1,1,24019,38071127,32.65,99.15,,0.0,97.7,False
-Google Pay,Kotak Mahindra Bank,W2,2,24294,38308447,32.84,99.22,1.1,54.2,97.7,False
-Google Pay,Kotak Mahindra Bank,W3,3,22923,36190123,33.07,99.17,-5.6,0.0,97.7,False
-Google Pay,Kotak Mahindra Bank,W4,4,23099,36002542,32.76,99.61,0.8,39.3,98.1,False
-Google Pay,Kotak Mahindra Bank,W5,5,24359,38246117,32.7,99.37,5.5,269.8,97.9,False
-Google Pay,Kotak Mahindra Bank,W6,6,25704,39923659,32.99,99.53,5.5,272.2,98.0,False
-Google Pay,Kotak Mahindra Bank,W7,7,24250,37505097,33.12,99.39,-5.7,0.0,97.9,False
-Google Pay,Kotak Mahindra Bank,W8,8,25080,39217261,32.87,99.72,3.4,167.6,98.2,False
-Google Pay,Kotak Mahindra Bank,W9,9,25556,38811413,32.72,99.43,1.9,93.3,97.9,False
-Google Pay,Kotak Mahindra Bank,W10,10,27428,41634650,32.62,99.52,7.3,357.2,98.0,False
-Google Pay,Kotak Mahindra Bank,W11,11,25975,39295902,32.82,99.64,-5.3,0.0,98.1,False
-Google Pay,Kotak Mahindra Bank,W12,12,26587,39761165,32.61,99.46,2.4,117.4,98.0,False
-Google Pay,Kotak Mahindra Bank,W13,13,26440,40282297,32.88,99.45,-0.6,0.0,98.0,False
-Google Pay,Kotak Mahindra Bank,W14,14,26536,40423051,32.96,99.63,0.4,19.8,98.1,False
-Google Pay,Kotak Mahindra Bank,W15,15,29619,44921560,32.99,99.78,11.6,574.0,98.3,False
-Google Pay,Kotak Mahindra Bank,W16,16,28221,42841284,32.86,99.43,-4.7,0.0,97.9,False
-Google Pay,Kotak Mahindra Bank,W17,17,27664,40999010,32.87,99.48,-2.0,0.0,98.0,False
-Google Pay,Kotak Mahindra Bank,W18,18,28266,42432864,33.08,99.59,2.2,109.2,98.1,False
-Google Pay,Kotak Mahindra Bank,W19,19,30882,45871844,32.78,99.28,9.3,457.3,97.8,False
-Google Pay,Kotak Mahindra Bank,W20,20,30059,44357531,33.12,99.41,-2.7,0.0,97.9,False
-Google Pay,Kotak Mahindra Bank,W21,21,29151,43599757,32.79,99.6,-3.0,0.0,98.1,False
-Google Pay,Kotak Mahindra Bank,W22,22,29546,43247180,32.91,99.7,1.4,69.1,98.2,False
-Google Pay,Kotak Mahindra Bank,W23,23,32401,48169169,33.08,99.61,9.7,481.2,98.1,False
-Google Pay,Kotak Mahindra Bank,W24,24,31741,47109708,32.96,99.97,-2.0,0.0,98.5,False
-Google Pay,Kotak Mahindra Bank,W25,25,31948,47890774,32.77,99.88,0.7,34.4,98.4,False
-Google Pay,Kotak Mahindra Bank,W26,26,24194,35706317,32.94,99.59,6.0,296.4,98.1,False
-HDFC MobileBanking,Canara Bank,W1,1,455,687609,0.62,98.57,,0.0,97.1,False
-HDFC MobileBanking,Canara Bank,W2,2,473,715798,0.64,98.87,4.0,3.8,97.4,False
-HDFC MobileBanking,Canara Bank,W3,3,409,655937,0.59,99.53,-13.5,0.0,98.0,False
-HDFC MobileBanking,Canara Bank,W4,4,410,668344,0.58,99.76,0.2,0.2,98.3,False
-HDFC MobileBanking,Canara Bank,W5,5,466,700055,0.63,99.31,13.7,12.9,97.8,False
-HDFC MobileBanking,Canara Bank,W6,6,416,646863,0.53,99.78,-10.7,0.0,98.3,False
-HDFC MobileBanking,Canara Bank,W7,7,415,575010,0.57,99.58,-0.2,0.0,98.1,False
-HDFC MobileBanking,Canara Bank,W8,8,448,696992,0.59,100.0,8.0,7.0,98.5,False
-HDFC MobileBanking,Canara Bank,W9,9,468,710738,0.6,98.78,4.5,4.0,97.3,False
-HDFC MobileBanking,Canara Bank,W10,10,511,810595,0.61,100.0,9.2,8.4,98.5,False
-HDFC MobileBanking,Canara Bank,W11,11,433,651106,0.55,100.0,-15.3,0.0,98.5,False
-HDFC MobileBanking,Canara Bank,W12,12,493,872581,0.6,99.82,13.9,12.6,98.3,False
-HDFC MobileBanking,Canara Bank,W13,13,510,788806,0.63,99.06,3.4,3.2,97.6,False
-HDFC MobileBanking,Canara Bank,W14,14,466,666725,0.58,99.6,-8.6,0.0,98.1,False
-HDFC MobileBanking,Canara Bank,W15,15,546,821737,0.61,99.41,17.2,15.7,97.9,False
-HDFC MobileBanking,Canara Bank,W16,16,473,655063,0.55,99.8,-13.4,0.0,98.3,False
-HDFC MobileBanking,Canara Bank,W17,17,488,753835,0.58,100.0,3.2,2.8,98.5,False
-HDFC MobileBanking,Canara Bank,W18,18,521,792905,0.61,99.77,6.8,6.2,98.3,False
-HDFC MobileBanking,Canara Bank,W19,19,575,848728,0.61,98.32,10.4,9.5,96.8,False
-HDFC MobileBanking,Canara Bank,W20,20,533,805051,0.59,99.78,-7.3,0.0,98.3,False
-HDFC MobileBanking,Canara Bank,W21,21,537,848707,0.6,99.44,0.8,0.7,97.9,False
-HDFC MobileBanking,Canara Bank,W22,22,588,854811,0.65,99.28,9.5,9.3,97.8,False
-HDFC MobileBanking,Canara Bank,W23,23,607,876635,0.62,99.83,3.2,3.0,98.3,False
-HDFC MobileBanking,Canara Bank,W24,24,546,917392,0.57,100.0,-10.0,0.0,98.5,False
-HDFC MobileBanking,Canara Bank,W25,25,573,898413,0.59,99.75,4.9,4.3,98.2,False
-HDFC MobileBanking,Canara Bank,W26,26,461,674892,0.63,99.37,12.6,11.9,97.9,False
-Navi,State Bank of India,W1,1,2880,4750860,3.92,99.15,,0.0,97.7,False
-Navi,State Bank of India,W2,2,2745,4468961,3.71,99.17,-4.7,0.0,97.7,False
-Navi,State Bank of India,W3,3,2607,4325644,3.76,99.04,-5.0,0.0,97.5,False
-Navi,State Bank of India,W4,4,2534,4115423,3.59,99.5,-2.8,0.0,98.0,False
-Navi,State Bank of India,W5,5,2830,4441908,3.8,99.46,11.7,66.7,98.0,False
-Navi,State Bank of India,W6,6,2870,4649140,3.68,99.14,1.4,7.7,97.6,False
-Navi,State Bank of India,W7,7,2649,4103204,3.62,99.29,-7.7,0.0,97.8,False
-Navi,State Bank of India,W8,8,2881,4617362,3.78,99.56,8.8,49.8,98.1,False
-Navi,State Bank of India,W9,9,3031,4843066,3.88,99.52,5.2,30.3,98.0,False
-Navi,State Bank of India,W10,10,3241,4869687,3.85,99.62,6.9,39.9,98.1,False
-Navi,State Bank of India,W11,11,2977,4666559,3.76,99.79,-8.1,0.0,98.3,False
-Navi,State Bank of India,W12,12,2986,4509144,3.66,99.58,0.3,1.6,98.1,False
-Navi,State Bank of India,W13,13,2978,4615128,3.7,99.33,-0.3,0.0,97.8,False
-Navi,State Bank of India,W14,14,2956,4492249,3.67,99.55,-0.7,0.0,98.0,False
-Navi,State Bank of India,W15,15,3323,5304691,3.7,99.84,12.4,68.8,98.3,False
-Navi,State Bank of India,W16,16,3278,5147952,3.82,99.05,-1.4,0.0,97.6,False
-Navi,State Bank of India,W17,17,3146,4849373,3.74,99.56,-4.0,0.0,98.1,False
-Navi,State Bank of India,W18,18,3268,5098769,3.82,99.35,3.9,22.4,97.8,False
-Navi,State Bank of India,W19,19,3546,5733235,3.76,99.33,8.5,48.0,97.8,False
-Navi,State Bank of India,W20,20,3372,5245856,3.72,99.01,-4.9,0.0,97.5,False
-Navi,State Bank of India,W21,21,3336,5029166,3.75,99.35,-1.1,0.0,97.9,False
-Navi,State Bank of India,W22,22,3422,5255308,3.81,99.76,2.6,14.9,98.3,False
-Navi,State Bank of India,W23,23,3689,5505210,3.77,99.58,7.8,44.1,98.1,False
-Navi,State Bank of India,W24,24,3562,5488151,3.7,100.0,-3.4,0.0,98.5,False
-Navi,State Bank of India,W25,25,3686,5672958,3.78,99.94,3.5,19.9,98.4,False
-Navi,State Bank of India,W26,26,2816,4444741,3.83,99.56,7.0,40.3,98.1,False
-Paytm,Indian Bank,W1,1,5850,9928536,7.95,99.27,,0.0,97.8,False
-Paytm,Indian Bank,W2,2,5922,10273849,8.01,98.55,1.2,14.4,97.0,False
-Paytm,Indian Bank,W3,3,5616,9554063,8.1,99.3,-5.2,0.0,97.8,False
-Paytm,Indian Bank,W4,4,5765,9948419,8.18,99.61,2.7,33.1,98.1,False
-Paytm,Indian Bank,W5,5,6033,10304877,8.1,99.38,4.6,55.9,97.9,False
-Paytm,Indian Bank,W6,6,6298,10720624,8.08,99.45,4.4,53.3,98.0,False
-Paytm,Indian Bank,W7,7,5863,9908233,8.01,99.38,-6.9,0.0,97.9,False
-Paytm,Indian Bank,W8,8,6063,10167619,7.95,99.66,3.4,40.5,98.2,False
-Paytm,Indian Bank,W9,9,6200,10495291,7.94,99.46,2.3,27.4,98.0,False
-Paytm,Indian Bank,W10,10,6778,11565644,8.06,99.56,9.3,112.5,98.1,False
-Paytm,Indian Bank,W11,11,6244,10422368,7.89,99.72,-7.9,0.0,98.2,False
-Paytm,Indian Bank,W12,12,6604,11242560,8.1,99.35,5.8,70.5,97.8,False
-Paytm,Indian Bank,W13,13,6361,10819192,7.91,99.39,-3.7,0.0,97.9,False
-Paytm,Indian Bank,W14,14,6686,11200420,8.31,99.66,5.1,63.5,98.2,False
-Paytm,Indian Bank,W15,15,7215,11966193,8.04,99.72,7.9,95.2,98.2,False
-Paytm,Indian Bank,W16,16,7021,11916982,8.18,99.35,-2.7,0.0,97.9,False
-Paytm,Indian Bank,W17,17,6691,11447082,7.95,99.44,-4.7,0.0,97.9,False
-Paytm,Indian Bank,W18,18,6740,11580192,7.89,99.63,0.7,8.3,98.1,False
-Paytm,Indian Bank,W19,19,7548,12864352,8.01,99.09,12.0,144.2,97.6,False
-Paytm,Indian Bank,W20,20,7062,11989375,7.78,99.54,-6.4,0.0,98.0,False
-Paytm,Indian Bank,W21,21,7174,11822329,8.07,99.62,1.6,19.4,98.1,False
-Paytm,Indian Bank,W22,22,7154,12366082,7.97,99.71,-0.3,0.0,98.2,False
-Paytm,Indian Bank,W23,23,7907,13491128,8.07,99.59,10.5,127.1,98.1,False
-Paytm,Indian Bank,W24,24,7753,13066165,8.05,99.91,-1.9,0.0,98.4,False
-Paytm,Indian Bank,W25,25,7769,13137500,7.97,99.75,0.2,2.4,98.2,False
-Paytm,Indian Bank,W26,26,5819,10444957,7.92,99.73,4.9,58.2,98.2,False
-PhonePe,Kotak Mahindra Bank,W1,1,35138,60089126,47.77,99.18,,0.0,97.7,True
-PhonePe,Kotak Mahindra Bank,W2,2,35296,60316457,47.72,99.03,0.4,28.6,97.5,True
-PhonePe,Kotak Mahindra Bank,W3,3,32787,56039399,47.3,99.07,-7.1,0.0,97.6,True
-PhonePe,Kotak Mahindra Bank,W4,4,33670,57649175,47.75,99.6,2.7,193.4,98.1,True
-PhonePe,Kotak Mahindra Bank,W5,5,35596,60355356,47.78,99.51,5.7,408.5,98.0,True
-PhonePe,Kotak Mahindra Bank,W6,6,37110,63456789,47.63,99.5,4.3,307.2,98.0,True
-PhonePe,Kotak Mahindra Bank,W7,7,34784,58870199,47.5,99.3,-6.3,0.0,97.8,True
-PhonePe,Kotak Mahindra Bank,W8,8,36404,61508383,47.71,99.74,4.7,336.4,98.2,True
-PhonePe,Kotak Mahindra Bank,W9,9,37381,63326106,47.86,99.58,2.7,193.8,98.1,True
-PhonePe,Kotak Mahindra Bank,W10,10,40044,67519447,47.62,99.52,7.1,507.2,98.0,True
-PhonePe,Kotak Mahindra Bank,W11,11,37780,62832253,47.74,99.64,-5.7,0.0,98.1,True
-PhonePe,Kotak Mahindra Bank,W12,12,38941,64734476,47.76,99.41,3.1,222.1,97.9,True
-PhonePe,Kotak Mahindra Bank,W13,13,38320,64618484,47.66,99.41,-1.6,0.0,97.9,True
-PhonePe,Kotak Mahindra Bank,W14,14,38115,64264717,47.35,99.56,-0.5,0.0,98.1,True
-PhonePe,Kotak Mahindra Bank,W15,15,42674,71854542,47.52,99.75,12.0,855.4,98.2,True
-PhonePe,Kotak Mahindra Bank,W16,16,40657,68274418,47.34,99.47,-4.7,0.0,98.0,True
-PhonePe,Kotak Mahindra Bank,W17,17,40123,67956682,47.68,99.49,-1.3,0.0,98.0,True
-PhonePe,Kotak Mahindra Bank,W18,18,40628,68613535,47.55,99.55,1.3,92.7,98.1,True
-PhonePe,Kotak Mahindra Bank,W19,19,44822,75600069,47.58,99.17,10.3,735.1,97.7,True
-PhonePe,Kotak Mahindra Bank,W20,20,43275,73145177,47.68,99.4,-3.5,0.0,97.9,True
-PhonePe,Kotak Mahindra Bank,W21,21,42162,71180450,47.43,99.52,-2.6,0.0,98.0,True
-PhonePe,Kotak Mahindra Bank,W22,22,42711,72669796,47.57,99.72,1.3,92.8,98.2,True
-PhonePe,Kotak Mahindra Bank,W23,23,46414,78578267,47.38,99.6,8.7,618.3,98.1,True
-PhonePe,Kotak Mahindra Bank,W24,24,45825,77991786,47.58,99.97,-1.3,0.0,98.5,True
-PhonePe,Kotak Mahindra Bank,W25,25,46440,79330252,47.64,99.88,1.3,92.9,98.4,True
-PhonePe,Kotak Mahindra Bank,W26,26,34987,59552606,47.63,99.61,5.5,393.0,98.1,True
-SuperMoney,IndusInd Bank,W1,1,1397,2227051,1.9,98.95,,0.0,97.4,False
-SuperMoney,IndusInd Bank,W2,2,1374,2232570,1.86,98.92,-1.6,0.0,97.4,False
-SuperMoney,IndusInd Bank,W3,3,1271,1999150,1.83,99.33,-7.5,0.0,97.8,False
-SuperMoney,IndusInd Bank,W4,4,1313,2061118,1.86,99.17,3.3,9.2,97.7,False
-SuperMoney,IndusInd Bank,W5,5,1385,2259033,1.86,99.44,5.5,15.3,97.9,False
-SuperMoney,IndusInd Bank,W6,6,1492,2229819,1.91,99.67,7.7,22.1,98.2,False
-SuperMoney,IndusInd Bank,W7,7,1382,2169705,1.89,99.33,-7.4,0.0,97.8,False
-SuperMoney,IndusInd Bank,W8,8,1363,1998585,1.79,99.54,-1.4,0.0,98.0,False
-SuperMoney,IndusInd Bank,W9,9,1377,2078892,1.76,99.26,1.0,2.6,97.8,False
-SuperMoney,IndusInd Bank,W10,10,1566,2359719,1.86,99.68,13.7,38.3,98.2,False
-SuperMoney,IndusInd Bank,W11,11,1526,2330632,1.93,99.8,-2.6,0.0,98.3,False
-SuperMoney,IndusInd Bank,W12,12,1588,2284930,1.95,99.34,4.1,12.0,97.8,False
-SuperMoney,IndusInd Bank,W13,13,1476,2172958,1.84,99.51,-7.1,0.0,98.0,False
-SuperMoney,IndusInd Bank,W14,14,1474,2253155,1.83,99.66,-0.1,0.0,98.2,False
-SuperMoney,IndusInd Bank,W15,15,1635,2422554,1.82,99.7,10.9,29.8,98.2,False
-SuperMoney,IndusInd Bank,W16,16,1620,2489098,1.89,99.55,-0.9,0.0,98.1,False
-SuperMoney,IndusInd Bank,W17,17,1531,2337784,1.82,99.74,-5.5,0.0,98.2,False
-SuperMoney,IndusInd Bank,W18,18,1570,2353466,1.84,99.51,2.5,6.9,98.0,False
-SuperMoney,IndusInd Bank,W19,19,1782,2686270,1.89,99.27,13.5,38.3,97.8,False
-SuperMoney,IndusInd Bank,W20,20,1678,2445341,1.85,99.38,-5.8,0.0,97.9,False
-SuperMoney,IndusInd Bank,W21,21,1703,2548779,1.92,99.2,1.5,4.3,97.7,False
-SuperMoney,IndusInd Bank,W22,22,1637,2384224,1.82,99.76,-3.9,0.0,98.3,False
-SuperMoney,IndusInd Bank,W23,23,1762,2579256,1.8,99.6,7.6,20.5,98.1,False
-SuperMoney,IndusInd Bank,W24,24,1818,2773946,1.89,99.95,3.2,9.1,98.4,False
-SuperMoney,IndusInd Bank,W25,25,1825,2578260,1.87,99.9,0.4,1.1,98.4,False
-SuperMoney,IndusInd Bank,W26,26,1400,2037378,1.91,99.59,7.4,21.2,98.1,False
-WhatsApp Pay,Yes Bank,W1,1,434,795749,0.59,99.25,,0.0,97.8,False
-WhatsApp Pay,Yes Bank,W2,2,424,661763,0.57,99.47,-2.3,0.0,98.0,False
-WhatsApp Pay,Yes Bank,W3,3,409,671463,0.59,99.48,-3.5,0.0,98.0,False
-WhatsApp Pay,Yes Bank,W4,4,400,676112,0.57,100.0,-2.2,0.0,98.5,False
-WhatsApp Pay,Yes Bank,W5,5,411,663539,0.55,99.78,2.7,2.2,98.3,False
-WhatsApp Pay,Yes Bank,W6,6,461,775730,0.59,99.83,12.2,10.8,98.3,False
-WhatsApp Pay,Yes Bank,W7,7,442,699632,0.6,100.0,-4.1,0.0,98.5,False
-WhatsApp Pay,Yes Bank,W8,8,450,664993,0.59,100.0,1.8,1.6,98.5,False
-WhatsApp Pay,Yes Bank,W9,9,449,813888,0.57,99.34,-0.2,0.0,97.8,False
-WhatsApp Pay,Yes Bank,W10,10,490,775875,0.58,99.79,9.1,8.0,98.3,False
-WhatsApp Pay,Yes Bank,W11,11,452,842769,0.57,99.64,-7.8,0.0,98.1,False
-WhatsApp Pay,Yes Bank,W12,12,487,896933,0.6,99.53,7.7,6.9,98.0,False
-WhatsApp Pay,Yes Bank,W13,13,460,829219,0.57,98.95,-5.5,0.0,97.5,False
-WhatsApp Pay,Yes Bank,W14,14,445,708880,0.55,100.0,-3.3,0.0,98.5,False
-WhatsApp Pay,Yes Bank,W15,15,514,828863,0.57,99.39,15.5,13.3,97.9,False
-WhatsApp Pay,Yes Bank,W16,16,506,882478,0.59,99.22,-1.6,0.0,97.7,False
-WhatsApp Pay,Yes Bank,W17,17,508,805304,0.6,98.83,0.4,0.4,97.3,False
-WhatsApp Pay,Yes Bank,W18,18,485,842222,0.57,100.0,-4.5,0.0,98.5,False
-WhatsApp Pay,Yes Bank,W19,19,533,902448,0.57,99.78,9.9,8.4,98.3,False
-WhatsApp Pay,Yes Bank,W20,20,600,926343,0.66,99.35,12.6,12.5,97.8,False
-WhatsApp Pay,Yes Bank,W21,21,537,907457,0.6,99.47,-10.5,0.0,98.0,False
-WhatsApp Pay,Yes Bank,W22,22,509,852725,0.57,100.0,-5.2,0.0,98.5,False
-WhatsApp Pay,Yes Bank,W23,23,560,1030254,0.57,99.52,10.0,8.6,98.0,False
-WhatsApp Pay,Yes Bank,W24,24,550,906698,0.57,100.0,-1.8,0.0,98.5,False
-WhatsApp Pay,Yes Bank,W25,25,594,1043147,0.61,99.85,8.0,7.3,98.4,False
-WhatsApp Pay,Yes Bank,W26,26,419,811433,0.57,99.75,-1.2,0.0,98.3,False
-YONO SBI,Union Bank of India,W1,1,629,1079956,0.86,98.85,,0.0,97.4,False
-YONO SBI,Union Bank of India,W2,2,623,1059385,0.84,99.01,-1.0,0.0,97.5,False
-YONO SBI,Union Bank of India,W3,3,596,968434,0.86,99.14,-4.3,0.0,97.6,False
-YONO SBI,Union Bank of India,W4,4,630,981481,0.89,100.0,5.7,7.6,98.5,False
-YONO SBI,Union Bank of India,W5,5,630,1119554,0.85,99.18,0.0,0.0,97.7,False
-YONO SBI,Union Bank of India,W6,6,645,1036603,0.83,99.66,2.4,3.0,98.2,False
-YONO SBI,Union Bank of India,W7,7,631,989400,0.86,99.19,-2.2,0.0,97.7,False
-YONO SBI,Union Bank of India,W8,8,673,1143886,0.88,99.71,6.7,8.9,98.2,False
-YONO SBI,Union Bank of India,W9,9,669,1092658,0.86,99.32,-0.6,0.0,97.8,False
-YONO SBI,Union Bank of India,W10,10,713,1158521,0.85,99.42,6.6,8.4,97.9,False
-YONO SBI,Union Bank of India,W11,11,670,1081283,0.85,99.47,-6.0,0.0,98.0,False
-YONO SBI,Union Bank of India,W12,12,690,1101665,0.85,99.56,3.0,3.8,98.1,False
-YONO SBI,Union Bank of India,W13,13,696,1169519,0.87,99.72,0.9,1.2,98.2,False
-YONO SBI,Union Bank of India,W14,14,719,1121344,0.89,99.61,3.3,4.4,98.1,False
-YONO SBI,Union Bank of India,W15,15,781,1203820,0.87,99.73,8.6,11.2,98.2,False
-YONO SBI,Union Bank of India,W16,16,725,1191585,0.84,99.05,-7.2,0.0,97.5,False
-YONO SBI,Union Bank of India,W17,17,706,1155273,0.84,99.34,-2.6,0.0,97.8,False
-YONO SBI,Union Bank of India,W18,18,710,1083126,0.83,99.7,0.6,0.7,98.2,False
-YONO SBI,Union Bank of India,W19,19,810,1167805,0.86,99.22,14.1,18.2,97.7,False
-YONO SBI,Union Bank of India,W20,20,733,1133220,0.81,99.03,-9.5,0.0,97.5,False
-YONO SBI,Union Bank of India,W21,21,790,1237819,0.89,99.29,7.8,10.4,97.8,False
-YONO SBI,Union Bank of India,W22,22,756,1129967,0.84,99.7,-4.3,0.0,98.2,False
-YONO SBI,Union Bank of India,W23,23,809,1251292,0.83,99.61,7.0,8.7,98.1,False
-YONO SBI,Union Bank of India,W24,24,794,1274479,0.82,100.0,-1.9,0.0,98.5,False
-YONO SBI,Union Bank of India,W25,25,840,1326386,0.86,99.91,5.8,7.5,98.4,False
-YONO SBI,Union Bank of India,W26,26,601,985073,0.82,99.86,0.2,0.2,98.4,False
-iMobile Pay,Federal Bank,W1,1,391,688896,0.53,98.93,,0.0,97.4,False
-iMobile Pay,Federal Bank,W2,2,335,513063,0.45,99.45,-14.3,0.0,98.0,False
-iMobile Pay,Federal Bank,W3,3,353,537030,0.51,99.32,5.4,4.1,97.8,False
-iMobile Pay,Federal Bank,W4,4,390,625681,0.55,100.0,10.5,8.7,98.5,False
-iMobile Pay,Federal Bank,W5,5,444,731421,0.6,99.15,13.8,12.3,97.7,False
-iMobile Pay,Federal Bank,W6,6,432,685555,0.55,99.62,-2.7,0.0,98.1,False
-iMobile Pay,Federal Bank,W7,7,408,718374,0.56,99.74,-5.6,0.0,98.2,False
-iMobile Pay,Federal Bank,W8,8,387,598459,0.51,99.72,-5.1,0.0,98.2,False
-iMobile Pay,Federal Bank,W9,9,408,590595,0.52,99.75,5.4,4.2,98.3,False
-iMobile Pay,Federal Bank,W10,10,444,654325,0.53,99.77,8.8,7.0,98.3,False
-iMobile Pay,Federal Bank,W11,11,435,667299,0.55,99.58,-2.0,0.0,98.1,False
-iMobile Pay,Federal Bank,W12,12,444,732895,0.54,99.02,2.1,1.7,97.5,False
-iMobile Pay,Federal Bank,W13,13,444,664418,0.55,99.52,0.0,0.0,98.0,False
-iMobile Pay,Federal Bank,W14,14,454,731226,0.56,99.5,2.3,1.9,98.0,False
-iMobile Pay,Federal Bank,W15,15,482,750269,0.54,99.34,6.2,5.0,97.8,False
-iMobile Pay,Federal Bank,W16,16,499,826084,0.58,99.81,3.5,3.1,98.3,False
-iMobile Pay,Federal Bank,W17,17,453,673253,0.54,99.4,-9.2,0.0,97.9,False
-iMobile Pay,Federal Bank,W18,18,437,634180,0.51,99.42,-3.5,0.0,97.9,False
-iMobile Pay,Federal Bank,W19,19,469,698634,0.5,99.56,7.3,5.5,98.1,False
-iMobile Pay,Federal Bank,W20,20,490,754691,0.54,99.18,4.5,3.6,97.7,False
-iMobile Pay,Federal Bank,W21,21,494,769534,0.56,100.0,0.8,0.7,98.5,False
-iMobile Pay,Federal Bank,W22,22,513,770958,0.57,98.99,3.8,3.3,97.5,False
-iMobile Pay,Federal Bank,W23,23,540,836709,0.55,99.49,5.3,4.4,98.0,False
-iMobile Pay,Federal Bank,W24,24,536,785663,0.56,100.0,-0.7,0.0,98.5,False
-iMobile Pay,Federal Bank,W25,25,545,832213,0.56,99.62,1.7,1.4,98.1,False
-iMobile Pay,Federal Bank,W26,26,393,567072,0.54,99.35,1.0,0.8,97.8,False
+Amazon Pay,Canara Bank,W1,1,182,287046,0.32,98.57,,0.0,97.1,False
+Amazon Pay,Canara Bank,W2,2,203,337396,0.36,99.13,11.5,6.3,97.6,False
+Amazon Pay,Canara Bank,W3,3,181,271775,0.32,99.45,-10.8,0.0,98.0,False
+Amazon Pay,Canara Bank,W4,4,216,395115,0.35,100.0,19.3,10.2,98.5,False
+Amazon Pay,Canara Bank,W5,5,209,306983,0.37,99.58,-3.2,0.0,98.1,False
+Amazon Pay,Canara Bank,W6,6,192,320006,0.34,99.32,-8.1,0.0,97.8,False
+Amazon Pay,Canara Bank,W7,7,218,346819,0.38,98.8,13.5,7.7,97.3,False
+Amazon Pay,Canara Bank,W8,8,234,365849,0.36,98.8,7.3,4.0,97.3,False
+Amazon Pay,Canara Bank,W9,9,212,316551,0.37,99.04,-9.4,0.0,97.5,False
+Amazon Pay,Canara Bank,W10,10,245,378775,0.4,98.7,15.6,9.2,97.2,False
+Amazon Pay,Canara Bank,W11,11,195,268298,0.33,100.0,-20.4,0.0,98.5,False
+Amazon Pay,Canara Bank,W12,12,247,354284,0.39,99.61,26.7,15.7,98.1,False
+Amazon Pay,Canara Bank,W13,13,257,412214,0.41,99.27,4.0,2.4,97.8,False
+Amazon Pay,Canara Bank,W14,14,221,349890,0.37,98.13,-14.0,0.0,96.6,False
+Amazon Pay,Canara Bank,W15,15,212,282061,0.36,99.55,-4.1,0.0,98.1,False
+Amazon Pay,Canara Bank,W16,16,227,331794,0.38,99.43,7.1,4.1,97.9,False
+Amazon Pay,Canara Bank,W17,17,234,350226,0.37,100.0,3.1,1.7,98.5,False
+Amazon Pay,Canara Bank,W18,18,232,335112,0.39,99.61,-0.9,0.0,98.1,False
+Amazon Pay,Canara Bank,W19,19,210,273426,0.35,100.0,-9.5,0.0,98.5,False
+Amazon Pay,Canara Bank,W20,20,223,327072,0.36,100.0,6.2,3.3,98.5,False
+Amazon Pay,Canara Bank,W21,21,256,382010,0.38,99.34,14.8,8.4,97.8,False
+Amazon Pay,Canara Bank,W22,22,210,314272,0.34,100.0,-18.0,0.0,98.5,False
+Amazon Pay,Canara Bank,W23,23,210,288562,0.33,99.06,0.0,0.0,97.6,False
+Amazon Pay,Canara Bank,W24,24,259,357413,0.42,100.0,23.3,14.6,98.5,False
+Amazon Pay,Canara Bank,W25,25,250,390135,0.37,99.07,-3.5,0.0,97.6,False
+Amazon Pay,Canara Bank,W26,26,226,352075,0.35,100.0,-9.6,0.0,98.5,False
+Amazon Pay,Canara Bank,W27,27,258,407921,0.4,99.7,14.2,8.5,98.2,False
+Amazon Pay,Canara Bank,W28,28,208,299256,0.33,99.55,-19.4,0.0,98.1,False
+Amazon Pay,Canara Bank,W29,29,238,331136,0.37,100.0,14.4,8.1,98.5,False
+Amazon Pay,Canara Bank,W30,30,125,223455,0.39,100.0,22.5,13.3,98.5,False
+Axis Mobile,Kotak Mahindra Bank,W1,1,328,479053,0.58,99.67,,0.0,98.2,False
+Axis Mobile,Kotak Mahindra Bank,W2,2,323,498235,0.58,99.46,-1.5,0.0,98.0,False
+Axis Mobile,Kotak Mahindra Bank,W3,3,323,493002,0.58,98.67,0.0,0.0,97.2,False
+Axis Mobile,Kotak Mahindra Bank,W4,4,351,468429,0.57,99.7,8.7,7.5,98.2,False
+Axis Mobile,Kotak Mahindra Bank,W5,5,349,499882,0.61,99.71,-0.6,0.0,98.2,False
+Axis Mobile,Kotak Mahindra Bank,W6,6,322,487608,0.57,98.44,-7.7,0.0,96.9,False
+Axis Mobile,Kotak Mahindra Bank,W7,7,345,529996,0.6,99.74,7.1,6.4,98.2,False
+Axis Mobile,Kotak Mahindra Bank,W8,8,370,560072,0.57,99.73,7.2,6.2,98.2,False
+Axis Mobile,Kotak Mahindra Bank,W9,9,324,495633,0.56,99.1,-12.4,0.0,97.6,False
+Axis Mobile,Kotak Mahindra Bank,W10,10,355,477388,0.57,99.77,9.6,8.2,98.3,False
+Axis Mobile,Kotak Mahindra Bank,W11,11,335,494427,0.57,99.3,-5.6,0.0,97.8,False
+Axis Mobile,Kotak Mahindra Bank,W12,12,351,552563,0.56,99.73,4.8,4.0,98.2,False
+Axis Mobile,Kotak Mahindra Bank,W13,13,361,485501,0.57,98.97,2.8,2.4,97.5,False
+Axis Mobile,Kotak Mahindra Bank,W14,14,340,433281,0.57,98.77,-5.8,0.0,97.3,False
+Axis Mobile,Kotak Mahindra Bank,W15,15,332,485373,0.56,99.73,-2.4,0.0,98.2,False
+Axis Mobile,Kotak Mahindra Bank,W16,16,353,482368,0.59,99.39,6.3,5.6,97.9,False
+Axis Mobile,Kotak Mahindra Bank,W17,17,341,472009,0.54,99.7,-3.4,0.0,98.2,False
+Axis Mobile,Kotak Mahindra Bank,W18,18,348,460691,0.58,99.74,2.1,1.8,98.2,False
+Axis Mobile,Kotak Mahindra Bank,W19,19,311,360231,0.52,99.55,-10.6,0.0,98.1,False
+Axis Mobile,Kotak Mahindra Bank,W20,20,354,480365,0.57,99.67,13.8,11.7,98.2,False
+Axis Mobile,Kotak Mahindra Bank,W21,21,398,480676,0.59,99.53,12.4,11.0,98.0,False
+Axis Mobile,Kotak Mahindra Bank,W22,22,341,382352,0.55,99.37,-14.3,0.0,97.9,False
+Axis Mobile,Kotak Mahindra Bank,W23,23,365,502932,0.57,99.44,7.0,6.0,97.9,False
+Axis Mobile,Kotak Mahindra Bank,W24,24,373,519982,0.6,100.0,2.2,2.0,98.5,False
+Axis Mobile,Kotak Mahindra Bank,W25,25,365,447456,0.54,100.0,-2.1,0.0,98.5,False
+Axis Mobile,Kotak Mahindra Bank,W26,26,378,504525,0.58,99.55,3.6,3.1,98.0,False
+Axis Mobile,Kotak Mahindra Bank,W27,27,392,483616,0.61,99.74,3.7,3.4,98.2,False
+Axis Mobile,Kotak Mahindra Bank,W28,28,367,493416,0.58,99.72,-6.4,0.0,98.2,False
+Axis Mobile,Kotak Mahindra Bank,W29,29,347,422924,0.55,99.74,-5.4,0.0,98.2,False
+Axis Mobile,Kotak Mahindra Bank,W30,30,172,172580,0.54,100.0,15.7,12.7,98.5,False
+BHIM,Federal Bank,W1,1,562,874616,0.99,99.46,,0.0,98.0,False
+BHIM,Federal Bank,W2,2,565,913131,1.01,99.66,0.5,0.8,98.2,False
+BHIM,Federal Bank,W3,3,597,976069,1.07,98.89,5.7,9.1,97.4,False
+BHIM,Federal Bank,W4,4,619,963012,1.01,99.65,3.7,5.6,98.2,False
+BHIM,Federal Bank,W5,5,569,835842,1.0,99.43,-8.1,0.0,97.9,False
+BHIM,Federal Bank,W6,6,558,912614,0.98,99.37,-1.9,0.0,97.9,False
+BHIM,Federal Bank,W7,7,546,872808,0.95,99.54,-2.2,0.0,98.0,False
+BHIM,Federal Bank,W8,8,640,966595,0.99,99.43,17.2,25.5,97.9,False
+BHIM,Federal Bank,W9,9,600,915568,1.04,99.15,-6.3,0.0,97.7,False
+BHIM,Federal Bank,W10,10,652,1007447,1.05,98.98,8.7,13.7,97.5,False
+BHIM,Federal Bank,W11,11,621,940890,1.07,99.38,-4.8,0.0,97.9,False
+BHIM,Federal Bank,W12,12,663,993521,1.05,99.27,6.8,10.7,97.8,False
+BHIM,Federal Bank,W13,13,634,934867,1.01,99.59,-4.4,0.0,98.1,False
+BHIM,Federal Bank,W14,14,618,922295,1.04,99.18,-2.5,0.0,97.7,False
+BHIM,Federal Bank,W15,15,628,938657,1.05,99.08,1.6,2.5,97.6,False
+BHIM,Federal Bank,W16,16,566,773537,0.95,99.28,-9.9,0.0,97.8,False
+BHIM,Federal Bank,W17,17,636,875546,1.01,99.85,12.4,18.9,98.3,False
+BHIM,Federal Bank,W18,18,640,1040378,1.07,99.81,0.6,1.0,98.3,False
+BHIM,Federal Bank,W19,19,621,977790,1.03,99.83,-3.0,0.0,98.3,False
+BHIM,Federal Bank,W20,20,633,928501,1.01,99.53,1.9,2.9,98.0,False
+BHIM,Federal Bank,W21,21,750,1115096,1.11,98.85,18.5,30.8,97.3,False
+BHIM,Federal Bank,W22,22,627,848819,1.02,99.53,-16.4,0.0,98.0,False
+BHIM,Federal Bank,W23,23,693,987329,1.08,99.6,10.5,17.0,98.1,False
+BHIM,Federal Bank,W24,24,644,927826,1.04,99.27,-7.1,0.0,97.8,False
+BHIM,Federal Bank,W25,25,645,956221,0.96,99.36,0.2,0.3,97.9,False
+BHIM,Federal Bank,W26,26,600,807919,0.92,99.77,-7.0,0.0,98.3,False
+BHIM,Federal Bank,W27,27,661,1025511,1.02,99.58,10.2,15.6,98.1,False
+BHIM,Federal Bank,W28,28,650,994734,1.03,99.69,-1.7,0.0,98.2,False
+BHIM,Federal Bank,W29,29,692,1047079,1.09,99.5,6.5,10.6,98.0,False
+BHIM,Federal Bank,W30,30,333,449584,1.05,100.0,12.3,19.3,98.5,False
+CRED,State Bank of India,W1,1,348,547905,0.61,98.97,,0.0,97.5,False
+CRED,State Bank of India,W2,2,323,496955,0.58,98.82,-7.2,0.0,97.3,False
+CRED,State Bank of India,W3,3,351,547389,0.63,99.07,8.7,8.2,97.6,False
+CRED,State Bank of India,W4,4,405,693555,0.66,99.52,15.4,15.2,98.0,False
+CRED,State Bank of India,W5,5,394,627126,0.69,99.25,-2.7,0.0,97.8,False
+CRED,State Bank of India,W6,6,342,487373,0.6,99.58,-13.2,0.0,98.1,False
+CRED,State Bank of India,W7,7,337,462912,0.59,99.39,-1.5,0.0,97.9,False
+CRED,State Bank of India,W8,8,368,529341,0.57,99.1,9.2,7.8,97.6,False
+CRED,State Bank of India,W9,9,346,508245,0.6,99.7,-6.0,0.0,98.2,False
+CRED,State Bank of India,W10,10,402,590888,0.65,99.39,16.2,15.8,97.9,False
+CRED,State Bank of India,W11,11,367,535731,0.63,99.48,-8.7,0.0,98.0,False
+CRED,State Bank of India,W12,12,395,538994,0.63,99.16,7.6,7.1,97.7,False
+CRED,State Bank of India,W13,13,382,623204,0.61,99.49,-3.3,0.0,98.0,False
+CRED,State Bank of India,W14,14,403,579845,0.68,99.05,5.5,5.6,97.5,False
+CRED,State Bank of India,W15,15,376,533626,0.63,99.51,-6.7,0.0,98.0,False
+CRED,State Bank of India,W16,16,373,504442,0.63,98.94,-0.8,0.0,97.4,False
+CRED,State Bank of India,W17,17,370,482605,0.59,99.72,-0.8,0.0,98.2,False
+CRED,State Bank of India,W18,18,403,592143,0.67,99.08,8.9,9.0,97.6,False
+CRED,State Bank of India,W19,19,393,551729,0.65,99.42,-2.5,0.0,97.9,False
+CRED,State Bank of India,W20,20,393,585350,0.63,99.42,0.0,0.0,97.9,False
+CRED,State Bank of India,W21,21,419,598432,0.62,99.04,6.6,6.1,97.5,False
+CRED,State Bank of India,W22,22,393,559827,0.64,98.71,-6.2,0.0,97.2,False
+CRED,State Bank of India,W23,23,379,554910,0.59,99.72,-3.6,0.0,98.2,False
+CRED,State Bank of India,W24,24,436,730193,0.7,99.8,15.0,15.8,98.3,False
+CRED,State Bank of India,W25,25,432,638904,0.64,99.47,-0.9,0.0,98.0,False
+CRED,State Bank of India,W26,26,423,658205,0.65,99.5,-2.1,0.0,98.0,False
+CRED,State Bank of India,W27,27,381,596769,0.59,99.52,-9.9,0.0,98.0,False
+CRED,State Bank of India,W28,28,377,530640,0.6,99.4,-1.0,0.0,97.9,False
+CRED,State Bank of India,W29,29,417,642890,0.66,99.78,10.6,10.4,98.3,False
+CRED,State Bank of India,W30,30,219,350534,0.69,100.0,22.5,23.2,98.5,False
+FamApp,ICICI Bank,W1,1,454,633725,0.8,99.82,,0.0,98.3,False
+FamApp,ICICI Bank,W2,2,408,572628,0.73,99.26,-10.1,0.0,97.8,False
+FamApp,ICICI Bank,W3,3,424,554817,0.76,98.46,3.9,4.4,97.0,False
+FamApp,ICICI Bank,W4,4,475,702779,0.77,99.07,12.0,13.9,97.6,False
+FamApp,ICICI Bank,W5,5,445,710761,0.78,99.31,-6.3,0.0,97.8,False
+FamApp,ICICI Bank,W6,6,418,570769,0.74,99.73,-6.1,0.0,98.2,False
+FamApp,ICICI Bank,W7,7,439,603365,0.77,99.55,5.0,5.7,98.1,False
+FamApp,ICICI Bank,W8,8,461,603745,0.71,99.13,5.0,5.3,97.6,False
+FamApp,ICICI Bank,W9,9,458,651634,0.79,99.68,-0.7,0.0,98.2,False
+FamApp,ICICI Bank,W10,10,453,624861,0.73,99.35,-1.1,0.0,97.9,False
+FamApp,ICICI Bank,W11,11,399,573555,0.68,99.37,-11.9,0.0,97.9,False
+FamApp,ICICI Bank,W12,12,420,614770,0.67,99.12,5.3,5.3,97.6,False
+FamApp,ICICI Bank,W13,13,436,621625,0.69,99.08,3.8,3.9,97.6,False
+FamApp,ICICI Bank,W14,14,471,574470,0.8,98.41,8.0,9.6,96.9,False
+FamApp,ICICI Bank,W15,15,403,484195,0.68,99.01,-14.4,0.0,97.5,False
+FamApp,ICICI Bank,W16,16,423,574105,0.71,99.54,5.0,5.3,98.0,False
+FamApp,ICICI Bank,W17,17,455,557564,0.73,99.71,7.6,8.3,98.2,False
+FamApp,ICICI Bank,W18,18,431,549010,0.72,99.61,-5.3,0.0,98.1,False
+FamApp,ICICI Bank,W19,19,438,592777,0.73,99.54,1.6,1.7,98.0,False
+FamApp,ICICI Bank,W20,20,460,618188,0.74,99.39,5.0,5.5,97.9,False
+FamApp,ICICI Bank,W21,21,486,619279,0.72,99.59,5.7,6.2,98.1,False
+FamApp,ICICI Bank,W22,22,446,560548,0.72,99.54,-8.2,0.0,98.0,False
+FamApp,ICICI Bank,W23,23,473,650777,0.74,99.61,6.1,6.7,98.1,False
+FamApp,ICICI Bank,W24,24,425,507517,0.69,99.46,-10.1,0.0,98.0,False
+FamApp,ICICI Bank,W25,25,489,641786,0.73,99.62,15.1,16.5,98.1,False
+FamApp,ICICI Bank,W26,26,502,605703,0.77,99.64,2.7,3.1,98.1,False
+FamApp,ICICI Bank,W27,27,456,542363,0.71,99.29,-9.2,0.0,97.8,False
+FamApp,ICICI Bank,W28,28,504,662266,0.8,99.19,10.5,12.6,97.7,False
+FamApp,ICICI Bank,W29,29,421,543991,0.66,99.4,-16.5,0.0,97.9,False
+FamApp,ICICI Bank,W30,30,258,360720,0.81,100.0,43.0,52.3,98.5,False
+Google Pay,HDFC Bank,W1,1,18853,29541531,33.07,99.33,,0.0,97.8,False
+Google Pay,HDFC Bank,W2,2,18477,29018054,33.08,98.99,-2.0,0.0,97.5,False
+Google Pay,HDFC Bank,W3,3,18357,28425981,32.84,98.78,-0.6,0.0,97.3,False
+Google Pay,HDFC Bank,W4,4,20313,31507575,33.1,99.45,10.7,531.2,98.0,False
+Google Pay,HDFC Bank,W5,5,18731,28726896,32.92,99.18,-7.8,0.0,97.7,False
+Google Pay,HDFC Bank,W6,6,18710,28788558,32.95,99.27,-0.1,0.0,97.8,False
+Google Pay,HDFC Bank,W7,7,18856,29102708,32.88,99.39,0.8,39.5,97.9,False
+Google Pay,HDFC Bank,W8,8,21196,31843249,32.74,98.82,12.4,609.0,97.3,False
+Google Pay,HDFC Bank,W9,9,19090,28946180,32.99,99.36,-9.9,0.0,97.9,False
+Google Pay,HDFC Bank,W10,10,20304,30554492,32.75,99.28,6.4,314.4,97.8,False
+Google Pay,HDFC Bank,W11,11,19049,28500117,32.68,99.5,-6.2,0.0,98.0,False
+Google Pay,HDFC Bank,W12,12,20927,31470332,33.19,99.31,9.9,492.8,97.8,False
+Google Pay,HDFC Bank,W13,13,20868,31235070,33.08,99.27,-0.3,0.0,97.8,False
+Google Pay,HDFC Bank,W14,14,19512,28698453,32.97,98.79,-6.5,0.0,97.3,False
+Google Pay,HDFC Bank,W15,15,19562,29282880,32.86,99.42,0.3,14.8,97.9,False
+Google Pay,HDFC Bank,W16,16,19686,29087881,33.02,99.4,0.6,29.7,97.9,False
+Google Pay,HDFC Bank,W17,17,20715,30895293,33.01,99.7,5.2,257.5,98.2,False
+Google Pay,HDFC Bank,W18,18,19561,28619854,32.6,99.63,-5.6,0.0,98.1,False
+Google Pay,HDFC Bank,W19,19,20039,29644907,33.26,99.76,2.4,119.7,98.3,False
+Google Pay,HDFC Bank,W20,20,20528,30348023,32.91,99.27,2.4,118.5,97.8,False
+Google Pay,HDFC Bank,W21,21,22116,32115987,32.78,99.28,7.7,378.6,97.8,False
+Google Pay,HDFC Bank,W22,22,20290,29816775,32.93,99.29,-8.3,0.0,97.8,False
+Google Pay,HDFC Bank,W23,23,21315,31011250,33.21,99.75,5.1,254.0,98.3,False
+Google Pay,HDFC Bank,W24,24,20380,29948304,32.85,99.64,-4.4,0.0,98.1,False
+Google Pay,HDFC Bank,W25,25,22212,32805603,33.04,99.52,9.0,446.1,98.0,False
+Google Pay,HDFC Bank,W26,26,21506,31637331,33.01,99.69,-3.2,0.0,98.2,False
+Google Pay,HDFC Bank,W27,27,21227,31426614,32.82,99.6,-1.3,0.0,98.1,False
+Google Pay,HDFC Bank,W28,28,20797,30779064,32.91,99.57,-2.0,0.0,98.1,False
+Google Pay,HDFC Bank,W29,29,20872,30948328,32.84,99.59,0.4,19.7,98.1,False
+Google Pay,HDFC Bank,W30,30,10447,15486654,32.85,99.99,16.8,827.8,98.5,False
+HDFC MobileBanking,Union Bank of India,W1,1,332,531659,0.58,99.03,,0.0,97.5,False
+HDFC MobileBanking,Union Bank of India,W2,2,334,532528,0.6,98.47,0.6,0.5,97.0,False
+HDFC MobileBanking,Union Bank of India,W3,3,344,587661,0.62,98.73,3.0,2.8,97.2,False
+HDFC MobileBanking,Union Bank of India,W4,4,375,588327,0.61,99.73,9.0,8.2,98.2,False
+HDFC MobileBanking,Union Bank of India,W5,5,353,539662,0.62,99.66,-5.9,0.0,98.2,False
+HDFC MobileBanking,Union Bank of India,W6,6,305,428573,0.54,98.86,-13.6,0.0,97.4,False
+HDFC MobileBanking,Union Bank of India,W7,7,350,524185,0.61,99.71,14.8,13.6,98.2,False
+HDFC MobileBanking,Union Bank of India,W8,8,348,453416,0.54,98.4,-0.6,0.0,96.9,False
+HDFC MobileBanking,Union Bank of India,W9,9,345,536865,0.6,99.39,-0.9,0.0,97.9,False
+HDFC MobileBanking,Union Bank of India,W10,10,341,533241,0.55,98.81,-1.2,0.0,97.3,False
+HDFC MobileBanking,Union Bank of India,W11,11,327,468958,0.56,100.0,-4.1,0.0,98.5,False
+HDFC MobileBanking,Union Bank of India,W12,12,376,621289,0.6,100.0,15.0,13.4,98.5,False
+HDFC MobileBanking,Union Bank of India,W13,13,381,542740,0.6,99.1,1.3,1.2,97.6,False
+HDFC MobileBanking,Union Bank of India,W14,14,354,502264,0.6,98.81,-7.1,0.0,97.3,False
+HDFC MobileBanking,Union Bank of India,W15,15,355,477831,0.6,99.26,0.3,0.3,97.8,False
+HDFC MobileBanking,Union Bank of India,W16,16,332,515373,0.56,99.11,-6.5,0.0,97.6,False
+HDFC MobileBanking,Union Bank of India,W17,17,390,636470,0.62,99.73,17.5,16.3,98.2,False
+HDFC MobileBanking,Union Bank of India,W18,18,358,593550,0.6,99.75,-8.2,0.0,98.2,False
+HDFC MobileBanking,Union Bank of India,W19,19,356,530776,0.59,100.0,-0.6,0.0,98.5,False
+HDFC MobileBanking,Union Bank of India,W20,20,394,617680,0.63,99.56,10.7,10.1,98.1,False
+HDFC MobileBanking,Union Bank of India,W21,21,387,605498,0.57,99.56,-1.8,0.0,98.1,False
+HDFC MobileBanking,Union Bank of India,W22,22,356,545182,0.58,98.86,-8.0,0.0,97.4,False
+HDFC MobileBanking,Union Bank of India,W23,23,340,506150,0.53,100.0,-4.5,0.0,98.5,False
+HDFC MobileBanking,Union Bank of India,W24,24,384,566918,0.62,99.7,12.9,12.0,98.2,False
+HDFC MobileBanking,Union Bank of India,W25,25,351,502183,0.52,99.75,-8.6,0.0,98.3,False
+HDFC MobileBanking,Union Bank of India,W26,26,369,484069,0.57,100.0,5.1,4.3,98.5,False
+HDFC MobileBanking,Union Bank of India,W27,27,381,559028,0.59,99.21,3.3,2.9,97.7,False
+HDFC MobileBanking,Union Bank of India,W28,28,355,592130,0.56,99.68,-6.8,0.0,98.2,False
+HDFC MobileBanking,Union Bank of India,W29,29,365,488778,0.57,99.7,2.8,2.4,98.2,False
+HDFC MobileBanking,Union Bank of India,W30,30,180,279850,0.57,100.0,15.1,12.8,98.5,False
+Navi,HDFC Bank,W1,1,2052,3156166,3.6,99.48,,0.0,98.0,False
+Navi,HDFC Bank,W2,2,2084,3285457,3.73,99.01,1.6,9.0,97.5,False
+Navi,HDFC Bank,W3,3,2100,3370439,3.76,98.82,0.8,4.5,97.3,False
+Navi,HDFC Bank,W4,4,2310,3641329,3.76,99.7,10.0,56.5,98.2,False
+Navi,HDFC Bank,W5,5,2182,3340482,3.83,99.26,-5.5,0.0,97.8,False
+Navi,HDFC Bank,W6,6,2201,3384245,3.88,99.05,0.9,5.2,97.5,False
+Navi,HDFC Bank,W7,7,2204,3446780,3.84,99.56,0.1,0.6,98.1,False
+Navi,HDFC Bank,W8,8,2419,3662030,3.74,98.48,9.8,54.9,97.0,False
+Navi,HDFC Bank,W9,9,2121,3153011,3.67,99.27,-12.3,0.0,97.8,False
+Navi,HDFC Bank,W10,10,2411,3738384,3.89,99.09,13.7,79.9,97.6,False
+Navi,HDFC Bank,W11,11,2274,3548204,3.9,98.93,-5.7,0.0,97.4,False
+Navi,HDFC Bank,W12,12,2336,3470480,3.7,99.64,2.7,15.0,98.1,False
+Navi,HDFC Bank,W13,13,2396,3578284,3.8,99.1,2.6,14.8,97.6,False
+Navi,HDFC Bank,W14,14,2263,3366770,3.82,98.49,-5.6,0.0,97.0,False
+Navi,HDFC Bank,W15,15,2283,3389265,3.83,99.35,0.9,5.2,97.9,False
+Navi,HDFC Bank,W16,16,2282,3387269,3.83,99.37,-0.0,0.0,97.9,False
+Navi,HDFC Bank,W17,17,2462,3771611,3.92,99.8,7.9,46.5,98.3,False
+Navi,HDFC Bank,W18,18,2318,3548165,3.86,99.73,-5.8,0.0,98.2,False
+Navi,HDFC Bank,W19,19,2329,3339324,3.87,99.75,0.5,2.9,98.2,False
+Navi,HDFC Bank,W20,20,2364,3503413,3.79,99.35,1.5,8.5,97.8,False
+Navi,HDFC Bank,W21,21,2472,3560155,3.66,99.47,4.6,25.3,98.0,False
+Navi,HDFC Bank,W22,22,2351,3415070,3.82,99.37,-4.9,0.0,97.9,False
+Navi,HDFC Bank,W23,23,2403,3790428,3.74,99.77,2.2,12.4,98.3,False
+Navi,HDFC Bank,W24,24,2306,3528852,3.72,99.55,-4.0,0.0,98.0,False
+Navi,HDFC Bank,W25,25,2493,3818293,3.71,99.57,8.1,45.1,98.1,False
+Navi,HDFC Bank,W26,26,2490,3720211,3.82,99.57,-0.1,0.0,98.1,False
+Navi,HDFC Bank,W27,27,2388,3427851,3.69,99.79,-4.1,0.0,98.3,False
+Navi,HDFC Bank,W28,28,2454,3805887,3.88,99.75,2.8,16.3,98.3,False
+Navi,HDFC Bank,W29,29,2411,3401079,3.79,99.48,-1.8,0.0,98.0,False
+Navi,HDFC Bank,W30,30,1229,1808138,3.86,100.0,18.9,109.6,98.5,False
+Paytm,Union Bank of India,W1,1,4548,7292759,7.98,99.42,,0.0,97.9,False
+Paytm,Union Bank of India,W2,2,4444,6882525,7.96,98.82,-2.3,0.0,97.3,False
+Paytm,Union Bank of India,W3,3,4411,6942270,7.89,98.43,-0.7,0.0,96.9,False
+Paytm,Union Bank of India,W4,4,4940,7952179,8.05,99.46,12.0,144.9,98.0,False
+Paytm,Union Bank of India,W5,5,4481,6830895,7.87,99.24,-9.3,0.0,97.7,False
+Paytm,Union Bank of India,W6,6,4660,7356730,8.21,99.43,4.0,49.2,97.9,False
+Paytm,Union Bank of India,W7,7,4602,7057988,8.03,99.47,-1.2,0.0,98.0,False
+Paytm,Union Bank of India,W8,8,5267,8067032,8.14,98.75,14.5,177.0,97.2,False
+Paytm,Union Bank of India,W9,9,4611,7136394,7.97,99.05,-12.5,0.0,97.6,False
+Paytm,Union Bank of India,W10,10,4952,7697234,7.99,99.4,7.4,88.7,97.9,False
+Paytm,Union Bank of India,W11,11,4681,7201389,8.03,99.39,-5.5,0.0,97.9,False
+Paytm,Union Bank of India,W12,12,4983,7690878,7.9,99.28,6.5,77.1,97.8,False
+Paytm,Union Bank of India,W13,13,4986,7718122,7.9,99.16,0.1,1.2,97.7,False
+Paytm,Union Bank of India,W14,14,4631,7084049,7.83,98.77,-7.1,0.0,97.3,False
+Paytm,Union Bank of India,W15,15,4741,6958933,7.96,99.22,2.4,28.7,97.7,False
+Paytm,Union Bank of India,W16,16,4716,7168552,7.91,99.51,-0.5,0.0,98.0,False
+Paytm,Union Bank of India,W17,17,4954,7405315,7.89,99.71,5.0,59.2,98.2,False
+Paytm,Union Bank of India,W18,18,4778,7397182,7.96,99.76,-3.6,0.0,98.3,False
+Paytm,Union Bank of India,W19,19,4667,6977351,7.75,99.73,-2.3,0.0,98.2,False
+Paytm,Union Bank of India,W20,20,5018,7586548,8.04,99.29,7.5,90.5,97.8,False
+Paytm,Union Bank of India,W21,21,5427,8144547,8.04,99.43,8.2,98.9,97.9,False
+Paytm,Union Bank of India,W22,22,4953,7535318,8.04,99.44,-8.7,0.0,97.9,False
+Paytm,Union Bank of India,W23,23,5201,7882782,8.1,99.75,5.0,60.8,98.2,False
+Paytm,Union Bank of India,W24,24,4980,7386623,8.03,99.73,-4.2,0.0,98.2,False
+Paytm,Union Bank of India,W25,25,5454,8204455,8.11,99.56,9.5,115.6,98.1,False
+Paytm,Union Bank of India,W26,26,5192,7798619,7.97,99.77,-4.8,0.0,98.3,False
+Paytm,Union Bank of India,W27,27,5139,7748933,7.95,99.76,-1.0,0.0,98.3,False
+Paytm,Union Bank of India,W28,28,4992,7590997,7.9,99.58,-2.9,0.0,98.1,False
+Paytm,Union Bank of India,W29,29,5087,7317550,8.0,99.55,1.9,22.8,98.0,False
+Paytm,Union Bank of India,W30,30,2606,3822850,8.19,100.0,19.5,239.7,98.5,False
+PhonePe,IndusInd Bank,W1,1,27088,43160033,47.52,99.41,,0.0,97.9,True
+PhonePe,IndusInd Bank,W2,2,26591,41569476,47.61,98.93,-1.8,0.0,97.4,True
+PhonePe,IndusInd Bank,W3,3,26642,41358806,47.66,98.76,0.2,14.3,97.3,True
+PhonePe,IndusInd Bank,W4,4,29045,45017742,47.32,99.45,9.0,638.9,98.0,True
+PhonePe,IndusInd Bank,W5,5,27021,41238973,47.49,99.21,-7.0,0.0,97.7,True
+PhonePe,IndusInd Bank,W6,6,26916,41689302,47.4,99.34,-0.4,0.0,97.8,True
+PhonePe,IndusInd Bank,W7,7,27157,41354977,47.36,99.37,0.9,63.9,97.9,True
+PhonePe,IndusInd Bank,W8,8,30914,46719258,47.76,99.05,13.8,988.6,97.5,True
+PhonePe,IndusInd Bank,W9,9,27548,41945471,47.6,99.25,-10.9,0.0,97.8,True
+PhonePe,IndusInd Bank,W10,10,29466,44448490,47.53,99.35,7.0,499.0,97.8,True
+PhonePe,IndusInd Bank,W11,11,27801,41660832,47.69,99.43,-5.7,0.0,97.9,True
+PhonePe,IndusInd Bank,W12,12,29854,44626866,47.35,99.31,7.4,525.5,97.8,True
+PhonePe,IndusInd Bank,W13,13,29938,44790639,47.46,99.24,0.3,21.4,97.7,True
+PhonePe,IndusInd Bank,W14,14,28141,41961402,47.55,98.79,-6.0,0.0,97.3,True
+PhonePe,IndusInd Bank,W15,15,28386,42558584,47.68,99.47,0.9,64.4,98.0,True
+PhonePe,IndusInd Bank,W16,16,28368,41852293,47.58,99.51,-0.1,0.0,98.0,True
+PhonePe,IndusInd Bank,W17,17,29695,44379011,47.32,99.79,4.7,333.6,98.3,True
+PhonePe,IndusInd Bank,W18,18,28716,42561403,47.86,99.64,-3.3,0.0,98.1,True
+PhonePe,IndusInd Bank,W19,19,28594,42222851,47.45,99.81,-0.4,0.0,98.3,True
+PhonePe,IndusInd Bank,W20,20,29680,43528314,47.58,99.21,3.8,271.2,97.7,True
+PhonePe,IndusInd Bank,W21,21,32200,46876902,47.72,99.28,8.5,608.4,97.8,True
+PhonePe,IndusInd Bank,W22,22,29259,43343649,47.49,99.22,-9.1,0.0,97.7,True
+PhonePe,IndusInd Bank,W23,23,30322,44505896,47.24,99.72,3.6,255.1,98.2,True
+PhonePe,IndusInd Bank,W24,24,29510,43696510,47.56,99.6,-2.7,0.0,98.1,True
+PhonePe,IndusInd Bank,W25,25,31952,46970506,47.53,99.54,8.3,591.8,98.0,True
+PhonePe,IndusInd Bank,W26,26,30934,45816095,47.48,99.7,-3.2,0.0,98.2,True
+PhonePe,IndusInd Bank,W27,27,31003,45846700,47.93,99.67,0.2,14.4,98.2,True
+PhonePe,IndusInd Bank,W28,28,30089,44277070,47.61,99.49,-2.9,0.0,98.0,True
+PhonePe,IndusInd Bank,W29,29,30308,44333609,47.68,99.6,0.7,50.1,98.1,True
+PhonePe,IndusInd Bank,W30,30,14955,22029648,47.03,99.96,15.1,1065.2,98.5,True
+SuperMoney,IDFC First Bank,W1,1,1101,1707438,1.93,99.74,,0.0,98.2,False
+SuperMoney,IDFC First Bank,W2,2,1000,1536658,1.79,99.22,-9.2,0.0,97.7,False
+SuperMoney,IDFC First Bank,W3,3,999,1554423,1.79,98.34,-0.1,0.0,96.8,False
+SuperMoney,IDFC First Bank,W4,4,1112,1781683,1.81,99.12,11.3,30.7,97.6,False
+SuperMoney,IDFC First Bank,W5,5,1069,1684406,1.88,99.36,-3.9,0.0,97.9,False
+SuperMoney,IDFC First Bank,W6,6,1040,1488035,1.83,99.62,-2.7,0.0,98.1,False
+SuperMoney,IDFC First Bank,W7,7,1053,1605739,1.84,99.63,1.2,3.3,98.1,False
+SuperMoney,IDFC First Bank,W8,8,1182,1723146,1.83,98.73,12.3,33.7,97.2,False
+SuperMoney,IDFC First Bank,W9,9,1032,1631418,1.78,99.4,-12.7,0.0,97.9,False
+SuperMoney,IDFC First Bank,W10,10,1159,1749483,1.87,99.32,12.3,34.5,97.8,False
+SuperMoney,IDFC First Bank,W11,11,1049,1581429,1.8,99.65,-9.5,0.0,98.1,False
+SuperMoney,IDFC First Bank,W12,12,1171,1770077,1.86,99.58,11.6,32.3,98.1,False
+SuperMoney,IDFC First Bank,W13,13,1149,1708766,1.82,99.3,-1.9,0.0,97.8,False
+SuperMoney,IDFC First Bank,W14,14,1073,1612018,1.81,99.55,-6.6,0.0,98.0,False
+SuperMoney,IDFC First Bank,W15,15,1076,1648459,1.81,99.7,0.3,0.8,98.2,False
+SuperMoney,IDFC First Bank,W16,16,1093,1604913,1.83,99.23,1.6,4.4,97.7,False
+SuperMoney,IDFC First Bank,W17,17,1202,1759382,1.92,99.82,10.0,28.7,98.3,False
+SuperMoney,IDFC First Bank,W18,18,1066,1415645,1.78,99.48,-11.3,0.0,98.0,False
+SuperMoney,IDFC First Bank,W19,19,1106,1670662,1.84,99.74,3.8,10.5,98.2,False
+SuperMoney,IDFC First Bank,W20,20,1101,1645955,1.76,99.07,-0.5,0.0,97.6,False
+SuperMoney,IDFC First Bank,W21,21,1212,1761648,1.8,99.53,10.1,27.2,98.0,False
+SuperMoney,IDFC First Bank,W22,22,1127,1635139,1.83,99.21,-7.0,0.0,97.7,False
+SuperMoney,IDFC First Bank,W23,23,1194,1839929,1.86,99.74,5.9,16.5,98.2,False
+SuperMoney,IDFC First Bank,W24,24,1116,1639780,1.8,99.83,-6.5,0.0,98.3,False
+SuperMoney,IDFC First Bank,W25,25,1227,1795859,1.83,99.54,9.9,27.1,98.0,False
+SuperMoney,IDFC First Bank,W26,26,1299,1907518,1.99,99.68,5.9,17.6,98.2,False
+SuperMoney,IDFC First Bank,W27,27,1155,1662081,1.79,99.92,-11.1,0.0,98.4,False
+SuperMoney,IDFC First Bank,W28,28,1143,1662005,1.81,99.52,-1.0,0.0,98.0,False
+SuperMoney,IDFC First Bank,W29,29,1189,1763515,1.87,99.68,4.0,11.2,98.2,False
+SuperMoney,IDFC First Bank,W30,30,589,927427,1.85,100.0,15.6,43.3,98.5,False
+WhatsApp Pay,HDFC Bank,W1,1,321,472574,0.56,99.51,,0.0,98.0,False
+WhatsApp Pay,HDFC Bank,W2,2,319,445815,0.57,98.69,-0.6,0.0,97.2,False
+WhatsApp Pay,HDFC Bank,W3,3,352,510835,0.63,97.31,10.3,9.7,95.8,False
+WhatsApp Pay,HDFC Bank,W4,4,387,565404,0.63,99.74,9.9,9.4,98.2,False
+WhatsApp Pay,HDFC Bank,W5,5,337,537385,0.59,100.0,-12.9,0.0,98.5,False
+WhatsApp Pay,HDFC Bank,W6,6,342,522342,0.6,98.81,1.5,1.4,97.3,False
+WhatsApp Pay,HDFC Bank,W7,7,349,455328,0.61,100.0,2.0,1.8,98.5,False
+WhatsApp Pay,HDFC Bank,W8,8,371,572252,0.57,99.71,6.3,5.4,98.2,False
+WhatsApp Pay,HDFC Bank,W9,9,342,470623,0.59,99.54,-7.8,0.0,98.0,False
+WhatsApp Pay,HDFC Bank,W10,10,372,568656,0.6,98.64,8.8,7.9,97.1,False
+WhatsApp Pay,HDFC Bank,W11,11,366,482044,0.63,99.46,-1.6,0.0,98.0,False
+WhatsApp Pay,HDFC Bank,W12,12,401,564667,0.64,99.77,9.6,9.2,98.3,False
+WhatsApp Pay,HDFC Bank,W13,13,373,557453,0.59,99.57,-7.0,0.0,98.1,False
+WhatsApp Pay,HDFC Bank,W14,14,345,448768,0.58,98.8,-7.5,0.0,97.3,False
+WhatsApp Pay,HDFC Bank,W15,15,375,482083,0.63,99.7,8.7,8.2,98.2,False
+WhatsApp Pay,HDFC Bank,W16,16,346,452840,0.58,99.71,-7.7,0.0,98.2,False
+WhatsApp Pay,HDFC Bank,W17,17,365,481379,0.58,100.0,5.5,4.8,98.5,False
+WhatsApp Pay,HDFC Bank,W18,18,319,414459,0.53,99.42,-12.6,0.0,97.9,False
+WhatsApp Pay,HDFC Bank,W19,19,337,416692,0.56,99.68,5.6,4.7,98.2,False
+WhatsApp Pay,HDFC Bank,W20,20,337,419662,0.54,99.49,0.0,0.0,98.0,False
+WhatsApp Pay,HDFC Bank,W21,21,402,520145,0.6,100.0,19.3,17.2,98.5,False
+WhatsApp Pay,HDFC Bank,W22,22,362,428094,0.59,98.83,-10.0,0.0,97.3,False
+WhatsApp Pay,HDFC Bank,W23,23,367,513650,0.57,99.39,1.4,1.2,97.9,False
+WhatsApp Pay,HDFC Bank,W24,24,343,450888,0.55,100.0,-6.5,0.0,98.5,False
+WhatsApp Pay,HDFC Bank,W25,25,417,536724,0.62,99.34,21.6,20.1,97.8,False
+WhatsApp Pay,HDFC Bank,W26,26,353,450805,0.54,99.05,-15.3,0.0,97.6,False
+WhatsApp Pay,HDFC Bank,W27,27,360,516053,0.56,99.74,2.0,1.7,98.2,False
+WhatsApp Pay,HDFC Bank,W28,28,397,544876,0.63,100.0,10.3,9.7,98.5,False
+WhatsApp Pay,HDFC Bank,W29,29,376,514207,0.59,100.0,-5.3,0.0,98.5,False
+WhatsApp Pay,HDFC Bank,W30,30,185,256294,0.58,100.0,14.8,12.9,98.5,False
+YONO SBI,Union Bank of India,W1,1,509,776811,0.89,99.58,,0.0,98.1,False
+YONO SBI,Union Bank of India,W2,2,479,731166,0.86,98.67,-5.9,0.0,97.2,False
+YONO SBI,Union Bank of India,W3,3,490,764082,0.88,99.04,2.3,3.0,97.5,False
+YONO SBI,Union Bank of India,W4,4,502,708298,0.82,99.41,2.4,2.9,97.9,False
+YONO SBI,Union Bank of India,W5,5,482,712212,0.85,99.21,-4.0,0.0,97.7,False
+YONO SBI,Union Bank of India,W6,6,493,684875,0.87,98.37,2.3,3.0,96.9,False
+YONO SBI,Union Bank of India,W7,7,538,684490,0.94,99.52,9.1,12.8,98.0,False
+YONO SBI,Union Bank of India,W8,8,576,800070,0.89,99.12,7.1,9.5,97.6,False
+YONO SBI,Union Bank of India,W9,9,514,752089,0.89,99.59,-10.8,0.0,98.1,False
+YONO SBI,Union Bank of India,W10,10,530,788101,0.85,99.27,3.1,4.0,97.8,False
+YONO SBI,Union Bank of India,W11,11,520,703092,0.89,99.64,-1.9,0.0,98.1,False
+YONO SBI,Union Bank of India,W12,12,565,767134,0.9,100.0,8.7,11.7,98.5,False
+YONO SBI,Union Bank of India,W13,13,567,725192,0.9,99.13,0.4,0.5,97.6,False
+YONO SBI,Union Bank of India,W14,14,508,626611,0.86,99.45,-10.4,0.0,98.0,False
+YONO SBI,Union Bank of India,W15,15,516,717288,0.87,99.07,1.6,2.1,97.6,False
+YONO SBI,Union Bank of India,W16,16,545,723660,0.91,99.6,5.6,7.7,98.1,False
+YONO SBI,Union Bank of India,W17,17,557,711651,0.89,99.81,2.2,2.9,98.3,False
+YONO SBI,Union Bank of India,W18,18,486,621701,0.81,99.84,-12.7,0.0,98.3,False
+YONO SBI,Union Bank of India,W19,19,530,765518,0.88,99.57,9.1,12.0,98.1,False
+YONO SBI,Union Bank of India,W20,20,559,700333,0.9,99.3,5.5,7.4,97.8,False
+YONO SBI,Union Bank of India,W21,21,591,730384,0.88,99.37,5.7,7.5,97.9,False
+YONO SBI,Union Bank of India,W22,22,553,700711,0.9,99.05,-6.4,0.0,97.5,False
+YONO SBI,Union Bank of India,W23,23,570,785754,0.89,99.84,3.1,4.1,98.3,False
+YONO SBI,Union Bank of India,W24,24,571,801246,0.92,99.65,0.2,0.3,98.2,False
+YONO SBI,Union Bank of India,W25,25,569,790023,0.85,99.51,-0.4,0.0,98.0,False
+YONO SBI,Union Bank of India,W26,26,556,671448,0.85,99.84,-2.3,0.0,98.3,False
+YONO SBI,Union Bank of India,W27,27,540,670510,0.83,99.64,-2.9,0.0,98.1,False
+YONO SBI,Union Bank of India,W28,28,551,725492,0.87,99.42,2.0,2.6,97.9,False
+YONO SBI,Union Bank of India,W29,29,526,627585,0.83,98.56,-4.5,0.0,97.1,False
+YONO SBI,Union Bank of India,W30,30,308,458901,0.97,100.0,36.6,53.2,98.5,False
+iMobile Pay,Canara Bank,W1,1,331,523691,0.58,100.0,,0.0,98.5,False
+iMobile Pay,Canara Bank,W2,2,302,553369,0.54,98.88,-8.8,0.0,97.4,False
+iMobile Pay,Canara Bank,W3,3,332,482230,0.59,98.54,9.9,8.8,97.0,False
+iMobile Pay,Canara Bank,W4,4,326,595689,0.53,99.29,-1.8,0.0,97.8,False
+iMobile Pay,Canara Bank,W5,5,282,429900,0.5,98.35,-13.5,0.0,96.8,False
+iMobile Pay,Canara Bank,W6,6,291,488705,0.51,99.67,3.2,2.5,98.2,False
+iMobile Pay,Canara Bank,W7,7,346,524006,0.6,99.79,18.9,17.1,98.3,False
+iMobile Pay,Canara Bank,W8,8,386,607702,0.6,99.41,11.6,10.4,97.9,False
+iMobile Pay,Canara Bank,W9,9,328,567512,0.57,99.18,-15.0,0.0,97.7,False
+iMobile Pay,Canara Bank,W10,10,356,530227,0.57,100.0,8.5,7.3,98.5,False
+iMobile Pay,Canara Bank,W11,11,314,483829,0.54,99.06,-11.8,0.0,97.6,False
+iMobile Pay,Canara Bank,W12,12,366,557708,0.58,98.94,16.6,14.5,97.4,False
+iMobile Pay,Canara Bank,W13,13,350,500126,0.55,99.12,-4.4,0.0,97.6,False
+iMobile Pay,Canara Bank,W14,14,299,459092,0.51,98.87,-14.6,0.0,97.4,False
+iMobile Pay,Canara Bank,W15,15,295,447505,0.5,100.0,-1.3,0.0,98.5,False
+iMobile Pay,Canara Bank,W16,16,309,443104,0.52,100.0,4.7,3.7,98.5,False
+iMobile Pay,Canara Bank,W17,17,373,591844,0.59,100.0,20.7,18.5,98.5,False
+iMobile Pay,Canara Bank,W18,18,344,521683,0.57,99.71,-7.8,0.0,98.2,False
+iMobile Pay,Canara Bank,W19,19,325,518718,0.54,98.92,-5.5,0.0,97.4,False
+iMobile Pay,Canara Bank,W20,20,337,515705,0.54,98.88,3.7,3.0,97.4,False
+iMobile Pay,Canara Bank,W21,21,362,539452,0.54,99.25,7.4,6.0,97.7,False
+iMobile Pay,Canara Bank,W22,22,345,494873,0.56,99.49,-4.7,0.0,98.0,False
+iMobile Pay,Canara Bank,W23,23,353,499961,0.55,100.0,2.3,1.9,98.5,False
+iMobile Pay,Canara Bank,W24,24,316,525840,0.51,99.23,-10.5,0.0,97.7,False
+iMobile Pay,Canara Bank,W25,25,367,638527,0.55,99.69,16.1,13.2,98.2,False
+iMobile Pay,Canara Bank,W26,26,327,509621,0.5,99.74,-10.9,0.0,98.2,False
+iMobile Pay,Canara Bank,W27,27,339,562646,0.52,100.0,3.7,2.9,98.5,False
+iMobile Pay,Canara Bank,W28,28,319,452556,0.5,99.38,-5.9,0.0,97.9,False
+iMobile Pay,Canara Bank,W29,29,316,573020,0.5,99.78,-0.9,0.0,98.3,False
+iMobile Pay,Canara Bank,W30,30,195,301556,0.61,100.0,44.0,40.5,98.5,False

@@ -3,25 +3,25 @@ id: TEAMS-D153-MON
 type: teams
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-11-21T09:30:00
+timestamp: 2026-06-06T09:30:00
 ---
 
-# Ops Monitoring — 21 Nov 2026
+# Ops Monitoring — 06 Jun 2026
 
 **Channel:** UPI Products / Ops Monitoring
-**Date:** Saturday 21 Nov 2026 · **Day archetype:** Saturday (lighter)
+**Date:** Saturday 06 Jun 2026 · **Day archetype:** Saturday (lighter)
 
 **Harsh Nanda** · 09:15
-Morning sweep for 21 Nov. UPI Transactions at 905.3 (down 77.7 vs Fri 20 Nov);
-Success Rate at 99.3% (down 0.32 vs Fri 20 Nov); Technical Declines at 0.25%;
-Business Declines at 0.17% (down 0.03 vs Fri 20 Nov). Estimated peak ~32,481 TPS.
+Morning sweep for 06 Jun. UPI Transactions at 647.7 (down 85.4 vs Fri 05 Jun);
+Success Rate at 99.06% (up 0.2 vs Fri 05 Jun); Technical Declines at 0.42% (down 0.09 vs Fri 05 Jun);
+Business Declines at 0.16%. Estimated peak ~23,239 TPS.
 
-**Farhan Subramanian** · 09:22
-Lowest bank success today: IndusInd Bank at 98.92%. Settlement Success
-99.98%. Complaints: customer 1,066,
-merchant 96. Full numbers in RPT-D153-DAILY and upi_kpis_month.xlsx.
+**Lakshmi Agarwal** · 09:22
+Lowest bank success today: Punjab National Bank at 98.87%. Settlement Success
+98.99%. Complaints: customer 1,292,
+merchant 148. Full numbers in RPT-D153-DAILY and upi_kpis_month.xlsx.
 
 **Harsh Nanda** · 09:30
-Open items: INC-2026-06 (fraud / risk spike · HDFC MobileBanking)
+Open items: INC-2026-06 (bank timeout / 5xx spike · Punjab National Bank)
 
 Refs: upi_kpis_month.xlsx, RPT-D153-DAILY, INC-2026-06

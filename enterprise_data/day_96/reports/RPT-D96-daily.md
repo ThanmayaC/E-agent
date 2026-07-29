@@ -3,65 +3,65 @@ id: RPT-D96-DAILY
 type: report
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-09-25T17:30:00
+timestamp: 2026-04-10T17:30:00
 ---
 
-# UPI Products — Daily Operations Report (Friday, 25 Sep 2026)
+# UPI Products — Daily Operations Report (Friday, 10 Apr 2026)
 
-**Report ID:** RPT-D96-DAILY  ·  **Prepared by:** Farhan Subramanian
-**Date:** Friday 25 Sep 2026  ·  **Day archetype:** Weekday (steady)
-**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 96 of 180)
+**Report ID:** RPT-D96-DAILY  ·  **Prepared by:** Lakshmi Agarwal
+**Date:** Friday 10 Apr 2026  ·  **Day archetype:** Weekday (steady)
+**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 96 of 206)
 
 ## Transaction summary
-The rail processed 890.0M UPI transactions on Friday — a steady mid-week day — down 17.5M on the same day last week. Success landed at 98.83% and settlement at 99.92%, held back by live issues on iMobile Pay (detailed below).
+The rail processed 702.6M UPI transactions on Friday — a steady mid-week day — down 155.5M on the same day last week. Success held at 99.02% and settlement at 99.21%; the softest bank was IDFC First Bank at 98.92%, still comfortably inside the normal band.
 
 ## KPIs (today · vs yesterday / last week / month start)
-- **UPI Transactions:** 890.0  (▼17.6 d/d, ▼17.5 w/w, ▲145.1 m/m)
-- **Success Rate:** 98.83%  (▼0.88 d/d, ▼0.09 w/w, ▼0.77 m/m)
-- **Settlement Success:** 99.92%  (▲0.96 d/d, ▲0.92 w/w, ▲0.49 m/m)
-- **Technical Declines:** 0.31%  (▼0.01 d/d, ▼0.02 w/w, ▼0.14 m/m)
-- **Business Declines:** 0.23%  (▼0.05 d/d, ▲0.07 w/w, ▲0.03 m/m)
-- **Customer Complaints:** 1,509  (▼184 d/d, ▲200 w/w, ▼433 m/m)
-- **Merchant Complaints:** 129  (▼1 d/d, ▼4 w/w, ▼82 m/m)
-- **Fraud Alerts:** 998  (▼105 d/d, ▲147 w/w, ▼53 m/m)
-- **Risk Score:** 35  (▼8 d/d, ▲11 w/w, ▲4 m/m)
-- **Response Time:** 612 ms  (▼7 d/d, ▼16 w/w, ▼130 m/m)
+- **UPI Transactions:** 702.6  (▼2.3 d/d, ▼155.5 w/w, ▼93.3 m/m)
+- **Success Rate:** 99.02%  (▲0.45 d/d, ▼0.55 w/w, ▼0.11 m/m)
+- **Settlement Success:** 99.21%  (▼0.77 d/d, ▼0.77 w/w, ▼0.74 m/m)
+- **Technical Declines:** 0.38%  (▼0.07 d/d, ▼0.01 w/w, ▼0.17 m/m)
+- **Business Declines:** 0.19%  (▼0.05 m/m)
+- **Customer Complaints:** 1,360  (▼178 d/d, ▼63 w/w, ▼782 m/m)
+- **Merchant Complaints:** 143  (▼27 d/d, ▼7 w/w, ▼91 m/m)
+- **Fraud Alerts:** 908  (▲3 d/d, ▼16 w/w, ▼252 m/m)
+- **Risk Score:** 25  (▼1 w/w, ▼9 m/m)
+- **Response Time:** 639 ms  (▼11 d/d, ▼3 w/w, ▼114 m/m)
 
 ## Top banks (by volume)
 | Bank | Txns (M/day) | Success |
 |------|--------------|---------|
-| State Bank of India | 286.2 | 99.5% |
-| HDFC Bank | 98.2 | 99.55% |
-| Bank of Baroda | 70.6 | 99.64% |
-| Union Bank of India | 61.3 | 99.43% |
-| ICICI Bank | 54.9 | 99.4% |
+| State Bank of India | 228.7 | 99.67% |
+| HDFC Bank | 75.1 | 99.42% |
+| Bank of Baroda | 54.1 | 99.26% |
+| Union Bank of India | 47.4 | 99.63% |
+| Axis Bank | 43.3 | 99.39% |
 
 ## Top UPI apps (by volume)
 | App / PSP | Txns (M/day) | Success | Callback p95 |
 |-----------|--------------|---------|--------------|
-| PhonePe | 424.6 | 99.14% | 231 ms |
-| Google Pay | 290.7 | 99.17% | 316 ms |
-| Paytm | 71.8 | 99.06% | 192 ms |
-| Navi | 32.8 | 99.17% | 225 ms |
-| SuperMoney | 17.3 | 99.08% | 299 ms |
+| PhonePe | 335.6 | 99.51% | 198 ms |
+| Google Pay | 229.8 | 99.35% | 241 ms |
+| Paytm | 55.7 | 99.53% | 201 ms |
+| Navi | 25.8 | 99.53% | 304 ms |
+| SuperMoney | 13.7 | 99.22% | 327 ms |
 
 ## Top features (by volume)
 | Feature | Txns (M/day) |
 |---------|--------------|
-| Person to Merchant | 333.8 |
-| Person to Person | 315.9 |
-| QR Payments | 84.5 |
-| UPI Lite | 42.7 |
-| UPI Autopay | 29.4 |
+| Person to Merchant | 260.0 |
+| Person to Person | 249.4 |
+| QR Payments | 66.7 |
+| UPI Lite | 33.7 |
+| UPI Autopay | 23.2 |
 
 ## Failure analysis
-- INC-2026-04 — fraud / risk spike on iMobile Pay (day 2 of 5); see RCA-2026-04.
+- No incidents open. Technical declines are within the 0.38% steady-state band; residual failures are routine bank/network timeouts.
 
 ## Recommendations
-Stay on the open incident: keep recovery monitoring on iMobile Pay and hold the bank/PSP bridge until success clears the 99.2% floor and stays there through two clean hours.
+Steady state — no action beyond routine watch; pick up the SLA trend at the next sync.
 
 ## Notes
 All figures read from upi_kpis_month.xlsx; they match the day's monitoring note
-(TEAMS-D96-MON) and any meetings/emails on 25 Sep.
+(TEAMS-D96-MON) and any meetings/emails on 10 Apr.
 
-Refs: upi_kpis_month.xlsx, TEAMS-D96-MON, RPT-D95-DAILY, INC-2026-04, RCA-2026-04
+Refs: upi_kpis_month.xlsx, TEAMS-D96-MON, RPT-D95-DAILY

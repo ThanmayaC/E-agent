@@ -31,12 +31,21 @@ def create_project(body: CreateProject, c: Container = Depends(container)):
 
 @router.get("/projects")
 def list_projects(c: Container = Depends(container)):
+    """Every project the user owns. States written by older builds can be
+    missing their identity fields; they are backfilled from the directory id
+    so such a project still renders — and stays deletable — in the UI."""
     projects = []
     for pid in c.store.list_projects():
         state = c.store.load(pid, "state")
-        if state:
-            projects.append(state)
-    projects.sort(key=lambda s: s.get("created_at", ""), reverse=True)
+        if not isinstance(state, dict) or not state:
+            continue
+        state.setdefault("project_id", pid)
+        state.setdefault("name", pid)
+        # no creation timestamp survived: fall back to when the report landed
+        if not state.get("created_at"):
+            state["created_at"] = state.get("report_generated_at")
+        projects.append(state)
+    projects.sort(key=lambda s: s.get("created_at") or "", reverse=True)
     return projects
 
 

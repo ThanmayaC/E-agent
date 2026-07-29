@@ -3,25 +3,25 @@ id: TEAMS-D11-MON
 type: teams
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-07-02T09:30:00
+timestamp: 2026-01-15T09:30:00
 ---
 
-# Ops Monitoring — 02 Jul 2026
+# Ops Monitoring — 15 Jan 2026
 
 **Channel:** UPI Products / Ops Monitoring
-**Date:** Thursday 02 Jul 2026 · **Day archetype:** Weekday (steady)
+**Date:** Thursday 15 Jan 2026 · **Day archetype:** Weekday (steady)
 
 **Harsh Nanda** · 09:15
-Morning sweep for 02 Jul. UPI Transactions at 755.0 (down 193.5 vs Wed 01 Jul);
-Success Rate at 98.08% (down 0.32 vs Wed 01 Jul); Technical Declines at 0.63% (up 0.1 vs Wed 01 Jul);
-Business Declines at 0.19% (down 0.01 vs Wed 01 Jul). Estimated peak ~27,089 TPS.
+Morning sweep for 15 Jan. UPI Transactions at 654.0 (down 25.0 vs Wed 14 Jan);
+Success Rate at 98.99% (up 0.73 vs Wed 14 Jan); Technical Declines at 0.53%;
+Business Declines at 0.24%. Estimated peak ~23,465 TPS.
 
-**Farhan Subramanian** · 09:22
-Lowest bank success today: IndusInd Bank at 98.92%. Settlement Success
-98.65%. Complaints: customer 2,519,
-merchant 200. Full numbers in RPT-D11-DAILY and upi_kpis_month.xlsx.
+**Lakshmi Agarwal** · 09:22
+Lowest bank success today: IDFC First Bank at 98.92%. Settlement Success
+99.6%. Complaints: customer 2,058,
+merchant 223. Full numbers in RPT-D11-DAILY and upi_kpis_month.xlsx.
 
 **Harsh Nanda** · 09:30
-Open items: INC-2026-13 (PSP callback latency increase · YONO SBI); INC-2026-16 (PSP callback latency increase · Paytm)
+No open incidents — steady-state monitoring.
 
-Refs: upi_kpis_month.xlsx, RPT-D11-DAILY, INC-2026-13, INC-2026-16
+Refs: upi_kpis_month.xlsx, RPT-D11-DAILY, ORG-OVERVIEW

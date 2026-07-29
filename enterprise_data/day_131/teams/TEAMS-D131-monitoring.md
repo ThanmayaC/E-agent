@@ -3,25 +3,25 @@ id: TEAMS-D131-MON
 type: teams
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-10-30T09:30:00
+timestamp: 2026-05-15T09:30:00
 ---
 
-# Ops Monitoring — 30 Oct 2026
+# Ops Monitoring — 15 May 2026
 
 **Channel:** UPI Products / Ops Monitoring
-**Date:** Friday 30 Oct 2026 · **Day archetype:** Month-end peak
+**Date:** Friday 15 May 2026 · **Day archetype:** Weekday (steady)
 
 **Harsh Nanda** · 09:15
-Morning sweep for 30 Oct. UPI Transactions at 1089.9 (up 1.1 vs Thu 29 Oct);
-Success Rate at 98.48% (down 1.17 vs Thu 29 Oct); Technical Declines at 0.44% (up 0.15 vs Thu 29 Oct);
-Business Declines at 0.16% (down 0.02 vs Thu 29 Oct). Estimated peak ~39,105 TPS.
+Morning sweep for 15 May. UPI Transactions at 724.2 (up 1.0 vs Thu 14 May);
+Success Rate at 99.98% (up 0.78 vs Thu 14 May); Technical Declines at 0.33% (down 0.01 vs Thu 14 May);
+Business Declines at 0.18% (down 0.02 vs Thu 14 May). Estimated peak ~25,984 TPS.
 
-**Farhan Subramanian** · 09:22
-Lowest bank success today: Union Bank of India at 98.71%. Settlement Success
-99.64%. Complaints: customer 1,503,
-merchant 201. Full numbers in RPT-D131-DAILY and upi_kpis_month.xlsx.
+**Lakshmi Agarwal** · 09:22
+Lowest bank success today: IDFC First Bank at 98.92%. Settlement Success
+99.98%. Complaints: customer 1,175,
+merchant 132. Full numbers in RPT-D131-DAILY and upi_kpis_month.xlsx.
 
 **Harsh Nanda** · 09:30
-Open items: INC-2026-24 (merchant decline-rate spike · TravelGo, InsureWell); INC-2026-10 (bank timeout / 5xx spike · Union Bank of India)
+Open items: INC-2026-13 (merchant decline-rate spike · TravelGo, InsureWell)
 
-Refs: upi_kpis_month.xlsx, RPT-D131-DAILY, INC-2026-24, INC-2026-10
+Refs: upi_kpis_month.xlsx, RPT-D131-DAILY, INC-2026-13

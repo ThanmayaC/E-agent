@@ -3,65 +3,65 @@ id: RPT-D49-DAILY
 type: report
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-08-09T17:30:00
+timestamp: 2026-02-22T17:30:00
 ---
 
-# UPI Products — Daily Operations Report (Sunday, 09 Aug 2026)
+# UPI Products — Daily Operations Report (Sunday, 22 Feb 2026)
 
-**Report ID:** RPT-D49-DAILY  ·  **Prepared by:** Farhan Subramanian
-**Date:** Sunday 09 Aug 2026  ·  **Day archetype:** Sunday (quiet) · maintenance window
-**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 49 of 180)
+**Report ID:** RPT-D49-DAILY  ·  **Prepared by:** Lakshmi Agarwal
+**Date:** Sunday 22 Feb 2026  ·  **Day archetype:** Sunday (quiet)
+**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 49 of 206)
 
 ## Transaction summary
-The rail processed 664.1M UPI transactions on Sunday — a quiet Sunday with a scheduled maintenance window — down 7.9M on the same day last week. Success held at 99.98% and settlement at 99.67%; the softest bank was IndusInd Bank at 98.92%, still comfortably inside the normal band.
+The rail processed 564.0M UPI transactions on Sunday — a quiet Sunday — up 9.8M on the same day last week. Success held at 99.61% and settlement at 98.63%; the softest bank was IDFC First Bank at 98.92%, still comfortably inside the normal band.
 
 ## KPIs (today · vs yesterday / last week / month start)
-- **UPI Transactions:** 664.1  (▼90.5 d/d, ▼7.9 w/w, ▼80.8 m/m)
-- **Success Rate:** 99.98%  (▲0.28 w/w, ▲0.38 m/m)
-- **Settlement Success:** 99.67%  (▼0.24 d/d, ▼0.31 w/w, ▲0.24 m/m)
-- **Technical Declines:** 0.38%  (▲0.01 d/d, ▼0.07 m/m)
-- **Business Declines:** 0.18%  (▼0.02 m/m)
-- **Customer Complaints:** 1,557  (▼5 d/d, ▼36 w/w, ▼385 m/m)
-- **Merchant Complaints:** 163  (▼2 d/d, ▼8 w/w, ▼48 m/m)
-- **Fraud Alerts:** 929  (▼28 w/w, ▼122 m/m)
-- **Risk Score:** 27  (▼4 m/m)
-- **Response Time:** 668 ms  (▼10 d/d, ▼11 w/w, ▼74 m/m)
+- **UPI Transactions:** 564.0  (▼43.8 d/d, ▲9.8 w/w, ▼231.9 m/m)
+- **Success Rate:** 99.61%  (▲0.27 d/d, ▲1.06 w/w, ▲0.48 m/m)
+- **Settlement Success:** 98.63%  (▼1.19 d/d, ▼1.35 w/w, ▼1.32 m/m)
+- **Technical Declines:** 0.46%  (▼0.01 w/w, ▼0.09 m/m)
+- **Business Declines:** 0.21%  (▼0.01 w/w, ▼0.03 m/m)
+- **Customer Complaints:** 1,699  (▼29 d/d, ▼79 w/w, ▼443 m/m)
+- **Merchant Complaints:** 184  (▼6 w/w, ▼50 m/m)
+- **Fraud Alerts:** 1,026  (▼4 d/d, ▼22 w/w, ▼134 m/m)
+- **Risk Score:** 29  (▼1 d/d, ▼1 w/w, ▼5 m/m)
+- **Response Time:** 693 ms  (▼6 d/d, ▼16 w/w, ▼60 m/m)
 
 ## Top banks (by volume)
 | Bank | Txns (M/day) | Success |
 |------|--------------|---------|
-| State Bank of India | 213.5 | 99.5% |
-| HDFC Bank | 73.3 | 99.55% |
-| Bank of Baroda | 52.7 | 99.64% |
-| Union Bank of India | 45.7 | 99.43% |
-| ICICI Bank | 40.9 | 99.4% |
+| State Bank of India | 183.6 | 99.67% |
+| HDFC Bank | 60.3 | 99.42% |
+| Bank of Baroda | 43.4 | 99.26% |
+| Union Bank of India | 38.0 | 99.63% |
+| Axis Bank | 34.8 | 99.39% |
 
 ## Top UPI apps (by volume)
 | App / PSP | Txns (M/day) | Success | Callback p95 |
 |-----------|--------------|---------|--------------|
-| PhonePe | 316.8 | 99.14% | 231 ms |
-| Google Pay | 216.9 | 99.17% | 316 ms |
-| Paytm | 53.6 | 99.06% | 192 ms |
-| Navi | 24.5 | 99.17% | 225 ms |
-| SuperMoney | 12.9 | 99.08% | 299 ms |
+| PhonePe | 269.4 | 99.51% | 198 ms |
+| Google Pay | 184.4 | 99.35% | 241 ms |
+| Paytm | 44.7 | 99.53% | 201 ms |
+| Navi | 20.7 | 99.53% | 304 ms |
+| SuperMoney | 11.0 | 99.22% | 327 ms |
 
 ## Top features (by volume)
 | Feature | Txns (M/day) |
 |---------|--------------|
-| Person to Merchant | 249.0 |
-| Person to Person | 235.8 |
-| QR Payments | 63.1 |
-| UPI Lite | 31.9 |
-| UPI Autopay | 21.9 |
+| Person to Merchant | 208.7 |
+| Person to Person | 200.2 |
+| QR Payments | 53.6 |
+| UPI Lite | 27.1 |
+| UPI Autopay | 18.6 |
 
 ## Failure analysis
-- No incidents open. Technical declines are within the 0.38% steady-state band; residual failures are routine bank/network timeouts.
+- No incidents open. Technical declines are within the 0.46% steady-state band; residual failures are routine bank/network timeouts.
 
 ## Recommendations
 Steady state — keep the standard monitoring cadence and let the adoption programmes run.
 
 ## Notes
 All figures read from upi_kpis_month.xlsx; they match the day's monitoring note
-(TEAMS-D49-MON) and any meetings/emails on 09 Aug.
+(TEAMS-D49-MON) and any meetings/emails on 22 Feb.
 
 Refs: upi_kpis_month.xlsx, TEAMS-D49-MON, RPT-D48-DAILY

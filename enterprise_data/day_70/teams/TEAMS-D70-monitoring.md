@@ -3,25 +3,25 @@ id: TEAMS-D70-MON
 type: teams
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-08-30T09:30:00
+timestamp: 2026-03-15T09:30:00
 ---
 
-# Ops Monitoring — 30 Aug 2026
+# Ops Monitoring — 15 Mar 2026
 
 **Channel:** UPI Products / Ops Monitoring
-**Date:** Sunday 30 Aug 2026 · **Day archetype:** Month-end peak
+**Date:** Sunday 15 Mar 2026 · **Day archetype:** Sunday (quiet)
 
 **Harsh Nanda** · 09:15
-Morning sweep for 30 Aug. UPI Transactions at 941.2 (down 10.9 vs Sat 29 Aug);
-Success Rate at 99.92% (up 0.42 vs Sat 29 Aug); Technical Declines at 0.46% (up 0.11 vs Sat 29 Aug);
-Business Declines at 0.17%. Estimated peak ~33,769 TPS.
+Morning sweep for 15 Mar. UPI Transactions at 565.4 (down 62.4 vs Sat 14 Mar);
+Success Rate at 98.5% (down 1.48 vs Sat 14 Mar); Technical Declines at 0.42%;
+Business Declines at 0.2%. Estimated peak ~20,286 TPS.
 
-**Farhan Subramanian** · 09:22
-Lowest bank success today: IndusInd Bank at 98.92%. Settlement Success
-99.31%. Complaints: customer 1,779,
-merchant 147. Full numbers in RPT-D70-DAILY and upi_kpis_month.xlsx.
+**Lakshmi Agarwal** · 09:22
+Lowest bank success today: IDFC First Bank at 98.92%. Settlement Success
+99.98%. Complaints: customer 1,547,
+merchant 164. Full numbers in RPT-D70-DAILY and upi_kpis_month.xlsx.
 
 **Harsh Nanda** · 09:30
-Open items: INC-2026-23 (PSP callback latency increase · BHIM)
+No open incidents — steady-state monitoring.
 
-Refs: upi_kpis_month.xlsx, RPT-D70-DAILY, INC-2026-23
+Refs: upi_kpis_month.xlsx, RPT-D70-DAILY, ORG-OVERVIEW

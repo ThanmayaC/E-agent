@@ -3,66 +3,65 @@ id: RPT-D129-DAILY
 type: report
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-10-28T17:30:00
+timestamp: 2026-05-13T17:30:00
 ---
 
-# UPI Products — Daily Operations Report (Wednesday, 28 Oct 2026)
+# UPI Products — Daily Operations Report (Wednesday, 13 May 2026)
 
-**Report ID:** RPT-D129-DAILY  ·  **Prepared by:** Farhan Subramanian
-**Date:** Wednesday 28 Oct 2026  ·  **Day archetype:** Month-end peak
-**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 129 of 180)
+**Report ID:** RPT-D129-DAILY  ·  **Prepared by:** Lakshmi Agarwal
+**Date:** Wednesday 13 May 2026  ·  **Day archetype:** Weekday (steady)
+**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 129 of 206)
 
 ## Transaction summary
-The rail processed 1068.1M UPI transactions on Wednesday — the month-end surge as salary and bill-pay flows land — up 110.2M on the same day last week. Success landed at 98.41% and settlement at 99.89%, held back by live issues on TravelGo, InsureWell, Union Bank of India (detailed below).
+The rail processed 707.1M UPI transactions on Wednesday — a steady mid-week day — down 15.9M on the same day last week. Success landed at 99.98% and settlement at 99.98%, held back by live issues on TravelGo, InsureWell (detailed below).
 
 ## KPIs (today · vs yesterday / last week / month start)
-- **UPI Transactions:** 1068.1  (▲81.6 d/d, ▲110.2 w/w, ▲323.2 m/m)
-- **Success Rate:** 98.41%  (▼1.57 d/d, ▼1.57 w/w, ▼1.19 m/m)
-- **Settlement Success:** 99.89%  (▲0.17 d/d, ▲0.97 w/w, ▲0.46 m/m)
-- **Technical Declines:** 0.32%  (▼0.05 d/d, ▲0.04 w/w, ▼0.13 m/m)
-- **Business Declines:** 0.21%  (▲0.06 d/d, ▲0.06 w/w, ▲0.01 m/m)
-- **Customer Complaints:** 1,185  (▼134 d/d, ▲81 w/w, ▼757 m/m)
-- **Merchant Complaints:** 194  (▲43 d/d, ▲82 w/w, ▼17 m/m)
-- **Fraud Alerts:** 758  (▼14 d/d, ▼13 w/w, ▼293 m/m)
-- **Risk Score:** 21  (▼10 m/m)
-- **Response Time:** 598 ms  (▼19 d/d, ▲16 w/w, ▼144 m/m)
+- **UPI Transactions:** 707.1  (▼0.7 d/d, ▼15.9 w/w, ▼88.8 m/m)
+- **Success Rate:** 99.98%  (▲0.35 d/d, ▲0.85 m/m)
+- **Settlement Success:** 99.98%  (▲1.09 w/w, ▲0.03 m/m)
+- **Technical Declines:** 0.34%  (▼0.01 w/w, ▼0.21 m/m)
+- **Business Declines:** 0.22%  (▼0.03 d/d, ▲0.04 w/w, ▼0.02 m/m)
+- **Customer Complaints:** 1,178  (▼3 d/d, ▼25 w/w, ▼964 m/m)
+- **Merchant Complaints:** 165  (▼30 d/d, ▲40 w/w, ▼69 m/m)
+- **Fraud Alerts:** 838  (▲2 d/d, ▼5 w/w, ▼322 m/m)
+- **Risk Score:** 23  (▼11 m/m)
+- **Response Time:** 604 ms  (▼1 d/d, ▼9 w/w, ▼149 m/m)
 
 ## Top banks (by volume)
 | Bank | Txns (M/day) | Success |
 |------|--------------|---------|
-| State Bank of India | 343.4 | 99.5% |
-| HDFC Bank | 117.8 | 99.55% |
-| Bank of Baroda | 84.7 | 99.64% |
-| Union Bank of India | 73.6 | 99.08% |
-| ICICI Bank | 65.9 | 99.4% |
+| State Bank of India | 230.2 | 99.67% |
+| HDFC Bank | 75.6 | 99.42% |
+| Bank of Baroda | 54.4 | 99.26% |
+| Union Bank of India | 47.7 | 99.63% |
+| Axis Bank | 43.6 | 99.39% |
 
 ## Top UPI apps (by volume)
 | App / PSP | Txns (M/day) | Success | Callback p95 |
 |-----------|--------------|---------|--------------|
-| PhonePe | 509.6 | 99.14% | 231 ms |
-| Google Pay | 348.9 | 99.17% | 316 ms |
-| Paytm | 86.2 | 99.06% | 192 ms |
-| Navi | 39.4 | 99.17% | 225 ms |
-| SuperMoney | 20.8 | 99.08% | 299 ms |
+| PhonePe | 337.8 | 99.51% | 198 ms |
+| Google Pay | 231.2 | 99.35% | 241 ms |
+| Paytm | 56.1 | 99.53% | 201 ms |
+| Navi | 26.0 | 99.53% | 304 ms |
+| SuperMoney | 13.8 | 99.22% | 327 ms |
 
 ## Top features (by volume)
 | Feature | Txns (M/day) |
 |---------|--------------|
-| Person to Merchant | 400.5 |
-| Person to Person | 379.2 |
-| QR Payments | 101.5 |
-| UPI Lite | 51.3 |
-| UPI Autopay | 35.2 |
+| Person to Merchant | 261.6 |
+| Person to Person | 251.0 |
+| QR Payments | 67.2 |
+| UPI Lite | 33.9 |
+| UPI Autopay | 23.3 |
 
 ## Failure analysis
-- INC-2026-05 — bank timeout / 5xx spike on Union Bank of India (day 4 of 5); see RCA-2026-05.
-- INC-2026-24 — merchant decline-rate spike on TravelGo, InsureWell (day 1 of 5); see RCA-2026-24.
+- INC-2026-13 — merchant decline-rate spike on TravelGo, InsureWell (day 2 of 5); see RCA-2026-13.
 
 ## Recommendations
-Stay on the open incidents: keep recovery monitoring on TravelGo, InsureWell, Union Bank of India and hold the bank/PSP bridge until success clears the 99.2% floor and stays there through two clean hours.
+Stay on the open incident: keep recovery monitoring on TravelGo, InsureWell and hold the bank/PSP bridge until success clears the 99.2% floor and stays there through two clean hours.
 
 ## Notes
 All figures read from upi_kpis_month.xlsx; they match the day's monitoring note
-(TEAMS-D129-MON) and any meetings/emails on 28 Oct.
+(TEAMS-D129-MON) and any meetings/emails on 13 May.
 
-Refs: upi_kpis_month.xlsx, TEAMS-D129-MON, RPT-D128-DAILY, INC-2026-05, INC-2026-24, RCA-2026-05, RCA-2026-24
+Refs: upi_kpis_month.xlsx, TEAMS-D129-MON, RPT-D128-DAILY, INC-2026-13, RCA-2026-13

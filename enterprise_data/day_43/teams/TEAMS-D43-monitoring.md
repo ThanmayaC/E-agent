@@ -3,25 +3,25 @@ id: TEAMS-D43-MON
 type: teams
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-08-03T09:30:00
+timestamp: 2026-02-16T09:30:00
 ---
 
-# Ops Monitoring — 03 Aug 2026
+# Ops Monitoring — 16 Feb 2026
 
 **Channel:** UPI Products / Ops Monitoring
-**Date:** Monday 03 Aug 2026 · **Day archetype:** Monday (ramp-up)
+**Date:** Monday 16 Feb 2026 · **Day archetype:** Monday (ramp-up)
 
 **Harsh Nanda** · 09:15
-Morning sweep for 03 Aug. UPI Transactions at 775.9 (up 103.9 vs Sun 02 Aug);
-Success Rate at 98.73% (down 0.97 vs Sun 02 Aug); Technical Declines at 0.39% (up 0.01 vs Sun 02 Aug);
-Business Declines at 0.23% (up 0.05 vs Sun 02 Aug). Estimated peak ~27,839 TPS.
+Morning sweep for 16 Feb. UPI Transactions at 668.1 (up 113.9 vs Sun 15 Feb);
+Success Rate at 98.87% (up 0.32 vs Sun 15 Feb); Technical Declines at 0.47%;
+Business Declines at 0.22%. Estimated peak ~23,971 TPS.
 
-**Farhan Subramanian** · 09:22
-Lowest bank success today: Yes Bank at 98.48%. Settlement Success
-99.79%. Complaints: customer 1,796,
-merchant 302. Full numbers in RPT-D43-DAILY and upi_kpis_month.xlsx.
+**Lakshmi Agarwal** · 09:22
+Lowest bank success today: IDFC First Bank at 98.92%. Settlement Success
+98.81%. Complaints: customer 1,766,
+merchant 190. Full numbers in RPT-D43-DAILY and upi_kpis_month.xlsx.
 
 **Harsh Nanda** · 09:30
-Open items: INC-2026-07 (merchant settlement delay · Yes Bank)
+No open incidents — steady-state monitoring.
 
-Refs: upi_kpis_month.xlsx, RPT-D43-DAILY, INC-2026-07
+Refs: upi_kpis_month.xlsx, RPT-D43-DAILY, ORG-OVERVIEW

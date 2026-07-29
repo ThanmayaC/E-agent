@@ -3,23 +3,23 @@ id: TEAMS-D175-MON
 type: teams
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-12-13T09:30:00
+timestamp: 2026-06-28T09:30:00
 ---
 
-# Ops Monitoring — 13 Dec 2026
+# Ops Monitoring — 28 Jun 2026
 
 **Channel:** UPI Products / Ops Monitoring
-**Date:** Sunday 13 Dec 2026 · **Day archetype:** Sunday (quiet)
+**Date:** Sunday 28 Jun 2026 · **Day archetype:** Month-end peak
 
 **Harsh Nanda** · 09:15
-Morning sweep for 13 Dec. UPI Transactions at 871.0 (down 58.9 vs Sat 12 Dec);
-Success Rate at 99.98%; Technical Declines at 0.23% (down 0.01 vs Sat 12 Dec);
-Business Declines at 0.13% (down 0.01 vs Sat 12 Dec). Estimated peak ~31,251 TPS.
+Morning sweep for 28 Jun. UPI Transactions at 844.6 (up 183.9 vs Sat 27 Jun);
+Success Rate at 99.98% (up 1.02 vs Sat 27 Jun); Technical Declines at 0.28%;
+Business Declines at 0.16%. Estimated peak ~30,303 TPS.
 
-**Farhan Subramanian** · 09:22
-Lowest bank success today: IndusInd Bank at 98.92%. Settlement Success
-99.36%. Complaints: customer 862,
-merchant 85. Full numbers in RPT-D175-DAILY and upi_kpis_month.xlsx.
+**Lakshmi Agarwal** · 09:22
+Lowest bank success today: IDFC First Bank at 98.92%. Settlement Success
+99.98%. Complaints: customer 949,
+merchant 94. Full numbers in RPT-D175-DAILY and upi_kpis_month.xlsx.
 
 **Harsh Nanda** · 09:30
 No open incidents — steady-state monitoring.

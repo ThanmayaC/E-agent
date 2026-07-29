@@ -1,6 +1,7 @@
 feature,owning_team,volume_share
-Person to Merchant,UPI Core,0.375
+Person to Merchant,UPI Core,0.37
 Person to Person,UPI Core,0.355
+UPI 123Pay,UPI 123Pay,0.005
 QR Payments,QR Payments,0.095
 Collect Requests,UPI Core,0.018
 Intent Payments,UPI Core,0.028

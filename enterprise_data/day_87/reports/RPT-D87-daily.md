@@ -3,65 +3,65 @@ id: RPT-D87-DAILY
 type: report
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-09-16T17:30:00
+timestamp: 2026-04-01T17:30:00
 ---
 
-# UPI Products — Daily Operations Report (Wednesday, 16 Sep 2026)
+# UPI Products — Daily Operations Report (Wednesday, 01 Apr 2026)
 
-**Report ID:** RPT-D87-DAILY  ·  **Prepared by:** Farhan Subramanian
-**Date:** Wednesday 16 Sep 2026  ·  **Day archetype:** Weekday (steady)
-**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 87 of 180)
+**Report ID:** RPT-D87-DAILY  ·  **Prepared by:** Lakshmi Agarwal
+**Date:** Wednesday 01 Apr 2026  ·  **Day archetype:** Weekday (steady)
+**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 87 of 206)
 
 ## Transaction summary
-The rail processed 895.3M UPI transactions on Wednesday — a steady mid-week day — up 28.1M on the same day last week. Success landed at 99.98% and settlement at 99.52%, held back by live issues on Axis Mobile (detailed below).
+The rail processed 695.6M UPI transactions on Wednesday — a steady mid-week day — up 10.5M on the same day last week. Success held at 99.79% and settlement at 98.72%; the softest bank was IDFC First Bank at 98.92%, still comfortably inside the normal band.
 
 ## KPIs (today · vs yesterday / last week / month start)
-- **UPI Transactions:** 895.3  (▼12.6 d/d, ▲28.1 w/w, ▲150.4 m/m)
-- **Success Rate:** 99.98%  (▲1.35 d/d, ▲1.06 w/w, ▲0.38 m/m)
-- **Settlement Success:** 99.52%  (▼0.46 d/d, ▼0.46 w/w, ▲0.09 m/m)
-- **Technical Declines:** 0.36%  (▼0.03 d/d, ▲0.03 w/w, ▼0.09 m/m)
-- **Business Declines:** 0.16%  (▼0.04 m/m)
-- **Customer Complaints:** 1,420  (▼113 d/d, ▲90 w/w, ▼522 m/m)
-- **Merchant Complaints:** 134  (▼2 d/d, ▼5 w/w, ▼77 m/m)
-- **Fraud Alerts:** 845  (▼2 d/d, ▼20 w/w, ▼206 m/m)
-- **Risk Score:** 24  (▼7 m/m)
-- **Response Time:** 653 ms  (▼27 d/d, ▲21 w/w, ▼89 m/m)
+- **UPI Transactions:** 695.6  (▼91.9 d/d, ▲10.5 w/w, ▼100.3 m/m)
+- **Success Rate:** 99.79%  (▲1.12 d/d, ▲0.23 w/w, ▲0.66 m/m)
+- **Settlement Success:** 98.72%  (▼1.26 d/d, ▼0.22 w/w, ▼1.23 m/m)
+- **Technical Declines:** 0.4%  (▲0.01 d/d, ▼0.2 w/w, ▼0.15 m/m)
+- **Business Declines:** 0.19%  (▼0.01 w/w, ▼0.05 m/m)
+- **Customer Complaints:** 1,441  (▲6 d/d, ▼475 w/w, ▼701 m/m)
+- **Merchant Complaints:** 152  (▼3 w/w, ▼82 m/m)
+- **Fraud Alerts:** 929  (▼10 d/d, ▼6 w/w, ▼231 m/m)
+- **Risk Score:** 26  (▼1 w/w, ▼8 m/m)
+- **Response Time:** 650 ms  (▼5 d/d, ▼52 w/w, ▼103 m/m)
 
 ## Top banks (by volume)
 | Bank | Txns (M/day) | Success |
 |------|--------------|---------|
-| State Bank of India | 287.9 | 99.5% |
-| HDFC Bank | 98.8 | 99.55% |
-| Bank of Baroda | 71.0 | 99.64% |
-| Union Bank of India | 61.7 | 99.43% |
-| ICICI Bank | 55.2 | 99.4% |
+| State Bank of India | 226.4 | 99.67% |
+| HDFC Bank | 74.4 | 99.42% |
+| Bank of Baroda | 53.5 | 99.26% |
+| Union Bank of India | 46.9 | 99.63% |
+| Axis Bank | 42.9 | 99.39% |
 
 ## Top UPI apps (by volume)
 | App / PSP | Txns (M/day) | Success | Callback p95 |
 |-----------|--------------|---------|--------------|
-| PhonePe | 427.1 | 99.14% | 231 ms |
-| Google Pay | 292.4 | 99.17% | 316 ms |
-| Paytm | 72.2 | 99.06% | 192 ms |
-| Navi | 33.0 | 99.17% | 225 ms |
-| SuperMoney | 17.4 | 99.08% | 299 ms |
+| PhonePe | 332.3 | 99.51% | 198 ms |
+| Google Pay | 227.5 | 99.35% | 241 ms |
+| Paytm | 55.2 | 99.53% | 201 ms |
+| Navi | 25.6 | 99.53% | 304 ms |
+| SuperMoney | 13.6 | 99.22% | 327 ms |
 
 ## Top features (by volume)
 | Feature | Txns (M/day) |
 |---------|--------------|
-| Person to Merchant | 335.7 |
-| Person to Person | 317.8 |
-| QR Payments | 85.1 |
-| UPI Lite | 43.0 |
-| UPI Autopay | 29.5 |
+| Person to Merchant | 257.4 |
+| Person to Person | 246.9 |
+| QR Payments | 66.1 |
+| UPI Lite | 33.4 |
+| UPI Autopay | 23.0 |
 
 ## Failure analysis
-- INC-2026-14 — PSP callback latency increase on Axis Mobile (day 3 of 5); see RCA-2026-14.
+- No incidents open. Technical declines are within the 0.4% steady-state band; residual failures are routine bank/network timeouts.
 
 ## Recommendations
-Stay on the open incident: keep recovery monitoring on Axis Mobile and hold the bank/PSP bridge until success clears the 99.2% floor and stays there through two clean hours.
+Steady state — hold the monitoring line and work down the merchant-onboarding backlog.
 
 ## Notes
 All figures read from upi_kpis_month.xlsx; they match the day's monitoring note
-(TEAMS-D87-MON) and any meetings/emails on 16 Sep.
+(TEAMS-D87-MON) and any meetings/emails on 01 Apr.
 
-Refs: upi_kpis_month.xlsx, TEAMS-D87-MON, RPT-D86-DAILY, INC-2026-14, RCA-2026-14
+Refs: upi_kpis_month.xlsx, TEAMS-D87-MON, RPT-D86-DAILY

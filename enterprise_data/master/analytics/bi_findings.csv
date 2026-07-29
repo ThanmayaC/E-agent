@@ -1,15 +1,18 @@
 category,severity,finding,entity,metric,value
-growing_features,info,Fastest-growing feature: UPI Lite X (+873.9% m/m).,UPI Lite X,txns,873.9
-declining_features,watch,Weakest feature: Collect Requests (-44.2% m/m).,Collect Requests,txns,-44.2
-fastest_growing_bank,info,Fastest-growing bank by volume: AU Small Finance Bank (+45.1%).,AU Small Finance Bank,txns,45.1
-psp_share_loss,watch,PSP losing share: Amazon Pay (13.5% m/m).,Amazon Pay,txns,13.5
-high_risk_bank,watch,Union Bank of India lowest avg success (99.4%).,Union Bank of India,success_rate,99.4
-high_risk_bank,watch,IndusInd Bank lowest avg success (99.42%).,IndusInd Bank,success_rate,99.42
-high_risk_bank,watch,Yes Bank lowest avg success (99.43%).,Yes Bank,success_rate,99.43
-anomaly,high,"Success-rate anomaly on day 3 (97.389%, z=-4.1).",day 3,success_rate,97.389
-anomaly,high,"Success-rate anomaly on day 10 (98.398%, z=-2.2).",day 10,success_rate,98.398
-anomaly,high,"Success-rate anomaly on day 11 (98.076%, z=-2.8).",day 11,success_rate,98.076
-anomaly,high,"Success-rate anomaly on day 16 (98.481%, z=-2.0).",day 16,success_rate,98.481
-anomaly,high,"Success-rate anomaly on day 126 (98.217%, z=-2.5).",day 126,success_rate,98.217
-anomaly,high,"Success-rate anomaly on day 129 (98.41%, z=-2.1).",day 129,success_rate,98.41
-regional_growth,info,Fastest-growing city: Guwahati (+60.4%).,Guwahati,txns,60.4
+growing_features,info,Fastest-growing feature: UPI Lite X (+1081.8% m/m).,UPI Lite X,txns,1081.8
+declining_features,watch,Weakest feature: Collect Requests (-55.0% m/m).,Collect Requests,txns,-55.0
+fastest_growing_bank,info,Fastest-growing bank by volume: Kotak Mahindra Bank (+25.2%).,Kotak Mahindra Bank,txns,25.2
+psp_share_loss,watch,PSP losing share: FamApp (3.1% m/m).,FamApp,txns,3.1
+high_risk_bank,watch,IDFC First Bank lowest avg success (99.22%).,IDFC First Bank,success_rate,99.22
+high_risk_bank,watch,Federal Bank lowest avg success (99.22%).,Federal Bank,success_rate,99.22
+high_risk_bank,watch,AU Small Finance Bank lowest avg success (99.26%).,AU Small Finance Bank,success_rate,99.26
+anomaly,high,"Success-rate anomaly on day 10 (98.265%, z=-2.2).",day 10,success_rate,98.265
+anomaly,high,"Success-rate anomaly on day 13 (98.346%, z=-2.0).",day 13,success_rate,98.346
+anomaly,high,"Success-rate anomaly on day 17 (98.335%, z=-2.0).",day 17,success_rate,98.335
+anomaly,high,"Success-rate anomaly on day 22 (98.092%, z=-2.5).",day 22,success_rate,98.092
+anomaly,high,"Success-rate anomaly on day 54 (98.343%, z=-2.0).",day 54,success_rate,98.343
+anomaly,high,"Success-rate anomaly on day 55 (98.206%, z=-2.3).",day 55,success_rate,98.206
+anomaly,high,"Success-rate anomaly on day 60 (98.255%, z=-2.2).",day 60,success_rate,98.255
+anomaly,high,"Success-rate anomaly on day 92 (98.172%, z=-2.4).",day 92,success_rate,98.172
+anomaly,high,"Success-rate anomaly on day 94 (98.309%, z=-2.1).",day 94,success_rate,98.309
+regional_growth,info,Fastest-growing city: Mumbai (+27.6%).,Mumbai,txns,27.6

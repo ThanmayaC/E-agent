@@ -3,7 +3,8 @@ PRD-UPICORE,UPI Core,UPI Core,EMP-1006,Deepak Ghosh,Core real-time person-to-per
 PRD-UPIAUTOP,UPI Autopay,UPI Autopay,EMP-1009,Rekha Joshi,"Recurring e-mandates for subscriptions, SIPs, bill payments and EMIs."
 PRD-UPILITE,UPI Lite,UPI Lite,EMP-1013,Yash Gupta,On-device low-value payments without a PIN for small-ticket transactions.
 PRD-UPILITEX,UPI Lite X,UPI Lite X,EMP-1016,Deepak Patel,Offline UPI Lite payments over NFC without an active internet connection.
-PRD-UPICREDI,UPI Credit,UPI Credit,EMP-1020,Kavya Nanda,Credit-line-on-UPI and RuPay credit card linkage for pay-later flows.
-PRD-UPIINTER,UPI International,UPI International,EMP-1023,Ishaan Verma,Cross-border UPI acceptance for Indian travellers and NRIs.
-PRD-MERCHANT,Merchant Products,Merchant Products,EMP-1027,Sunil Pillai,"Merchant onboarding, soundbox, and settlement products."
-PRD-QRPAYMEN,QR Payments,QR Payments,EMP-1031,Deepak Rao,Interoperable UPI QR (static and dynamic) for merchant acceptance.
+PRD-UPI123PA,UPI 123Pay,UPI 123Pay,EMP-1020,Kavya Nanda,"UPI for feature phones via IVR, missed-call, sound-based and on-device app flows — no smartphone or internet needed."
+PRD-UPICREDI,UPI Credit,UPI Credit,EMP-1023,Ishaan Verma,Credit-line-on-UPI and RuPay credit card linkage for pay-later flows.
+PRD-UPIINTER,UPI International,UPI International,EMP-1027,Sunil Pillai,Cross-border UPI acceptance for Indian travellers and NRIs.
+PRD-MERCHANT,Merchant Products,Merchant Products,EMP-1031,Deepak Rao,"Merchant onboarding, soundbox, and settlement products."
+PRD-QRPAYMEN,QR Payments,QR Payments,EMP-1033,Rekha Rao,Interoperable UPI QR (static and dynamic) for merchant acceptance.

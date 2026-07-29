@@ -1,16 +1,16 @@
 merchant_id,name,category,region,psp,settlement_bank,monthly_gmv_cr
-MID-2001,BharatKart,E-commerce,North,Paytm,IDFC First Bank,36.5
-MID-2002,FreshBasket,Grocery,West,BHIM,IndusInd Bank,105.7
-MID-2003,MetroRide,Mobility,South,PhonePe,State Bank of India,72.2
-MID-2004,FlixStream,OTT / Subscriptions,East,CRED,Kotak Mahindra Bank,128.7
-MID-2005,EduPrime,EdTech,West,YONO SBI,Canara Bank,228.6
-MID-2006,HealthFirst,Pharmacy,East,BHIM,ICICI Bank,153.7
-MID-2007,TravelGo,Travel,East,CRED,Indian Bank,177.6
-MID-2008,StyleHub,Fashion,West,WhatsApp Pay,Indian Bank,231.4
-MID-2009,QuickBite,Food Delivery,North,YONO SBI,IDFC First Bank,161.6
-MID-2010,PowerPay Utilities,Utilities,West,CRED,IndusInd Bank,187.2
-MID-2011,InsureWell,Insurance,Central,Axis Mobile,Federal Bank,171.4
-MID-2012,GadgetZone,Electronics,West,Google Pay,AU Small Finance Bank,202.2
-MID-2013,DailyMart,Retail,West,SuperMoney,Canara Bank,27.2
-MID-2014,WealthGrow,Wealth / SIP,East,CRED,Federal Bank,216.4
-MID-2015,CityFuel,Fuel,West,HDFC MobileBanking,IndusInd Bank,144.8
+MID-2001,BharatKart,E-commerce,South,iMobile Pay,ICICI Bank,50.6
+MID-2002,FreshBasket,Grocery,Central,Navi,Union Bank of India,69.2
+MID-2003,MetroRide,Mobility,Central,iMobile Pay,Yes Bank,81.7
+MID-2004,FlixStream,OTT / Subscriptions,East,iMobile Pay,Axis Bank,138.3
+MID-2005,EduPrime,EdTech,West,Paytm,Bank of Baroda,215.4
+MID-2006,HealthFirst,Pharmacy,East,Paytm,Yes Bank,179.6
+MID-2007,TravelGo,Travel,South,FamApp,HDFC Bank,27.8
+MID-2008,StyleHub,Fashion,Central,Amazon Pay,Canara Bank,39.1
+MID-2009,QuickBite,Food Delivery,South,YONO SBI,Indian Bank,14.8
+MID-2010,PowerPay Utilities,Utilities,East,Amazon Pay,Axis Bank,131.5
+MID-2011,InsureWell,Insurance,East,Axis Mobile,HDFC Bank,88.7
+MID-2012,GadgetZone,Electronics,North,iMobile Pay,Bank of Baroda,188.5
+MID-2013,DailyMart,Retail,South,iMobile Pay,Bank of Baroda,59.1
+MID-2014,WealthGrow,Wealth / SIP,South,WhatsApp Pay,Punjab National Bank,84.3
+MID-2015,CityFuel,Fuel,North,Amazon Pay,Punjab National Bank,141.3

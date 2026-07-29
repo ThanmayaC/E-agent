@@ -3,65 +3,65 @@ id: RPT-D71-DAILY
 type: report
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-08-31T17:30:00
+timestamp: 2026-03-16T17:30:00
 ---
 
-# UPI Products — Daily Operations Report (Monday, 31 Aug 2026)
+# UPI Products — Daily Operations Report (Monday, 16 Mar 2026)
 
-**Report ID:** RPT-D71-DAILY  ·  **Prepared by:** Farhan Subramanian
-**Date:** Monday 31 Aug 2026  ·  **Day archetype:** Month-end peak
-**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 71 of 180)
+**Report ID:** RPT-D71-DAILY  ·  **Prepared by:** Lakshmi Agarwal
+**Date:** Monday 16 Mar 2026  ·  **Day archetype:** Monday (ramp-up)
+**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 71 of 206)
 
 ## Transaction summary
-The rail processed 956.8M UPI transactions on Monday — the month-end surge as salary and bill-pay flows land — up 132.6M on the same day last week. Success landed at 99.98% and settlement at 99.98%, held back by live issues on BHIM (detailed below).
+The rail processed 680.8M UPI transactions on Monday — the Monday ramp-up after the weekend — down 167.9M on the same day last week. Success held at 99.41% and settlement at 99.37%; the softest bank was IDFC First Bank at 98.92%, still comfortably inside the normal band.
 
 ## KPIs (today · vs yesterday / last week / month start)
-- **UPI Transactions:** 956.8  (▲15.6 d/d, ▲132.6 w/w, ▲211.9 m/m)
-- **Success Rate:** 99.98%  (▲0.06 d/d, ▲1.07 w/w, ▲0.38 m/m)
-- **Settlement Success:** 99.98%  (▲0.67 d/d, ▲0.55 m/m)
-- **Technical Declines:** 0.42%  (▼0.04 d/d, ▲0.07 w/w, ▼0.03 m/m)
-- **Business Declines:** 0.17%  (▼0.03 m/m)
-- **Customer Complaints:** 1,633  (▼146 d/d, ▲198 w/w, ▼309 m/m)
-- **Merchant Complaints:** 145  (▼2 d/d, ▼5 w/w, ▼66 m/m)
-- **Fraud Alerts:** 883  (▼3 d/d, ▼6 w/w, ▼168 m/m)
-- **Risk Score:** 25  (▼6 m/m)
-- **Response Time:** 698 ms  (▼35 d/d, ▲43 w/w, ▼44 m/m)
+- **UPI Transactions:** 680.8  (▲115.4 d/d, ▼167.9 w/w, ▼115.1 m/m)
+- **Success Rate:** 99.41%  (▲0.91 d/d, ▼0.39 w/w, ▲0.28 m/m)
+- **Settlement Success:** 99.37%  (▼0.61 d/d, ▲0.61 w/w, ▼0.58 m/m)
+- **Technical Declines:** 0.42%  (▼0.01 w/w, ▼0.13 m/m)
+- **Business Declines:** 0.2%  (▼0.04 m/m)
+- **Customer Complaints:** 1,554  (▲7 d/d, ▼35 w/w, ▼588 m/m)
+- **Merchant Complaints:** 163  (▼1 d/d, ▼5 w/w, ▼71 m/m)
+- **Fraud Alerts:** 962  (▼9 d/d, ▼20 w/w, ▼198 m/m)
+- **Risk Score:** 27  (▼1 w/w, ▼7 m/m)
+- **Response Time:** 665 ms  (▼8 d/d, ▼16 w/w, ▼88 m/m)
 
 ## Top banks (by volume)
 | Bank | Txns (M/day) | Success |
 |------|--------------|---------|
-| State Bank of India | 307.6 | 99.5% |
-| HDFC Bank | 105.6 | 99.55% |
-| Bank of Baroda | 75.9 | 99.64% |
-| Union Bank of India | 65.9 | 99.43% |
-| ICICI Bank | 59.0 | 99.4% |
+| State Bank of India | 221.6 | 99.67% |
+| HDFC Bank | 72.8 | 99.42% |
+| Bank of Baroda | 52.4 | 99.26% |
+| Union Bank of India | 45.9 | 99.63% |
+| Axis Bank | 41.9 | 99.39% |
 
 ## Top UPI apps (by volume)
 | App / PSP | Txns (M/day) | Success | Callback p95 |
 |-----------|--------------|---------|--------------|
-| PhonePe | 456.5 | 99.14% | 231 ms |
-| Google Pay | 312.5 | 99.17% | 316 ms |
-| Paytm | 77.2 | 99.06% | 192 ms |
-| Navi | 35.3 | 99.17% | 225 ms |
-| SuperMoney | 18.6 | 99.08% | 299 ms |
+| PhonePe | 325.2 | 99.51% | 198 ms |
+| Google Pay | 222.6 | 99.35% | 241 ms |
+| Paytm | 54.0 | 99.53% | 201 ms |
+| Navi | 25.0 | 99.53% | 304 ms |
+| SuperMoney | 13.3 | 99.22% | 327 ms |
 
 ## Top features (by volume)
 | Feature | Txns (M/day) |
 |---------|--------------|
-| Person to Merchant | 358.8 |
-| Person to Person | 339.7 |
-| QR Payments | 90.9 |
-| UPI Lite | 45.9 |
-| UPI Autopay | 31.6 |
+| Person to Merchant | 251.9 |
+| Person to Person | 241.7 |
+| QR Payments | 64.7 |
+| UPI Lite | 32.7 |
+| UPI Autopay | 22.5 |
 
 ## Failure analysis
-- INC-2026-23 — PSP callback latency increase on BHIM (day 2 of 2); see INC-2026-23.
+- No incidents open. Technical declines are within the 0.42% steady-state band; residual failures are routine bank/network timeouts.
 
 ## Recommendations
-Stay on the open incident: keep recovery monitoring on BHIM and hold the bank/PSP bridge until success clears the 99.2% floor and stays there through two clean hours.
+Steady state — hold the monitoring line and work down the merchant-onboarding backlog.
 
 ## Notes
 All figures read from upi_kpis_month.xlsx; they match the day's monitoring note
-(TEAMS-D71-MON) and any meetings/emails on 31 Aug.
+(TEAMS-D71-MON) and any meetings/emails on 16 Mar.
 
-Refs: upi_kpis_month.xlsx, TEAMS-D71-MON, RPT-D70-DAILY, INC-2026-23
+Refs: upi_kpis_month.xlsx, TEAMS-D71-MON, RPT-D70-DAILY

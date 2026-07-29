@@ -3,65 +3,65 @@ id: RPT-D124-DAILY
 type: report
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-10-23T17:30:00
+timestamp: 2026-05-08T17:30:00
 ---
 
-# UPI Products — Daily Operations Report (Friday, 23 Oct 2026)
+# UPI Products — Daily Operations Report (Friday, 08 May 2026)
 
-**Report ID:** RPT-D124-DAILY  ·  **Prepared by:** Farhan Subramanian
-**Date:** Friday 23 Oct 2026  ·  **Day archetype:** Weekday (steady)
-**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 124 of 180)
+**Report ID:** RPT-D124-DAILY  ·  **Prepared by:** Lakshmi Agarwal
+**Date:** Friday 08 May 2026  ·  **Day archetype:** Weekday (steady)
+**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 124 of 206)
 
 ## Transaction summary
-The rail processed 952.6M UPI transactions on Friday — a steady mid-week day — up 16.5M on the same day last week. Success held at 99.98% and settlement at 99.51%; the softest bank was IndusInd Bank at 98.92%, still comfortably inside the normal band.
+The rail processed 717.9M UPI transactions on Friday — a steady mid-week day — down 10.0M on the same day last week. Success landed at 99.59% and settlement at 99.7%, held back by live issues on AU Small Finance Bank (detailed below).
 
 ## KPIs (today · vs yesterday / last week / month start)
-- **UPI Transactions:** 952.6  (▲9.1 d/d, ▲16.5 w/w, ▲207.7 m/m)
-- **Success Rate:** 99.98%  (▲0.73 w/w, ▲0.38 m/m)
-- **Settlement Success:** 99.51%  (▼0.31 d/d, ▼0.32 w/w, ▲0.08 m/m)
-- **Technical Declines:** 0.28%  (▼0.11 w/w, ▼0.17 m/m)
-- **Business Declines:** 0.15%  (▼0.05 m/m)
-- **Customer Complaints:** 1,087  (▼7 d/d, ▼372 w/w, ▼855 m/m)
-- **Merchant Complaints:** 110  (▼2 d/d, ▼4 w/w, ▼101 m/m)
-- **Fraud Alerts:** 770  (▼12 d/d, ▼20 w/w, ▼281 m/m)
-- **Risk Score:** 21  (▼2 w/w, ▼10 m/m)
-- **Response Time:** 585 ms  (▼90 w/w, ▼157 m/m)
+- **UPI Transactions:** 717.9  (▲17.1 d/d, ▼10.0 w/w, ▼78.0 m/m)
+- **Success Rate:** 99.59%  (▼0.39 d/d, ▼0.39 w/w, ▲0.46 m/m)
+- **Settlement Success:** 99.7%  (▼0.28 d/d, ▲1.02 w/w, ▼0.25 m/m)
+- **Technical Declines:** 0.35%  (▲0.01 d/d, ▼0.01 w/w, ▼0.2 m/m)
+- **Business Declines:** 0.23%  (▲0.05 d/d, ▼0.04 w/w, ▼0.01 m/m)
+- **Customer Complaints:** 1,355  (▲154 d/d, ▼123 w/w, ▼787 m/m)
+- **Merchant Complaints:** 219  (▲93 d/d, ▼75 w/w, ▼15 m/m)
+- **Fraud Alerts:** 843  (▲1 d/d, ▼19 w/w, ▼317 m/m)
+- **Risk Score:** 23  (▼11 m/m)
+- **Response Time:** 605 ms  (▲2 d/d, ▼6 w/w, ▼148 m/m)
 
 ## Top banks (by volume)
 | Bank | Txns (M/day) | Success |
 |------|--------------|---------|
-| State Bank of India | 306.3 | 99.5% |
-| HDFC Bank | 105.1 | 99.55% |
-| Bank of Baroda | 75.5 | 99.64% |
-| Union Bank of India | 65.6 | 99.43% |
-| ICICI Bank | 58.7 | 99.4% |
+| State Bank of India | 233.7 | 99.67% |
+| HDFC Bank | 76.8 | 99.42% |
+| Bank of Baroda | 55.2 | 99.26% |
+| Union Bank of India | 48.4 | 99.63% |
+| Axis Bank | 44.2 | 99.39% |
 
 ## Top UPI apps (by volume)
 | App / PSP | Txns (M/day) | Success | Callback p95 |
 |-----------|--------------|---------|--------------|
-| PhonePe | 454.5 | 99.14% | 231 ms |
-| Google Pay | 311.2 | 99.17% | 316 ms |
-| Paytm | 76.9 | 99.06% | 192 ms |
-| Navi | 35.1 | 99.17% | 225 ms |
-| SuperMoney | 18.6 | 99.08% | 299 ms |
+| PhonePe | 342.9 | 99.51% | 198 ms |
+| Google Pay | 234.8 | 99.35% | 241 ms |
+| Paytm | 56.9 | 99.53% | 201 ms |
+| Navi | 26.4 | 99.53% | 304 ms |
+| SuperMoney | 14.0 | 99.22% | 327 ms |
 
 ## Top features (by volume)
 | Feature | Txns (M/day) |
 |---------|--------------|
-| Person to Merchant | 357.2 |
-| Person to Person | 338.2 |
-| QR Payments | 90.5 |
-| UPI Lite | 45.7 |
-| UPI Autopay | 31.4 |
+| Person to Merchant | 265.6 |
+| Person to Person | 254.9 |
+| QR Payments | 68.2 |
+| UPI Lite | 34.5 |
+| UPI Autopay | 23.7 |
 
 ## Failure analysis
-- No incidents open. Technical declines are within the 0.28% steady-state band; residual failures are routine bank/network timeouts.
+- INC-2026-26 — merchant settlement delay on AU Small Finance Bank (day 1 of 4); see RCA-2026-26.
 
 ## Recommendations
-Steady state — no action beyond routine watch; pick up the SLA trend at the next sync.
+Stay on the open incident: keep recovery monitoring on AU Small Finance Bank and hold the bank/PSP bridge until success clears the 99.2% floor and stays there through two clean hours.
 
 ## Notes
 All figures read from upi_kpis_month.xlsx; they match the day's monitoring note
-(TEAMS-D124-MON) and any meetings/emails on 23 Oct.
+(TEAMS-D124-MON) and any meetings/emails on 08 May.
 
-Refs: upi_kpis_month.xlsx, TEAMS-D124-MON, RPT-D123-DAILY
+Refs: upi_kpis_month.xlsx, TEAMS-D124-MON, RPT-D123-DAILY, INC-2026-26, RCA-2026-26

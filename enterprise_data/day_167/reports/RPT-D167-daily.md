@@ -3,65 +3,65 @@ id: RPT-D167-DAILY
 type: report
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-12-05T17:30:00
+timestamp: 2026-06-20T17:30:00
 ---
 
-# UPI Products — Daily Operations Report (Saturday, 05 Dec 2026)
+# UPI Products — Daily Operations Report (Saturday, 20 Jun 2026)
 
-**Report ID:** RPT-D167-DAILY  ·  **Prepared by:** Farhan Subramanian
-**Date:** Saturday 05 Dec 2026  ·  **Day archetype:** Saturday (lighter)
-**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 167 of 180)
+**Report ID:** RPT-D167-DAILY  ·  **Prepared by:** Lakshmi Agarwal
+**Date:** Saturday 20 Jun 2026  ·  **Day archetype:** Saturday (lighter)
+**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 167 of 206)
 
 ## Transaction summary
-The rail processed 935.9M UPI transactions on Saturday — a lighter Saturday — down 182.0M on the same day last week. Success landed at 99.94% and settlement at 99.98%, held back by live issues on QR Payments (detailed below).
+The rail processed 663.7M UPI transactions on Saturday — a lighter Saturday — down 7.8M on the same day last week. Success held at 99.98% and settlement at 99.28%; the softest bank was IDFC First Bank at 98.92%, still comfortably inside the normal band.
 
 ## KPIs (today · vs yesterday / last week / month start)
-- **UPI Transactions:** 935.9  (▼75.3 d/d, ▼182.0 w/w, ▲191.0 m/m)
-- **Success Rate:** 99.94%  (▲0.01 d/d, ▼0.04 w/w, ▲0.34 m/m)
-- **Settlement Success:** 99.98%  (▲0.55 m/m)
-- **Technical Declines:** 0.31%  (▼0.05 d/d, ▲0.06 w/w, ▼0.14 m/m)
-- **Business Declines:** 0.13%  (▼0.07 m/m)
-- **Customer Complaints:** 1,047  (▼109 d/d, ▲124 w/w, ▼895 m/m)
-- **Merchant Complaints:** 89  (▼3 w/w, ▼122 m/m)
-- **Fraud Alerts:** 688  (▼6 d/d, ▼23 w/w, ▼363 m/m)
-- **Risk Score:** 19  (▲1 d/d, ▼12 m/m)
-- **Response Time:** 569 ms  (▼15 d/d, ▲25 w/w, ▼173 m/m)
+- **UPI Transactions:** 663.7  (▼73.8 d/d, ▼7.8 w/w, ▼132.2 m/m)
+- **Success Rate:** 99.98%  (▲0.43 d/d, ▲0.28 w/w, ▲0.85 m/m)
+- **Settlement Success:** 99.28%  (▼0.7 w/w, ▼0.67 m/m)
+- **Technical Declines:** 0.29%  (▼0.01 w/w, ▼0.26 m/m)
+- **Business Declines:** 0.16%  (▼0.08 m/m)
+- **Customer Complaints:** 981  (▼12 d/d, ▼24 w/w, ▼1161 m/m)
+- **Merchant Complaints:** 99  (▼1 d/d, ▼5 w/w, ▼135 m/m)
+- **Fraud Alerts:** 761  (▲4 d/d, ▼20 w/w, ▼399 m/m)
+- **Risk Score:** 20  (▼1 w/w, ▼14 m/m)
+- **Response Time:** 562 ms  (▲6 d/d, ▼2 w/w, ▼191 m/m)
 
 ## Top banks (by volume)
 | Bank | Txns (M/day) | Success |
 |------|--------------|---------|
-| State Bank of India | 300.9 | 99.5% |
-| HDFC Bank | 103.2 | 99.55% |
-| Bank of Baroda | 74.2 | 99.64% |
-| Union Bank of India | 64.5 | 99.43% |
-| ICICI Bank | 57.7 | 99.4% |
+| State Bank of India | 216.0 | 99.67% |
+| HDFC Bank | 71.0 | 99.42% |
+| Bank of Baroda | 51.1 | 99.26% |
+| Union Bank of India | 44.8 | 99.63% |
+| Axis Bank | 40.9 | 99.39% |
 
 ## Top UPI apps (by volume)
 | App / PSP | Txns (M/day) | Success | Callback p95 |
 |-----------|--------------|---------|--------------|
-| PhonePe | 446.5 | 99.14% | 231 ms |
-| Google Pay | 305.7 | 99.17% | 316 ms |
-| Paytm | 75.5 | 99.06% | 192 ms |
-| Navi | 34.5 | 99.17% | 225 ms |
-| SuperMoney | 18.2 | 99.08% | 299 ms |
+| PhonePe | 317.0 | 99.51% | 198 ms |
+| Google Pay | 217.1 | 99.35% | 241 ms |
+| Paytm | 52.6 | 99.53% | 201 ms |
+| Navi | 24.4 | 99.53% | 304 ms |
+| SuperMoney | 12.9 | 99.22% | 327 ms |
 
 ## Top features (by volume)
 | Feature | Txns (M/day) |
 |---------|--------------|
-| Person to Merchant | 351.0 |
-| Person to Person | 332.2 |
-| QR Payments | 88.9 |
-| UPI Lite | 44.9 |
-| UPI Autopay | 30.9 |
+| Person to Merchant | 245.6 |
+| Person to Person | 235.6 |
+| QR Payments | 63.1 |
+| UPI Lite | 31.9 |
+| UPI Autopay | 21.9 |
 
 ## Failure analysis
-- INC-2026-21 — feature-level degradation on QR Payments (day 2 of 5); see RCA-2026-21.
+- No incidents open. Technical declines are within the 0.29% steady-state band; residual failures are routine bank/network timeouts.
 
 ## Recommendations
-Stay on the open incident: keep recovery monitoring on QR Payments and hold the bank/PSP bridge until success clears the 99.2% floor and stays there through two clean hours.
+Steady state — hold the monitoring line and work down the merchant-onboarding backlog.
 
 ## Notes
 All figures read from upi_kpis_month.xlsx; they match the day's monitoring note
-(TEAMS-D167-MON) and any meetings/emails on 05 Dec.
+(TEAMS-D167-MON) and any meetings/emails on 20 Jun.
 
-Refs: upi_kpis_month.xlsx, TEAMS-D167-MON, RPT-D166-DAILY, INC-2026-21, RCA-2026-21
+Refs: upi_kpis_month.xlsx, TEAMS-D167-MON, RPT-D166-DAILY

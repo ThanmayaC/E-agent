@@ -3,65 +3,66 @@ id: RPT-D52-DAILY
 type: report
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-08-12T17:30:00
+timestamp: 2026-02-25T17:30:00
 ---
 
-# UPI Products — Daily Operations Report (Wednesday, 12 Aug 2026)
+# UPI Products — Daily Operations Report (Wednesday, 25 Feb 2026)
 
-**Report ID:** RPT-D52-DAILY  ·  **Prepared by:** Farhan Subramanian
-**Date:** Wednesday 12 Aug 2026  ·  **Day archetype:** Weekday (steady)
-**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 52 of 180)
+**Report ID:** RPT-D52-DAILY  ·  **Prepared by:** Lakshmi Agarwal
+**Date:** Wednesday 25 Feb 2026  ·  **Day archetype:** High-volume campaign day
+**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 52 of 206)
 
 ## Transaction summary
-The rail processed 830.8M UPI transactions on Wednesday — a steady mid-week day — up 13.3M on the same day last week. Success held at 99.98% and settlement at 99.82%; the softest bank was IndusInd Bank at 98.92%, still comfortably inside the normal band.
+The rail processed 824.9M UPI transactions on Wednesday — a campaign-driven high-volume day — up 141.7M on the same day last week. Success landed at 99.29% and settlement at 99.35%, held back by live issues on Google Pay, Navi (detailed below).
 
 ## KPIs (today · vs yesterday / last week / month start)
-- **UPI Transactions:** 830.8  (▲23.3 d/d, ▲13.3 w/w, ▲85.9 m/m)
-- **Success Rate:** 99.98%  (▲0.29 w/w, ▲0.38 m/m)
-- **Settlement Success:** 99.82%  (▲0.92 d/d, ▼0.16 w/w, ▲0.39 m/m)
-- **Technical Declines:** 0.37%  (▼0.01 w/w, ▼0.08 m/m)
-- **Business Declines:** 0.18%  (▼0.02 m/m)
-- **Customer Complaints:** 1,533  (▼20 d/d, ▼57 w/w, ▼409 m/m)
-- **Merchant Complaints:** 162  (▼1 d/d, ▼7 w/w, ▼49 m/m)
-- **Fraud Alerts:** 930  (▲5 d/d, ▼19 w/w, ▼121 m/m)
-- **Risk Score:** 26  (▼1 d/d, ▼1 w/w, ▼5 m/m)
-- **Response Time:** 667 ms  (▲3 d/d, ▼13 w/w, ▼75 m/m)
+- **UPI Transactions:** 824.9  (▼5.1 d/d, ▲141.7 w/w, ▲29.0 m/m)
+- **Success Rate:** 99.29%  (▼0.12 w/w, ▲0.16 m/m)
+- **Settlement Success:** 99.35%  (▼0.63 d/d, ▼0.54 w/w, ▼0.6 m/m)
+- **Technical Declines:** 0.61%  (▲0.16 d/d, ▲0.14 w/w, ▲0.06 m/m)
+- **Business Declines:** 0.27%  (▼0.04 d/d, ▲0.05 w/w, ▲0.03 m/m)
+- **Customer Complaints:** 2,328  (▲272 d/d, ▲567 w/w, ▲186 m/m)
+- **Merchant Complaints:** 181  (▼6 w/w, ▼53 m/m)
+- **Fraud Alerts:** 1,126  (▼108 d/d, ▲94 w/w, ▼34 m/m)
+- **Risk Score:** 37  (▼7 d/d, ▲8 w/w, ▲3 m/m)
+- **Response Time:** 787 ms  (▲91 d/d, ▲87 w/w, ▲34 m/m)
 
 ## Top banks (by volume)
 | Bank | Txns (M/day) | Success |
 |------|--------------|---------|
-| State Bank of India | 267.1 | 99.5% |
-| HDFC Bank | 91.7 | 99.55% |
-| Bank of Baroda | 65.9 | 99.64% |
-| Union Bank of India | 57.2 | 99.43% |
-| ICICI Bank | 51.2 | 99.4% |
+| State Bank of India | 268.5 | 99.67% |
+| HDFC Bank | 88.2 | 99.42% |
+| Bank of Baroda | 63.5 | 99.26% |
+| Union Bank of India | 55.6 | 99.63% |
+| Axis Bank | 50.8 | 99.39% |
 
 ## Top UPI apps (by volume)
 | App / PSP | Txns (M/day) | Success | Callback p95 |
 |-----------|--------------|---------|--------------|
-| PhonePe | 396.4 | 99.14% | 231 ms |
-| Google Pay | 271.4 | 99.17% | 316 ms |
-| Paytm | 67.0 | 99.06% | 192 ms |
-| Navi | 30.6 | 99.17% | 225 ms |
-| SuperMoney | 16.2 | 99.08% | 299 ms |
+| PhonePe | 394.0 | 99.51% | 198 ms |
+| Google Pay | 269.8 | 99.01% | 372 ms |
+| Paytm | 65.4 | 99.53% | 201 ms |
+| Navi | 30.3 | 98.93% | 468 ms |
+| SuperMoney | 16.1 | 99.22% | 327 ms |
 
 ## Top features (by volume)
 | Feature | Txns (M/day) |
 |---------|--------------|
-| Person to Merchant | 311.5 |
-| Person to Person | 294.9 |
-| QR Payments | 78.9 |
-| UPI Lite | 39.9 |
-| UPI Autopay | 27.4 |
+| Person to Merchant | 305.2 |
+| Person to Person | 292.8 |
+| QR Payments | 78.4 |
+| UPI Lite | 39.6 |
+| UPI Autopay | 27.2 |
 
 ## Failure analysis
-- No incidents open. Technical declines are within the 0.37% steady-state band; residual failures are routine bank/network timeouts.
+- INC-2026-19 — fraud / risk spike on Google Pay (day 3 of 3); see RCA-2026-19.
+- INC-2026-22 — PSP callback latency increase on Navi (day 1 of 4); see RCA-2026-22.
 
 ## Recommendations
-Steady state — no action beyond routine watch; pick up the SLA trend at the next sync.
+Stay on the open incidents: keep recovery monitoring on Google Pay, Navi and hold the bank/PSP bridge until success clears the 99.2% floor and stays there through two clean hours.
 
 ## Notes
 All figures read from upi_kpis_month.xlsx; they match the day's monitoring note
-(TEAMS-D52-MON) and any meetings/emails on 12 Aug.
+(TEAMS-D52-MON) and any meetings/emails on 25 Feb.
 
-Refs: upi_kpis_month.xlsx, TEAMS-D52-MON, RPT-D51-DAILY
+Refs: upi_kpis_month.xlsx, TEAMS-D52-MON, RPT-D51-DAILY, INC-2026-19, INC-2026-22, RCA-2026-19, RCA-2026-22

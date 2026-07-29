@@ -3,65 +3,65 @@ id: RPT-D101-DAILY
 type: report
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-09-30T17:30:00
+timestamp: 2026-04-15T17:30:00
 ---
 
-# UPI Products — Daily Operations Report (Wednesday, 30 Sep 2026)
+# UPI Products — Daily Operations Report (Wednesday, 15 Apr 2026)
 
-**Report ID:** RPT-D101-DAILY  ·  **Prepared by:** Farhan Subramanian
-**Date:** Wednesday 30 Sep 2026  ·  **Day archetype:** Month-end peak
-**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 101 of 180)
+**Report ID:** RPT-D101-DAILY  ·  **Prepared by:** Lakshmi Agarwal
+**Date:** Wednesday 15 Apr 2026  ·  **Day archetype:** Weekday (steady)
+**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 101 of 206)
 
 ## Transaction summary
-The rail processed 1005.4M UPI transactions on Wednesday — the month-end surge as salary and bill-pay flows land — up 104.0M on the same day last week. Success landed at 99.98% and settlement at 98.84%, held back by live issues on State Bank of India (detailed below).
+The rail processed 709.8M UPI transactions on Wednesday — a steady mid-week day — down 0.9M on the same day last week. Success landed at 99.25% and settlement at 98.65%, held back by live issues on Kotak Mahindra Bank (detailed below).
 
 ## KPIs (today · vs yesterday / last week / month start)
-- **UPI Transactions:** 1005.4  (▼24.3 d/d, ▲104.0 w/w, ▲260.5 m/m)
-- **Success Rate:** 99.98%  (▲0.38 m/m)
-- **Settlement Success:** 98.84%  (▼1.14 w/w, ▼0.59 m/m)
-- **Technical Declines:** 0.31%  (▼0.01 w/w, ▼0.14 m/m)
-- **Business Declines:** 0.19%  (▼0.01 d/d, ▲0.03 w/w, ▼0.01 m/m)
-- **Customer Complaints:** 1,305  (▼72 d/d, ▲54 w/w, ▼637 m/m)
-- **Merchant Complaints:** 187  (▼35 d/d, ▲58 w/w, ▼24 m/m)
-- **Fraud Alerts:** 824  (▼2 d/d, ▼7 w/w, ▼227 m/m)
-- **Risk Score:** 23  (▼8 m/m)
-- **Response Time:** 616 ms  (▲5 d/d, ▼6 w/w, ▼126 m/m)
+- **UPI Transactions:** 709.8  (▼1.0 d/d, ▼0.9 w/w, ▼86.1 m/m)
+- **Success Rate:** 99.25%  (▼0.07 d/d, ▲0.94 w/w, ▲0.12 m/m)
+- **Settlement Success:** 98.65%  (▼1.33 d/d, ▼1.33 w/w, ▼1.3 m/m)
+- **Technical Declines:** 0.38%  (▲0.01 d/d, ▼0.14 w/w, ▼0.17 m/m)
+- **Business Declines:** 0.24%  (▲0.05 d/d, ▲0.05 w/w)
+- **Customer Complaints:** 1,511  (▲159 d/d, ▼192 w/w, ▼631 m/m)
+- **Merchant Complaints:** 249  (▲107 d/d, ▲49 w/w, ▲15 m/m)
+- **Fraud Alerts:** 904  (▲6 d/d, ▼3 w/w, ▼256 m/m)
+- **Risk Score:** 25  (▼9 m/m)
+- **Response Time:** 629 ms  (▲1 d/d, ▼41 w/w, ▼124 m/m)
 
 ## Top banks (by volume)
 | Bank | Txns (M/day) | Success |
 |------|--------------|---------|
-| State Bank of India | 323.3 | 99.05% |
-| HDFC Bank | 110.9 | 99.55% |
-| Bank of Baroda | 79.7 | 99.64% |
-| Union Bank of India | 69.3 | 99.43% |
-| ICICI Bank | 62.0 | 99.4% |
+| State Bank of India | 231.0 | 99.67% |
+| HDFC Bank | 75.9 | 99.42% |
+| Bank of Baroda | 54.6 | 99.26% |
+| Union Bank of India | 47.9 | 99.63% |
+| Axis Bank | 43.7 | 99.39% |
 
 ## Top UPI apps (by volume)
 | App / PSP | Txns (M/day) | Success | Callback p95 |
 |-----------|--------------|---------|--------------|
-| PhonePe | 479.7 | 99.14% | 231 ms |
-| Google Pay | 328.4 | 99.17% | 316 ms |
-| Paytm | 81.1 | 99.06% | 192 ms |
-| Navi | 37.1 | 99.17% | 225 ms |
-| SuperMoney | 19.6 | 99.08% | 299 ms |
+| PhonePe | 339.0 | 99.51% | 198 ms |
+| Google Pay | 232.1 | 99.35% | 241 ms |
+| Paytm | 56.3 | 99.53% | 201 ms |
+| Navi | 26.1 | 99.53% | 304 ms |
+| SuperMoney | 13.8 | 99.22% | 327 ms |
 
 ## Top features (by volume)
 | Feature | Txns (M/day) |
 |---------|--------------|
-| Person to Merchant | 377.0 |
-| Person to Person | 356.9 |
-| QR Payments | 95.5 |
-| UPI Lite | 48.3 |
-| UPI Autopay | 33.2 |
+| Person to Merchant | 262.6 |
+| Person to Person | 252.0 |
+| QR Payments | 67.4 |
+| UPI Lite | 34.1 |
+| UPI Autopay | 23.4 |
 
 ## Failure analysis
-- INC-2026-12 — merchant settlement delay on State Bank of India (day 2 of 5); see RCA-2026-12.
+- INC-2026-20 — merchant settlement delay on Kotak Mahindra Bank (day 1 of 3); see RCA-2026-20.
 
 ## Recommendations
-Stay on the open incident: keep recovery monitoring on State Bank of India and hold the bank/PSP bridge until success clears the 99.2% floor and stays there through two clean hours.
+Stay on the open incident: keep recovery monitoring on Kotak Mahindra Bank and hold the bank/PSP bridge until success clears the 99.2% floor and stays there through two clean hours.
 
 ## Notes
 All figures read from upi_kpis_month.xlsx; they match the day's monitoring note
-(TEAMS-D101-MON) and any meetings/emails on 30 Sep.
+(TEAMS-D101-MON) and any meetings/emails on 15 Apr.
 
-Refs: upi_kpis_month.xlsx, TEAMS-D101-MON, RPT-D100-DAILY, INC-2026-12, RCA-2026-12
+Refs: upi_kpis_month.xlsx, TEAMS-D101-MON, RPT-D100-DAILY, INC-2026-20, RCA-2026-20

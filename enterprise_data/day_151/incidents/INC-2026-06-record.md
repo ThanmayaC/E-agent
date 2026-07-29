@@ -3,27 +3,27 @@ id: INC-2026-06
 type: incident
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-11-19T09:00:00
+timestamp: 2026-06-04T09:00:00
 ---
 
-# Incident Record — INC-2026-06 UPI Credit fraud / risk spike
+# Incident Record — INC-2026-06 UPI International bank timeout / 5xx spike
 
 **Incident ID:** INC-2026-06  ·  **Severity:** Sev-2  ·  **Status:** Investigating
-**Product:** UPI Credit  ·  **Commander:** Harsh Nanda
-**Detected:** 19 Nov 2026 08:30 IST (morning KPI sweep)
+**Product:** UPI International  ·  **Commander:** Harsh Nanda
+**Detected:** 04 Jun 2026 08:30 IST (morning KPI sweep)
 
 ## Summary
-A fraud / risk spike on HDFC MobileBanking degraded UPI Credit. Success Rate at
-99.92%, Technical Declines 0.25%,
-Response Time p95 561 ms. Customer Complaints
-1,288, Merchant Complaints 96.
+A bank timeout / 5xx spike on Punjab National Bank degraded UPI International. Success Rate at
+99.21%, Technical Declines 0.63%,
+Response Time p95 662 ms. Customer Complaints
+1,795, Merchant Complaints 226.
 
 ## Impact
-Impact concentrated on the UPI Credit path.
-Expected active window: 19 Nov - 23 Nov.
+Impact concentrated on the UPI International path.
+Expected active window: 04 Jun - 06 Jun.
 
 ## Timeline (day 1)
-- 06:25 — first elevated failures on UPI Credit.
+- 06:25 — first elevated failures on UPI International.
 - 08:30 — anomaly flagged by KPI sweep (RPT-D151-DAILY).
 - 09:30 — incident bridge convened; Sev-2 confirmed.
 

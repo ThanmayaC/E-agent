@@ -3,25 +3,25 @@ id: TEAMS-D55-MON
 type: teams
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-08-15T09:30:00
+timestamp: 2026-02-28T09:30:00
 ---
 
-# Ops Monitoring — 15 Aug 2026
+# Ops Monitoring — 28 Feb 2026
 
 **Channel:** UPI Products / Ops Monitoring
-**Date:** Saturday 15 Aug 2026 · **Day archetype:** Saturday (lighter)
+**Date:** Saturday 28 Feb 2026 · **Day archetype:** Month-end peak
 
 **Harsh Nanda** · 09:15
-Morning sweep for 15 Aug. UPI Transactions at 745.6 (down 250.3 vs Fri 14 Aug);
-Success Rate at 99.69% (down 0.29 vs Fri 14 Aug); Technical Declines at 0.37% (up 0.01 vs Fri 14 Aug);
-Business Declines at 0.18% (up 0.01 vs Fri 14 Aug). Estimated peak ~26,751 TPS.
+Morning sweep for 28 Feb. UPI Transactions at 767.6 (down 53.6 vs Fri 27 Feb);
+Success Rate at 98.21% (down 0.13 vs Fri 27 Feb); Technical Declines at 0.47% (down 0.03 vs Fri 27 Feb);
+Business Declines at 0.3% (up 0.09 vs Fri 27 Feb). Estimated peak ~27,541 TPS.
 
-**Farhan Subramanian** · 09:22
-Lowest bank success today: IndusInd Bank at 98.92%. Settlement Success
-99.98%. Complaints: customer 1,513,
-merchant 159. Full numbers in RPT-D55-DAILY and upi_kpis_month.xlsx.
+**Lakshmi Agarwal** · 09:22
+Lowest bank success today: IDFC First Bank at 98.92%. Settlement Success
+99.62%. Complaints: customer 2,083,
+merchant 177. Full numbers in RPT-D55-DAILY and upi_kpis_month.xlsx.
 
 **Harsh Nanda** · 09:30
-No open incidents — steady-state monitoring.
+Open items: INC-2026-22 (PSP callback latency increase · Navi); INC-2026-16 (fraud / risk spike · Navi)
 
-Refs: upi_kpis_month.xlsx, RPT-D55-DAILY, ORG-OVERVIEW
+Refs: upi_kpis_month.xlsx, RPT-D55-DAILY, INC-2026-22, INC-2026-16

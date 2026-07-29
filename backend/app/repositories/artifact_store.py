@@ -21,9 +21,13 @@ class ArtifactStore:
         self._root = projects_dir
 
     # ------------------------------------------------------------- paths
-    def project_dir(self, project_id: str) -> Path:
+    def project_dir(self, project_id: str, *, create: bool = True) -> Path:
+        """Path to a project directory. ``create=False`` for read paths: a
+        lookup must never bring a project into existence (a stray id such as
+        ``undefined`` used to leave a permanent ghost directory behind)."""
         d = self._root / project_id
-        d.mkdir(parents=True, exist_ok=True)
+        if create:
+            d.mkdir(parents=True, exist_ok=True)
         return d
 
     def uploads_dir(self, project_id: str) -> Path:
@@ -37,9 +41,11 @@ class ArtifactStore:
     def vectors_path(self, project_id: str) -> Path:
         return self.project_dir(project_id) / "vectors.json"
 
-    def _artifact_path(self, project_id: str, name: str) -> Path:
-        d = self.project_dir(project_id) / "artifacts"
-        d.mkdir(exist_ok=True)
+    def _artifact_path(self, project_id: str, name: str,
+                       *, create: bool = True) -> Path:
+        d = self.project_dir(project_id, create=create) / "artifacts"
+        if create:
+            d.mkdir(parents=True, exist_ok=True)
         return d / f"{name}.json"
 
     # ---------------------------------------------------------- documents
@@ -52,18 +58,26 @@ class ArtifactStore:
         )
 
     def load(self, project_id: str, name: str, default: Any = None) -> Any:
-        path = self._artifact_path(project_id, name)
+        path = self._artifact_path(project_id, name, create=False)
         if not path.exists():
             return default
-        return json.loads(path.read_text(encoding="utf-8"))["data"]
+        try:
+            return json.loads(path.read_text(encoding="utf-8"))["data"]
+        except (ValueError, KeyError):
+            # a truncated/half-written artifact must not take the caller down
+            return default
 
     def exists(self, project_id: str, name: str) -> bool:
-        return self._artifact_path(project_id, name).exists()
+        return self._artifact_path(project_id, name, create=False).exists()
 
     def list_projects(self) -> list[str]:
+        """User-facing project ids. Directories prefixed with ``_`` are
+        internal namespaces (``_enterprise``, ``_organization``,
+        ``_documents``) and are never projects."""
         if not self._root.exists():
             return []
-        return sorted(p.name for p in self._root.iterdir() if p.is_dir())
+        return sorted(p.name for p in self._root.iterdir()
+                      if p.is_dir() and not p.name.startswith("_"))
 
     def delete_project(self, project_id: str) -> bool:
         """Remove every artifact a project owns: metadata/state, uploaded

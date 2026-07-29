@@ -8,6 +8,9 @@ import {
   AsyncSection, Badge, PageHeader, Panel, PanelEmpty, Stat, Tabs, Trend,
   severityTone, useAsync,
 } from '../components/ui'
+import {
+  CompareTable, DrillHint, EntityDrawer, FilterInput, useDrilldown,
+} from '../components/drilldown'
 
 const INR = (v) => (v == null ? '—' : `₹${fmt.num(v)}`)
 
@@ -32,31 +35,18 @@ function barOption(names, values, { horizontal = false, color = PALETTE[0], rota
 
 const growthColor = (g) => (g > 0 ? '#34d399' : g < 0 ? '#fb7185' : '#64748b')
 
-function CompareTable({ rows, cols }) {
-  if (!rows?.length) return <PanelEmpty text="No data." />
-  return (
-    <div className="overflow-x-auto">
-      <table className="w-full text-sm">
-        <thead>
-          <tr className="text-left text-xs uppercase tracking-wide text-slate-500 border-b border-surface-border">
-            {cols.map((c) => <th key={c.key} className={`py-2 pr-4 ${c.right ? 'text-right' : ''}`}>{c.label}</th>)}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r, i) => (
-            <tr key={r.name || i} className="border-b border-surface-border/50 hover:bg-surface-overlay/40">
-              {cols.map((c) => (
-                <td key={c.key} className={`py-2 pr-4 tabular-nums ${c.right ? 'text-right' : 'text-slate-200'}`}>
-                  {c.render ? c.render(r) : r[c.key]}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  )
-}
+const pct = (v) => (v == null ? '—' : `${v}%`)
+
+// Metric spec for the drill-down drawer — shared by every ecosystem entity
+// (features, banks, PSPs, cities). Absent metrics are skipped automatically.
+const ENTITY_METRICS = [
+  ['Transactions', 'txns', true, fmt.num],
+  ['Value ₹', 'value_inr', true, INR],
+  ['Market share %', 'share_pct', true, pct],
+  ['Success rate %', 'avg_success_rate', true, pct],
+  ['Growth % m/m', 'growth_pct', true, pct],
+  ['Avg ticket ₹', 'avg_ticket_inr', true, INR],
+]
 
 function Overview({ data }) {
   const { overview, features, mix } = data
@@ -91,67 +81,46 @@ function Overview({ data }) {
   )
 }
 
-function Features({ data }) {
-  const rows = data.features || []
+// One interactive entity tab, reused for features / banks / PSPs / cities:
+// chart click and row click drive the same selection, columns sort, the filter
+// narrows the table, and the drawer ranks the picked entity against its peers.
+function EntityTab({ rows, label, cols, chart = 'volume', singular }) {
+  const d = useDrilldown(rows)
+  // naive de-pluralisation mangles irregulars ("Cities" → "Citie"), so the
+  // caller passes the singular whenever stripping a trailing "s" is wrong
+  const one = singular || label.replace(/s$/, '')
+  const top = d.rows.slice(0, 12)
+  const chartOption = chart === 'growth'
+    ? barOption(d.rows.map((r) => r.name), d.rows.map((r) => r.growth_pct),
+                { rotate: 35, color: d.rows.map((r) => growthColor(r.growth_pct)) })
+    : barOption(top.map((r) => r.name), top.map((r) => r.txns),
+                { horizontal: true, color: chart === 'cities' ? PALETTE[4] : PALETTE[0] })
   return (
     <div className="space-y-4">
-      <Panel title="Feature growth (month over month)">
-        <EChart height={300} option={barOption(rows.map((r) => r.name), rows.map((r) => r.growth_pct),
-          { rotate: 35, color: rows.map((r) => growthColor(r.growth_pct)) })} />
+      <Panel title={chart === 'growth'
+        ? `${label} growth (month over month)` : `${label} by sampled volume`}>
+        <EChart height={320} option={chartOption} onClick={(p) => d.selectByName(p.name)} />
       </Panel>
-      <Panel title="All UPI features">
-        <CompareTable rows={rows} cols={[
-          { key: 'name', label: 'Feature' },
-          { key: 'txns', label: 'Txns', right: true, render: (r) => fmt.num(r.txns) },
-          { key: 'avg_ticket_inr', label: 'Avg ticket', right: true, render: (r) => INR(r.avg_ticket_inr) },
-          { key: 'avg_success_rate', label: 'Success', right: true, render: (r) => (r.avg_success_rate == null ? '—' : `${r.avg_success_rate}%`) },
-          { key: 'share_pct', label: 'Share', right: true, render: (r) => `${r.share_pct}%` },
-          { key: 'growth_pct', label: 'Growth', right: true, render: (r) => <Trend change={r.growth_pct} suffix="%" /> },
-        ]} />
+      <Panel title={`All ${label.toLowerCase()}`}
+             action={<FilterInput value={d.filter} onChange={d.setFilter}
+                                  placeholder={`Filter ${label.toLowerCase()}…`} />}>
+        <DrillHint />
+        <CompareTable rows={d.rows} filter={d.filter} selected={d.selected}
+                      onRowClick={d.setSelected}
+                      cols={[{ key: 'name', label: one }, ...cols]} />
       </Panel>
+      <EntityDrawer entity={d.selected} peers={d.rows} label={one}
+                    metrics={ENTITY_METRICS} onClose={d.close} />
     </div>
   )
 }
 
-function EntityTab({ rows, label }) {
-  const top = (rows || []).slice(0, 12)
-  return (
-    <div className="space-y-4">
-      <Panel title={`${label} by sampled volume`}>
-        <EChart height={320} option={barOption(top.map((r) => r.name), top.map((r) => r.txns), { horizontal: true })} />
-      </Panel>
-      <Panel title={`All ${label.toLowerCase()}`}>
-        <CompareTable rows={rows} cols={[
-          { key: 'name', label: label.replace(/s$/, '') },
-          { key: 'txns', label: 'Txns', right: true, render: (r) => fmt.num(r.txns) },
-          { key: 'share_pct', label: 'Share', right: true, render: (r) => `${r.share_pct}%` },
-          { key: 'avg_success_rate', label: 'Success', right: true, render: (r) => (r.avg_success_rate == null ? '—' : `${r.avg_success_rate}%`) },
-          { key: 'growth_pct', label: 'Growth', right: true, render: (r) => <Trend change={r.growth_pct} suffix="%" /> },
-        ]} />
-      </Panel>
-    </div>
-  )
-}
-
-function Cities({ data }) {
-  const rows = data.cities || []
-  const top = rows.slice(0, 12)
-  return (
-    <div className="space-y-4">
-      <Panel title="Top cities by sampled volume">
-        <EChart height={320} option={barOption(top.map((r) => r.name), top.map((r) => r.txns), { horizontal: true, color: PALETTE[4] })} />
-      </Panel>
-      <Panel title="All cities">
-        <CompareTable rows={rows} cols={[
-          { key: 'name', label: 'City' },
-          { key: 'txns', label: 'Txns', right: true, render: (r) => fmt.num(r.txns) },
-          { key: 'value_inr', label: 'Value', right: true, render: (r) => INR(r.value_inr) },
-          { key: 'share_pct', label: 'Share', right: true, render: (r) => `${r.share_pct}%` },
-        ]} />
-      </Panel>
-    </div>
-  )
-}
+const COL_TXNS = { key: 'txns', label: 'Txns', right: true, render: (r) => fmt.num(r.txns) }
+const COL_SHARE = { key: 'share_pct', label: 'Share', right: true, render: (r) => pct(r.share_pct) }
+const COL_SUCCESS = { key: 'avg_success_rate', label: 'Success', right: true, render: (r) => pct(r.avg_success_rate) }
+const COL_GROWTH = { key: 'growth_pct', label: 'Growth', right: true, render: (r) => <Trend change={r.growth_pct} suffix="%" /> }
+const COL_TICKET = { key: 'avg_ticket_inr', label: 'Avg ticket', right: true, render: (r) => INR(r.avg_ticket_inr) }
+const COL_VALUE = { key: 'value_inr', label: 'Value', right: true, render: (r) => INR(r.value_inr) }
 
 function TrendsForecast({ data }) {
   const fc = data.forecasts || []
@@ -241,10 +210,22 @@ export default function EcosystemDashboard() {
           <>
             <Tabs tabs={TABS} active={tab} onChange={setTab} />
             {tab === 'overview' && <Overview data={data} />}
-            {tab === 'features' && <Features data={data} />}
-            {tab === 'banks' && <EntityTab rows={data.banks} label="Banks" />}
-            {tab === 'psps' && <EntityTab rows={data.psps} label="PSPs" />}
-            {tab === 'cities' && <Cities data={data} />}
+            {tab === 'features' && (
+              <EntityTab rows={data.features} label="Features" chart="growth"
+                         cols={[COL_TXNS, COL_TICKET, COL_SUCCESS, COL_SHARE, COL_GROWTH]} />
+            )}
+            {tab === 'banks' && (
+              <EntityTab rows={data.banks} label="Banks"
+                         cols={[COL_TXNS, COL_SHARE, COL_SUCCESS, COL_GROWTH]} />
+            )}
+            {tab === 'psps' && (
+              <EntityTab rows={data.psps} label="PSPs"
+                         cols={[COL_TXNS, COL_SHARE, COL_SUCCESS, COL_GROWTH]} />
+            )}
+            {tab === 'cities' && (
+              <EntityTab rows={data.cities} label="Cities" chart="cities" singular="City"
+                         cols={[COL_TXNS, COL_VALUE, COL_SHARE]} />
+            )}
             {tab === 'trends' && <TrendsForecast data={data} />}
             {tab === 'signals' && <Signals data={data} />}
           </>

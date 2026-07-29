@@ -1,48 +1,48 @@
 source_type,source,relation,target_type,target,weight,note
-merchant,BharatKart,settles_via,psp,Paytm,122415,E-commerce / Large
-merchant,BharatKart,in_region,region,North,122415,
-merchant,FreshBasket,settles_via,psp,BHIM,12669,Grocery / Mid
-merchant,FreshBasket,in_region,region,West,12669,
-merchant,MetroRide,settles_via,psp,PhonePe,701305,Mobility / Large
-merchant,MetroRide,in_region,region,South,701305,
-merchant,FlixStream,settles_via,psp,CRED,7559,OTT / Subscriptions / Small
-merchant,FlixStream,in_region,region,East,7559,
-merchant,EduPrime,settles_via,psp,YONO SBI,11315,EdTech / Large
-merchant,EduPrime,in_region,region,West,11315,
-merchant,HealthFirst,settles_via,psp,BHIM,12676,Pharmacy / Small
-merchant,HealthFirst,in_region,region,East,12676,
-merchant,TravelGo,settles_via,psp,CRED,7486,Travel / Large
-merchant,TravelGo,in_region,region,East,7486,
-merchant,StyleHub,settles_via,psp,WhatsApp Pay,13833,Fashion / Large
-merchant,StyleHub,in_region,region,West,13833,
-merchant,QuickBite,settles_via,psp,YONO SBI,11520,Food Delivery / Mid
-merchant,QuickBite,in_region,region,North,11520,
-merchant,PowerPay Utilities,settles_via,psp,CRED,7578,Utilities / Mid
-merchant,PowerPay Utilities,in_region,region,West,7578,
-merchant,InsureWell,settles_via,psp,Axis Mobile,13679,Insurance / Large
-merchant,InsureWell,in_region,region,Central,13679,
-merchant,GadgetZone,settles_via,psp,Google Pay,484805,Electronics / Mid
-merchant,GadgetZone,in_region,region,West,484805,
-merchant,DailyMart,settles_via,psp,SuperMoney,32313,Retail / Mid
-merchant,DailyMart,in_region,region,West,32313,
-merchant,WealthGrow,settles_via,psp,CRED,7432,Wealth / SIP / Small
-merchant,WealthGrow,in_region,region,East,7432,
-merchant,CityFuel,settles_via,psp,HDFC MobileBanking,13977,Fuel / Mid
-merchant,CityFuel,in_region,region,West,13977,
-psp,PhonePe,sponsored_by,bank,Kotak Mahindra Bank,0,
-psp,Google Pay,sponsored_by,bank,Kotak Mahindra Bank,0,
-psp,Paytm,sponsored_by,bank,Indian Bank,0,
+merchant,BharatKart,settles_via,psp,iMobile Pay,70571,E-commerce / Mid
+merchant,BharatKart,in_region,region,South,70571,
+merchant,FreshBasket,settles_via,psp,Navi,116500,Grocery / Mid
+merchant,FreshBasket,in_region,region,Central,116500,
+merchant,MetroRide,settles_via,psp,iMobile Pay,71444,Mobility / Mid
+merchant,MetroRide,in_region,region,Central,71444,
+merchant,FlixStream,settles_via,psp,iMobile Pay,71697,OTT / Subscriptions / Mid
+merchant,FlixStream,in_region,region,East,71697,
+merchant,EduPrime,settles_via,psp,Paytm,118895,EdTech / Large
+merchant,EduPrime,in_region,region,West,118895,
+merchant,HealthFirst,settles_via,psp,Paytm,118799,Pharmacy / Small
+merchant,HealthFirst,in_region,region,East,118799,
+merchant,TravelGo,settles_via,psp,FamApp,79486,Travel / Small
+merchant,TravelGo,in_region,region,South,79486,
+merchant,StyleHub,settles_via,psp,Amazon Pay,71626,Fashion / Mid
+merchant,StyleHub,in_region,region,Central,71626,
+merchant,QuickBite,settles_via,psp,YONO SBI,80868,Food Delivery / Small
+merchant,QuickBite,in_region,region,South,80868,
+merchant,PowerPay Utilities,settles_via,psp,Amazon Pay,71613,Utilities / Large
+merchant,PowerPay Utilities,in_region,region,East,71613,
+merchant,InsureWell,settles_via,psp,Axis Mobile,77039,Insurance / Small
+merchant,InsureWell,in_region,region,East,77039,
+merchant,GadgetZone,settles_via,psp,iMobile Pay,70895,Electronics / Large
+merchant,GadgetZone,in_region,region,North,70895,
+merchant,DailyMart,settles_via,psp,iMobile Pay,70897,Retail / Large
+merchant,DailyMart,in_region,region,South,70897,
+merchant,WealthGrow,settles_via,psp,WhatsApp Pay,76716,Wealth / SIP / Small
+merchant,WealthGrow,in_region,region,South,76716,
+merchant,CityFuel,settles_via,psp,Amazon Pay,71182,Fuel / Small
+merchant,CityFuel,in_region,region,North,71182,
+psp,PhonePe,sponsored_by,bank,IndusInd Bank,0,
+psp,Google Pay,sponsored_by,bank,HDFC Bank,0,
+psp,Paytm,sponsored_by,bank,Union Bank of India,0,
 psp,BHIM,sponsored_by,bank,Federal Bank,0,
-psp,Amazon Pay,sponsored_by,bank,Punjab National Bank,0,
-psp,CRED,sponsored_by,bank,Canara Bank,0,
-psp,WhatsApp Pay,sponsored_by,bank,Yes Bank,0,
-psp,Navi,sponsored_by,bank,State Bank of India,0,
-psp,FamApp,sponsored_by,bank,Canara Bank,0,
-psp,SuperMoney,sponsored_by,bank,IndusInd Bank,0,
-psp,Axis Mobile,sponsored_by,bank,HDFC Bank,0,
+psp,Amazon Pay,sponsored_by,bank,Canara Bank,0,
+psp,CRED,sponsored_by,bank,State Bank of India,0,
+psp,WhatsApp Pay,sponsored_by,bank,HDFC Bank,0,
+psp,Navi,sponsored_by,bank,HDFC Bank,0,
+psp,FamApp,sponsored_by,bank,ICICI Bank,0,
+psp,SuperMoney,sponsored_by,bank,IDFC First Bank,0,
+psp,Axis Mobile,sponsored_by,bank,Kotak Mahindra Bank,0,
 psp,YONO SBI,sponsored_by,bank,Union Bank of India,0,
-psp,iMobile Pay,sponsored_by,bank,Federal Bank,0,
-psp,HDFC MobileBanking,sponsored_by,bank,Canara Bank,0,
+psp,iMobile Pay,sponsored_by,bank,Canara Bank,0,
+psp,HDFC MobileBanking,sponsored_by,bank,Union Bank of India,0,
 feature,Person to Merchant,part_of,product,UPI Core,0,
 feature,Person to Person,part_of,product,UPI Core,0,
 feature,Collect Requests,part_of,product,UPI Core,0,
@@ -50,20 +50,22 @@ feature,Intent Payments,part_of,product,UPI Core,0,
 feature,UPI Autopay,part_of,product,UPI Autopay,0,
 feature,UPI Lite,part_of,product,UPI Lite,0,
 feature,UPI Lite X,part_of,product,UPI Lite X,0,
+feature,UPI 123Pay,part_of,product,UPI 123Pay,0,
 feature,UPI Credit Line,part_of,product,UPI Credit,0,
 feature,RuPay Credit on UPI,part_of,product,UPI Credit,0,
 feature,UPI International,part_of,product,UPI International,0,
 feature,QR Payments,part_of,product,QR Payments,0,
 feature,QR Payments,part_of,product,Merchant Products,0,
 feature,Person to Merchant,part_of,product,Merchant Products,0,
-feature,Person to Merchant,drives_growth,business,UPI volume,759572,+9.9% over the period
-feature,QR Payments,drives_growth,business,UPI volume,217102,+34.0% over the period
-feature,Person to Person,drives_growth,business,UPI volume,572325,-30.4% over the period
-feature,Intent Payments,drives_growth,business,UPI volume,54055,+2.6% over the period
-feature,UPI Lite,drives_growth,business,UPI volume,155523,+154.6% over the period
-feature,Collect Requests,drives_growth,business,UPI volume,26534,-44.2% over the period
-feature,UPI International,drives_growth,business,UPI volume,33709,+277.8% over the period
-feature,UPI Autopay,drives_growth,business,UPI volume,116527,+197.0% over the period
-feature,UPI Credit Line,drives_growth,business,UPI volume,75993,+519.5% over the period
-feature,UPI Lite X,drives_growth,business,UPI volume,81357,+873.9% over the period
-feature,RuPay Credit on UPI,drives_growth,business,UPI volume,54488,+406.4% over the period
+feature,Person to Merchant,drives_growth,business,UPI volume,618234,-10.6% over the period
+feature,UPI Autopay,drives_growth,business,UPI volume,102345,+179.5% over the period
+feature,UPI Lite,drives_growth,business,UPI volume,135355,+128.2% over the period
+feature,Person to Person,drives_growth,business,UPI volume,463902,-46.5% over the period
+feature,Collect Requests,drives_growth,business,UPI volume,21420,-55.0% over the period
+feature,QR Payments,drives_growth,business,UPI volume,181820,+19.4% over the period
+feature,Intent Payments,drives_growth,business,UPI volume,44444,-14.3% over the period
+feature,UPI International,drives_growth,business,UPI volume,29789,+276.1% over the period
+feature,UPI Lite X,drives_growth,business,UPI volume,79383,+1081.8% over the period
+feature,RuPay Credit on UPI,drives_growth,business,UPI volume,49859,+422.2% over the period
+feature,UPI 123Pay,drives_growth,business,UPI volume,7093,-43.2% over the period
+feature,UPI Credit Line,drives_growth,business,UPI volume,71232,+546.1% over the period

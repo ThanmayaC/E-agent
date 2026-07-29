@@ -3,65 +3,65 @@ id: RPT-D58-DAILY
 type: report
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-08-18T17:30:00
+timestamp: 2026-03-03T17:30:00
 ---
 
-# UPI Products — Daily Operations Report (Tuesday, 18 Aug 2026)
+# UPI Products — Daily Operations Report (Tuesday, 03 Mar 2026)
 
-**Report ID:** RPT-D58-DAILY  ·  **Prepared by:** Farhan Subramanian
-**Date:** Tuesday 18 Aug 2026  ·  **Day archetype:** Weekday (steady)
-**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 58 of 180)
+**Report ID:** RPT-D58-DAILY  ·  **Prepared by:** Lakshmi Agarwal
+**Date:** Tuesday 03 Mar 2026  ·  **Day archetype:** Weekday (steady)
+**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 58 of 206)
 
 ## Transaction summary
-The rail processed 849.7M UPI transactions on Tuesday — a steady mid-week day — up 42.2M on the same day last week. Success landed at 99.98% and settlement at 98.1%, held back by live issues on ICICI Bank (detailed below).
+The rail processed 696.6M UPI transactions on Tuesday — a steady mid-week day — down 133.4M on the same day last week. Success held at 99.87% and settlement at 99.98%; the softest bank was IDFC First Bank at 98.92%, still comfortably inside the normal band.
 
 ## KPIs (today · vs yesterday / last week / month start)
-- **UPI Transactions:** 849.7  (▲29.2 d/d, ▲42.2 w/w, ▲104.8 m/m)
-- **Success Rate:** 99.98%  (▲0.41 d/d, ▲0.38 m/m)
-- **Settlement Success:** 98.1%  (▲0.16 d/d, ▼0.8 w/w, ▼1.33 m/m)
-- **Technical Declines:** 0.36%  (▼0.01 w/w, ▼0.09 m/m)
-- **Business Declines:** 0.23%  (▼0.03 d/d, ▲0.05 w/w, ▲0.03 m/m)
-- **Customer Complaints:** 1,666  (▼148 d/d, ▲113 w/w, ▼276 m/m)
-- **Merchant Complaints:** 282  (▼81 d/d, ▲119 w/w, ▲71 m/m)
-- **Fraud Alerts:** 908  (▼12 d/d, ▼17 w/w, ▼143 m/m)
-- **Risk Score:** 26  (▼1 w/w, ▼5 m/m)
-- **Response Time:** 656 ms  (▼10 d/d, ▼8 w/w, ▼86 m/m)
+- **UPI Transactions:** 696.6  (▲28.7 d/d, ▼133.4 w/w, ▼99.3 m/m)
+- **Success Rate:** 99.87%  (▲1.27 d/d, ▲0.58 w/w, ▲0.74 m/m)
+- **Settlement Success:** 99.98%  (▲1.26 d/d, ▲0.03 m/m)
+- **Technical Declines:** 0.44%  (▼0.01 d/d, ▼0.01 w/w, ▼0.11 m/m)
+- **Business Declines:** 0.21%  (▼0.1 w/w, ▼0.03 m/m)
+- **Customer Complaints:** 1,627  (▼25 d/d, ▼429 w/w, ▼515 m/m)
+- **Merchant Complaints:** 176  (▼5 w/w, ▼58 m/m)
+- **Fraud Alerts:** 1,005  (▲2 d/d, ▼229 w/w, ▼155 m/m)
+- **Risk Score:** 28  (▼16 w/w, ▼6 m/m)
+- **Response Time:** 689 ms  (▲7 d/d, ▼7 w/w, ▼64 m/m)
 
 ## Top banks (by volume)
 | Bank | Txns (M/day) | Success |
 |------|--------------|---------|
-| State Bank of India | 273.2 | 99.5% |
-| HDFC Bank | 93.7 | 99.55% |
-| Bank of Baroda | 67.4 | 99.64% |
-| Union Bank of India | 58.5 | 99.43% |
-| ICICI Bank | 52.4 | 98.04% |
+| State Bank of India | 226.7 | 99.67% |
+| HDFC Bank | 74.5 | 99.42% |
+| Bank of Baroda | 53.6 | 99.26% |
+| Union Bank of India | 47.0 | 99.63% |
+| Axis Bank | 42.9 | 99.39% |
 
 ## Top UPI apps (by volume)
 | App / PSP | Txns (M/day) | Success | Callback p95 |
 |-----------|--------------|---------|--------------|
-| PhonePe | 405.4 | 99.14% | 231 ms |
-| Google Pay | 277.5 | 99.17% | 316 ms |
-| Paytm | 68.5 | 99.06% | 192 ms |
-| Navi | 31.3 | 99.17% | 225 ms |
-| SuperMoney | 16.6 | 99.08% | 299 ms |
+| PhonePe | 332.7 | 99.51% | 198 ms |
+| Google Pay | 227.8 | 99.35% | 241 ms |
+| Paytm | 55.3 | 99.53% | 201 ms |
+| Navi | 25.6 | 99.53% | 304 ms |
+| SuperMoney | 13.6 | 99.22% | 327 ms |
 
 ## Top features (by volume)
 | Feature | Txns (M/day) |
 |---------|--------------|
-| Person to Merchant | 318.6 |
-| Person to Person | 301.6 |
-| QR Payments | 80.7 |
-| UPI Lite | 40.8 |
-| UPI Autopay | 28.0 |
+| Person to Merchant | 257.7 |
+| Person to Person | 247.3 |
+| QR Payments | 66.2 |
+| UPI Lite | 33.4 |
+| UPI Autopay | 23.0 |
 
 ## Failure analysis
-- INC-2026-03 — merchant settlement delay on ICICI Bank (day 2 of 4); see RCA-2026-03.
+- No incidents open. Technical declines are within the 0.44% steady-state band; residual failures are routine bank/network timeouts.
 
 ## Recommendations
-Stay on the open incident: keep recovery monitoring on ICICI Bank and hold the bank/PSP bridge until success clears the 99.2% floor and stays there through two clean hours.
+Steady state — use the quieter window to progress capacity planning before the next peak.
 
 ## Notes
 All figures read from upi_kpis_month.xlsx; they match the day's monitoring note
-(TEAMS-D58-MON) and any meetings/emails on 18 Aug.
+(TEAMS-D58-MON) and any meetings/emails on 03 Mar.
 
-Refs: upi_kpis_month.xlsx, TEAMS-D58-MON, RPT-D57-DAILY, INC-2026-03, RCA-2026-03
+Refs: upi_kpis_month.xlsx, TEAMS-D58-MON, RPT-D57-DAILY

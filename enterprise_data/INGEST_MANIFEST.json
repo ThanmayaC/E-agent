@@ -1,10 +1,10 @@
 {
   "organization": "NPCI (Synthetic Demonstration)",
   "department": "UPI Products",
-  "week_start": "2026-06-22",
-  "week_end": "2026-12-18",
-  "weeks": 26,
-  "days": 180,
+  "week_start": "2026-01-05",
+  "week_end": "2026-07-29",
+  "weeks": 30,
+  "days": 206,
   "master": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\master",
   "ingest_sources": [
     {
@@ -12,12 +12,6 @@
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_01\\teams",
       "description": "Day 1 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day01-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_01\\meetings",
-      "description": "Day 1 \u2014 Meetings: agendas, notes, decisions"
     },
     {
       "name": "npci-day01-reports",
@@ -50,28 +44,10 @@
       "description": "Day 2 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day03-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_03\\outlook",
-      "description": "Day 3 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day03-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_03\\teams",
       "description": "Day 3 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day03-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_03\\meetings",
-      "description": "Day 3 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day03-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_03\\incidents",
-      "description": "Day 3 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day03-reports",
@@ -86,40 +62,10 @@
       "description": "Day 3 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day03-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_03\\tasks",
-      "description": "Day 3 \u2014 Enterprise tasks"
-    },
-    {
       "name": "npci-day04-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_04\\teams",
       "description": "Day 4 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day04-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_04\\meetings",
-      "description": "Day 4 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day04-decisions",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_04\\decisions",
-      "description": "Day 4 \u2014 Decision records"
-    },
-    {
-      "name": "npci-day04-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_04\\incidents",
-      "description": "Day 4 \u2014 Incident records and RCAs"
-    },
-    {
-      "name": "npci-day04-docs",
-      "kind": "product_documents",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_04\\docs",
-      "description": "Day 4 \u2014 SOPs, BRDs, PRDs, product docs"
     },
     {
       "name": "npci-day04-reports",
@@ -134,16 +80,28 @@
       "description": "Day 4 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day04-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_04\\tasks",
-      "description": "Day 4 \u2014 Enterprise tasks"
+      "name": "npci-day05-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_05\\outlook",
+      "description": "Day 5 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day05-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_05\\teams",
       "description": "Day 5 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day05-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_05\\meetings",
+      "description": "Day 5 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day05-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_05\\incidents",
+      "description": "Day 5 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day05-reports",
@@ -158,16 +116,40 @@
       "description": "Day 5 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day06-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_06\\outlook",
-      "description": "Day 6 \u2014 Outlook email threads"
+      "name": "npci-day05-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_05\\tasks",
+      "description": "Day 5 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day06-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_06\\teams",
       "description": "Day 6 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day06-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_06\\meetings",
+      "description": "Day 6 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day06-decisions",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_06\\decisions",
+      "description": "Day 6 \u2014 Decision records"
+    },
+    {
+      "name": "npci-day06-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_06\\incidents",
+      "description": "Day 6 \u2014 Incident records and RCAs"
+    },
+    {
+      "name": "npci-day06-docs",
+      "kind": "product_documents",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_06\\docs",
+      "description": "Day 6 \u2014 SOPs, BRDs, PRDs, product docs"
     },
     {
       "name": "npci-day06-reports",
@@ -180,6 +162,12 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_06\\excel",
       "description": "Day 6 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day06-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_06\\tasks",
+      "description": "Day 6 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day07-teams",
@@ -212,6 +200,12 @@
       "description": "Day 7 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
     },
     {
+      "name": "npci-day08-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_08\\outlook",
+      "description": "Day 8 \u2014 Outlook email threads"
+    },
+    {
       "name": "npci-day08-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_08\\teams",
@@ -230,28 +224,10 @@
       "description": "Day 8 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day09-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_09\\outlook",
-      "description": "Day 9 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day09-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_09\\teams",
       "description": "Day 9 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day09-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_09\\meetings",
-      "description": "Day 9 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day09-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_09\\incidents",
-      "description": "Day 9 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day09-reports",
@@ -266,40 +242,10 @@
       "description": "Day 9 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day09-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_09\\tasks",
-      "description": "Day 9 \u2014 Enterprise tasks"
-    },
-    {
       "name": "npci-day10-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_10\\teams",
       "description": "Day 10 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day10-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_10\\meetings",
-      "description": "Day 10 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day10-decisions",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_10\\decisions",
-      "description": "Day 10 \u2014 Decision records"
-    },
-    {
-      "name": "npci-day10-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_10\\incidents",
-      "description": "Day 10 \u2014 Incident records and RCAs"
-    },
-    {
-      "name": "npci-day10-docs",
-      "kind": "product_documents",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_10\\docs",
-      "description": "Day 10 \u2014 SOPs, BRDs, PRDs, product docs"
     },
     {
       "name": "npci-day10-reports",
@@ -314,34 +260,10 @@
       "description": "Day 10 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day10-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_10\\tasks",
-      "description": "Day 10 \u2014 Enterprise tasks"
-    },
-    {
-      "name": "npci-day11-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_11\\outlook",
-      "description": "Day 11 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day11-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_11\\teams",
       "description": "Day 11 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day11-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_11\\meetings",
-      "description": "Day 11 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day11-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_11\\incidents",
-      "description": "Day 11 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day11-reports",
@@ -356,40 +278,10 @@
       "description": "Day 11 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day11-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_11\\tasks",
-      "description": "Day 11 \u2014 Enterprise tasks"
-    },
-    {
-      "name": "npci-day12-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_12\\outlook",
-      "description": "Day 12 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day12-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_12\\teams",
       "description": "Day 12 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day12-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_12\\meetings",
-      "description": "Day 12 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day12-decisions",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_12\\decisions",
-      "description": "Day 12 \u2014 Decision records"
-    },
-    {
-      "name": "npci-day12-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_12\\incidents",
-      "description": "Day 12 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day12-reports",
@@ -402,12 +294,6 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_12\\excel",
       "description": "Day 12 \u2014 KPI workbooks"
-    },
-    {
-      "name": "npci-day12-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_12\\tasks",
-      "description": "Day 12 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day13-teams",
@@ -426,12 +312,6 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_13\\excel",
       "description": "Day 13 \u2014 KPI workbooks"
-    },
-    {
-      "name": "npci-day14-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_14\\outlook",
-      "description": "Day 14 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day14-teams",
@@ -464,28 +344,10 @@
       "description": "Day 14 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
     },
     {
-      "name": "npci-day15-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_15\\outlook",
-      "description": "Day 15 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day15-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_15\\teams",
       "description": "Day 15 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day15-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_15\\meetings",
-      "description": "Day 15 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day15-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_15\\incidents",
-      "description": "Day 15 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day15-reports",
@@ -500,40 +362,10 @@
       "description": "Day 15 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day15-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_15\\tasks",
-      "description": "Day 15 \u2014 Enterprise tasks"
-    },
-    {
       "name": "npci-day16-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_16\\teams",
       "description": "Day 16 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day16-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_16\\meetings",
-      "description": "Day 16 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day16-decisions",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_16\\decisions",
-      "description": "Day 16 \u2014 Decision records"
-    },
-    {
-      "name": "npci-day16-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_16\\incidents",
-      "description": "Day 16 \u2014 Incident records and RCAs"
-    },
-    {
-      "name": "npci-day16-docs",
-      "kind": "product_documents",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_16\\docs",
-      "description": "Day 16 \u2014 SOPs, BRDs, PRDs, product docs"
     },
     {
       "name": "npci-day16-reports",
@@ -546,18 +378,6 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_16\\excel",
       "description": "Day 16 \u2014 KPI workbooks"
-    },
-    {
-      "name": "npci-day16-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_16\\tasks",
-      "description": "Day 16 \u2014 Enterprise tasks"
-    },
-    {
-      "name": "npci-day17-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_17\\outlook",
-      "description": "Day 17 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day17-teams",
@@ -578,10 +398,28 @@
       "description": "Day 17 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day18-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_18\\outlook",
+      "description": "Day 18 \u2014 Outlook email threads"
+    },
+    {
       "name": "npci-day18-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_18\\teams",
       "description": "Day 18 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day18-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_18\\meetings",
+      "description": "Day 18 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day18-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_18\\incidents",
+      "description": "Day 18 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day18-reports",
@@ -596,10 +434,40 @@
       "description": "Day 18 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day18-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_18\\tasks",
+      "description": "Day 18 \u2014 Enterprise tasks"
+    },
+    {
       "name": "npci-day19-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_19\\teams",
       "description": "Day 19 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day19-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_19\\meetings",
+      "description": "Day 19 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day19-decisions",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_19\\decisions",
+      "description": "Day 19 \u2014 Decision records"
+    },
+    {
+      "name": "npci-day19-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_19\\incidents",
+      "description": "Day 19 \u2014 Incident records and RCAs"
+    },
+    {
+      "name": "npci-day19-docs",
+      "kind": "product_documents",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_19\\docs",
+      "description": "Day 19 \u2014 SOPs, BRDs, PRDs, product docs"
     },
     {
       "name": "npci-day19-reports",
@@ -612,6 +480,18 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_19\\excel",
       "description": "Day 19 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day19-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_19\\tasks",
+      "description": "Day 19 \u2014 Enterprise tasks"
+    },
+    {
+      "name": "npci-day20-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_20\\outlook",
+      "description": "Day 20 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day20-teams",
@@ -662,10 +542,28 @@
       "description": "Day 21 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
     },
     {
+      "name": "npci-day22-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_22\\outlook",
+      "description": "Day 22 \u2014 Outlook email threads"
+    },
+    {
       "name": "npci-day22-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_22\\teams",
       "description": "Day 22 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day22-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_22\\meetings",
+      "description": "Day 22 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day22-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_22\\incidents",
+      "description": "Day 22 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day22-reports",
@@ -680,10 +578,40 @@
       "description": "Day 22 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day22-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_22\\tasks",
+      "description": "Day 22 \u2014 Enterprise tasks"
+    },
+    {
       "name": "npci-day23-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_23\\teams",
       "description": "Day 23 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day23-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_23\\meetings",
+      "description": "Day 23 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day23-decisions",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_23\\decisions",
+      "description": "Day 23 \u2014 Decision records"
+    },
+    {
+      "name": "npci-day23-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_23\\incidents",
+      "description": "Day 23 \u2014 Incident records and RCAs"
+    },
+    {
+      "name": "npci-day23-docs",
+      "kind": "product_documents",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_23\\docs",
+      "description": "Day 23 \u2014 SOPs, BRDs, PRDs, product docs"
     },
     {
       "name": "npci-day23-reports",
@@ -696,6 +624,18 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_23\\excel",
       "description": "Day 23 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day23-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_23\\tasks",
+      "description": "Day 23 \u2014 Enterprise tasks"
+    },
+    {
+      "name": "npci-day24-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_24\\outlook",
+      "description": "Day 24 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day24-teams",
@@ -770,12 +710,6 @@
       "description": "Day 27 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day28-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_28\\outlook",
-      "description": "Day 28 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day28-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_28\\teams",
@@ -786,12 +720,6 @@
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_28\\meetings",
       "description": "Day 28 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day28-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_28\\incidents",
-      "description": "Day 28 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day28-reports",
@@ -806,22 +734,10 @@
       "description": "Day 28 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day28-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_28\\tasks",
-      "description": "Day 28 \u2014 Enterprise tasks"
-    },
-    {
       "name": "npci-day28-analytics",
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_28\\analytics",
       "description": "Day 28 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
-    },
-    {
-      "name": "npci-day29-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_29\\outlook",
-      "description": "Day 29 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day29-teams",
@@ -860,10 +776,28 @@
       "description": "Day 30 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day31-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_31\\outlook",
+      "description": "Day 31 \u2014 Outlook email threads"
+    },
+    {
       "name": "npci-day31-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_31\\teams",
       "description": "Day 31 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day31-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_31\\meetings",
+      "description": "Day 31 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day31-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_31\\incidents",
+      "description": "Day 31 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day31-reports",
@@ -878,10 +812,34 @@
       "description": "Day 31 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day31-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_31\\tasks",
+      "description": "Day 31 \u2014 Enterprise tasks"
+    },
+    {
       "name": "npci-day32-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_32\\teams",
       "description": "Day 32 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day32-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_32\\meetings",
+      "description": "Day 32 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day32-decisions",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_32\\decisions",
+      "description": "Day 32 \u2014 Decision records"
+    },
+    {
+      "name": "npci-day32-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_32\\incidents",
+      "description": "Day 32 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day32-reports",
@@ -894,6 +852,12 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_32\\excel",
       "description": "Day 32 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day32-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_32\\tasks",
+      "description": "Day 32 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day33-teams",
@@ -956,6 +920,12 @@
       "description": "Day 34 \u2014 Enterprise tasks"
     },
     {
+      "name": "npci-day35-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_35\\outlook",
+      "description": "Day 35 \u2014 Outlook email threads"
+    },
+    {
       "name": "npci-day35-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_35\\teams",
@@ -1004,28 +974,10 @@
       "description": "Day 35 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
     },
     {
-      "name": "npci-day36-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_36\\outlook",
-      "description": "Day 36 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day36-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_36\\teams",
       "description": "Day 36 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day36-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_36\\meetings",
-      "description": "Day 36 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day36-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_36\\incidents",
-      "description": "Day 36 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day36-reports",
@@ -1040,40 +992,10 @@
       "description": "Day 36 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day36-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_36\\tasks",
-      "description": "Day 36 \u2014 Enterprise tasks"
-    },
-    {
       "name": "npci-day37-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_37\\teams",
       "description": "Day 37 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day37-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_37\\meetings",
-      "description": "Day 37 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day37-decisions",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_37\\decisions",
-      "description": "Day 37 \u2014 Decision records"
-    },
-    {
-      "name": "npci-day37-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_37\\incidents",
-      "description": "Day 37 \u2014 Incident records and RCAs"
-    },
-    {
-      "name": "npci-day37-docs",
-      "kind": "product_documents",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_37\\docs",
-      "description": "Day 37 \u2014 SOPs, BRDs, PRDs, product docs"
     },
     {
       "name": "npci-day37-reports",
@@ -1086,12 +1008,6 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_37\\excel",
       "description": "Day 37 \u2014 KPI workbooks"
-    },
-    {
-      "name": "npci-day37-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_37\\tasks",
-      "description": "Day 37 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day38-outlook",
@@ -1202,28 +1118,10 @@
       "description": "Day 42 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
     },
     {
-      "name": "npci-day43-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_43\\outlook",
-      "description": "Day 43 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day43-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_43\\teams",
       "description": "Day 43 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day43-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_43\\meetings",
-      "description": "Day 43 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day43-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_43\\incidents",
-      "description": "Day 43 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day43-reports",
@@ -1236,18 +1134,6 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_43\\excel",
       "description": "Day 43 \u2014 KPI workbooks"
-    },
-    {
-      "name": "npci-day43-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_43\\tasks",
-      "description": "Day 43 \u2014 Enterprise tasks"
-    },
-    {
-      "name": "npci-day44-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_44\\outlook",
-      "description": "Day 44 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day44-teams",
@@ -1370,10 +1256,28 @@
       "description": "Day 49 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
     },
     {
+      "name": "npci-day50-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_50\\outlook",
+      "description": "Day 50 \u2014 Outlook email threads"
+    },
+    {
       "name": "npci-day50-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_50\\teams",
       "description": "Day 50 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day50-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_50\\meetings",
+      "description": "Day 50 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day50-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_50\\incidents",
+      "description": "Day 50 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day50-reports",
@@ -1388,10 +1292,34 @@
       "description": "Day 50 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day50-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_50\\tasks",
+      "description": "Day 50 \u2014 Enterprise tasks"
+    },
+    {
       "name": "npci-day51-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_51\\teams",
       "description": "Day 51 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day51-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_51\\meetings",
+      "description": "Day 51 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day51-decisions",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_51\\decisions",
+      "description": "Day 51 \u2014 Decision records"
+    },
+    {
+      "name": "npci-day51-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_51\\incidents",
+      "description": "Day 51 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day51-reports",
@@ -1406,10 +1334,34 @@
       "description": "Day 51 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day51-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_51\\tasks",
+      "description": "Day 51 \u2014 Enterprise tasks"
+    },
+    {
+      "name": "npci-day52-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_52\\outlook",
+      "description": "Day 52 \u2014 Outlook email threads"
+    },
+    {
       "name": "npci-day52-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_52\\teams",
       "description": "Day 52 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day52-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_52\\meetings",
+      "description": "Day 52 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day52-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_52\\incidents",
+      "description": "Day 52 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day52-reports",
@@ -1424,6 +1376,12 @@
       "description": "Day 52 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day52-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_52\\tasks",
+      "description": "Day 52 \u2014 Enterprise tasks"
+    },
+    {
       "name": "npci-day53-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_53\\teams",
@@ -1436,6 +1394,24 @@
       "description": "Day 53 \u2014 Meetings: agendas, notes, decisions"
     },
     {
+      "name": "npci-day53-decisions",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_53\\decisions",
+      "description": "Day 53 \u2014 Decision records"
+    },
+    {
+      "name": "npci-day53-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_53\\incidents",
+      "description": "Day 53 \u2014 Incident records and RCAs"
+    },
+    {
+      "name": "npci-day53-docs",
+      "kind": "product_documents",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_53\\docs",
+      "description": "Day 53 \u2014 SOPs, BRDs, PRDs, product docs"
+    },
+    {
       "name": "npci-day53-reports",
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_53\\reports",
@@ -1446,6 +1422,12 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_53\\excel",
       "description": "Day 53 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day53-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_53\\tasks",
+      "description": "Day 53 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day54-teams",
@@ -1466,10 +1448,28 @@
       "description": "Day 54 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day55-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_55\\outlook",
+      "description": "Day 55 \u2014 Outlook email threads"
+    },
+    {
       "name": "npci-day55-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_55\\teams",
       "description": "Day 55 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day55-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_55\\meetings",
+      "description": "Day 55 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day55-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_55\\incidents",
+      "description": "Day 55 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day55-reports",
@@ -1482,6 +1482,18 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_55\\excel",
       "description": "Day 55 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day55-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_55\\tasks",
+      "description": "Day 55 \u2014 Enterprise tasks"
+    },
+    {
+      "name": "npci-day56-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_56\\outlook",
+      "description": "Day 56 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day56-teams",
@@ -1514,28 +1526,10 @@
       "description": "Day 56 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
     },
     {
-      "name": "npci-day57-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_57\\outlook",
-      "description": "Day 57 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day57-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_57\\teams",
       "description": "Day 57 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day57-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_57\\meetings",
-      "description": "Day 57 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day57-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_57\\incidents",
-      "description": "Day 57 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day57-reports",
@@ -1550,34 +1544,10 @@
       "description": "Day 57 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day57-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_57\\tasks",
-      "description": "Day 57 \u2014 Enterprise tasks"
-    },
-    {
       "name": "npci-day58-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_58\\teams",
       "description": "Day 58 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day58-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_58\\meetings",
-      "description": "Day 58 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day58-decisions",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_58\\decisions",
-      "description": "Day 58 \u2014 Decision records"
-    },
-    {
-      "name": "npci-day58-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_58\\incidents",
-      "description": "Day 58 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day58-reports",
@@ -1592,16 +1562,28 @@
       "description": "Day 58 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day58-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_58\\tasks",
-      "description": "Day 58 \u2014 Enterprise tasks"
+      "name": "npci-day59-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_59\\outlook",
+      "description": "Day 59 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day59-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_59\\teams",
       "description": "Day 59 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day59-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_59\\meetings",
+      "description": "Day 59 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day59-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_59\\incidents",
+      "description": "Day 59 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day59-reports",
@@ -1616,16 +1598,34 @@
       "description": "Day 59 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day60-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_60\\outlook",
-      "description": "Day 60 \u2014 Outlook email threads"
+      "name": "npci-day59-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_59\\tasks",
+      "description": "Day 59 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day60-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_60\\teams",
       "description": "Day 60 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day60-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_60\\meetings",
+      "description": "Day 60 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day60-decisions",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_60\\decisions",
+      "description": "Day 60 \u2014 Decision records"
+    },
+    {
+      "name": "npci-day60-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_60\\incidents",
+      "description": "Day 60 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day60-reports",
@@ -1638,6 +1638,12 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_60\\excel",
       "description": "Day 60 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day60-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_60\\tasks",
+      "description": "Day 60 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day61-outlook",
@@ -1682,34 +1688,16 @@
       "description": "Day 61 \u2014 Enterprise tasks"
     },
     {
+      "name": "npci-day62-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_62\\outlook",
+      "description": "Day 62 \u2014 Outlook email threads"
+    },
+    {
       "name": "npci-day62-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_62\\teams",
       "description": "Day 62 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day62-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_62\\meetings",
-      "description": "Day 62 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day62-decisions",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_62\\decisions",
-      "description": "Day 62 \u2014 Decision records"
-    },
-    {
-      "name": "npci-day62-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_62\\incidents",
-      "description": "Day 62 \u2014 Incident records and RCAs"
-    },
-    {
-      "name": "npci-day62-docs",
-      "kind": "product_documents",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_62\\docs",
-      "description": "Day 62 \u2014 SOPs, BRDs, PRDs, product docs"
     },
     {
       "name": "npci-day62-reports",
@@ -1722,18 +1710,6 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_62\\excel",
       "description": "Day 62 \u2014 KPI workbooks"
-    },
-    {
-      "name": "npci-day62-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_62\\tasks",
-      "description": "Day 62 \u2014 Enterprise tasks"
-    },
-    {
-      "name": "npci-day63-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_63\\outlook",
-      "description": "Day 63 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day63-teams",
@@ -1784,12 +1760,6 @@
       "description": "Day 64 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day65-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_65\\outlook",
-      "description": "Day 65 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day65-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_65\\teams",
@@ -1802,12 +1772,6 @@
       "description": "Day 65 \u2014 Meetings: agendas, notes, decisions"
     },
     {
-      "name": "npci-day65-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_65\\incidents",
-      "description": "Day 65 \u2014 Incident records and RCAs"
-    },
-    {
       "name": "npci-day65-reports",
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_65\\reports",
@@ -1818,18 +1782,6 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_65\\excel",
       "description": "Day 65 \u2014 KPI workbooks"
-    },
-    {
-      "name": "npci-day65-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_65\\tasks",
-      "description": "Day 65 \u2014 Enterprise tasks"
-    },
-    {
-      "name": "npci-day66-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_66\\outlook",
-      "description": "Day 66 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day66-teams",
@@ -1904,12 +1856,6 @@
       "description": "Day 69 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day70-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_70\\outlook",
-      "description": "Day 70 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day70-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_70\\teams",
@@ -1920,12 +1866,6 @@
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_70\\meetings",
       "description": "Day 70 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day70-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_70\\incidents",
-      "description": "Day 70 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day70-reports",
@@ -1940,22 +1880,10 @@
       "description": "Day 70 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day70-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_70\\tasks",
-      "description": "Day 70 \u2014 Enterprise tasks"
-    },
-    {
       "name": "npci-day70-analytics",
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_70\\analytics",
       "description": "Day 70 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
-    },
-    {
-      "name": "npci-day71-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_71\\outlook",
-      "description": "Day 71 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day71-teams",
@@ -2048,10 +1976,28 @@
       "description": "Day 75 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day76-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_76\\outlook",
+      "description": "Day 76 \u2014 Outlook email threads"
+    },
+    {
       "name": "npci-day76-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_76\\teams",
       "description": "Day 76 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day76-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_76\\meetings",
+      "description": "Day 76 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day76-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_76\\incidents",
+      "description": "Day 76 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day76-reports",
@@ -2066,6 +2012,12 @@
       "description": "Day 76 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day76-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_76\\tasks",
+      "description": "Day 76 \u2014 Enterprise tasks"
+    },
+    {
       "name": "npci-day77-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_77\\teams",
@@ -2076,6 +2028,18 @@
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_77\\meetings",
       "description": "Day 77 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day77-decisions",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_77\\decisions",
+      "description": "Day 77 \u2014 Decision records"
+    },
+    {
+      "name": "npci-day77-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_77\\incidents",
+      "description": "Day 77 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day77-reports",
@@ -2090,16 +2054,40 @@
       "description": "Day 77 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day77-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_77\\tasks",
+      "description": "Day 77 \u2014 Enterprise tasks"
+    },
+    {
       "name": "npci-day77-analytics",
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_77\\analytics",
       "description": "Day 77 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
     },
     {
+      "name": "npci-day78-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_78\\outlook",
+      "description": "Day 78 \u2014 Outlook email threads"
+    },
+    {
       "name": "npci-day78-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_78\\teams",
       "description": "Day 78 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day78-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_78\\meetings",
+      "description": "Day 78 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day78-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_78\\incidents",
+      "description": "Day 78 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day78-reports",
@@ -2112,6 +2100,18 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_78\\excel",
       "description": "Day 78 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day78-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_78\\tasks",
+      "description": "Day 78 \u2014 Enterprise tasks"
+    },
+    {
+      "name": "npci-day79-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_79\\outlook",
+      "description": "Day 79 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day79-teams",
@@ -2132,10 +2132,28 @@
       "description": "Day 79 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day80-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_80\\outlook",
+      "description": "Day 80 \u2014 Outlook email threads"
+    },
+    {
       "name": "npci-day80-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_80\\teams",
       "description": "Day 80 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day80-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_80\\meetings",
+      "description": "Day 80 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day80-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_80\\incidents",
+      "description": "Day 80 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day80-reports",
@@ -2150,6 +2168,12 @@
       "description": "Day 80 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day80-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_80\\tasks",
+      "description": "Day 80 \u2014 Enterprise tasks"
+    },
+    {
       "name": "npci-day81-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_81\\teams",
@@ -2162,6 +2186,18 @@
       "description": "Day 81 \u2014 Meetings: agendas, notes, decisions"
     },
     {
+      "name": "npci-day81-decisions",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_81\\decisions",
+      "description": "Day 81 \u2014 Decision records"
+    },
+    {
+      "name": "npci-day81-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_81\\incidents",
+      "description": "Day 81 \u2014 Incident records and RCAs"
+    },
+    {
       "name": "npci-day81-reports",
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_81\\reports",
@@ -2172,6 +2208,12 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_81\\excel",
       "description": "Day 81 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day81-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_81\\tasks",
+      "description": "Day 81 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day82-teams",
@@ -2190,6 +2232,12 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_82\\excel",
       "description": "Day 82 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day83-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_83\\outlook",
+      "description": "Day 83 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day83-teams",
@@ -2240,28 +2288,10 @@
       "description": "Day 84 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
     },
     {
-      "name": "npci-day85-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_85\\outlook",
-      "description": "Day 85 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day85-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_85\\teams",
       "description": "Day 85 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day85-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_85\\meetings",
-      "description": "Day 85 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day85-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_85\\incidents",
-      "description": "Day 85 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day85-reports",
@@ -2276,34 +2306,10 @@
       "description": "Day 85 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day85-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_85\\tasks",
-      "description": "Day 85 \u2014 Enterprise tasks"
-    },
-    {
       "name": "npci-day86-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_86\\teams",
       "description": "Day 86 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day86-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_86\\meetings",
-      "description": "Day 86 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day86-decisions",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_86\\decisions",
-      "description": "Day 86 \u2014 Decision records"
-    },
-    {
-      "name": "npci-day86-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_86\\incidents",
-      "description": "Day 86 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day86-reports",
@@ -2316,12 +2322,6 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_86\\excel",
       "description": "Day 86 \u2014 KPI workbooks"
-    },
-    {
-      "name": "npci-day86-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_86\\tasks",
-      "description": "Day 86 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day87-teams",
@@ -2348,6 +2348,12 @@
       "description": "Day 88 \u2014 Microsoft Teams conversations"
     },
     {
+      "name": "npci-day88-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_88\\meetings",
+      "description": "Day 88 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
       "name": "npci-day88-reports",
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_88\\reports",
@@ -2358,12 +2364,6 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_88\\excel",
       "description": "Day 88 \u2014 KPI workbooks"
-    },
-    {
-      "name": "npci-day89-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_89\\outlook",
-      "description": "Day 89 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day89-teams",
@@ -2432,10 +2432,28 @@
       "description": "Day 91 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
     },
     {
+      "name": "npci-day92-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_92\\outlook",
+      "description": "Day 92 \u2014 Outlook email threads"
+    },
+    {
       "name": "npci-day92-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_92\\teams",
       "description": "Day 92 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day92-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_92\\meetings",
+      "description": "Day 92 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day92-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_92\\incidents",
+      "description": "Day 92 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day92-reports",
@@ -2450,10 +2468,34 @@
       "description": "Day 92 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day92-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_92\\tasks",
+      "description": "Day 92 \u2014 Enterprise tasks"
+    },
+    {
       "name": "npci-day93-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_93\\teams",
       "description": "Day 93 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day93-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_93\\meetings",
+      "description": "Day 93 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day93-decisions",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_93\\decisions",
+      "description": "Day 93 \u2014 Decision records"
+    },
+    {
+      "name": "npci-day93-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_93\\incidents",
+      "description": "Day 93 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day93-reports",
@@ -2466,6 +2508,12 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_93\\excel",
       "description": "Day 93 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day93-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_93\\tasks",
+      "description": "Day 93 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day94-teams",
@@ -2498,18 +2546,6 @@
       "description": "Day 95 \u2014 Microsoft Teams conversations"
     },
     {
-      "name": "npci-day95-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_95\\meetings",
-      "description": "Day 95 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day95-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_95\\incidents",
-      "description": "Day 95 \u2014 Incident records and RCAs"
-    },
-    {
       "name": "npci-day95-reports",
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_95\\reports",
@@ -2522,34 +2558,10 @@
       "description": "Day 95 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day95-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_95\\tasks",
-      "description": "Day 95 \u2014 Enterprise tasks"
-    },
-    {
       "name": "npci-day96-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_96\\teams",
       "description": "Day 96 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day96-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_96\\meetings",
-      "description": "Day 96 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day96-decisions",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_96\\decisions",
-      "description": "Day 96 \u2014 Decision records"
-    },
-    {
-      "name": "npci-day96-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_96\\incidents",
-      "description": "Day 96 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day96-reports",
@@ -2562,12 +2574,6 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_96\\excel",
       "description": "Day 96 \u2014 KPI workbooks"
-    },
-    {
-      "name": "npci-day96-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_96\\tasks",
-      "description": "Day 96 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day97-teams",
@@ -2618,12 +2624,6 @@
       "description": "Day 98 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
     },
     {
-      "name": "npci-day99-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_99\\outlook",
-      "description": "Day 99 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day99-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_99\\teams",
@@ -2642,28 +2642,10 @@
       "description": "Day 99 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day100-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_100\\outlook",
-      "description": "Day 100 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day100-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_100\\teams",
       "description": "Day 100 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day100-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_100\\meetings",
-      "description": "Day 100 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day100-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_100\\incidents",
-      "description": "Day 100 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day100-reports",
@@ -2678,10 +2660,10 @@
       "description": "Day 100 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day100-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_100\\tasks",
-      "description": "Day 100 \u2014 Enterprise tasks"
+      "name": "npci-day101-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_101\\outlook",
+      "description": "Day 101 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day101-teams",
@@ -2694,12 +2676,6 @@
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_101\\meetings",
       "description": "Day 101 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day101-decisions",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_101\\decisions",
-      "description": "Day 101 \u2014 Decision records"
     },
     {
       "name": "npci-day101-incidents",
@@ -2732,6 +2708,30 @@
       "description": "Day 102 \u2014 Microsoft Teams conversations"
     },
     {
+      "name": "npci-day102-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_102\\meetings",
+      "description": "Day 102 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day102-decisions",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_102\\decisions",
+      "description": "Day 102 \u2014 Decision records"
+    },
+    {
+      "name": "npci-day102-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_102\\incidents",
+      "description": "Day 102 \u2014 Incident records and RCAs"
+    },
+    {
+      "name": "npci-day102-docs",
+      "kind": "product_documents",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_102\\docs",
+      "description": "Day 102 \u2014 SOPs, BRDs, PRDs, product docs"
+    },
+    {
       "name": "npci-day102-reports",
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_102\\reports",
@@ -2742,6 +2742,18 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_102\\excel",
       "description": "Day 102 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day102-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_102\\tasks",
+      "description": "Day 102 \u2014 Enterprise tasks"
+    },
+    {
+      "name": "npci-day103-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_103\\outlook",
+      "description": "Day 103 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day103-teams",
@@ -2760,12 +2772,6 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_103\\excel",
       "description": "Day 103 \u2014 KPI workbooks"
-    },
-    {
-      "name": "npci-day104-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_104\\outlook",
-      "description": "Day 104 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day104-teams",
@@ -2870,10 +2876,28 @@
       "description": "Day 108 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day109-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_109\\outlook",
+      "description": "Day 109 \u2014 Outlook email threads"
+    },
+    {
       "name": "npci-day109-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_109\\teams",
       "description": "Day 109 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day109-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_109\\meetings",
+      "description": "Day 109 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day109-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_109\\incidents",
+      "description": "Day 109 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day109-reports",
@@ -2888,10 +2912,40 @@
       "description": "Day 109 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day109-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_109\\tasks",
+      "description": "Day 109 \u2014 Enterprise tasks"
+    },
+    {
       "name": "npci-day110-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_110\\teams",
       "description": "Day 110 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day110-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_110\\meetings",
+      "description": "Day 110 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day110-decisions",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_110\\decisions",
+      "description": "Day 110 \u2014 Decision records"
+    },
+    {
+      "name": "npci-day110-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_110\\incidents",
+      "description": "Day 110 \u2014 Incident records and RCAs"
+    },
+    {
+      "name": "npci-day110-docs",
+      "kind": "product_documents",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_110\\docs",
+      "description": "Day 110 \u2014 SOPs, BRDs, PRDs, product docs"
     },
     {
       "name": "npci-day110-reports",
@@ -2904,6 +2958,12 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_110\\excel",
       "description": "Day 110 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day110-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_110\\tasks",
+      "description": "Day 110 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day111-teams",
@@ -2922,6 +2982,12 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_111\\excel",
       "description": "Day 111 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day112-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_112\\outlook",
+      "description": "Day 112 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day112-teams",
@@ -2954,28 +3020,10 @@
       "description": "Day 112 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
     },
     {
-      "name": "npci-day113-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_113\\outlook",
-      "description": "Day 113 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day113-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_113\\teams",
       "description": "Day 113 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day113-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_113\\meetings",
-      "description": "Day 113 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day113-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_113\\incidents",
-      "description": "Day 113 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day113-reports",
@@ -2990,10 +3038,10 @@
       "description": "Day 113 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day113-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_113\\tasks",
-      "description": "Day 113 \u2014 Enterprise tasks"
+      "name": "npci-day114-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_114\\outlook",
+      "description": "Day 114 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day114-teams",
@@ -3006,12 +3054,6 @@
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_114\\meetings",
       "description": "Day 114 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day114-decisions",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_114\\decisions",
-      "description": "Day 114 \u2014 Decision records"
     },
     {
       "name": "npci-day114-incidents",
@@ -3036,6 +3078,12 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_114\\tasks",
       "description": "Day 114 \u2014 Enterprise tasks"
+    },
+    {
+      "name": "npci-day115-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_115\\outlook",
+      "description": "Day 115 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day115-teams",
@@ -3158,6 +3206,12 @@
       "description": "Day 118 \u2014 Enterprise tasks"
     },
     {
+      "name": "npci-day119-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_119\\outlook",
+      "description": "Day 119 \u2014 Outlook email threads"
+    },
+    {
       "name": "npci-day119-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_119\\teams",
@@ -3186,12 +3240,6 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_119\\analytics",
       "description": "Day 119 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
-    },
-    {
-      "name": "npci-day120-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_120\\outlook",
-      "description": "Day 120 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day120-teams",
@@ -3266,10 +3314,28 @@
       "description": "Day 123 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day124-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_124\\outlook",
+      "description": "Day 124 \u2014 Outlook email threads"
+    },
+    {
       "name": "npci-day124-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_124\\teams",
       "description": "Day 124 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day124-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_124\\meetings",
+      "description": "Day 124 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day124-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_124\\incidents",
+      "description": "Day 124 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day124-reports",
@@ -3284,10 +3350,34 @@
       "description": "Day 124 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day124-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_124\\tasks",
+      "description": "Day 124 \u2014 Enterprise tasks"
+    },
+    {
       "name": "npci-day125-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_125\\teams",
       "description": "Day 125 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day125-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_125\\meetings",
+      "description": "Day 125 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day125-decisions",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_125\\decisions",
+      "description": "Day 125 \u2014 Decision records"
+    },
+    {
+      "name": "npci-day125-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_125\\incidents",
+      "description": "Day 125 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day125-reports",
@@ -3302,10 +3392,10 @@
       "description": "Day 125 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day126-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_126\\outlook",
-      "description": "Day 126 \u2014 Outlook email threads"
+      "name": "npci-day125-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_125\\tasks",
+      "description": "Day 125 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day126-teams",
@@ -3320,12 +3410,6 @@
       "description": "Day 126 \u2014 Meetings: agendas, notes, decisions"
     },
     {
-      "name": "npci-day126-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_126\\incidents",
-      "description": "Day 126 \u2014 Incident records and RCAs"
-    },
-    {
       "name": "npci-day126-reports",
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_126\\reports",
@@ -3338,40 +3422,22 @@
       "description": "Day 126 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day126-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_126\\tasks",
-      "description": "Day 126 \u2014 Enterprise tasks"
-    },
-    {
       "name": "npci-day126-analytics",
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_126\\analytics",
       "description": "Day 126 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
     },
     {
+      "name": "npci-day127-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_127\\outlook",
+      "description": "Day 127 \u2014 Outlook email threads"
+    },
+    {
       "name": "npci-day127-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_127\\teams",
       "description": "Day 127 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day127-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_127\\meetings",
-      "description": "Day 127 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day127-decisions",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_127\\decisions",
-      "description": "Day 127 \u2014 Decision records"
-    },
-    {
-      "name": "npci-day127-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_127\\incidents",
-      "description": "Day 127 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day127-reports",
@@ -3386,16 +3452,28 @@
       "description": "Day 127 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day127-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_127\\tasks",
-      "description": "Day 127 \u2014 Enterprise tasks"
+      "name": "npci-day128-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_128\\outlook",
+      "description": "Day 128 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day128-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_128\\teams",
       "description": "Day 128 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day128-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_128\\meetings",
+      "description": "Day 128 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day128-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_128\\incidents",
+      "description": "Day 128 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day128-reports",
@@ -3410,10 +3488,10 @@
       "description": "Day 128 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day129-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_129\\outlook",
-      "description": "Day 129 \u2014 Outlook email threads"
+      "name": "npci-day128-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_128\\tasks",
+      "description": "Day 128 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day129-teams",
@@ -3426,6 +3504,12 @@
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_129\\meetings",
       "description": "Day 129 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day129-decisions",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_129\\decisions",
+      "description": "Day 129 \u2014 Decision records"
     },
     {
       "name": "npci-day129-incidents",
@@ -3452,40 +3536,10 @@
       "description": "Day 129 \u2014 Enterprise tasks"
     },
     {
-      "name": "npci-day130-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_130\\outlook",
-      "description": "Day 130 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day130-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_130\\teams",
       "description": "Day 130 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day130-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_130\\meetings",
-      "description": "Day 130 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day130-decisions",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_130\\decisions",
-      "description": "Day 130 \u2014 Decision records"
-    },
-    {
-      "name": "npci-day130-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_130\\incidents",
-      "description": "Day 130 \u2014 Incident records and RCAs"
-    },
-    {
-      "name": "npci-day130-docs",
-      "kind": "product_documents",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_130\\docs",
-      "description": "Day 130 \u2014 SOPs, BRDs, PRDs, product docs"
     },
     {
       "name": "npci-day130-reports",
@@ -3500,34 +3554,10 @@
       "description": "Day 130 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day130-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_130\\tasks",
-      "description": "Day 130 \u2014 Enterprise tasks"
-    },
-    {
-      "name": "npci-day131-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_131\\outlook",
-      "description": "Day 131 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day131-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_131\\teams",
       "description": "Day 131 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day131-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_131\\meetings",
-      "description": "Day 131 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day131-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_131\\incidents",
-      "description": "Day 131 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day131-reports",
@@ -3540,12 +3570,6 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_131\\excel",
       "description": "Day 131 \u2014 KPI workbooks"
-    },
-    {
-      "name": "npci-day131-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_131\\tasks",
-      "description": "Day 131 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day132-outlook",
@@ -3570,12 +3594,6 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_132\\excel",
       "description": "Day 132 \u2014 KPI workbooks"
-    },
-    {
-      "name": "npci-day133-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_133\\outlook",
-      "description": "Day 133 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day133-teams",
@@ -3626,12 +3644,6 @@
       "description": "Day 134 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day135-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_135\\outlook",
-      "description": "Day 135 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day135-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_135\\teams",
@@ -3644,12 +3656,6 @@
       "description": "Day 135 \u2014 Meetings: agendas, notes, decisions"
     },
     {
-      "name": "npci-day135-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_135\\incidents",
-      "description": "Day 135 \u2014 Incident records and RCAs"
-    },
-    {
       "name": "npci-day135-reports",
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_135\\reports",
@@ -3660,18 +3666,6 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_135\\excel",
       "description": "Day 135 \u2014 KPI workbooks"
-    },
-    {
-      "name": "npci-day135-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_135\\tasks",
-      "description": "Day 135 \u2014 Enterprise tasks"
-    },
-    {
-      "name": "npci-day136-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_136\\outlook",
-      "description": "Day 136 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day136-teams",
@@ -3698,12 +3692,6 @@
       "description": "Day 137 \u2014 Microsoft Teams conversations"
     },
     {
-      "name": "npci-day137-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_137\\meetings",
-      "description": "Day 137 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
       "name": "npci-day137-reports",
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_137\\reports",
@@ -3716,10 +3704,28 @@
       "description": "Day 137 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day138-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_138\\outlook",
+      "description": "Day 138 \u2014 Outlook email threads"
+    },
+    {
       "name": "npci-day138-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_138\\teams",
       "description": "Day 138 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day138-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_138\\meetings",
+      "description": "Day 138 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day138-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_138\\incidents",
+      "description": "Day 138 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day138-reports",
@@ -3734,6 +3740,12 @@
       "description": "Day 138 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day138-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_138\\tasks",
+      "description": "Day 138 \u2014 Enterprise tasks"
+    },
+    {
       "name": "npci-day139-outlook",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_139\\outlook",
@@ -3744,18 +3756,6 @@
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_139\\teams",
       "description": "Day 139 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day139-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_139\\meetings",
-      "description": "Day 139 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day139-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_139\\incidents",
-      "description": "Day 139 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day139-reports",
@@ -3770,10 +3770,10 @@
       "description": "Day 139 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day139-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_139\\tasks",
-      "description": "Day 139 \u2014 Enterprise tasks"
+      "name": "npci-day140-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_140\\outlook",
+      "description": "Day 140 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day140-teams",
@@ -3786,12 +3786,6 @@
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_140\\meetings",
       "description": "Day 140 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day140-decisions",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_140\\decisions",
-      "description": "Day 140 \u2014 Decision records"
     },
     {
       "name": "npci-day140-incidents",
@@ -3830,6 +3824,24 @@
       "description": "Day 141 \u2014 Microsoft Teams conversations"
     },
     {
+      "name": "npci-day141-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_141\\meetings",
+      "description": "Day 141 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day141-decisions",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_141\\decisions",
+      "description": "Day 141 \u2014 Decision records"
+    },
+    {
+      "name": "npci-day141-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_141\\incidents",
+      "description": "Day 141 \u2014 Incident records and RCAs"
+    },
+    {
       "name": "npci-day141-reports",
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_141\\reports",
@@ -3840,6 +3852,12 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_141\\excel",
       "description": "Day 141 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day141-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_141\\tasks",
+      "description": "Day 141 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day142-teams",
@@ -3884,10 +3902,28 @@
       "description": "Day 143 \u2014 KPI workbooks"
     },
     {
+      "name": "npci-day144-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_144\\outlook",
+      "description": "Day 144 \u2014 Outlook email threads"
+    },
+    {
       "name": "npci-day144-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_144\\teams",
       "description": "Day 144 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day144-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_144\\meetings",
+      "description": "Day 144 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day144-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_144\\incidents",
+      "description": "Day 144 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day144-reports",
@@ -3902,10 +3938,10 @@
       "description": "Day 144 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day145-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_145\\outlook",
-      "description": "Day 145 \u2014 Outlook email threads"
+      "name": "npci-day144-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_144\\tasks",
+      "description": "Day 144 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day145-teams",
@@ -3918,6 +3954,12 @@
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_145\\meetings",
       "description": "Day 145 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day145-decisions",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_145\\decisions",
+      "description": "Day 145 \u2014 Decision records"
     },
     {
       "name": "npci-day145-incidents",
@@ -3950,24 +3992,6 @@
       "description": "Day 146 \u2014 Microsoft Teams conversations"
     },
     {
-      "name": "npci-day146-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_146\\meetings",
-      "description": "Day 146 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day146-decisions",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_146\\decisions",
-      "description": "Day 146 \u2014 Decision records"
-    },
-    {
-      "name": "npci-day146-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_146\\incidents",
-      "description": "Day 146 \u2014 Incident records and RCAs"
-    },
-    {
       "name": "npci-day146-reports",
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_146\\reports",
@@ -3978,12 +4002,6 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_146\\excel",
       "description": "Day 146 \u2014 KPI workbooks"
-    },
-    {
-      "name": "npci-day146-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_146\\tasks",
-      "description": "Day 146 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day147-outlook",
@@ -4046,24 +4064,6 @@
       "description": "Day 148 \u2014 Microsoft Teams conversations"
     },
     {
-      "name": "npci-day148-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_148\\meetings",
-      "description": "Day 148 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day148-decisions",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_148\\decisions",
-      "description": "Day 148 \u2014 Decision records"
-    },
-    {
-      "name": "npci-day148-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_148\\incidents",
-      "description": "Day 148 \u2014 Incident records and RCAs"
-    },
-    {
       "name": "npci-day148-reports",
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_148\\reports",
@@ -4074,18 +4074,6 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_148\\excel",
       "description": "Day 148 \u2014 KPI workbooks"
-    },
-    {
-      "name": "npci-day148-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_148\\tasks",
-      "description": "Day 148 \u2014 Enterprise tasks"
-    },
-    {
-      "name": "npci-day149-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_149\\outlook",
-      "description": "Day 149 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day149-teams",
@@ -4208,6 +4196,12 @@
       "description": "Day 152 \u2014 Enterprise tasks"
     },
     {
+      "name": "npci-day153-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_153\\outlook",
+      "description": "Day 153 \u2014 Outlook email threads"
+    },
+    {
       "name": "npci-day153-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_153\\teams",
@@ -4256,12 +4250,6 @@
       "description": "Day 154 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
     },
     {
-      "name": "npci-day155-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_155\\outlook",
-      "description": "Day 155 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day155-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_155\\teams",
@@ -4284,6 +4272,12 @@
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_156\\teams",
       "description": "Day 156 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day156-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_156\\meetings",
+      "description": "Day 156 \u2014 Meetings: agendas, notes, decisions"
     },
     {
       "name": "npci-day156-reports",
@@ -4370,12 +4364,6 @@
       "description": "Day 160 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day161-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_161\\outlook",
-      "description": "Day 161 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day161-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_161\\teams",
@@ -4386,12 +4374,6 @@
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_161\\meetings",
       "description": "Day 161 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day161-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_161\\incidents",
-      "description": "Day 161 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day161-reports",
@@ -4406,22 +4388,10 @@
       "description": "Day 161 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day161-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_161\\tasks",
-      "description": "Day 161 \u2014 Enterprise tasks"
-    },
-    {
       "name": "npci-day161-analytics",
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_161\\analytics",
       "description": "Day 161 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
-    },
-    {
-      "name": "npci-day162-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_162\\outlook",
-      "description": "Day 162 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day162-teams",
@@ -4496,28 +4466,10 @@
       "description": "Day 165 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day166-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_166\\outlook",
-      "description": "Day 166 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day166-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_166\\teams",
       "description": "Day 166 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day166-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_166\\meetings",
-      "description": "Day 166 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day166-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_166\\incidents",
-      "description": "Day 166 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day166-reports",
@@ -4532,34 +4484,10 @@
       "description": "Day 166 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day166-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_166\\tasks",
-      "description": "Day 166 \u2014 Enterprise tasks"
-    },
-    {
       "name": "npci-day167-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_167\\teams",
       "description": "Day 167 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day167-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_167\\meetings",
-      "description": "Day 167 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day167-decisions",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_167\\decisions",
-      "description": "Day 167 \u2014 Decision records"
-    },
-    {
-      "name": "npci-day167-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_167\\incidents",
-      "description": "Day 167 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day167-reports",
@@ -4572,12 +4500,6 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_167\\excel",
       "description": "Day 167 \u2014 KPI workbooks"
-    },
-    {
-      "name": "npci-day167-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_167\\tasks",
-      "description": "Day 167 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day168-teams",
@@ -4628,12 +4550,6 @@
       "description": "Day 169 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day170-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_170\\outlook",
-      "description": "Day 170 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day170-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_170\\teams",
@@ -4652,12 +4568,6 @@
       "description": "Day 170 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day171-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_171\\outlook",
-      "description": "Day 171 \u2014 Outlook email threads"
-    },
-    {
       "name": "npci-day171-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_171\\teams",
@@ -4668,12 +4578,6 @@
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_171\\meetings",
       "description": "Day 171 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day171-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_171\\incidents",
-      "description": "Day 171 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day171-reports",
@@ -4688,34 +4592,10 @@
       "description": "Day 171 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day171-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_171\\tasks",
-      "description": "Day 171 \u2014 Enterprise tasks"
-    },
-    {
       "name": "npci-day172-teams",
       "kind": "meeting_notes",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_172\\teams",
       "description": "Day 172 \u2014 Microsoft Teams conversations"
-    },
-    {
-      "name": "npci-day172-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_172\\meetings",
-      "description": "Day 172 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day172-decisions",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_172\\decisions",
-      "description": "Day 172 \u2014 Decision records"
-    },
-    {
-      "name": "npci-day172-incidents",
-      "kind": "rca_repository",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_172\\incidents",
-      "description": "Day 172 \u2014 Incident records and RCAs"
     },
     {
       "name": "npci-day172-reports",
@@ -4728,12 +4608,6 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_172\\excel",
       "description": "Day 172 \u2014 KPI workbooks"
-    },
-    {
-      "name": "npci-day172-tasks",
-      "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_172\\tasks",
-      "description": "Day 172 \u2014 Enterprise tasks"
     },
     {
       "name": "npci-day173-teams",
@@ -4752,12 +4626,6 @@
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_173\\excel",
       "description": "Day 173 \u2014 KPI workbooks"
-    },
-    {
-      "name": "npci-day174-outlook",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_174\\outlook",
-      "description": "Day 174 \u2014 Outlook email threads"
     },
     {
       "name": "npci-day174-teams",
@@ -4850,12 +4718,6 @@
       "description": "Day 178 \u2014 Microsoft Teams conversations"
     },
     {
-      "name": "npci-day178-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_178\\meetings",
-      "description": "Day 178 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
       "name": "npci-day178-reports",
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_178\\reports",
@@ -4892,18 +4754,6 @@
       "description": "Day 180 \u2014 Microsoft Teams conversations"
     },
     {
-      "name": "npci-day180-meetings",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_180\\meetings",
-      "description": "Day 180 \u2014 Meetings: agendas, notes, decisions"
-    },
-    {
-      "name": "npci-day180-decisions",
-      "kind": "meeting_notes",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_180\\decisions",
-      "description": "Day 180 \u2014 Decision records"
-    },
-    {
       "name": "npci-day180-reports",
       "kind": "document_folder",
       "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_180\\reports",
@@ -4916,10 +4766,598 @@
       "description": "Day 180 \u2014 KPI workbooks"
     },
     {
-      "name": "npci-day180-analytics",
+      "name": "npci-day181-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_181\\teams",
+      "description": "Day 181 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day181-reports",
       "kind": "document_folder",
-      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_180\\analytics",
-      "description": "Day 180 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_181\\reports",
+      "description": "Day 181 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day181-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_181\\excel",
+      "description": "Day 181 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day182-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_182\\teams",
+      "description": "Day 182 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day182-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_182\\meetings",
+      "description": "Day 182 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day182-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_182\\reports",
+      "description": "Day 182 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day182-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_182\\excel",
+      "description": "Day 182 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day182-analytics",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_182\\analytics",
+      "description": "Day 182 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
+    },
+    {
+      "name": "npci-day183-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_183\\teams",
+      "description": "Day 183 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day183-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_183\\reports",
+      "description": "Day 183 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day183-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_183\\excel",
+      "description": "Day 183 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day184-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_184\\outlook",
+      "description": "Day 184 \u2014 Outlook email threads"
+    },
+    {
+      "name": "npci-day184-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_184\\teams",
+      "description": "Day 184 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day184-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_184\\meetings",
+      "description": "Day 184 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day184-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_184\\incidents",
+      "description": "Day 184 \u2014 Incident records and RCAs"
+    },
+    {
+      "name": "npci-day184-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_184\\reports",
+      "description": "Day 184 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day184-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_184\\excel",
+      "description": "Day 184 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day184-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_184\\tasks",
+      "description": "Day 184 \u2014 Enterprise tasks"
+    },
+    {
+      "name": "npci-day185-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_185\\teams",
+      "description": "Day 185 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day185-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_185\\meetings",
+      "description": "Day 185 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day185-decisions",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_185\\decisions",
+      "description": "Day 185 \u2014 Decision records"
+    },
+    {
+      "name": "npci-day185-incidents",
+      "kind": "rca_repository",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_185\\incidents",
+      "description": "Day 185 \u2014 Incident records and RCAs"
+    },
+    {
+      "name": "npci-day185-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_185\\reports",
+      "description": "Day 185 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day185-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_185\\excel",
+      "description": "Day 185 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day185-tasks",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_185\\tasks",
+      "description": "Day 185 \u2014 Enterprise tasks"
+    },
+    {
+      "name": "npci-day186-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_186\\teams",
+      "description": "Day 186 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day186-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_186\\reports",
+      "description": "Day 186 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day186-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_186\\excel",
+      "description": "Day 186 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day187-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_187\\teams",
+      "description": "Day 187 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day187-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_187\\reports",
+      "description": "Day 187 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day187-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_187\\excel",
+      "description": "Day 187 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day188-outlook",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_188\\outlook",
+      "description": "Day 188 \u2014 Outlook email threads"
+    },
+    {
+      "name": "npci-day188-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_188\\teams",
+      "description": "Day 188 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day188-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_188\\reports",
+      "description": "Day 188 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day188-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_188\\excel",
+      "description": "Day 188 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day189-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_189\\teams",
+      "description": "Day 189 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day189-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_189\\meetings",
+      "description": "Day 189 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day189-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_189\\reports",
+      "description": "Day 189 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day189-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_189\\excel",
+      "description": "Day 189 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day189-analytics",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_189\\analytics",
+      "description": "Day 189 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
+    },
+    {
+      "name": "npci-day190-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_190\\teams",
+      "description": "Day 190 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day190-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_190\\reports",
+      "description": "Day 190 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day190-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_190\\excel",
+      "description": "Day 190 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day191-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_191\\teams",
+      "description": "Day 191 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day191-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_191\\reports",
+      "description": "Day 191 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day191-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_191\\excel",
+      "description": "Day 191 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day192-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_192\\teams",
+      "description": "Day 192 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day192-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_192\\reports",
+      "description": "Day 192 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day192-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_192\\excel",
+      "description": "Day 192 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day193-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_193\\teams",
+      "description": "Day 193 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day193-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_193\\reports",
+      "description": "Day 193 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day193-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_193\\excel",
+      "description": "Day 193 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day194-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_194\\teams",
+      "description": "Day 194 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day194-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_194\\reports",
+      "description": "Day 194 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day194-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_194\\excel",
+      "description": "Day 194 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day195-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_195\\teams",
+      "description": "Day 195 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day195-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_195\\reports",
+      "description": "Day 195 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day195-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_195\\excel",
+      "description": "Day 195 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day196-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_196\\teams",
+      "description": "Day 196 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day196-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_196\\meetings",
+      "description": "Day 196 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day196-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_196\\reports",
+      "description": "Day 196 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day196-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_196\\excel",
+      "description": "Day 196 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day196-analytics",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_196\\analytics",
+      "description": "Day 196 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
+    },
+    {
+      "name": "npci-day197-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_197\\teams",
+      "description": "Day 197 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day197-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_197\\reports",
+      "description": "Day 197 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day197-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_197\\excel",
+      "description": "Day 197 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day198-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_198\\teams",
+      "description": "Day 198 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day198-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_198\\reports",
+      "description": "Day 198 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day198-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_198\\excel",
+      "description": "Day 198 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day199-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_199\\teams",
+      "description": "Day 199 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day199-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_199\\reports",
+      "description": "Day 199 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day199-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_199\\excel",
+      "description": "Day 199 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day200-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_200\\teams",
+      "description": "Day 200 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day200-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_200\\reports",
+      "description": "Day 200 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day200-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_200\\excel",
+      "description": "Day 200 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day201-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_201\\teams",
+      "description": "Day 201 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day201-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_201\\reports",
+      "description": "Day 201 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day201-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_201\\excel",
+      "description": "Day 201 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day202-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_202\\teams",
+      "description": "Day 202 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day202-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_202\\reports",
+      "description": "Day 202 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day202-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_202\\excel",
+      "description": "Day 202 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day203-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_203\\teams",
+      "description": "Day 203 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day203-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_203\\meetings",
+      "description": "Day 203 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day203-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_203\\reports",
+      "description": "Day 203 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day203-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_203\\excel",
+      "description": "Day 203 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day203-analytics",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_203\\analytics",
+      "description": "Day 203 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
+    },
+    {
+      "name": "npci-day204-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_204\\teams",
+      "description": "Day 204 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day204-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_204\\meetings",
+      "description": "Day 204 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day204-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_204\\reports",
+      "description": "Day 204 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day204-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_204\\excel",
+      "description": "Day 204 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day205-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_205\\teams",
+      "description": "Day 205 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day205-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_205\\reports",
+      "description": "Day 205 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day205-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_205\\excel",
+      "description": "Day 205 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day206-teams",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_206\\teams",
+      "description": "Day 206 \u2014 Microsoft Teams conversations"
+    },
+    {
+      "name": "npci-day206-meetings",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_206\\meetings",
+      "description": "Day 206 \u2014 Meetings: agendas, notes, decisions"
+    },
+    {
+      "name": "npci-day206-decisions",
+      "kind": "meeting_notes",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_206\\decisions",
+      "description": "Day 206 \u2014 Decision records"
+    },
+    {
+      "name": "npci-day206-reports",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_206\\reports",
+      "description": "Day 206 \u2014 Daily, weekly, executive, risk reports"
+    },
+    {
+      "name": "npci-day206-excel",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_206\\excel",
+      "description": "Day 206 \u2014 KPI workbooks"
+    },
+    {
+      "name": "npci-day206-analytics",
+      "kind": "document_folder",
+      "location": "C:\\Users\\AI\\Downloads\\Growth Agent Docs\\e-agent\\enterprise_data\\day_206\\analytics",
+      "description": "Day 206 \u2014 Ecosystem analytics, BI, comparisons, forecasts"
     }
   ]
 }

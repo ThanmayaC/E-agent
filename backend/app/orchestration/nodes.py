@@ -97,8 +97,14 @@ class NodeContext:
             self.store.save(project_id, "state", state)
 
     def set_project_status(self, project_id: str, status: str, **fields) -> None:
+        """Read-modify-write of project status. If the project has no state
+        artifact this is a no-op: fabricating one from ``{}`` used to leave an
+        identity-less ghost project (no name/created_at) that the UI could
+        neither render nor delete."""
         with _STATE_LOCK:
-            raw = self.store.load(project_id, "state") or {}
+            raw = self.store.load(project_id, "state")
+            if not raw:
+                return
             raw["status"] = status
             raw.update({k: v for k, v in fields.items() if v is not None})
             self.store.save(project_id, "state", raw)
@@ -142,9 +148,10 @@ def build_nodes(ctx: NodeContext) -> dict:
         extracts = engine.ingest(pid)
         files = [e.info for e in extracts]
         with _STATE_LOCK:
-            raw = ctx.store.load(pid, "state") or {}
-            raw["files"] = [f.model_dump() for f in files]
-            ctx.store.save(pid, "state", raw)
+            raw = ctx.store.load(pid, "state")
+            if raw:
+                raw["files"] = [f.model_dump() for f in files]
+                ctx.store.save(pid, "state", raw)
         tables = [t for e in extracts for t in e.tables]
         if not tables:
             raise ValueError("No readable tables found in uploaded sources")

@@ -35,6 +35,14 @@ function analysisDuration(p) {
 
 const confTone = (v) => (v >= 0.7 ? 'success' : v >= 0.5 ? 'warn' : 'danger')
 
+/** Never render "Invalid Date" — a project written by an older build may have
+ *  no creation timestamp at all. */
+function fmtDate(value) {
+  if (!value) return null
+  const d = new Date(value)
+  return Number.isNaN(d.getTime()) ? null : d.toLocaleString()
+}
+
 export default function Projects() {
   const [projects, setProjects] = useState(null)
   const [name, setName] = useState('')
@@ -93,6 +101,7 @@ export default function Projects() {
   }
 
   async function removeProject(projectId) {
+    if (!projectId) { setConfirmDelete(null); return }
     setDeleting(projectId); setError(null)
     try {
       await api.deleteProject(projectId)
@@ -125,6 +134,7 @@ export default function Projects() {
   }
 
   function openProject(p) {
+    if (!p.project_id) return
     if (p.status === 'awaiting_clarification') {
       setActive({ projectId: p.project_id, status: p.status, stages: p.stages || [] })
       clarifyFetchedRef.current = true
@@ -273,14 +283,24 @@ export default function Projects() {
           <div className="text-sm text-slate-600">No projects yet.</div>
         ) : (
           <div className="grid md:grid-cols-2 gap-3">
-            {projects.map((p) => {
+            {projects.map((p, i) => {
               const duration = analysisDuration(p)
+              // a project written by an older build may carry no id; key the
+              // confirm dialog by row so it can never open on every card at once
+              const rowKey = p.project_id || `row-${i}`
+              const created = fmtDate(p.created_at)
+              const reported = fmtDate(p.report_generated_at)
+              const orphaned = !p.project_id
               return (
-                <div key={p.project_id} role="button" tabIndex={0} onClick={() => openProject(p)}
+                <div key={rowKey} role="button" tabIndex={0} onClick={() => openProject(p)}
                      onKeyDown={(e) => e.key === 'Enter' && openProject(p)}
-                     className="card-pad text-left hover:border-accent/50 transition-colors cursor-pointer">
+                     className={`card-pad text-left transition-colors ${
+                       orphaned ? 'opacity-70 cursor-default'
+                                : 'hover:border-accent/50 cursor-pointer'}`}>
                   <div className="flex items-center justify-between gap-2">
-                    <div className="font-medium text-slate-200 truncate">{p.name}</div>
+                    <div className="font-medium text-slate-200 truncate">
+                      {p.name || 'Untitled project'}
+                    </div>
                     <div className="flex items-center gap-2 shrink-0">
                       {p.report_confidence != null && (
                         <Badge tone={confTone(p.report_confidence)}>
@@ -290,27 +310,35 @@ export default function Projects() {
                       <Badge tone={p.status === 'ready' ? 'success' : p.status === 'failed' ? 'danger' : 'warn'}>
                         {p.status === 'awaiting_clarification' ? 'needs your input' : p.status}
                       </Badge>
-                      <button title="Delete project"
-                              onClick={(e) => { e.stopPropagation(); setConfirmDelete(p.project_id) }}
-                              className="w-6 h-6 rounded flex items-center justify-center text-slate-600 hover:text-rose-400 hover:bg-rose-500/10 transition-colors">
-                        ✕
-                      </button>
+                      {!orphaned && (
+                        <button title="Delete project"
+                                onClick={(e) => { e.stopPropagation(); setConfirmDelete(rowKey) }}
+                                className="w-6 h-6 rounded flex items-center justify-center text-slate-600 hover:text-rose-400 hover:bg-rose-500/10 transition-colors">
+                          ✕
+                        </button>
+                      )}
                     </div>
                   </div>
                   <div className="text-xs text-slate-600 mt-1">
-                    {p.files?.length || 0} file(s) · {new Date(p.created_at).toLocaleString()}
+                    {p.files?.length ? `${p.files.length} file(s)` : 'no files recorded'}
+                    {created && <> · {created}</>}
                     {duration && <> · analysis {duration}</>}
                   </div>
-                  {p.report_generated_at && (
+                  {reported && (
                     <div className="text-xs text-slate-600 mt-0.5">
-                      report v{p.report_version || 1} · {new Date(p.report_generated_at).toLocaleString()}
+                      report v{p.report_version || 1} · {reported}
                     </div>
                   )}
-                  {confirmDelete === p.project_id && (
+                  {orphaned && (
+                    <div className="text-xs text-amber-500/80 mt-1">
+                      Incomplete record — this project has no id and cannot be opened or deleted.
+                    </div>
+                  )}
+                  {confirmDelete === rowKey && !orphaned && (
                     <div className="mt-3 p-3 rounded-lg border border-rose-500/30 bg-rose-500/5"
                          onClick={(e) => e.stopPropagation()}>
                       <div className="text-sm text-slate-300">
-                        Delete <span className="font-medium">{p.name}</span> and all its data
+                        Delete <span className="font-medium">{p.name || p.project_id}</span> and all its data
                         (uploads, datasets, analytics, reports, embeddings, knowledge graph)?
                         This cannot be undone.
                       </div>

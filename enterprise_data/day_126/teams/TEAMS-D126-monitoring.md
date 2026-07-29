@@ -3,25 +3,25 @@ id: TEAMS-D126-MON
 type: teams
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-10-25T09:30:00
+timestamp: 2026-05-10T09:30:00
 ---
 
-# Ops Monitoring — 25 Oct 2026
+# Ops Monitoring — 10 May 2026
 
 **Channel:** UPI Products / Ops Monitoring
-**Date:** Sunday 25 Oct 2026 · **Day archetype:** Sunday (quiet)
+**Date:** Sunday 10 May 2026 · **Day archetype:** Sunday (quiet) · maintenance window
 
 **Harsh Nanda** · 09:15
-Morning sweep for 25 Oct. UPI Transactions at 781.4 (down 89.7 vs Sat 24 Oct);
-Success Rate at 98.22% (down 1.56 vs Sat 24 Oct); Technical Declines at 0.58% (up 0.3 vs Sat 24 Oct);
-Business Declines at 0.15%. Estimated peak ~28,036 TPS.
+Morning sweep for 10 May. UPI Transactions at 586.7 (down 53.4 vs Sat 09 May);
+Success Rate at 99.59% (down 0.03 vs Sat 09 May); Technical Declines at 0.34%;
+Business Declines at 0.2% (down 0.01 vs Sat 09 May). Estimated peak ~21,050 TPS.
 
-**Farhan Subramanian** · 09:22
-Lowest bank success today: Union Bank of India at 97.23%. Settlement Success
-99.08%. Complaints: customer 1,831,
-merchant 229. Full numbers in RPT-D126-DAILY and upi_kpis_month.xlsx.
+**Lakshmi Agarwal** · 09:22
+Lowest bank success today: AU Small Finance Bank at 98.69%. Settlement Success
+98.81%. Complaints: customer 1,230,
+merchant 156. Full numbers in RPT-D126-DAILY and upi_kpis_month.xlsx.
 
 **Harsh Nanda** · 09:30
-Open items: INC-2026-05 (bank timeout / 5xx spike · Union Bank of India)
+Open items: INC-2026-26 (merchant settlement delay · AU Small Finance Bank)
 
-Refs: upi_kpis_month.xlsx, RPT-D126-DAILY, INC-2026-05
+Refs: upi_kpis_month.xlsx, RPT-D126-DAILY, INC-2026-26

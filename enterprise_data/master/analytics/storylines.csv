@@ -1,131 +1,151 @@
 week,week_start,step_no,stage,actor_team,event,entity,linked_kpi,sr_start,sr_end,has_incident
-1,2026-06-22,1,Signal,Product Analytics,Transaction monitoring flags bank timeout / 5xx spike on Union Bank of India,Union Bank of India,Success Rate (%),99.6,99.98,True
-1,2026-06-22,2,Impact,Operations,Sev-2 incident INC-2026-01 opened; complaints and declines rise,Union Bank of India,Customer Complaints,99.6,99.98,True
-1,2026-06-22,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Union Bank of India,Response Time (ms),99.6,99.98,True
-1,2026-06-22,4,Action,UPI Products leadership,Executive approves the Bank Coordination remediation (DEC-2026-01),Union Bank of India,Risk Score,99.6,99.98,True
-1,2026-06-22,5,Outcome,Product Operations,Success Rate recovers to 99.98% by week end,Union Bank of India,Success Rate (%),99.6,99.98,True
-2,2026-06-29,1,Signal,Product Analytics,Transaction monitoring flags PSP callback latency increase on YONO SBI,YONO SBI,Success Rate (%),99.98,98.63,True
-2,2026-06-29,2,Impact,Operations,Sev-3 incident INC-2026-13 opened; complaints and declines rise,YONO SBI,Customer Complaints,99.98,98.63,True
-2,2026-06-29,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,YONO SBI,Response Time (ms),99.98,98.63,True
-2,2026-06-29,4,Action,UPI Products leadership,Executive approves the PSP Integration remediation (DEC-2026-13),YONO SBI,Risk Score,99.98,98.63,True
-2,2026-06-29,5,Outcome,Product Operations,Success Rate recovers to 98.63% by week end,YONO SBI,Success Rate (%),99.98,98.63,True
-3,2026-07-06,1,Signal,Product Analytics,Transaction monitoring flags fraud / risk spike on YONO SBI,YONO SBI,Success Rate (%),99.57,98.94,True
-3,2026-07-06,2,Impact,Operations,Sev-2 incident INC-2026-09 opened; complaints and declines rise,YONO SBI,Customer Complaints,99.57,98.94,True
-3,2026-07-06,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,YONO SBI,Response Time (ms),99.57,98.94,True
-3,2026-07-06,4,Action,UPI Products leadership,Executive approves the Risk and Compliance remediation (DEC-2026-09),YONO SBI,Risk Score,99.57,98.94,True
-3,2026-07-06,5,Outcome,Product Operations,Success Rate recovers to 98.94% by week end,YONO SBI,Success Rate (%),99.57,98.94,True
-4,2026-07-13,1,Signal,Product Analytics,Transaction monitoring flags PSP callback latency increase on CRED,CRED,Success Rate (%),99.01,99.04,True
-4,2026-07-13,2,Impact,Operations,Sev-3 incident INC-2026-11 opened; complaints and declines rise,CRED,Customer Complaints,99.01,99.04,True
-4,2026-07-13,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,CRED,Response Time (ms),99.01,99.04,True
-4,2026-07-13,4,Action,UPI Products leadership,Executive approves the PSP Integration remediation (INC-2026-11),CRED,Risk Score,99.01,99.04,True
-4,2026-07-13,5,Outcome,Product Operations,Success Rate recovers to 99.04% by week end,CRED,Success Rate (%),99.01,99.04,True
-5,2026-07-20,1,Signal,Product Analytics,Transaction monitoring flags PSP callback latency increase on Amazon Pay,Amazon Pay,Success Rate (%),99.91,98.52,True
-5,2026-07-20,2,Impact,Operations,Sev-3 incident INC-2026-27 opened; complaints and declines rise,Amazon Pay,Customer Complaints,99.91,98.52,True
-5,2026-07-20,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Amazon Pay,Response Time (ms),99.91,98.52,True
-5,2026-07-20,4,Action,UPI Products leadership,Executive approves the PSP Integration remediation (DEC-2026-27),Amazon Pay,Risk Score,99.91,98.52,True
-5,2026-07-20,5,Outcome,Product Operations,Success Rate recovers to 98.52% by week end,Amazon Pay,Success Rate (%),99.91,98.52,True
-6,2026-07-27,1,Signal,Product Analytics,Transaction monitoring flags merchant settlement delay on Axis Bank,Axis Bank,Success Rate (%),99.97,99.7,True
-6,2026-07-27,2,Impact,Operations,Sev-2 incident INC-2026-02 opened; complaints and declines rise,Axis Bank,Customer Complaints,99.97,99.7,True
-6,2026-07-27,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Axis Bank,Response Time (ms),99.97,99.7,True
-6,2026-07-27,4,Action,UPI Products leadership,Executive approves the Merchant Success remediation (DEC-2026-02),Axis Bank,Risk Score,99.97,99.7,True
-6,2026-07-27,5,Outcome,Product Operations,Success Rate recovers to 99.7% by week end,Axis Bank,Success Rate (%),99.97,99.7,True
-7,2026-08-03,1,Signal,Product Analytics,Transaction monitoring flags merchant settlement delay on Yes Bank,Yes Bank,Success Rate (%),98.73,99.98,True
-7,2026-08-03,2,Impact,Operations,Sev-3 incident INC-2026-07 opened; complaints and declines rise,Yes Bank,Customer Complaints,98.73,99.98,True
-7,2026-08-03,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Yes Bank,Response Time (ms),98.73,99.98,True
-7,2026-08-03,4,Action,UPI Products leadership,Executive approves the Merchant Success remediation (INC-2026-07),Yes Bank,Risk Score,98.73,99.98,True
-7,2026-08-03,5,Outcome,Product Operations,Success Rate recovers to 99.98% by week end,Yes Bank,Success Rate (%),98.73,99.98,True
-8,2026-08-10,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.84,99.25,False
-8,2026-08-10,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.84,99.25,False
-8,2026-08-10,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.84,99.25,False
-8,2026-08-10,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.84,99.25,False
-8,2026-08-10,5,Outcome,Product Operations,"Steady week; success rate 99.25%, lowest bank IndusInd Bank at 98.92%",IndusInd Bank,Success Rate (%),99.84,99.25,False
-9,2026-08-17,1,Signal,Product Analytics,Transaction monitoring flags merchant settlement delay on ICICI Bank,ICICI Bank,Success Rate (%),99.57,99.38,True
-9,2026-08-17,2,Impact,Operations,Sev-2 incident INC-2026-03 opened; complaints and declines rise,ICICI Bank,Customer Complaints,99.57,99.38,True
-9,2026-08-17,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,ICICI Bank,Response Time (ms),99.57,99.38,True
-9,2026-08-17,4,Action,UPI Products leadership,Executive approves the Merchant Success remediation (DEC-2026-03),ICICI Bank,Risk Score,99.57,99.38,True
-9,2026-08-17,5,Outcome,Product Operations,Success Rate recovers to 99.38% by week end,ICICI Bank,Success Rate (%),99.57,99.38,True
-10,2026-08-24,1,Signal,Product Analytics,"Transaction monitoring flags merchant decline-rate spike on MetroRide, QuickBite","MetroRide, QuickBite",Success Rate (%),98.91,99.92,True
-10,2026-08-24,2,Impact,Operations,Sev-3 incident INC-2026-18 opened; complaints and declines rise,"MetroRide, QuickBite",Customer Complaints,98.91,99.92,True
-10,2026-08-24,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,"MetroRide, QuickBite",Response Time (ms),98.91,99.92,True
-10,2026-08-24,4,Action,UPI Products leadership,Executive approves the Merchant Success remediation (INC-2026-18),"MetroRide, QuickBite",Risk Score,98.91,99.92,True
-10,2026-08-24,5,Outcome,Product Operations,Success Rate recovers to 99.92% by week end,"MetroRide, QuickBite",Success Rate (%),98.91,99.92,True
-11,2026-08-31,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.98,99.19,False
-11,2026-08-31,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.98,99.19,False
-11,2026-08-31,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.98,99.19,False
-11,2026-08-31,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.98,99.19,False
-11,2026-08-31,5,Outcome,Product Operations,"Steady week; success rate 99.19%, lowest bank IndusInd Bank at 98.92%",IndusInd Bank,Success Rate (%),99.98,99.19,False
-12,2026-09-07,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.98,98.78,False
-12,2026-09-07,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.98,98.78,False
-12,2026-09-07,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.98,98.78,False
-12,2026-09-07,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.98,98.78,False
-12,2026-09-07,5,Outcome,Product Operations,"Steady week; success rate 98.78%, lowest bank IndusInd Bank at 98.92%",IndusInd Bank,Success Rate (%),99.98,98.78,False
-13,2026-09-14,1,Signal,Product Analytics,Transaction monitoring flags PSP callback latency increase on Axis Mobile,Axis Mobile,Success Rate (%),99.02,99.98,True
-13,2026-09-14,2,Impact,Operations,Sev-3 incident INC-2026-14 opened; complaints and declines rise,Axis Mobile,Customer Complaints,99.02,99.98,True
-13,2026-09-14,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Axis Mobile,Response Time (ms),99.02,99.98,True
-13,2026-09-14,4,Action,UPI Products leadership,Executive approves the PSP Integration remediation (DEC-2026-14),Axis Mobile,Risk Score,99.02,99.98,True
-13,2026-09-14,5,Outcome,Product Operations,Success Rate recovers to 99.98% by week end,Axis Mobile,Success Rate (%),99.02,99.98,True
-14,2026-09-21,1,Signal,Product Analytics,Transaction monitoring flags fraud / risk spike on iMobile Pay,iMobile Pay,Success Rate (%),99.35,99.84,True
-14,2026-09-21,2,Impact,Operations,Sev-2 incident INC-2026-04 opened; complaints and declines rise,iMobile Pay,Customer Complaints,99.35,99.84,True
-14,2026-09-21,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,iMobile Pay,Response Time (ms),99.35,99.84,True
-14,2026-09-21,4,Action,UPI Products leadership,Executive approves the Risk and Compliance remediation (DEC-2026-04),iMobile Pay,Risk Score,99.35,99.84,True
-14,2026-09-21,5,Outcome,Product Operations,Success Rate recovers to 99.84% by week end,iMobile Pay,Success Rate (%),99.35,99.84,True
-15,2026-09-28,1,Signal,Product Analytics,Transaction monitoring flags merchant settlement delay on State Bank of India,State Bank of India,Success Rate (%),99.09,99.44,True
-15,2026-09-28,2,Impact,Operations,Sev-3 incident INC-2026-12 opened; complaints and declines rise,State Bank of India,Customer Complaints,99.09,99.44,True
-15,2026-09-28,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,State Bank of India,Response Time (ms),99.09,99.44,True
-15,2026-09-28,4,Action,UPI Products leadership,Executive approves the Merchant Success remediation (DEC-2026-12),State Bank of India,Risk Score,99.09,99.44,True
-15,2026-09-28,5,Outcome,Product Operations,Success Rate recovers to 99.44% by week end,State Bank of India,Success Rate (%),99.09,99.44,True
-16,2026-10-05,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.21,99.98,False
-16,2026-10-05,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.21,99.98,False
-16,2026-10-05,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.21,99.98,False
-16,2026-10-05,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.21,99.98,False
-16,2026-10-05,5,Outcome,Product Operations,"Steady week; success rate 99.98%, lowest bank IndusInd Bank at 98.92%",IndusInd Bank,Success Rate (%),99.21,99.98,False
-17,2026-10-12,1,Signal,Product Analytics,Transaction monitoring flags fraud / risk spike on WhatsApp Pay,WhatsApp Pay,Success Rate (%),99.91,99.98,True
-17,2026-10-12,2,Impact,Operations,Sev-3 incident INC-2026-19 opened; complaints and declines rise,WhatsApp Pay,Customer Complaints,99.91,99.98,True
-17,2026-10-12,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,WhatsApp Pay,Response Time (ms),99.91,99.98,True
-17,2026-10-12,4,Action,UPI Products leadership,Executive approves the Risk and Compliance remediation (DEC-2026-19),WhatsApp Pay,Risk Score,99.91,99.98,True
-17,2026-10-12,5,Outcome,Product Operations,Success Rate recovers to 99.98% by week end,WhatsApp Pay,Success Rate (%),99.91,99.98,True
-18,2026-10-19,1,Signal,Product Analytics,Transaction monitoring flags bank timeout / 5xx spike on Union Bank of India,Union Bank of India,Success Rate (%),99.29,98.22,True
-18,2026-10-19,2,Impact,Operations,Sev-2 incident INC-2026-05 opened; complaints and declines rise,Union Bank of India,Customer Complaints,99.29,98.22,True
-18,2026-10-19,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Union Bank of India,Response Time (ms),99.29,98.22,True
-18,2026-10-19,4,Action,UPI Products leadership,Executive approves the Bank Coordination remediation (DEC-2026-05),Union Bank of India,Risk Score,99.29,98.22,True
-18,2026-10-19,5,Outcome,Product Operations,Success Rate recovers to 98.22% by week end,Union Bank of India,Success Rate (%),99.29,98.22,True
-19,2026-10-26,1,Signal,Product Analytics,"Transaction monitoring flags merchant decline-rate spike on TravelGo, InsureWell","TravelGo, InsureWell",Success Rate (%),98.78,99.18,True
-19,2026-10-26,2,Impact,Operations,Sev-3 incident INC-2026-24 opened; complaints and declines rise,"TravelGo, InsureWell",Customer Complaints,98.78,99.18,True
-19,2026-10-26,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,"TravelGo, InsureWell",Response Time (ms),98.78,99.18,True
-19,2026-10-26,4,Action,UPI Products leadership,Executive approves the Merchant Success remediation (DEC-2026-24),"TravelGo, InsureWell",Risk Score,98.78,99.18,True
-19,2026-10-26,5,Outcome,Product Operations,Success Rate recovers to 99.18% by week end,"TravelGo, InsureWell",Success Rate (%),98.78,99.18,True
-20,2026-11-02,1,Signal,Product Analytics,Transaction monitoring flags merchant settlement delay on Bank of Baroda,Bank of Baroda,Success Rate (%),99.01,99.32,True
-20,2026-11-02,2,Impact,Operations,Sev-3 incident INC-2026-20 opened; complaints and declines rise,Bank of Baroda,Customer Complaints,99.01,99.32,True
-20,2026-11-02,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Bank of Baroda,Response Time (ms),99.01,99.32,True
-20,2026-11-02,4,Action,UPI Products leadership,Executive approves the Merchant Success remediation (INC-2026-20),Bank of Baroda,Risk Score,99.01,99.32,True
-20,2026-11-02,5,Outcome,Product Operations,Success Rate recovers to 99.32% by week end,Bank of Baroda,Success Rate (%),99.01,99.32,True
-21,2026-11-09,1,Signal,Product Analytics,Transaction monitoring flags merchant settlement delay on IndusInd Bank,IndusInd Bank,Success Rate (%),99.76,98.57,True
-21,2026-11-09,2,Impact,Operations,Sev-3 incident INC-2026-17 opened; complaints and declines rise,IndusInd Bank,Customer Complaints,99.76,98.57,True
-21,2026-11-09,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,IndusInd Bank,Response Time (ms),99.76,98.57,True
-21,2026-11-09,4,Action,UPI Products leadership,Executive approves the Merchant Success remediation (DEC-2026-17),IndusInd Bank,Risk Score,99.76,98.57,True
-21,2026-11-09,5,Outcome,Product Operations,Success Rate recovers to 98.57% by week end,IndusInd Bank,Success Rate (%),99.76,98.57,True
-22,2026-11-16,1,Signal,Product Analytics,Transaction monitoring flags fraud / risk spike on HDFC MobileBanking,HDFC MobileBanking,Success Rate (%),99.5,99.98,True
-22,2026-11-16,2,Impact,Operations,Sev-2 incident INC-2026-06 opened; complaints and declines rise,HDFC MobileBanking,Customer Complaints,99.5,99.98,True
-22,2026-11-16,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,HDFC MobileBanking,Response Time (ms),99.5,99.98,True
-22,2026-11-16,4,Action,UPI Products leadership,Executive approves the Risk and Compliance remediation (DEC-2026-06),HDFC MobileBanking,Risk Score,99.5,99.98,True
-22,2026-11-16,5,Outcome,Product Operations,Success Rate recovers to 99.98% by week end,HDFC MobileBanking,Success Rate (%),99.5,99.98,True
-23,2026-11-23,1,Signal,Product Analytics,Transaction monitoring flags bank timeout / 5xx spike on Bank of Baroda,Bank of Baroda,Success Rate (%),99.9,98.92,True
-23,2026-11-23,2,Impact,Operations,Sev-3 incident INC-2026-22 opened; complaints and declines rise,Bank of Baroda,Customer Complaints,99.9,98.92,True
-23,2026-11-23,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Bank of Baroda,Response Time (ms),99.9,98.92,True
-23,2026-11-23,4,Action,UPI Products leadership,Executive approves the Bank Coordination remediation (INC-2026-22),Bank of Baroda,Risk Score,99.9,98.92,True
-23,2026-11-23,5,Outcome,Product Operations,Success Rate recovers to 98.92% by week end,Bank of Baroda,Success Rate (%),99.9,98.92,True
-24,2026-11-30,1,Signal,Product Analytics,Transaction monitoring flags feature-level degradation on QR Payments,QR Payments,Success Rate (%),99.98,99.98,True
-24,2026-11-30,2,Impact,Operations,Sev-3 incident INC-2026-21 opened; complaints and declines rise,QR Payments,Customer Complaints,99.98,99.98,True
-24,2026-11-30,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,QR Payments,Response Time (ms),99.98,99.98,True
-24,2026-11-30,4,Action,UPI Products leadership,Executive approves the Core Engineering remediation (DEC-2026-21),QR Payments,Risk Score,99.98,99.98,True
-24,2026-11-30,5,Outcome,Product Operations,Success Rate recovers to 99.98% by week end,QR Payments,Success Rate (%),99.98,99.98,True
-25,2026-12-07,1,Signal,Product Analytics,Transaction monitoring flags merchant settlement delay on Bank of Baroda,Bank of Baroda,Success Rate (%),99.98,99.98,True
-25,2026-12-07,2,Impact,Operations,Sev-3 incident INC-2026-15 opened; complaints and declines rise,Bank of Baroda,Customer Complaints,99.98,99.98,True
-25,2026-12-07,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Bank of Baroda,Response Time (ms),99.98,99.98,True
-25,2026-12-07,4,Action,UPI Products leadership,Executive approves the Merchant Success remediation (DEC-2026-15),Bank of Baroda,Risk Score,99.98,99.98,True
-25,2026-12-07,5,Outcome,Product Operations,Success Rate recovers to 99.98% by week end,Bank of Baroda,Success Rate (%),99.98,99.98,True
-26,2026-12-14,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.62,99.57,False
-26,2026-12-14,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.62,99.57,False
-26,2026-12-14,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.62,99.57,False
-26,2026-12-14,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.62,99.57,False
-26,2026-12-14,5,Outcome,Product Operations,"Steady week; success rate 99.57%, lowest bank IndusInd Bank at 98.92%",IndusInd Bank,Success Rate (%),99.62,99.57,False
+1,2026-01-05,1,Signal,Product Analytics,Transaction monitoring flags bank timeout / 5xx spike on Punjab National Bank,Punjab National Bank,Success Rate (%),99.13,99.69,True
+1,2026-01-05,2,Impact,Operations,Sev-2 incident INC-2026-01 opened; complaints and declines rise,Punjab National Bank,Customer Complaints,99.13,99.69,True
+1,2026-01-05,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Punjab National Bank,Response Time (ms),99.13,99.69,True
+1,2026-01-05,4,Action,UPI Products leadership,Executive approves the Bank Coordination remediation (DEC-2026-01),Punjab National Bank,Risk Score,99.13,99.69,True
+1,2026-01-05,5,Outcome,Product Operations,Success Rate recovers to 99.69% by week end,Punjab National Bank,Success Rate (%),99.13,99.69,True
+2,2026-01-12,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),98.78,99.03,False
+2,2026-01-12,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),98.78,99.03,False
+2,2026-01-12,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),98.78,99.03,False
+2,2026-01-12,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),98.78,99.03,False
+2,2026-01-12,5,Outcome,Product Operations,"Steady week; success rate 99.03%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),98.78,99.03,False
+3,2026-01-19,1,Signal,Product Analytics,Transaction monitoring flags feature-level degradation on UPI Lite,UPI Lite,Success Rate (%),98.78,98.79,True
+3,2026-01-19,2,Impact,Operations,Sev-3 incident INC-2026-24 opened; complaints and declines rise,UPI Lite,Customer Complaints,98.78,98.79,True
+3,2026-01-19,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,UPI Lite,Response Time (ms),98.78,98.79,True
+3,2026-01-19,4,Action,UPI Products leadership,Executive approves the Core Engineering remediation (DEC-2026-24),UPI Lite,Risk Score,98.78,98.79,True
+3,2026-01-19,5,Outcome,Product Operations,Success Rate recovers to 98.79% by week end,UPI Lite,Success Rate (%),98.78,98.79,True
+4,2026-01-26,1,Signal,Product Analytics,Transaction monitoring flags fraud / risk spike on FamApp,FamApp,Success Rate (%),98.09,99.98,True
+4,2026-01-26,2,Impact,Operations,Sev-2 incident INC-2026-15 opened; complaints and declines rise,FamApp,Customer Complaints,98.09,99.98,True
+4,2026-01-26,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,FamApp,Response Time (ms),98.09,99.98,True
+4,2026-01-26,4,Action,UPI Products leadership,Executive approves the Risk and Compliance remediation (DEC-2026-15),FamApp,Risk Score,98.09,99.98,True
+4,2026-01-26,5,Outcome,Product Operations,Success Rate recovers to 99.98% by week end,FamApp,Success Rate (%),98.09,99.98,True
+5,2026-02-02,1,Signal,Product Analytics,Transaction monitoring flags fraud / risk spike on HDFC MobileBanking,HDFC MobileBanking,Success Rate (%),98.48,99.66,True
+5,2026-02-02,2,Impact,Operations,Sev-2 incident INC-2026-02 opened; complaints and declines rise,HDFC MobileBanking,Customer Complaints,98.48,99.66,True
+5,2026-02-02,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,HDFC MobileBanking,Response Time (ms),98.48,99.66,True
+5,2026-02-02,4,Action,UPI Products leadership,Executive approves the Risk and Compliance remediation (DEC-2026-02),HDFC MobileBanking,Risk Score,98.48,99.66,True
+5,2026-02-02,5,Outcome,Product Operations,Success Rate recovers to 99.66% by week end,HDFC MobileBanking,Success Rate (%),98.48,99.66,True
+6,2026-02-09,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),98.95,98.55,False
+6,2026-02-09,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),98.95,98.55,False
+6,2026-02-09,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),98.95,98.55,False
+6,2026-02-09,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),98.95,98.55,False
+6,2026-02-09,5,Outcome,Product Operations,"Steady week; success rate 98.55%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),98.95,98.55,False
+7,2026-02-16,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),98.87,99.61,False
+7,2026-02-16,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),98.87,99.61,False
+7,2026-02-16,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),98.87,99.61,False
+7,2026-02-16,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),98.87,99.61,False
+7,2026-02-16,5,Outcome,Product Operations,"Steady week; success rate 99.61%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),98.87,99.61,False
+8,2026-02-23,1,Signal,Product Analytics,Transaction monitoring flags fraud / risk spike on Google Pay,Google Pay,Success Rate (%),99.36,98.4,True
+8,2026-02-23,2,Impact,Operations,Sev-2 incident INC-2026-19 opened; complaints and declines rise,Google Pay,Customer Complaints,99.36,98.4,True
+8,2026-02-23,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Google Pay,Response Time (ms),99.36,98.4,True
+8,2026-02-23,4,Action,UPI Products leadership,Executive approves the Risk and Compliance remediation (DEC-2026-19),Google Pay,Risk Score,99.36,98.4,True
+8,2026-02-23,5,Outcome,Product Operations,Success Rate recovers to 98.4% by week end,Google Pay,Success Rate (%),99.36,98.4,True
+9,2026-03-02,1,Signal,Product Analytics,Transaction monitoring flags fraud / risk spike on Navi,Navi,Success Rate (%),98.6,98.57,True
+9,2026-03-02,2,Impact,Operations,Sev-2 incident INC-2026-03 opened; complaints and declines rise,Navi,Customer Complaints,98.6,98.57,True
+9,2026-03-02,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Navi,Response Time (ms),98.6,98.57,True
+9,2026-03-02,4,Action,UPI Products leadership,Executive approves the Risk and Compliance remediation (DEC-2026-03),Navi,Risk Score,98.6,98.57,True
+9,2026-03-02,5,Outcome,Product Operations,Success Rate recovers to 98.57% by week end,Navi,Success Rate (%),98.6,98.57,True
+10,2026-03-09,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.8,98.5,False
+10,2026-03-09,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.8,98.5,False
+10,2026-03-09,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.8,98.5,False
+10,2026-03-09,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.8,98.5,False
+10,2026-03-09,5,Outcome,Product Operations,"Steady week; success rate 98.5%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),99.8,98.5,False
+11,2026-03-16,1,Signal,Product Analytics,Transaction monitoring flags PSP callback latency increase on YONO SBI,YONO SBI,Success Rate (%),99.41,99.63,True
+11,2026-03-16,2,Impact,Operations,Sev-3 incident INC-2026-17 opened; complaints and declines rise,YONO SBI,Customer Complaints,99.41,99.63,True
+11,2026-03-16,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,YONO SBI,Response Time (ms),99.41,99.63,True
+11,2026-03-16,4,Action,UPI Products leadership,Executive approves the PSP Integration remediation (DEC-2026-17),YONO SBI,Risk Score,99.41,99.63,True
+11,2026-03-16,5,Outcome,Product Operations,Success Rate recovers to 99.63% by week end,YONO SBI,Success Rate (%),99.41,99.63,True
+12,2026-03-23,1,Signal,Product Analytics,Transaction monitoring flags PSP callback latency increase on BHIM,BHIM,Success Rate (%),98.71,99.6,True
+12,2026-03-23,2,Impact,Operations,Sev-3 incident INC-2026-12 opened; complaints and declines rise,BHIM,Customer Complaints,98.71,99.6,True
+12,2026-03-23,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,BHIM,Response Time (ms),98.71,99.6,True
+12,2026-03-23,4,Action,UPI Products leadership,Executive approves the PSP Integration remediation (INC-2026-12),BHIM,Risk Score,98.71,99.6,True
+12,2026-03-23,5,Outcome,Product Operations,Success Rate recovers to 99.6% by week end,BHIM,Success Rate (%),98.71,99.6,True
+13,2026-03-30,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),98.55,99.98,False
+13,2026-03-30,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),98.55,99.98,False
+13,2026-03-30,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),98.55,99.98,False
+13,2026-03-30,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),98.55,99.98,False
+13,2026-03-30,5,Outcome,Product Operations,"Steady week; success rate 99.98%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),98.55,99.98,False
+14,2026-04-06,1,Signal,Product Analytics,Transaction monitoring flags bank timeout / 5xx spike on State Bank of India,State Bank of India,Success Rate (%),98.17,98.65,True
+14,2026-04-06,2,Impact,Operations,Sev-2 incident INC-2026-04 opened; complaints and declines rise,State Bank of India,Customer Complaints,98.17,98.65,True
+14,2026-04-06,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,State Bank of India,Response Time (ms),98.17,98.65,True
+14,2026-04-06,4,Action,UPI Products leadership,Executive approves the Bank Coordination remediation (DEC-2026-04),State Bank of India,Risk Score,98.17,98.65,True
+14,2026-04-06,5,Outcome,Product Operations,Success Rate recovers to 98.65% by week end,State Bank of India,Success Rate (%),98.17,98.65,True
+15,2026-04-13,1,Signal,Product Analytics,Transaction monitoring flags merchant settlement delay on Kotak Mahindra Bank,Kotak Mahindra Bank,Success Rate (%),99.98,99.41,True
+15,2026-04-13,2,Impact,Operations,Sev-3 incident INC-2026-20 opened; complaints and declines rise,Kotak Mahindra Bank,Customer Complaints,99.98,99.41,True
+15,2026-04-13,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Kotak Mahindra Bank,Response Time (ms),99.98,99.41,True
+15,2026-04-13,4,Action,UPI Products leadership,Executive approves the Merchant Success remediation (DEC-2026-20),Kotak Mahindra Bank,Risk Score,99.98,99.41,True
+15,2026-04-13,5,Outcome,Product Operations,Success Rate recovers to 99.41% by week end,Kotak Mahindra Bank,Success Rate (%),99.98,99.41,True
+16,2026-04-20,1,Signal,Product Analytics,"Transaction monitoring flags merchant decline-rate spike on PowerPay Utilities, MetroRide","PowerPay Utilities, MetroRide",Success Rate (%),99.98,99.7,True
+16,2026-04-20,2,Impact,Operations,Sev-3 incident INC-2026-23 opened; complaints and declines rise,"PowerPay Utilities, MetroRide",Customer Complaints,99.98,99.7,True
+16,2026-04-20,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,"PowerPay Utilities, MetroRide",Response Time (ms),99.98,99.7,True
+16,2026-04-20,4,Action,UPI Products leadership,Executive approves the Merchant Success remediation (DEC-2026-23),"PowerPay Utilities, MetroRide",Risk Score,99.98,99.7,True
+16,2026-04-20,5,Outcome,Product Operations,Success Rate recovers to 99.7% by week end,"PowerPay Utilities, MetroRide",Success Rate (%),99.98,99.7,True
+17,2026-04-27,1,Signal,Product Analytics,Transaction monitoring flags bank timeout / 5xx spike on Bank of Baroda,Bank of Baroda,Success Rate (%),99.49,99.98,True
+17,2026-04-27,2,Impact,Operations,Sev-3 incident INC-2026-11 opened; complaints and declines rise,Bank of Baroda,Customer Complaints,99.49,99.98,True
+17,2026-04-27,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Bank of Baroda,Response Time (ms),99.49,99.98,True
+17,2026-04-27,4,Action,UPI Products leadership,Executive approves the Bank Coordination remediation (INC-2026-11),Bank of Baroda,Risk Score,99.49,99.98,True
+17,2026-04-27,5,Outcome,Product Operations,Success Rate recovers to 99.98% by week end,Bank of Baroda,Success Rate (%),99.49,99.98,True
+18,2026-05-04,1,Signal,Product Analytics,Transaction monitoring flags merchant settlement delay on AU Small Finance Bank,AU Small Finance Bank,Success Rate (%),99.94,99.59,True
+18,2026-05-04,2,Impact,Operations,Sev-3 incident INC-2026-26 opened; complaints and declines rise,AU Small Finance Bank,Customer Complaints,99.94,99.59,True
+18,2026-05-04,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,AU Small Finance Bank,Response Time (ms),99.94,99.59,True
+18,2026-05-04,4,Action,UPI Products leadership,Executive approves the Merchant Success remediation (DEC-2026-26),AU Small Finance Bank,Risk Score,99.94,99.59,True
+18,2026-05-04,5,Outcome,Product Operations,Success Rate recovers to 99.59% by week end,AU Small Finance Bank,Success Rate (%),99.94,99.59,True
+19,2026-05-11,1,Signal,Product Analytics,"Transaction monitoring flags merchant decline-rate spike on TravelGo, InsureWell","TravelGo, InsureWell",Success Rate (%),99.69,99.98,True
+19,2026-05-11,2,Impact,Operations,Sev-3 incident INC-2026-13 opened; complaints and declines rise,"TravelGo, InsureWell",Customer Complaints,99.69,99.98,True
+19,2026-05-11,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,"TravelGo, InsureWell",Response Time (ms),99.69,99.98,True
+19,2026-05-11,4,Action,UPI Products leadership,Executive approves the Merchant Success remediation (DEC-2026-13),"TravelGo, InsureWell",Risk Score,99.69,99.98,True
+19,2026-05-11,5,Outcome,Product Operations,Success Rate recovers to 99.98% by week end,"TravelGo, InsureWell",Success Rate (%),99.69,99.98,True
+20,2026-05-18,1,Signal,Product Analytics,Transaction monitoring flags merchant settlement delay on ICICI Bank,ICICI Bank,Success Rate (%),98.9,99.63,True
+20,2026-05-18,2,Impact,Operations,Sev-3 incident INC-2026-25 opened; complaints and declines rise,ICICI Bank,Customer Complaints,98.9,99.63,True
+20,2026-05-18,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,ICICI Bank,Response Time (ms),98.9,99.63,True
+20,2026-05-18,4,Action,UPI Products leadership,Executive approves the Merchant Success remediation (INC-2026-25),ICICI Bank,Risk Score,98.9,99.63,True
+20,2026-05-18,5,Outcome,Product Operations,Success Rate recovers to 99.63% by week end,ICICI Bank,Success Rate (%),98.9,99.63,True
+21,2026-05-25,1,Signal,Product Analytics,Transaction monitoring flags PSP callback latency increase on BHIM,BHIM,Success Rate (%),99.02,99.2,True
+21,2026-05-25,2,Impact,Operations,Sev-3 incident INC-2026-14 opened; complaints and declines rise,BHIM,Customer Complaints,99.02,99.2,True
+21,2026-05-25,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,BHIM,Response Time (ms),99.02,99.2,True
+21,2026-05-25,4,Action,UPI Products leadership,Executive approves the PSP Integration remediation (DEC-2026-14),BHIM,Risk Score,99.02,99.2,True
+21,2026-05-25,5,Outcome,Product Operations,Success Rate recovers to 99.2% by week end,BHIM,Success Rate (%),99.02,99.2,True
+22,2026-06-01,1,Signal,Product Analytics,Transaction monitoring flags bank timeout / 5xx spike on Punjab National Bank,Punjab National Bank,Success Rate (%),99.5,99.11,True
+22,2026-06-01,2,Impact,Operations,Sev-2 incident INC-2026-06 opened; complaints and declines rise,Punjab National Bank,Customer Complaints,99.5,99.11,True
+22,2026-06-01,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Punjab National Bank,Response Time (ms),99.5,99.11,True
+22,2026-06-01,4,Action,UPI Products leadership,Executive approves the Bank Coordination remediation (DEC-2026-06),Punjab National Bank,Risk Score,99.5,99.11,True
+22,2026-06-01,5,Outcome,Product Operations,Success Rate recovers to 99.11% by week end,Punjab National Bank,Success Rate (%),99.5,99.11,True
+23,2026-06-08,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.78,99.98,False
+23,2026-06-08,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.78,99.98,False
+23,2026-06-08,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.78,99.98,False
+23,2026-06-08,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.78,99.98,False
+23,2026-06-08,5,Outcome,Product Operations,"Steady week; success rate 99.98%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),99.78,99.98,False
+24,2026-06-15,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.28,99.98,False
+24,2026-06-15,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.28,99.98,False
+24,2026-06-15,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.28,99.98,False
+24,2026-06-15,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.28,99.98,False
+24,2026-06-15,5,Outcome,Product Operations,"Steady week; success rate 99.98%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),99.28,99.98,False
+25,2026-06-22,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.98,99.98,False
+25,2026-06-22,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.98,99.98,False
+25,2026-06-22,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.98,99.98,False
+25,2026-06-22,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.98,99.98,False
+25,2026-06-22,5,Outcome,Product Operations,"Steady week; success rate 99.98%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),99.98,99.98,False
+26,2026-06-29,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.55,99.8,False
+26,2026-06-29,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.55,99.8,False
+26,2026-06-29,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.55,99.8,False
+26,2026-06-29,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.55,99.8,False
+26,2026-06-29,5,Outcome,Product Operations,"Steady week; success rate 99.8%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),99.55,99.8,False
+27,2026-07-06,1,Signal,Product Analytics,Transaction monitoring flags feature-level degradation on UPI 123Pay,UPI 123Pay,Success Rate (%),99.98,99.98,True
+27,2026-07-06,2,Impact,Operations,Sev-3 incident INC-2026-10 opened; complaints and declines rise,UPI 123Pay,Customer Complaints,99.98,99.98,True
+27,2026-07-06,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,UPI 123Pay,Response Time (ms),99.98,99.98,True
+27,2026-07-06,4,Action,UPI Products leadership,Executive approves the Core Engineering remediation (DEC-2026-10),UPI 123Pay,Risk Score,99.98,99.98,True
+27,2026-07-06,5,Outcome,Product Operations,Success Rate recovers to 99.98% by week end,UPI 123Pay,Success Rate (%),99.98,99.98,True
+28,2026-07-13,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.55,99.07,False
+28,2026-07-13,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.55,99.07,False
+28,2026-07-13,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.55,99.07,False
+28,2026-07-13,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.55,99.07,False
+28,2026-07-13,5,Outcome,Product Operations,"Steady week; success rate 99.07%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),99.55,99.07,False
+29,2026-07-20,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.98,99.28,False
+29,2026-07-20,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.98,99.28,False
+29,2026-07-20,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.98,99.28,False
+29,2026-07-20,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.98,99.28,False
+29,2026-07-20,5,Outcome,Product Operations,"Steady week; success rate 99.28%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),99.98,99.28,False
+30,2026-07-27,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.98,99.98,False
+30,2026-07-27,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.98,99.98,False
+30,2026-07-27,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.98,99.98,False
+30,2026-07-27,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.98,99.98,False
+30,2026-07-27,5,Outcome,Product Operations,"Steady week; success rate 99.98%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),99.98,99.98,False

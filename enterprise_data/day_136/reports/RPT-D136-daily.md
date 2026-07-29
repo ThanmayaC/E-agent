@@ -3,65 +3,65 @@ id: RPT-D136-DAILY
 type: report
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-11-04T17:30:00
+timestamp: 2026-05-20T17:30:00
 ---
 
-# UPI Products — Daily Operations Report (Wednesday, 04 Nov 2026)
+# UPI Products — Daily Operations Report (Wednesday, 20 May 2026)
 
-**Report ID:** RPT-D136-DAILY  ·  **Prepared by:** Farhan Subramanian
-**Date:** Wednesday 04 Nov 2026  ·  **Day archetype:** Weekday (steady)
-**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 136 of 180)
+**Report ID:** RPT-D136-DAILY  ·  **Prepared by:** Lakshmi Agarwal
+**Date:** Wednesday 20 May 2026  ·  **Day archetype:** High-volume campaign day
+**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 136 of 206)
 
 ## Transaction summary
-The rail processed 949.0M UPI transactions on Wednesday — a steady mid-week day — down 119.1M on the same day last week. Success landed at 99.58% and settlement at 99.8%, held back by live issues on Bank of Baroda (detailed below).
+The rail processed 868.0M UPI transactions on Wednesday — a campaign-driven high-volume day — up 160.9M on the same day last week. Success held at 99.18% and settlement at 99.98%; the softest bank was IDFC First Bank at 98.92%, still comfortably inside the normal band.
 
 ## KPIs (today · vs yesterday / last week / month start)
-- **UPI Transactions:** 949.0  (▼36.0 d/d, ▼119.1 w/w, ▲204.1 m/m)
-- **Success Rate:** 99.58%  (▲0.37 d/d, ▲1.17 w/w, ▼0.02 m/m)
-- **Settlement Success:** 99.8%  (▼0.18 d/d, ▼0.09 w/w, ▲0.37 m/m)
-- **Technical Declines:** 0.27%  (▼0.05 w/w, ▼0.18 m/m)
-- **Business Declines:** 0.17%  (▼0.02 d/d, ▼0.04 w/w, ▼0.03 m/m)
-- **Customer Complaints:** 1,111  (▼59 d/d, ▼74 w/w, ▼831 m/m)
-- **Merchant Complaints:** 154  (▼33 d/d, ▼40 w/w, ▼57 m/m)
-- **Fraud Alerts:** 744  (▼15 d/d, ▼14 w/w, ▼307 m/m)
-- **Risk Score:** 20  (▼1 w/w, ▼11 m/m)
-- **Response Time:** 573 ms  (▼3 d/d, ▼25 w/w, ▼169 m/m)
+- **UPI Transactions:** 868.0  (▲152.0 d/d, ▲160.9 w/w, ▲72.1 m/m)
+- **Success Rate:** 99.18%  (▼0.55 d/d, ▼0.8 w/w, ▲0.05 m/m)
+- **Settlement Success:** 99.98%  (▲0.57 d/d, ▲0.03 m/m)
+- **Technical Declines:** 0.33%  (▼0.01 w/w, ▼0.22 m/m)
+- **Business Declines:** 0.17%  (▼0.05 w/w, ▼0.07 m/m)
+- **Customer Complaints:** 1,134  (▼9 d/d, ▼44 w/w, ▼1008 m/m)
+- **Merchant Complaints:** 116  (▼1 d/d, ▼49 w/w, ▼118 m/m)
+- **Fraud Alerts:** 828  (▲12 d/d, ▼10 w/w, ▼332 m/m)
+- **Risk Score:** 22  (▼1 w/w, ▼12 m/m)
+- **Response Time:** 588 ms  (▼1 d/d, ▼16 w/w, ▼165 m/m)
 
 ## Top banks (by volume)
 | Bank | Txns (M/day) | Success |
 |------|--------------|---------|
-| State Bank of India | 305.1 | 99.5% |
-| HDFC Bank | 104.7 | 99.55% |
-| Bank of Baroda | 75.3 | 99.19% |
-| Union Bank of India | 65.4 | 99.43% |
-| ICICI Bank | 58.5 | 99.4% |
+| State Bank of India | 282.5 | 99.67% |
+| HDFC Bank | 92.8 | 99.42% |
+| Bank of Baroda | 66.8 | 99.26% |
+| Union Bank of India | 58.6 | 99.63% |
+| Axis Bank | 53.5 | 99.39% |
 
 ## Top UPI apps (by volume)
 | App / PSP | Txns (M/day) | Success | Callback p95 |
 |-----------|--------------|---------|--------------|
-| PhonePe | 452.7 | 99.14% | 231 ms |
-| Google Pay | 310.0 | 99.17% | 316 ms |
-| Paytm | 76.6 | 99.06% | 192 ms |
-| Navi | 35.0 | 99.17% | 225 ms |
-| SuperMoney | 18.5 | 99.08% | 299 ms |
+| PhonePe | 414.6 | 99.51% | 198 ms |
+| Google Pay | 283.9 | 99.35% | 241 ms |
+| Paytm | 68.9 | 99.53% | 201 ms |
+| Navi | 31.9 | 99.53% | 304 ms |
+| SuperMoney | 16.9 | 99.22% | 327 ms |
 
 ## Top features (by volume)
 | Feature | Txns (M/day) |
 |---------|--------------|
-| Person to Merchant | 355.9 |
-| Person to Person | 336.9 |
-| QR Payments | 90.2 |
-| UPI Lite | 45.6 |
-| UPI Autopay | 31.3 |
+| Person to Merchant | 321.2 |
+| Person to Person | 308.1 |
+| QR Payments | 82.5 |
+| UPI Lite | 41.7 |
+| UPI Autopay | 28.6 |
 
 ## Failure analysis
-- INC-2026-20 — merchant settlement delay on Bank of Baroda (day 2 of 2); see INC-2026-20.
+- No incidents open. Technical declines are within the 0.33% steady-state band; residual failures are routine bank/network timeouts.
 
 ## Recommendations
-Stay on the open incident: keep recovery monitoring on Bank of Baroda and hold the bank/PSP bridge until success clears the 99.2% floor and stays there through two clean hours.
+Steady state — no action beyond routine watch; pick up the SLA trend at the next sync.
 
 ## Notes
 All figures read from upi_kpis_month.xlsx; they match the day's monitoring note
-(TEAMS-D136-MON) and any meetings/emails on 04 Nov.
+(TEAMS-D136-MON) and any meetings/emails on 20 May.
 
-Refs: upi_kpis_month.xlsx, TEAMS-D136-MON, RPT-D135-DAILY, INC-2026-20
+Refs: upi_kpis_month.xlsx, TEAMS-D136-MON, RPT-D135-DAILY

@@ -3,65 +3,65 @@ id: RPT-D22-DAILY
 type: report
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-07-13T17:30:00
+timestamp: 2026-01-26T17:30:00
 ---
 
-# UPI Products — Daily Operations Report (Monday, 13 Jul 2026)
+# UPI Products — Daily Operations Report (Monday, 26 Jan 2026)
 
-**Report ID:** RPT-D22-DAILY  ·  **Prepared by:** Farhan Subramanian
-**Date:** Monday 13 Jul 2026  ·  **Day archetype:** Monday (ramp-up)
-**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 22 of 180)
+**Report ID:** RPT-D22-DAILY  ·  **Prepared by:** Lakshmi Agarwal
+**Date:** Monday 26 Jan 2026  ·  **Day archetype:** Monday (ramp-up)
+**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 22 of 206)
 
 ## Transaction summary
-The rail processed 765.3M UPI transactions on Monday — the Monday ramp-up after the weekend — up 21.4M on the same day last week. Success held at 99.01% and settlement at 98.7%; the softest bank was IndusInd Bank at 98.92%, still comfortably inside the normal band.
+The rail processed 663.3M UPI transactions on Monday — the Monday ramp-up after the weekend — up 20.1M on the same day last week. Success landed at 98.09% and settlement at 99.98%, held back by live issues on FamApp (detailed below).
 
 ## KPIs (today · vs yesterday / last week / month start)
-- **UPI Transactions:** 765.3  (▲130.4 d/d, ▲21.4 w/w, ▲20.4 m/m)
-- **Success Rate:** 99.01%  (▲0.07 d/d, ▼0.56 w/w, ▼0.59 m/m)
-- **Settlement Success:** 98.7%  (▼1.28 d/d, ▼0.77 w/w, ▼0.73 m/m)
-- **Technical Declines:** 0.41%  (▼0.02 w/w, ▼0.04 m/m)
-- **Business Declines:** 0.19%  (▼0.15 w/w, ▼0.01 m/m)
-- **Customer Complaints:** 1,781  (▼10 d/d, ▼703 w/w, ▼161 m/m)
-- **Merchant Complaints:** 187  (▼2 d/d, ▼9 w/w, ▼24 m/m)
-- **Fraud Alerts:** 995  (▲4 d/d, ▼353 w/w, ▼56 m/m)
-- **Risk Score:** 29  (▼26 w/w, ▼2 m/m)
-- **Response Time:** 710 ms  (▼4 d/d, ▼13 w/w, ▼32 m/m)
+- **UPI Transactions:** 663.3  (▲110.2 d/d, ▲20.1 w/w, ▼132.6 m/m)
+- **Success Rate:** 98.09%  (▼0.7 d/d, ▼0.69 w/w, ▼1.04 m/m)
+- **Settlement Success:** 99.98%  (▲0.63 d/d, ▲0.5 w/w, ▲0.03 m/m)
+- **Technical Declines:** 0.51%  (▼0.01 w/w, ▼0.04 m/m)
+- **Business Declines:** 0.4%  (▲0.17 d/d, ▲0.17 w/w, ▲0.16 m/m)
+- **Customer Complaints:** 2,609  (▲668 d/d, ▲577 w/w, ▲467 m/m)
+- **Merchant Complaints:** 209  (▼5 d/d, ▼11 w/w, ▼25 m/m)
+- **Fraud Alerts:** 1,455  (▲358 d/d, ▲352 w/w, ▲295 m/m)
+- **Risk Score:** 59  (▲27 d/d, ▲26 w/w, ▲25 m/m)
+- **Response Time:** 728 ms  (▼1 d/d, ▼13 w/w, ▼25 m/m)
 
 ## Top banks (by volume)
 | Bank | Txns (M/day) | Success |
 |------|--------------|---------|
-| State Bank of India | 246.1 | 99.5% |
-| HDFC Bank | 84.4 | 99.55% |
-| Bank of Baroda | 60.7 | 99.64% |
-| Union Bank of India | 52.7 | 99.43% |
-| ICICI Bank | 47.2 | 99.4% |
+| State Bank of India | 215.9 | 99.67% |
+| HDFC Bank | 70.9 | 99.42% |
+| Bank of Baroda | 51.0 | 99.26% |
+| Union Bank of India | 44.7 | 99.63% |
+| Axis Bank | 40.9 | 99.39% |
 
 ## Top UPI apps (by volume)
 | App / PSP | Txns (M/day) | Success | Callback p95 |
 |-----------|--------------|---------|--------------|
-| PhonePe | 365.1 | 99.14% | 231 ms |
-| Google Pay | 250.0 | 99.17% | 316 ms |
-| Paytm | 61.7 | 99.06% | 192 ms |
-| Navi | 28.2 | 99.17% | 225 ms |
-| SuperMoney | 14.9 | 99.08% | 299 ms |
+| PhonePe | 316.8 | 99.51% | 198 ms |
+| Google Pay | 216.9 | 99.35% | 241 ms |
+| Paytm | 52.6 | 99.53% | 201 ms |
+| Navi | 24.4 | 99.53% | 304 ms |
+| SuperMoney | 12.9 | 99.22% | 327 ms |
 
 ## Top features (by volume)
 | Feature | Txns (M/day) |
 |---------|--------------|
-| Person to Merchant | 287.0 |
-| Person to Person | 271.7 |
-| QR Payments | 72.7 |
-| UPI Lite | 36.7 |
-| UPI Autopay | 25.3 |
+| Person to Merchant | 245.4 |
+| Person to Person | 235.5 |
+| QR Payments | 63.0 |
+| UPI Lite | 31.8 |
+| UPI Autopay | 21.9 |
 
 ## Failure analysis
-- No incidents open. Technical declines are within the 0.41% steady-state band; residual failures are routine bank/network timeouts.
+- INC-2026-15 — fraud / risk spike on FamApp (day 1 of 3); see RCA-2026-15.
 
 ## Recommendations
-Steady state — use the quieter window to progress capacity planning before the next peak.
+Stay on the open incident: keep recovery monitoring on FamApp and hold the bank/PSP bridge until success clears the 99.2% floor and stays there through two clean hours.
 
 ## Notes
 All figures read from upi_kpis_month.xlsx; they match the day's monitoring note
-(TEAMS-D22-MON) and any meetings/emails on 13 Jul.
+(TEAMS-D22-MON) and any meetings/emails on 26 Jan.
 
-Refs: upi_kpis_month.xlsx, TEAMS-D22-MON, RPT-D21-DAILY
+Refs: upi_kpis_month.xlsx, TEAMS-D22-MON, RPT-D21-DAILY, INC-2026-15, RCA-2026-15

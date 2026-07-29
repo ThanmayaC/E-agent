@@ -3,25 +3,25 @@ id: TEAMS-D24-MON
 type: teams
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-07-15T09:30:00
+timestamp: 2026-01-28T09:30:00
 ---
 
-# Ops Monitoring — 15 Jul 2026
+# Ops Monitoring — 28 Jan 2026
 
 **Channel:** UPI Products / Ops Monitoring
-**Date:** Wednesday 15 Jul 2026 · **Day archetype:** Weekday (steady)
+**Date:** Wednesday 28 Jan 2026 · **Day archetype:** Month-end peak
 
 **Harsh Nanda** · 09:15
-Morning sweep for 15 Jul. UPI Transactions at 780.3 (up 3.7 vs Tue 14 Jul);
-Success Rate at 99.42% (down 0.56 vs Tue 14 Jul); Technical Declines at 0.41%;
-Business Declines at 0.19%. Estimated peak ~27,996 TPS.
+Morning sweep for 28 Jan. UPI Transactions at 759.5 (up 84.8 vs Tue 27 Jan);
+Success Rate at 99.55% (up 0.23 vs Tue 27 Jan); Technical Declines at 0.51%;
+Business Declines at 0.29% (down 0.05 vs Tue 27 Jan). Estimated peak ~27,250 TPS.
 
-**Farhan Subramanian** · 09:22
-Lowest bank success today: IndusInd Bank at 98.92%. Settlement Success
-99.84%. Complaints: customer 1,755,
-merchant 186. Full numbers in RPT-D24-DAILY and upi_kpis_month.xlsx.
+**Lakshmi Agarwal** · 09:22
+Lowest bank success today: IDFC First Bank at 98.92%. Settlement Success
+99.69%. Complaints: customer 2,170,
+merchant 210. Full numbers in RPT-D24-DAILY and upi_kpis_month.xlsx.
 
 **Harsh Nanda** · 09:30
-No open incidents — steady-state monitoring.
+Open items: INC-2026-15 (fraud / risk spike · FamApp)
 
-Refs: upi_kpis_month.xlsx, RPT-D24-DAILY, ORG-OVERVIEW
+Refs: upi_kpis_month.xlsx, RPT-D24-DAILY, INC-2026-15

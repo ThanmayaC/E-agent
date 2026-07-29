@@ -10,6 +10,7 @@ snippet and a link target the frontend can route to.
 from __future__ import annotations
 
 from app.core.logging import get_logger
+from app.intelligence.retrieval import HybridRetriever
 
 logger = get_logger(__name__)
 
@@ -41,21 +42,61 @@ class EnterpriseSearch:
         query = (query or "").strip()
         if not query:
             return {"query": query, "results": [], "groups": {}, "total": 0}
-        results: list[dict] = []
+        candidates: list[dict] = []
         for collector in (self._entities, self._kpis, self._reports_decisions,
                           self._files, self._graph):
             try:
-                results.extend(collector(query))
+                candidates.extend(collector(query))
             except Exception:  # noqa: BLE001 — one bad source never fails search
                 logger.exception("enterprise search collector failed")
-        results.sort(key=lambda r: r.get("score", 0), reverse=True)
-        results = results[:limit]
+
+        results, retrieval = self._hybrid_rank(query, candidates, limit)
         groups: dict[str, list] = {}
         for r in results:
             groups.setdefault(r["type"], []).append(r)
         return {"query": query, "results": results, "groups": groups,
-                "total": len(results),
+                "total": len(results), "retrieval": retrieval,
                 "counts": {k: len(v) for k, v in groups.items()}}
+
+    def _hybrid_rank(self, query: str, candidates: list[dict],
+                     limit: int) -> tuple[list[dict], dict]:
+        """Rank federated candidates with BM25 lexical + the collectors' own
+        semantic score, fused via Reciprocal Rank Fusion and reranked. Returns
+        the ranked hits and retrieval diagnostics. Falls back to the plain score
+        ordering if anything goes wrong — search must never fail."""
+        if not candidates:
+            return [], {"strategy": "none", "candidates": 0}
+        try:
+            docs = [{"id": f"h{i}",
+                     "text": f"{c.get('title','')} {c.get('snippet','')}".strip(),
+                     "title": c.get("title", ""), "_hit": c}
+                    for i, c in enumerate(candidates)]
+            # The collectors' own score is the "dense"/semantic signal.
+            ordered = sorted(docs, key=lambda d: d["_hit"].get("score", 0.0),
+                             reverse=True)
+
+            def dense(_q: str, k: int) -> list[dict]:
+                return [{"id": d["id"], "score": d["_hit"].get("score", 0.0)}
+                        for d in ordered[:k]]
+
+            retriever = HybridRetriever.from_documents(docs, dense_search=dense)
+            ranked, diag = retriever.retrieve(query, top_k=limit,
+                                              dense_k=len(docs), bm25_k=len(docs))
+            hits = []
+            for c in ranked:
+                hit = dict(c.payload.get("_hit", {}))
+                hit["retrieval_score"] = round(c.rerank_score
+                                               if c.rerank_score is not None
+                                               else c.fused_score, 4)
+                hits.append(hit)
+            diag["strategy"] = "hybrid_bm25_dense_rrf_rerank"
+            return hits, diag
+        except Exception:  # noqa: BLE001 — never fail search on ranking
+            logger.exception("hybrid ranking failed; using score fallback")
+            fallback = sorted(candidates, key=lambda r: r.get("score", 0),
+                              reverse=True)[:limit]
+            return fallback, {"strategy": "score_fallback",
+                              "candidates": len(candidates)}
 
     # ------------------------------------------------------------ sources
     def _entities(self, q: str) -> list[dict]:

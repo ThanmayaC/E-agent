@@ -3,25 +3,25 @@ id: TEAMS-D34-MON
 type: teams
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-07-25T09:30:00
+timestamp: 2026-02-07T09:30:00
 ---
 
-# Ops Monitoring — 25 Jul 2026
+# Ops Monitoring — 07 Feb 2026
 
 **Channel:** UPI Products / Ops Monitoring
-**Date:** Saturday 25 Jul 2026 · **Day archetype:** Saturday (lighter)
+**Date:** Saturday 07 Feb 2026 · **Day archetype:** Saturday (lighter)
 
 **Harsh Nanda** · 09:15
-Morning sweep for 25 Jul. UPI Transactions at 717.3 (down 97.9 vs Fri 24 Jul);
-Success Rate at 99.17% (down 0.26 vs Fri 24 Jul); Technical Declines at 0.52% (up 0.12 vs Fri 24 Jul);
-Business Declines at 0.18%. Estimated peak ~25,736 TPS.
+Morning sweep for 07 Feb. UPI Transactions at 609.8 (down 62.9 vs Fri 06 Feb);
+Success Rate at 98.87% (down 0.54 vs Fri 06 Feb); Technical Declines at 0.49%;
+Business Declines at 0.35% (up 0.07 vs Fri 06 Feb). Estimated peak ~21,879 TPS.
 
-**Farhan Subramanian** · 09:22
-Lowest bank success today: IndusInd Bank at 98.92%. Settlement Success
-98.96%. Complaints: customer 2,109,
-merchant 178. Full numbers in RPT-D34-DAILY and upi_kpis_month.xlsx.
+**Lakshmi Agarwal** · 09:22
+Lowest bank success today: IDFC First Bank at 98.92%. Settlement Success
+99.98%. Complaints: customer 2,330,
+merchant 199. Full numbers in RPT-D34-DAILY and upi_kpis_month.xlsx.
 
 **Harsh Nanda** · 09:30
-Open items: INC-2026-27 (PSP callback latency increase · Amazon Pay)
+Open items: INC-2026-02 (fraud / risk spike · HDFC MobileBanking); INC-2026-08 (fraud / risk spike · WhatsApp Pay)
 
-Refs: upi_kpis_month.xlsx, RPT-D34-DAILY, INC-2026-27
+Refs: upi_kpis_month.xlsx, RPT-D34-DAILY, INC-2026-02, INC-2026-08

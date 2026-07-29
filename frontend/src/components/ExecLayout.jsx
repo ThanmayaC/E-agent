@@ -17,6 +17,7 @@ import ErrorBoundary from './ErrorBoundary'
 const NAV = [
   { to: '/', label: 'Workspace', icon: '✦', end: true },
   { to: '/assistant', label: 'AI Analyst', icon: '💬' },
+  { to: '/ecosystem', label: 'Ecosystem', icon: '🌍' },
   { to: '/files', label: 'Files', icon: '📎' },
   { to: '/reports', label: 'Reports', icon: '▣' },
   { to: '/intelligence', label: 'Analytics', icon: '⚛' },

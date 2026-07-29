@@ -3,25 +3,25 @@ id: TEAMS-D167-MON
 type: teams
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-12-05T09:30:00
+timestamp: 2026-06-20T09:30:00
 ---
 
-# Ops Monitoring — 05 Dec 2026
+# Ops Monitoring — 20 Jun 2026
 
 **Channel:** UPI Products / Ops Monitoring
-**Date:** Saturday 05 Dec 2026 · **Day archetype:** Saturday (lighter)
+**Date:** Saturday 20 Jun 2026 · **Day archetype:** Saturday (lighter)
 
 **Harsh Nanda** · 09:15
-Morning sweep for 05 Dec. UPI Transactions at 935.9 (down 75.3 vs Fri 04 Dec);
-Success Rate at 99.94% (up 0.01 vs Fri 04 Dec); Technical Declines at 0.31% (down 0.05 vs Fri 04 Dec);
-Business Declines at 0.13%. Estimated peak ~33,579 TPS.
+Morning sweep for 20 Jun. UPI Transactions at 663.7 (down 73.8 vs Fri 19 Jun);
+Success Rate at 99.98% (up 0.43 vs Fri 19 Jun); Technical Declines at 0.29%;
+Business Declines at 0.16%. Estimated peak ~23,813 TPS.
 
-**Farhan Subramanian** · 09:22
-Lowest bank success today: IndusInd Bank at 98.92%. Settlement Success
-99.98%. Complaints: customer 1,047,
-merchant 89. Full numbers in RPT-D167-DAILY and upi_kpis_month.xlsx.
+**Lakshmi Agarwal** · 09:22
+Lowest bank success today: IDFC First Bank at 98.92%. Settlement Success
+99.28%. Complaints: customer 981,
+merchant 99. Full numbers in RPT-D167-DAILY and upi_kpis_month.xlsx.
 
 **Harsh Nanda** · 09:30
-Open items: INC-2026-21 (feature-level degradation · QR Payments)
+No open incidents — steady-state monitoring.
 
-Refs: upi_kpis_month.xlsx, RPT-D167-DAILY, INC-2026-21
+Refs: upi_kpis_month.xlsx, RPT-D167-DAILY, ORG-OVERVIEW

@@ -3,65 +3,65 @@ id: RPT-D65-DAILY
 type: report
 organization: NPCI (Synthetic Demonstration)
 department: UPI Products
-timestamp: 2026-08-25T17:30:00
+timestamp: 2026-03-10T17:30:00
 ---
 
-# UPI Products — Daily Operations Report (Tuesday, 25 Aug 2026)
+# UPI Products — Daily Operations Report (Tuesday, 10 Mar 2026)
 
-**Report ID:** RPT-D65-DAILY  ·  **Prepared by:** Farhan Subramanian
-**Date:** Tuesday 25 Aug 2026  ·  **Day archetype:** Weekday (steady)
-**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 65 of 180)
+**Report ID:** RPT-D65-DAILY  ·  **Prepared by:** Lakshmi Agarwal
+**Date:** Tuesday 10 Mar 2026  ·  **Day archetype:** Weekday (steady)
+**Source:** upi_kpis_month.xlsx ("Monthly KPIs", day 65 of 206)
 
 ## Transaction summary
-The rail processed 856.0M UPI transactions on Tuesday — a steady mid-week day — up 6.3M on the same day last week. Success landed at 98.95% and settlement at 99.36%, held back by live issues on MetroRide, QuickBite (detailed below).
+The rail processed 708.7M UPI transactions on Tuesday — a steady mid-week day — up 12.1M on the same day last week. Success held at 99.46% and settlement at 99.98%; the softest bank was IDFC First Bank at 98.92%, still comfortably inside the normal band.
 
 ## KPIs (today · vs yesterday / last week / month start)
-- **UPI Transactions:** 856.0  (▲31.8 d/d, ▲6.3 w/w, ▲111.1 m/m)
-- **Success Rate:** 98.95%  (▲0.04 d/d, ▼1.03 w/w, ▼0.65 m/m)
-- **Settlement Success:** 99.36%  (▼0.62 d/d, ▲1.26 w/w, ▼0.07 m/m)
-- **Technical Declines:** 0.36%  (▲0.01 d/d, ▼0.09 m/m)
-- **Business Declines:** 0.24%  (▲0.07 d/d, ▲0.01 w/w, ▲0.04 m/m)
-- **Customer Complaints:** 1,437  (▲2 d/d, ▼229 w/w, ▼505 m/m)
-- **Merchant Complaints:** 242  (▲92 d/d, ▼40 w/w, ▲31 m/m)
-- **Fraud Alerts:** 898  (▲9 d/d, ▼10 w/w, ▼153 m/m)
-- **Risk Score:** 26  (▲1 d/d, ▼5 m/m)
-- **Response Time:** 652 ms  (▼3 d/d, ▼4 w/w, ▼90 m/m)
+- **UPI Transactions:** 708.7  (▼140.0 d/d, ▲12.1 w/w, ▼87.2 m/m)
+- **Success Rate:** 99.46%  (▼0.34 d/d, ▼0.41 w/w, ▲0.33 m/m)
+- **Settlement Success:** 99.98%  (▲1.22 d/d, ▲0.03 m/m)
+- **Technical Declines:** 0.43%  (▼0.01 w/w, ▼0.12 m/m)
+- **Business Declines:** 0.21%  (▲0.01 d/d, ▼0.03 m/m)
+- **Customer Complaints:** 1,588  (▼1 d/d, ▼39 w/w, ▼554 m/m)
+- **Merchant Complaints:** 168  (▼8 w/w, ▼66 m/m)
+- **Fraud Alerts:** 983  (▲1 d/d, ▼22 w/w, ▼177 m/m)
+- **Risk Score:** 28  (▼6 m/m)
+- **Response Time:** 679 ms  (▼2 d/d, ▼10 w/w, ▼74 m/m)
 
 ## Top banks (by volume)
 | Bank | Txns (M/day) | Success |
 |------|--------------|---------|
-| State Bank of India | 275.2 | 99.5% |
-| HDFC Bank | 94.4 | 99.55% |
-| Bank of Baroda | 67.9 | 99.64% |
-| Union Bank of India | 59.0 | 99.43% |
-| ICICI Bank | 52.8 | 99.4% |
+| State Bank of India | 230.7 | 99.67% |
+| HDFC Bank | 75.8 | 99.42% |
+| Bank of Baroda | 54.5 | 99.26% |
+| Union Bank of India | 47.8 | 99.63% |
+| Axis Bank | 43.7 | 99.39% |
 
 ## Top UPI apps (by volume)
 | App / PSP | Txns (M/day) | Success | Callback p95 |
 |-----------|--------------|---------|--------------|
-| PhonePe | 408.4 | 99.14% | 231 ms |
-| Google Pay | 279.6 | 99.17% | 316 ms |
-| Paytm | 69.1 | 99.06% | 192 ms |
-| Navi | 31.5 | 99.17% | 225 ms |
-| SuperMoney | 16.7 | 99.08% | 299 ms |
+| PhonePe | 338.5 | 99.51% | 198 ms |
+| Google Pay | 231.8 | 99.35% | 241 ms |
+| Paytm | 56.2 | 99.53% | 201 ms |
+| Navi | 26.1 | 99.53% | 304 ms |
+| SuperMoney | 13.8 | 99.22% | 327 ms |
 
 ## Top features (by volume)
 | Feature | Txns (M/day) |
 |---------|--------------|
-| Person to Merchant | 321.0 |
-| Person to Person | 303.9 |
-| QR Payments | 81.3 |
-| UPI Lite | 41.1 |
-| UPI Autopay | 28.2 |
+| Person to Merchant | 262.2 |
+| Person to Person | 251.6 |
+| QR Payments | 67.3 |
+| UPI Lite | 34.0 |
+| UPI Autopay | 23.4 |
 
 ## Failure analysis
-- INC-2026-18 — merchant decline-rate spike on MetroRide, QuickBite (day 1 of 2); see INC-2026-18.
+- No incidents open. Technical declines are within the 0.43% steady-state band; residual failures are routine bank/network timeouts.
 
 ## Recommendations
-Stay on the open incident: keep recovery monitoring on MetroRide, QuickBite and hold the bank/PSP bridge until success clears the 99.2% floor and stays there through two clean hours.
+Steady state — keep the standard monitoring cadence and let the adoption programmes run.
 
 ## Notes
 All figures read from upi_kpis_month.xlsx; they match the day's monitoring note
-(TEAMS-D65-MON) and any meetings/emails on 25 Aug.
+(TEAMS-D65-MON) and any meetings/emails on 10 Mar.
 
-Refs: upi_kpis_month.xlsx, TEAMS-D65-MON, RPT-D64-DAILY, INC-2026-18
+Refs: upi_kpis_month.xlsx, TEAMS-D65-MON, RPT-D64-DAILY

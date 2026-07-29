@@ -44,7 +44,7 @@ import DecisionAnalytics from './pages/DecisionAnalytics'
 import WorkflowMonitor from './pages/WorkflowMonitor'
 import AgentActivity from './pages/AgentActivity'
 import KnowledgeGrowth from './pages/KnowledgeGrowth'
-
+import ecosystem from './pages/EcosystemDashboard'
 // Per-project analyst workbench (backwards compatible, linked from Admin)
 import Dashboard from './pages/Dashboard'
 import Datasets from './pages/Datasets'
@@ -83,6 +83,7 @@ function ProjectShell() {
         <Route path="knowledge" element={<Knowledge />} />
         <Route path="workflows" element={<Workflows />} />
         <Route path="admin" element={<Admin />} />
+        <Route path="ecosystem" element={<EcosystemDashboard />} />
       </Routes>
     </Layout>
   )
