@@ -1,0 +1,15 @@
+category,severity,finding,entity,metric,value
+growing_features,info,Fastest-growing feature: UPI Lite X (+873.9% m/m).,UPI Lite X,txns,873.9
+declining_features,watch,Weakest feature: Collect Requests (-44.2% m/m).,Collect Requests,txns,-44.2
+fastest_growing_bank,info,Fastest-growing bank by volume: AU Small Finance Bank (+45.1%).,AU Small Finance Bank,txns,45.1
+psp_share_loss,watch,PSP losing share: Amazon Pay (13.5% m/m).,Amazon Pay,txns,13.5
+high_risk_bank,watch,Union Bank of India lowest avg success (99.4%).,Union Bank of India,success_rate,99.4
+high_risk_bank,watch,IndusInd Bank lowest avg success (99.42%).,IndusInd Bank,success_rate,99.42
+high_risk_bank,watch,Yes Bank lowest avg success (99.43%).,Yes Bank,success_rate,99.43
+anomaly,high,"Success-rate anomaly on day 3 (97.389%, z=-4.1).",day 3,success_rate,97.389
+anomaly,high,"Success-rate anomaly on day 10 (98.398%, z=-2.2).",day 10,success_rate,98.398
+anomaly,high,"Success-rate anomaly on day 11 (98.076%, z=-2.8).",day 11,success_rate,98.076
+anomaly,high,"Success-rate anomaly on day 16 (98.481%, z=-2.0).",day 16,success_rate,98.481
+anomaly,high,"Success-rate anomaly on day 126 (98.217%, z=-2.5).",day 126,success_rate,98.217
+anomaly,high,"Success-rate anomaly on day 129 (98.41%, z=-2.1).",day 129,success_rate,98.41
+regional_growth,info,Fastest-growing city: Guwahati (+60.4%).,Guwahati,txns,60.4

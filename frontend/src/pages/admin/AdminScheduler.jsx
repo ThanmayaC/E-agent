@@ -46,7 +46,7 @@ export default function AdminScheduler() {
                 <Stat label="Jobs enabled" value={sched.jobs_enabled} />
                 <Stat label="Jobs total" value={sched.jobs_total ?? jobList.length} />
                 <Stat label="Degraded" value={(sched.degraded_jobs || []).length}
-                      tone={(sched.degraded_jobs || []).length > 0 ? 'text-rose-400' : 'text-slate-100'} />
+                      tone={(sched.degraded_jobs || []).length > 0 ? 'fg-danger' : 'fg-primary'} />
               </div>
 
               <Panel title="Degraded jobs">

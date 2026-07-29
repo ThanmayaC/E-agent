@@ -48,6 +48,15 @@ class BaseLLMProvider(ABC):
 
     def __init__(self, config: LLMConfig):
         self.config = config
+        # Token usage from the most recent _chat_once call, when the provider's
+        # API reports it. Read by the caller right after chat()/chat_json()
+        # returns — there is one call in flight per provider instance per
+        # request, so this needs no locking.
+        self.last_usage: dict[str, int] = {"tokens_in": 0, "tokens_out": 0}
+        # Richer diagnostics from the most recent call (prompt size, latency),
+        # surfaced on the runtime diagnostics page. Providers that measure it
+        # populate this; the default is empty.
+        self.last_call: dict[str, Any] = {}
 
     # ------------------------------------------------------------ interface
     @abstractmethod
@@ -61,16 +70,24 @@ class BaseLLMProvider(ABC):
     # ------------------------------------------------------------- retries
     def chat(self, messages: list[ChatMessage], json_mode: bool = False) -> str:
         last_exc: Exception | None = None
+        prompt_chars = sum(len(m.content) for m in messages)
         for attempt in range(self.config.retries + 1):
+            started = time.monotonic()
             try:
                 return self._chat_once(messages, json_mode)
             except Exception as exc:  # transport, HTTP, timeout
                 last_exc = exc
-                logger.warning("%s chat attempt %d/%d failed: %s",
-                               self.name, attempt + 1, self.config.retries + 1, exc)
+                took = int((time.monotonic() - started) * 1000)
+                # Log why and how long — a timeout on a large prompt is a very
+                # different failure from a connection refused, and both were
+                # previously invisible behind "failed after N attempts".
+                logger.warning("%s chat attempt %d/%d failed after %d ms "
+                               "(prompt=%d chars): %s", self.name, attempt + 1,
+                               self.config.retries + 1, took, prompt_chars, exc)
                 if attempt < self.config.retries:
                     time.sleep(self.config.retry_backoff_s * (attempt + 1))
-        raise LLMError(f"{self.name} failed after {self.config.retries + 1} attempts: {last_exc}")
+        raise LLMError(f"{self.name} failed after {self.config.retries + 1} "
+                       f"attempts (prompt={prompt_chars} chars): {last_exc}")
 
     def chat_json(self, messages: list[ChatMessage]) -> dict[str, Any]:
         """Completion that must yield a JSON object; re-asks once on bad JSON."""

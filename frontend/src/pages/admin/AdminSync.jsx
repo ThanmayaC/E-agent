@@ -43,7 +43,7 @@ export default function AdminSync() {
                 <Stat label="Sources" value={sourceList.length} />
                 <Stat label="Entities modeled" value={overview?.entities_total} />
                 <Stat label="Freshness" value={overview?.knowledge_freshness?.status || '—'}
-                      tone={overview?.knowledge_freshness?.status === 'fresh' ? 'text-emerald-400' : 'text-amber-400'} />
+                      tone={overview?.knowledge_freshness?.status === 'fresh' ? 'fg-success' : 'fg-warn'} />
                 <Stat label="Last update" value={overview?.knowledge_freshness?.last_updated_at
                   ? when(overview.knowledge_freshness.last_updated_at) : '—'} />
               </div>

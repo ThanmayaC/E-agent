@@ -88,20 +88,25 @@ export function Loader({ state, skeleton, children, empty = 'Nothing here yet.' 
 // ------------------------------------------------------- animated value
 // Counts up to the target so KPIs feel alive on first paint.
 export function Counter({ value, decimals = 0, prefix = '', suffix = '', className = '' }) {
-  const [display, setDisplay] = useState(0)
+  const [display, setDisplay] = useState(Number(value) || 0)
   const raf = useRef(null)
   useEffect(() => {
     const target = Number(value) || 0
     const start = performance.now()
     const from = 0
+    let done = false
     const tick = (now) => {
       const t = Math.min(1, (now - start) / 700)
       const eased = 1 - Math.pow(1 - t, 3)
       setDisplay(from + (target - from) * eased)
       if (t < 1) raf.current = requestAnimationFrame(tick)
+      else done = true
     }
     raf.current = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(raf.current)
+    // Guarantee the final value even where rAF is throttled (a background or
+    // headless tab, reduced-motion) — the number must never stay stuck at 0.
+    const settle = setTimeout(() => { if (!done) setDisplay(target) }, 780)
+    return () => { cancelAnimationFrame(raf.current); clearTimeout(settle) }
   }, [value])
   return (
     <span className={`tabular-nums ${className}`}>
@@ -113,7 +118,7 @@ export function Counter({ value, decimals = 0, prefix = '', suffix = '', classNa
 
 // A premium stat tile: eyebrow label, animated value, trend, optional spark.
 export function StatCard({ label, value, decimals = 0, prefix = '', suffix = '',
-                          tone = 'text-slate-100', delta, spark, hint, onClick }) {
+                          tone = 'fg-primary', delta, spark, hint, onClick }) {
   return (
     <div onClick={onClick}
       className={`card-pad relative overflow-hidden group ${onClick ? 'cursor-pointer card-hover' : ''}`}>
@@ -135,11 +140,38 @@ export function TrendPill({ change, suffix = '' }) {
   if (change == null) return null
   const up = change > 0, flat = change === 0
   return (
-    <span className={`inline-flex items-center gap-1 text-xs font-medium tabular-nums px-1.5 py-0.5 rounded-md ${
-      flat ? 'text-slate-400 bg-surface-overlay'
-        : up ? 'text-emerald-400 bg-emerald-500/10' : 'text-rose-400 bg-rose-500/10'}`}>
+    <span className={`chip inline-flex items-center gap-1 tabular-nums ${
+      flat ? 'chip-neutral' : up ? 'chip-success' : 'chip-danger'}`}>
       {flat ? '→' : up ? '↑' : '↓'} {up ? '+' : ''}{Number(change).toFixed(1)}{suffix}
     </span>
+  )
+}
+
+// ------------------------------------------------------------ trend row
+// Today / Yesterday / Last Week / Last Month / Trend — the shared shape for
+// showing a KPI's history instead of an isolated number. Fed by
+// api.executiveTrends() (backend: ExecutiveIntelligence.trends()).
+export function TrendRow({ trend, unit = '' }) {
+  if (!trend) return null
+  const fmt = (v) => (v == null ? '—' : `${v}${unit}`)
+  return (
+    <div className="grid grid-cols-5 gap-2 text-center">
+      {[
+        ['Today', trend.today],
+        ['Yesterday', trend.yesterday],
+        ['Last Week', trend.last_week],
+        ['Last Month', trend.last_month],
+      ].map(([label, v]) => (
+        <div key={label}>
+          <div className="text-[10px] uppercase tracking-wide text-slate-500">{label}</div>
+          <div className="text-sm font-medium text-slate-200 tabular-nums mt-0.5">{fmt(v)}</div>
+        </div>
+      ))}
+      <div>
+        <div className="text-[10px] uppercase tracking-wide text-slate-500">Trend</div>
+        <div className="mt-0.5"><TrendPill change={trend.trend} suffix={unit} /></div>
+      </div>
+    </div>
   )
 }
 

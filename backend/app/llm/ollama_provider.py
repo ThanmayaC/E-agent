@@ -8,6 +8,7 @@ first installed model is used.
 from __future__ import annotations
 
 import json
+import time
 from typing import Iterator
 
 import httpx
@@ -46,6 +47,7 @@ class OllamaProvider(BaseLLMProvider):
 
     # -------------------------------------------------------------- chat
     def _chat_once(self, messages: list[ChatMessage], json_mode: bool) -> str:
+        prompt_chars = sum(len(m.content) for m in messages)
         payload = {
             "model": self.model,
             "messages": [{"role": m.role, "content": m.content} for m in messages],
@@ -60,9 +62,29 @@ class OllamaProvider(BaseLLMProvider):
         }
         if json_mode:
             payload["format"] = "json"
+        # Observability: measure model latency and log prompt size + token
+        # counts for every request, so the bottleneck is visible instead of
+        # inferred. Captured on the instance for the diagnostics surface too.
+        started = time.monotonic()
+        logger.info("ollama chat → model=%s prompt=%d chars (~%d tokens) "
+                    "num_predict=%d json=%s", self.model, prompt_chars,
+                    prompt_chars // 4, self.config.max_tokens, json_mode)
         resp = httpx.post(f"{self.base_url}/api/chat", json=payload, timeout=self.config.timeout_s)
         resp.raise_for_status()
-        message = resp.json()["message"]
+        latency_ms = int((time.monotonic() - started) * 1000)
+        data = resp.json()
+        self.last_usage = {"tokens_in": int(data.get("prompt_eval_count", 0)),
+                           "tokens_out": int(data.get("eval_count", 0))}
+        self.last_call = {
+            "model": self.model, "prompt_chars": prompt_chars,
+            "tokens_in": self.last_usage["tokens_in"],
+            "tokens_out": self.last_usage["tokens_out"],
+            "latency_ms": latency_ms, "json_mode": json_mode,
+        }
+        logger.info("ollama chat ← %d ms, tokens_in=%d tokens_out=%d",
+                    latency_ms, self.last_usage["tokens_in"],
+                    self.last_usage["tokens_out"])
+        message = data["message"]
         content = message.get("content", "")
         if not content and message.get("thinking"):
             return message["thinking"]  # fallback: some models ignore think=false

@@ -1,0 +1,2701 @@
+merchant,day,txns,value,category,success_rate
+GadgetZone,1,1992,1564800.0,Electronics,99.65
+MetroRide,1,2849,2774929.0,Mobility,99.65
+BharatKart,1,520,558867.0,E-commerce,99.62
+StyleHub,1,55,56770.0,Fashion,100.0
+DailyMart,1,136,93143.0,Retail,99.26
+FlixStream,1,32,14063.0,OTT / Subscriptions,100.0
+HealthFirst,1,54,27780.0,Pharmacy,100.0
+QuickBite,1,45,33332.0,Food Delivery,100.0
+CityFuel,1,54,39046.0,Fuel,96.3
+PowerPay Utilities,1,26,18409.0,Utilities,100.0
+WealthGrow,1,27,14258.0,Wealth / SIP,100.0
+InsureWell,1,54,65833.0,Insurance,100.0
+FreshBasket,1,58,40640.0,Grocery,98.28
+EduPrime,1,45,42630.0,EdTech,100.0
+TravelGo,1,33,24402.0,Travel,100.0
+GadgetZone,2,2057,1549076.0,Electronics,99.37
+MetroRide,2,2943,2923397.0,Mobility,99.69
+FlixStream,2,28,18314.0,OTT / Subscriptions,100.0
+BharatKart,2,485,445638.0,E-commerce,99.38
+InsureWell,2,57,57168.0,Insurance,100.0
+PowerPay Utilities,2,25,18957.0,Utilities,100.0
+WealthGrow,2,33,21190.0,Wealth / SIP,96.97
+EduPrime,2,55,44207.0,EdTech,100.0
+DailyMart,2,126,91283.0,Retail,99.21
+StyleHub,2,46,47558.0,Fashion,100.0
+HealthFirst,2,53,33902.0,Pharmacy,100.0
+QuickBite,2,38,28312.0,Food Delivery,100.0
+CityFuel,2,53,43916.0,Fuel,100.0
+TravelGo,2,42,32588.0,Travel,100.0
+FreshBasket,2,52,35869.0,Grocery,98.08
+MetroRide,3,2851,2804059.0,Mobility,96.49
+GadgetZone,3,2078,1594339.0,Electronics,96.97
+BharatKart,3,519,502736.0,E-commerce,97.5
+DailyMart,3,130,90656.0,Retail,96.92
+QuickBite,3,44,36641.0,Food Delivery,100.0
+StyleHub,3,61,70455.0,Fashion,96.72
+HealthFirst,3,54,29403.0,Pharmacy,100.0
+TravelGo,3,30,35632.0,Travel,96.67
+EduPrime,3,50,45148.0,EdTech,94.0
+PowerPay Utilities,3,33,30078.0,Utilities,100.0
+FreshBasket,3,53,32967.0,Grocery,98.11
+InsureWell,3,57,58631.0,Insurance,100.0
+WealthGrow,3,32,14956.0,Wealth / SIP,93.75
+FlixStream,3,37,21744.0,OTT / Subscriptions,94.59
+CityFuel,3,51,37223.0,Fuel,94.12
+MetroRide,4,3578,3451470.0,Mobility,99.13
+BharatKart,4,610,563966.0,E-commerce,99.34
+GadgetZone,4,2421,1882010.0,Electronics,98.97
+DailyMart,4,192,137302.0,Retail,99.48
+PowerPay Utilities,4,38,30042.0,Utilities,100.0
+WealthGrow,4,33,17139.0,Wealth / SIP,100.0
+StyleHub,4,79,73929.0,Fashion,100.0
+HealthFirst,4,62,40954.0,Pharmacy,100.0
+CityFuel,4,70,54102.0,Fuel,100.0
+FlixStream,4,42,28352.0,OTT / Subscriptions,97.62
+QuickBite,4,62,51519.0,Food Delivery,100.0
+InsureWell,4,79,120173.0,Insurance,98.73
+FreshBasket,4,63,49944.0,Grocery,100.0
+TravelGo,4,34,33787.0,Travel,100.0
+EduPrime,4,47,45221.0,EdTech,97.87
+StyleHub,5,52,47440.0,Fashion,98.08
+MetroRide,5,2814,2782826.0,Mobility,98.29
+DailyMart,5,132,97149.0,Retail,98.48
+GadgetZone,5,1958,1571214.0,Electronics,98.57
+BharatKart,5,505,446960.0,E-commerce,97.62
+QuickBite,5,59,41363.0,Food Delivery,100.0
+FlixStream,5,28,12031.0,OTT / Subscriptions,100.0
+WealthGrow,5,34,14009.0,Wealth / SIP,97.06
+InsureWell,5,51,54258.0,Insurance,98.04
+FreshBasket,5,49,42640.0,Grocery,97.96
+EduPrime,5,46,46525.0,EdTech,95.65
+CityFuel,5,59,42262.0,Fuel,100.0
+TravelGo,5,23,56161.0,Travel,100.0
+HealthFirst,5,46,32590.0,Pharmacy,97.83
+PowerPay Utilities,5,36,31897.0,Utilities,94.44
+MetroRide,6,2602,2639717.0,Mobility,100.0
+GadgetZone,6,1762,1363409.0,Electronics,100.0
+StyleHub,6,48,44106.0,Fashion,100.0
+DailyMart,6,124,118344.0,Retail,99.19
+FlixStream,6,29,15030.0,OTT / Subscriptions,100.0
+BharatKart,6,420,401516.0,E-commerce,100.0
+WealthGrow,6,31,15226.0,Wealth / SIP,100.0
+InsureWell,6,36,45461.0,Insurance,100.0
+EduPrime,6,34,36657.0,EdTech,100.0
+HealthFirst,6,56,28514.0,Pharmacy,100.0
+QuickBite,6,52,43939.0,Food Delivery,100.0
+CityFuel,6,42,39811.0,Fuel,100.0
+FreshBasket,6,44,38082.0,Grocery,100.0
+PowerPay Utilities,6,22,19999.0,Utilities,100.0
+TravelGo,6,36,40729.0,Travel,100.0
+GadgetZone,7,2250,1722079.0,Electronics,99.96
+DailyMart,7,146,125404.0,Retail,100.0
+MetroRide,7,3271,3126812.0,Mobility,99.97
+WealthGrow,7,30,16323.0,Wealth / SIP,100.0
+BharatKart,7,549,558088.0,E-commerce,100.0
+EduPrime,7,56,46486.0,EdTech,100.0
+FreshBasket,7,51,34205.0,Grocery,100.0
+QuickBite,7,47,40434.0,Food Delivery,100.0
+CityFuel,7,80,66569.0,Fuel,100.0
+StyleHub,7,78,73085.0,Fashion,100.0
+HealthFirst,7,56,38196.0,Pharmacy,100.0
+InsureWell,7,79,67259.0,Insurance,100.0
+TravelGo,7,25,24742.0,Travel,100.0
+PowerPay Utilities,7,31,23140.0,Utilities,100.0
+FlixStream,7,40,26597.0,OTT / Subscriptions,100.0
+GadgetZone,8,2274,1704591.0,Electronics,100.0
+MetroRide,8,3289,3325551.0,Mobility,100.0
+DailyMart,8,164,127524.0,Retail,99.39
+FreshBasket,8,60,38892.0,Grocery,100.0
+WealthGrow,8,45,24035.0,Wealth / SIP,100.0
+BharatKart,8,565,606611.0,E-commerce,100.0
+HealthFirst,8,59,40800.0,Pharmacy,100.0
+InsureWell,8,77,66801.0,Insurance,100.0
+PowerPay Utilities,8,40,25799.0,Utilities,100.0
+EduPrime,8,56,43239.0,EdTech,100.0
+CityFuel,8,79,63142.0,Fuel,100.0
+TravelGo,8,33,30338.0,Travel,100.0
+QuickBite,8,46,30257.0,Food Delivery,100.0
+StyleHub,8,74,67897.0,Fashion,100.0
+FlixStream,8,28,14592.0,OTT / Subscriptions,100.0
+EduPrime,9,57,60594.0,EdTech,100.0
+MetroRide,9,3362,3468433.0,Mobility,99.85
+GadgetZone,9,2201,1709428.0,Electronics,99.91
+BharatKart,9,615,616864.0,E-commerce,100.0
+DailyMart,9,137,104504.0,Retail,100.0
+HealthFirst,9,41,24884.0,Pharmacy,100.0
+StyleHub,9,63,70318.0,Fashion,100.0
+QuickBite,9,55,48792.0,Food Delivery,100.0
+CityFuel,9,75,65362.0,Fuel,100.0
+FreshBasket,9,43,30718.0,Grocery,100.0
+FlixStream,9,29,13397.0,OTT / Subscriptions,100.0
+WealthGrow,9,40,20295.0,Wealth / SIP,100.0
+TravelGo,9,34,29411.0,Travel,100.0
+InsureWell,9,77,64050.0,Insurance,100.0
+PowerPay Utilities,9,31,23763.0,Utilities,100.0
+GadgetZone,10,2435,1864549.0,Electronics,98.85
+MetroRide,10,3621,3553362.0,Mobility,98.4
+BharatKart,10,667,686434.0,E-commerce,97.75
+HealthFirst,10,72,34625.0,Pharmacy,100.0
+EduPrime,10,62,66403.0,EdTech,96.77
+QuickBite,10,61,52981.0,Food Delivery,95.08
+FreshBasket,10,75,55680.0,Grocery,94.67
+PowerPay Utilities,10,41,26346.0,Utilities,97.56
+FlixStream,10,32,21246.0,OTT / Subscriptions,100.0
+DailyMart,10,174,143029.0,Retail,96.55
+WealthGrow,10,42,30081.0,Wealth / SIP,100.0
+StyleHub,10,53,52044.0,Fashion,100.0
+InsureWell,10,79,69138.0,Insurance,100.0
+CityFuel,10,76,55638.0,Fuel,98.68
+TravelGo,10,34,46957.0,Travel,100.0
+GadgetZone,11,2065,1518049.0,Electronics,98.26
+MetroRide,11,2936,2917544.0,Mobility,98.02
+HealthFirst,11,58,31366.0,Pharmacy,96.55
+TravelGo,11,30,26355.0,Travel,93.33
+EduPrime,11,40,44504.0,EdTech,100.0
+StyleHub,11,58,69911.0,Fashion,100.0
+FreshBasket,11,57,47542.0,Grocery,96.49
+BharatKart,11,466,422497.0,E-commerce,97.21
+InsureWell,11,67,52865.0,Insurance,97.01
+CityFuel,11,69,52697.0,Fuel,97.1
+WealthGrow,11,31,20848.0,Wealth / SIP,100.0
+QuickBite,11,59,47090.0,Food Delivery,98.31
+FlixStream,11,31,16676.0,OTT / Subscriptions,100.0
+PowerPay Utilities,11,21,16530.0,Utilities,100.0
+DailyMart,11,117,101598.0,Retail,99.15
+MetroRide,12,2994,2934258.0,Mobility,99.87
+BharatKart,12,502,516777.0,E-commerce,99.6
+GadgetZone,12,2090,1656857.0,Electronics,99.95
+HealthFirst,12,48,21443.0,Pharmacy,100.0
+FlixStream,12,30,16370.0,OTT / Subscriptions,100.0
+QuickBite,12,44,28276.0,Food Delivery,100.0
+InsureWell,12,45,41932.0,Insurance,97.78
+StyleHub,12,53,58508.0,Fashion,100.0
+CityFuel,12,59,49326.0,Fuel,100.0
+PowerPay Utilities,12,29,25135.0,Utilities,100.0
+DailyMart,12,145,133475.0,Retail,100.0
+EduPrime,12,46,54158.0,EdTech,100.0
+TravelGo,12,32,27166.0,Travel,100.0
+FreshBasket,12,53,41427.0,Grocery,100.0
+WealthGrow,12,32,21331.0,Wealth / SIP,100.0
+MetroRide,13,2670,2582096.0,Mobility,98.76
+GadgetZone,13,1912,1485477.0,Electronics,98.54
+BharatKart,13,494,497086.0,E-commerce,97.57
+WealthGrow,13,27,12281.0,Wealth / SIP,100.0
+DailyMart,13,124,94077.0,Retail,99.19
+HealthFirst,13,51,28884.0,Pharmacy,98.04
+FreshBasket,13,45,46248.0,Grocery,97.78
+FlixStream,13,30,15212.0,OTT / Subscriptions,96.67
+StyleHub,13,50,42188.0,Fashion,98.0
+TravelGo,13,33,45256.0,Travel,100.0
+CityFuel,13,53,37332.0,Fuel,100.0
+InsureWell,13,53,54758.0,Insurance,100.0
+PowerPay Utilities,13,26,17560.0,Utilities,100.0
+QuickBite,13,43,35685.0,Food Delivery,100.0
+EduPrime,13,38,35740.0,EdTech,100.0
+MetroRide,14,2417,2363865.0,Mobility,98.72
+GadgetZone,14,1676,1325155.0,Electronics,98.93
+BharatKart,14,376,372163.0,E-commerce,97.87
+StyleHub,14,54,45425.0,Fashion,98.15
+TravelGo,14,25,22684.0,Travel,100.0
+FreshBasket,14,51,41975.0,Grocery,100.0
+DailyMart,14,103,72550.0,Retail,99.03
+WealthGrow,14,23,16075.0,Wealth / SIP,95.65
+EduPrime,14,35,38759.0,EdTech,94.29
+QuickBite,14,42,32222.0,Food Delivery,100.0
+FlixStream,14,24,11216.0,OTT / Subscriptions,100.0
+PowerPay Utilities,14,19,15687.0,Utilities,100.0
+InsureWell,14,45,55922.0,Insurance,97.78
+CityFuel,14,39,29221.0,Fuel,97.44
+HealthFirst,14,40,24115.0,Pharmacy,100.0
+BharatKart,15,510,574456.0,E-commerce,100.0
+MetroRide,15,2845,2878278.0,Mobility,99.61
+EduPrime,15,48,36872.0,EdTech,97.92
+GadgetZone,15,2072,1612080.0,Electronics,99.57
+HealthFirst,15,47,23711.0,Pharmacy,100.0
+InsureWell,15,52,43898.0,Insurance,98.08
+StyleHub,15,58,60769.0,Fashion,100.0
+DailyMart,15,142,112051.0,Retail,100.0
+QuickBite,15,40,27842.0,Food Delivery,97.5
+WealthGrow,15,36,18537.0,Wealth / SIP,100.0
+FreshBasket,15,62,55929.0,Grocery,100.0
+TravelGo,15,27,30164.0,Travel,100.0
+CityFuel,15,53,33330.0,Fuel,100.0
+FlixStream,15,24,10729.0,OTT / Subscriptions,100.0
+PowerPay Utilities,15,38,32494.0,Utilities,100.0
+GadgetZone,16,2075,1590305.0,Electronics,98.84
+MetroRide,16,3005,2980396.0,Mobility,98.67
+StyleHub,16,59,61456.0,Fashion,98.31
+TravelGo,16,29,21998.0,Travel,96.55
+CityFuel,16,59,37799.0,Fuel,100.0
+BharatKart,16,522,547619.0,E-commerce,97.89
+PowerPay Utilities,16,28,14547.0,Utilities,85.71
+InsureWell,16,59,60865.0,Insurance,98.31
+QuickBite,16,46,41162.0,Food Delivery,95.65
+DailyMart,16,142,118387.0,Retail,98.59
+EduPrime,16,39,37187.0,EdTech,100.0
+HealthFirst,16,47,33230.0,Pharmacy,97.87
+WealthGrow,16,22,15145.0,Wealth / SIP,100.0
+FreshBasket,16,56,40145.0,Grocery,98.21
+FlixStream,16,21,7323.0,OTT / Subscriptions,100.0
+MetroRide,17,2924,3129719.0,Mobility,99.97
+GadgetZone,17,2060,1628584.0,Electronics,100.0
+HealthFirst,17,63,32191.0,Pharmacy,100.0
+DailyMart,17,121,94753.0,Retail,100.0
+BharatKart,17,526,568108.0,E-commerce,100.0
+InsureWell,17,51,51749.0,Insurance,100.0
+PowerPay Utilities,17,31,22465.0,Utilities,100.0
+StyleHub,17,53,55274.0,Fashion,100.0
+CityFuel,17,58,43914.0,Fuel,100.0
+FreshBasket,17,50,32829.0,Grocery,100.0
+EduPrime,17,47,56756.0,EdTech,100.0
+TravelGo,17,29,20150.0,Travel,100.0
+FlixStream,17,30,17867.0,OTT / Subscriptions,100.0
+WealthGrow,17,37,23905.0,Wealth / SIP,100.0
+QuickBite,17,66,40651.0,Food Delivery,100.0
+MetroRide,18,2984,2953643.0,Mobility,98.76
+DailyMart,18,152,139408.0,Retail,98.03
+CityFuel,18,57,39976.0,Fuel,98.25
+GadgetZone,18,2083,1640624.0,Electronics,98.42
+QuickBite,18,55,45210.0,Food Delivery,98.18
+WealthGrow,18,29,15699.0,Wealth / SIP,100.0
+BharatKart,18,539,561839.0,E-commerce,99.26
+FreshBasket,18,72,49516.0,Grocery,98.61
+FlixStream,18,37,17183.0,OTT / Subscriptions,97.3
+StyleHub,18,54,42080.0,Fashion,98.15
+EduPrime,18,44,30124.0,EdTech,97.73
+TravelGo,18,30,30431.0,Travel,100.0
+InsureWell,18,50,57154.0,Insurance,100.0
+HealthFirst,18,48,39333.0,Pharmacy,100.0
+PowerPay Utilities,18,21,14273.0,Utilities,100.0
+MetroRide,19,2977,2945068.0,Mobility,99.09
+GadgetZone,19,2032,1631038.0,Electronics,99.61
+StyleHub,19,71,61652.0,Fashion,100.0
+PowerPay Utilities,19,31,18686.0,Utilities,100.0
+TravelGo,19,31,21431.0,Travel,100.0
+BharatKart,19,515,516797.0,E-commerce,99.61
+CityFuel,19,54,46539.0,Fuel,98.15
+EduPrime,19,53,56914.0,EdTech,98.11
+InsureWell,19,80,68835.0,Insurance,98.75
+DailyMart,19,139,112600.0,Retail,100.0
+FreshBasket,19,76,56673.0,Grocery,100.0
+HealthFirst,19,56,27199.0,Pharmacy,98.21
+FlixStream,19,30,11452.0,OTT / Subscriptions,100.0
+WealthGrow,19,34,21326.0,Wealth / SIP,97.06
+QuickBite,19,48,42289.0,Food Delivery,100.0
+MetroRide,20,2681,2668124.0,Mobility,98.99
+GadgetZone,20,1911,1527271.0,Electronics,98.74
+DailyMart,20,136,121561.0,Retail,100.0
+BharatKart,20,494,520241.0,E-commerce,99.6
+QuickBite,20,47,54228.0,Food Delivery,97.87
+StyleHub,20,53,57761.0,Fashion,98.11
+CityFuel,20,55,42236.0,Fuel,100.0
+FreshBasket,20,56,56203.0,Grocery,100.0
+PowerPay Utilities,20,24,30352.0,Utilities,95.83
+WealthGrow,20,28,11889.0,Wealth / SIP,100.0
+InsureWell,20,71,73465.0,Insurance,100.0
+FlixStream,20,22,17523.0,OTT / Subscriptions,100.0
+EduPrime,20,45,59483.0,EdTech,97.78
+HealthFirst,20,38,21353.0,Pharmacy,97.37
+TravelGo,20,40,32014.0,Travel,100.0
+GadgetZone,21,1716,1329986.0,Electronics,99.07
+InsureWell,21,49,36795.0,Insurance,100.0
+MetroRide,21,2397,2485888.0,Mobility,98.66
+BharatKart,21,460,472590.0,E-commerce,99.57
+HealthFirst,21,44,23813.0,Pharmacy,100.0
+FlixStream,21,33,24039.0,OTT / Subscriptions,100.0
+CityFuel,21,65,44672.0,Fuel,98.46
+QuickBite,21,48,31817.0,Food Delivery,97.92
+DailyMart,21,108,83814.0,Retail,99.07
+StyleHub,21,58,46039.0,Fashion,100.0
+FreshBasket,21,41,28242.0,Grocery,95.12
+EduPrime,21,39,33667.0,EdTech,100.0
+WealthGrow,21,28,12036.0,Wealth / SIP,100.0
+TravelGo,21,29,39749.0,Travel,100.0
+PowerPay Utilities,21,26,17715.0,Utilities,100.0
+GadgetZone,22,2065,1602312.0,Electronics,99.23
+MetroRide,22,3024,3118287.0,Mobility,98.88
+DailyMart,22,153,123709.0,Retail,96.73
+CityFuel,22,56,40160.0,Fuel,100.0
+BharatKart,22,513,521462.0,E-commerce,98.83
+QuickBite,22,42,37979.0,Food Delivery,100.0
+InsureWell,22,57,57098.0,Insurance,98.25
+TravelGo,22,24,27966.0,Travel,100.0
+FlixStream,22,32,14355.0,OTT / Subscriptions,100.0
+WealthGrow,22,28,13060.0,Wealth / SIP,100.0
+HealthFirst,22,44,30498.0,Pharmacy,100.0
+FreshBasket,22,60,45293.0,Grocery,100.0
+StyleHub,22,54,48932.0,Fashion,98.15
+EduPrime,22,46,34019.0,EdTech,100.0
+PowerPay Utilities,22,31,23548.0,Utilities,100.0
+MetroRide,23,3083,3116249.0,Mobility,100.0
+GadgetZone,23,2115,1723343.0,Electronics,99.95
+StyleHub,23,58,64107.0,Fashion,100.0
+EduPrime,23,53,48768.0,EdTech,100.0
+HealthFirst,23,54,32923.0,Pharmacy,100.0
+BharatKart,23,511,489907.0,E-commerce,100.0
+FlixStream,23,28,10347.0,OTT / Subscriptions,100.0
+QuickBite,23,63,48425.0,Food Delivery,100.0
+InsureWell,23,62,91982.0,Insurance,100.0
+DailyMart,23,123,93155.0,Retail,99.19
+PowerPay Utilities,23,38,27594.0,Utilities,100.0
+TravelGo,23,34,29633.0,Travel,100.0
+CityFuel,23,58,43111.0,Fuel,100.0
+FreshBasket,23,48,29690.0,Grocery,100.0
+WealthGrow,23,34,20666.0,Wealth / SIP,100.0
+GadgetZone,24,2065,1599689.0,Electronics,99.23
+MetroRide,24,3004,3031050.0,Mobility,99.4
+StyleHub,24,56,60451.0,Fashion,100.0
+HealthFirst,24,56,29161.0,Pharmacy,100.0
+FreshBasket,24,53,41708.0,Grocery,100.0
+BharatKart,24,552,567987.0,E-commerce,98.91
+EduPrime,24,47,55340.0,EdTech,100.0
+DailyMart,24,148,114152.0,Retail,100.0
+WealthGrow,24,30,14704.0,Wealth / SIP,96.67
+CityFuel,24,50,41452.0,Fuel,100.0
+PowerPay Utilities,24,33,24782.0,Utilities,100.0
+QuickBite,24,52,38427.0,Food Delivery,100.0
+FlixStream,24,47,27551.0,OTT / Subscriptions,100.0
+TravelGo,24,29,36310.0,Travel,100.0
+InsureWell,24,51,50042.0,Insurance,100.0
+BharatKart,25,557,525784.0,E-commerce,100.0
+MetroRide,25,3055,3176059.0,Mobility,99.97
+GadgetZone,25,2097,1685609.0,Electronics,100.0
+TravelGo,25,31,39039.0,Travel,100.0
+QuickBite,25,37,33395.0,Food Delivery,100.0
+PowerPay Utilities,25,41,33858.0,Utilities,100.0
+WealthGrow,25,30,21881.0,Wealth / SIP,96.67
+StyleHub,25,74,71989.0,Fashion,100.0
+CityFuel,25,56,46535.0,Fuel,100.0
+FreshBasket,25,38,27633.0,Grocery,100.0
+HealthFirst,25,58,31251.0,Pharmacy,100.0
+InsureWell,25,51,44092.0,Insurance,100.0
+EduPrime,25,60,48898.0,EdTech,100.0
+DailyMart,25,127,124424.0,Retail,100.0
+FlixStream,25,37,22060.0,OTT / Subscriptions,100.0
+MetroRide,26,3123,3221215.0,Mobility,100.0
+EduPrime,26,55,53098.0,EdTech,100.0
+GadgetZone,26,2089,1614269.0,Electronics,100.0
+BharatKart,26,539,571907.0,E-commerce,99.81
+DailyMart,26,131,98051.0,Retail,100.0
+HealthFirst,26,58,18091.0,Pharmacy,100.0
+CityFuel,26,66,58607.0,Fuel,100.0
+WealthGrow,26,35,20136.0,Wealth / SIP,100.0
+FreshBasket,26,48,27329.0,Grocery,100.0
+StyleHub,26,60,52004.0,Fashion,100.0
+InsureWell,26,59,71615.0,Insurance,100.0
+PowerPay Utilities,26,43,34890.0,Utilities,100.0
+QuickBite,26,55,36263.0,Food Delivery,100.0
+TravelGo,26,39,43097.0,Travel,100.0
+FlixStream,26,34,16820.0,OTT / Subscriptions,100.0
+BharatKart,27,498,543627.0,E-commerce,100.0
+MetroRide,27,2845,2932045.0,Mobility,99.82
+GadgetZone,27,1949,1556825.0,Electronics,99.74
+DailyMart,27,120,84537.0,Retail,100.0
+InsureWell,27,58,49414.0,Insurance,100.0
+FreshBasket,27,40,32725.0,Grocery,100.0
+HealthFirst,27,59,33042.0,Pharmacy,100.0
+StyleHub,27,55,51837.0,Fashion,100.0
+CityFuel,27,51,38807.0,Fuel,100.0
+TravelGo,27,24,22269.0,Travel,100.0
+EduPrime,27,45,46039.0,EdTech,100.0
+QuickBite,27,45,30984.0,Food Delivery,100.0
+FlixStream,27,35,20549.0,OTT / Subscriptions,100.0
+PowerPay Utilities,27,17,10903.0,Utilities,100.0
+WealthGrow,27,35,17402.0,Wealth / SIP,97.14
+GadgetZone,28,1840,1570219.0,Electronics,99.13
+BharatKart,28,482,499661.0,E-commerce,98.96
+MetroRide,28,2595,2652010.0,Mobility,99.0
+FlixStream,28,25,12454.0,OTT / Subscriptions,100.0
+HealthFirst,28,43,29508.0,Pharmacy,100.0
+PowerPay Utilities,28,28,21952.0,Utilities,96.43
+InsureWell,28,40,31392.0,Insurance,100.0
+CityFuel,28,56,45033.0,Fuel,100.0
+FreshBasket,28,53,39395.0,Grocery,100.0
+WealthGrow,28,27,21723.0,Wealth / SIP,100.0
+DailyMart,28,117,79514.0,Retail,96.58
+StyleHub,28,53,45591.0,Fashion,100.0
+TravelGo,28,26,23307.0,Travel,100.0
+QuickBite,28,52,47729.0,Food Delivery,100.0
+EduPrime,28,27,27712.0,EdTech,96.3
+InsureWell,29,76,66842.0,Insurance,100.0
+FreshBasket,29,64,48410.0,Grocery,100.0
+GadgetZone,29,2759,2201201.0,Electronics,99.86
+MetroRide,29,3848,3855419.0,Mobility,99.87
+CityFuel,29,75,59767.0,Fuel,100.0
+EduPrime,29,50,51812.0,EdTech,100.0
+TravelGo,29,62,67176.0,Travel,100.0
+QuickBite,29,55,44988.0,Food Delivery,100.0
+BharatKart,29,652,707568.0,E-commerce,100.0
+HealthFirst,29,72,43733.0,Pharmacy,100.0
+DailyMart,29,170,136516.0,Retail,100.0
+FlixStream,29,43,26270.0,OTT / Subscriptions,100.0
+StyleHub,29,85,81323.0,Fashion,100.0
+PowerPay Utilities,29,37,22474.0,Utilities,100.0
+WealthGrow,29,35,25544.0,Wealth / SIP,100.0
+BharatKart,30,552,566752.0,E-commerce,99.82
+GadgetZone,30,2117,1715339.0,Electronics,100.0
+MetroRide,30,3200,3257945.0,Mobility,100.0
+StyleHub,30,58,49004.0,Fashion,100.0
+WealthGrow,30,26,17928.0,Wealth / SIP,100.0
+InsureWell,30,69,74512.0,Insurance,100.0
+HealthFirst,30,58,45213.0,Pharmacy,100.0
+DailyMart,30,145,91782.0,Retail,100.0
+EduPrime,30,41,38789.0,EdTech,100.0
+FreshBasket,30,60,48379.0,Grocery,100.0
+CityFuel,30,65,64480.0,Fuel,100.0
+TravelGo,30,36,42157.0,Travel,100.0
+QuickBite,30,42,28178.0,Food Delivery,100.0
+PowerPay Utilities,30,36,29538.0,Utilities,100.0
+FlixStream,30,28,17735.0,OTT / Subscriptions,100.0
+EduPrime,31,49,58550.0,EdTech,95.92
+MetroRide,31,3167,3203982.0,Mobility,99.75
+GadgetZone,31,2197,1816197.0,Electronics,99.77
+BharatKart,31,597,592614.0,E-commerce,99.33
+QuickBite,31,57,35964.0,Food Delivery,100.0
+FreshBasket,31,48,42112.0,Grocery,100.0
+CityFuel,31,64,45350.0,Fuel,100.0
+DailyMart,31,155,119582.0,Retail,99.35
+StyleHub,31,68,73367.0,Fashion,97.06
+InsureWell,31,58,56388.0,Insurance,98.28
+HealthFirst,31,62,38663.0,Pharmacy,100.0
+FlixStream,31,42,21054.0,OTT / Subscriptions,100.0
+TravelGo,31,28,27865.0,Travel,100.0
+WealthGrow,31,38,25728.0,Wealth / SIP,100.0
+PowerPay Utilities,31,37,39231.0,Utilities,100.0
+MetroRide,32,3123,3148779.0,Mobility,99.49
+BharatKart,32,561,609514.0,E-commerce,99.82
+GadgetZone,32,2126,1682738.0,Electronics,99.39
+InsureWell,32,60,59954.0,Insurance,98.33
+FreshBasket,32,49,40363.0,Grocery,100.0
+WealthGrow,32,30,20398.0,Wealth / SIP,100.0
+EduPrime,32,33,28575.0,EdTech,96.97
+PowerPay Utilities,32,50,42909.0,Utilities,100.0
+CityFuel,32,60,36227.0,Fuel,100.0
+QuickBite,32,57,48387.0,Food Delivery,100.0
+StyleHub,32,50,50871.0,Fashion,100.0
+DailyMart,32,151,123423.0,Retail,100.0
+HealthFirst,32,51,31668.0,Pharmacy,100.0
+TravelGo,32,43,58605.0,Travel,100.0
+FlixStream,32,38,24593.0,OTT / Subscriptions,100.0
+MetroRide,33,3219,3276806.0,Mobility,99.5
+GadgetZone,33,2190,1745578.0,Electronics,99.32
+InsureWell,33,62,64140.0,Insurance,98.39
+CityFuel,33,79,60325.0,Fuel,97.47
+DailyMart,33,149,111794.0,Retail,100.0
+StyleHub,33,69,64397.0,Fashion,100.0
+BharatKart,33,546,595951.0,E-commerce,99.63
+QuickBite,33,39,31560.0,Food Delivery,100.0
+EduPrime,33,63,57400.0,EdTech,100.0
+FlixStream,33,30,15085.0,OTT / Subscriptions,96.67
+FreshBasket,33,57,47766.0,Grocery,100.0
+TravelGo,33,37,35093.0,Travel,97.3
+PowerPay Utilities,33,35,26004.0,Utilities,100.0
+HealthFirst,33,56,30732.0,Pharmacy,100.0
+WealthGrow,33,39,20599.0,Wealth / SIP,100.0
+GadgetZone,34,1984,1607015.0,Electronics,99.55
+MetroRide,34,2858,2990844.0,Mobility,99.62
+CityFuel,34,62,60320.0,Fuel,98.39
+HealthFirst,34,56,28682.0,Pharmacy,100.0
+FlixStream,34,29,19887.0,OTT / Subscriptions,100.0
+BharatKart,34,482,414614.0,E-commerce,99.59
+TravelGo,34,24,17118.0,Travel,100.0
+StyleHub,34,49,50325.0,Fashion,100.0
+InsureWell,34,51,34734.0,Insurance,100.0
+DailyMart,34,145,124687.0,Retail,99.31
+FreshBasket,34,46,39892.0,Grocery,100.0
+WealthGrow,34,35,15243.0,Wealth / SIP,97.14
+EduPrime,34,49,78036.0,EdTech,100.0
+PowerPay Utilities,34,35,25076.0,Utilities,100.0
+QuickBite,34,45,33875.0,Food Delivery,97.78
+CityFuel,35,59,49863.0,Fuel,100.0
+FreshBasket,35,43,32832.0,Grocery,100.0
+MetroRide,35,2637,2576266.0,Mobility,99.01
+GadgetZone,35,1821,1447667.0,Electronics,98.74
+StyleHub,35,47,36972.0,Fashion,97.87
+QuickBite,35,51,34674.0,Food Delivery,100.0
+BharatKart,35,448,417153.0,E-commerce,98.66
+TravelGo,35,32,29257.0,Travel,100.0
+DailyMart,35,129,108495.0,Retail,98.45
+EduPrime,35,54,61504.0,EdTech,98.15
+InsureWell,35,46,42669.0,Insurance,100.0
+PowerPay Utilities,35,31,22780.0,Utilities,100.0
+WealthGrow,35,24,16151.0,Wealth / SIP,100.0
+HealthFirst,35,44,32521.0,Pharmacy,100.0
+FlixStream,35,24,10746.0,OTT / Subscriptions,95.83
+MetroRide,36,3098,3209161.0,Mobility,100.0
+GadgetZone,36,2248,1834021.0,Electronics,100.0
+EduPrime,36,43,41609.0,EdTech,100.0
+BharatKart,36,568,571526.0,E-commerce,100.0
+InsureWell,36,67,77998.0,Insurance,100.0
+QuickBite,36,45,37775.0,Food Delivery,100.0
+TravelGo,36,30,40231.0,Travel,100.0
+DailyMart,36,131,119988.0,Retail,100.0
+WealthGrow,36,37,20573.0,Wealth / SIP,100.0
+CityFuel,36,60,59878.0,Fuel,100.0
+StyleHub,36,56,67457.0,Fashion,100.0
+FlixStream,36,21,7332.0,OTT / Subscriptions,100.0
+PowerPay Utilities,36,31,24699.0,Utilities,100.0
+HealthFirst,36,57,28641.0,Pharmacy,100.0
+FreshBasket,36,55,38931.0,Grocery,98.18
+MetroRide,37,3669,3829430.0,Mobility,98.91
+BharatKart,37,646,657935.0,E-commerce,99.07
+GadgetZone,37,2508,2019938.0,Electronics,99.0
+InsureWell,37,68,88431.0,Insurance,100.0
+StyleHub,37,68,55497.0,Fashion,100.0
+QuickBite,37,56,54244.0,Food Delivery,98.21
+FreshBasket,37,71,48350.0,Grocery,98.59
+WealthGrow,37,35,18948.0,Wealth / SIP,97.14
+DailyMart,37,212,147425.0,Retail,99.53
+EduPrime,37,63,77245.0,EdTech,100.0
+FlixStream,37,47,29651.0,OTT / Subscriptions,100.0
+PowerPay Utilities,37,40,34986.0,Utilities,97.5
+HealthFirst,37,57,48347.0,Pharmacy,100.0
+CityFuel,37,66,56250.0,Fuel,100.0
+TravelGo,37,35,41553.0,Travel,100.0
+BharatKart,38,614,626757.0,E-commerce,100.0
+GadgetZone,38,2525,2047200.0,Electronics,100.0
+MetroRide,38,3644,3916475.0,Mobility,99.97
+EduPrime,38,73,66716.0,EdTech,100.0
+WealthGrow,38,44,30195.0,Wealth / SIP,100.0
+FreshBasket,38,64,58006.0,Grocery,100.0
+QuickBite,38,63,44778.0,Food Delivery,100.0
+HealthFirst,38,74,39497.0,Pharmacy,100.0
+PowerPay Utilities,38,37,42624.0,Utilities,100.0
+DailyMart,38,177,117230.0,Retail,100.0
+CityFuel,38,66,59327.0,Fuel,100.0
+TravelGo,38,33,48949.0,Travel,100.0
+InsureWell,38,62,47636.0,Insurance,100.0
+StyleHub,38,77,71443.0,Fashion,100.0
+FlixStream,38,34,22696.0,OTT / Subscriptions,100.0
+GadgetZone,39,2594,2058492.0,Electronics,99.65
+MetroRide,39,3633,3810183.0,Mobility,99.64
+BharatKart,39,617,666832.0,E-commerce,99.03
+WealthGrow,39,39,25829.0,Wealth / SIP,100.0
+EduPrime,39,52,49511.0,EdTech,100.0
+PowerPay Utilities,39,35,40795.0,Utilities,100.0
+QuickBite,39,53,39480.0,Food Delivery,100.0
+DailyMart,39,163,128560.0,Retail,100.0
+InsureWell,39,75,78849.0,Insurance,98.67
+FreshBasket,39,67,66590.0,Grocery,100.0
+FlixStream,39,34,15672.0,OTT / Subscriptions,100.0
+CityFuel,39,68,39883.0,Fuel,100.0
+StyleHub,39,87,79868.0,Fashion,100.0
+HealthFirst,39,52,26063.0,Pharmacy,100.0
+TravelGo,39,30,27047.0,Travel,100.0
+GadgetZone,40,2520,2099470.0,Electronics,100.0
+MetroRide,40,3553,3615267.0,Mobility,100.0
+WealthGrow,40,35,15096.0,Wealth / SIP,100.0
+InsureWell,40,72,88588.0,Insurance,98.61
+BharatKart,40,657,697484.0,E-commerce,99.85
+FlixStream,40,44,22756.0,OTT / Subscriptions,100.0
+CityFuel,40,51,35540.0,Fuel,100.0
+DailyMart,40,165,134884.0,Retail,100.0
+QuickBite,40,57,49168.0,Food Delivery,100.0
+StyleHub,40,68,80289.0,Fashion,100.0
+EduPrime,40,54,50748.0,EdTech,100.0
+HealthFirst,40,61,31228.0,Pharmacy,100.0
+TravelGo,40,39,57325.0,Travel,100.0
+FreshBasket,40,63,61768.0,Grocery,100.0
+PowerPay Utilities,40,23,17073.0,Utilities,100.0
+MetroRide,41,2919,3022488.0,Mobility,98.6
+GadgetZone,41,1948,1539117.0,Electronics,98.82
+QuickBite,41,51,36624.0,Food Delivery,94.12
+FlixStream,41,27,9518.0,OTT / Subscriptions,100.0
+BharatKart,41,522,573246.0,E-commerce,98.66
+StyleHub,41,58,61314.0,Fashion,100.0
+InsureWell,41,61,78558.0,Insurance,98.36
+PowerPay Utilities,41,33,30688.0,Utilities,100.0
+CityFuel,41,75,53718.0,Fuel,97.33
+DailyMart,41,137,114527.0,Retail,97.08
+FreshBasket,41,57,46872.0,Grocery,96.49
+WealthGrow,41,31,15859.0,Wealth / SIP,100.0
+TravelGo,41,32,27032.0,Travel,100.0
+HealthFirst,41,43,22121.0,Pharmacy,97.67
+EduPrime,41,41,31819.0,EdTech,100.0
+MetroRide,42,2747,2874611.0,Mobility,99.75
+GadgetZone,42,1821,1524752.0,Electronics,99.78
+StyleHub,42,47,43167.0,Fashion,97.87
+HealthFirst,42,51,30650.0,Pharmacy,100.0
+InsureWell,42,53,57944.0,Insurance,98.11
+BharatKart,42,468,436920.0,E-commerce,99.15
+CityFuel,42,45,35589.0,Fuel,100.0
+DailyMart,42,119,105861.0,Retail,100.0
+FreshBasket,42,48,40466.0,Grocery,100.0
+EduPrime,42,64,69620.0,EdTech,98.44
+WealthGrow,42,30,13807.0,Wealth / SIP,100.0
+QuickBite,42,42,27904.0,Food Delivery,100.0
+PowerPay Utilities,42,33,18768.0,Utilities,96.97
+FlixStream,42,31,18724.0,OTT / Subscriptions,100.0
+TravelGo,42,30,35707.0,Travel,100.0
+MetroRide,43,3123,3410269.0,Mobility,98.62
+GadgetZone,43,2180,1672292.0,Electronics,99.08
+EduPrime,43,55,67398.0,EdTech,96.36
+BharatKart,43,570,574212.0,E-commerce,98.95
+PowerPay Utilities,43,35,30446.0,Utilities,100.0
+CityFuel,43,69,45906.0,Fuel,98.55
+WealthGrow,43,28,13606.0,Wealth / SIP,100.0
+DailyMart,43,163,124306.0,Retail,98.77
+QuickBite,43,37,29034.0,Food Delivery,100.0
+HealthFirst,43,54,28557.0,Pharmacy,96.3
+InsureWell,43,49,57322.0,Insurance,95.92
+FlixStream,43,36,19002.0,OTT / Subscriptions,94.44
+FreshBasket,43,53,51470.0,Grocery,98.11
+StyleHub,43,68,75733.0,Fashion,100.0
+TravelGo,43,23,24159.0,Travel,100.0
+MetroRide,44,3252,3428633.0,Mobility,99.78
+BharatKart,44,553,574903.0,E-commerce,99.82
+GadgetZone,44,2287,1809862.0,Electronics,99.74
+InsureWell,44,79,84790.0,Insurance,100.0
+StyleHub,44,67,72800.0,Fashion,100.0
+EduPrime,44,50,44122.0,EdTech,100.0
+FreshBasket,44,65,67778.0,Grocery,100.0
+DailyMart,44,157,130282.0,Retail,99.36
+WealthGrow,44,35,15962.0,Wealth / SIP,100.0
+HealthFirst,44,50,32078.0,Pharmacy,100.0
+FlixStream,44,32,21716.0,OTT / Subscriptions,100.0
+CityFuel,44,66,41414.0,Fuel,98.48
+QuickBite,44,37,37391.0,Food Delivery,100.0
+PowerPay Utilities,44,26,18330.0,Utilities,100.0
+TravelGo,44,38,37473.0,Travel,100.0
+GadgetZone,45,2363,1884629.0,Electronics,99.7
+FlixStream,45,29,18911.0,OTT / Subscriptions,100.0
+BharatKart,45,568,614896.0,E-commerce,100.0
+MetroRide,45,3326,3417208.0,Mobility,99.61
+DailyMart,45,139,109056.0,Retail,100.0
+TravelGo,45,42,39277.0,Travel,100.0
+InsureWell,45,63,57026.0,Insurance,100.0
+CityFuel,45,71,58008.0,Fuel,100.0
+PowerPay Utilities,45,34,24823.0,Utilities,100.0
+HealthFirst,45,62,46085.0,Pharmacy,100.0
+StyleHub,45,67,55341.0,Fashion,100.0
+EduPrime,45,39,43082.0,EdTech,100.0
+FreshBasket,45,61,40438.0,Grocery,100.0
+QuickBite,45,57,42635.0,Food Delivery,100.0
+WealthGrow,45,36,19219.0,Wealth / SIP,100.0
+MetroRide,46,3390,3467933.0,Mobility,98.85
+GadgetZone,46,2356,1953306.0,Electronics,98.39
+BharatKart,46,573,619460.0,E-commerce,98.78
+CityFuel,46,69,41455.0,Fuel,97.1
+StyleHub,46,71,67080.0,Fashion,100.0
+DailyMart,46,142,87307.0,Retail,98.59
+PowerPay Utilities,46,36,29832.0,Utilities,97.22
+EduPrime,46,61,65043.0,EdTech,100.0
+QuickBite,46,66,52244.0,Food Delivery,98.48
+FreshBasket,46,59,46262.0,Grocery,100.0
+InsureWell,46,60,63937.0,Insurance,100.0
+HealthFirst,46,57,32218.0,Pharmacy,100.0
+TravelGo,46,40,38428.0,Travel,100.0
+FlixStream,46,48,32032.0,OTT / Subscriptions,100.0
+WealthGrow,46,28,12568.0,Wealth / SIP,100.0
+GadgetZone,47,2250,1804449.0,Electronics,98.62
+CityFuel,47,57,42445.0,Fuel,100.0
+MetroRide,47,3341,3573343.0,Mobility,98.35
+HealthFirst,47,71,33030.0,Pharmacy,98.59
+BharatKart,47,559,574478.0,E-commerce,98.39
+DailyMart,47,158,134815.0,Retail,99.37
+FreshBasket,47,61,41854.0,Grocery,100.0
+QuickBite,47,55,43147.0,Food Delivery,96.36
+PowerPay Utilities,47,39,34419.0,Utilities,100.0
+TravelGo,47,42,42238.0,Travel,97.62
+InsureWell,47,72,65578.0,Insurance,98.61
+StyleHub,47,62,73175.0,Fashion,100.0
+EduPrime,47,61,68595.0,EdTech,96.72
+WealthGrow,47,33,25309.0,Wealth / SIP,100.0
+FlixStream,47,32,22113.0,OTT / Subscriptions,100.0
+TravelGo,48,26,30908.0,Travel,100.0
+GadgetZone,48,2143,1795632.0,Electronics,99.95
+MetroRide,48,3069,3468322.0,Mobility,100.0
+BharatKart,48,538,565244.0,E-commerce,100.0
+FlixStream,48,25,17234.0,OTT / Subscriptions,100.0
+QuickBite,48,52,36878.0,Food Delivery,100.0
+DailyMart,48,134,122481.0,Retail,100.0
+EduPrime,48,50,59204.0,EdTech,100.0
+StyleHub,48,56,55505.0,Fashion,100.0
+CityFuel,48,56,39963.0,Fuel,100.0
+InsureWell,48,63,60828.0,Insurance,100.0
+FreshBasket,48,46,28513.0,Grocery,100.0
+WealthGrow,48,26,14843.0,Wealth / SIP,100.0
+HealthFirst,48,48,36510.0,Pharmacy,100.0
+PowerPay Utilities,48,32,20573.0,Utilities,100.0
+MetroRide,49,2689,2906682.0,Mobility,99.96
+GadgetZone,49,1850,1568636.0,Electronics,99.95
+InsureWell,49,58,56945.0,Insurance,100.0
+PowerPay Utilities,49,25,20852.0,Utilities,100.0
+BharatKart,49,499,492924.0,E-commerce,100.0
+DailyMart,49,122,99628.0,Retail,100.0
+QuickBite,49,42,26666.0,Food Delivery,100.0
+CityFuel,49,45,37373.0,Fuel,100.0
+HealthFirst,49,45,30788.0,Pharmacy,100.0
+FlixStream,49,29,19556.0,OTT / Subscriptions,100.0
+EduPrime,49,45,41456.0,EdTech,100.0
+StyleHub,49,53,63892.0,Fashion,100.0
+TravelGo,49,33,35644.0,Travel,100.0
+WealthGrow,49,20,11310.0,Wealth / SIP,100.0
+FreshBasket,49,43,40471.0,Grocery,100.0
+MetroRide,50,3207,3346079.0,Mobility,99.88
+GadgetZone,50,2273,1950490.0,Electronics,99.87
+DailyMart,50,149,113366.0,Retail,100.0
+BharatKart,50,548,583938.0,E-commerce,99.82
+CityFuel,50,61,51789.0,Fuel,100.0
+FlixStream,50,44,34924.0,OTT / Subscriptions,100.0
+EduPrime,50,51,75197.0,EdTech,100.0
+HealthFirst,50,52,32180.0,Pharmacy,100.0
+QuickBite,50,65,55798.0,Food Delivery,100.0
+StyleHub,50,58,56098.0,Fashion,100.0
+InsureWell,50,62,64920.0,Insurance,100.0
+FreshBasket,50,49,38535.0,Grocery,100.0
+PowerPay Utilities,50,49,37068.0,Utilities,100.0
+WealthGrow,50,42,36464.0,Wealth / SIP,100.0
+TravelGo,50,26,29409.0,Travel,100.0
+MetroRide,51,3298,3539047.0,Mobility,100.0
+GadgetZone,51,2250,1802176.0,Electronics,99.96
+BharatKart,51,589,634821.0,E-commerce,100.0
+QuickBite,51,53,56275.0,Food Delivery,100.0
+TravelGo,51,46,43680.0,Travel,100.0
+StyleHub,51,64,63212.0,Fashion,100.0
+HealthFirst,51,65,33381.0,Pharmacy,100.0
+DailyMart,51,151,144022.0,Retail,100.0
+CityFuel,51,65,66626.0,Fuel,100.0
+EduPrime,51,62,54205.0,EdTech,100.0
+InsureWell,51,53,58460.0,Insurance,100.0
+FlixStream,51,40,13833.0,OTT / Subscriptions,100.0
+FreshBasket,51,54,38338.0,Grocery,100.0
+PowerPay Utilities,51,32,28877.0,Utilities,100.0
+WealthGrow,51,26,17409.0,Wealth / SIP,100.0
+GadgetZone,52,2392,1999595.0,Electronics,100.0
+StyleHub,52,85,81029.0,Fashion,100.0
+MetroRide,52,3416,3696680.0,Mobility,99.94
+EduPrime,52,62,58385.0,EdTech,100.0
+BharatKart,52,613,691492.0,E-commerce,100.0
+DailyMart,52,153,101963.0,Retail,100.0
+FlixStream,52,28,17441.0,OTT / Subscriptions,100.0
+QuickBite,52,46,32212.0,Food Delivery,100.0
+FreshBasket,52,57,66585.0,Grocery,100.0
+WealthGrow,52,38,15973.0,Wealth / SIP,100.0
+HealthFirst,52,69,47508.0,Pharmacy,100.0
+InsureWell,52,66,65681.0,Insurance,100.0
+CityFuel,52,70,54857.0,Fuel,100.0
+PowerPay Utilities,52,36,25820.0,Utilities,100.0
+TravelGo,52,40,31867.0,Travel,100.0
+MetroRide,53,3431,3589124.0,Mobility,99.39
+FlixStream,53,34,14925.0,OTT / Subscriptions,100.0
+GadgetZone,53,2342,1925901.0,Electronics,99.53
+BharatKart,53,606,667674.0,E-commerce,99.01
+FreshBasket,53,63,56872.0,Grocery,100.0
+QuickBite,53,68,60679.0,Food Delivery,100.0
+WealthGrow,53,49,27535.0,Wealth / SIP,97.96
+DailyMart,53,166,137490.0,Retail,98.8
+EduPrime,53,51,66023.0,EdTech,100.0
+PowerPay Utilities,53,39,34459.0,Utilities,100.0
+InsureWell,53,57,51062.0,Insurance,100.0
+TravelGo,53,33,48577.0,Travel,96.97
+StyleHub,53,77,79008.0,Fashion,100.0
+HealthFirst,53,73,45605.0,Pharmacy,100.0
+CityFuel,53,70,50402.0,Fuel,100.0
+MetroRide,54,4104,4436207.0,Mobility,100.0
+BharatKart,54,749,771604.0,E-commerce,100.0
+GadgetZone,54,2766,2352344.0,Electronics,99.96
+DailyMart,54,186,158546.0,Retail,100.0
+StyleHub,54,95,115585.0,Fashion,100.0
+FlixStream,54,43,33985.0,OTT / Subscriptions,100.0
+InsureWell,54,80,90841.0,Insurance,100.0
+FreshBasket,54,89,80502.0,Grocery,100.0
+HealthFirst,54,91,60724.0,Pharmacy,100.0
+TravelGo,54,37,36972.0,Travel,100.0
+QuickBite,54,67,57100.0,Food Delivery,100.0
+EduPrime,54,68,77890.0,EdTech,100.0
+WealthGrow,54,29,14499.0,Wealth / SIP,100.0
+CityFuel,54,73,69176.0,Fuel,100.0
+PowerPay Utilities,54,47,26143.0,Utilities,100.0
+MetroRide,55,3106,3305174.0,Mobility,99.77
+GadgetZone,55,2031,1596864.0,Electronics,99.51
+FlixStream,55,36,20132.0,OTT / Subscriptions,100.0
+CityFuel,55,59,54772.0,Fuel,100.0
+BharatKart,55,530,618435.0,E-commerce,100.0
+FreshBasket,55,68,65869.0,Grocery,100.0
+InsureWell,55,72,68186.0,Insurance,100.0
+PowerPay Utilities,55,28,25116.0,Utilities,100.0
+TravelGo,55,30,28051.0,Travel,100.0
+DailyMart,55,141,113772.0,Retail,100.0
+WealthGrow,55,29,14797.0,Wealth / SIP,100.0
+EduPrime,55,55,56117.0,EdTech,100.0
+QuickBite,55,42,37735.0,Food Delivery,100.0
+StyleHub,55,67,62422.0,Fashion,100.0
+HealthFirst,55,49,34338.0,Pharmacy,100.0
+MetroRide,56,2846,2977628.0,Mobility,99.19
+BharatKart,56,502,521139.0,E-commerce,98.41
+StyleHub,56,59,71455.0,Fashion,100.0
+GadgetZone,56,1892,1549498.0,Electronics,99.31
+FlixStream,56,28,23493.0,OTT / Subscriptions,100.0
+InsureWell,56,51,58429.0,Insurance,98.04
+QuickBite,56,65,49741.0,Food Delivery,98.46
+DailyMart,56,113,102900.0,Retail,98.23
+EduPrime,56,47,54169.0,EdTech,100.0
+CityFuel,56,52,38083.0,Fuel,100.0
+HealthFirst,56,44,24383.0,Pharmacy,100.0
+FreshBasket,56,53,38690.0,Grocery,100.0
+PowerPay Utilities,56,32,22416.0,Utilities,100.0
+TravelGo,56,30,36454.0,Travel,96.67
+WealthGrow,56,31,12195.0,Wealth / SIP,100.0
+GadgetZone,57,2380,2017164.0,Electronics,99.66
+BharatKart,57,559,630326.0,E-commerce,99.28
+MetroRide,57,3417,3569467.0,Mobility,99.74
+DailyMart,57,137,104890.0,Retail,100.0
+QuickBite,57,54,47102.0,Food Delivery,100.0
+InsureWell,57,53,60139.0,Insurance,100.0
+HealthFirst,57,62,39302.0,Pharmacy,100.0
+StyleHub,57,74,78367.0,Fashion,100.0
+CityFuel,57,75,50714.0,Fuel,100.0
+EduPrime,57,55,47524.0,EdTech,100.0
+FlixStream,57,35,18759.0,OTT / Subscriptions,100.0
+PowerPay Utilities,57,30,18895.0,Utilities,100.0
+TravelGo,57,38,37198.0,Travel,100.0
+FreshBasket,57,56,52453.0,Grocery,100.0
+WealthGrow,57,25,13201.0,Wealth / SIP,100.0
+GadgetZone,58,2519,1959281.0,Electronics,100.0
+MetroRide,58,3513,3850108.0,Mobility,99.97
+QuickBite,58,63,66694.0,Food Delivery,100.0
+FreshBasket,58,67,53099.0,Grocery,100.0
+BharatKart,58,616,693367.0,E-commerce,99.84
+InsureWell,58,74,70973.0,Insurance,100.0
+CityFuel,58,82,69637.0,Fuel,100.0
+FlixStream,58,39,24188.0,OTT / Subscriptions,100.0
+DailyMart,58,138,129778.0,Retail,100.0
+HealthFirst,58,72,37181.0,Pharmacy,100.0
+StyleHub,58,72,79956.0,Fashion,100.0
+PowerPay Utilities,58,38,24149.0,Utilities,100.0
+EduPrime,58,53,36054.0,EdTech,100.0
+TravelGo,58,33,50782.0,Travel,100.0
+WealthGrow,58,33,17553.0,Wealth / SIP,100.0
+MetroRide,59,3496,3744605.0,Mobility,99.14
+GadgetZone,59,2424,2063110.0,Electronics,98.76
+FreshBasket,59,58,56572.0,Grocery,98.28
+QuickBite,59,56,46878.0,Food Delivery,96.43
+CityFuel,59,81,54084.0,Fuel,98.77
+BharatKart,59,573,619658.0,E-commerce,98.95
+WealthGrow,59,39,23803.0,Wealth / SIP,100.0
+TravelGo,59,32,29364.0,Travel,96.88
+PowerPay Utilities,59,34,42592.0,Utilities,97.06
+StyleHub,59,75,81734.0,Fashion,97.33
+HealthFirst,59,54,41034.0,Pharmacy,100.0
+DailyMart,59,145,106596.0,Retail,99.31
+FlixStream,59,45,20448.0,OTT / Subscriptions,100.0
+EduPrime,59,51,51705.0,EdTech,98.04
+InsureWell,59,63,86020.0,Insurance,98.41
+GadgetZone,60,2430,2058819.0,Electronics,99.75
+MetroRide,60,3444,3731095.0,Mobility,99.88
+DailyMart,60,148,115147.0,Retail,100.0
+TravelGo,60,38,40150.0,Travel,100.0
+BharatKart,60,604,626706.0,E-commerce,99.83
+WealthGrow,60,46,33509.0,Wealth / SIP,100.0
+FreshBasket,60,66,53310.0,Grocery,100.0
+InsureWell,60,65,65350.0,Insurance,100.0
+CityFuel,60,66,55592.0,Fuel,100.0
+HealthFirst,60,53,29389.0,Pharmacy,100.0
+QuickBite,60,69,54618.0,Food Delivery,100.0
+EduPrime,60,61,63072.0,EdTech,100.0
+StyleHub,60,59,60122.0,Fashion,98.31
+PowerPay Utilities,60,39,25943.0,Utilities,97.44
+FlixStream,60,27,18782.0,OTT / Subscriptions,96.3
+MetroRide,61,4271,4464426.0,Mobility,99.11
+BharatKart,61,726,785824.0,E-commerce,98.9
+GadgetZone,61,2978,2410193.0,Electronics,98.82
+FreshBasket,61,81,66204.0,Grocery,98.77
+EduPrime,61,71,68439.0,EdTech,98.59
+DailyMart,61,203,171620.0,Retail,99.01
+QuickBite,61,86,62572.0,Food Delivery,97.67
+StyleHub,61,78,71839.0,Fashion,100.0
+InsureWell,61,87,109669.0,Insurance,98.85
+HealthFirst,61,70,41773.0,Pharmacy,98.57
+CityFuel,61,72,48918.0,Fuel,98.61
+PowerPay Utilities,61,43,49637.0,Utilities,97.67
+FlixStream,61,41,23669.0,OTT / Subscriptions,97.56
+WealthGrow,61,48,28615.0,Wealth / SIP,100.0
+TravelGo,61,44,53982.0,Travel,97.73
+GadgetZone,62,2124,1823926.0,Electronics,99.95
+BharatKart,62,578,615887.0,E-commerce,100.0
+MetroRide,62,3181,3494986.0,Mobility,100.0
+WealthGrow,62,39,31170.0,Wealth / SIP,100.0
+HealthFirst,62,62,41032.0,Pharmacy,100.0
+PowerPay Utilities,62,29,21926.0,Utilities,100.0
+DailyMart,62,139,95336.0,Retail,100.0
+CityFuel,62,58,53482.0,Fuel,100.0
+StyleHub,62,68,71954.0,Fashion,100.0
+EduPrime,62,47,64384.0,EdTech,100.0
+FreshBasket,62,66,46442.0,Grocery,100.0
+InsureWell,62,55,43098.0,Insurance,100.0
+QuickBite,62,44,44041.0,Food Delivery,100.0
+FlixStream,62,35,24578.0,OTT / Subscriptions,100.0
+TravelGo,62,31,40321.0,Travel,100.0
+GadgetZone,63,1951,1513694.0,Electronics,99.38
+MetroRide,63,2885,3219618.0,Mobility,99.51
+DailyMart,63,145,144961.0,Retail,99.31
+BharatKart,63,533,593560.0,E-commerce,99.06
+QuickBite,63,55,58669.0,Food Delivery,100.0
+FreshBasket,63,46,31884.0,Grocery,100.0
+EduPrime,63,40,33007.0,EdTech,100.0
+PowerPay Utilities,63,36,25163.0,Utilities,100.0
+StyleHub,63,60,74247.0,Fashion,96.67
+CityFuel,63,62,57611.0,Fuel,98.39
+InsureWell,63,56,61637.0,Insurance,100.0
+HealthFirst,63,66,32181.0,Pharmacy,98.48
+FlixStream,63,26,15525.0,OTT / Subscriptions,100.0
+WealthGrow,63,29,14997.0,Wealth / SIP,100.0
+TravelGo,63,37,36889.0,Travel,97.3
+GadgetZone,64,2338,1944377.0,Electronics,98.63
+MetroRide,64,3495,3767590.0,Mobility,98.83
+DailyMart,64,169,142304.0,Retail,99.41
+BharatKart,64,594,679197.0,E-commerce,98.65
+WealthGrow,64,27,15496.0,Wealth / SIP,96.3
+InsureWell,64,85,81586.0,Insurance,98.82
+CityFuel,64,81,69378.0,Fuel,100.0
+FreshBasket,64,60,58639.0,Grocery,100.0
+TravelGo,64,36,32198.0,Travel,100.0
+PowerPay Utilities,64,33,29118.0,Utilities,100.0
+StyleHub,64,59,49426.0,Fashion,100.0
+EduPrime,64,61,88209.0,EdTech,98.36
+FlixStream,64,24,17914.0,OTT / Subscriptions,100.0
+QuickBite,64,63,55779.0,Food Delivery,100.0
+HealthFirst,64,56,33329.0,Pharmacy,98.21
+EduPrime,65,69,68692.0,EdTech,100.0
+MetroRide,65,3649,4095276.0,Mobility,98.85
+BharatKart,65,632,668610.0,E-commerce,98.89
+HealthFirst,65,64,42412.0,Pharmacy,96.88
+GadgetZone,65,2376,1899155.0,Electronics,98.95
+DailyMart,65,175,155010.0,Retail,100.0
+InsureWell,65,88,100041.0,Insurance,100.0
+CityFuel,65,57,66021.0,Fuel,100.0
+FreshBasket,65,53,51436.0,Grocery,100.0
+StyleHub,65,74,80811.0,Fashion,100.0
+FlixStream,65,37,22547.0,OTT / Subscriptions,97.3
+QuickBite,65,59,50156.0,Food Delivery,94.92
+TravelGo,65,38,53855.0,Travel,94.74
+PowerPay Utilities,65,36,29075.0,Utilities,100.0
+WealthGrow,65,39,26078.0,Wealth / SIP,100.0
+GadgetZone,66,2540,2087835.0,Electronics,99.96
+BharatKart,66,627,694369.0,E-commerce,99.84
+MetroRide,66,3556,3895617.0,Mobility,99.92
+HealthFirst,66,72,53829.0,Pharmacy,100.0
+QuickBite,66,63,39433.0,Food Delivery,100.0
+CityFuel,66,82,71519.0,Fuel,100.0
+DailyMart,66,159,129694.0,Retail,100.0
+WealthGrow,66,41,23655.0,Wealth / SIP,100.0
+InsureWell,66,90,79311.0,Insurance,100.0
+TravelGo,66,51,46754.0,Travel,100.0
+PowerPay Utilities,66,53,50689.0,Utilities,100.0
+StyleHub,66,58,51780.0,Fashion,100.0
+EduPrime,66,49,49871.0,EdTech,100.0
+FreshBasket,66,74,50935.0,Grocery,100.0
+FlixStream,66,40,21212.0,OTT / Subscriptions,100.0
+MetroRide,67,3703,4015142.0,Mobility,99.97
+GadgetZone,67,2427,2009861.0,Electronics,99.96
+DailyMart,67,173,154579.0,Retail,100.0
+FlixStream,67,37,18897.0,OTT / Subscriptions,100.0
+BharatKart,67,622,636044.0,E-commerce,100.0
+InsureWell,67,62,75053.0,Insurance,100.0
+StyleHub,67,65,56573.0,Fashion,100.0
+EduPrime,67,68,79757.0,EdTech,100.0
+CityFuel,67,77,69627.0,Fuel,100.0
+FreshBasket,67,71,68788.0,Grocery,100.0
+QuickBite,67,69,51441.0,Food Delivery,100.0
+PowerPay Utilities,67,39,37550.0,Utilities,100.0
+WealthGrow,67,38,18328.0,Wealth / SIP,100.0
+HealthFirst,67,54,31653.0,Pharmacy,100.0
+TravelGo,67,38,35560.0,Travel,100.0
+MetroRide,68,4009,4300057.0,Mobility,99.55
+GadgetZone,68,2726,2305135.0,Electronics,99.71
+BharatKart,68,731,807777.0,E-commerce,99.86
+WealthGrow,68,54,28565.0,Wealth / SIP,100.0
+CityFuel,68,76,66655.0,Fuel,100.0
+EduPrime,68,57,78092.0,EdTech,100.0
+FlixStream,68,53,31546.0,OTT / Subscriptions,100.0
+QuickBite,68,77,66488.0,Food Delivery,100.0
+DailyMart,68,176,143988.0,Retail,98.86
+PowerPay Utilities,68,36,28730.0,Utilities,100.0
+StyleHub,68,82,81699.0,Fashion,100.0
+HealthFirst,68,78,60458.0,Pharmacy,98.72
+InsureWell,68,82,88728.0,Insurance,100.0
+TravelGo,68,37,37124.0,Travel,100.0
+FreshBasket,68,76,69556.0,Grocery,100.0
+BharatKart,69,732,798830.0,E-commerce,99.59
+MetroRide,69,3895,4253808.0,Mobility,99.54
+GadgetZone,69,2810,2277314.0,Electronics,99.5
+PowerPay Utilities,69,49,54242.0,Utilities,100.0
+QuickBite,69,52,43263.0,Food Delivery,100.0
+DailyMart,69,193,157126.0,Retail,99.48
+HealthFirst,69,67,55677.0,Pharmacy,100.0
+FreshBasket,69,77,55503.0,Grocery,100.0
+StyleHub,69,91,98055.0,Fashion,100.0
+TravelGo,69,49,50871.0,Travel,100.0
+WealthGrow,69,47,27386.0,Wealth / SIP,100.0
+EduPrime,69,63,68637.0,EdTech,98.41
+InsureWell,69,75,80693.0,Insurance,98.67
+FlixStream,69,63,34212.0,OTT / Subscriptions,100.0
+CityFuel,69,81,63549.0,Fuel,100.0
+MetroRide,70,4029,4315357.0,Mobility,99.9
+StyleHub,70,86,102674.0,Fashion,100.0
+BharatKart,70,672,786445.0,E-commerce,100.0
+GadgetZone,70,2743,2347927.0,Electronics,99.96
+TravelGo,70,53,49715.0,Travel,100.0
+HealthFirst,70,66,36355.0,Pharmacy,100.0
+FlixStream,70,48,25615.0,OTT / Subscriptions,100.0
+QuickBite,70,70,49472.0,Food Delivery,98.57
+PowerPay Utilities,70,47,37012.0,Utilities,100.0
+InsureWell,70,71,84070.0,Insurance,100.0
+FreshBasket,70,52,49311.0,Grocery,100.0
+CityFuel,70,77,56963.0,Fuel,100.0
+EduPrime,70,54,70053.0,EdTech,100.0
+DailyMart,70,204,183278.0,Retail,100.0
+WealthGrow,70,50,33061.0,Wealth / SIP,100.0
+MetroRide,71,4121,4453589.0,Mobility,99.98
+GadgetZone,71,2812,2387067.0,Electronics,100.0
+TravelGo,71,43,45636.0,Travel,100.0
+BharatKart,71,649,753466.0,E-commerce,100.0
+DailyMart,71,183,141728.0,Retail,100.0
+FlixStream,71,38,27327.0,OTT / Subscriptions,100.0
+QuickBite,71,69,65464.0,Food Delivery,100.0
+HealthFirst,71,61,37726.0,Pharmacy,100.0
+PowerPay Utilities,71,31,47219.0,Utilities,100.0
+StyleHub,71,82,108071.0,Fashion,100.0
+CityFuel,71,79,77053.0,Fuel,100.0
+EduPrime,71,51,49414.0,EdTech,100.0
+InsureWell,71,83,79914.0,Insurance,100.0
+WealthGrow,71,46,27612.0,Wealth / SIP,100.0
+FreshBasket,71,82,72608.0,Grocery,100.0
+GadgetZone,72,2528,2168864.0,Electronics,100.0
+MetroRide,72,3642,3826916.0,Mobility,99.95
+StyleHub,72,77,90802.0,Fashion,100.0
+BharatKart,72,648,660761.0,E-commerce,100.0
+EduPrime,72,60,77072.0,EdTech,100.0
+DailyMart,72,171,169199.0,Retail,100.0
+FreshBasket,72,56,49648.0,Grocery,100.0
+HealthFirst,72,70,43643.0,Pharmacy,100.0
+WealthGrow,72,46,33107.0,Wealth / SIP,100.0
+QuickBite,72,66,45772.0,Food Delivery,100.0
+TravelGo,72,44,40545.0,Travel,100.0
+InsureWell,72,66,58950.0,Insurance,100.0
+PowerPay Utilities,72,44,46615.0,Utilities,100.0
+FlixStream,72,40,25263.0,OTT / Subscriptions,100.0
+CityFuel,72,59,62219.0,Fuel,100.0
+GadgetZone,73,2499,2021485.0,Electronics,99.96
+BharatKart,73,621,632189.0,E-commerce,100.0
+MetroRide,73,3685,3854641.0,Mobility,100.0
+StyleHub,73,78,80478.0,Fashion,100.0
+DailyMart,73,184,137942.0,Retail,100.0
+CityFuel,73,73,57881.0,Fuel,100.0
+QuickBite,73,53,37190.0,Food Delivery,100.0
+HealthFirst,73,69,59683.0,Pharmacy,100.0
+FlixStream,73,44,21575.0,OTT / Subscriptions,100.0
+EduPrime,73,50,49321.0,EdTech,100.0
+WealthGrow,73,35,24039.0,Wealth / SIP,100.0
+PowerPay Utilities,73,52,54861.0,Utilities,100.0
+TravelGo,73,39,38577.0,Travel,100.0
+FreshBasket,73,59,49479.0,Grocery,100.0
+InsureWell,73,73,91078.0,Insurance,100.0
+GadgetZone,74,2523,2150230.0,Electronics,99.33
+MetroRide,74,3717,4002258.0,Mobility,99.03
+BharatKart,74,691,746985.0,E-commerce,99.57
+HealthFirst,74,70,48174.0,Pharmacy,100.0
+DailyMart,74,181,142334.0,Retail,99.45
+QuickBite,74,64,58538.0,Food Delivery,100.0
+EduPrime,74,54,69639.0,EdTech,100.0
+CityFuel,74,80,60688.0,Fuel,100.0
+FreshBasket,74,69,56565.0,Grocery,100.0
+StyleHub,74,65,84668.0,Fashion,100.0
+InsureWell,74,60,52884.0,Insurance,98.33
+PowerPay Utilities,74,42,36051.0,Utilities,100.0
+WealthGrow,74,40,26097.0,Wealth / SIP,100.0
+FlixStream,74,35,19527.0,OTT / Subscriptions,100.0
+TravelGo,74,47,45800.0,Travel,100.0
+MetroRide,75,3697,4071716.0,Mobility,99.24
+GadgetZone,75,2578,2179512.0,Electronics,99.22
+HealthFirst,75,73,55781.0,Pharmacy,98.63
+BharatKart,75,677,772807.0,E-commerce,99.26
+EduPrime,75,68,69797.0,EdTech,100.0
+PowerPay Utilities,75,38,31949.0,Utilities,100.0
+DailyMart,75,162,158728.0,Retail,100.0
+CityFuel,75,74,44158.0,Fuel,100.0
+FlixStream,75,39,24051.0,OTT / Subscriptions,100.0
+FreshBasket,75,59,70736.0,Grocery,100.0
+WealthGrow,75,34,28434.0,Wealth / SIP,100.0
+InsureWell,75,70,89893.0,Insurance,98.57
+QuickBite,75,60,53230.0,Food Delivery,96.67
+StyleHub,75,63,86972.0,Fashion,100.0
+TravelGo,75,46,69381.0,Travel,100.0
+GadgetZone,76,2258,1846418.0,Electronics,99.96
+DailyMart,76,148,122503.0,Retail,100.0
+EduPrime,76,54,68594.0,EdTech,100.0
+MetroRide,76,3248,3671837.0,Mobility,100.0
+InsureWell,76,77,73083.0,Insurance,100.0
+CityFuel,76,49,51381.0,Fuel,100.0
+BharatKart,76,568,651404.0,E-commerce,99.82
+StyleHub,76,47,47981.0,Fashion,100.0
+QuickBite,76,49,49863.0,Food Delivery,100.0
+WealthGrow,76,50,19481.0,Wealth / SIP,100.0
+FlixStream,76,40,26123.0,OTT / Subscriptions,100.0
+HealthFirst,76,74,53573.0,Pharmacy,100.0
+FreshBasket,76,54,34972.0,Grocery,100.0
+PowerPay Utilities,76,41,29987.0,Utilities,100.0
+TravelGo,76,34,46883.0,Travel,100.0
+CityFuel,77,68,52394.0,Fuel,98.53
+GadgetZone,77,2061,1738621.0,Electronics,98.93
+MetroRide,77,3028,3257586.0,Mobility,99.47
+QuickBite,77,55,41947.0,Food Delivery,98.18
+BharatKart,77,508,598572.0,E-commerce,99.21
+InsureWell,77,65,84312.0,Insurance,98.46
+FreshBasket,77,51,37910.0,Grocery,100.0
+StyleHub,77,44,48519.0,Fashion,100.0
+PowerPay Utilities,77,22,29590.0,Utilities,100.0
+HealthFirst,77,56,28070.0,Pharmacy,100.0
+TravelGo,77,39,29924.0,Travel,94.87
+EduPrime,77,41,43361.0,EdTech,100.0
+DailyMart,77,145,112951.0,Retail,100.0
+WealthGrow,77,35,21811.0,Wealth / SIP,100.0
+FlixStream,77,27,21651.0,OTT / Subscriptions,100.0
+StyleHub,78,63,66937.0,Fashion,100.0
+MetroRide,78,3752,4100714.0,Mobility,100.0
+BharatKart,78,677,732155.0,E-commerce,100.0
+CityFuel,78,74,69124.0,Fuel,100.0
+GadgetZone,78,2412,2040384.0,Electronics,100.0
+DailyMart,78,169,175547.0,Retail,100.0
+FreshBasket,78,62,61653.0,Grocery,100.0
+PowerPay Utilities,78,40,33304.0,Utilities,100.0
+EduPrime,78,55,55683.0,EdTech,100.0
+WealthGrow,78,30,18302.0,Wealth / SIP,100.0
+InsureWell,78,80,96783.0,Insurance,100.0
+QuickBite,78,58,52270.0,Food Delivery,100.0
+HealthFirst,78,63,52307.0,Pharmacy,100.0
+FlixStream,78,40,22710.0,OTT / Subscriptions,100.0
+TravelGo,78,33,33455.0,Travel,100.0
+MetroRide,79,3792,4046298.0,Mobility,100.0
+GadgetZone,79,2618,2302043.0,Electronics,100.0
+BharatKart,79,668,782810.0,E-commerce,99.85
+FlixStream,79,49,38908.0,OTT / Subscriptions,100.0
+FreshBasket,79,68,65071.0,Grocery,100.0
+DailyMart,79,179,134498.0,Retail,100.0
+TravelGo,79,52,61449.0,Travel,100.0
+HealthFirst,79,65,38317.0,Pharmacy,100.0
+StyleHub,79,73,94318.0,Fashion,100.0
+CityFuel,79,68,54799.0,Fuel,100.0
+EduPrime,79,53,49909.0,EdTech,100.0
+InsureWell,79,68,73534.0,Insurance,100.0
+PowerPay Utilities,79,42,23059.0,Utilities,100.0
+QuickBite,79,55,49159.0,Food Delivery,100.0
+WealthGrow,79,38,27203.0,Wealth / SIP,100.0
+MetroRide,80,3686,4091480.0,Mobility,98.97
+DailyMart,80,193,142803.0,Retail,98.96
+GadgetZone,80,2573,2133024.0,Electronics,98.99
+StyleHub,80,64,82892.0,Fashion,100.0
+BharatKart,80,649,745455.0,E-commerce,99.23
+PowerPay Utilities,80,41,41342.0,Utilities,100.0
+WealthGrow,80,34,18951.0,Wealth / SIP,97.06
+HealthFirst,80,75,41318.0,Pharmacy,98.67
+CityFuel,80,87,72519.0,Fuel,98.85
+FreshBasket,80,70,49296.0,Grocery,98.57
+QuickBite,80,49,41832.0,Food Delivery,97.96
+EduPrime,80,60,56934.0,EdTech,98.33
+InsureWell,80,72,79896.0,Insurance,98.61
+FlixStream,80,40,36143.0,OTT / Subscriptions,100.0
+TravelGo,80,26,31609.0,Travel,100.0
+GadgetZone,81,2649,2160385.0,Electronics,99.32
+DailyMart,81,186,133239.0,Retail,99.46
+MetroRide,81,3723,4057931.0,Mobility,99.27
+BharatKart,81,647,699497.0,E-commerce,99.54
+StyleHub,81,70,90198.0,Fashion,100.0
+TravelGo,81,37,39580.0,Travel,100.0
+FreshBasket,81,55,56683.0,Grocery,100.0
+InsureWell,81,82,74677.0,Insurance,100.0
+CityFuel,81,77,65237.0,Fuel,100.0
+HealthFirst,81,64,37956.0,Pharmacy,98.44
+WealthGrow,81,48,36373.0,Wealth / SIP,100.0
+EduPrime,81,66,81128.0,EdTech,98.48
+PowerPay Utilities,81,22,22778.0,Utilities,100.0
+QuickBite,81,55,42176.0,Food Delivery,100.0
+FlixStream,81,42,29759.0,OTT / Subscriptions,100.0
+MetroRide,82,4636,5135808.0,Mobility,99.16
+GadgetZone,82,3180,2581068.0,Electronics,99.4
+BharatKart,82,808,981284.0,E-commerce,99.01
+InsureWell,82,79,90414.0,Insurance,98.73
+QuickBite,82,75,52723.0,Food Delivery,100.0
+TravelGo,82,36,36320.0,Travel,97.22
+FreshBasket,82,79,72721.0,Grocery,100.0
+HealthFirst,82,68,40478.0,Pharmacy,100.0
+CityFuel,82,90,82273.0,Fuel,100.0
+DailyMart,82,218,208081.0,Retail,98.62
+PowerPay Utilities,82,36,21568.0,Utilities,100.0
+WealthGrow,82,43,27498.0,Wealth / SIP,100.0
+StyleHub,82,92,102280.0,Fashion,98.91
+EduPrime,82,81,87722.0,EdTech,97.53
+FlixStream,82,50,25724.0,OTT / Subscriptions,100.0
+MetroRide,83,3531,3978699.0,Mobility,99.86
+GadgetZone,83,2416,2071979.0,Electronics,99.88
+HealthFirst,83,69,43133.0,Pharmacy,100.0
+StyleHub,83,64,79735.0,Fashion,100.0
+FlixStream,83,35,23759.0,OTT / Subscriptions,100.0
+BharatKart,83,583,654847.0,E-commerce,100.0
+TravelGo,83,29,41394.0,Travel,96.55
+PowerPay Utilities,83,31,19656.0,Utilities,100.0
+InsureWell,83,65,58355.0,Insurance,100.0
+FreshBasket,83,72,62986.0,Grocery,98.61
+EduPrime,83,49,48640.0,EdTech,100.0
+CityFuel,83,66,50761.0,Fuel,100.0
+QuickBite,83,51,51486.0,Food Delivery,100.0
+DailyMart,83,160,100804.0,Retail,100.0
+WealthGrow,83,34,20578.0,Wealth / SIP,100.0
+MetroRide,84,3160,3606896.0,Mobility,98.89
+GadgetZone,84,2159,1818259.0,Electronics,98.43
+BharatKart,84,529,567324.0,E-commerce,98.3
+EduPrime,84,57,64734.0,EdTech,100.0
+StyleHub,84,64,73720.0,Fashion,98.44
+HealthFirst,84,55,28742.0,Pharmacy,100.0
+QuickBite,84,55,41068.0,Food Delivery,96.36
+FlixStream,84,32,30082.0,OTT / Subscriptions,100.0
+FreshBasket,84,68,53810.0,Grocery,97.06
+PowerPay Utilities,84,47,48960.0,Utilities,97.87
+InsureWell,84,62,59466.0,Insurance,100.0
+CityFuel,84,62,49706.0,Fuel,100.0
+DailyMart,84,164,155603.0,Retail,98.78
+WealthGrow,84,34,27915.0,Wealth / SIP,100.0
+TravelGo,84,29,22249.0,Travel,96.55
+MetroRide,85,3637,4167639.0,Mobility,98.85
+QuickBite,85,66,42316.0,Food Delivery,98.48
+GadgetZone,85,2481,2114601.0,Electronics,99.07
+DailyMart,85,176,137180.0,Retail,98.3
+FreshBasket,85,71,77166.0,Grocery,100.0
+BharatKart,85,661,724876.0,E-commerce,98.49
+FlixStream,85,42,26742.0,OTT / Subscriptions,97.62
+StyleHub,85,66,99662.0,Fashion,96.97
+InsureWell,85,74,60018.0,Insurance,97.3
+CityFuel,85,70,46832.0,Fuel,100.0
+EduPrime,85,55,60393.0,EdTech,100.0
+PowerPay Utilities,85,45,33480.0,Utilities,100.0
+WealthGrow,85,33,11758.0,Wealth / SIP,100.0
+TravelGo,85,31,35752.0,Travel,100.0
+HealthFirst,85,73,48791.0,Pharmacy,100.0
+GadgetZone,86,2778,2391199.0,Electronics,98.38
+MetroRide,86,3973,4486428.0,Mobility,98.74
+BharatKart,86,645,749510.0,E-commerce,98.6
+DailyMart,86,156,124708.0,Retail,96.79
+FreshBasket,86,72,72014.0,Grocery,95.83
+WealthGrow,86,42,33660.0,Wealth / SIP,100.0
+StyleHub,86,74,75244.0,Fashion,98.65
+EduPrime,86,61,57811.0,EdTech,98.36
+TravelGo,86,42,35348.0,Travel,95.24
+PowerPay Utilities,86,37,21097.0,Utilities,97.3
+QuickBite,86,49,49049.0,Food Delivery,100.0
+HealthFirst,86,71,48073.0,Pharmacy,98.59
+InsureWell,86,80,111491.0,Insurance,98.75
+CityFuel,86,73,68703.0,Fuel,98.63
+FlixStream,86,37,24623.0,OTT / Subscriptions,94.59
+GadgetZone,87,2692,2358279.0,Electronics,100.0
+MetroRide,87,3791,4305168.0,Mobility,99.95
+EduPrime,87,64,76020.0,EdTech,100.0
+HealthFirst,87,72,49197.0,Pharmacy,100.0
+BharatKart,87,652,717445.0,E-commerce,100.0
+PowerPay Utilities,87,36,38281.0,Utilities,100.0
+StyleHub,87,78,64232.0,Fashion,100.0
+DailyMart,87,188,142743.0,Retail,100.0
+WealthGrow,87,42,24166.0,Wealth / SIP,100.0
+FreshBasket,87,59,60606.0,Grocery,100.0
+TravelGo,87,48,51130.0,Travel,100.0
+CityFuel,87,77,68833.0,Fuel,100.0
+FlixStream,87,44,28635.0,OTT / Subscriptions,100.0
+InsureWell,87,76,79239.0,Insurance,100.0
+QuickBite,87,73,51915.0,Food Delivery,100.0
+MetroRide,88,4040,4608349.0,Mobility,99.98
+BharatKart,88,663,714142.0,E-commerce,99.85
+GadgetZone,88,2690,2418255.0,Electronics,100.0
+InsureWell,88,74,89572.0,Insurance,100.0
+FreshBasket,88,66,55486.0,Grocery,100.0
+CityFuel,88,77,59387.0,Fuel,100.0
+DailyMart,88,197,166643.0,Retail,100.0
+HealthFirst,88,95,70907.0,Pharmacy,100.0
+EduPrime,88,55,64682.0,EdTech,100.0
+FlixStream,88,42,29118.0,OTT / Subscriptions,100.0
+QuickBite,88,64,59886.0,Food Delivery,100.0
+TravelGo,88,43,48180.0,Travel,100.0
+StyleHub,88,88,113880.0,Fashion,100.0
+WealthGrow,88,52,27285.0,Wealth / SIP,100.0
+PowerPay Utilities,88,48,53383.0,Utilities,100.0
+MetroRide,89,3901,4341329.0,Mobility,98.77
+InsureWell,89,77,86601.0,Insurance,98.7
+GadgetZone,89,2728,2433385.0,Electronics,99.05
+BharatKart,89,691,797756.0,E-commerce,98.99
+HealthFirst,89,69,38178.0,Pharmacy,98.55
+PowerPay Utilities,89,42,46256.0,Utilities,100.0
+WealthGrow,89,34,16051.0,Wealth / SIP,100.0
+CityFuel,89,84,87754.0,Fuel,100.0
+TravelGo,89,50,51073.0,Travel,100.0
+DailyMart,89,163,134759.0,Retail,100.0
+StyleHub,89,81,73984.0,Fashion,96.3
+EduPrime,89,73,78976.0,EdTech,97.26
+QuickBite,89,74,86984.0,Food Delivery,100.0
+FreshBasket,89,69,54403.0,Grocery,98.55
+FlixStream,89,40,15845.0,OTT / Subscriptions,100.0
+GadgetZone,90,2391,2114602.0,Electronics,99.62
+MetroRide,90,3370,3731240.0,Mobility,99.29
+InsureWell,90,68,73223.0,Insurance,98.53
+QuickBite,90,41,28315.0,Food Delivery,100.0
+BharatKart,90,610,709429.0,E-commerce,99.02
+DailyMart,90,154,136267.0,Retail,100.0
+TravelGo,90,32,33893.0,Travel,100.0
+WealthGrow,90,33,24624.0,Wealth / SIP,100.0
+CityFuel,90,82,86543.0,Fuel,97.56
+FreshBasket,90,77,74405.0,Grocery,98.7
+EduPrime,90,72,90556.0,EdTech,100.0
+HealthFirst,90,65,42587.0,Pharmacy,100.0
+FlixStream,90,43,33248.0,OTT / Subscriptions,100.0
+PowerPay Utilities,90,25,26730.0,Utilities,100.0
+StyleHub,90,56,63412.0,Fashion,100.0
+MetroRide,91,3203,3564308.0,Mobility,100.0
+GadgetZone,91,2183,1816784.0,Electronics,100.0
+BharatKart,91,509,601948.0,E-commerce,100.0
+TravelGo,91,36,52335.0,Travel,100.0
+StyleHub,91,57,68624.0,Fashion,100.0
+DailyMart,91,131,122265.0,Retail,100.0
+InsureWell,91,55,55900.0,Insurance,100.0
+QuickBite,91,50,43636.0,Food Delivery,100.0
+FreshBasket,91,51,51009.0,Grocery,100.0
+EduPrime,91,58,51912.0,EdTech,100.0
+PowerPay Utilities,91,27,18287.0,Utilities,100.0
+HealthFirst,91,60,30796.0,Pharmacy,100.0
+FlixStream,91,28,22936.0,OTT / Subscriptions,100.0
+CityFuel,91,68,64819.0,Fuel,100.0
+WealthGrow,91,38,32461.0,Wealth / SIP,100.0
+MetroRide,92,3692,4073459.0,Mobility,99.3
+GadgetZone,92,2490,2255375.0,Electronics,99.24
+BharatKart,92,674,771750.0,E-commerce,99.7
+HealthFirst,92,75,66778.0,Pharmacy,98.67
+InsureWell,92,75,73497.0,Insurance,97.33
+CityFuel,92,86,91321.0,Fuel,100.0
+DailyMart,92,158,135050.0,Retail,99.37
+FreshBasket,92,49,41230.0,Grocery,100.0
+StyleHub,92,64,72205.0,Fashion,100.0
+TravelGo,92,42,46659.0,Travel,100.0
+EduPrime,92,71,73073.0,EdTech,100.0
+FlixStream,92,43,26790.0,OTT / Subscriptions,100.0
+QuickBite,92,74,56180.0,Food Delivery,100.0
+PowerPay Utilities,92,36,23654.0,Utilities,100.0
+WealthGrow,92,30,19567.0,Wealth / SIP,100.0
+MetroRide,93,3854,4311484.0,Mobility,99.56
+GadgetZone,93,2748,2403268.0,Electronics,99.64
+TravelGo,93,45,39346.0,Travel,100.0
+DailyMart,93,171,159148.0,Retail,98.83
+BharatKart,93,733,793634.0,E-commerce,99.05
+StyleHub,93,88,77623.0,Fashion,98.86
+HealthFirst,93,72,58725.0,Pharmacy,98.61
+InsureWell,93,79,106536.0,Insurance,100.0
+CityFuel,93,87,79898.0,Fuel,98.85
+QuickBite,93,65,54247.0,Food Delivery,100.0
+EduPrime,93,53,54286.0,EdTech,98.11
+FreshBasket,93,67,58533.0,Grocery,100.0
+WealthGrow,93,44,27421.0,Wealth / SIP,100.0
+PowerPay Utilities,93,41,30184.0,Utilities,100.0
+FlixStream,93,37,35037.0,OTT / Subscriptions,100.0
+MetroRide,94,3946,4554358.0,Mobility,100.0
+HealthFirst,94,85,48877.0,Pharmacy,100.0
+GadgetZone,94,2718,2347239.0,Electronics,99.96
+FreshBasket,94,75,59615.0,Grocery,100.0
+DailyMart,94,177,156331.0,Retail,100.0
+QuickBite,94,66,55264.0,Food Delivery,100.0
+CityFuel,94,69,74958.0,Fuel,98.55
+BharatKart,94,734,857105.0,E-commerce,100.0
+FlixStream,94,50,42246.0,OTT / Subscriptions,100.0
+EduPrime,94,51,31504.0,EdTech,100.0
+StyleHub,94,58,50107.0,Fashion,100.0
+WealthGrow,94,44,27936.0,Wealth / SIP,100.0
+PowerPay Utilities,94,27,15076.0,Utilities,100.0
+TravelGo,94,36,32162.0,Travel,100.0
+InsureWell,94,82,111873.0,Insurance,100.0
+InsureWell,95,76,91389.0,Insurance,100.0
+MetroRide,95,3973,4592088.0,Mobility,99.6
+GadgetZone,95,2711,2315352.0,Electronics,99.82
+BharatKart,95,702,750869.0,E-commerce,100.0
+CityFuel,95,76,59180.0,Fuel,100.0
+FreshBasket,95,61,47171.0,Grocery,100.0
+DailyMart,95,187,180424.0,Retail,99.47
+HealthFirst,95,73,37877.0,Pharmacy,98.63
+WealthGrow,95,45,30280.0,Wealth / SIP,100.0
+PowerPay Utilities,95,46,38171.0,Utilities,100.0
+FlixStream,95,49,22739.0,OTT / Subscriptions,100.0
+QuickBite,95,67,67825.0,Food Delivery,100.0
+EduPrime,95,57,57632.0,EdTech,100.0
+StyleHub,95,67,78975.0,Fashion,98.51
+TravelGo,95,40,46553.0,Travel,100.0
+MetroRide,96,3889,4521799.0,Mobility,98.53
+FreshBasket,96,80,67589.0,Grocery,98.75
+GadgetZone,96,2636,2333580.0,Electronics,98.98
+StyleHub,96,83,87271.0,Fashion,100.0
+BharatKart,96,712,842104.0,E-commerce,99.02
+HealthFirst,96,62,34320.0,Pharmacy,98.39
+FlixStream,96,46,35055.0,OTT / Subscriptions,95.65
+EduPrime,96,72,92193.0,EdTech,100.0
+TravelGo,96,50,60108.0,Travel,98.0
+WealthGrow,96,40,22007.0,Wealth / SIP,100.0
+PowerPay Utilities,96,43,33835.0,Utilities,100.0
+CityFuel,96,59,53913.0,Fuel,98.31
+DailyMart,96,171,180879.0,Retail,98.83
+InsureWell,96,74,70281.0,Insurance,100.0
+QuickBite,96,51,40791.0,Food Delivery,98.04
+MetroRide,97,3499,3927490.0,Mobility,100.0
+GadgetZone,97,2467,2154277.0,Electronics,99.96
+BharatKart,97,641,758075.0,E-commerce,100.0
+WealthGrow,97,35,19229.0,Wealth / SIP,100.0
+DailyMart,97,156,108317.0,Retail,100.0
+HealthFirst,97,58,41032.0,Pharmacy,100.0
+QuickBite,97,46,37828.0,Food Delivery,100.0
+StyleHub,97,74,68816.0,Fashion,100.0
+FlixStream,97,36,22480.0,OTT / Subscriptions,100.0
+InsureWell,97,74,89595.0,Insurance,100.0
+CityFuel,97,71,63276.0,Fuel,100.0
+FreshBasket,97,59,62348.0,Grocery,100.0
+TravelGo,97,40,66241.0,Travel,100.0
+PowerPay Utilities,97,38,32555.0,Utilities,100.0
+EduPrime,97,64,59674.0,EdTech,100.0
+MetroRide,98,3164,3696174.0,Mobility,99.84
+GadgetZone,98,2244,1914223.0,Electronics,99.82
+DailyMart,98,150,121204.0,Retail,100.0
+EduPrime,98,54,60792.0,EdTech,100.0
+BharatKart,98,569,663735.0,E-commerce,100.0
+PowerPay Utilities,98,36,19955.0,Utilities,100.0
+WealthGrow,98,41,23334.0,Wealth / SIP,100.0
+FreshBasket,98,45,40273.0,Grocery,100.0
+InsureWell,98,60,60237.0,Insurance,100.0
+StyleHub,98,58,59555.0,Fashion,100.0
+FlixStream,98,30,17461.0,OTT / Subscriptions,100.0
+TravelGo,98,33,29782.0,Travel,96.97
+HealthFirst,98,63,39639.0,Pharmacy,100.0
+QuickBite,98,40,31395.0,Food Delivery,100.0
+CityFuel,98,76,74947.0,Fuel,100.0
+MetroRide,99,4630,5377954.0,Mobility,98.98
+EduPrime,99,79,92220.0,EdTech,100.0
+GadgetZone,99,3100,2791791.0,Electronics,99.26
+CityFuel,99,94,109287.0,Fuel,98.94
+BharatKart,99,738,856071.0,E-commerce,98.78
+StyleHub,99,83,94299.0,Fashion,97.59
+DailyMart,99,206,203381.0,Retail,98.06
+FreshBasket,99,85,69382.0,Grocery,98.82
+InsureWell,99,87,98854.0,Insurance,100.0
+QuickBite,99,72,60951.0,Food Delivery,98.61
+HealthFirst,99,74,44941.0,Pharmacy,98.65
+FlixStream,99,48,23733.0,OTT / Subscriptions,100.0
+WealthGrow,99,47,26117.0,Wealth / SIP,100.0
+TravelGo,99,56,84026.0,Travel,100.0
+PowerPay Utilities,99,34,31487.0,Utilities,100.0
+GadgetZone,100,3127,2772791.0,Electronics,100.0
+MetroRide,100,4520,5069827.0,Mobility,99.93
+BharatKart,100,763,832537.0,E-commerce,100.0
+StyleHub,100,101,129816.0,Fashion,100.0
+CityFuel,100,103,111129.0,Fuel,100.0
+DailyMart,100,228,219420.0,Retail,100.0
+TravelGo,100,50,65121.0,Travel,100.0
+InsureWell,100,90,89367.0,Insurance,100.0
+HealthFirst,100,85,49062.0,Pharmacy,100.0
+QuickBite,100,73,56455.0,Food Delivery,100.0
+FreshBasket,100,84,78343.0,Grocery,100.0
+FlixStream,100,40,27119.0,OTT / Subscriptions,100.0
+WealthGrow,100,53,46327.0,Wealth / SIP,100.0
+PowerPay Utilities,100,45,35163.0,Utilities,100.0
+EduPrime,100,61,78263.0,EdTech,100.0
+GadgetZone,101,3080,2680029.0,Electronics,99.97
+MetroRide,101,4377,5109139.0,Mobility,99.98
+CityFuel,101,90,51824.0,Fuel,100.0
+BharatKart,101,804,885995.0,E-commerce,100.0
+FreshBasket,101,86,75971.0,Grocery,100.0
+InsureWell,101,78,120868.0,Insurance,100.0
+FlixStream,101,51,45862.0,OTT / Subscriptions,100.0
+DailyMart,101,192,200766.0,Retail,100.0
+PowerPay Utilities,101,49,39842.0,Utilities,100.0
+HealthFirst,101,71,49279.0,Pharmacy,100.0
+QuickBite,101,73,56112.0,Food Delivery,100.0
+StyleHub,101,79,94693.0,Fashion,100.0
+EduPrime,101,65,79502.0,EdTech,100.0
+WealthGrow,101,46,33592.0,Wealth / SIP,100.0
+TravelGo,101,37,27828.0,Travel,100.0
+GadgetZone,102,2816,2501918.0,Electronics,100.0
+MetroRide,102,4050,4685769.0,Mobility,100.0
+InsureWell,102,93,84899.0,Insurance,100.0
+BharatKart,102,742,826803.0,E-commerce,100.0
+TravelGo,102,57,64731.0,Travel,100.0
+StyleHub,102,91,88462.0,Fashion,100.0
+FreshBasket,102,72,46106.0,Grocery,100.0
+PowerPay Utilities,102,47,48413.0,Utilities,100.0
+CityFuel,102,82,67639.0,Fuel,100.0
+EduPrime,102,71,90448.0,EdTech,100.0
+DailyMart,102,177,155445.0,Retail,100.0
+QuickBite,102,83,60177.0,Food Delivery,100.0
+FlixStream,102,48,32213.0,OTT / Subscriptions,100.0
+HealthFirst,102,87,55694.0,Pharmacy,100.0
+WealthGrow,102,39,21249.0,Wealth / SIP,100.0
+GadgetZone,103,3431,3126925.0,Electronics,99.97
+MetroRide,103,4999,5974981.0,Mobility,99.96
+BharatKart,103,913,1075377.0,E-commerce,100.0
+DailyMart,103,237,197053.0,Retail,100.0
+QuickBite,103,79,52552.0,Food Delivery,100.0
+CityFuel,103,88,93195.0,Fuel,100.0
+InsureWell,103,102,103757.0,Insurance,100.0
+FreshBasket,103,76,60907.0,Grocery,100.0
+HealthFirst,103,79,48612.0,Pharmacy,100.0
+WealthGrow,103,50,27791.0,Wealth / SIP,100.0
+EduPrime,103,82,89516.0,EdTech,100.0
+PowerPay Utilities,103,56,62708.0,Utilities,100.0
+StyleHub,103,103,116185.0,Fashion,100.0
+TravelGo,103,61,76724.0,Travel,100.0
+FlixStream,103,55,35777.0,OTT / Subscriptions,100.0
+GadgetZone,104,2504,2213488.0,Electronics,99.76
+MetroRide,104,3678,4263092.0,Mobility,99.81
+WealthGrow,104,41,27665.0,Wealth / SIP,100.0
+BharatKart,104,618,719771.0,E-commerce,100.0
+HealthFirst,104,65,48162.0,Pharmacy,100.0
+FreshBasket,104,64,74011.0,Grocery,100.0
+FlixStream,104,31,14098.0,OTT / Subscriptions,100.0
+CityFuel,104,88,64948.0,Fuel,100.0
+InsureWell,104,78,96320.0,Insurance,100.0
+QuickBite,104,61,67773.0,Food Delivery,100.0
+DailyMart,104,147,108630.0,Retail,100.0
+PowerPay Utilities,104,38,28465.0,Utilities,100.0
+EduPrime,104,61,98241.0,EdTech,100.0
+StyleHub,104,61,77604.0,Fashion,98.36
+TravelGo,104,32,35810.0,Travel,100.0
+GadgetZone,105,2318,1942899.0,Electronics,99.53
+MetroRide,105,3346,3920672.0,Mobility,99.34
+BharatKart,105,591,669442.0,E-commerce,99.49
+HealthFirst,105,58,57345.0,Pharmacy,98.28
+TravelGo,105,35,47836.0,Travel,100.0
+FreshBasket,105,69,56913.0,Grocery,98.55
+InsureWell,105,69,73450.0,Insurance,100.0
+FlixStream,105,34,22703.0,OTT / Subscriptions,100.0
+DailyMart,105,166,159578.0,Retail,98.8
+CityFuel,105,66,56644.0,Fuel,98.48
+PowerPay Utilities,105,28,23510.0,Utilities,100.0
+StyleHub,105,65,72190.0,Fashion,100.0
+QuickBite,105,60,61531.0,Food Delivery,98.33
+EduPrime,105,59,59790.0,EdTech,100.0
+WealthGrow,105,31,37728.0,Wealth / SIP,100.0
+MetroRide,106,4953,5631157.0,Mobility,99.25
+BharatKart,106,877,983658.0,E-commerce,98.97
+GadgetZone,106,3397,2954475.0,Electronics,99.06
+InsureWell,106,96,109196.0,Insurance,100.0
+DailyMart,106,236,185710.0,Retail,99.58
+CityFuel,106,82,79227.0,Fuel,98.78
+QuickBite,106,94,94368.0,Food Delivery,98.94
+FreshBasket,106,80,87004.0,Grocery,100.0
+PowerPay Utilities,106,68,56243.0,Utilities,98.53
+StyleHub,106,92,110425.0,Fashion,98.91
+HealthFirst,106,89,81754.0,Pharmacy,100.0
+FlixStream,106,59,28971.0,OTT / Subscriptions,100.0
+EduPrime,106,88,124418.0,EdTech,100.0
+TravelGo,106,66,78367.0,Travel,100.0
+WealthGrow,106,55,44506.0,Wealth / SIP,100.0
+GadgetZone,107,2946,2585414.0,Electronics,98.78
+MetroRide,107,4148,4838422.0,Mobility,98.75
+DailyMart,107,189,161947.0,Retail,99.47
+BharatKart,107,717,893455.0,E-commerce,98.05
+InsureWell,107,83,92276.0,Insurance,98.8
+QuickBite,107,65,54477.0,Food Delivery,98.46
+EduPrime,107,78,89369.0,EdTech,97.44
+WealthGrow,107,47,25257.0,Wealth / SIP,100.0
+CityFuel,107,71,51321.0,Fuel,100.0
+StyleHub,107,69,69579.0,Fashion,98.55
+HealthFirst,107,75,53509.0,Pharmacy,100.0
+TravelGo,107,40,35718.0,Travel,95.0
+PowerPay Utilities,107,60,55506.0,Utilities,98.33
+FreshBasket,107,84,83936.0,Grocery,98.81
+FlixStream,107,40,26913.0,OTT / Subscriptions,100.0
+MetroRide,108,4210,4860313.0,Mobility,100.0
+GadgetZone,108,2782,2508437.0,Electronics,100.0
+BharatKart,108,707,839921.0,E-commerce,100.0
+EduPrime,108,56,61464.0,EdTech,100.0
+DailyMart,108,184,143281.0,Retail,100.0
+InsureWell,108,101,123680.0,Insurance,100.0
+StyleHub,108,86,129170.0,Fashion,100.0
+QuickBite,108,74,77020.0,Food Delivery,100.0
+TravelGo,108,43,38667.0,Travel,100.0
+PowerPay Utilities,108,44,30483.0,Utilities,100.0
+HealthFirst,108,72,59596.0,Pharmacy,100.0
+WealthGrow,108,47,32613.0,Wealth / SIP,100.0
+CityFuel,108,82,84852.0,Fuel,100.0
+FreshBasket,108,71,47864.0,Grocery,100.0
+FlixStream,108,49,34220.0,OTT / Subscriptions,100.0
+BharatKart,109,759,845922.0,E-commerce,100.0
+GadgetZone,109,2845,2562825.0,Electronics,99.54
+MetroRide,109,4003,4632047.0,Mobility,99.38
+HealthFirst,109,75,54126.0,Pharmacy,100.0
+WealthGrow,109,38,22202.0,Wealth / SIP,100.0
+DailyMart,109,170,147957.0,Retail,100.0
+EduPrime,109,68,88100.0,EdTech,100.0
+QuickBite,109,66,66741.0,Food Delivery,98.48
+TravelGo,109,64,71434.0,Travel,100.0
+StyleHub,109,79,60343.0,Fashion,100.0
+PowerPay Utilities,109,32,22037.0,Utilities,100.0
+FlixStream,109,38,26434.0,OTT / Subscriptions,100.0
+CityFuel,109,78,69535.0,Fuel,98.72
+InsureWell,109,76,85418.0,Insurance,98.68
+FreshBasket,109,87,59894.0,Grocery,100.0
+MetroRide,110,3998,4670282.0,Mobility,99.27
+GadgetZone,110,2797,2549653.0,Electronics,99.46
+HealthFirst,110,71,48207.0,Pharmacy,100.0
+BharatKart,110,705,915994.0,E-commerce,99.15
+QuickBite,110,55,54682.0,Food Delivery,98.18
+CityFuel,110,78,49888.0,Fuel,98.72
+FreshBasket,110,70,62041.0,Grocery,98.57
+TravelGo,110,36,56037.0,Travel,100.0
+DailyMart,110,198,208411.0,Retail,99.49
+FlixStream,110,41,18585.0,OTT / Subscriptions,100.0
+EduPrime,110,78,105013.0,EdTech,98.72
+StyleHub,110,79,79640.0,Fashion,98.73
+WealthGrow,110,38,29767.0,Wealth / SIP,97.37
+InsureWell,110,77,94347.0,Insurance,100.0
+PowerPay Utilities,110,31,24665.0,Utilities,100.0
+HealthFirst,111,68,55521.0,Pharmacy,100.0
+MetroRide,111,3753,4389154.0,Mobility,99.47
+BharatKart,111,687,820706.0,E-commerce,98.84
+GadgetZone,111,2610,2408317.0,Electronics,99.0
+WealthGrow,111,37,22296.0,Wealth / SIP,100.0
+CityFuel,111,72,59427.0,Fuel,98.61
+FreshBasket,111,80,87484.0,Grocery,100.0
+QuickBite,111,66,58132.0,Food Delivery,96.97
+StyleHub,111,67,81549.0,Fashion,100.0
+DailyMart,111,165,130778.0,Retail,98.18
+PowerPay Utilities,111,47,37644.0,Utilities,100.0
+InsureWell,111,72,88561.0,Insurance,100.0
+EduPrime,111,65,72245.0,EdTech,98.46
+FlixStream,111,41,38459.0,OTT / Subscriptions,100.0
+TravelGo,111,41,32754.0,Travel,100.0
+MetroRide,112,3346,3887695.0,Mobility,99.94
+GadgetZone,112,2277,2110385.0,Electronics,100.0
+BharatKart,112,608,659936.0,E-commerce,100.0
+DailyMart,112,173,172723.0,Retail,100.0
+TravelGo,112,30,23120.0,Travel,100.0
+PowerPay Utilities,112,45,48583.0,Utilities,100.0
+StyleHub,112,84,90584.0,Fashion,100.0
+InsureWell,112,55,47612.0,Insurance,100.0
+WealthGrow,112,46,39409.0,Wealth / SIP,100.0
+QuickBite,112,52,51235.0,Food Delivery,100.0
+FlixStream,112,35,15288.0,OTT / Subscriptions,100.0
+FreshBasket,112,58,58364.0,Grocery,100.0
+CityFuel,112,63,59258.0,Fuel,100.0
+HealthFirst,112,60,42634.0,Pharmacy,100.0
+EduPrime,112,51,70529.0,EdTech,100.0
+BharatKart,113,688,874480.0,E-commerce,100.0
+GadgetZone,113,2828,2607743.0,Electronics,99.89
+MetroRide,113,4049,4738336.0,Mobility,99.85
+TravelGo,113,45,47265.0,Travel,100.0
+WealthGrow,113,41,20818.0,Wealth / SIP,100.0
+DailyMart,113,157,158419.0,Retail,100.0
+QuickBite,113,65,59938.0,Food Delivery,100.0
+PowerPay Utilities,113,38,37393.0,Utilities,100.0
+CityFuel,113,74,88582.0,Fuel,100.0
+StyleHub,113,82,112278.0,Fashion,98.78
+HealthFirst,113,64,50078.0,Pharmacy,100.0
+EduPrime,113,70,84681.0,EdTech,100.0
+FlixStream,113,51,35817.0,OTT / Subscriptions,100.0
+FreshBasket,113,67,76164.0,Grocery,100.0
+InsureWell,113,83,85104.0,Insurance,100.0
+GadgetZone,114,2994,2789913.0,Electronics,98.56
+MetroRide,114,4281,4947617.0,Mobility,98.72
+WealthGrow,114,53,33189.0,Wealth / SIP,98.11
+BharatKart,114,744,889878.0,E-commerce,97.98
+DailyMart,114,206,194908.0,Retail,99.51
+InsureWell,114,80,95994.0,Insurance,100.0
+CityFuel,114,81,82442.0,Fuel,98.77
+HealthFirst,114,85,51530.0,Pharmacy,100.0
+StyleHub,114,80,66801.0,Fashion,98.75
+QuickBite,114,62,83976.0,Food Delivery,98.39
+PowerPay Utilities,114,57,39702.0,Utilities,100.0
+FreshBasket,114,75,61551.0,Grocery,98.67
+FlixStream,114,43,17146.0,OTT / Subscriptions,100.0
+EduPrime,114,61,78948.0,EdTech,100.0
+TravelGo,114,57,97413.0,Travel,100.0
+BharatKart,115,717,795912.0,E-commerce,99.72
+WealthGrow,115,45,23259.0,Wealth / SIP,100.0
+MetroRide,115,4184,4904526.0,Mobility,98.88
+GadgetZone,115,2980,2665358.0,Electronics,99.23
+DailyMart,115,200,187271.0,Retail,99.5
+CityFuel,115,69,85059.0,Fuel,100.0
+InsureWell,115,85,105930.0,Insurance,98.82
+TravelGo,115,45,57939.0,Travel,100.0
+HealthFirst,115,71,41427.0,Pharmacy,100.0
+StyleHub,115,83,88539.0,Fashion,100.0
+EduPrime,115,63,77344.0,EdTech,100.0
+PowerPay Utilities,115,43,32521.0,Utilities,100.0
+FlixStream,115,53,41850.0,OTT / Subscriptions,98.11
+QuickBite,115,61,50862.0,Food Delivery,98.36
+FreshBasket,115,103,114784.0,Grocery,100.0
+GadgetZone,116,2858,2558082.0,Electronics,99.27
+MetroRide,116,4183,5016781.0,Mobility,99.47
+HealthFirst,116,89,46505.0,Pharmacy,100.0
+BharatKart,116,709,825286.0,E-commerce,99.01
+StyleHub,116,90,92535.0,Fashion,98.89
+CityFuel,116,91,85397.0,Fuel,100.0
+FreshBasket,116,87,80575.0,Grocery,100.0
+EduPrime,116,62,69063.0,EdTech,98.39
+DailyMart,116,185,173773.0,Retail,99.46
+FlixStream,116,51,37476.0,OTT / Subscriptions,100.0
+WealthGrow,116,47,36626.0,Wealth / SIP,100.0
+InsureWell,116,91,99602.0,Insurance,97.8
+PowerPay Utilities,116,42,39587.0,Utilities,97.62
+QuickBite,116,72,70266.0,Food Delivery,98.61
+TravelGo,116,40,39435.0,Travel,100.0
+MetroRide,117,4325,5148419.0,Mobility,99.47
+GadgetZone,117,2950,2683922.0,Electronics,99.32
+BharatKart,117,718,816672.0,E-commerce,99.72
+QuickBite,117,67,51266.0,Food Delivery,98.51
+DailyMart,117,177,153182.0,Retail,99.44
+InsureWell,117,83,117613.0,Insurance,100.0
+StyleHub,117,94,104095.0,Fashion,100.0
+CityFuel,117,72,70354.0,Fuel,100.0
+HealthFirst,117,82,59205.0,Pharmacy,100.0
+FlixStream,117,57,43144.0,OTT / Subscriptions,100.0
+EduPrime,117,68,74938.0,EdTech,98.53
+TravelGo,117,47,35275.0,Travel,95.74
+FreshBasket,117,83,84062.0,Grocery,100.0
+WealthGrow,117,52,31330.0,Wealth / SIP,98.08
+PowerPay Utilities,117,37,21022.0,Utilities,100.0
+MetroRide,118,3841,4537922.0,Mobility,99.97
+BharatKart,118,665,793179.0,E-commerce,100.0
+InsureWell,118,69,87398.0,Insurance,100.0
+GadgetZone,118,2653,2473289.0,Electronics,99.96
+StyleHub,118,101,133289.0,Fashion,100.0
+QuickBite,118,56,44257.0,Food Delivery,100.0
+WealthGrow,118,51,27963.0,Wealth / SIP,100.0
+FreshBasket,118,73,65144.0,Grocery,100.0
+CityFuel,118,74,65323.0,Fuel,100.0
+DailyMart,118,179,153779.0,Retail,100.0
+HealthFirst,118,65,56647.0,Pharmacy,100.0
+EduPrime,118,60,63808.0,EdTech,100.0
+PowerPay Utilities,118,43,45909.0,Utilities,100.0
+TravelGo,118,42,66172.0,Travel,100.0
+FlixStream,118,38,26671.0,OTT / Subscriptions,100.0
+MetroRide,119,3553,4279226.0,Mobility,100.0
+GadgetZone,119,2337,2035162.0,Electronics,100.0
+StyleHub,119,55,64426.0,Fashion,100.0
+BharatKart,119,554,675186.0,E-commerce,100.0
+QuickBite,119,64,59690.0,Food Delivery,100.0
+FreshBasket,119,79,75101.0,Grocery,100.0
+InsureWell,119,66,88327.0,Insurance,100.0
+DailyMart,119,184,178100.0,Retail,100.0
+EduPrime,119,47,59849.0,EdTech,100.0
+PowerPay Utilities,119,37,35766.0,Utilities,100.0
+FlixStream,119,34,16902.0,OTT / Subscriptions,100.0
+HealthFirst,119,60,41600.0,Pharmacy,100.0
+CityFuel,119,75,64763.0,Fuel,100.0
+WealthGrow,119,36,34440.0,Wealth / SIP,100.0
+TravelGo,119,30,61333.0,Travel,100.0
+GadgetZone,120,2964,2725429.0,Electronics,99.53
+MetroRide,120,4271,5205185.0,Mobility,99.56
+BharatKart,120,746,893186.0,E-commerce,99.33
+CityFuel,120,85,77112.0,Fuel,98.82
+EduPrime,120,73,63417.0,EdTech,100.0
+DailyMart,120,193,164654.0,Retail,98.96
+QuickBite,120,55,62790.0,Food Delivery,100.0
+HealthFirst,120,88,58077.0,Pharmacy,100.0
+FreshBasket,120,69,72709.0,Grocery,98.55
+StyleHub,120,74,99719.0,Fashion,98.65
+WealthGrow,120,38,20879.0,Wealth / SIP,100.0
+TravelGo,120,37,67893.0,Travel,100.0
+InsureWell,120,81,111515.0,Insurance,98.77
+PowerPay Utilities,120,45,42720.0,Utilities,95.56
+FlixStream,120,50,29351.0,OTT / Subscriptions,98.0
+GadgetZone,121,2965,2764478.0,Electronics,99.73
+MetroRide,121,4235,4967745.0,Mobility,99.74
+FlixStream,121,56,30222.0,OTT / Subscriptions,100.0
+BharatKart,121,711,870071.0,E-commerce,99.72
+StyleHub,121,85,118506.0,Fashion,100.0
+FreshBasket,121,72,60389.0,Grocery,100.0
+DailyMart,121,191,180174.0,Retail,100.0
+WealthGrow,121,50,31530.0,Wealth / SIP,100.0
+EduPrime,121,68,73827.0,EdTech,100.0
+QuickBite,121,64,66367.0,Food Delivery,100.0
+CityFuel,121,92,84413.0,Fuel,100.0
+TravelGo,121,41,38024.0,Travel,100.0
+InsureWell,121,82,73553.0,Insurance,100.0
+PowerPay Utilities,121,60,50106.0,Utilities,100.0
+HealthFirst,121,72,46031.0,Pharmacy,100.0
+MetroRide,122,4246,5104848.0,Mobility,99.95
+GadgetZone,122,3135,2862584.0,Electronics,100.0
+BharatKart,122,757,882583.0,E-commerce,100.0
+DailyMart,122,187,173106.0,Retail,100.0
+CityFuel,122,79,72429.0,Fuel,100.0
+FlixStream,122,56,45042.0,OTT / Subscriptions,100.0
+InsureWell,122,87,91706.0,Insurance,100.0
+QuickBite,122,60,42490.0,Food Delivery,100.0
+StyleHub,122,91,91981.0,Fashion,100.0
+WealthGrow,122,50,29836.0,Wealth / SIP,100.0
+HealthFirst,122,99,59321.0,Pharmacy,100.0
+FreshBasket,122,82,76228.0,Grocery,100.0
+EduPrime,122,67,100431.0,EdTech,100.0
+PowerPay Utilities,122,31,30002.0,Utilities,100.0
+TravelGo,122,38,47233.0,Travel,100.0
+GadgetZone,123,2972,2759071.0,Electronics,99.9
+MetroRide,123,4291,5222568.0,Mobility,100.0
+FreshBasket,123,71,80738.0,Grocery,100.0
+DailyMart,123,191,178579.0,Retail,100.0
+BharatKart,123,802,970544.0,E-commerce,100.0
+StyleHub,123,89,120376.0,Fashion,100.0
+WealthGrow,123,45,33478.0,Wealth / SIP,100.0
+FlixStream,123,51,28709.0,OTT / Subscriptions,100.0
+PowerPay Utilities,123,68,65937.0,Utilities,100.0
+InsureWell,123,91,128504.0,Insurance,100.0
+QuickBite,123,66,56400.0,Food Delivery,100.0
+EduPrime,123,68,101241.0,EdTech,100.0
+HealthFirst,123,71,41569.0,Pharmacy,100.0
+CityFuel,123,97,85193.0,Fuel,100.0
+TravelGo,123,39,49485.0,Travel,100.0
+MetroRide,124,4465,5244519.0,Mobility,99.98
+GadgetZone,124,2951,2736673.0,Electronics,99.97
+BharatKart,124,737,924813.0,E-commerce,99.86
+FreshBasket,124,74,64676.0,Grocery,100.0
+DailyMart,124,197,170300.0,Retail,100.0
+InsureWell,124,94,133449.0,Insurance,100.0
+PowerPay Utilities,124,60,55274.0,Utilities,100.0
+QuickBite,124,76,72997.0,Food Delivery,100.0
+EduPrime,124,67,73807.0,EdTech,100.0
+FlixStream,124,43,28329.0,OTT / Subscriptions,100.0
+WealthGrow,124,42,44535.0,Wealth / SIP,100.0
+CityFuel,124,88,93862.0,Fuel,100.0
+TravelGo,124,49,71744.0,Travel,100.0
+StyleHub,124,81,84054.0,Fashion,100.0
+HealthFirst,124,80,53770.0,Pharmacy,100.0
+MetroRide,125,3920,4686242.0,Mobility,99.72
+GadgetZone,125,2733,2439070.0,Electronics,99.71
+BharatKart,125,725,904036.0,E-commerce,100.0
+QuickBite,125,75,64595.0,Food Delivery,98.67
+StyleHub,125,71,81597.0,Fashion,100.0
+InsureWell,125,76,88450.0,Insurance,100.0
+FlixStream,125,54,40181.0,OTT / Subscriptions,100.0
+WealthGrow,125,42,32429.0,Wealth / SIP,100.0
+PowerPay Utilities,125,37,35753.0,Utilities,100.0
+DailyMart,125,187,155637.0,Retail,100.0
+FreshBasket,125,63,45546.0,Grocery,98.41
+TravelGo,125,38,51518.0,Travel,100.0
+EduPrime,125,71,72688.0,EdTech,100.0
+HealthFirst,125,63,41747.0,Pharmacy,100.0
+CityFuel,125,77,76097.0,Fuel,100.0
+MetroRide,126,3545,4187530.0,Mobility,98.0
+QuickBite,126,50,35297.0,Food Delivery,96.0
+GadgetZone,126,2481,2333550.0,Electronics,98.35
+BharatKart,126,559,696106.0,E-commerce,98.75
+DailyMart,126,164,187105.0,Retail,96.34
+StyleHub,126,65,84412.0,Fashion,100.0
+TravelGo,126,47,50765.0,Travel,97.87
+HealthFirst,126,68,36030.0,Pharmacy,97.06
+EduPrime,126,58,54768.0,EdTech,98.28
+InsureWell,126,65,77398.0,Insurance,98.46
+PowerPay Utilities,126,39,23518.0,Utilities,94.87
+WealthGrow,126,43,26707.0,Wealth / SIP,100.0
+CityFuel,126,73,54852.0,Fuel,97.26
+FlixStream,126,37,26455.0,OTT / Subscriptions,100.0
+FreshBasket,126,80,74463.0,Grocery,100.0
+MetroRide,127,4295,5252683.0,Mobility,98.39
+GadgetZone,127,2933,2693469.0,Electronics,98.87
+CityFuel,127,89,70627.0,Fuel,100.0
+DailyMart,127,200,168232.0,Retail,98.0
+QuickBite,127,60,49435.0,Food Delivery,96.67
+InsureWell,127,87,115472.0,Insurance,98.85
+BharatKart,127,741,872524.0,E-commerce,99.06
+PowerPay Utilities,127,44,33195.0,Utilities,100.0
+TravelGo,127,40,52412.0,Travel,95.0
+HealthFirst,127,76,54572.0,Pharmacy,100.0
+EduPrime,127,74,98388.0,EdTech,100.0
+StyleHub,127,90,112194.0,Fashion,100.0
+WealthGrow,127,39,23661.0,Wealth / SIP,100.0
+FlixStream,127,48,30148.0,OTT / Subscriptions,100.0
+FreshBasket,127,80,86526.0,Grocery,97.5
+FreshBasket,128,85,61251.0,Grocery,100.0
+DailyMart,128,195,160648.0,Retail,99.49
+GadgetZone,128,3125,2975401.0,Electronics,100.0
+MetroRide,128,4598,5545253.0,Mobility,99.96
+BharatKart,128,785,935039.0,E-commerce,100.0
+StyleHub,128,85,108911.0,Fashion,100.0
+CityFuel,128,85,67126.0,Fuel,100.0
+FlixStream,128,33,16898.0,OTT / Subscriptions,100.0
+EduPrime,128,68,66744.0,EdTech,100.0
+QuickBite,128,62,63452.0,Food Delivery,100.0
+PowerPay Utilities,128,45,46022.0,Utilities,100.0
+InsureWell,128,79,93682.0,Insurance,100.0
+TravelGo,128,47,69812.0,Travel,100.0
+HealthFirst,128,80,51699.0,Pharmacy,100.0
+WealthGrow,128,35,21541.0,Wealth / SIP,100.0
+GadgetZone,129,3332,3102053.0,Electronics,98.38
+MetroRide,129,4971,5994603.0,Mobility,98.25
+EduPrime,129,75,83111.0,EdTech,100.0
+BharatKart,129,866,1057975.0,E-commerce,97.69
+PowerPay Utilities,129,59,46950.0,Utilities,100.0
+QuickBite,129,100,95246.0,Food Delivery,100.0
+DailyMart,129,234,242636.0,Retail,99.15
+CityFuel,129,97,90197.0,Fuel,97.94
+InsureWell,129,98,149244.0,Insurance,97.96
+HealthFirst,129,87,51465.0,Pharmacy,100.0
+TravelGo,129,53,74712.0,Travel,96.23
+StyleHub,129,116,129172.0,Fashion,99.14
+FreshBasket,129,93,89474.0,Grocery,97.85
+WealthGrow,129,46,30844.0,Wealth / SIP,100.0
+FlixStream,129,54,55793.0,OTT / Subscriptions,96.3
+MetroRide,130,5047,6069274.0,Mobility,99.66
+GadgetZone,130,3478,3255871.0,Electronics,99.71
+BharatKart,130,834,1045154.0,E-commerce,99.76
+DailyMart,130,218,177057.0,Retail,99.54
+StyleHub,130,85,117516.0,Fashion,100.0
+FreshBasket,130,89,63450.0,Grocery,98.88
+CityFuel,130,94,93267.0,Fuel,100.0
+WealthGrow,130,42,44684.0,Wealth / SIP,100.0
+HealthFirst,130,81,68202.0,Pharmacy,100.0
+EduPrime,130,77,70547.0,EdTech,97.4
+QuickBite,130,95,75828.0,Food Delivery,100.0
+FlixStream,130,51,24100.0,OTT / Subscriptions,100.0
+PowerPay Utilities,130,42,38706.0,Utilities,100.0
+InsureWell,130,96,90884.0,Insurance,100.0
+TravelGo,130,58,58811.0,Travel,100.0
+MetroRide,131,5001,6139846.0,Mobility,98.36
+HealthFirst,131,89,72732.0,Pharmacy,95.51
+GadgetZone,131,3450,3208114.0,Electronics,98.75
+DailyMart,131,248,232782.0,Retail,98.39
+BharatKart,131,893,1094550.0,E-commerce,98.21
+StyleHub,131,78,79593.0,Fashion,100.0
+CityFuel,131,94,87478.0,Fuel,93.62
+InsureWell,131,108,120007.0,Insurance,99.07
+PowerPay Utilities,131,51,46208.0,Utilities,100.0
+FreshBasket,131,111,79523.0,Grocery,98.2
+WealthGrow,131,57,37920.0,Wealth / SIP,96.49
+QuickBite,131,95,94721.0,Food Delivery,98.95
+EduPrime,131,88,100873.0,EdTech,100.0
+TravelGo,131,68,84256.0,Travel,100.0
+FlixStream,131,54,28676.0,OTT / Subscriptions,100.0
+MetroRide,132,4794,5791971.0,Mobility,99.98
+GadgetZone,132,3460,3209132.0,Electronics,99.97
+PowerPay Utilities,132,77,47822.0,Utilities,100.0
+BharatKart,132,866,1027261.0,E-commerce,99.88
+QuickBite,132,85,84324.0,Food Delivery,100.0
+EduPrime,132,83,88412.0,EdTech,100.0
+DailyMart,132,222,243130.0,Retail,100.0
+TravelGo,132,59,64414.0,Travel,100.0
+CityFuel,132,97,78885.0,Fuel,100.0
+FlixStream,132,60,50226.0,OTT / Subscriptions,100.0
+InsureWell,132,102,137213.0,Insurance,100.0
+FreshBasket,132,82,64976.0,Grocery,100.0
+HealthFirst,132,83,49388.0,Pharmacy,100.0
+WealthGrow,132,52,33053.0,Wealth / SIP,100.0
+StyleHub,132,89,119959.0,Fashion,100.0
+MetroRide,133,3697,4393975.0,Mobility,99.03
+GadgetZone,133,2472,2311883.0,Electronics,99.27
+EduPrime,133,67,73484.0,EdTech,100.0
+QuickBite,133,66,57420.0,Food Delivery,96.97
+BharatKart,133,609,824595.0,E-commerce,98.85
+StyleHub,133,75,91284.0,Fashion,98.67
+CityFuel,133,66,53121.0,Fuel,96.97
+FlixStream,133,42,21405.0,OTT / Subscriptions,100.0
+DailyMart,133,171,183487.0,Retail,99.42
+FreshBasket,133,68,67158.0,Grocery,100.0
+HealthFirst,133,67,54009.0,Pharmacy,98.51
+WealthGrow,133,36,34762.0,Wealth / SIP,100.0
+TravelGo,133,45,50583.0,Travel,97.78
+InsureWell,133,63,82980.0,Insurance,98.41
+PowerPay Utilities,133,39,30444.0,Utilities,100.0
+MetroRide,134,4400,5344421.0,Mobility,99.11
+BharatKart,134,758,982047.0,E-commerce,98.68
+QuickBite,134,75,64282.0,Food Delivery,100.0
+GadgetZone,134,3036,2897901.0,Electronics,99.14
+CityFuel,134,75,57735.0,Fuel,100.0
+FreshBasket,134,77,65791.0,Grocery,96.1
+HealthFirst,134,66,39830.0,Pharmacy,98.48
+FlixStream,134,53,50709.0,OTT / Subscriptions,100.0
+TravelGo,134,40,36348.0,Travel,97.5
+DailyMart,134,207,208181.0,Retail,98.07
+EduPrime,134,63,70823.0,EdTech,95.24
+WealthGrow,134,56,50169.0,Wealth / SIP,96.43
+StyleHub,134,89,99728.0,Fashion,100.0
+PowerPay Utilities,134,51,49233.0,Utilities,100.0
+InsureWell,134,73,89959.0,Insurance,100.0
+MetroRide,135,4560,5646429.0,Mobility,99.12
+GadgetZone,135,3121,2810411.0,Electronics,99.3
+WealthGrow,135,47,24881.0,Wealth / SIP,100.0
+HealthFirst,135,83,70691.0,Pharmacy,98.8
+InsureWell,135,94,111519.0,Insurance,100.0
+BharatKart,135,772,955624.0,E-commerce,99.74
+FlixStream,135,42,29613.0,OTT / Subscriptions,100.0
+StyleHub,135,86,104136.0,Fashion,98.84
+EduPrime,135,76,129293.0,EdTech,98.68
+DailyMart,135,223,220910.0,Retail,98.65
+CityFuel,135,92,95448.0,Fuel,100.0
+TravelGo,135,43,41185.0,Travel,100.0
+PowerPay Utilities,135,49,50370.0,Utilities,95.92
+FreshBasket,135,101,106626.0,Grocery,98.02
+QuickBite,135,80,62252.0,Food Delivery,97.5
+MetroRide,136,4314,5151770.0,Mobility,99.51
+StyleHub,136,102,99985.0,Fashion,100.0
+GadgetZone,136,3098,2970105.0,Electronics,99.58
+BharatKart,136,747,864529.0,E-commerce,99.87
+DailyMart,136,199,188943.0,Retail,100.0
+EduPrime,136,65,72814.0,EdTech,100.0
+CityFuel,136,82,86027.0,Fuel,98.78
+HealthFirst,136,80,58420.0,Pharmacy,98.75
+WealthGrow,136,57,36462.0,Wealth / SIP,100.0
+InsureWell,136,93,113272.0,Insurance,97.85
+FreshBasket,136,102,87934.0,Grocery,100.0
+TravelGo,136,45,69244.0,Travel,100.0
+QuickBite,136,88,75092.0,Food Delivery,100.0
+FlixStream,136,47,41810.0,OTT / Subscriptions,97.87
+PowerPay Utilities,136,44,34511.0,Utilities,100.0
+MetroRide,137,4613,5756618.0,Mobility,99.13
+GadgetZone,137,3124,2753360.0,Electronics,99.01
+StyleHub,137,112,129972.0,Fashion,97.32
+FlixStream,137,58,50026.0,OTT / Subscriptions,98.28
+FreshBasket,137,93,72931.0,Grocery,98.92
+BharatKart,137,797,1040832.0,E-commerce,99.5
+PowerPay Utilities,137,44,40371.0,Utilities,100.0
+EduPrime,137,63,70123.0,EdTech,96.83
+DailyMart,137,226,192478.0,Retail,100.0
+CityFuel,137,85,105875.0,Fuel,100.0
+InsureWell,137,95,88286.0,Insurance,100.0
+HealthFirst,137,78,60381.0,Pharmacy,100.0
+QuickBite,137,52,43509.0,Food Delivery,96.15
+TravelGo,137,39,35984.0,Travel,100.0
+WealthGrow,137,41,38713.0,Wealth / SIP,95.12
+MetroRide,138,5553,6877813.0,Mobility,99.93
+GadgetZone,138,3921,3580454.0,Electronics,99.87
+QuickBite,138,83,68098.0,Food Delivery,98.8
+BharatKart,138,902,1005911.0,E-commerce,99.89
+InsureWell,138,100,123900.0,Insurance,100.0
+DailyMart,138,260,262010.0,Retail,99.62
+EduPrime,138,92,75419.0,EdTech,100.0
+StyleHub,138,118,109647.0,Fashion,100.0
+FreshBasket,138,97,88044.0,Grocery,100.0
+CityFuel,138,99,84227.0,Fuel,100.0
+HealthFirst,138,98,53329.0,Pharmacy,100.0
+TravelGo,138,75,94045.0,Travel,100.0
+PowerPay Utilities,138,59,58827.0,Utilities,100.0
+WealthGrow,138,68,53497.0,Wealth / SIP,100.0
+FlixStream,138,47,22953.0,OTT / Subscriptions,100.0
+BharatKart,139,719,862191.0,E-commerce,99.58
+MetroRide,139,4255,5279312.0,Mobility,99.76
+GadgetZone,139,2896,2801728.0,Electronics,99.59
+QuickBite,139,70,71963.0,Food Delivery,100.0
+EduPrime,139,64,72579.0,EdTech,100.0
+InsureWell,139,82,71848.0,Insurance,100.0
+FreshBasket,139,72,75357.0,Grocery,98.61
+StyleHub,139,89,116066.0,Fashion,100.0
+DailyMart,139,190,160811.0,Retail,99.47
+CityFuel,139,78,77674.0,Fuel,98.72
+HealthFirst,139,75,43811.0,Pharmacy,100.0
+TravelGo,139,40,39300.0,Travel,100.0
+FlixStream,139,47,24038.0,OTT / Subscriptions,97.87
+PowerPay Utilities,139,39,34347.0,Utilities,100.0
+WealthGrow,139,32,24802.0,Wealth / SIP,100.0
+MetroRide,140,3823,4648577.0,Mobility,99.35
+GadgetZone,140,2615,2539802.0,Electronics,99.31
+BharatKart,140,632,716409.0,E-commerce,99.53
+DailyMart,140,181,176362.0,Retail,98.34
+StyleHub,140,78,92341.0,Fashion,98.72
+InsureWell,140,72,87813.0,Insurance,100.0
+WealthGrow,140,46,36502.0,Wealth / SIP,97.83
+EduPrime,140,72,84653.0,EdTech,97.22
+TravelGo,140,36,42385.0,Travel,100.0
+FlixStream,140,37,29576.0,OTT / Subscriptions,100.0
+QuickBite,140,60,49753.0,Food Delivery,100.0
+HealthFirst,140,55,46072.0,Pharmacy,98.18
+FreshBasket,140,61,85190.0,Grocery,98.36
+PowerPay Utilities,140,33,26525.0,Utilities,100.0
+CityFuel,140,70,71661.0,Fuel,100.0
+MetroRide,141,4454,5383123.0,Mobility,99.69
+GadgetZone,141,3097,2948641.0,Electronics,99.84
+QuickBite,141,54,63739.0,Food Delivery,100.0
+BharatKart,141,769,941011.0,E-commerce,99.87
+InsureWell,141,79,93819.0,Insurance,100.0
+DailyMart,141,215,224133.0,Retail,100.0
+CityFuel,141,83,97895.0,Fuel,98.8
+FreshBasket,141,77,56594.0,Grocery,100.0
+WealthGrow,141,38,23825.0,Wealth / SIP,100.0
+TravelGo,141,39,48124.0,Travel,100.0
+FlixStream,141,50,43922.0,OTT / Subscriptions,100.0
+HealthFirst,141,79,50984.0,Pharmacy,100.0
+StyleHub,141,94,106077.0,Fashion,100.0
+EduPrime,141,69,66927.0,EdTech,100.0
+PowerPay Utilities,141,52,49262.0,Utilities,100.0
+MetroRide,142,4636,5597508.0,Mobility,98.9
+StyleHub,142,86,95309.0,Fashion,97.67
+GadgetZone,142,3253,3118770.0,Electronics,99.14
+BharatKart,142,815,1059635.0,E-commerce,98.9
+CityFuel,142,105,101575.0,Fuel,100.0
+FlixStream,142,55,38883.0,OTT / Subscriptions,98.18
+QuickBite,142,79,81336.0,Food Delivery,98.73
+FreshBasket,142,79,69432.0,Grocery,98.73
+DailyMart,142,232,193813.0,Retail,98.71
+PowerPay Utilities,142,54,52058.0,Utilities,98.15
+EduPrime,142,84,95503.0,EdTech,98.81
+HealthFirst,142,74,48046.0,Pharmacy,100.0
+InsureWell,142,88,96552.0,Insurance,100.0
+WealthGrow,142,58,29558.0,Wealth / SIP,98.28
+TravelGo,142,68,75139.0,Travel,100.0
+GadgetZone,143,3161,2937816.0,Electronics,99.78
+MetroRide,143,4753,5770012.0,Mobility,99.6
+BharatKart,143,798,959234.0,E-commerce,99.87
+QuickBite,143,69,44153.0,Food Delivery,100.0
+DailyMart,143,231,213032.0,Retail,100.0
+FreshBasket,143,87,82104.0,Grocery,98.85
+InsureWell,143,103,155506.0,Insurance,100.0
+CityFuel,143,78,72832.0,Fuel,100.0
+WealthGrow,143,46,38878.0,Wealth / SIP,100.0
+TravelGo,143,44,57639.0,Travel,100.0
+FlixStream,143,70,60706.0,OTT / Subscriptions,100.0
+StyleHub,143,92,115712.0,Fashion,100.0
+EduPrime,143,91,106006.0,EdTech,98.9
+PowerPay Utilities,143,59,47579.0,Utilities,100.0
+HealthFirst,143,107,87476.0,Pharmacy,99.07
+BharatKart,144,826,991505.0,E-commerce,100.0
+GadgetZone,144,3309,3268727.0,Electronics,99.94
+MetroRide,144,4478,5461401.0,Mobility,100.0
+StyleHub,144,84,85529.0,Fashion,100.0
+DailyMart,144,227,243768.0,Retail,100.0
+InsureWell,144,105,144316.0,Insurance,100.0
+CityFuel,144,83,84273.0,Fuel,100.0
+HealthFirst,144,91,64612.0,Pharmacy,100.0
+QuickBite,144,62,60016.0,Food Delivery,100.0
+TravelGo,144,42,62015.0,Travel,100.0
+WealthGrow,144,47,27171.0,Wealth / SIP,100.0
+FreshBasket,144,89,81399.0,Grocery,100.0
+EduPrime,144,79,116738.0,EdTech,100.0
+PowerPay Utilities,144,50,56802.0,Utilities,98.0
+FlixStream,144,45,18682.0,OTT / Subscriptions,100.0
+MetroRide,145,4754,5830652.0,Mobility,99.89
+FreshBasket,145,81,76099.0,Grocery,100.0
+GadgetZone,145,3210,3132959.0,Electronics,99.69
+HealthFirst,145,84,54781.0,Pharmacy,100.0
+EduPrime,145,83,85892.0,EdTech,100.0
+BharatKart,145,848,975387.0,E-commerce,99.76
+StyleHub,145,89,99048.0,Fashion,100.0
+DailyMart,145,211,207518.0,Retail,100.0
+InsureWell,145,90,100623.0,Insurance,100.0
+TravelGo,145,47,70284.0,Travel,100.0
+QuickBite,145,78,84944.0,Food Delivery,100.0
+CityFuel,145,111,106400.0,Fuel,98.2
+WealthGrow,145,48,24355.0,Wealth / SIP,100.0
+FlixStream,145,46,37065.0,OTT / Subscriptions,100.0
+PowerPay Utilities,145,51,46366.0,Utilities,100.0
+GadgetZone,146,2800,2642574.0,Electronics,100.0
+MetroRide,146,4085,5142832.0,Mobility,99.95
+QuickBite,146,73,68498.0,Food Delivery,100.0
+FlixStream,146,43,28368.0,OTT / Subscriptions,100.0
+WealthGrow,146,56,46592.0,Wealth / SIP,100.0
+BharatKart,146,716,894172.0,E-commerce,100.0
+HealthFirst,146,76,54498.0,Pharmacy,100.0
+PowerPay Utilities,146,43,33436.0,Utilities,100.0
+CityFuel,146,76,95413.0,Fuel,100.0
+StyleHub,146,103,110422.0,Fashion,100.0
+InsureWell,146,70,74778.0,Insurance,100.0
+DailyMart,146,179,163985.0,Retail,100.0
+EduPrime,146,72,76632.0,EdTech,100.0
+TravelGo,146,55,59026.0,Travel,100.0
+FreshBasket,146,62,85465.0,Grocery,100.0
+MetroRide,147,3767,4710223.0,Mobility,98.43
+FreshBasket,147,73,72730.0,Grocery,97.26
+GadgetZone,147,2604,2515363.0,Electronics,98.69
+BharatKart,147,712,820562.0,E-commerce,98.88
+CityFuel,147,85,76429.0,Fuel,98.82
+HealthFirst,147,69,42761.0,Pharmacy,97.1
+FlixStream,147,37,17568.0,OTT / Subscriptions,94.59
+DailyMart,147,157,142420.0,Retail,97.45
+StyleHub,147,87,117630.0,Fashion,100.0
+PowerPay Utilities,147,42,38019.0,Utilities,97.62
+QuickBite,147,61,69267.0,Food Delivery,100.0
+InsureWell,147,66,67409.0,Insurance,98.48
+TravelGo,147,48,60332.0,Travel,97.92
+WealthGrow,147,37,30987.0,Wealth / SIP,100.0
+EduPrime,147,60,59502.0,EdTech,96.67
+MetroRide,148,4555,5864150.0,Mobility,99.52
+GadgetZone,148,3129,2912825.0,Electronics,99.65
+WealthGrow,148,46,33281.0,Wealth / SIP,100.0
+BharatKart,148,761,925532.0,E-commerce,99.47
+HealthFirst,148,68,42597.0,Pharmacy,100.0
+DailyMart,148,177,151644.0,Retail,98.87
+StyleHub,148,84,89332.0,Fashion,100.0
+PowerPay Utilities,148,50,45978.0,Utilities,98.0
+EduPrime,148,76,91629.0,EdTech,94.74
+InsureWell,148,89,120202.0,Insurance,97.75
+FreshBasket,148,70,71334.0,Grocery,100.0
+QuickBite,148,52,45703.0,Food Delivery,100.0
+CityFuel,148,94,96003.0,Fuel,100.0
+FlixStream,148,50,30364.0,OTT / Subscriptions,100.0
+TravelGo,148,52,68327.0,Travel,100.0
+MetroRide,149,4775,5840240.0,Mobility,99.71
+GadgetZone,149,3320,3339439.0,Electronics,99.49
+BharatKart,149,841,1064229.0,E-commerce,99.76
+TravelGo,149,43,55194.0,Travel,100.0
+DailyMart,149,223,202748.0,Retail,100.0
+InsureWell,149,81,87268.0,Insurance,100.0
+CityFuel,149,101,99832.0,Fuel,100.0
+PowerPay Utilities,149,49,37308.0,Utilities,100.0
+QuickBite,149,93,112261.0,Food Delivery,100.0
+WealthGrow,149,45,46676.0,Wealth / SIP,100.0
+StyleHub,149,82,108086.0,Fashion,100.0
+HealthFirst,149,64,47390.0,Pharmacy,100.0
+FreshBasket,149,75,66049.0,Grocery,100.0
+EduPrime,149,92,136672.0,EdTech,100.0
+FlixStream,149,52,38240.0,OTT / Subscriptions,100.0
+GadgetZone,150,3310,3233797.0,Electronics,99.94
+BharatKart,150,809,1069333.0,E-commerce,100.0
+MetroRide,150,4643,5838160.0,Mobility,99.98
+CityFuel,150,118,98708.0,Fuel,100.0
+InsureWell,150,93,95098.0,Insurance,100.0
+HealthFirst,150,99,80409.0,Pharmacy,100.0
+WealthGrow,150,56,43831.0,Wealth / SIP,100.0
+FreshBasket,150,94,85148.0,Grocery,100.0
+QuickBite,150,76,55416.0,Food Delivery,100.0
+DailyMart,150,234,198542.0,Retail,100.0
+TravelGo,150,54,58735.0,Travel,100.0
+EduPrime,150,66,70486.0,EdTech,100.0
+StyleHub,150,84,98104.0,Fashion,100.0
+PowerPay Utilities,150,41,40304.0,Utilities,100.0
+FlixStream,150,51,36633.0,OTT / Subscriptions,100.0
+GadgetZone,151,3293,3067904.0,Electronics,99.94
+MetroRide,151,4693,5711290.0,Mobility,99.91
+FreshBasket,151,90,67864.0,Grocery,100.0
+BharatKart,151,806,963886.0,E-commerce,99.75
+QuickBite,151,88,93624.0,Food Delivery,100.0
+InsureWell,151,99,123464.0,Insurance,100.0
+StyleHub,151,102,127030.0,Fashion,100.0
+HealthFirst,151,85,63874.0,Pharmacy,100.0
+DailyMart,151,223,217431.0,Retail,99.55
+EduPrime,151,61,84188.0,EdTech,98.36
+CityFuel,151,106,90250.0,Fuel,100.0
+TravelGo,151,52,72438.0,Travel,100.0
+WealthGrow,151,53,37514.0,Wealth / SIP,100.0
+PowerPay Utilities,151,56,40503.0,Utilities,100.0
+FlixStream,151,43,29759.0,OTT / Subscriptions,100.0
+GadgetZone,152,3226,3179754.0,Electronics,99.6
+MetroRide,152,4752,5850319.0,Mobility,99.54
+TravelGo,152,69,89981.0,Travel,100.0
+DailyMart,152,214,198222.0,Retail,100.0
+QuickBite,152,90,60316.0,Food Delivery,100.0
+EduPrime,152,82,106979.0,EdTech,100.0
+FreshBasket,152,73,85767.0,Grocery,100.0
+BharatKart,152,816,1034117.0,E-commerce,99.63
+HealthFirst,152,69,57484.0,Pharmacy,100.0
+InsureWell,152,92,117475.0,Insurance,100.0
+FlixStream,152,56,36585.0,OTT / Subscriptions,100.0
+StyleHub,152,74,95841.0,Fashion,100.0
+PowerPay Utilities,152,49,54327.0,Utilities,100.0
+WealthGrow,152,51,27063.0,Wealth / SIP,100.0
+CityFuel,152,83,78597.0,Fuel,97.59
+GadgetZone,153,3049,2930080.0,Electronics,99.11
+TravelGo,153,40,37601.0,Travel,100.0
+MetroRide,153,4251,5428242.0,Mobility,99.27
+StyleHub,153,98,116932.0,Fashion,98.98
+CityFuel,153,103,103352.0,Fuel,99.03
+BharatKart,153,756,939004.0,E-commerce,99.21
+QuickBite,153,74,69422.0,Food Delivery,100.0
+DailyMart,153,219,249652.0,Retail,100.0
+EduPrime,153,77,106468.0,EdTech,100.0
+FreshBasket,153,85,71501.0,Grocery,100.0
+FlixStream,153,33,26977.0,OTT / Subscriptions,96.97
+WealthGrow,153,53,41967.0,Wealth / SIP,100.0
+PowerPay Utilities,153,43,39383.0,Utilities,100.0
+HealthFirst,153,97,77361.0,Pharmacy,100.0
+InsureWell,153,94,118222.0,Insurance,100.0
+GadgetZone,154,2767,2637735.0,Electronics,100.0
+MetroRide,154,3968,5053523.0,Mobility,99.95
+BharatKart,154,696,946234.0,E-commerce,100.0
+DailyMart,154,168,172250.0,Retail,100.0
+EduPrime,154,65,79088.0,EdTech,100.0
+TravelGo,154,43,37426.0,Travel,100.0
+FreshBasket,154,84,83886.0,Grocery,100.0
+InsureWell,154,79,101077.0,Insurance,100.0
+FlixStream,154,51,34111.0,OTT / Subscriptions,100.0
+StyleHub,154,82,124736.0,Fashion,100.0
+HealthFirst,154,62,40598.0,Pharmacy,100.0
+WealthGrow,154,36,27964.0,Wealth / SIP,100.0
+QuickBite,154,57,40962.0,Food Delivery,100.0
+CityFuel,154,80,83134.0,Fuel,100.0
+PowerPay Utilities,154,34,33581.0,Utilities,100.0
+MetroRide,155,4739,5720040.0,Mobility,99.87
+GadgetZone,155,3347,3260467.0,Electronics,99.88
+BharatKart,155,840,1088016.0,E-commerce,100.0
+DailyMart,155,197,191761.0,Retail,100.0
+PowerPay Utilities,155,55,51021.0,Utilities,100.0
+FreshBasket,155,72,73879.0,Grocery,100.0
+QuickBite,155,89,75654.0,Food Delivery,100.0
+InsureWell,155,79,114727.0,Insurance,100.0
+CityFuel,155,106,108578.0,Fuel,100.0
+StyleHub,155,98,135611.0,Fashion,100.0
+WealthGrow,155,47,37484.0,Wealth / SIP,100.0
+TravelGo,155,48,80616.0,Travel,100.0
+HealthFirst,155,84,63485.0,Pharmacy,100.0
+EduPrime,155,64,73582.0,EdTech,100.0
+FlixStream,155,52,43781.0,OTT / Subscriptions,100.0
+MetroRide,156,4741,5954458.0,Mobility,99.22
+GadgetZone,156,3343,3327511.0,Electronics,99.04
+BharatKart,156,818,998132.0,E-commerce,99.27
+PowerPay Utilities,156,51,42415.0,Utilities,100.0
+FreshBasket,156,86,67867.0,Grocery,98.84
+CityFuel,156,120,105928.0,Fuel,100.0
+TravelGo,156,49,56996.0,Travel,100.0
+InsureWell,156,91,115629.0,Insurance,100.0
+DailyMart,156,225,204274.0,Retail,99.56
+FlixStream,156,61,30322.0,OTT / Subscriptions,100.0
+StyleHub,156,86,111400.0,Fashion,98.84
+HealthFirst,156,98,58892.0,Pharmacy,97.96
+EduPrime,156,67,85930.0,EdTech,100.0
+WealthGrow,156,49,33346.0,Wealth / SIP,100.0
+QuickBite,156,69,66184.0,Food Delivery,98.55
+MetroRide,157,4866,5977861.0,Mobility,99.92
+BharatKart,157,864,1067361.0,E-commerce,100.0
+GadgetZone,157,3378,3182715.0,Electronics,99.97
+FreshBasket,157,85,84438.0,Grocery,100.0
+CityFuel,157,86,82148.0,Fuel,100.0
+DailyMart,157,221,223580.0,Retail,100.0
+TravelGo,157,53,66569.0,Travel,100.0
+InsureWell,157,91,101673.0,Insurance,100.0
+HealthFirst,157,100,63982.0,Pharmacy,100.0
+FlixStream,157,48,53484.0,OTT / Subscriptions,100.0
+StyleHub,157,84,114088.0,Fashion,100.0
+QuickBite,157,83,79055.0,Food Delivery,100.0
+WealthGrow,157,51,36380.0,Wealth / SIP,100.0
+EduPrime,157,65,102647.0,EdTech,100.0
+PowerPay Utilities,157,57,68211.0,Utilities,100.0
+MetroRide,158,4927,6206941.0,Mobility,100.0
+GadgetZone,158,3400,3344318.0,Electronics,99.97
+InsureWell,158,79,83524.0,Insurance,100.0
+BharatKart,158,865,1056075.0,E-commerce,100.0
+EduPrime,158,82,129587.0,EdTech,98.78
+DailyMart,158,242,239154.0,Retail,100.0
+TravelGo,158,47,53075.0,Travel,100.0
+StyleHub,158,108,135817.0,Fashion,100.0
+FreshBasket,158,91,91597.0,Grocery,100.0
+QuickBite,158,77,54957.0,Food Delivery,100.0
+CityFuel,158,113,122798.0,Fuel,100.0
+PowerPay Utilities,158,62,61080.0,Utilities,100.0
+HealthFirst,158,76,53311.0,Pharmacy,100.0
+FlixStream,158,50,40379.0,OTT / Subscriptions,100.0
+WealthGrow,158,52,36309.0,Wealth / SIP,100.0
+MetroRide,159,4772,6016711.0,Mobility,99.06
+BharatKart,159,875,1209283.0,E-commerce,99.09
+GadgetZone,159,3339,3355854.0,Electronics,99.49
+HealthFirst,159,91,63721.0,Pharmacy,100.0
+DailyMart,159,209,197743.0,Retail,99.04
+FlixStream,159,54,39948.0,OTT / Subscriptions,98.15
+QuickBite,159,78,75469.0,Food Delivery,100.0
+InsureWell,159,80,80270.0,Insurance,100.0
+StyleHub,159,95,118643.0,Fashion,98.95
+CityFuel,159,96,89372.0,Fuel,98.96
+FreshBasket,159,100,100979.0,Grocery,100.0
+WealthGrow,159,45,23446.0,Wealth / SIP,100.0
+EduPrime,159,83,81620.0,EdTech,97.59
+PowerPay Utilities,159,51,62087.0,Utilities,100.0
+TravelGo,159,48,65205.0,Travel,100.0
+MetroRide,160,5276,6914860.0,Mobility,99.98
+BharatKart,160,955,1179669.0,E-commerce,100.0
+GadgetZone,160,3616,3548496.0,Electronics,99.97
+StyleHub,160,103,105101.0,Fashion,100.0
+HealthFirst,160,107,65184.0,Pharmacy,100.0
+WealthGrow,160,58,41821.0,Wealth / SIP,100.0
+InsureWell,160,119,129353.0,Insurance,100.0
+QuickBite,160,85,102715.0,Food Delivery,100.0
+CityFuel,160,96,81800.0,Fuel,100.0
+EduPrime,160,92,106928.0,EdTech,100.0
+DailyMart,160,250,249402.0,Retail,100.0
+FlixStream,160,58,35372.0,OTT / Subscriptions,100.0
+TravelGo,160,68,84339.0,Travel,100.0
+PowerPay Utilities,160,50,48195.0,Utilities,100.0
+FreshBasket,160,95,93802.0,Grocery,100.0
+BharatKart,161,983,1282072.0,E-commerce,98.78
+MetroRide,161,5485,7277759.0,Mobility,98.85
+GadgetZone,161,3813,3738941.0,Electronics,99.0
+HealthFirst,161,100,84090.0,Pharmacy,98.0
+InsureWell,161,106,137898.0,Insurance,97.17
+EduPrime,161,91,104304.0,EdTech,100.0
+QuickBite,161,89,99192.0,Food Delivery,100.0
+FlixStream,161,62,59513.0,OTT / Subscriptions,100.0
+StyleHub,161,105,114296.0,Fashion,99.05
+TravelGo,161,53,52201.0,Travel,98.11
+DailyMart,161,218,224100.0,Retail,99.08
+WealthGrow,161,47,45738.0,Wealth / SIP,100.0
+CityFuel,161,111,98751.0,Fuel,100.0
+PowerPay Utilities,161,45,34203.0,Utilities,100.0
+FreshBasket,161,89,83785.0,Grocery,98.88
+FreshBasket,162,101,95695.0,Grocery,100.0
+MetroRide,162,5998,7651423.0,Mobility,99.98
+CityFuel,162,130,126837.0,Fuel,100.0
+BharatKart,162,1019,1266738.0,E-commerce,99.9
+GadgetZone,162,4231,4185030.0,Electronics,99.98
+WealthGrow,162,59,64081.0,Wealth / SIP,100.0
+DailyMart,162,291,305901.0,Retail,100.0
+HealthFirst,162,110,82559.0,Pharmacy,100.0
+PowerPay Utilities,162,78,82444.0,Utilities,100.0
+FlixStream,162,55,33809.0,OTT / Subscriptions,100.0
+StyleHub,162,104,147836.0,Fashion,100.0
+InsureWell,162,95,113841.0,Insurance,100.0
+QuickBite,162,113,113216.0,Food Delivery,100.0
+TravelGo,162,65,74154.0,Travel,100.0
+EduPrime,162,103,124941.0,EdTech,100.0
+GadgetZone,163,3555,3440710.0,Electronics,100.0
+BharatKart,163,905,1142459.0,E-commerce,100.0
+MetroRide,163,5114,6459573.0,Mobility,100.0
+WealthGrow,163,47,43419.0,Wealth / SIP,100.0
+QuickBite,163,81,73359.0,Food Delivery,98.77
+EduPrime,163,72,151283.0,EdTech,100.0
+CityFuel,163,95,105195.0,Fuel,100.0
+TravelGo,163,55,60761.0,Travel,100.0
+HealthFirst,163,84,76826.0,Pharmacy,100.0
+FlixStream,163,45,28162.0,OTT / Subscriptions,100.0
+DailyMart,163,219,183562.0,Retail,100.0
+InsureWell,163,83,80341.0,Insurance,100.0
+StyleHub,163,92,101981.0,Fashion,100.0
+PowerPay Utilities,163,67,76368.0,Utilities,100.0
+FreshBasket,163,76,80788.0,Grocery,100.0
+BharatKart,164,894,1133532.0,E-commerce,100.0
+MetroRide,164,5010,6632418.0,Mobility,99.98
+GadgetZone,164,3406,3471024.0,Electronics,99.94
+StyleHub,164,103,123422.0,Fashion,100.0
+EduPrime,164,79,109799.0,EdTech,100.0
+FlixStream,164,62,66532.0,OTT / Subscriptions,100.0
+QuickBite,164,84,81714.0,Food Delivery,100.0
+HealthFirst,164,79,47868.0,Pharmacy,100.0
+DailyMart,164,246,204397.0,Retail,100.0
+PowerPay Utilities,164,64,59111.0,Utilities,100.0
+FreshBasket,164,95,87939.0,Grocery,100.0
+InsureWell,164,84,105177.0,Insurance,100.0
+WealthGrow,164,63,30383.0,Wealth / SIP,100.0
+CityFuel,164,79,90107.0,Fuel,100.0
+TravelGo,164,44,67775.0,Travel,100.0
+MetroRide,165,4962,6419876.0,Mobility,99.98
+GadgetZone,165,3487,3416984.0,Electronics,100.0
+DailyMart,165,226,248938.0,Retail,100.0
+PowerPay Utilities,165,51,40806.0,Utilities,100.0
+InsureWell,165,79,90689.0,Insurance,100.0
+BharatKart,165,910,1144108.0,E-commerce,99.89
+FlixStream,165,48,37960.0,OTT / Subscriptions,100.0
+EduPrime,165,58,58795.0,EdTech,100.0
+FreshBasket,165,101,88359.0,Grocery,100.0
+HealthFirst,165,79,53336.0,Pharmacy,100.0
+TravelGo,165,43,58827.0,Travel,100.0
+CityFuel,165,95,96116.0,Fuel,100.0
+QuickBite,165,80,74944.0,Food Delivery,100.0
+StyleHub,165,104,117673.0,Fashion,100.0
+WealthGrow,165,58,34600.0,Wealth / SIP,100.0
+MetroRide,166,4840,6193811.0,Mobility,99.94
+GadgetZone,166,3366,3353011.0,Electronics,99.91
+PowerPay Utilities,166,66,66617.0,Utilities,100.0
+BharatKart,166,843,982109.0,E-commerce,99.88
+CityFuel,166,103,93284.0,Fuel,100.0
+InsureWell,166,93,105523.0,Insurance,100.0
+FreshBasket,166,96,98862.0,Grocery,98.96
+DailyMart,166,247,244089.0,Retail,99.6
+QuickBite,166,76,91414.0,Food Delivery,100.0
+StyleHub,166,92,117696.0,Fashion,100.0
+HealthFirst,166,101,81564.0,Pharmacy,100.0
+EduPrime,166,94,126117.0,EdTech,100.0
+FlixStream,166,59,41313.0,OTT / Subscriptions,100.0
+WealthGrow,166,59,44226.0,Wealth / SIP,100.0
+TravelGo,166,50,76153.0,Travel,100.0
+GadgetZone,167,3103,3182368.0,Electronics,100.0
+MetroRide,167,4515,5782228.0,Mobility,99.91
+BharatKart,167,793,981369.0,E-commerce,99.75
+DailyMart,167,214,239636.0,Retail,100.0
+InsureWell,167,97,94723.0,Insurance,100.0
+QuickBite,167,66,57188.0,Food Delivery,100.0
+CityFuel,167,99,110043.0,Fuel,100.0
+HealthFirst,167,91,53725.0,Pharmacy,100.0
+WealthGrow,167,54,46710.0,Wealth / SIP,100.0
+StyleHub,167,88,112477.0,Fashion,100.0
+TravelGo,167,55,63130.0,Travel,100.0
+FreshBasket,167,76,94087.0,Grocery,100.0
+EduPrime,167,83,101852.0,EdTech,100.0
+PowerPay Utilities,167,64,48181.0,Utilities,100.0
+FlixStream,167,42,31525.0,OTT / Subscriptions,100.0
+MetroRide,168,4215,5320475.0,Mobility,100.0
+GadgetZone,168,2943,2895208.0,Electronics,100.0
+FreshBasket,168,67,59391.0,Grocery,100.0
+WealthGrow,168,44,26903.0,Wealth / SIP,100.0
+TravelGo,168,50,73262.0,Travel,100.0
+BharatKart,168,743,1012631.0,E-commerce,99.87
+CityFuel,168,90,127317.0,Fuel,100.0
+HealthFirst,168,67,68478.0,Pharmacy,100.0
+DailyMart,168,165,150100.0,Retail,100.0
+QuickBite,168,75,66839.0,Food Delivery,100.0
+InsureWell,168,86,129978.0,Insurance,100.0
+EduPrime,168,63,80813.0,EdTech,100.0
+PowerPay Utilities,168,40,47521.0,Utilities,100.0
+StyleHub,168,72,114358.0,Fashion,100.0
+FlixStream,168,48,34351.0,OTT / Subscriptions,100.0
+GadgetZone,169,3430,3500124.0,Electronics,99.97
+MetroRide,169,4930,6336376.0,Mobility,100.0
+BharatKart,169,816,998486.0,E-commerce,99.88
+HealthFirst,169,95,76056.0,Pharmacy,100.0
+DailyMart,169,261,250951.0,Retail,100.0
+CityFuel,169,101,106347.0,Fuel,100.0
+PowerPay Utilities,169,57,64264.0,Utilities,100.0
+QuickBite,169,94,86050.0,Food Delivery,100.0
+EduPrime,169,98,125891.0,EdTech,100.0
+InsureWell,169,101,151003.0,Insurance,100.0
+FreshBasket,169,87,87940.0,Grocery,100.0
+FlixStream,169,50,29872.0,OTT / Subscriptions,100.0
+TravelGo,169,52,68537.0,Travel,100.0
+StyleHub,169,91,118445.0,Fashion,100.0
+WealthGrow,169,43,35478.0,Wealth / SIP,100.0
+MetroRide,170,5124,6677590.0,Mobility,100.0
+FlixStream,170,53,38130.0,OTT / Subscriptions,100.0
+GadgetZone,170,3510,3490729.0,Electronics,99.97
+QuickBite,170,82,94545.0,Food Delivery,100.0
+BharatKart,170,896,1153912.0,E-commerce,100.0
+InsureWell,170,99,126498.0,Insurance,100.0
+CityFuel,170,102,88100.0,Fuel,100.0
+DailyMart,170,212,195526.0,Retail,100.0
+FreshBasket,170,96,97492.0,Grocery,100.0
+WealthGrow,170,48,42121.0,Wealth / SIP,100.0
+PowerPay Utilities,170,68,58942.0,Utilities,100.0
+StyleHub,170,118,133927.0,Fashion,100.0
+HealthFirst,170,90,87449.0,Pharmacy,100.0
+TravelGo,170,63,110725.0,Travel,100.0
+EduPrime,170,60,56683.0,EdTech,100.0
+GadgetZone,171,3431,3473883.0,Electronics,100.0
+MetroRide,171,5077,6410042.0,Mobility,99.98
+BharatKart,171,910,1119025.0,E-commerce,100.0
+TravelGo,171,46,83786.0,Travel,100.0
+DailyMart,171,223,220947.0,Retail,100.0
+FreshBasket,171,83,84758.0,Grocery,100.0
+EduPrime,171,88,111002.0,EdTech,100.0
+StyleHub,171,84,99249.0,Fashion,100.0
+QuickBite,171,84,74886.0,Food Delivery,98.81
+PowerPay Utilities,171,67,70286.0,Utilities,100.0
+InsureWell,171,94,110599.0,Insurance,100.0
+CityFuel,171,91,90653.0,Fuel,100.0
+FlixStream,171,61,44640.0,OTT / Subscriptions,100.0
+WealthGrow,171,50,43411.0,Wealth / SIP,100.0
+HealthFirst,171,107,76727.0,Pharmacy,100.0
+MetroRide,172,5122,6765695.0,Mobility,99.94
+StyleHub,172,125,159472.0,Fashion,100.0
+BharatKart,172,931,1251670.0,E-commerce,100.0
+EduPrime,172,100,163043.0,EdTech,100.0
+GadgetZone,172,3486,3475452.0,Electronics,100.0
+DailyMart,172,224,224235.0,Retail,100.0
+TravelGo,172,49,60297.0,Travel,100.0
+HealthFirst,172,113,89395.0,Pharmacy,100.0
+CityFuel,172,115,100533.0,Fuel,100.0
+WealthGrow,172,64,44177.0,Wealth / SIP,100.0
+FreshBasket,172,113,93179.0,Grocery,100.0
+FlixStream,172,62,40372.0,OTT / Subscriptions,100.0
+QuickBite,172,81,72846.0,Food Delivery,100.0
+InsureWell,172,103,155606.0,Insurance,100.0
+PowerPay Utilities,172,74,66444.0,Utilities,100.0
+MetroRide,173,6398,8190357.0,Mobility,99.17
+GadgetZone,173,4441,4467714.0,Electronics,99.35
+PowerPay Utilities,173,69,63227.0,Utilities,97.1
+BharatKart,173,1078,1453940.0,E-commerce,98.42
+StyleHub,173,132,205189.0,Fashion,99.24
+WealthGrow,173,73,48937.0,Wealth / SIP,98.63
+InsureWell,173,99,140872.0,Insurance,96.97
+FlixStream,173,55,58182.0,OTT / Subscriptions,100.0
+TravelGo,173,67,93568.0,Travel,100.0
+DailyMart,173,308,274560.0,Retail,99.35
+FreshBasket,173,116,112867.0,Grocery,99.14
+HealthFirst,173,121,81063.0,Pharmacy,100.0
+QuickBite,173,109,97255.0,Food Delivery,99.08
+CityFuel,173,150,148516.0,Fuel,99.33
+EduPrime,173,114,147712.0,EdTech,100.0
+MetroRide,174,4494,6149016.0,Mobility,99.98
+GadgetZone,174,3101,3093690.0,Electronics,100.0
+FreshBasket,174,77,76388.0,Grocery,100.0
+DailyMart,174,222,200554.0,Retail,99.55
+HealthFirst,174,85,61433.0,Pharmacy,100.0
+BharatKart,174,777,1042282.0,E-commerce,100.0
+InsureWell,174,95,97748.0,Insurance,100.0
+WealthGrow,174,58,39687.0,Wealth / SIP,100.0
+TravelGo,174,50,57531.0,Travel,100.0
+QuickBite,174,78,91600.0,Food Delivery,100.0
+EduPrime,174,83,116977.0,EdTech,100.0
+FlixStream,174,51,47947.0,OTT / Subscriptions,100.0
+PowerPay Utilities,174,49,53383.0,Utilities,100.0
+StyleHub,174,100,143161.0,Fashion,100.0
+CityFuel,174,85,95668.0,Fuel,100.0
+MetroRide,175,4260,5522894.0,Mobility,99.98
+GadgetZone,175,2932,2968560.0,Electronics,99.97
+PowerPay Utilities,175,60,62327.0,Utilities,100.0
+DailyMart,175,201,197322.0,Retail,100.0
+InsureWell,175,88,90254.0,Insurance,100.0
+StyleHub,175,84,121928.0,Fashion,100.0
+FreshBasket,175,84,75854.0,Grocery,100.0
+BharatKart,175,747,992759.0,E-commerce,100.0
+CityFuel,175,76,55676.0,Fuel,100.0
+QuickBite,175,72,77774.0,Food Delivery,100.0
+HealthFirst,175,83,53086.0,Pharmacy,100.0
+EduPrime,175,64,63669.0,EdTech,100.0
+FlixStream,175,43,41531.0,OTT / Subscriptions,100.0
+WealthGrow,175,43,37159.0,Wealth / SIP,100.0
+TravelGo,175,40,50608.0,Travel,100.0
+MetroRide,176,4938,6445670.0,Mobility,99.55
+DailyMart,176,217,194156.0,Retail,99.54
+GadgetZone,176,3440,3438651.0,Electronics,99.62
+EduPrime,176,62,85912.0,EdTech,100.0
+BharatKart,176,861,1136925.0,E-commerce,99.77
+QuickBite,176,80,77095.0,Food Delivery,98.75
+WealthGrow,176,37,18563.0,Wealth / SIP,100.0
+FreshBasket,176,95,110514.0,Grocery,100.0
+StyleHub,176,113,165202.0,Fashion,100.0
+FlixStream,176,57,47936.0,OTT / Subscriptions,100.0
+CityFuel,176,105,93457.0,Fuel,100.0
+InsureWell,176,96,149246.0,Insurance,100.0
+TravelGo,176,45,67830.0,Travel,100.0
+PowerPay Utilities,176,56,64334.0,Utilities,100.0
+HealthFirst,176,88,58087.0,Pharmacy,100.0
+MetroRide,177,5239,6954110.0,Mobility,99.45
+GadgetZone,177,3560,3424510.0,Electronics,99.38
+EduPrime,177,78,88723.0,EdTech,100.0
+StyleHub,177,93,148134.0,Fashion,98.92
+QuickBite,177,97,89465.0,Food Delivery,98.97
+BharatKart,177,887,1305886.0,E-commerce,99.66
+FreshBasket,177,97,88582.0,Grocery,100.0
+HealthFirst,177,98,80101.0,Pharmacy,96.94
+TravelGo,177,45,57131.0,Travel,100.0
+InsureWell,177,110,149851.0,Insurance,100.0
+FlixStream,177,72,50937.0,OTT / Subscriptions,100.0
+DailyMart,177,219,233838.0,Retail,99.54
+WealthGrow,177,53,47332.0,Wealth / SIP,100.0
+CityFuel,177,113,98437.0,Fuel,99.12
+PowerPay Utilities,177,52,47193.0,Utilities,96.15
+EduPrime,178,86,113168.0,EdTech,100.0
+BharatKart,178,891,1110160.0,E-commerce,100.0
+GadgetZone,178,3581,3507655.0,Electronics,99.97
+MetroRide,178,5240,6864842.0,Mobility,99.98
+PowerPay Utilities,178,64,63022.0,Utilities,100.0
+FreshBasket,178,100,93777.0,Grocery,100.0
+StyleHub,178,118,174436.0,Fashion,100.0
+CityFuel,178,91,108486.0,Fuel,100.0
+DailyMart,178,205,203950.0,Retail,100.0
+QuickBite,178,91,77621.0,Food Delivery,100.0
+WealthGrow,178,67,41936.0,Wealth / SIP,100.0
+HealthFirst,178,92,58108.0,Pharmacy,100.0
+FlixStream,178,54,37662.0,OTT / Subscriptions,100.0
+InsureWell,178,88,134177.0,Insurance,100.0
+TravelGo,178,56,78130.0,Travel,100.0
+GadgetZone,179,4450,4362763.0,Electronics,99.44
+FreshBasket,179,99,115056.0,Grocery,100.0
+MetroRide,179,6412,8407277.0,Mobility,99.5
+BharatKart,179,1053,1487589.0,E-commerce,99.62
+DailyMart,179,320,351872.0,Retail,99.06
+TravelGo,179,73,101560.0,Travel,100.0
+StyleHub,179,112,195752.0,Fashion,100.0
+HealthFirst,179,129,91928.0,Pharmacy,99.22
+EduPrime,179,111,124298.0,EdTech,98.2
+QuickBite,179,97,78653.0,Food Delivery,100.0
+WealthGrow,179,63,55893.0,Wealth / SIP,100.0
+InsureWell,179,140,184899.0,Insurance,100.0
+CityFuel,179,134,110724.0,Fuel,100.0
+PowerPay Utilities,179,63,73780.0,Utilities,100.0
+FlixStream,179,65,46681.0,OTT / Subscriptions,98.46
+StyleHub,180,101,152648.0,Fashion,98.02
+MetroRide,180,5181,6684809.0,Mobility,99.59
+GadgetZone,180,3634,3835744.0,Electronics,99.5
+DailyMart,180,268,220825.0,Retail,99.63
+BharatKart,180,954,1312070.0,E-commerce,99.79
+InsureWell,180,101,145809.0,Insurance,100.0
+QuickBite,180,89,114009.0,Food Delivery,100.0
+CityFuel,180,103,114619.0,Fuel,99.03
+FreshBasket,180,90,110835.0,Grocery,100.0
+FlixStream,180,54,31684.0,OTT / Subscriptions,98.15
+PowerPay Utilities,180,59,45790.0,Utilities,100.0
+TravelGo,180,45,50265.0,Travel,100.0
+HealthFirst,180,90,57057.0,Pharmacy,100.0
+EduPrime,180,67,76887.0,EdTech,100.0
+WealthGrow,180,50,32292.0,Wealth / SIP,100.0

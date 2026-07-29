@@ -1,0 +1,12 @@
+feature,owning_team,volume_share
+Person to Merchant,UPI Core,0.375
+Person to Person,UPI Core,0.355
+QR Payments,QR Payments,0.095
+Collect Requests,UPI Core,0.018
+Intent Payments,UPI Core,0.028
+UPI Lite,UPI Lite,0.048
+UPI Lite X,UPI Lite X,0.01
+UPI Autopay,UPI Autopay,0.033
+UPI Credit Line,UPI Credit,0.013
+RuPay Credit on UPI,UPI Credit,0.011
+UPI International,UPI International,0.008

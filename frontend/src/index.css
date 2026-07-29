@@ -21,6 +21,43 @@
   --accent: 110 132 255;
 }
 
+/* Semantic tokens. Colour carries meaning here, and only meaning:
+   green = healthy, amber = needs attention, red = critical, blue =
+   informational, violet = AI-generated, grey = secondary. Every surface that
+   shows status reads these rather than a hardcoded palette, so a theme change
+   is a variable change and contrast stays correct in both directions. */
+:root,
+[data-theme='midnight'],
+[data-theme='graphite'] {
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  --status-success-fg: #34d399;
+  --status-success-bg: rgb(16 185 129 / 0.15);
+  --status-warn-fg: #fbbf24;
+  --status-warn-bg: rgb(245 158 11 / 0.15);
+  --status-danger-fg: #fb7185;
+  --status-danger-bg: rgb(244 63 94 / 0.15);
+  --status-info-fg: #38bdf8;
+  --status-info-bg: rgb(14 165 233 / 0.15);
+  --status-ai-fg: #a78bfa;
+  --status-ai-bg: rgb(139 92 246 / 0.15);
+  --status-neutral-fg: #cbd5e1;
+  --status-neutral-bg: rgb(148 163 184 / 0.14);
+
+  --chart-text: #94a3b8;
+  --chart-axis: #232f45;
+  --chart-grid: #1a2333;
+  --chart-1: #4f8ef7; --chart-2: #34d399; --chart-3: #fbbf24; --chart-4: #f87171;
+  --chart-5: #a78bfa; --chart-6: #22d3ee; --chart-7: #fb923c; --chart-8: #e879f9;
+
+  --graph-node-fill: #1e293b;
+  --graph-node-stroke: #475569;
+  --graph-node-text: #e2e8f0;
+  --graph-node-accent: #1e3a8a;
+}
+
 /* V2.5: Daylight — a genuine light theme. Surfaces flip via the variables;
    the slate text scale (hardcoded across pages) is remapped to dark ink so
    every existing surface stays legible without touching a component. */
@@ -30,18 +67,57 @@
   --surface-2: 237 240 246;
   --surface-border: 214 220 230;
   --accent: 37 99 235;
+
+  /* Ink on paper. The status foregrounds drop to the 600/700 range because
+     the 400s that read well on near-black fail contrast on near-white. */
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+
+  --status-success-fg: #047857;
+  --status-success-bg: rgb(16 185 129 / 0.12);
+  --status-warn-fg: #b45309;
+  --status-warn-bg: rgb(245 158 11 / 0.14);
+  --status-danger-fg: #be123c;
+  --status-danger-bg: rgb(244 63 94 / 0.11);
+  --status-info-fg: #0369a1;
+  --status-info-bg: rgb(14 165 233 / 0.11);
+  --status-ai-fg: #6d28d9;
+  --status-ai-bg: rgb(139 92 246 / 0.11);
+  --status-neutral-fg: #475569;
+  --status-neutral-bg: rgb(100 116 139 / 0.10);
+
+  --chart-text: #4d5a6d;
+  --chart-axis: #cbd5e1;
+  --chart-grid: #e8ecf3;
+  --chart-1: #2563eb; --chart-2: #059669; --chart-3: #d97706; --chart-4: #dc2626;
+  --chart-5: #7c3aed; --chart-6: #0891b2; --chart-7: #ea580c; --chart-8: #c026d3;
+
+  --graph-node-fill: #e2e8f0;
+  --graph-node-stroke: #94a3b8;
+  --graph-node-text: #0f172a;
+  --graph-node-accent: #bfdbfe;
 }
 [data-theme='daylight'] .text-slate-100 { color: #0f172a; }
 [data-theme='daylight'] .text-slate-200 { color: #1e293b; }
 [data-theme='daylight'] .text-slate-300 { color: #334155; }
 [data-theme='daylight'] .text-slate-400 { color: #475569; }
 [data-theme='daylight'] .text-slate-500 { color: #64748b; }
-[data-theme='daylight'] .text-slate-600 { color: #94a3b8; }
+[data-theme='daylight'] .text-slate-600 { color: #64748b; }
 [data-theme='daylight'] .metric { color: #0f172a; }
 [data-theme='daylight'] body { color: #1e293b; }
 /* Keep white button text readable on the accent fill. */
 [data-theme='daylight'] .btn { color: #fff; }
 [data-theme='daylight'] ::-webkit-scrollbar-thumb { background: #cbd5e1; }
+/* Dark-tuned borders and fills that the text-only remap above never reached:
+   on paper they read as heavy smudges rather than hairlines. */
+[data-theme='daylight'] .border-slate-600 { border-color: #cbd5e1; }
+[data-theme='daylight'] .border-slate-700 { border-color: #e2e8f0; }
+[data-theme='daylight'] .bg-slate-600 { background-color: #94a3b8; }
+[data-theme='daylight'] .bg-slate-700 { background-color: #cbd5e1; }
+[data-theme='daylight'] .text-slate-700 { color: #334155; }
+/* Active nav uses white-on-dark in the dark themes; invert it here. */
+[data-theme='daylight'] .nav-item-active { color: #0f172a; }
 
 @layer base {
   html { @apply antialiased; }
@@ -82,6 +158,25 @@
     background-image: radial-gradient(rgb(var(--surface-border) / 0.5) 1px, transparent 1px);
     background-size: 22px 22px;
   }
+
+  /* Status chips. One class per meaning, both themes correct by construction. */
+  .chip { @apply inline-block px-2 py-0.5 rounded-md text-[11px] font-medium; }
+  .chip-neutral { color: var(--status-neutral-fg); background: var(--status-neutral-bg); }
+  .chip-success { color: var(--status-success-fg); background: var(--status-success-bg); }
+  .chip-warn    { color: var(--status-warn-fg);    background: var(--status-warn-bg); }
+  .chip-danger  { color: var(--status-danger-fg);  background: var(--status-danger-bg); }
+  .chip-info    { color: var(--status-info-fg);    background: var(--status-info-bg); }
+  .chip-ai      { color: var(--status-ai-fg);      background: var(--status-ai-bg); }
+  .chip-accent  { color: rgb(var(--accent)); background: rgb(var(--accent) / 0.14); }
+
+  /* Status text, for prose and numerals that carry the same meaning. */
+  .fg-success { color: var(--status-success-fg); }
+  .fg-warn    { color: var(--status-warn-fg); }
+  .fg-danger  { color: var(--status-danger-fg); }
+  .fg-info    { color: var(--status-info-fg); }
+  .fg-ai      { color: var(--status-ai-fg); }
+  .fg-muted   { color: var(--text-muted); }
+  .fg-primary { color: var(--text-primary); }
 }
 
 /* V2.5 Export → Print / Save-as-PDF: strip the shell and let a single

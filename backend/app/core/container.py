@@ -106,11 +106,17 @@ class Container:
         self.prompts = PromptRegistry(settings.prompts_dir)
 
         # ------------------------------------------------------ LLM layer
+        # Built here (before reasoning) so every LLM call can be recorded —
+        # governance.record_model_usage() for the Admin console's usage
+        # metrics, latency for the processing-latency dashboard.
+        self.latency = LatencyTracker()
         self.llm_provider = create_provider(settings)  # None => AI unavailable
         self.prompt_agent = PromptGenerationAgent(knowledge=self.knowledge,
                                                   prompts=self.prompts)
         self.reasoning = AIReasoningEngine(self.llm_provider, self.prompt_agent,
-                                           fallback=create_fallback_provider(settings))
+                                           fallback=create_fallback_provider(settings),
+                                           governance=self.governance,
+                                           latency=self.latency)
 
         # ----------------------------------------------------------- tools
         # V2.2: each tool registers with its declared spec — capability,
@@ -226,7 +232,7 @@ class Container:
             connectors=self.connectors, embedder=self.embedder,
             vector_store_for=self.vector_store_for, brain=self.brain,
             tasks=self.exec_tasks, portfolio=self.portfolio,
-            graph=self.enterprise_graph)
+            graph=self.enterprise_graph, latency=self.latency)
         self.manager.sync = self.sync  # organization panels in the workspace
 
         # ------------------ Enterprise Connector Framework (V2.1)
@@ -264,7 +270,8 @@ class Container:
             prompt_agent=self.prompt_agent, provider=self.llm_provider,
             fallback=create_fallback_provider(settings), manager=self.manager,
             portfolio=self.portfolio, brain=self.brain, sync=self.sync,
-            product=self.product)
+            product=self.product, governance=self.governance,
+            latency=self.latency)
         self.manager.copilot_layer = self.copilot_layer
 
         # ------------------------------------------- autonomous execution
@@ -320,8 +327,81 @@ class Container:
             organization=self.sync.organization,
             relationships=self.sync.relationships, governance=self.governance)
 
+        # ------------------ V3.1: Executive Intelligence layer
+        # Reads the ingested synthetic enterprise (KPI workbook, decisions,
+        # incidents, RCAs, SOPs, reports, master data) and reasons over it to
+        # produce the executive brief, priorities, recommendations, KPI
+        # intelligence, and ranked decisions. Adds no data and changes no Brain
+        # architecture; if the enterprise has not been generated it runs empty
+        # and every existing surface behaves exactly as before.
+        from app.executive import (
+            EcosystemIntelligence, EcosystemReader, EnterpriseReader,
+            EvolutionIntelligence, ExecutiveIntelligence)
+        self.executive = ExecutiveIntelligence(
+            EnterpriseReader(settings.enterprise_data_dir))
+        # V7.0: ecosystem analytics over the sampled ledger + aggregate cubes.
+        _eco_reader = EcosystemReader(settings.enterprise_data_dir)
+        self.ecosystem = EcosystemIntelligence(_eco_reader)
+        # V8.0: six-month evolution — entity lifecycle, multi-granularity trends,
+        # forecast validation, decision tracking, storylines + executive Q&A.
+        # Shares the ecosystem reader (one cache over the same cube directory).
+        self.evolution = EvolutionIntelligence(_eco_reader)
+
+        # Phase 2 #12: email intelligence. Emails from any configured provider
+        # (Gmail/Outlook) become searchable enterprise knowledge — categorised
+        # and linked to the same business entities the rest of the Brain uses.
+        # The vocabulary is best-effort (the analyzer still extracts ids and
+        # actions without it), so a missing/unbuilt ecosystem never blocks it.
+        from app.communication.email_intelligence import EmailIntelligence
+
+        def _entity_vocab() -> list[str]:
+            names: list[str] = []
+            for accessor in (self.ecosystem.compare_banks,
+                             self.ecosystem.compare_psps):
+                try:
+                    for row in accessor():
+                        name = row.get("name") or row.get("bank") or \
+                            row.get("psp") or ""
+                        if name:
+                            names.append(name)
+                except Exception:  # noqa: BLE001 — vocab is optional
+                    pass
+            return names
+
+        self.email_intelligence = EmailIntelligence(vocabulary=_entity_vocab())
+
+        # V9.0: the AI-first Enterprise Workspace — universal file understanding,
+        # unified search, artifact generation, home feed and pins. Orchestrates
+        # the layers above; adds no new intelligence. Built last so every layer
+        # it federates (copilot/executive/ecosystem/evolution/graph) exists.
+        from app.workspace import Workspace
+        self.workspace = Workspace(self, settings.data_dir / "workspace")
+
+        # V10.0: Layer-2 machine learning (scikit-learn) — forecasting, anomaly
+        # detection, segmentation, churn & failure prediction, each prediction
+        # tagged model+version+confidence+features. Trained on the cubes.
+        from app.ml_models import MLService
+        self.ml = MLService(self)
+        # V10.0: the multi-layer analyst — insight engine (deterministic + ML +
+        # graph + evidence), continuous-learning feedback store, and the
+        # retrieval/semantic cache. Kept in its own app/analyst package.
+        from app.analyst import InsightEngine, LearningStore
+        self.learning_store = LearningStore(settings.data_dir / "learning")
+        self.insight_engine = InsightEngine(self)
+        # The manager workspace and daily brief draw on it so the existing
+        # Executive Dashboard lights up with real enterprise intelligence.
+        self.manager.executive = self.executive
+        self.daily_brief.executive = self.executive
+        # The Copilot reasons over it: the executive summary is always in the
+        # business context, and the executive facts are admissible evidence so
+        # the validator grounds the figures the model quotes — success-criteria
+        # questions are answered by reasoning, not document retrieval alone.
+        self.copilot_layer.context._executive = self.executive
+        self.copilot_layer.evidence._executive = self.executive
+
         # Admin-only observability, composed from every layer's own status.
-        self.latency = LatencyTracker()
+        # self.latency was built earlier, alongside the LLM layer, so every
+        # reasoning/copilot call could be timed from the start.
         self.observability = ObservabilityDashboard(
             agents=self.agents, tools=self.tools, prompts=self.prompts,
             evaluation=self.evaluation, governance=self.governance,

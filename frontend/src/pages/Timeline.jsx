@@ -46,24 +46,50 @@ function normalize({ events, learning, decisions }) {
     .sort((a, b) => new Date(b.at) - new Date(a.at))
 }
 
+// Which calendar week (1-based, Mon-start) a timestamp falls in relative to
+// the corpus's week_start — powers the Week filter.
+function weekNumber(iso, weekStartIso) {
+  if (!iso || !weekStartIso) return null
+  const start = new Date(weekStartIso)
+  const d = new Date(iso)
+  const days = Math.floor((d - start) / 86400000)
+  if (days < 0) return null
+  return Math.min(5, Math.floor(days / 7) + 1)
+}
+
 export default function Timeline() {
   const events = useAsync(() => api.runtimeEvents(120).then((r) => r.events).catch(() => []), [])
   const learning = useAsync(() => api.learningHistory(120).catch(() => []), [])
   const decisions = useAsync(() => api.intelligenceDecisions('', 80).then((r) => r.decisions).catch(() => []), [])
+  const status = useAsync(() => api.executiveStatus().catch(() => null), [])
+  const kpis = useAsync(() => api.executiveKpis().catch(() => null), [])
+  const risks = useAsync(() => api.executiveRisks().catch(() => null), [])
 
   const loading = events.loading || learning.loading || decisions.loading
   const all = useMemo(() => normalize({
     events: events.data, learning: learning.data, decisions: decisions.data,
   }), [events.data, learning.data, decisions.data])
 
+  const weekStart = status.data?.week_start
+  const products = (kpis.data?.health?.products || []).map((p) => p.product)
+  const banks = (risks.data?.banks_at_risk || []).map((b) => b.bank).filter(Boolean)
+  const merchants = (risks.data?.merchants_to_follow_up || []).map((m) => m.merchant).filter(Boolean)
+
   const [cat, setCat] = useState('')
+  const [week, setWeek] = useState('')
+  const [entity, setEntity] = useState('')
   const [q, setQ] = useState('')
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase()
-    return all.filter((i) =>
-      (!cat || i.category === cat) &&
-      (!needle || `${i.title} ${i.detail}`.toLowerCase().includes(needle)))
-  }, [all, cat, q])
+    return all.filter((i) => {
+      const text = `${i.title} ${i.detail}`.toLowerCase()
+      const wk = weekNumber(i.at, weekStart)
+      return (!cat || i.category === cat)
+        && (!needle || text.includes(needle))
+        && (!week || wk === Number(week))
+        && (!entity || text.includes(entity.toLowerCase()))
+    })
+  }, [all, cat, week, entity, q, weekStart])
 
   const counts = useMemo(() => Object.keys(CATS).map((value) => ({
     value, label: CATS[value].label, count: all.filter((i) => i.category === value).length,
@@ -92,6 +118,31 @@ export default function Timeline() {
       <div className="flex flex-wrap items-center gap-3 mb-5">
         <SearchInput value={q} onChange={setQ} placeholder="Search the timeline…" className="w-64" />
         <FilterChips options={counts} active={cat} onChange={setCat} allLabel={`All (${all.length})`} />
+      </div>
+
+      <div className="flex flex-wrap items-center gap-3 mb-5">
+        <select className="input !py-1.5 !w-auto" value={week} onChange={(e) => setWeek(e.target.value)}>
+          <option value="">All weeks</option>
+          {[1, 2, 3, 4, 5].map((w) => <option key={w} value={w}>Week {w}</option>)}
+        </select>
+        <select className="input !py-1.5 !w-auto" value={entity} onChange={(e) => setEntity(e.target.value)}>
+          <option value="">All products / banks / merchants / teams</option>
+          {products.length > 0 && (
+            <optgroup label="Products">
+              {products.map((p) => <option key={p} value={p}>{p}</option>)}
+            </optgroup>
+          )}
+          {banks.length > 0 && (
+            <optgroup label="Banks">
+              {banks.map((b) => <option key={b} value={b}>{b}</option>)}
+            </optgroup>
+          )}
+          {merchants.length > 0 && (
+            <optgroup label="Merchants">
+              {merchants.map((m) => <option key={m} value={m}>{m}</option>)}
+            </optgroup>
+          )}
+        </select>
       </div>
 
       <Loader state={{ loading, error: null, data: loading ? null : filtered }}

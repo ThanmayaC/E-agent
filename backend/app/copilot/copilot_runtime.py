@@ -38,7 +38,7 @@ class CopilotLayer:
 
     def __init__(self, settings, store, knowledge, prompt_agent, provider=None,
                  fallback=None, manager=None, portfolio=None, brain=None,
-                 sync=None, product=None):
+                 sync=None, product=None, governance=None, latency=None):
         self.settings = settings
         self.store = CopilotStore(settings.copilot_dir)
         self.conversations = ConversationMemory(self.store,
@@ -55,7 +55,8 @@ class CopilotLayer:
             search=getattr(sync, "search", None))
         # The LLM Router reuses the platform's provider abstraction — the
         # concrete providers are built once, in the container, from config.
-        self.router = LLMRouter(provider, fallback)
+        self.router = LLMRouter(provider, fallback, governance=governance,
+                                latency=latency)
         self.validator = ResponseValidator()
         self.actions = SuggestedActionsBuilder(product=product,
                                                manager=manager,

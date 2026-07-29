@@ -7,6 +7,8 @@ layer's synchronization, never through this API.
 """
 from __future__ import annotations
 
+import time
+
 from fastapi import APIRouter, Depends, HTTPException, Query
 
 from app.api.deps import container
@@ -41,7 +43,42 @@ def documents_status(c: Container = Depends(container)):
 @router.get("/documents/search")
 def search_documents(q: str, limit: int = Query(8, ge=1, le=25),
                      c: Container = Depends(container)):
-    return {"results": _documents(c).search(q, limit)}
+    """Retrieval over document chunks. Returns the elapsed time alongside the
+    hits so the caller can see what retrieval actually cost, rather than
+    trusting a dashboard average."""
+    started = time.monotonic()
+    results = _documents(c).search(q, limit)
+    return {"results": results, "count": len(results),
+            "took_ms": round((time.monotonic() - started) * 1000, 1)}
+
+
+@router.get("/documents/rag")
+def rag_diagnostics(c: Container = Depends(container)):
+    """Enterprise RAG diagnostics: what is indexed, how many vectors exist,
+    which embedding model produced them, and how long retrieval takes.
+
+    Every number is read live — document counts from the document store,
+    vector count from the vector store itself, retrieval timing from the
+    platform's latency tracker. Nothing here is a static figure.
+    """
+    documents = _documents(c)
+    store_stats = documents.status()
+    retrieval = store_stats.get("retrieval", {})
+    timings = c.latency.summary().get("rag_retrieval", {})
+    return {
+        "documents_indexed": store_stats.get("documents", 0),
+        "chunks_embedded": store_stats.get("chunks", 0),
+        "by_category": store_stats.get("by_category", {}),
+        "retrieval": retrieval,
+        "timing": timings or {
+            "samples": 0,
+            "note": "No retrieval has run yet since the backend started.",
+        },
+        "pipeline": {
+            "parsed": store_stats.get("parsed", 0),
+            "versions": store_stats.get("versions", 0),
+        },
+    }
 
 
 @router.get("/documents/{document_id}")

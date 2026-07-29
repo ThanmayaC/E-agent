@@ -1,14 +1,27 @@
 """Application configuration. Everything is environment-driven — no hardcoded values."""
 from __future__ import annotations
 
+import os
 from functools import lru_cache
 from pathlib import Path
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
+# The .env lives at the repository root, but the backend is launched from the
+# backend/ directory, so a bare env_file=".env" resolved to a non-existent
+# backend/.env and every EDIP_* setting was silently ignored (the LLM model then
+# fell back to auto-selecting the first installed Ollama model). Resolve the root
+# .env by absolute path so configuration loads regardless of the working
+# directory. A local backend/.env still wins if present (dev override).
+_ROOT_ENV = Path(__file__).resolve().parents[3] / ".env"
+_LOCAL_ENV = Path(__file__).resolve().parents[2] / ".env"
+
+
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", env_prefix="EDIP_", extra="ignore")
+    model_config = SettingsConfigDict(
+        env_file=(str(_ROOT_ENV), str(_LOCAL_ENV)),
+        env_prefix="EDIP_", extra="ignore")
 
     # --- Application ---
     app_name: str = "Enterprise Autonomous Product Intelligence Platform"
@@ -17,6 +30,18 @@ class Settings(BaseSettings):
     debug: bool = True
     api_prefix: str = "/api/v1"
     cors_origins: list[str] = ["http://localhost:5173", "http://localhost:3000"]
+
+    # --- Desktop mode (v4 Phase 0: EnterpriseAI.exe sidecar) ---
+    # When the Core runs embedded inside the desktop shell, the Rust shell
+    # launches it bound to loopback (127.0.0.1) on a random port and passes a
+    # per-launch bearer token. Every request must then present that token.
+    # Off (the default) = the web deployment behaves exactly as before: no
+    # token is required and the app is reachable per its CORS/host config.
+    desktop_mode: bool = False
+    # The per-launch shared secret the shell injects (EDIP_DESKTOP_TOKEN).
+    # Enforcement only activates when desktop_mode is on AND this is non-empty,
+    # so an accidental desktop_mode with no token never silently opens the app.
+    desktop_token: str = ""
 
     # --- Storage ---
     data_dir: Path = Path("data")
@@ -218,6 +243,17 @@ class Settings(BaseSettings):
         if self.database_url:
             return self.database_url
         return f"sqlite:///{(self.data_dir / 'control.db').as_posix()}"
+
+    @property
+    def enterprise_data_dir(self) -> Path:
+        """The generated synthetic enterprise (``enterprise_data/`` at the repo
+        root) that the V3.1 executive layer reads for structured facts. Override
+        with ``EDIP_ENTERPRISE_DATA_DIR``; absent = the executive layer runs
+        empty and every existing surface behaves exactly as before."""
+        override = os.environ.get("EDIP_ENTERPRISE_DATA_DIR")
+        if override:
+            return Path(override)
+        return Path(__file__).resolve().parents[3] / "enterprise_data"
 
     @property
     def projects_dir(self) -> Path:

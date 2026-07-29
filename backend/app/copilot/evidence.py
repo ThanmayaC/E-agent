@@ -106,6 +106,7 @@ class EvidenceCollector:
         # not shadow the ``_search`` collector method below — a shadow that
         # silently kept enterprise-search evidence from ever reaching answers.
         self._enterprise_search = search
+        self._executive = None  # ExecutiveIntelligence (V3.1), set by container
 
     # ------------------------------------------------------------ collect
     def collect(self, plan, message: str = "") -> Evidence:
@@ -147,7 +148,71 @@ class EvidenceCollector:
             except Exception as exc:  # noqa: BLE001 — one source never fails the answer
                 logger.exception("Copilot evidence source %s failed", kind)
                 evidence.missing.append(f"{kind}: {str(exc)[:120]}")
+        # V3.1: the Executive Intelligence facts are always admissible evidence
+        # for a Product Head — the incident, KPI health, ranked decisions,
+        # priorities and recommendations, with their numbers, so the model may
+        # reason over them and the validator grounds the figures it quotes.
+        try:
+            self._executive_evidence(evidence)
+        except Exception:  # noqa: BLE001 — evidence enrichment never fails an answer
+            logger.exception("Executive evidence source failed")
         return evidence
+
+    def _executive_evidence(self, evidence: "Evidence") -> None:
+        ei = self._executive
+        if ei is None or not getattr(ei, "available", False):
+            return
+        brief = ei.executive_brief()
+        health = brief.get("health", {})
+        inc = ei.incident()
+        evidence.add("executive_brief", "exec-brief",
+                     "Executive brief for the week",
+                     {"text": (f"{brief.get('business_summary','')} "
+                               f"Portfolio health {health.get('portfolio')}, "
+                               f"operational {health.get('operational')}, "
+                               f"customer {health.get('customer')}, merchant "
+                               f"{health.get('merchant')}, growth "
+                               f"{health.get('growth')}. Incident "
+                               f"{inc.get('incident_id','')} on "
+                               f"{inc.get('bank','')}: Success Rate low "
+                               f"{inc.get('low_success_rate','')}% on "
+                               f"{inc.get('low_day','')}, recovered to "
+                               f"{inc.get('current_success_rate','')}%.")})
+        for d in ei.decisions():
+            im = d["impact"]
+            evidence.add("executive_decision", d["decision_id"], d["title"],
+                         {"text": (f"Decision {d['decision_id']} '{d['title']}' "
+                                   f"status {d['status']}. Business impact "
+                                   f"{im['business']}, customer {im['customer']}, "
+                                   f"revenue {im['revenue']}, operational "
+                                   f"{im['operational']}, executive priority "
+                                   f"{d['executive_priority']}, confidence "
+                                   f"{d['confidence']}. {d['actual_impact']} "
+                                   f"{d['business_value']} Alternatives: "
+                                   f"{'; '.join(d['alternatives_considered'])}")})
+        for p in brief.get("priorities", []):
+            evidence.add("executive_priority", f"prio-{p['priority']}",
+                         p["title"],
+                         {"text": (f"Priority {p['priority']}: {p['title']}. "
+                                   f"{p['reason']} Impact {p['impact']}, "
+                                   f"confidence {p['confidence']}.")})
+        for i, r in enumerate(brief.get("recommended_actions", [])):
+            evidence.add("executive_recommendation", f"exec-rec-{i}",
+                         r["title"],
+                         {"text": (f"{r['title']}. {r['reason']} Owner "
+                                   f"{r['owner']}, priority {r['priority']}, "
+                                   f"confidence {r['confidence']}.")})
+        for c in ei.kpi_intelligence()["kpis"]:
+            evidence.add("executive_kpi", f"kpi-{c['kpi']}", c["kpi"],
+                         {"name": c["kpi"], "value": c["value"],
+                          "text": (f"{c['kpi']} is {c['value']} "
+                                   f"({c['unit']}), health {c['health']}, "
+                                   f"trend {c['trend']}. {c['why_changed']} "
+                                   f"{c['caused_by']}")})
+        for b in brief.get("banks_at_risk", []):
+            evidence.add("executive_bank", f"bank-{b['bank']}", b["bank"],
+                         {"text": (f"{b['bank']} success rate "
+                                   f"{b.get('success_rate')}%. {b['reason']}.")})
 
     # ---------------------------------------------------------- analytics
     def _projects(self, subject: str) -> list[str]:

@@ -67,9 +67,9 @@ export default function AgentActivity() {
       <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-6">
         <StaggerItem><StatCard label="Registered agents" value={(agents.data || []).length} /></StaggerItem>
         <StaggerItem><StatCard label="Events published" value={events.data?.stats?.published ?? 0} /></StaggerItem>
-        <StaggerItem><StatCard label="Jobs completed" value={jobsCompleted} tone="text-emerald-400" /></StaggerItem>
+        <StaggerItem><StatCard label="Jobs completed" value={jobsCompleted} tone="fg-success" /></StaggerItem>
         <StaggerItem><StatCard label="Jobs failed" value={jobsFailed}
-          tone={jobsFailed ? 'text-rose-400' : 'text-slate-100'} /></StaggerItem>
+          tone={jobsFailed ? 'fg-danger' : 'fg-primary'} /></StaggerItem>
       </Stagger>
 
       <div className="grid gap-5 lg:grid-cols-3">

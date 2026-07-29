@@ -37,8 +37,8 @@ export default function AdminRuntime() {
           <div className="space-y-5">
             <div className="grid gap-4 md:grid-cols-4">
               <Stat label="Autonomy" value={status.autonomy}
-                    tone={status.running ? 'text-emerald-400' : 'text-slate-400'} />
-              <Stat label="Queue pending" value={status.queue?.pending_approval} tone="text-amber-400" />
+                    tone={status.running ? 'fg-success' : 'fg-muted'} />
+              <Stat label="Queue pending" value={status.queue?.pending_approval} tone="fg-warn" />
               <Stat label="In flight" value={status.queue?.in_flight} />
               <Stat label="Autonomous decisions" value={status.decisions?.autonomous} />
             </div>

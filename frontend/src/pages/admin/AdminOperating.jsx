@@ -216,7 +216,7 @@ function Evaluation({ data }) {
     <div className="space-y-4">
       <div className="grid gap-4 md:grid-cols-4">
         <Stat label="Enabled" value={s.enabled ? 'yes' : 'no'}
-              tone={s.enabled ? 'text-emerald-400' : 'text-slate-400'} />
+              tone={s.enabled ? 'fg-success' : 'fg-muted'} />
         <Stat label="Evaluators" value={s.evaluators ?? 0} />
         <Stat label="Evaluated" value={s.evaluated ?? 0} />
         <Stat label="Acceptance"
@@ -246,7 +246,7 @@ function Governance({ data, usage }) {
     <div className="space-y-4">
       <div className="grid gap-4 md:grid-cols-4">
         <Stat label="Governance" value={data.enabled ? 'on' : 'off'}
-              tone={data.enabled ? 'text-emerald-400' : 'text-amber-400'} />
+              tone={data.enabled ? 'fg-success' : 'fg-warn'} />
         <Stat label="Roles" value={(data.roles || []).length} />
         <Stat label="Audit entries" value={data.audit_entries ?? 0} />
         <Stat label="LLM calls" value={usage?.summary?.calls ?? 0}
@@ -327,7 +327,7 @@ function Memory({ data }) {
       <div className="grid gap-4 md:grid-cols-3">
         <Stat label="Knowledge items" value={data.total_items ?? 0} />
         <Stat label="Stale items" value={data.stale_items ?? 0}
-              tone={(data.stale_items ?? 0) > 0 ? 'text-amber-400' : 'text-slate-100'} />
+              tone={(data.stale_items ?? 0) > 0 ? 'fg-warn' : 'fg-primary'} />
         <Stat label="Archived events" value={data.archived_events ?? 0} />
       </div>
       <Panel title="Knowledge freshness">

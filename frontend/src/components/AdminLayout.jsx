@@ -1,7 +1,8 @@
 // Admin Console shell — every engineering surface lives here, behind the
 // administrator switch. Business users never see this chrome.
-import { Link, NavLink, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { isAdmin } from '../lib/prefs'
+import ErrorBoundary from './ErrorBoundary'
 
 const NAV = [
   { to: '/admin', label: 'Overview', icon: '◈', end: true },
@@ -21,6 +22,7 @@ const NAV = [
 ]
 
 export default function AdminLayout() {
+  const location = useLocation()
   if (!isAdmin()) {
     return (
       <div className="min-h-screen flex items-center justify-center p-6">
@@ -63,7 +65,9 @@ export default function AdminLayout() {
         </div>
       </aside>
       <main className="flex-1 min-w-0 p-4 lg:p-8 max-w-content w-full mx-auto">
-        <Outlet />
+        <ErrorBoundary routeKey={location.pathname}>
+          <Outlet />
+        </ErrorBoundary>
       </main>
     </div>
   )

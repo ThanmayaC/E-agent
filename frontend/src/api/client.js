@@ -1,10 +1,37 @@
-const BASE = import.meta.env.VITE_API_URL || ''
+// Desktop shell (EnterpriseAI.exe) injects the Core origin + per-launch bearer
+// token as window.__CORE__ before any app code runs. In the browser dev/web
+// build it is undefined and we fall back to the Vite proxy / VITE_API_URL with
+// no token (the web Core does not require one).
+const CORE = (typeof window !== 'undefined' && window.__CORE__) || null
+const BASE = (CORE && CORE.url) || import.meta.env.VITE_API_URL || ''
+const AUTH_HEADERS = CORE && CORE.token ? { Authorization: `Bearer ${CORE.token}` } : {}
+
+// Default request ceiling. A hung backend (e.g. a slow local model retrying)
+// must never leave the UI waiting forever — the request aborts and the caller's
+// catch/finally runs, so loading indicators always clear. Override per call with
+// options.timeoutMs (the copilot uses a longer one).
+const DEFAULT_TIMEOUT_MS = 60000
 
 async function request(path, options = {}) {
-  const res = await fetch(`${BASE}/api/v1${path}`, {
-    headers: options.body instanceof FormData ? {} : { 'Content-Type': 'application/json' },
-    ...options,
-  })
+  const { timeoutMs = DEFAULT_TIMEOUT_MS, ...opts } = options
+  const contentType = opts.body instanceof FormData ? {} : { 'Content-Type': 'application/json' }
+  const controller = new AbortController()
+  const timer = setTimeout(() => controller.abort(), timeoutMs)
+  let res
+  try {
+    res = await fetch(`${BASE}/api/v1${path}`, {
+      ...opts,
+      signal: opts.signal || controller.signal,
+      headers: { ...contentType, ...AUTH_HEADERS, ...(opts.headers || {}) },
+    })
+  } catch (e) {
+    if (e.name === 'AbortError') {
+      throw new Error(`Request timed out after ${Math.round(timeoutMs / 1000)}s — the server did not respond in time.`)
+    }
+    throw e
+  } finally {
+    clearTimeout(timer)
+  }
   if (!res.ok) {
     const detail = await res.json().catch(() => ({}))
     throw new Error(detail.detail || `${res.status} ${res.statusText}`)
@@ -132,6 +159,87 @@ export const api = {
   startScheduler: () => request('/runtime/scheduler/start', { method: 'POST' }),
   stopScheduler: () => request('/runtime/scheduler/stop', { method: 'POST' }),
   runtimeExecutions: (limit = 50) => request(`/runtime/executions?limit=${limit}`),
+  // V3.1 Executive Intelligence — the AI Product Head layer
+  executiveStatus: () => request('/executive'),
+  executiveBrief: () => request('/executive/brief'),
+  executivePriorities: () => request('/executive/priorities'),
+  executiveRecommendations: () => request('/executive/recommendations'),
+  executiveKpis: () => request('/executive/kpis'),
+  executiveDecisions: () => request('/executive/decisions'),
+  executiveRisks: () => request('/executive/risks'),
+  executivePatterns: () => request('/executive/patterns'),
+  executiveTrends: () => request('/executive/trends'),
+  executiveWeekOverWeek: () => request('/executive/week-over-week'),
+  executiveMonthOverMonth: () => request('/executive/month-over-month'),
+  executiveReports: () => request('/executive/reports'),
+  // V7.0 UPI Ecosystem analytics (over the sampled ledger + aggregate cubes)
+  ecosystemStatus: () => request('/executive/ecosystem'),
+  ecosystemOverview: () => request('/executive/ecosystem/overview'),
+  ecosystemFeatures: () => request('/executive/ecosystem/features'),
+  ecosystemFeature: (feature) => request(`/executive/ecosystem/features/${encodeURIComponent(feature)}`),
+  ecosystemBanks: () => request('/executive/ecosystem/banks'),
+  ecosystemPsps: () => request('/executive/ecosystem/psps'),
+  ecosystemMarketShare: () => request('/executive/ecosystem/market-share'),
+  ecosystemGrowth: () => request('/executive/ecosystem/growth'),
+  ecosystemCities: () => request('/executive/ecosystem/cities'),
+  ecosystemHourly: () => request('/executive/ecosystem/hourly'),
+  ecosystemMix: () => request('/executive/ecosystem/mix'),
+  ecosystemAnomalies: () => request('/executive/ecosystem/anomalies'),
+  ecosystemForecasts: () => request('/executive/ecosystem/forecasts'),
+  ecosystemKpis: () => request('/executive/ecosystem/kpis'),
+  // V8.0 six-month evolution — the continuously-evolving digital twin
+  evolutionStatus: () => request('/executive/evolution'),
+  evolutionOverview: () => request('/executive/evolution/overview'),
+  evolutionCustomers: () => request('/executive/evolution/customers'),
+  evolutionMerchants: () => request('/executive/evolution/merchants'),
+  evolutionMerchant: (name) => request(`/executive/evolution/merchants/${encodeURIComponent(name)}`),
+  evolutionBanks: () => request('/executive/evolution/banks'),
+  evolutionPsps: () => request('/executive/evolution/psps'),
+  evolutionProducts: () => request('/executive/evolution/products'),
+  evolutionProduct: (name) => request(`/executive/evolution/products/${encodeURIComponent(name)}`),
+  evolutionFeatures: () => request('/executive/evolution/features'),
+  evolutionTrends: (grain = 'monthly') => request(`/executive/evolution/trends?grain=${grain}`),
+  evolutionTrend: (kpi) => request(`/executive/evolution/trends/${encodeURIComponent(kpi)}`),
+  evolutionForecastAccuracy: () => request('/executive/evolution/forecast-accuracy'),
+  evolutionForecast: (kpi) => request(`/executive/evolution/forecast/${encodeURIComponent(kpi)}`),
+  evolutionDecisions: () => request('/executive/evolution/decisions'),
+  evolutionDecision: (id) => request(`/executive/evolution/decisions/${encodeURIComponent(id)}`),
+  evolutionCrossEntity: (entity = '') => request(`/executive/evolution/cross-entity${entity ? `?entity=${encodeURIComponent(entity)}` : ''}`),
+  evolutionStories: () => request('/executive/evolution/stories'),
+  evolutionStory: (week) => request(`/executive/evolution/stories/${week}`),
+  evolutionAsk: (q) => request(`/executive/evolution/ask?q=${encodeURIComponent(q)}`),
+  // V9.0 AI Workspace — universal upload+understanding, unified search, artifacts
+  workspaceStatus: () => request('/workspace'),
+  workspaceHome: () => request('/workspace/home'),
+  workspaceUpload: (files) => {
+    const form = new FormData()
+    for (const f of files) form.append('files', f)
+    return request('/workspace/upload', { method: 'POST', body: form })
+  },
+  workspaceFiles: () => request('/workspace/files'),
+  workspaceFile: (id) => request(`/workspace/files/${id}`),
+  deleteWorkspaceFile: (id) => request(`/workspace/files/${id}`, { method: 'DELETE' }),
+  workspaceSearch: (q, limit = 40) => request(`/workspace/search?q=${encodeURIComponent(q)}&limit=${limit}`),
+  generateArtifact: (payload) => request('/workspace/artifacts', { method: 'POST', body: JSON.stringify(payload) }),
+  workspaceArtifacts: () => request('/workspace/artifacts'),
+  workspacePins: () => request('/workspace/pins'),
+  addWorkspacePin: (bucket, item) => request('/workspace/pins', { method: 'POST', body: JSON.stringify({ bucket, item }) }),
+  removeWorkspacePin: (bucket, id) => request(`/workspace/pins/${bucket}/${id}`, { method: 'DELETE' }),
+  workspaceContext: (page = '') => request(`/workspace/context?page=${encodeURIComponent(page)}`),
+  artifactUrl: (name) => `${BASE}/api/v1/workspace/artifacts/${name}`,
+  // V10.0 analyst layer — ML models, insights, continuous learning, cache
+  mlStatus: () => request('/ml'),
+  mlModels: () => request('/ml/models'),
+  mlForecast: (kpi = 'Success Rate (%)', horizon = 30) => request(`/ml/forecast?kpi=${encodeURIComponent(kpi)}&horizon=${horizon}`),
+  mlAnomalies: () => request('/ml/anomalies'),
+  mlSegments: (k = 4) => request(`/ml/segments?k=${k}`),
+  mlChurn: () => request('/ml/churn'),
+  mlFailure: () => request('/ml/failure'),
+  insights: (limit = 12) => request(`/insights?limit=${limit}`),
+  learningStats: () => request('/learning'),
+  sendFeedback: (ref, action, kind = 'recommendation', meta = {}) =>
+    request('/learning/feedback', { method: 'POST', body: JSON.stringify({ kind, ref, action, meta }) }),
+  cacheStats: () => request('/cache'),
   // V2.4 Decision Intelligence — the Brain deciding, not just informing
   intelligenceBrief: () => request('/runtime/intelligence/brief'),
   intelligenceStatus: () => request('/runtime/intelligence'),
@@ -147,7 +255,9 @@ export const api = {
   intelligenceObserve: () => request('/runtime/intelligence/observe', { method: 'POST' }),
   // Enterprise Copilot (organization-wide conversational surface)
   copilotChat: (message, conversation_id = '') =>
-    request('/copilot/chat', { method: 'POST', body: JSON.stringify({ message, conversation_id }) }),
+    // Longer ceiling than the default: a local model may legitimately take a
+    // while, but it is still bounded so the UI always recovers.
+    request('/copilot/chat', { method: 'POST', body: JSON.stringify({ message, conversation_id }), timeoutMs: 150000 }),
   copilotWorkspace: () => request('/copilot'),
   copilotSuggestions: (limit = 6) => request(`/copilot/suggestions?limit=${limit}`),
   copilotIntents: () => request('/copilot/intents'),
@@ -161,6 +271,14 @@ export const api = {
   managerProductReviews: (limit = 6) => request(`/manager/product-reviews?limit=${limit}`),
   managerOrganization: () => request('/manager/organization'),
   managerSearch: (q, limit = 12) => request(`/manager/search?q=${encodeURIComponent(q)}&limit=${limit}`),
+  // Phase 2 — Communications: email as enterprise knowledge
+  commProviders: () => request('/communication/providers'),
+  commInbox: (provider = '', folder = 'inbox', top = 25) =>
+    request(`/communication/inbox?folder=${encodeURIComponent(folder)}&top=${top}${provider ? `&provider=${encodeURIComponent(provider)}` : ''}`),
+  commSearch: (q, provider = '', top = 25) =>
+    request(`/communication/search?q=${encodeURIComponent(q)}&top=${top}${provider ? `&provider=${encodeURIComponent(provider)}` : ''}`),
+  commAnalyze: (email) => request('/communication/analyze', { method: 'POST', body: JSON.stringify(email) }),
+  commDraft: (kind, context) => request('/communication/draft', { method: 'POST', body: JSON.stringify({ kind, context }) }),
   dailyBriefHistory: (limit = 14) => request(`/manager/daily-brief/history?limit=${limit}`),
   productOverview: () => request('/product'),
   productPortfolio: () => request('/product/portfolio'),
@@ -179,6 +297,10 @@ export const api = {
   documentsList: (category = '', limit = 100) =>
     request(`/documents?limit=${limit}${category ? `&category=${category}` : ''}`),
   documentVersions: (id) => request(`/documents/${id}/versions`),
+  // Enterprise RAG diagnostics + live retrieval test
+  ragDiagnostics: () => request('/documents/rag'),
+  documentsSearch: (q, limit = 8) =>
+    request(`/documents/search?q=${encodeURIComponent(q)}&limit=${limit}`),
   registerSource: (payload) => request('/sources', { method: 'POST', body: JSON.stringify(payload) }),
   // Organization synchronization (Admin Console)
   syncSources: () => request('/sources'),

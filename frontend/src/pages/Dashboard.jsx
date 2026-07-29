@@ -1,19 +1,22 @@
 import { useParams, Link } from 'react-router-dom'
 import { api, fmt } from '../api/client'
 import { AsyncSection, Badge, PageHeader, useAsync } from '../components/ui'
-import EChart, { axisStyle, PALETTE } from '../components/EChart'
+import EChart, { axisStyle, PALETTE, useChartTheme } from '../components/EChart'
 
 function HealthRing({ score }) {
-  const tone = score >= 70 ? '#34d399' : score >= 45 ? '#fbbf24' : '#f87171'
+  const theme = useChartTheme()
+  const tone = score >= 70 ? theme.palette[1]
+    : score >= 45 ? theme.palette[2] : theme.palette[3]
   return (
     <EChart height={170} option={{
       series: [{
         type: 'gauge', startAngle: 220, endAngle: -40, min: 0, max: 100,
         progress: { show: true, width: 12, itemStyle: { color: tone } },
-        axisLine: { lineStyle: { width: 12, color: [[1, '#1a2333']] } },
+        axisLine: { lineStyle: { width: 12, color: [[1, theme.grid]] } },
         axisTick: { show: false }, splitLine: { show: false }, axisLabel: { show: false },
         pointer: { show: false }, anchor: { show: false },
-        detail: { valueAnimation: false, fontSize: 30, color: '#e2e8f0', offsetCenter: [0, 0], formatter: '{value}' },
+        detail: { valueAnimation: false, fontSize: 30, color: theme.textStrong,
+                  offsetCenter: [0, 0], formatter: '{value}' },
         data: [{ value: score }],
       }],
     }} />
@@ -88,7 +91,7 @@ export default function Dashboard() {
                     )}
                   </>
                 ) : (
-                  <p className="text-sm text-amber-300/80">
+                  <p className="text-sm fg-warn">
                     {r.meta.ai.error || 'Configure an LLM provider (EDIP_LLM_PROVIDER) to generate the executive narrative.'}
                     {' '}Deterministic KPIs, signals and forecasts below remain available.
                   </p>

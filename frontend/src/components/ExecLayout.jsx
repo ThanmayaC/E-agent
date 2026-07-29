@@ -1,33 +1,34 @@
 // Executive shell — the production experience. Business surfaces only;
 // engineering screens live behind the Admin Console.
 import { useEffect, useRef, useState } from 'react'
-import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom'
+import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { api } from '../api/client'
 import { getTheme, isAdmin, setTheme } from '../lib/prefs'
+import AISidebar from './AISidebar'
+import ErrorBoundary from './ErrorBoundary'
 
-// Two groups: the core executive surfaces, and the V2.5 "Intelligence"
-// premium surfaces (graph, timeline, analytics dashboards).
+// A single flat nav for the Product Manager workspace. Technical/engineering
+// surfaces (graph, workflow monitor, agent activity, knowledge growth,
+// decision analytics) live under Admin, not here — see App.jsx.
+// Phase 2 #15: eight work-oriented destinations (Settings lives in the footer).
+// Search stays in the header bar; Products, Ecosystem, Evolution, Timeline and
+// Decisions remain reachable by URL (see App.jsx) and are surfaced as tabs/cards
+// inside Workspace, Analytics and Products — demoted from the rail, not removed.
 const NAV = [
-  { to: '/', label: 'Cockpit', icon: '◆', end: true },
-  { to: '/dashboard', label: 'Executive Dashboard', icon: '◈' },
-  { to: '/portfolio', label: 'Portfolio', icon: '▦' },
+  { to: '/', label: 'Workspace', icon: '✦', end: true },
+  { to: '/assistant', label: 'AI Analyst', icon: '💬' },
+  { to: '/files', label: 'Files', icon: '📎' },
   { to: '/reports', label: 'Reports', icon: '▣' },
-  { to: '/copilot', label: 'AI Copilot', icon: '✦' },
-  { to: '/tasks', label: 'Tasks', icon: '☑' },
-  { to: '/decisions', label: 'Decisions', icon: '⚖' },
-  { to: '/notifications', label: 'Notifications', icon: '◔' },
+  { to: '/intelligence', label: 'Analytics', icon: '⚛' },
+  { to: '/communications', label: 'Communications', icon: '✉' },
+  { to: '/products', label: 'Products', icon: '▦' },
+  { to: '/data', label: 'Projects', icon: '▤' },
 ]
 
-const NAV_INTEL = [
-  { to: '/graph', label: 'Graph Explorer', icon: '❖' },
-  { to: '/timeline', label: 'Timeline', icon: '≡' },
-  { to: '/analytics/decisions', label: 'Decision Analytics', icon: '◉' },
-  { to: '/analytics/workflows', label: 'Workflow Monitor', icon: '⟳' },
-  { to: '/analytics/agents', label: 'Agent Activity', icon: '⧉' },
-  { to: '/analytics/knowledge', label: 'Knowledge Growth', icon: '↗' },
-]
+const NAV_INTEL = []
 
-const THEMES = ['midnight', 'graphite', 'daylight']
+// Light theme leads; dark themes remain available via the header toggle.
+const THEMES = ['daylight', 'graphite', 'midnight']
 const THEME_ICON = { midnight: '☾', graphite: '◑', daylight: '☀' }
 
 function ThemeToggle() {
@@ -50,6 +51,7 @@ function GlobalSearch() {
   const [open, setOpen] = useState(false)
   const boxRef = useRef(null)
   const timer = useRef(null)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const close = (e) => { if (boxRef.current && !boxRef.current.contains(e.target)) setOpen(false) }
@@ -70,8 +72,9 @@ function GlobalSearch() {
 
   return (
     <div ref={boxRef} className="relative w-full max-w-md">
-      <input className="input !py-1.5 !bg-surface-overlay/50" placeholder="Search across the organization…"
+      <input className="input !py-1.5 !bg-surface-overlay/50" placeholder="Search across the organization…  (Enter for full results)"
              value={q} onChange={(e) => onChange(e.target.value)}
+             onKeyDown={(e) => { if (e.key === 'Enter' && q.trim()) { setOpen(false); navigate(`/search?q=${encodeURIComponent(q.trim())}`) } }}
              onFocus={() => results && setOpen(true)} />
       {open && (
         <div className="absolute top-full mt-1.5 left-0 right-0 card shadow-2xl shadow-black/40 z-50 max-h-96 overflow-y-auto">
@@ -119,6 +122,7 @@ function NotificationBell() {
 export default function ExecLayout() {
   const [admin, setAdminState] = useState(isAdmin())
   const navigate = useNavigate()
+  const location = useLocation()
   useEffect(() => {
     const sync = () => setAdminState(isAdmin())
     window.addEventListener('edip-admin-changed', sync)
@@ -136,14 +140,6 @@ export default function ExecLayout() {
         <nav className="flex-1 overflow-y-auto py-3 space-y-0.5">
           {NAV.map((item) => (
             <NavLink key={item.to} to={item.to} end={item.end}
-                     className={({ isActive }) => `nav-item ${isActive ? 'nav-item-active' : 'nav-item-idle'}`}>
-              <span className="w-4 text-center opacity-70">{item.icon}</span>
-              {item.label}
-            </NavLink>
-          ))}
-          <div className="px-5 pt-4 pb-1.5 text-[10px] uppercase tracking-[0.14em] text-slate-600 font-semibold">Intelligence</div>
-          {NAV_INTEL.map((item) => (
-            <NavLink key={item.to} to={item.to}
                      className={({ isActive }) => `nav-item ${isActive ? 'nav-item-active' : 'nav-item-idle'}`}>
               <span className="w-4 text-center opacity-70">{item.icon}</span>
               {item.label}
@@ -173,7 +169,7 @@ export default function ExecLayout() {
           <div className="flex-1" />
           <ThemeToggle />
           <NotificationBell />
-          <Link to="/copilot" title="Ask the AI Copilot"
+          <Link to="/assistant" title="Ask the AI Assistant"
                 className="w-8 h-8 rounded-lg flex items-center justify-center text-accent hover:bg-accent/10 transition-colors">✦</Link>
           <div className="w-8 h-8 rounded-full bg-accent/20 text-accent text-xs font-semibold flex items-center justify-center"
                title="Executive">E</div>
@@ -194,9 +190,14 @@ export default function ExecLayout() {
         </nav>
 
         <main className="flex-1 min-w-0 p-4 lg:p-8 max-w-content w-full mx-auto">
-          <Outlet />
+          <ErrorBoundary routeKey={location.pathname}>
+            <Outlet />
+          </ErrorBoundary>
         </main>
       </div>
+
+      {/* Persistent, context-aware AI panel — available on every page */}
+      <AISidebar />
     </div>
   )
 }

@@ -31,7 +31,11 @@ class GeminiProvider(BaseLLMProvider):
                f"{self.config.model}:generateContent?key={self.config.api_key}")
         resp = httpx.post(url, json=payload, timeout=self.config.timeout_s)
         resp.raise_for_status()
-        candidates = resp.json().get("candidates", [])
+        data = resp.json()
+        usage = data.get("usageMetadata") or {}
+        self.last_usage = {"tokens_in": int(usage.get("promptTokenCount", 0)),
+                           "tokens_out": int(usage.get("candidatesTokenCount", 0))}
+        candidates = data.get("candidates", [])
         if not candidates:
             raise RuntimeError("Gemini returned no candidates")
         return "".join(p.get("text", "") for p in candidates[0]["content"]["parts"])

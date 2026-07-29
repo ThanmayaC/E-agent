@@ -25,6 +25,17 @@ const blank = {
   auth: { kind: 'none', ref: '' }, options: '',
 }
 
+// The platform holds sources in two registries — this framework's own, and
+// the Synchronization Layer's (where document folders and the enterprise
+// corpus live). Both are real; only the former is administered from here.
+const originHint = (byOrigin) => {
+  if (!byOrigin) return ''
+  const own = byOrigin.connector_framework ?? 0
+  const sync = byOrigin.sync_layer ?? 0
+  if (!sync) return 'all managed by the connector framework'
+  return `${own} connector · ${sync} synchronization layer`
+}
+
 export default function AdminConnectors() {
   const [refresh, setRefresh] = useState(0)
   const [busy, setBusy] = useState('')
@@ -104,13 +115,14 @@ export default function AdminConnectors() {
           return (
             <div className="space-y-5">
               <div className="grid gap-4 md:grid-cols-4">
-                <Stat label="Data sources" value={status.total ?? 0} />
+                <Stat label="Data sources" value={status.total ?? 0}
+                      hint={originHint(status.by_origin)} />
                 <Stat label="Healthy" value={status.healthy ?? 0}
-                      tone="text-emerald-400" />
+                      tone="fg-success" />
                 <Stat label="Need attention" value={status.needs_attention ?? 0}
-                      tone={(status.needs_attention ?? 0) > 0 ? 'text-amber-400' : 'text-slate-100'} />
-                <Stat label="Knowledge packages" value={status.packages_produced ?? 0}
-                      hint="produced since the framework started" />
+                      tone={(status.needs_attention ?? 0) > 0 ? 'fg-warn' : 'fg-primary'} />
+                <Stat label="Records ingested" value={status.items_total ?? 0}
+                      hint="across every connected source" />
               </div>
 
               {showForm && (
@@ -193,7 +205,12 @@ export default function AdminConnectors() {
                                 {s.location || s.description || '—'}
                               </div>
                             </td>
-                            <td className="text-xs font-mono">{s.kind}</td>
+                            <td className="text-xs font-mono">
+                              {s.kind}
+                              {s.origin === 'sync_layer' && (
+                                <div className="mt-1"><Badge>sync layer</Badge></div>
+                              )}
+                            </td>
                             <td>
                               <Badge tone={HEALTH_TONE[s.health] || 'default'}>
                                 {s.enabled ? s.health : 'disabled'}
@@ -210,6 +227,11 @@ export default function AdminConnectors() {
                             </td>
                             <td className="text-xs tabular-nums">{s.items_total ?? 0}</td>
                             <td>
+                              {s.read_only ? (
+                                <span className="text-[11px] fg-muted">
+                                  Managed under Sync — administered there, not here.
+                                </span>
+                              ) : (
                               <div className="flex flex-wrap gap-1">
                                 <button className="btn-ghost text-xs px-2 py-1"
                                         disabled={busy === `test-${s.connector_id}`}
@@ -235,12 +257,13 @@ export default function AdminConnectors() {
                                             { enabled: !s.enabled }))}>
                                   {s.enabled ? 'Disable' : 'Enable'}
                                 </button>
-                                <button className="btn-ghost text-xs px-2 py-1 text-rose-400"
+                                <button className="btn-ghost text-xs px-2 py-1 fg-danger"
                                         onClick={() => act(`del-${s.connector_id}`,
                                           () => api.deleteConnector(s.connector_id))}>
                                   Delete
                                 </button>
                               </div>
+                              )}
                             </td>
                           </tr>
                         ))}

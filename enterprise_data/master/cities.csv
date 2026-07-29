@@ -1,0 +1,26 @@
+city,state,weight
+Mumbai,Maharashtra,3.1
+Delhi,Delhi,3.0
+Bengaluru,Karnataka,2.8
+Hyderabad,Telangana,2.2
+Chennai,Tamil Nadu,2.0
+Pune,Maharashtra,1.7
+Kolkata,West Bengal,1.7
+Ahmedabad,Gujarat,1.5
+Surat,Gujarat,1.1
+Jaipur,Rajasthan,1.1
+Lucknow,Uttar Pradesh,1.0
+Kanpur,Uttar Pradesh,0.8
+Nagpur,Maharashtra,0.8
+Indore,Madhya Pradesh,0.9
+Bhopal,Madhya Pradesh,0.7
+Patna,Bihar,0.8
+Chandigarh,Chandigarh,0.7
+Kochi,Kerala,0.9
+Coimbatore,Tamil Nadu,0.8
+Visakhapatnam,Andhra Pradesh,0.8
+Guwahati,Assam,0.6
+Bhubaneswar,Odisha,0.6
+Ludhiana,Punjab,0.7
+Vadodara,Gujarat,0.7
+Gurugram,Haryana,1.0

@@ -28,6 +28,7 @@ from app.intelligence.context.builder import BusinessContextBuilder
 from app.intelligence.dedup.merger import DatasetMerger
 from app.intelligence.embeddings.embedder import Embedder
 from app.intelligence.embeddings.vector_store import build_documents, create_vector_store
+from app.intelligence.feasibility import AnalysisFeasibility
 from app.intelligence.forecasting.engine import ForecastEngine
 from app.intelligence.graph.knowledge_graph import KnowledgeGraphBuilder
 from app.intelligence.kpi.discovery import KPIDiscovery
@@ -104,7 +105,18 @@ class IntelligenceEngine:
     # ---------------------------------------------------------- analytics
     def kpis(self, profiles: list[TableProfile],
              frames: dict[str, pd.DataFrame]) -> list:
-        return KPIDiscovery().discover(profiles, frames)
+        discovery = KPIDiscovery()
+        found = discovery.discover(profiles, frames)
+        # Period coverage is a property of the data, not of any one KPI; keep
+        # it so the feasibility gate and the report can explain which periods
+        # were analysed and which were excluded as incomplete.
+        self.period_coverage = discovery.coverage
+        return found
+
+    def feasibility(self, profiles: list[TableProfile], kpis: list) -> dict:
+        """What the supplied data can actually support. Runs before narrative."""
+        return AnalysisFeasibility().assess(
+            profiles, kpis, getattr(self, "period_coverage", {}))
 
     def quality(self, project_id: str, profiles: list[TableProfile],
                 frames: dict[str, pd.DataFrame]) -> Any:
@@ -165,10 +177,13 @@ class IntelligenceEngine:
     def business_context(self, project_id: str, name: str,
                          profiles: list[TableProfile], relationships: list,
                          kpis: list, signals: list, forecasts: list,
-                         quality: Any, understanding: dict | None = None) -> dict:
+                         quality: Any, understanding: dict | None = None,
+                         feasibility: dict | None = None) -> dict:
         """Compact factual JSON — the only thing reasoning agents ever see."""
         context = BusinessContextBuilder().build(
             name, profiles, relationships, kpis, signals, forecasts, quality,
-            understanding=understanding)
+            understanding=understanding,
+            feasibility=feasibility if feasibility is not None
+            else self.feasibility(profiles, kpis))
         self.store.save(project_id, "business_context", context)
         return context

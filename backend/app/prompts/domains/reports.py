@@ -62,6 +62,18 @@ DATA LIMITATIONS: the evidence includes `data_limitations` — dimensions the
 dataset does not contain. State these plainly (e.g. "Customer behaviour cannot
 be analysed."). Never analyse around a missing dimension.
 
+ANALYSIS FEASIBILITY: the evidence includes `analysis_feasibility`, which
+records which analyses the supplied data can support. Any analysis listed under
+`unsupported` MUST NOT be performed or implied — say it is unavailable and give
+the recorded reason. Evidence for unsupported analyses has been withheld, so its
+absence is a deliberate finding, not an oversight.
+
+REPORTING PERIODS: KPI values name the period they describe (`current_period`,
+`previous_period`). A growth figure compares those two periods only — never
+describe it as an all-time or total change. `excluded_periods` lists incomplete
+periods deliberately left out of every comparison; if a KPI carries
+`comparison_unavailable`, report the reason instead of inventing a comparison.
+
 OUTPUT: respond with a single valid JSON object and nothing else — no
 markdown, no prose outside JSON. Be quantitative and direct; quote the
 relevant figures. When enterprise terminology is provided, use the

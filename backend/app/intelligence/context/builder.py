@@ -19,6 +19,16 @@ from app.domain.entities import (
 )
 from app.domain.enums import BusinessConcept, ColumnRole, SemanticType, SignalKind
 
+# Health score terms, named so the report can print the formula it used rather
+# than a number nobody can reproduce.
+HEALTH_BASELINE = 70.0          # a dataset with no positive or negative signal
+HEALTH_GROWTH_CAP = 15.0        # most growth can add
+HEALTH_GROWTH_FLOOR = 25.0      # most decline can subtract
+HEALTH_ANOMALY_PENALTY = 4.0    # per strong anomaly
+HEALTH_ANOMALY_STRENGTH = 0.7   # what counts as strong
+HEALTH_QUALITY_WEIGHT = 0.2     # weight on (quality - baseline)
+HEALTH_MIN, HEALTH_MAX = 5.0, 98.0
+
 # analysis dimensions the platform can check for deterministically: when the
 # schema contains no column of these concepts, the corresponding analysis is
 # impossible and the report must say so instead of speculating
@@ -54,10 +64,25 @@ class BusinessContextBuilder:
         forecasts: list[Forecast],
         quality: QualityReport,
         understanding: dict[str, Any] | None = None,
+        feasibility: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
         trended = [k for k in kpis if k.growth_pct is not None]
         anomalies = [s for s in signals if s.kind == SignalKind.ANOMALY]
+        # Analyses the data cannot support are withheld from the model rather
+        # than merely discouraged: it cannot narrate what it never receives.
+        allowed = set((feasibility or {}).get("supported") or [])
+        gate = bool(feasibility)
+        if gate and "anomaly_detection" not in allowed:
+            anomalies = []
+            signals = [s for s in signals if s.kind != SignalKind.ANOMALY]
+        if gate and "trend" not in allowed:
+            signals = [s for s in signals if s.kind != SignalKind.TREND]
+        if gate and "seasonality" not in allowed:
+            signals = [s for s in signals if s.kind != SignalKind.SEASONALITY]
+        if gate and "forecast" not in allowed:
+            forecasts = []
         return {
+            **({"analysis_feasibility": feasibility} if feasibility else {}),
             # how confidently the platform understood the data (assessment
             # facts + user-answered clarifications) — lets the model reason
             # confidence-aware and in the organization's own terms
@@ -149,6 +174,7 @@ class BusinessContextBuilder:
             },
             "executive_metrics": {
                 "health_score": self.health_score(kpis, signals, quality),
+                "health_score_breakdown": self.health_breakdown(kpis, signals, quality),
                 "high_strength_anomalies": len([s for s in anomalies if s.strength >= 0.7]),
                 "concentration_signals": [
                     self._signal(s) for s in signals if s.kind == SignalKind.CONCENTRATION
@@ -169,6 +195,14 @@ class BusinessContextBuilder:
             "trend": k.trend,
             "history_tail": k.sparkline[-self.history_tail:],
             "history_labels": k.sparkline_labels[-self.history_tail:],
+            # Which periods these numbers describe. Without this the model can
+            # read a period-over-period move as an all-time collapse.
+            "basis": k.basis,
+            "current_period": k.current_period_label,
+            "previous_period": k.previous_period_label,
+            "excluded_periods": k.excluded_periods,
+            **({"comparison_unavailable": k.comparison_unavailable_reason}
+               if k.comparison_unavailable_reason else {}),
         }
 
     @staticmethod
@@ -191,11 +225,20 @@ class BusinessContextBuilder:
         ]
         missing, available = [], []
         for dim in ANALYSIS_DIMENSIONS:
+            backing = [f"{p.name}.{c.name}" for p in profiles for c in p.columns
+                       if c.concept in dim["concepts"]]
+            if dim["dimension"] == "geography" and has_geo:
+                backing += [f"{p.name}.{c.name}" for p in profiles for c in p.columns
+                            if c.semantic_type == SemanticType.GEO]
             present = bool(concepts & dim["concepts"]) or \
                 (dim["dimension"] == "geography" and has_geo)
-            (available if present else missing).append(
-                {"dimension": dim["dimension"]} if present
-                else {"dimension": dim["dimension"], "impact": dim["impact"]})
+            if present:
+                # Name the columns that make the dimension analysable, so
+                # "available" is a checkable claim rather than an assertion.
+                available.append({"dimension": dim["dimension"],
+                                  "backed_by": sorted(set(backing))[:8]})
+            else:
+                missing.append({"dimension": dim["dimension"], "impact": dim["impact"]})
         if not segmentation_cols:
             missing.append({"dimension": "segmentation",
                             "impact": "Segment-level analysis unavailable: no "
@@ -206,11 +249,19 @@ class BusinessContextBuilder:
                                   "macroeconomics, pricing environment) are not in "
                                   "the dataset and cannot be assessed."})
         history = max((len(k.sparkline) for k in kpis), default=0)
+        excluded_columns = [
+            {"column": f"{p.name}.{c.name}", "inferred_type": c.semantic_type.value,
+             "reason": c.exclusion_reason}
+            for p in profiles for c in p.columns if c.exclusion_reason]
         return {
             "available_dimensions": sorted(d["dimension"] for d in available),
+            "available_dimension_detail": available,
             "missing_dimensions": missing,
             "observed_history_periods": history,
             "segmentation_columns": segmentation_cols[:10],
+            # Numeric columns deliberately not treated as measures — disclosed
+            # so an excluded column is never mistaken for an overlooked one.
+            "excluded_columns": excluded_columns[:40],
         }
 
     @staticmethod
@@ -221,13 +272,70 @@ class BusinessContextBuilder:
         return counts
 
     @staticmethod
-    def health_score(kpis: list[KPI], signals: list[AnalyticsSignal], quality: QualityReport) -> float:
-        """Deterministic composite metric (a computed fact, not narrative)."""
-        score = 70.0
+    def health_score(kpis: list[KPI], signals: list[AnalyticsSignal],
+                     quality: QualityReport) -> float:
+        return BusinessContextBuilder.health_breakdown(kpis, signals, quality)["score"]
+
+    @staticmethod
+    def health_breakdown(kpis: list[KPI], signals: list[AnalyticsSignal],
+                         quality: QualityReport) -> dict[str, Any]:
+        """Deterministic composite metric, with every term shown.
+
+        A single number nobody can reproduce is not a metric, it is an opinion.
+        The components, their weights and the clamp are all reported, including
+        the pre-clamp value — a score sitting on the floor means "at or below
+        the floor", which is a materially different statement from "5".
+        """
+        components: list[dict[str, Any]] = []
+        score = HEALTH_BASELINE
+        components.append({"component": "baseline", "value": HEALTH_BASELINE,
+                           "contribution": HEALTH_BASELINE,
+                           "detail": "starting point for a dataset with no signal"})
+
         trended = [k for k in kpis if k.growth_pct is not None]
         if trended:
             avg_growth = sum(k.growth_pct for k in trended) / len(trended)
-            score += max(min(avg_growth, 15), -25)
-        score -= 4 * len([s for s in signals if s.kind == SignalKind.ANOMALY and s.strength >= 0.7])
-        score += (quality.overall_score - 70) * 0.2
-        return round(max(min(score, 98), 5), 1)
+            contribution = max(min(avg_growth, HEALTH_GROWTH_CAP), -HEALTH_GROWTH_FLOOR)
+            score += contribution
+            components.append({
+                "component": "average_kpi_growth", "value": round(avg_growth, 2),
+                "contribution": round(contribution, 2),
+                "detail": (f"mean growth across {len(trended)} KPI(s) with a "
+                           f"period-over-period comparison, clamped to "
+                           f"[-{HEALTH_GROWTH_FLOOR}, +{HEALTH_GROWTH_CAP}]")})
+
+        strong = [s for s in signals
+                  if s.kind == SignalKind.ANOMALY and s.strength >= HEALTH_ANOMALY_STRENGTH]
+        if strong:
+            contribution = -HEALTH_ANOMALY_PENALTY * len(strong)
+            score += contribution
+            components.append({
+                "component": "strong_anomalies", "value": len(strong),
+                "contribution": round(contribution, 2),
+                "detail": (f"{HEALTH_ANOMALY_PENALTY} points per anomaly with "
+                           f"strength >= {HEALTH_ANOMALY_STRENGTH}")})
+
+        quality_contribution = (quality.overall_score - HEALTH_BASELINE) * HEALTH_QUALITY_WEIGHT
+        score += quality_contribution
+        components.append({
+            "component": "data_quality", "value": quality.overall_score,
+            "contribution": round(quality_contribution, 2),
+            "detail": f"(quality_score - {HEALTH_BASELINE}) * {HEALTH_QUALITY_WEIGHT}"})
+
+        raw = round(score, 1)
+        final = round(max(min(score, HEALTH_MAX), HEALTH_MIN), 1)
+        return {
+            "score": final,
+            "raw_score": raw,
+            "clamped": final != raw,
+            "clamp_note": (
+                f"the computed value was {raw}; the reported score is the "
+                f"{'floor' if raw < HEALTH_MIN else 'ceiling'} of {final}, so treat it "
+                f"as '{'at or below' if raw < HEALTH_MIN else 'at or above'} {final}'"
+            ) if final != raw else "",
+            "formula": (f"{HEALTH_BASELINE} + clamp(avg_kpi_growth, -{HEALTH_GROWTH_FLOOR}, "
+                        f"+{HEALTH_GROWTH_CAP}) - {HEALTH_ANOMALY_PENALTY}*strong_anomalies "
+                        f"+ (quality_score - {HEALTH_BASELINE})*{HEALTH_QUALITY_WEIGHT}, "
+                        f"clamped to [{HEALTH_MIN}, {HEALTH_MAX}]"),
+            "components": components,
+        }

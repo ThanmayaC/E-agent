@@ -132,13 +132,23 @@ class EnterpriseBrain:
         return self.context.build(project_id, business_context, objective)
 
     def status(self) -> dict[str, Any]:
+        # Component states are derived from the startup checks that actually
+        # ran, never asserted. A component whose check failed reports
+        # "degraded"; before startup() has run there is nothing to report, so
+        # it says so rather than claiming readiness.
+        def component(check: str) -> str:
+            result = self.checks.get(check)
+            if result is None:
+                return "not_started"
+            return "ready" if result.get("ok") else "degraded"
+
         return {"state": self.state, "started_at": self.started_at,
                 "checks": self.checks,
                 "components": {
-                    "knowledge_engine": "ready",
-                    "learning_engine": "ready",
-                    "memory_synchronizer": "ready",
-                    "enterprise_context_builder": "ready",
+                    "knowledge_engine": component("knowledge_store"),
+                    "learning_engine": component("learning_history"),
+                    "memory_synchronizer": component("memory"),
+                    "enterprise_context_builder": component("business_rules"),
                     "knowledge_graph": self.graph.stats().get("neo4j",
                                                               "not_configured"),
                 }}

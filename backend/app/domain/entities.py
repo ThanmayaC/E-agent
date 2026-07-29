@@ -45,6 +45,10 @@ class ColumnProfile(BaseModel):
     std_value: Optional[float] = None
     aliases: list[str] = Field(default_factory=list)
     description: str = ""
+    # Set when a numeric column was deliberately NOT treated as an additive
+    # measure (phone numbers, category codes, sequence numbers...). Reported so
+    # the exclusion is auditable rather than silent.
+    exclusion_reason: str = ""
 
 
 class TableProfile(BaseModel):
@@ -119,6 +123,17 @@ class KPI(BaseModel):
     forecast_next: Optional[float] = None
     forecast_confidence: Optional[float] = None
     confidence: float = 0.0
+    # Provenance: which periods the numbers above describe, what was excluded,
+    # and how the value was computed. A KPI that cannot be traced back to its
+    # inputs is not reportable.
+    period_grain: str = ""
+    current_period_label: str = ""
+    previous_period_label: str = ""
+    excluded_periods: list[str] = Field(default_factory=list)
+    comparison_unavailable_reason: str = ""
+    basis: str = ""              # "whole_dataset" | "period_over_period"
+    contributing_rows: int = 0
+    calculation: dict[str, Any] = Field(default_factory=dict)
 
 
 class QualityIssue(BaseModel):

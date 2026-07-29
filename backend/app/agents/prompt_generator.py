@@ -15,9 +15,56 @@ from dataclasses import dataclass, field
 from typing import Any
 
 from app.agents.base import AgentPlan, AgentRequest, AgentResult, BaseAgent
+from app.core.logging import get_logger
 from app.knowledge.store import KnowledgeStore
 from app.memory.manager import MemoryManager, WorkingMemory
 from app.tools.registry import ToolRegistry
+
+logger = get_logger(__name__)
+
+# Context budget (Enterprise RAG / Prompt Builder, production hardening).
+# The copilot prompt must never carry the *entire* evidence set or business
+# context to the model — an oversized prompt is the single biggest cause of
+# local-model timeouts. These caps bound the serialized evidence and business
+# context (characters ≈ tokens×4). Overridable per call and, at the call site,
+# from settings (llm_max_prompt_chars). Rough guide: 12000 chars ≈ 3000 tokens.
+DEFAULT_EVIDENCE_BUDGET_CHARS = 12000
+DEFAULT_CONTEXT_BUDGET_CHARS = 6000
+
+
+def _budget_evidence(evidence: list[dict], max_chars: int) -> tuple[list[dict], int]:
+    """Keep evidence items in their given (relevance) order until the character
+    budget is spent. Returns the kept items and how many were dropped — so only
+    the minimum required evidence reaches the LLM, and the drop is observable."""
+    kept: list[dict] = []
+    used = 0
+    for item in evidence:
+        size = len(json.dumps(item, default=str))
+        if kept and used + size > max_chars:
+            break
+        kept.append(item)
+        used += size
+    return kept, len(evidence) - len(kept)
+
+
+def _cap_json(obj: Any, max_chars: int) -> str:
+    """Serialize, and if it exceeds the budget drop the largest top-level keys
+    (dicts) until it fits, marking what was omitted rather than sending it all."""
+    text = json.dumps(obj, default=str)
+    if len(text) <= max_chars or not isinstance(obj, dict):
+        return text
+    trimmed = dict(obj)
+    omitted: list[str] = []
+    # drop biggest keys first until within budget
+    for key in sorted(trimmed, key=lambda k: len(json.dumps(trimmed[k], default=str)),
+                      reverse=True):
+        if len(json.dumps(trimmed, default=str)) <= max_chars:
+            break
+        omitted.append(key)
+        trimmed.pop(key, None)
+    if omitted:
+        trimmed["_omitted_for_budget"] = omitted
+    return json.dumps(trimmed, default=str)
 
 # Prompts live in the Prompt Registry (V2.2), not in this module: an
 # enterprise must be able to read every instruction the platform gives a model
@@ -118,7 +165,9 @@ class PromptGenerationAgent(BaseAgent):
             evidence: list[dict], output_format: str,
             conversation: list[dict] | None = None,
             business_rules: list[str] | None = None,
-            weak_evidence: bool = False) -> GeneratedPrompt:
+            weak_evidence: bool = False,
+            max_evidence_chars: int = DEFAULT_EVIDENCE_BUDGET_CHARS,
+            max_context_chars: int = DEFAULT_CONTEXT_BUDGET_CHARS) -> GeneratedPrompt:
         """The Enterprise Copilot's prompt: an executive request answered from
         a closed set of evidence.
 
@@ -146,17 +195,32 @@ class PromptGenerationAgent(BaseAgent):
         confidence_requirement = (CONFIDENCE_WEAK if weak_evidence
                                   else CONFIDENCE_STRONG)
 
+        # Budget the two large payloads BEFORE serialization so the prompt
+        # carries only the minimum required evidence + a bounded business
+        # context — never the whole set. This is what keeps the local model
+        # from being handed a 10k-token prompt it cannot finish in time.
+        budgeted_evidence, dropped = _budget_evidence(evidence or [],
+                                                      max_evidence_chars)
+        evidence_json = json.dumps(budgeted_evidence, default=str)
+        business_context_json = _cap_json(business_context, max_context_chars)
+
         user = self.prompts.render(
             "copilot.enterprise_answer", question=repr(question), intent=intent,
             history=history,
-            business_context_json=json.dumps(business_context, default=str),
+            business_context_json=business_context_json,
             rules_block=rules_block,
-            evidence_json=json.dumps(evidence, default=str),
+            evidence_json=evidence_json,
             output_format=output_format,
             confidence_requirement=confidence_requirement)
         confidence = 0.3 if weak_evidence else 0.8
-        return GeneratedPrompt(system=self._system(), user=user,
-                               confidence=confidence)
+        prompt = GeneratedPrompt(system=self._system(), user=user,
+                                 confidence=confidence)
+        logger.info("copilot prompt built: %d evidence kept (%d dropped), "
+                    "context=%d chars, prompt=%d chars (~%d tokens)",
+                    len(budgeted_evidence), dropped, len(business_context_json),
+                    len(prompt.system) + len(prompt.user),
+                    (len(prompt.system) + len(prompt.user)) // 4)
+        return prompt
 
     # ----------------------------------------------------------- internals
     def _knowledge_block(self, context: dict[str, Any] | None = None) -> str:

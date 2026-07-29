@@ -8,6 +8,7 @@ narrative.
 """
 from __future__ import annotations
 
+import time
 from typing import Any
 
 from app.agents.prompt_generator import PromptGenerationAgent
@@ -27,10 +28,34 @@ AI_UNAVAILABLE = (
 class AIReasoningEngine:
     def __init__(self, provider: BaseLLMProvider | None,
                  prompt_agent: PromptGenerationAgent | None = None,
-                 fallback: BaseLLMProvider | None = None):
+                 fallback: BaseLLMProvider | None = None,
+                 governance=None, latency=None):
         self.provider = provider
         self.fallback = fallback
         self.prompt_agent = prompt_agent or PromptGenerationAgent()
+        # Optional — when wired, every call is recorded for the Admin
+        # console's LLM usage metrics (governance) and processing-latency
+        # dashboard (latency). Absent in tests/deployments that don't need
+        # the observability layer.
+        self._governance = governance
+        self._latency = latency
+
+    def _record_usage(self, provider: BaseLLMProvider, duration_ms: float,
+                      status: str) -> None:
+        if self._latency is not None:
+            self._latency.record("llm_chat", duration_ms)
+        if self._governance is None:
+            return
+        usage = getattr(provider, "last_usage", None) or {}
+        try:
+            self._governance.record_model_usage(
+                provider=provider.name,
+                model=getattr(provider, "model", provider.config.model),
+                tokens_in=usage.get("tokens_in", 0),
+                tokens_out=usage.get("tokens_out", 0),
+                duration_ms=int(duration_ms), status=status)
+        except Exception:  # noqa: BLE001 — usage tracking must never break reasoning
+            logger.exception("Recording model usage failed")
 
     # ------------------------------------------------------------- report
     def generate_report(self, context: dict[str, Any]) -> AIReport:
@@ -43,8 +68,10 @@ class AIReasoningEngine:
         # primary (with its own retries), then the configured fallback —
         # never a fabricated report
         for provider in [p for p in (self.provider, self.fallback) if p]:
+            started = time.monotonic()
             try:
                 raw = provider.chat_json(messages)
+                self._record_usage(provider, (time.monotonic() - started) * 1000, "ok")
                 report = self._validate(raw)
                 self._verify_evidence(report, self._collect_evidence_ids(context))
                 report.provider = provider.name
@@ -53,6 +80,7 @@ class AIReasoningEngine:
                 report.clarification_questions = prompt.clarification_questions
                 return report
             except (LLMError, Exception) as exc:  # noqa: BLE001 — must degrade gracefully
+                self._record_usage(provider, (time.monotonic() - started) * 1000, "failed")
                 logger.exception("AI reasoning failed on provider %s", provider.name)
                 last_error = f"{provider.name}: {str(exc)[:400]}"
         return AIReport(status="failed", error=last_error,
@@ -65,11 +93,13 @@ class AIReasoningEngine:
             return {"status": "unavailable", "answer": AI_UNAVAILABLE,
                     "cited_facts": [], "confidence": 0.0}
         prompt = self.prompt_agent.copilot_prompt(question, context, conversation)
+        started = time.monotonic()
         try:
             raw = self.provider.chat_json([
                 ChatMessage("system", prompt.system),
                 ChatMessage("user", prompt.user),
             ])
+            self._record_usage(self.provider, (time.monotonic() - started) * 1000, "ok")
             return {
                 "status": "ok",
                 "answer": str(raw.get("answer", "")).strip() or "(empty answer)",
@@ -79,6 +109,7 @@ class AIReasoningEngine:
                 "model": getattr(self.provider, "model", self.provider.config.model),
             }
         except (LLMError, Exception) as exc:  # noqa: BLE001
+            self._record_usage(self.provider, (time.monotonic() - started) * 1000, "failed")
             logger.exception("Copilot reasoning failed")
             return {"status": "failed", "answer": f"AI reasoning failed: {exc}",
                     "cited_facts": [], "confidence": 0.0}

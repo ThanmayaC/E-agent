@@ -39,7 +39,7 @@ class SynchronizationLayer:
 
     def __init__(self, settings, store, knowledge, connectors, embedder=None,
                  vector_store_for=None, brain=None, tasks=None,
-                 portfolio=None, graph=None):
+                 portfolio=None, graph=None, latency=None):
         self.settings = settings
         self.store = SyncStore(settings.sync_dir)
         self.registry = DataSourceRegistry(self.store)
@@ -66,7 +66,8 @@ class SynchronizationLayer:
                 chunk_overlap=getattr(settings, "document_chunk_overlap", 200),
                 embedder=embedder, vector_store_for=vector_store_for,
                 knowledge=knowledge, organization=self.organization,
-                graph_client_for=self._graph_client_for)
+                graph_client_for=self._graph_client_for, latency=latency,
+                embedding_model=getattr(settings, "embedding_model", ""))
         self.pipeline = KnowledgeRefreshPipeline(
             self.store, self.engine, self.registry, self.organization,
             self.relationships, knowledge, brain=brain, artifacts=store,

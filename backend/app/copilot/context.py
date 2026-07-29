@@ -44,6 +44,7 @@ class ContextBuilder:
         self._sync = sync
         self._product = product
         self._conversations = conversations
+        self._executive = None  # ExecutiveIntelligence (V3.1), set by container
 
     # -------------------------------------------------------------- build
     def build(self, plan, conversation_id: str = "") -> dict[str, Any]:
@@ -77,6 +78,14 @@ class ContextBuilder:
             if value is not None:
                 context[module] = value
 
+        # V3.1: the Executive Intelligence summary is always in scope for a
+        # Product Head — the structured facts (brief, priorities, ranked
+        # decisions, KPI health, banks/merchants at risk) that let the model
+        # reason rather than only retrieve. Compact by design.
+        exec_state = self._safe("executive", self._executive_state, context)
+        if exec_state:
+            context["executive"] = exec_state
+
         context["business_rules"] = self._safe(
             "business_rules", self._business_rules, context) or []
         if conversation_id and self._conversations is not None:
@@ -86,6 +95,51 @@ class ContextBuilder:
         return context
 
     # ------------------------------------------------------------ readers
+    def _executive_state(self) -> dict:
+        """A compact, non-hallucinating snapshot of the enterprise for the
+        model to reason over: the incident, KPI health, the top priorities,
+        ranked decisions, recommendations, and banks/merchants at risk."""
+        ei = self._executive
+        if ei is None or not getattr(ei, "available", False):
+            raise _Absent("no synthetic enterprise is loaded")
+        brief = ei.executive_brief()
+        health = brief.get("health", {})
+        risk = brief.get("risk_assessment", {})
+        return {
+            "week_of": brief.get("generated_for"),
+            "business_summary": brief.get("business_summary"),
+            "health_scores": {k: health.get(k) for k in
+                              ("portfolio", "operational", "customer",
+                               "merchant", "growth", "risk")},
+            "incident": ei.incident(),
+            "priorities": [
+                {"priority": p["priority"], "title": p["title"],
+                 "reason": p["reason"], "impact": p["impact"],
+                 "confidence": p["confidence"]}
+                for p in brief.get("priorities", [])],
+            "ranked_decisions": [
+                {"rank": d["rank"], "decision_id": d["decision_id"],
+                 "title": d["title"], "status": d["status"],
+                 "impact": d["impact"], "business_value": d["business_value"],
+                 "alternatives_considered": d["alternatives_considered"],
+                 "actual_impact": d["actual_impact"]}
+                for d in ei.decisions()],
+            "recommendations": [
+                {"title": r["title"], "reason": r["reason"],
+                 "priority": r["priority"], "owner": r["owner"],
+                 "confidence": r["confidence"]}
+                for r in brief.get("recommended_actions", [])],
+            "top_risks": risk.get("top_risks", []),
+            "banks_at_risk": brief.get("banks_at_risk", []),
+            "products_at_risk": brief.get("products_at_risk", []),
+            "merchants_to_follow_up": brief.get("merchant_impact", []),
+            "kpi_health": {c["kpi"]: {"value": c["value"], "health": c["health"],
+                                      "trend": c["trend"],
+                                      "why": c["why_changed"]}
+                           for c in ei.kpi_intelligence()["kpis"]},
+            "patterns": ei.patterns(),
+        }
+
     def _brain_state(self) -> dict:
         if self._brain is None:
             raise _Absent("the Enterprise Brain is disabled")

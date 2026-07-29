@@ -38,11 +38,24 @@ def chat(body: Chat, c: Container = Depends(container)):
     it: the detected intent, the execution plan, the evidence gathered, the
     validation verdict, and the suggested actions."""
     try:
-        return _layer(c).copilot.chat(body.message,
-                                      conversation_id=body.conversation_id,
-                                      owner=body.owner)
+        res = _layer(c).copilot.chat(body.message,
+                                     conversation_id=body.conversation_id,
+                                     owner=body.owner)
     except ValueError as exc:
         raise HTTPException(status_code=422, detail=str(exc))
+    # V10.0: never expose the internal day/week/phase clock to end users —
+    # rewrite it into business language; and remember the question (learning).
+    try:
+        from app.analyst.timeline import BusinessTimeline
+        tl = BusinessTimeline.from_container(c)
+        if isinstance(res, dict) and res.get("answer"):
+            res["answer"] = tl.humanize(res["answer"])
+        ls = getattr(c, "learning_store", None)
+        if ls:
+            ls.record_question(body.message)
+    except Exception:  # noqa: BLE001 — polish/learning never breaks the answer
+        pass
+    return res
 
 
 @router.get("/copilot")

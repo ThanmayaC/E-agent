@@ -42,11 +42,11 @@ export default function DecisionAnalytics() {
             <div className="space-y-6">
               <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <StaggerItem><StatCard label="Decisions" value={r.decisions} /></StaggerItem>
-                <StaggerItem><StatCard label="Executed" value={r.executed} tone="text-emerald-400" /></StaggerItem>
+                <StaggerItem><StatCard label="Executed" value={r.executed} tone="fg-success" /></StaggerItem>
                 <StaggerItem><StatCard label="Execution rate"
                   value={eff.execution_rate != null ? eff.execution_rate * 100 : null}
                   suffix="%" decimals={0} tone="text-accent" /></StaggerItem>
-                <StaggerItem><StatCard label="Open now" value={status.data?.open ?? 0} tone="text-amber-400" /></StaggerItem>
+                <StaggerItem><StatCard label="Open now" value={status.data?.open ?? 0} tone="fg-warn" /></StaggerItem>
               </Stagger>
 
               <div className="grid gap-5 lg:grid-cols-2">

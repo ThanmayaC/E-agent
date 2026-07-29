@@ -153,7 +153,11 @@ def test_full_workflow(client: TestClient, sample_dir: Path):
             assert f["values"] == []
 
     md = client.get(f"/api/v1/projects/{pid}/report/markdown").json()["markdown"]
-    assert "# Executive Report" in md and "## 10. Recommendations (AI)" in md
+    assert "# Executive Report" in md and "## 11. Recommendations (AI)" in md
+    # the report states what the data can support before it states findings,
+    # and traces every printed metric back to its formula
+    assert "## 2. Analysis Feasibility" in md
+    assert "## 16. Calculation & Provenance" in md
 
     # copilot: retrieval -> context -> LLM -> grounded answer
     resp = client.post(f"/api/v1/projects/{pid}/copilot/chat",

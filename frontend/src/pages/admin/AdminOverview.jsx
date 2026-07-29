@@ -21,12 +21,16 @@ export default function AdminOverview() {
           <div className="space-y-5">
             <div className="grid gap-4 md:grid-cols-4">
               <Stat label="Autonomy runtime" value={runtime?.autonomy ?? 'unavailable'}
-                    tone={runtime?.running ? 'text-emerald-400' : 'text-slate-400'} />
+                    tone={runtime?.running ? 'fg-success' : 'fg-muted'} />
               <Stat label="Enterprise Brain" value={brain?.state ?? 'unavailable'}
-                    tone={brain?.state === 'ready' ? 'text-emerald-400' : 'text-amber-400'} />
+                    tone={brain?.state === 'ready' ? 'fg-success' : 'fg-warn'} />
               <Stat label="Jobs enabled" value={runtime?.scheduler?.jobs_enabled} />
-              <Stat label="Actions pending approval" value={queue?.pending_approval ?? runtime?.queue?.pending_approval}
-                    tone="text-amber-400" />
+              <Stat label="Actions pending approval"
+                    value={runtime?.queue?.pending_approval
+                           ?? (Array.isArray(queue?.pending_approval)
+                               ? queue.pending_approval.length
+                               : queue?.pending_approval)}
+                    tone="fg-warn" />
             </div>
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
               {[

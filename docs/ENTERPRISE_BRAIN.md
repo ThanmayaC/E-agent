@@ -1,5 +1,16 @@
 # Enterprise Brain — Demonstration (V2.3)
 
+> **Superseded by V3.0.** The synthetic corpus this document describes
+> (`scripts/generate_enterprise_corpus.py` → `sample_data/enterprise/`, the
+> "SkyPay" fintech) has been **replaced** by the V3.0 Synthetic Enterprise
+> Generator — `generate_enterprise.py` → `enterprise_data/` (NPCI UPI
+> Products, one business week). The ingestion mechanism is unchanged; only the
+> data and the generator differ. See
+> [SYNTHETIC_ENTERPRISE.md](SYNTHETIC_ENTERPRISE.md). The sections below
+> remain accurate for how the Brain ingests and answers cross-source
+> questions; the specific file paths and the March-settlement example are
+> historical.
+
 V2.3 does not add architecture. Every layer it exercises — the Enterprise Brain,
 the Document Intelligence pipeline, the organizational model, the knowledge
 graph, the autonomous scheduler, the copilot, and the Outlook/Teams adapters —

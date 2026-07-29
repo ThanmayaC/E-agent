@@ -1,0 +1,8707 @@
+{
+  "ORG-OVERVIEW": {
+    "stem": "ORG-OVERVIEW",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "STORYLINE",
+      "INC-2026-01",
+      "INC-2026-13"
+    ]
+  },
+  "upi_kpis_month.xlsx": {
+    "stem": "upi_kpis_month",
+    "category": "document",
+    "refs": [
+      "INC-2026-01",
+      "INC-2026-13",
+      "INC-2026-16",
+      "INC-2026-09",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "MTG-D01-REVIEW": {
+    "stem": "MTG-D01-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D01-DAILY",
+      "TEAMS-D01-MON"
+    ]
+  },
+  "TEAMS-D01-MON": {
+    "stem": "TEAMS-D01-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D01-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D01-DAILY": {
+    "stem": "RPT-D01-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D01-MON",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "KPI-D01": {
+    "stem": "upi_kpis_day_01",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D01-DAILY"
+    ]
+  },
+  "TEAMS-D02-MON": {
+    "stem": "TEAMS-D02-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D02-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D02-DAILY": {
+    "stem": "RPT-D02-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D02-MON",
+      "RPT-D01-DAILY"
+    ]
+  },
+  "KPI-D02": {
+    "stem": "upi_kpis_day_02",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D02-DAILY"
+    ]
+  },
+  "INC-2026-01": {
+    "stem": "INC-2026-01-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D03-DAILY",
+      "RCA-2026-01",
+      "DEC-2026-01",
+      "TEAMS-D03-MON"
+    ]
+  },
+  "EMAIL-D03-001": {
+    "stem": "EMAIL-D03-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-01",
+      "RPT-D03-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D03-BRIDGE-01": {
+    "stem": "TEAMS-D03-BRIDGE-01",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-01",
+      "MTG-D03-BRIDGE-01",
+      "RCA-2026-01",
+      "RPT-D03-DAILY"
+    ]
+  },
+  "MTG-D03-BRIDGE-01": {
+    "stem": "MTG-D03-BRIDGE-01",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-01",
+      "RCA-2026-01",
+      "DEC-2026-01",
+      "RPT-D03-DAILY",
+      "TEAMS-D03-BRIDGE-01"
+    ]
+  },
+  "TASK-0001": {
+    "stem": "TASK-0001",
+    "category": "document",
+    "refs": [
+      "INC-2026-01",
+      "MTG-D03-BRIDGE-01",
+      "RCA-2026-01"
+    ]
+  },
+  "TASK-0002": {
+    "stem": "TASK-0002",
+    "category": "document",
+    "refs": [
+      "INC-2026-01",
+      "RPT-D03-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D03-MON": {
+    "stem": "TEAMS-D03-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D03-DAILY",
+      "INC-2026-01"
+    ]
+  },
+  "RPT-D03-DAILY": {
+    "stem": "RPT-D03-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D03-MON",
+      "RPT-D02-DAILY",
+      "INC-2026-01",
+      "RCA-2026-01"
+    ]
+  },
+  "KPI-D03": {
+    "stem": "upi_kpis_day_03",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D03-DAILY"
+    ]
+  },
+  "MTG-D04-INVEST-01": {
+    "stem": "MTG-D04-INVEST-01",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-01",
+      "RCA-2026-01",
+      "DEC-2026-01",
+      "SOP-UPI-BANK-FAILOVER-014",
+      "RPT-D04-DAILY"
+    ]
+  },
+  "RCA-2026-01": {
+    "stem": "RCA-2026-01",
+    "category": "rca",
+    "refs": [
+      "INC-2026-01",
+      "DEC-2026-01",
+      "SOP-UPI-BANK-FAILOVER-014",
+      "RPT-D04-DAILY",
+      "RPT-D06-DAILY"
+    ]
+  },
+  "DEC-2026-01": {
+    "stem": "DEC-2026-01",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-01",
+      "RCA-2026-01",
+      "SOP-UPI-BANK-FAILOVER-014",
+      "RPT-D04-DAILY"
+    ]
+  },
+  "SOP-UPI-BANK-FAILOVER-014": {
+    "stem": "SOP-UPI-BANK-FAILOVER-014",
+    "category": "product_document",
+    "refs": [
+      "INC-2026-01",
+      "RCA-2026-01",
+      "DEC-2026-01"
+    ]
+  },
+  "TASK-0003": {
+    "stem": "TASK-0003",
+    "category": "document",
+    "refs": [
+      "DEC-2026-01",
+      "RCA-2026-01",
+      "SOP-UPI-BANK-FAILOVER-014"
+    ]
+  },
+  "TEAMS-D04-MON": {
+    "stem": "TEAMS-D04-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D04-DAILY",
+      "INC-2026-01"
+    ]
+  },
+  "RPT-D04-DAILY": {
+    "stem": "RPT-D04-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D04-MON",
+      "RPT-D03-DAILY",
+      "INC-2026-01",
+      "RCA-2026-01"
+    ]
+  },
+  "KPI-D04": {
+    "stem": "upi_kpis_day_04",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D04-DAILY"
+    ]
+  },
+  "TEAMS-D05-MON": {
+    "stem": "TEAMS-D05-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D05-DAILY",
+      "INC-2026-01"
+    ]
+  },
+  "RPT-D05-DAILY": {
+    "stem": "RPT-D05-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D05-MON",
+      "RPT-D04-DAILY",
+      "INC-2026-01",
+      "RCA-2026-01"
+    ]
+  },
+  "KPI-D05": {
+    "stem": "upi_kpis_day_05",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D05-DAILY"
+    ]
+  },
+  "EMAIL-D06-001": {
+    "stem": "EMAIL-D06-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-01",
+      "DEC-2026-01",
+      "RCA-2026-01",
+      "RPT-D06-DAILY"
+    ]
+  },
+  "TEAMS-D06-MON": {
+    "stem": "TEAMS-D06-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D06-DAILY",
+      "INC-2026-01"
+    ]
+  },
+  "RPT-D06-DAILY": {
+    "stem": "RPT-D06-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D06-MON",
+      "RPT-D05-DAILY",
+      "INC-2026-01",
+      "RCA-2026-01"
+    ]
+  },
+  "KPI-D06": {
+    "stem": "upi_kpis_day_06",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D06-DAILY"
+    ]
+  },
+  "TEAMS-D07-MON": {
+    "stem": "TEAMS-D07-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D07-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D07-DAILY": {
+    "stem": "RPT-D07-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D07-MON",
+      "RPT-D06-DAILY"
+    ]
+  },
+  "KPI-D07": {
+    "stem": "upi_kpis_day_07",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D07-DAILY"
+    ]
+  },
+  "RPT-W1-REVIEW": {
+    "stem": "RPT-W1-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D01-DAILY",
+      "RPT-D02-DAILY",
+      "RPT-D03-DAILY",
+      "RPT-D04-DAILY",
+      "INC-2026-01"
+    ]
+  },
+  "MTG-W1-REVIEW": {
+    "stem": "MTG-W1-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W1-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-01"
+    ]
+  },
+  "TEAMS-D08-MON": {
+    "stem": "TEAMS-D08-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D08-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D08-DAILY": {
+    "stem": "RPT-D08-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D08-MON",
+      "RPT-D07-DAILY"
+    ]
+  },
+  "KPI-D08": {
+    "stem": "upi_kpis_day_08",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D08-DAILY"
+    ]
+  },
+  "INC-2026-13": {
+    "stem": "INC-2026-13-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D09-DAILY",
+      "RCA-2026-13",
+      "DEC-2026-13",
+      "TEAMS-D09-MON"
+    ]
+  },
+  "EMAIL-D09-001": {
+    "stem": "EMAIL-D09-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-13",
+      "RPT-D09-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D09-BRIDGE-13": {
+    "stem": "TEAMS-D09-BRIDGE-13",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-13",
+      "MTG-D09-BRIDGE-13",
+      "RCA-2026-13",
+      "RPT-D09-DAILY"
+    ]
+  },
+  "MTG-D09-BRIDGE-13": {
+    "stem": "MTG-D09-BRIDGE-13",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-13",
+      "RCA-2026-13",
+      "DEC-2026-13",
+      "RPT-D09-DAILY",
+      "TEAMS-D09-BRIDGE-13"
+    ]
+  },
+  "TASK-0004": {
+    "stem": "TASK-0004",
+    "category": "document",
+    "refs": [
+      "INC-2026-13",
+      "MTG-D09-BRIDGE-13",
+      "RCA-2026-13"
+    ]
+  },
+  "TASK-0005": {
+    "stem": "TASK-0005",
+    "category": "document",
+    "refs": [
+      "INC-2026-13",
+      "RPT-D09-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D09-MON": {
+    "stem": "TEAMS-D09-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D09-DAILY",
+      "INC-2026-13"
+    ]
+  },
+  "RPT-D09-DAILY": {
+    "stem": "RPT-D09-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D09-MON",
+      "RPT-D08-DAILY",
+      "INC-2026-13",
+      "RCA-2026-13"
+    ]
+  },
+  "KPI-D09": {
+    "stem": "upi_kpis_day_09",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D09-DAILY"
+    ]
+  },
+  "MTG-D10-INVEST-13": {
+    "stem": "MTG-D10-INVEST-13",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-13",
+      "RCA-2026-13",
+      "DEC-2026-13",
+      "SOP-UPI-PSP-LATENCY-018",
+      "RPT-D10-DAILY"
+    ]
+  },
+  "RCA-2026-13": {
+    "stem": "RCA-2026-13",
+    "category": "rca",
+    "refs": [
+      "INC-2026-13",
+      "DEC-2026-13",
+      "SOP-UPI-PSP-LATENCY-018",
+      "RPT-D10-DAILY",
+      "RPT-D12-DAILY"
+    ]
+  },
+  "DEC-2026-13": {
+    "stem": "DEC-2026-13",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-13",
+      "RCA-2026-13",
+      "SOP-UPI-PSP-LATENCY-018",
+      "RPT-D10-DAILY"
+    ]
+  },
+  "SOP-UPI-PSP-LATENCY-018": {
+    "stem": "SOP-UPI-PSP-LATENCY-018",
+    "category": "product_document",
+    "refs": [
+      "INC-2026-13",
+      "RCA-2026-13",
+      "DEC-2026-13"
+    ]
+  },
+  "TASK-0006": {
+    "stem": "TASK-0006",
+    "category": "document",
+    "refs": [
+      "DEC-2026-13",
+      "RCA-2026-13",
+      "SOP-UPI-PSP-LATENCY-018"
+    ]
+  },
+  "TEAMS-D10-MON": {
+    "stem": "TEAMS-D10-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D10-DAILY",
+      "INC-2026-13"
+    ]
+  },
+  "RPT-D10-DAILY": {
+    "stem": "RPT-D10-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D10-MON",
+      "RPT-D09-DAILY",
+      "INC-2026-13",
+      "RCA-2026-13"
+    ]
+  },
+  "KPI-D10": {
+    "stem": "upi_kpis_day_10",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D10-DAILY"
+    ]
+  },
+  "INC-2026-16": {
+    "stem": "INC-2026-16-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D11-DAILY",
+      "RCA-2026-16",
+      "DEC-2026-16",
+      "TEAMS-D11-MON"
+    ]
+  },
+  "EMAIL-D11-001": {
+    "stem": "EMAIL-D11-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-16",
+      "RPT-D11-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D11-BRIDGE-16": {
+    "stem": "TEAMS-D11-BRIDGE-16",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-16",
+      "MTG-D11-BRIDGE-16",
+      "RCA-2026-16",
+      "RPT-D11-DAILY"
+    ]
+  },
+  "MTG-D11-BRIDGE-16": {
+    "stem": "MTG-D11-BRIDGE-16",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-16",
+      "RCA-2026-16",
+      "DEC-2026-16",
+      "RPT-D11-DAILY",
+      "TEAMS-D11-BRIDGE-16"
+    ]
+  },
+  "TASK-0007": {
+    "stem": "TASK-0007",
+    "category": "document",
+    "refs": [
+      "INC-2026-16",
+      "MTG-D11-BRIDGE-16",
+      "RCA-2026-16"
+    ]
+  },
+  "TASK-0008": {
+    "stem": "TASK-0008",
+    "category": "document",
+    "refs": [
+      "INC-2026-16",
+      "RPT-D11-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D11-MON": {
+    "stem": "TEAMS-D11-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D11-DAILY",
+      "INC-2026-13",
+      "INC-2026-16"
+    ]
+  },
+  "RPT-D11-DAILY": {
+    "stem": "RPT-D11-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D11-MON",
+      "RPT-D10-DAILY",
+      "INC-2026-13",
+      "INC-2026-16",
+      "RCA-2026-13",
+      "RCA-2026-16"
+    ]
+  },
+  "KPI-D11": {
+    "stem": "upi_kpis_day_11",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D11-DAILY"
+    ]
+  },
+  "MTG-D12-INVEST-16": {
+    "stem": "MTG-D12-INVEST-16",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-16",
+      "RCA-2026-16",
+      "DEC-2026-16",
+      "SOP-UPI-PSP-LATENCY-018",
+      "RPT-D12-DAILY"
+    ]
+  },
+  "RCA-2026-16": {
+    "stem": "RCA-2026-16",
+    "category": "rca",
+    "refs": [
+      "INC-2026-16",
+      "DEC-2026-16",
+      "SOP-UPI-PSP-LATENCY-018",
+      "RPT-D12-DAILY",
+      "RPT-D14-DAILY"
+    ]
+  },
+  "DEC-2026-16": {
+    "stem": "DEC-2026-16",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-16",
+      "RCA-2026-16",
+      "SOP-UPI-PSP-LATENCY-018",
+      "RPT-D12-DAILY"
+    ]
+  },
+  "TASK-0009": {
+    "stem": "TASK-0009",
+    "category": "document",
+    "refs": [
+      "DEC-2026-16",
+      "RCA-2026-16",
+      "SOP-UPI-PSP-LATENCY-018"
+    ]
+  },
+  "EMAIL-D12-001": {
+    "stem": "EMAIL-D12-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-13",
+      "DEC-2026-13",
+      "RCA-2026-13",
+      "RPT-D12-DAILY"
+    ]
+  },
+  "TEAMS-D12-MON": {
+    "stem": "TEAMS-D12-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D12-DAILY",
+      "INC-2026-13",
+      "INC-2026-16"
+    ]
+  },
+  "RPT-D12-DAILY": {
+    "stem": "RPT-D12-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D12-MON",
+      "RPT-D11-DAILY",
+      "INC-2026-13",
+      "INC-2026-16",
+      "RCA-2026-13",
+      "RCA-2026-16"
+    ]
+  },
+  "KPI-D12": {
+    "stem": "upi_kpis_day_12",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D12-DAILY"
+    ]
+  },
+  "TEAMS-D13-MON": {
+    "stem": "TEAMS-D13-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D13-DAILY",
+      "INC-2026-16"
+    ]
+  },
+  "RPT-D13-DAILY": {
+    "stem": "RPT-D13-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D13-MON",
+      "RPT-D12-DAILY",
+      "INC-2026-16",
+      "RCA-2026-16"
+    ]
+  },
+  "KPI-D13": {
+    "stem": "upi_kpis_day_13",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D13-DAILY"
+    ]
+  },
+  "EMAIL-D14-001": {
+    "stem": "EMAIL-D14-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-16",
+      "DEC-2026-16",
+      "RCA-2026-16",
+      "RPT-D14-DAILY"
+    ]
+  },
+  "TEAMS-D14-MON": {
+    "stem": "TEAMS-D14-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D14-DAILY",
+      "INC-2026-16"
+    ]
+  },
+  "RPT-D14-DAILY": {
+    "stem": "RPT-D14-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D14-MON",
+      "RPT-D13-DAILY",
+      "INC-2026-16",
+      "RCA-2026-16"
+    ]
+  },
+  "KPI-D14": {
+    "stem": "upi_kpis_day_14",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D14-DAILY"
+    ]
+  },
+  "RPT-W2-REVIEW": {
+    "stem": "RPT-W2-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D08-DAILY",
+      "RPT-D09-DAILY",
+      "RPT-D10-DAILY",
+      "RPT-D11-DAILY",
+      "INC-2026-13",
+      "INC-2026-16"
+    ]
+  },
+  "MTG-W2-REVIEW": {
+    "stem": "MTG-W2-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W2-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-13",
+      "INC-2026-16"
+    ]
+  },
+  "INC-2026-09": {
+    "stem": "INC-2026-09-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D15-DAILY",
+      "RCA-2026-09",
+      "DEC-2026-09",
+      "TEAMS-D15-MON"
+    ]
+  },
+  "EMAIL-D15-001": {
+    "stem": "EMAIL-D15-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-09",
+      "RPT-D15-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D15-BRIDGE-09": {
+    "stem": "TEAMS-D15-BRIDGE-09",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-09",
+      "MTG-D15-BRIDGE-09",
+      "RCA-2026-09",
+      "RPT-D15-DAILY"
+    ]
+  },
+  "MTG-D15-BRIDGE-09": {
+    "stem": "MTG-D15-BRIDGE-09",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-09",
+      "RCA-2026-09",
+      "DEC-2026-09",
+      "RPT-D15-DAILY",
+      "TEAMS-D15-BRIDGE-09"
+    ]
+  },
+  "TASK-0010": {
+    "stem": "TASK-0010",
+    "category": "document",
+    "refs": [
+      "INC-2026-09",
+      "MTG-D15-BRIDGE-09",
+      "RCA-2026-09"
+    ]
+  },
+  "TASK-0011": {
+    "stem": "TASK-0011",
+    "category": "document",
+    "refs": [
+      "INC-2026-09",
+      "RPT-D15-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D15-MON": {
+    "stem": "TEAMS-D15-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D15-DAILY",
+      "INC-2026-09"
+    ]
+  },
+  "RPT-D15-DAILY": {
+    "stem": "RPT-D15-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D15-MON",
+      "RPT-D14-DAILY",
+      "INC-2026-09",
+      "RCA-2026-09"
+    ]
+  },
+  "KPI-D15": {
+    "stem": "upi_kpis_day_15",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D15-DAILY"
+    ]
+  },
+  "MTG-D16-INVEST-09": {
+    "stem": "MTG-D16-INVEST-09",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-09",
+      "RCA-2026-09",
+      "DEC-2026-09",
+      "SOP-UPI-RISK-030",
+      "RPT-D16-DAILY"
+    ]
+  },
+  "RCA-2026-09": {
+    "stem": "RCA-2026-09",
+    "category": "rca",
+    "refs": [
+      "INC-2026-09",
+      "DEC-2026-09",
+      "SOP-UPI-RISK-030",
+      "RPT-D16-DAILY",
+      "RPT-D17-DAILY"
+    ]
+  },
+  "DEC-2026-09": {
+    "stem": "DEC-2026-09",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-09",
+      "RCA-2026-09",
+      "SOP-UPI-RISK-030",
+      "RPT-D16-DAILY"
+    ]
+  },
+  "SOP-UPI-RISK-030": {
+    "stem": "SOP-UPI-RISK-030",
+    "category": "product_document",
+    "refs": [
+      "INC-2026-09",
+      "RCA-2026-09",
+      "DEC-2026-09"
+    ]
+  },
+  "TASK-0012": {
+    "stem": "TASK-0012",
+    "category": "document",
+    "refs": [
+      "DEC-2026-09",
+      "RCA-2026-09",
+      "SOP-UPI-RISK-030"
+    ]
+  },
+  "TEAMS-D16-MON": {
+    "stem": "TEAMS-D16-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D16-DAILY",
+      "INC-2026-09"
+    ]
+  },
+  "RPT-D16-DAILY": {
+    "stem": "RPT-D16-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D16-MON",
+      "RPT-D15-DAILY",
+      "INC-2026-09",
+      "RCA-2026-09"
+    ]
+  },
+  "KPI-D16": {
+    "stem": "upi_kpis_day_16",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D16-DAILY"
+    ]
+  },
+  "EMAIL-D17-001": {
+    "stem": "EMAIL-D17-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-09",
+      "DEC-2026-09",
+      "RCA-2026-09",
+      "RPT-D17-DAILY"
+    ]
+  },
+  "TEAMS-D17-MON": {
+    "stem": "TEAMS-D17-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D17-DAILY",
+      "INC-2026-09"
+    ]
+  },
+  "RPT-D17-DAILY": {
+    "stem": "RPT-D17-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D17-MON",
+      "RPT-D16-DAILY",
+      "INC-2026-09",
+      "RCA-2026-09"
+    ]
+  },
+  "KPI-D17": {
+    "stem": "upi_kpis_day_17",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D17-DAILY"
+    ]
+  },
+  "TEAMS-D18-MON": {
+    "stem": "TEAMS-D18-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D18-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D18-DAILY": {
+    "stem": "RPT-D18-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D18-MON",
+      "RPT-D17-DAILY"
+    ]
+  },
+  "KPI-D18": {
+    "stem": "upi_kpis_day_18",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D18-DAILY"
+    ]
+  },
+  "TEAMS-D19-MON": {
+    "stem": "TEAMS-D19-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D19-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D19-DAILY": {
+    "stem": "RPT-D19-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D19-MON",
+      "RPT-D18-DAILY"
+    ]
+  },
+  "KPI-D19": {
+    "stem": "upi_kpis_day_19",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D19-DAILY"
+    ]
+  },
+  "TEAMS-D20-MON": {
+    "stem": "TEAMS-D20-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D20-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D20-DAILY": {
+    "stem": "RPT-D20-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D20-MON",
+      "RPT-D19-DAILY"
+    ]
+  },
+  "KPI-D20": {
+    "stem": "upi_kpis_day_20",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D20-DAILY"
+    ]
+  },
+  "TEAMS-D21-MON": {
+    "stem": "TEAMS-D21-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D21-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D21-DAILY": {
+    "stem": "RPT-D21-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D21-MON",
+      "RPT-D20-DAILY"
+    ]
+  },
+  "KPI-D21": {
+    "stem": "upi_kpis_day_21",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D21-DAILY"
+    ]
+  },
+  "RPT-W3-REVIEW": {
+    "stem": "RPT-W3-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D15-DAILY",
+      "RPT-D16-DAILY",
+      "RPT-D17-DAILY",
+      "RPT-D18-DAILY",
+      "INC-2026-09"
+    ]
+  },
+  "MTG-W3-REVIEW": {
+    "stem": "MTG-W3-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W3-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-09"
+    ]
+  },
+  "TEAMS-D22-MON": {
+    "stem": "TEAMS-D22-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D22-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D22-DAILY": {
+    "stem": "RPT-D22-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D22-MON",
+      "RPT-D21-DAILY"
+    ]
+  },
+  "KPI-D22": {
+    "stem": "upi_kpis_day_22",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D22-DAILY"
+    ]
+  },
+  "TEAMS-D23-MON": {
+    "stem": "TEAMS-D23-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D23-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D23-DAILY": {
+    "stem": "RPT-D23-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D23-MON",
+      "RPT-D22-DAILY"
+    ]
+  },
+  "KPI-D23": {
+    "stem": "upi_kpis_day_23",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D23-DAILY"
+    ]
+  },
+  "TEAMS-D24-MON": {
+    "stem": "TEAMS-D24-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D24-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D24-DAILY": {
+    "stem": "RPT-D24-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D24-MON",
+      "RPT-D23-DAILY"
+    ]
+  },
+  "KPI-D24": {
+    "stem": "upi_kpis_day_24",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D24-DAILY"
+    ]
+  },
+  "TEAMS-D25-MON": {
+    "stem": "TEAMS-D25-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D25-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D25-DAILY": {
+    "stem": "RPT-D25-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D25-MON",
+      "RPT-D24-DAILY"
+    ]
+  },
+  "KPI-D25": {
+    "stem": "upi_kpis_day_25",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D25-DAILY"
+    ]
+  },
+  "TEAMS-D26-MON": {
+    "stem": "TEAMS-D26-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D26-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D26-DAILY": {
+    "stem": "RPT-D26-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D26-MON",
+      "RPT-D25-DAILY"
+    ]
+  },
+  "KPI-D26": {
+    "stem": "upi_kpis_day_26",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D26-DAILY"
+    ]
+  },
+  "TEAMS-D27-MON": {
+    "stem": "TEAMS-D27-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D27-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D27-DAILY": {
+    "stem": "RPT-D27-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D27-MON",
+      "RPT-D26-DAILY"
+    ]
+  },
+  "KPI-D27": {
+    "stem": "upi_kpis_day_27",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D27-DAILY"
+    ]
+  },
+  "INC-2026-11": {
+    "stem": "INC-2026-11-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D28-DAILY",
+      "TEAMS-D28-MON"
+    ]
+  },
+  "EMAIL-D28-001": {
+    "stem": "EMAIL-D28-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-11",
+      "RPT-D28-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D28-BRIDGE-11": {
+    "stem": "TEAMS-D28-BRIDGE-11",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-11",
+      "MTG-D28-BRIDGE-11",
+      "RPT-D28-DAILY"
+    ]
+  },
+  "MTG-D28-BRIDGE-11": {
+    "stem": "MTG-D28-BRIDGE-11",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-11",
+      "RPT-D28-DAILY",
+      "TEAMS-D28-BRIDGE-11"
+    ]
+  },
+  "TASK-0013": {
+    "stem": "TASK-0013",
+    "category": "document",
+    "refs": [
+      "INC-2026-11",
+      "MTG-D28-BRIDGE-11",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TASK-0014": {
+    "stem": "TASK-0014",
+    "category": "document",
+    "refs": [
+      "INC-2026-11",
+      "RPT-D28-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D28-MON": {
+    "stem": "TEAMS-D28-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D28-DAILY",
+      "INC-2026-11"
+    ]
+  },
+  "RPT-D28-DAILY": {
+    "stem": "RPT-D28-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D28-MON",
+      "RPT-D27-DAILY",
+      "INC-2026-11"
+    ]
+  },
+  "KPI-D28": {
+    "stem": "upi_kpis_day_28",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D28-DAILY"
+    ]
+  },
+  "RPT-W4-REVIEW": {
+    "stem": "RPT-W4-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D22-DAILY",
+      "RPT-D23-DAILY",
+      "RPT-D24-DAILY",
+      "RPT-D25-DAILY",
+      "INC-2026-11"
+    ]
+  },
+  "MTG-W4-REVIEW": {
+    "stem": "MTG-W4-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W4-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-11"
+    ]
+  },
+  "EMAIL-D29-001": {
+    "stem": "EMAIL-D29-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-11",
+      "RPT-D29-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D29-MON": {
+    "stem": "TEAMS-D29-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D29-DAILY",
+      "INC-2026-11"
+    ]
+  },
+  "RPT-D29-DAILY": {
+    "stem": "RPT-D29-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D29-MON",
+      "RPT-D28-DAILY",
+      "INC-2026-11"
+    ]
+  },
+  "KPI-D29": {
+    "stem": "upi_kpis_day_29",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D29-DAILY"
+    ]
+  },
+  "TEAMS-D30-MON": {
+    "stem": "TEAMS-D30-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D30-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D30-DAILY": {
+    "stem": "RPT-D30-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D30-MON",
+      "RPT-D29-DAILY"
+    ]
+  },
+  "KPI-D30": {
+    "stem": "upi_kpis_day_30",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D30-DAILY"
+    ]
+  },
+  "TEAMS-D31-MON": {
+    "stem": "TEAMS-D31-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D31-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D31-DAILY": {
+    "stem": "RPT-D31-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D31-MON",
+      "RPT-D30-DAILY"
+    ]
+  },
+  "KPI-D31": {
+    "stem": "upi_kpis_day_31",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D31-DAILY"
+    ]
+  },
+  "TEAMS-D32-MON": {
+    "stem": "TEAMS-D32-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D32-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D32-DAILY": {
+    "stem": "RPT-D32-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D32-MON",
+      "RPT-D31-DAILY"
+    ]
+  },
+  "KPI-D32": {
+    "stem": "upi_kpis_day_32",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D32-DAILY"
+    ]
+  },
+  "TEAMS-D33-MON": {
+    "stem": "TEAMS-D33-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D33-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D33-DAILY": {
+    "stem": "RPT-D33-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D33-MON",
+      "RPT-D32-DAILY"
+    ]
+  },
+  "KPI-D33": {
+    "stem": "upi_kpis_day_33",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D33-DAILY"
+    ]
+  },
+  "INC-2026-27": {
+    "stem": "INC-2026-27-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D34-DAILY",
+      "RCA-2026-27",
+      "DEC-2026-27",
+      "TEAMS-D34-MON"
+    ]
+  },
+  "EMAIL-D34-001": {
+    "stem": "EMAIL-D34-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-27",
+      "RPT-D34-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D34-BRIDGE-27": {
+    "stem": "TEAMS-D34-BRIDGE-27",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-27",
+      "MTG-D34-BRIDGE-27",
+      "RCA-2026-27",
+      "RPT-D34-DAILY"
+    ]
+  },
+  "MTG-D34-BRIDGE-27": {
+    "stem": "MTG-D34-BRIDGE-27",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-27",
+      "RCA-2026-27",
+      "DEC-2026-27",
+      "RPT-D34-DAILY",
+      "TEAMS-D34-BRIDGE-27"
+    ]
+  },
+  "TASK-0015": {
+    "stem": "TASK-0015",
+    "category": "document",
+    "refs": [
+      "INC-2026-27",
+      "MTG-D34-BRIDGE-27",
+      "RCA-2026-27"
+    ]
+  },
+  "TASK-0016": {
+    "stem": "TASK-0016",
+    "category": "document",
+    "refs": [
+      "INC-2026-27",
+      "RPT-D34-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D34-MON": {
+    "stem": "TEAMS-D34-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D34-DAILY",
+      "INC-2026-27"
+    ]
+  },
+  "RPT-D34-DAILY": {
+    "stem": "RPT-D34-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D34-MON",
+      "RPT-D33-DAILY",
+      "INC-2026-27",
+      "RCA-2026-27"
+    ]
+  },
+  "KPI-D34": {
+    "stem": "upi_kpis_day_34",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D34-DAILY"
+    ]
+  },
+  "MTG-D35-INVEST-27": {
+    "stem": "MTG-D35-INVEST-27",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-27",
+      "RCA-2026-27",
+      "DEC-2026-27",
+      "SOP-UPI-PSP-LATENCY-018",
+      "RPT-D35-DAILY"
+    ]
+  },
+  "RCA-2026-27": {
+    "stem": "RCA-2026-27",
+    "category": "rca",
+    "refs": [
+      "INC-2026-27",
+      "DEC-2026-27",
+      "SOP-UPI-PSP-LATENCY-018",
+      "RPT-D35-DAILY",
+      "RPT-D38-DAILY"
+    ]
+  },
+  "DEC-2026-27": {
+    "stem": "DEC-2026-27",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-27",
+      "RCA-2026-27",
+      "SOP-UPI-PSP-LATENCY-018",
+      "RPT-D35-DAILY"
+    ]
+  },
+  "TASK-0017": {
+    "stem": "TASK-0017",
+    "category": "document",
+    "refs": [
+      "DEC-2026-27",
+      "RCA-2026-27",
+      "SOP-UPI-PSP-LATENCY-018"
+    ]
+  },
+  "TEAMS-D35-MON": {
+    "stem": "TEAMS-D35-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D35-DAILY",
+      "INC-2026-27"
+    ]
+  },
+  "RPT-D35-DAILY": {
+    "stem": "RPT-D35-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D35-MON",
+      "RPT-D34-DAILY",
+      "INC-2026-27",
+      "RCA-2026-27"
+    ]
+  },
+  "KPI-D35": {
+    "stem": "upi_kpis_day_35",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D35-DAILY"
+    ]
+  },
+  "RPT-W5-REVIEW": {
+    "stem": "RPT-W5-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D29-DAILY",
+      "RPT-D30-DAILY",
+      "RPT-D31-DAILY",
+      "RPT-D32-DAILY",
+      "INC-2026-11",
+      "INC-2026-27"
+    ]
+  },
+  "MTG-W5-REVIEW": {
+    "stem": "MTG-W5-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W5-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-11",
+      "INC-2026-27"
+    ]
+  },
+  "INC-2026-02": {
+    "stem": "INC-2026-02-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D36-DAILY",
+      "RCA-2026-02",
+      "DEC-2026-02",
+      "TEAMS-D36-MON"
+    ]
+  },
+  "EMAIL-D36-001": {
+    "stem": "EMAIL-D36-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-02",
+      "RPT-D36-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D36-BRIDGE-02": {
+    "stem": "TEAMS-D36-BRIDGE-02",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-02",
+      "MTG-D36-BRIDGE-02",
+      "RCA-2026-02",
+      "RPT-D36-DAILY"
+    ]
+  },
+  "MTG-D36-BRIDGE-02": {
+    "stem": "MTG-D36-BRIDGE-02",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-02",
+      "RCA-2026-02",
+      "DEC-2026-02",
+      "RPT-D36-DAILY",
+      "TEAMS-D36-BRIDGE-02"
+    ]
+  },
+  "TASK-0018": {
+    "stem": "TASK-0018",
+    "category": "document",
+    "refs": [
+      "INC-2026-02",
+      "MTG-D36-BRIDGE-02",
+      "RCA-2026-02"
+    ]
+  },
+  "TASK-0019": {
+    "stem": "TASK-0019",
+    "category": "document",
+    "refs": [
+      "INC-2026-02",
+      "RPT-D36-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D36-MON": {
+    "stem": "TEAMS-D36-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D36-DAILY",
+      "INC-2026-27",
+      "INC-2026-02"
+    ]
+  },
+  "RPT-D36-DAILY": {
+    "stem": "RPT-D36-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D36-MON",
+      "RPT-D35-DAILY",
+      "INC-2026-27",
+      "INC-2026-02",
+      "RCA-2026-27",
+      "RCA-2026-02"
+    ]
+  },
+  "KPI-D36": {
+    "stem": "upi_kpis_day_36",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D36-DAILY"
+    ]
+  },
+  "MTG-D37-INVEST-02": {
+    "stem": "MTG-D37-INVEST-02",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-02",
+      "RCA-2026-02",
+      "DEC-2026-02",
+      "SOP-UPI-SETTLEMENT-022",
+      "RPT-D37-DAILY"
+    ]
+  },
+  "RCA-2026-02": {
+    "stem": "RCA-2026-02",
+    "category": "rca",
+    "refs": [
+      "INC-2026-02",
+      "DEC-2026-02",
+      "SOP-UPI-SETTLEMENT-022",
+      "RPT-D37-DAILY",
+      "RPT-D38-DAILY"
+    ]
+  },
+  "DEC-2026-02": {
+    "stem": "DEC-2026-02",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-02",
+      "RCA-2026-02",
+      "SOP-UPI-SETTLEMENT-022",
+      "RPT-D37-DAILY"
+    ]
+  },
+  "SOP-UPI-SETTLEMENT-022": {
+    "stem": "SOP-UPI-SETTLEMENT-022",
+    "category": "product_document",
+    "refs": [
+      "INC-2026-02",
+      "RCA-2026-02",
+      "DEC-2026-02"
+    ]
+  },
+  "TASK-0020": {
+    "stem": "TASK-0020",
+    "category": "document",
+    "refs": [
+      "DEC-2026-02",
+      "RCA-2026-02",
+      "SOP-UPI-SETTLEMENT-022"
+    ]
+  },
+  "TEAMS-D37-MON": {
+    "stem": "TEAMS-D37-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D37-DAILY",
+      "INC-2026-27",
+      "INC-2026-02"
+    ]
+  },
+  "RPT-D37-DAILY": {
+    "stem": "RPT-D37-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D37-MON",
+      "RPT-D36-DAILY",
+      "INC-2026-27",
+      "INC-2026-02",
+      "RCA-2026-27",
+      "RCA-2026-02"
+    ]
+  },
+  "KPI-D37": {
+    "stem": "upi_kpis_day_37",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D37-DAILY"
+    ]
+  },
+  "EMAIL-D38-001": {
+    "stem": "EMAIL-D38-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-27",
+      "DEC-2026-27",
+      "RCA-2026-27",
+      "RPT-D38-DAILY"
+    ]
+  },
+  "EMAIL-D38-002": {
+    "stem": "EMAIL-D38-002-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-02",
+      "DEC-2026-02",
+      "RCA-2026-02",
+      "RPT-D38-DAILY"
+    ]
+  },
+  "TEAMS-D38-MON": {
+    "stem": "TEAMS-D38-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D38-DAILY",
+      "INC-2026-27",
+      "INC-2026-02"
+    ]
+  },
+  "RPT-D38-DAILY": {
+    "stem": "RPT-D38-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D38-MON",
+      "RPT-D37-DAILY",
+      "INC-2026-27",
+      "INC-2026-02",
+      "RCA-2026-27",
+      "RCA-2026-02"
+    ]
+  },
+  "KPI-D38": {
+    "stem": "upi_kpis_day_38",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D38-DAILY"
+    ]
+  },
+  "TEAMS-D39-MON": {
+    "stem": "TEAMS-D39-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D39-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D39-DAILY": {
+    "stem": "RPT-D39-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D39-MON",
+      "RPT-D38-DAILY"
+    ]
+  },
+  "KPI-D39": {
+    "stem": "upi_kpis_day_39",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D39-DAILY"
+    ]
+  },
+  "TEAMS-D40-MON": {
+    "stem": "TEAMS-D40-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D40-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D40-DAILY": {
+    "stem": "RPT-D40-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D40-MON",
+      "RPT-D39-DAILY"
+    ]
+  },
+  "KPI-D40": {
+    "stem": "upi_kpis_day_40",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D40-DAILY"
+    ]
+  },
+  "TEAMS-D41-MON": {
+    "stem": "TEAMS-D41-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D41-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D41-DAILY": {
+    "stem": "RPT-D41-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D41-MON",
+      "RPT-D40-DAILY"
+    ]
+  },
+  "KPI-D41": {
+    "stem": "upi_kpis_day_41",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D41-DAILY"
+    ]
+  },
+  "TEAMS-D42-MON": {
+    "stem": "TEAMS-D42-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D42-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D42-DAILY": {
+    "stem": "RPT-D42-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D42-MON",
+      "RPT-D41-DAILY"
+    ]
+  },
+  "KPI-D42": {
+    "stem": "upi_kpis_day_42",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D42-DAILY"
+    ]
+  },
+  "RPT-W6-REVIEW": {
+    "stem": "RPT-W6-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D36-DAILY",
+      "RPT-D37-DAILY",
+      "RPT-D38-DAILY",
+      "RPT-D39-DAILY",
+      "INC-2026-27",
+      "INC-2026-02"
+    ]
+  },
+  "MTG-W6-REVIEW": {
+    "stem": "MTG-W6-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W6-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-27",
+      "INC-2026-02"
+    ]
+  },
+  "INC-2026-07": {
+    "stem": "INC-2026-07-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D43-DAILY",
+      "TEAMS-D43-MON"
+    ]
+  },
+  "EMAIL-D43-001": {
+    "stem": "EMAIL-D43-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-07",
+      "RPT-D43-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D43-BRIDGE-07": {
+    "stem": "TEAMS-D43-BRIDGE-07",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-07",
+      "MTG-D43-BRIDGE-07",
+      "RPT-D43-DAILY"
+    ]
+  },
+  "MTG-D43-BRIDGE-07": {
+    "stem": "MTG-D43-BRIDGE-07",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-07",
+      "RPT-D43-DAILY",
+      "TEAMS-D43-BRIDGE-07"
+    ]
+  },
+  "TASK-0021": {
+    "stem": "TASK-0021",
+    "category": "document",
+    "refs": [
+      "INC-2026-07",
+      "MTG-D43-BRIDGE-07",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TASK-0022": {
+    "stem": "TASK-0022",
+    "category": "document",
+    "refs": [
+      "INC-2026-07",
+      "RPT-D43-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D43-MON": {
+    "stem": "TEAMS-D43-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D43-DAILY",
+      "INC-2026-07"
+    ]
+  },
+  "RPT-D43-DAILY": {
+    "stem": "RPT-D43-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D43-MON",
+      "RPT-D42-DAILY",
+      "INC-2026-07"
+    ]
+  },
+  "KPI-D43": {
+    "stem": "upi_kpis_day_43",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D43-DAILY"
+    ]
+  },
+  "EMAIL-D44-001": {
+    "stem": "EMAIL-D44-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-07",
+      "RPT-D44-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D44-MON": {
+    "stem": "TEAMS-D44-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D44-DAILY",
+      "INC-2026-07"
+    ]
+  },
+  "RPT-D44-DAILY": {
+    "stem": "RPT-D44-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D44-MON",
+      "RPT-D43-DAILY",
+      "INC-2026-07"
+    ]
+  },
+  "KPI-D44": {
+    "stem": "upi_kpis_day_44",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D44-DAILY"
+    ]
+  },
+  "TEAMS-D45-MON": {
+    "stem": "TEAMS-D45-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D45-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D45-DAILY": {
+    "stem": "RPT-D45-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D45-MON",
+      "RPT-D44-DAILY"
+    ]
+  },
+  "KPI-D45": {
+    "stem": "upi_kpis_day_45",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D45-DAILY"
+    ]
+  },
+  "TEAMS-D46-MON": {
+    "stem": "TEAMS-D46-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D46-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D46-DAILY": {
+    "stem": "RPT-D46-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D46-MON",
+      "RPT-D45-DAILY"
+    ]
+  },
+  "KPI-D46": {
+    "stem": "upi_kpis_day_46",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D46-DAILY"
+    ]
+  },
+  "TEAMS-D47-MON": {
+    "stem": "TEAMS-D47-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D47-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D47-DAILY": {
+    "stem": "RPT-D47-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D47-MON",
+      "RPT-D46-DAILY"
+    ]
+  },
+  "KPI-D47": {
+    "stem": "upi_kpis_day_47",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D47-DAILY"
+    ]
+  },
+  "TEAMS-D48-MON": {
+    "stem": "TEAMS-D48-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D48-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D48-DAILY": {
+    "stem": "RPT-D48-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D48-MON",
+      "RPT-D47-DAILY"
+    ]
+  },
+  "KPI-D48": {
+    "stem": "upi_kpis_day_48",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D48-DAILY"
+    ]
+  },
+  "TEAMS-D49-MON": {
+    "stem": "TEAMS-D49-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D49-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D49-DAILY": {
+    "stem": "RPT-D49-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D49-MON",
+      "RPT-D48-DAILY"
+    ]
+  },
+  "KPI-D49": {
+    "stem": "upi_kpis_day_49",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D49-DAILY"
+    ]
+  },
+  "RPT-W7-REVIEW": {
+    "stem": "RPT-W7-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D43-DAILY",
+      "RPT-D44-DAILY",
+      "RPT-D45-DAILY",
+      "RPT-D46-DAILY",
+      "INC-2026-07"
+    ]
+  },
+  "MTG-W7-REVIEW": {
+    "stem": "MTG-W7-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W7-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-07"
+    ]
+  },
+  "TEAMS-D50-MON": {
+    "stem": "TEAMS-D50-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D50-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D50-DAILY": {
+    "stem": "RPT-D50-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D50-MON",
+      "RPT-D49-DAILY"
+    ]
+  },
+  "KPI-D50": {
+    "stem": "upi_kpis_day_50",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D50-DAILY"
+    ]
+  },
+  "TEAMS-D51-MON": {
+    "stem": "TEAMS-D51-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D51-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D51-DAILY": {
+    "stem": "RPT-D51-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D51-MON",
+      "RPT-D50-DAILY"
+    ]
+  },
+  "KPI-D51": {
+    "stem": "upi_kpis_day_51",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D51-DAILY"
+    ]
+  },
+  "TEAMS-D52-MON": {
+    "stem": "TEAMS-D52-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D52-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D52-DAILY": {
+    "stem": "RPT-D52-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D52-MON",
+      "RPT-D51-DAILY"
+    ]
+  },
+  "KPI-D52": {
+    "stem": "upi_kpis_day_52",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D52-DAILY"
+    ]
+  },
+  "MTG-D53-REVIEW": {
+    "stem": "MTG-D53-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D53-DAILY",
+      "TEAMS-D53-MON"
+    ]
+  },
+  "TEAMS-D53-MON": {
+    "stem": "TEAMS-D53-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D53-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D53-DAILY": {
+    "stem": "RPT-D53-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D53-MON",
+      "RPT-D52-DAILY"
+    ]
+  },
+  "KPI-D53": {
+    "stem": "upi_kpis_day_53",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D53-DAILY"
+    ]
+  },
+  "TEAMS-D54-MON": {
+    "stem": "TEAMS-D54-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D54-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D54-DAILY": {
+    "stem": "RPT-D54-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D54-MON",
+      "RPT-D53-DAILY"
+    ]
+  },
+  "KPI-D54": {
+    "stem": "upi_kpis_day_54",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D54-DAILY"
+    ]
+  },
+  "TEAMS-D55-MON": {
+    "stem": "TEAMS-D55-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D55-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D55-DAILY": {
+    "stem": "RPT-D55-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D55-MON",
+      "RPT-D54-DAILY"
+    ]
+  },
+  "KPI-D55": {
+    "stem": "upi_kpis_day_55",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D55-DAILY"
+    ]
+  },
+  "TEAMS-D56-MON": {
+    "stem": "TEAMS-D56-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D56-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D56-DAILY": {
+    "stem": "RPT-D56-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D56-MON",
+      "RPT-D55-DAILY"
+    ]
+  },
+  "KPI-D56": {
+    "stem": "upi_kpis_day_56",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D56-DAILY"
+    ]
+  },
+  "RPT-W8-REVIEW": {
+    "stem": "RPT-W8-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D50-DAILY",
+      "RPT-D51-DAILY",
+      "RPT-D52-DAILY",
+      "RPT-D53-DAILY"
+    ]
+  },
+  "MTG-W8-REVIEW": {
+    "stem": "MTG-W8-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W8-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "INC-2026-03": {
+    "stem": "INC-2026-03-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D57-DAILY",
+      "RCA-2026-03",
+      "DEC-2026-03",
+      "TEAMS-D57-MON"
+    ]
+  },
+  "EMAIL-D57-001": {
+    "stem": "EMAIL-D57-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-03",
+      "RPT-D57-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D57-BRIDGE-03": {
+    "stem": "TEAMS-D57-BRIDGE-03",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-03",
+      "MTG-D57-BRIDGE-03",
+      "RCA-2026-03",
+      "RPT-D57-DAILY"
+    ]
+  },
+  "MTG-D57-BRIDGE-03": {
+    "stem": "MTG-D57-BRIDGE-03",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-03",
+      "RCA-2026-03",
+      "DEC-2026-03",
+      "RPT-D57-DAILY",
+      "TEAMS-D57-BRIDGE-03"
+    ]
+  },
+  "TASK-0023": {
+    "stem": "TASK-0023",
+    "category": "document",
+    "refs": [
+      "INC-2026-03",
+      "MTG-D57-BRIDGE-03",
+      "RCA-2026-03"
+    ]
+  },
+  "TASK-0024": {
+    "stem": "TASK-0024",
+    "category": "document",
+    "refs": [
+      "INC-2026-03",
+      "RPT-D57-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D57-MON": {
+    "stem": "TEAMS-D57-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D57-DAILY",
+      "INC-2026-03"
+    ]
+  },
+  "RPT-D57-DAILY": {
+    "stem": "RPT-D57-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D57-MON",
+      "RPT-D56-DAILY",
+      "INC-2026-03",
+      "RCA-2026-03"
+    ]
+  },
+  "KPI-D57": {
+    "stem": "upi_kpis_day_57",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D57-DAILY"
+    ]
+  },
+  "MTG-D58-INVEST-03": {
+    "stem": "MTG-D58-INVEST-03",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-03",
+      "RCA-2026-03",
+      "DEC-2026-03",
+      "SOP-UPI-SETTLEMENT-022",
+      "RPT-D58-DAILY"
+    ]
+  },
+  "RCA-2026-03": {
+    "stem": "RCA-2026-03",
+    "category": "rca",
+    "refs": [
+      "INC-2026-03",
+      "DEC-2026-03",
+      "SOP-UPI-SETTLEMENT-022",
+      "RPT-D58-DAILY",
+      "RPT-D60-DAILY"
+    ]
+  },
+  "DEC-2026-03": {
+    "stem": "DEC-2026-03",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-03",
+      "RCA-2026-03",
+      "SOP-UPI-SETTLEMENT-022",
+      "RPT-D58-DAILY"
+    ]
+  },
+  "TASK-0025": {
+    "stem": "TASK-0025",
+    "category": "document",
+    "refs": [
+      "DEC-2026-03",
+      "RCA-2026-03",
+      "SOP-UPI-SETTLEMENT-022"
+    ]
+  },
+  "TEAMS-D58-MON": {
+    "stem": "TEAMS-D58-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D58-DAILY",
+      "INC-2026-03"
+    ]
+  },
+  "RPT-D58-DAILY": {
+    "stem": "RPT-D58-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D58-MON",
+      "RPT-D57-DAILY",
+      "INC-2026-03",
+      "RCA-2026-03"
+    ]
+  },
+  "KPI-D58": {
+    "stem": "upi_kpis_day_58",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D58-DAILY"
+    ]
+  },
+  "TEAMS-D59-MON": {
+    "stem": "TEAMS-D59-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D59-DAILY",
+      "INC-2026-03"
+    ]
+  },
+  "RPT-D59-DAILY": {
+    "stem": "RPT-D59-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D59-MON",
+      "RPT-D58-DAILY",
+      "INC-2026-03",
+      "RCA-2026-03"
+    ]
+  },
+  "KPI-D59": {
+    "stem": "upi_kpis_day_59",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D59-DAILY"
+    ]
+  },
+  "EMAIL-D60-001": {
+    "stem": "EMAIL-D60-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-03",
+      "DEC-2026-03",
+      "RCA-2026-03",
+      "RPT-D60-DAILY"
+    ]
+  },
+  "TEAMS-D60-MON": {
+    "stem": "TEAMS-D60-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D60-DAILY",
+      "INC-2026-03"
+    ]
+  },
+  "RPT-D60-DAILY": {
+    "stem": "RPT-D60-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D60-MON",
+      "RPT-D59-DAILY",
+      "INC-2026-03",
+      "RCA-2026-03"
+    ]
+  },
+  "KPI-D60": {
+    "stem": "upi_kpis_day_60",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D60-DAILY"
+    ]
+  },
+  "INC-2026-28": {
+    "stem": "INC-2026-28-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D61-DAILY",
+      "RCA-2026-28",
+      "DEC-2026-28",
+      "TEAMS-D61-MON"
+    ]
+  },
+  "EMAIL-D61-001": {
+    "stem": "EMAIL-D61-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-28",
+      "RPT-D61-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D61-BRIDGE-28": {
+    "stem": "TEAMS-D61-BRIDGE-28",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-28",
+      "MTG-D61-BRIDGE-28",
+      "RCA-2026-28",
+      "RPT-D61-DAILY"
+    ]
+  },
+  "MTG-D61-BRIDGE-28": {
+    "stem": "MTG-D61-BRIDGE-28",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-28",
+      "RCA-2026-28",
+      "DEC-2026-28",
+      "RPT-D61-DAILY",
+      "TEAMS-D61-BRIDGE-28"
+    ]
+  },
+  "TASK-0026": {
+    "stem": "TASK-0026",
+    "category": "document",
+    "refs": [
+      "INC-2026-28",
+      "MTG-D61-BRIDGE-28",
+      "RCA-2026-28"
+    ]
+  },
+  "TASK-0027": {
+    "stem": "TASK-0027",
+    "category": "document",
+    "refs": [
+      "INC-2026-28",
+      "RPT-D61-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D61-MON": {
+    "stem": "TEAMS-D61-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D61-DAILY",
+      "INC-2026-28"
+    ]
+  },
+  "RPT-D61-DAILY": {
+    "stem": "RPT-D61-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D61-MON",
+      "RPT-D60-DAILY",
+      "INC-2026-28",
+      "RCA-2026-28"
+    ]
+  },
+  "KPI-D61": {
+    "stem": "upi_kpis_day_61",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D61-DAILY"
+    ]
+  },
+  "MTG-D62-INVEST-28": {
+    "stem": "MTG-D62-INVEST-28",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-28",
+      "RCA-2026-28",
+      "DEC-2026-28",
+      "SOP-UPI-FEATURE-011",
+      "RPT-D62-DAILY"
+    ]
+  },
+  "RCA-2026-28": {
+    "stem": "RCA-2026-28",
+    "category": "rca",
+    "refs": [
+      "INC-2026-28",
+      "DEC-2026-28",
+      "SOP-UPI-FEATURE-011",
+      "RPT-D62-DAILY",
+      "RPT-D63-DAILY"
+    ]
+  },
+  "DEC-2026-28": {
+    "stem": "DEC-2026-28",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-28",
+      "RCA-2026-28",
+      "SOP-UPI-FEATURE-011",
+      "RPT-D62-DAILY"
+    ]
+  },
+  "SOP-UPI-FEATURE-011": {
+    "stem": "SOP-UPI-FEATURE-011",
+    "category": "product_document",
+    "refs": [
+      "INC-2026-28",
+      "RCA-2026-28",
+      "DEC-2026-28"
+    ]
+  },
+  "TASK-0028": {
+    "stem": "TASK-0028",
+    "category": "document",
+    "refs": [
+      "DEC-2026-28",
+      "RCA-2026-28",
+      "SOP-UPI-FEATURE-011"
+    ]
+  },
+  "TEAMS-D62-MON": {
+    "stem": "TEAMS-D62-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D62-DAILY",
+      "INC-2026-28"
+    ]
+  },
+  "RPT-D62-DAILY": {
+    "stem": "RPT-D62-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D62-MON",
+      "RPT-D61-DAILY",
+      "INC-2026-28",
+      "RCA-2026-28"
+    ]
+  },
+  "KPI-D62": {
+    "stem": "upi_kpis_day_62",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D62-DAILY"
+    ]
+  },
+  "EMAIL-D63-001": {
+    "stem": "EMAIL-D63-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-28",
+      "DEC-2026-28",
+      "RCA-2026-28",
+      "RPT-D63-DAILY"
+    ]
+  },
+  "TEAMS-D63-MON": {
+    "stem": "TEAMS-D63-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D63-DAILY",
+      "INC-2026-28"
+    ]
+  },
+  "RPT-D63-DAILY": {
+    "stem": "RPT-D63-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D63-MON",
+      "RPT-D62-DAILY",
+      "INC-2026-28",
+      "RCA-2026-28"
+    ]
+  },
+  "KPI-D63": {
+    "stem": "upi_kpis_day_63",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D63-DAILY"
+    ]
+  },
+  "RPT-W9-REVIEW": {
+    "stem": "RPT-W9-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D57-DAILY",
+      "RPT-D58-DAILY",
+      "RPT-D59-DAILY",
+      "RPT-D60-DAILY",
+      "INC-2026-03",
+      "INC-2026-28"
+    ]
+  },
+  "MTG-W9-REVIEW": {
+    "stem": "MTG-W9-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W9-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-03",
+      "INC-2026-28"
+    ]
+  },
+  "TEAMS-D64-MON": {
+    "stem": "TEAMS-D64-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D64-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D64-DAILY": {
+    "stem": "RPT-D64-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D64-MON",
+      "RPT-D63-DAILY"
+    ]
+  },
+  "KPI-D64": {
+    "stem": "upi_kpis_day_64",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D64-DAILY"
+    ]
+  },
+  "INC-2026-18": {
+    "stem": "INC-2026-18-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D65-DAILY",
+      "TEAMS-D65-MON"
+    ]
+  },
+  "EMAIL-D65-001": {
+    "stem": "EMAIL-D65-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-18",
+      "RPT-D65-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D65-BRIDGE-18": {
+    "stem": "TEAMS-D65-BRIDGE-18",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-18",
+      "MTG-D65-BRIDGE-18",
+      "RPT-D65-DAILY"
+    ]
+  },
+  "MTG-D65-BRIDGE-18": {
+    "stem": "MTG-D65-BRIDGE-18",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-18",
+      "RPT-D65-DAILY",
+      "TEAMS-D65-BRIDGE-18"
+    ]
+  },
+  "TASK-0029": {
+    "stem": "TASK-0029",
+    "category": "document",
+    "refs": [
+      "INC-2026-18",
+      "MTG-D65-BRIDGE-18",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TASK-0030": {
+    "stem": "TASK-0030",
+    "category": "document",
+    "refs": [
+      "INC-2026-18",
+      "RPT-D65-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D65-MON": {
+    "stem": "TEAMS-D65-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D65-DAILY",
+      "INC-2026-18"
+    ]
+  },
+  "RPT-D65-DAILY": {
+    "stem": "RPT-D65-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D65-MON",
+      "RPT-D64-DAILY",
+      "INC-2026-18"
+    ]
+  },
+  "KPI-D65": {
+    "stem": "upi_kpis_day_65",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D65-DAILY"
+    ]
+  },
+  "EMAIL-D66-001": {
+    "stem": "EMAIL-D66-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-18",
+      "RPT-D66-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D66-MON": {
+    "stem": "TEAMS-D66-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D66-DAILY",
+      "INC-2026-18"
+    ]
+  },
+  "RPT-D66-DAILY": {
+    "stem": "RPT-D66-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D66-MON",
+      "RPT-D65-DAILY",
+      "INC-2026-18"
+    ]
+  },
+  "KPI-D66": {
+    "stem": "upi_kpis_day_66",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D66-DAILY"
+    ]
+  },
+  "TEAMS-D67-MON": {
+    "stem": "TEAMS-D67-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D67-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D67-DAILY": {
+    "stem": "RPT-D67-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D67-MON",
+      "RPT-D66-DAILY"
+    ]
+  },
+  "KPI-D67": {
+    "stem": "upi_kpis_day_67",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D67-DAILY"
+    ]
+  },
+  "TEAMS-D68-MON": {
+    "stem": "TEAMS-D68-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D68-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D68-DAILY": {
+    "stem": "RPT-D68-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D68-MON",
+      "RPT-D67-DAILY"
+    ]
+  },
+  "KPI-D68": {
+    "stem": "upi_kpis_day_68",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D68-DAILY"
+    ]
+  },
+  "TEAMS-D69-MON": {
+    "stem": "TEAMS-D69-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D69-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D69-DAILY": {
+    "stem": "RPT-D69-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D69-MON",
+      "RPT-D68-DAILY"
+    ]
+  },
+  "KPI-D69": {
+    "stem": "upi_kpis_day_69",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D69-DAILY"
+    ]
+  },
+  "INC-2026-23": {
+    "stem": "INC-2026-23-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D70-DAILY",
+      "TEAMS-D70-MON"
+    ]
+  },
+  "EMAIL-D70-001": {
+    "stem": "EMAIL-D70-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-23",
+      "RPT-D70-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D70-BRIDGE-23": {
+    "stem": "TEAMS-D70-BRIDGE-23",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-23",
+      "MTG-D70-BRIDGE-23",
+      "RPT-D70-DAILY"
+    ]
+  },
+  "MTG-D70-BRIDGE-23": {
+    "stem": "MTG-D70-BRIDGE-23",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-23",
+      "RPT-D70-DAILY",
+      "TEAMS-D70-BRIDGE-23"
+    ]
+  },
+  "TASK-0031": {
+    "stem": "TASK-0031",
+    "category": "document",
+    "refs": [
+      "INC-2026-23",
+      "MTG-D70-BRIDGE-23",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TASK-0032": {
+    "stem": "TASK-0032",
+    "category": "document",
+    "refs": [
+      "INC-2026-23",
+      "RPT-D70-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D70-MON": {
+    "stem": "TEAMS-D70-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D70-DAILY",
+      "INC-2026-23"
+    ]
+  },
+  "RPT-D70-DAILY": {
+    "stem": "RPT-D70-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D70-MON",
+      "RPT-D69-DAILY",
+      "INC-2026-23"
+    ]
+  },
+  "KPI-D70": {
+    "stem": "upi_kpis_day_70",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D70-DAILY"
+    ]
+  },
+  "RPT-W10-REVIEW": {
+    "stem": "RPT-W10-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D64-DAILY",
+      "RPT-D65-DAILY",
+      "RPT-D66-DAILY",
+      "RPT-D67-DAILY",
+      "INC-2026-18",
+      "INC-2026-23"
+    ]
+  },
+  "MTG-W10-REVIEW": {
+    "stem": "MTG-W10-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W10-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-18",
+      "INC-2026-23"
+    ]
+  },
+  "EMAIL-D71-001": {
+    "stem": "EMAIL-D71-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-23",
+      "RPT-D71-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D71-MON": {
+    "stem": "TEAMS-D71-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D71-DAILY",
+      "INC-2026-23"
+    ]
+  },
+  "RPT-D71-DAILY": {
+    "stem": "RPT-D71-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D71-MON",
+      "RPT-D70-DAILY",
+      "INC-2026-23"
+    ]
+  },
+  "KPI-D71": {
+    "stem": "upi_kpis_day_71",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D71-DAILY"
+    ]
+  },
+  "TEAMS-D72-MON": {
+    "stem": "TEAMS-D72-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D72-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D72-DAILY": {
+    "stem": "RPT-D72-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D72-MON",
+      "RPT-D71-DAILY"
+    ]
+  },
+  "KPI-D72": {
+    "stem": "upi_kpis_day_72",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D72-DAILY"
+    ]
+  },
+  "TEAMS-D73-MON": {
+    "stem": "TEAMS-D73-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D73-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D73-DAILY": {
+    "stem": "RPT-D73-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D73-MON",
+      "RPT-D72-DAILY"
+    ]
+  },
+  "KPI-D73": {
+    "stem": "upi_kpis_day_73",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D73-DAILY"
+    ]
+  },
+  "TEAMS-D74-MON": {
+    "stem": "TEAMS-D74-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D74-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D74-DAILY": {
+    "stem": "RPT-D74-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D74-MON",
+      "RPT-D73-DAILY"
+    ]
+  },
+  "KPI-D74": {
+    "stem": "upi_kpis_day_74",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D74-DAILY"
+    ]
+  },
+  "TEAMS-D75-MON": {
+    "stem": "TEAMS-D75-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D75-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D75-DAILY": {
+    "stem": "RPT-D75-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D75-MON",
+      "RPT-D74-DAILY"
+    ]
+  },
+  "KPI-D75": {
+    "stem": "upi_kpis_day_75",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D75-DAILY"
+    ]
+  },
+  "TEAMS-D76-MON": {
+    "stem": "TEAMS-D76-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D76-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D76-DAILY": {
+    "stem": "RPT-D76-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D76-MON",
+      "RPT-D75-DAILY"
+    ]
+  },
+  "KPI-D76": {
+    "stem": "upi_kpis_day_76",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D76-DAILY"
+    ]
+  },
+  "TEAMS-D77-MON": {
+    "stem": "TEAMS-D77-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D77-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D77-DAILY": {
+    "stem": "RPT-D77-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D77-MON",
+      "RPT-D76-DAILY"
+    ]
+  },
+  "KPI-D77": {
+    "stem": "upi_kpis_day_77",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D77-DAILY"
+    ]
+  },
+  "RPT-W11-REVIEW": {
+    "stem": "RPT-W11-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D71-DAILY",
+      "RPT-D72-DAILY",
+      "RPT-D73-DAILY",
+      "RPT-D74-DAILY",
+      "INC-2026-23"
+    ]
+  },
+  "MTG-W11-REVIEW": {
+    "stem": "MTG-W11-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W11-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-23"
+    ]
+  },
+  "TEAMS-D78-MON": {
+    "stem": "TEAMS-D78-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D78-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D78-DAILY": {
+    "stem": "RPT-D78-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D78-MON",
+      "RPT-D77-DAILY"
+    ]
+  },
+  "KPI-D78": {
+    "stem": "upi_kpis_day_78",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D78-DAILY"
+    ]
+  },
+  "TEAMS-D79-MON": {
+    "stem": "TEAMS-D79-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D79-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D79-DAILY": {
+    "stem": "RPT-D79-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D79-MON",
+      "RPT-D78-DAILY"
+    ]
+  },
+  "KPI-D79": {
+    "stem": "upi_kpis_day_79",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D79-DAILY"
+    ]
+  },
+  "TEAMS-D80-MON": {
+    "stem": "TEAMS-D80-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D80-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D80-DAILY": {
+    "stem": "RPT-D80-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D80-MON",
+      "RPT-D79-DAILY"
+    ]
+  },
+  "KPI-D80": {
+    "stem": "upi_kpis_day_80",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D80-DAILY"
+    ]
+  },
+  "MTG-D81-REVIEW": {
+    "stem": "MTG-D81-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D81-DAILY",
+      "TEAMS-D81-MON"
+    ]
+  },
+  "TEAMS-D81-MON": {
+    "stem": "TEAMS-D81-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D81-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D81-DAILY": {
+    "stem": "RPT-D81-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D81-MON",
+      "RPT-D80-DAILY"
+    ]
+  },
+  "KPI-D81": {
+    "stem": "upi_kpis_day_81",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D81-DAILY"
+    ]
+  },
+  "TEAMS-D82-MON": {
+    "stem": "TEAMS-D82-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D82-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D82-DAILY": {
+    "stem": "RPT-D82-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D82-MON",
+      "RPT-D81-DAILY"
+    ]
+  },
+  "KPI-D82": {
+    "stem": "upi_kpis_day_82",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D82-DAILY"
+    ]
+  },
+  "TEAMS-D83-MON": {
+    "stem": "TEAMS-D83-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D83-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D83-DAILY": {
+    "stem": "RPT-D83-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D83-MON",
+      "RPT-D82-DAILY"
+    ]
+  },
+  "KPI-D83": {
+    "stem": "upi_kpis_day_83",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D83-DAILY"
+    ]
+  },
+  "TEAMS-D84-MON": {
+    "stem": "TEAMS-D84-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D84-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D84-DAILY": {
+    "stem": "RPT-D84-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D84-MON",
+      "RPT-D83-DAILY"
+    ]
+  },
+  "KPI-D84": {
+    "stem": "upi_kpis_day_84",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D84-DAILY"
+    ]
+  },
+  "RPT-W12-REVIEW": {
+    "stem": "RPT-W12-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D78-DAILY",
+      "RPT-D79-DAILY",
+      "RPT-D80-DAILY",
+      "RPT-D81-DAILY"
+    ]
+  },
+  "MTG-W12-REVIEW": {
+    "stem": "MTG-W12-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W12-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "INC-2026-14": {
+    "stem": "INC-2026-14-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D85-DAILY",
+      "RCA-2026-14",
+      "DEC-2026-14",
+      "TEAMS-D85-MON"
+    ]
+  },
+  "EMAIL-D85-001": {
+    "stem": "EMAIL-D85-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-14",
+      "RPT-D85-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D85-BRIDGE-14": {
+    "stem": "TEAMS-D85-BRIDGE-14",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-14",
+      "MTG-D85-BRIDGE-14",
+      "RCA-2026-14",
+      "RPT-D85-DAILY"
+    ]
+  },
+  "MTG-D85-BRIDGE-14": {
+    "stem": "MTG-D85-BRIDGE-14",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-14",
+      "RCA-2026-14",
+      "DEC-2026-14",
+      "RPT-D85-DAILY",
+      "TEAMS-D85-BRIDGE-14"
+    ]
+  },
+  "TASK-0033": {
+    "stem": "TASK-0033",
+    "category": "document",
+    "refs": [
+      "INC-2026-14",
+      "MTG-D85-BRIDGE-14",
+      "RCA-2026-14"
+    ]
+  },
+  "TASK-0034": {
+    "stem": "TASK-0034",
+    "category": "document",
+    "refs": [
+      "INC-2026-14",
+      "RPT-D85-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D85-MON": {
+    "stem": "TEAMS-D85-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D85-DAILY",
+      "INC-2026-14"
+    ]
+  },
+  "RPT-D85-DAILY": {
+    "stem": "RPT-D85-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D85-MON",
+      "RPT-D84-DAILY",
+      "INC-2026-14",
+      "RCA-2026-14"
+    ]
+  },
+  "KPI-D85": {
+    "stem": "upi_kpis_day_85",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D85-DAILY"
+    ]
+  },
+  "MTG-D86-INVEST-14": {
+    "stem": "MTG-D86-INVEST-14",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-14",
+      "RCA-2026-14",
+      "DEC-2026-14",
+      "SOP-UPI-PSP-LATENCY-018",
+      "RPT-D86-DAILY"
+    ]
+  },
+  "RCA-2026-14": {
+    "stem": "RCA-2026-14",
+    "category": "rca",
+    "refs": [
+      "INC-2026-14",
+      "DEC-2026-14",
+      "SOP-UPI-PSP-LATENCY-018",
+      "RPT-D86-DAILY",
+      "RPT-D89-DAILY"
+    ]
+  },
+  "DEC-2026-14": {
+    "stem": "DEC-2026-14",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-14",
+      "RCA-2026-14",
+      "SOP-UPI-PSP-LATENCY-018",
+      "RPT-D86-DAILY"
+    ]
+  },
+  "TASK-0035": {
+    "stem": "TASK-0035",
+    "category": "document",
+    "refs": [
+      "DEC-2026-14",
+      "RCA-2026-14",
+      "SOP-UPI-PSP-LATENCY-018"
+    ]
+  },
+  "TEAMS-D86-MON": {
+    "stem": "TEAMS-D86-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D86-DAILY",
+      "INC-2026-14"
+    ]
+  },
+  "RPT-D86-DAILY": {
+    "stem": "RPT-D86-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D86-MON",
+      "RPT-D85-DAILY",
+      "INC-2026-14",
+      "RCA-2026-14"
+    ]
+  },
+  "KPI-D86": {
+    "stem": "upi_kpis_day_86",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D86-DAILY"
+    ]
+  },
+  "TEAMS-D87-MON": {
+    "stem": "TEAMS-D87-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D87-DAILY",
+      "INC-2026-14"
+    ]
+  },
+  "RPT-D87-DAILY": {
+    "stem": "RPT-D87-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D87-MON",
+      "RPT-D86-DAILY",
+      "INC-2026-14",
+      "RCA-2026-14"
+    ]
+  },
+  "KPI-D87": {
+    "stem": "upi_kpis_day_87",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D87-DAILY"
+    ]
+  },
+  "TEAMS-D88-MON": {
+    "stem": "TEAMS-D88-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D88-DAILY",
+      "INC-2026-14"
+    ]
+  },
+  "RPT-D88-DAILY": {
+    "stem": "RPT-D88-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D88-MON",
+      "RPT-D87-DAILY",
+      "INC-2026-14",
+      "RCA-2026-14"
+    ]
+  },
+  "KPI-D88": {
+    "stem": "upi_kpis_day_88",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D88-DAILY"
+    ]
+  },
+  "EMAIL-D89-001": {
+    "stem": "EMAIL-D89-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-14",
+      "DEC-2026-14",
+      "RCA-2026-14",
+      "RPT-D89-DAILY"
+    ]
+  },
+  "TEAMS-D89-MON": {
+    "stem": "TEAMS-D89-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D89-DAILY",
+      "INC-2026-14"
+    ]
+  },
+  "RPT-D89-DAILY": {
+    "stem": "RPT-D89-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D89-MON",
+      "RPT-D88-DAILY",
+      "INC-2026-14",
+      "RCA-2026-14"
+    ]
+  },
+  "KPI-D89": {
+    "stem": "upi_kpis_day_89",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D89-DAILY"
+    ]
+  },
+  "TEAMS-D90-MON": {
+    "stem": "TEAMS-D90-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D90-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D90-DAILY": {
+    "stem": "RPT-D90-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D90-MON",
+      "RPT-D89-DAILY"
+    ]
+  },
+  "KPI-D90": {
+    "stem": "upi_kpis_day_90",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D90-DAILY"
+    ]
+  },
+  "TEAMS-D91-MON": {
+    "stem": "TEAMS-D91-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D91-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D91-DAILY": {
+    "stem": "RPT-D91-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D91-MON",
+      "RPT-D90-DAILY"
+    ]
+  },
+  "KPI-D91": {
+    "stem": "upi_kpis_day_91",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D91-DAILY"
+    ]
+  },
+  "RPT-W13-REVIEW": {
+    "stem": "RPT-W13-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D85-DAILY",
+      "RPT-D86-DAILY",
+      "RPT-D87-DAILY",
+      "RPT-D88-DAILY",
+      "INC-2026-14"
+    ]
+  },
+  "MTG-W13-REVIEW": {
+    "stem": "MTG-W13-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W13-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-14"
+    ]
+  },
+  "TEAMS-D92-MON": {
+    "stem": "TEAMS-D92-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D92-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D92-DAILY": {
+    "stem": "RPT-D92-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D92-MON",
+      "RPT-D91-DAILY"
+    ]
+  },
+  "KPI-D92": {
+    "stem": "upi_kpis_day_92",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D92-DAILY"
+    ]
+  },
+  "TEAMS-D93-MON": {
+    "stem": "TEAMS-D93-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D93-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D93-DAILY": {
+    "stem": "RPT-D93-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D93-MON",
+      "RPT-D92-DAILY"
+    ]
+  },
+  "KPI-D93": {
+    "stem": "upi_kpis_day_93",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D93-DAILY"
+    ]
+  },
+  "TEAMS-D94-MON": {
+    "stem": "TEAMS-D94-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D94-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D94-DAILY": {
+    "stem": "RPT-D94-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D94-MON",
+      "RPT-D93-DAILY"
+    ]
+  },
+  "KPI-D94": {
+    "stem": "upi_kpis_day_94",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D94-DAILY"
+    ]
+  },
+  "INC-2026-04": {
+    "stem": "INC-2026-04-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D95-DAILY",
+      "RCA-2026-04",
+      "DEC-2026-04",
+      "TEAMS-D95-MON"
+    ]
+  },
+  "EMAIL-D95-001": {
+    "stem": "EMAIL-D95-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-04",
+      "RPT-D95-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D95-BRIDGE-04": {
+    "stem": "TEAMS-D95-BRIDGE-04",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-04",
+      "MTG-D95-BRIDGE-04",
+      "RCA-2026-04",
+      "RPT-D95-DAILY"
+    ]
+  },
+  "MTG-D95-BRIDGE-04": {
+    "stem": "MTG-D95-BRIDGE-04",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-04",
+      "RCA-2026-04",
+      "DEC-2026-04",
+      "RPT-D95-DAILY",
+      "TEAMS-D95-BRIDGE-04"
+    ]
+  },
+  "TASK-0036": {
+    "stem": "TASK-0036",
+    "category": "document",
+    "refs": [
+      "INC-2026-04",
+      "MTG-D95-BRIDGE-04",
+      "RCA-2026-04"
+    ]
+  },
+  "TASK-0037": {
+    "stem": "TASK-0037",
+    "category": "document",
+    "refs": [
+      "INC-2026-04",
+      "RPT-D95-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D95-MON": {
+    "stem": "TEAMS-D95-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D95-DAILY",
+      "INC-2026-04"
+    ]
+  },
+  "RPT-D95-DAILY": {
+    "stem": "RPT-D95-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D95-MON",
+      "RPT-D94-DAILY",
+      "INC-2026-04",
+      "RCA-2026-04"
+    ]
+  },
+  "KPI-D95": {
+    "stem": "upi_kpis_day_95",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D95-DAILY"
+    ]
+  },
+  "MTG-D96-INVEST-04": {
+    "stem": "MTG-D96-INVEST-04",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-04",
+      "RCA-2026-04",
+      "DEC-2026-04",
+      "SOP-UPI-RISK-030",
+      "RPT-D96-DAILY"
+    ]
+  },
+  "RCA-2026-04": {
+    "stem": "RCA-2026-04",
+    "category": "rca",
+    "refs": [
+      "INC-2026-04",
+      "DEC-2026-04",
+      "SOP-UPI-RISK-030",
+      "RPT-D96-DAILY",
+      "RPT-D99-DAILY"
+    ]
+  },
+  "DEC-2026-04": {
+    "stem": "DEC-2026-04",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-04",
+      "RCA-2026-04",
+      "SOP-UPI-RISK-030",
+      "RPT-D96-DAILY"
+    ]
+  },
+  "TASK-0038": {
+    "stem": "TASK-0038",
+    "category": "document",
+    "refs": [
+      "DEC-2026-04",
+      "RCA-2026-04",
+      "SOP-UPI-RISK-030"
+    ]
+  },
+  "TEAMS-D96-MON": {
+    "stem": "TEAMS-D96-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D96-DAILY",
+      "INC-2026-04"
+    ]
+  },
+  "RPT-D96-DAILY": {
+    "stem": "RPT-D96-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D96-MON",
+      "RPT-D95-DAILY",
+      "INC-2026-04",
+      "RCA-2026-04"
+    ]
+  },
+  "KPI-D96": {
+    "stem": "upi_kpis_day_96",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D96-DAILY"
+    ]
+  },
+  "TEAMS-D97-MON": {
+    "stem": "TEAMS-D97-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D97-DAILY",
+      "INC-2026-04"
+    ]
+  },
+  "RPT-D97-DAILY": {
+    "stem": "RPT-D97-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D97-MON",
+      "RPT-D96-DAILY",
+      "INC-2026-04",
+      "RCA-2026-04"
+    ]
+  },
+  "KPI-D97": {
+    "stem": "upi_kpis_day_97",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D97-DAILY"
+    ]
+  },
+  "TEAMS-D98-MON": {
+    "stem": "TEAMS-D98-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D98-DAILY",
+      "INC-2026-04"
+    ]
+  },
+  "RPT-D98-DAILY": {
+    "stem": "RPT-D98-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D98-MON",
+      "RPT-D97-DAILY",
+      "INC-2026-04",
+      "RCA-2026-04"
+    ]
+  },
+  "KPI-D98": {
+    "stem": "upi_kpis_day_98",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D98-DAILY"
+    ]
+  },
+  "RPT-W14-REVIEW": {
+    "stem": "RPT-W14-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D92-DAILY",
+      "RPT-D93-DAILY",
+      "RPT-D94-DAILY",
+      "RPT-D95-DAILY",
+      "INC-2026-04"
+    ]
+  },
+  "MTG-W14-REVIEW": {
+    "stem": "MTG-W14-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W14-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-04"
+    ]
+  },
+  "EMAIL-D99-001": {
+    "stem": "EMAIL-D99-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-04",
+      "DEC-2026-04",
+      "RCA-2026-04",
+      "RPT-D99-DAILY"
+    ]
+  },
+  "TEAMS-D99-MON": {
+    "stem": "TEAMS-D99-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D99-DAILY",
+      "INC-2026-04"
+    ]
+  },
+  "RPT-D99-DAILY": {
+    "stem": "RPT-D99-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D99-MON",
+      "RPT-D98-DAILY",
+      "INC-2026-04",
+      "RCA-2026-04"
+    ]
+  },
+  "KPI-D99": {
+    "stem": "upi_kpis_day_99",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D99-DAILY"
+    ]
+  },
+  "INC-2026-12": {
+    "stem": "INC-2026-12-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D100-DAILY",
+      "RCA-2026-12",
+      "DEC-2026-12",
+      "TEAMS-D100-MON"
+    ]
+  },
+  "EMAIL-D100-001": {
+    "stem": "EMAIL-D100-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-12",
+      "RPT-D100-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D100-BRIDGE-12": {
+    "stem": "TEAMS-D100-BRIDGE-12",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-12",
+      "MTG-D100-BRIDGE-12",
+      "RCA-2026-12",
+      "RPT-D100-DAILY"
+    ]
+  },
+  "MTG-D100-BRIDGE-12": {
+    "stem": "MTG-D100-BRIDGE-12",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-12",
+      "RCA-2026-12",
+      "DEC-2026-12",
+      "RPT-D100-DAILY",
+      "TEAMS-D100-BRIDGE-12"
+    ]
+  },
+  "TASK-0039": {
+    "stem": "TASK-0039",
+    "category": "document",
+    "refs": [
+      "INC-2026-12",
+      "MTG-D100-BRIDGE-12",
+      "RCA-2026-12"
+    ]
+  },
+  "TASK-0040": {
+    "stem": "TASK-0040",
+    "category": "document",
+    "refs": [
+      "INC-2026-12",
+      "RPT-D100-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D100-MON": {
+    "stem": "TEAMS-D100-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D100-DAILY",
+      "INC-2026-12"
+    ]
+  },
+  "RPT-D100-DAILY": {
+    "stem": "RPT-D100-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D100-MON",
+      "RPT-D99-DAILY",
+      "INC-2026-12",
+      "RCA-2026-12"
+    ]
+  },
+  "KPI-D100": {
+    "stem": "upi_kpis_day_100",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D100-DAILY"
+    ]
+  },
+  "MTG-D101-INVEST-12": {
+    "stem": "MTG-D101-INVEST-12",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-12",
+      "RCA-2026-12",
+      "DEC-2026-12",
+      "SOP-UPI-SETTLEMENT-022",
+      "RPT-D101-DAILY"
+    ]
+  },
+  "RCA-2026-12": {
+    "stem": "RCA-2026-12",
+    "category": "rca",
+    "refs": [
+      "INC-2026-12",
+      "DEC-2026-12",
+      "SOP-UPI-SETTLEMENT-022",
+      "RPT-D101-DAILY",
+      "RPT-D104-DAILY"
+    ]
+  },
+  "DEC-2026-12": {
+    "stem": "DEC-2026-12",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-12",
+      "RCA-2026-12",
+      "SOP-UPI-SETTLEMENT-022",
+      "RPT-D101-DAILY"
+    ]
+  },
+  "TASK-0041": {
+    "stem": "TASK-0041",
+    "category": "document",
+    "refs": [
+      "DEC-2026-12",
+      "RCA-2026-12",
+      "SOP-UPI-SETTLEMENT-022"
+    ]
+  },
+  "TEAMS-D101-MON": {
+    "stem": "TEAMS-D101-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D101-DAILY",
+      "INC-2026-12"
+    ]
+  },
+  "RPT-D101-DAILY": {
+    "stem": "RPT-D101-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D101-MON",
+      "RPT-D100-DAILY",
+      "INC-2026-12",
+      "RCA-2026-12"
+    ]
+  },
+  "KPI-D101": {
+    "stem": "upi_kpis_day_101",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D101-DAILY"
+    ]
+  },
+  "TEAMS-D102-MON": {
+    "stem": "TEAMS-D102-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D102-DAILY",
+      "INC-2026-12"
+    ]
+  },
+  "RPT-D102-DAILY": {
+    "stem": "RPT-D102-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D102-MON",
+      "RPT-D101-DAILY",
+      "INC-2026-12",
+      "RCA-2026-12"
+    ]
+  },
+  "KPI-D102": {
+    "stem": "upi_kpis_day_102",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D102-DAILY"
+    ]
+  },
+  "TEAMS-D103-MON": {
+    "stem": "TEAMS-D103-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D103-DAILY",
+      "INC-2026-12"
+    ]
+  },
+  "RPT-D103-DAILY": {
+    "stem": "RPT-D103-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D103-MON",
+      "RPT-D102-DAILY",
+      "INC-2026-12",
+      "RCA-2026-12"
+    ]
+  },
+  "KPI-D103": {
+    "stem": "upi_kpis_day_103",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D103-DAILY"
+    ]
+  },
+  "EMAIL-D104-001": {
+    "stem": "EMAIL-D104-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-12",
+      "DEC-2026-12",
+      "RCA-2026-12",
+      "RPT-D104-DAILY"
+    ]
+  },
+  "TEAMS-D104-MON": {
+    "stem": "TEAMS-D104-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D104-DAILY",
+      "INC-2026-12"
+    ]
+  },
+  "RPT-D104-DAILY": {
+    "stem": "RPT-D104-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D104-MON",
+      "RPT-D103-DAILY",
+      "INC-2026-12",
+      "RCA-2026-12"
+    ]
+  },
+  "KPI-D104": {
+    "stem": "upi_kpis_day_104",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D104-DAILY"
+    ]
+  },
+  "TEAMS-D105-MON": {
+    "stem": "TEAMS-D105-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D105-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D105-DAILY": {
+    "stem": "RPT-D105-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D105-MON",
+      "RPT-D104-DAILY"
+    ]
+  },
+  "KPI-D105": {
+    "stem": "upi_kpis_day_105",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D105-DAILY"
+    ]
+  },
+  "RPT-W15-REVIEW": {
+    "stem": "RPT-W15-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D99-DAILY",
+      "RPT-D100-DAILY",
+      "RPT-D101-DAILY",
+      "RPT-D102-DAILY",
+      "INC-2026-04",
+      "INC-2026-12"
+    ]
+  },
+  "MTG-W15-REVIEW": {
+    "stem": "MTG-W15-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W15-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-04",
+      "INC-2026-12"
+    ]
+  },
+  "TEAMS-D106-MON": {
+    "stem": "TEAMS-D106-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D106-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D106-DAILY": {
+    "stem": "RPT-D106-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D106-MON",
+      "RPT-D105-DAILY"
+    ]
+  },
+  "KPI-D106": {
+    "stem": "upi_kpis_day_106",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D106-DAILY"
+    ]
+  },
+  "TEAMS-D107-MON": {
+    "stem": "TEAMS-D107-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D107-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D107-DAILY": {
+    "stem": "RPT-D107-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D107-MON",
+      "RPT-D106-DAILY"
+    ]
+  },
+  "KPI-D107": {
+    "stem": "upi_kpis_day_107",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D107-DAILY"
+    ]
+  },
+  "TEAMS-D108-MON": {
+    "stem": "TEAMS-D108-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D108-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D108-DAILY": {
+    "stem": "RPT-D108-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D108-MON",
+      "RPT-D107-DAILY"
+    ]
+  },
+  "KPI-D108": {
+    "stem": "upi_kpis_day_108",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D108-DAILY"
+    ]
+  },
+  "TEAMS-D109-MON": {
+    "stem": "TEAMS-D109-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D109-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D109-DAILY": {
+    "stem": "RPT-D109-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D109-MON",
+      "RPT-D108-DAILY"
+    ]
+  },
+  "KPI-D109": {
+    "stem": "upi_kpis_day_109",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D109-DAILY"
+    ]
+  },
+  "TEAMS-D110-MON": {
+    "stem": "TEAMS-D110-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D110-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D110-DAILY": {
+    "stem": "RPT-D110-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D110-MON",
+      "RPT-D109-DAILY"
+    ]
+  },
+  "KPI-D110": {
+    "stem": "upi_kpis_day_110",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D110-DAILY"
+    ]
+  },
+  "TEAMS-D111-MON": {
+    "stem": "TEAMS-D111-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D111-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D111-DAILY": {
+    "stem": "RPT-D111-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D111-MON",
+      "RPT-D110-DAILY"
+    ]
+  },
+  "KPI-D111": {
+    "stem": "upi_kpis_day_111",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D111-DAILY"
+    ]
+  },
+  "TEAMS-D112-MON": {
+    "stem": "TEAMS-D112-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D112-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D112-DAILY": {
+    "stem": "RPT-D112-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D112-MON",
+      "RPT-D111-DAILY"
+    ]
+  },
+  "KPI-D112": {
+    "stem": "upi_kpis_day_112",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D112-DAILY"
+    ]
+  },
+  "RPT-W16-REVIEW": {
+    "stem": "RPT-W16-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D106-DAILY",
+      "RPT-D107-DAILY",
+      "RPT-D108-DAILY",
+      "RPT-D109-DAILY"
+    ]
+  },
+  "MTG-W16-REVIEW": {
+    "stem": "MTG-W16-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W16-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "INC-2026-19": {
+    "stem": "INC-2026-19-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D113-DAILY",
+      "RCA-2026-19",
+      "DEC-2026-19",
+      "TEAMS-D113-MON"
+    ]
+  },
+  "EMAIL-D113-001": {
+    "stem": "EMAIL-D113-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-19",
+      "RPT-D113-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D113-BRIDGE-19": {
+    "stem": "TEAMS-D113-BRIDGE-19",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-19",
+      "MTG-D113-BRIDGE-19",
+      "RCA-2026-19",
+      "RPT-D113-DAILY"
+    ]
+  },
+  "MTG-D113-BRIDGE-19": {
+    "stem": "MTG-D113-BRIDGE-19",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-19",
+      "RCA-2026-19",
+      "DEC-2026-19",
+      "RPT-D113-DAILY",
+      "TEAMS-D113-BRIDGE-19"
+    ]
+  },
+  "TASK-0042": {
+    "stem": "TASK-0042",
+    "category": "document",
+    "refs": [
+      "INC-2026-19",
+      "MTG-D113-BRIDGE-19",
+      "RCA-2026-19"
+    ]
+  },
+  "TASK-0043": {
+    "stem": "TASK-0043",
+    "category": "document",
+    "refs": [
+      "INC-2026-19",
+      "RPT-D113-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D113-MON": {
+    "stem": "TEAMS-D113-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D113-DAILY",
+      "INC-2026-19"
+    ]
+  },
+  "RPT-D113-DAILY": {
+    "stem": "RPT-D113-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D113-MON",
+      "RPT-D112-DAILY",
+      "INC-2026-19",
+      "RCA-2026-19"
+    ]
+  },
+  "KPI-D113": {
+    "stem": "upi_kpis_day_113",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D113-DAILY"
+    ]
+  },
+  "MTG-D114-INVEST-19": {
+    "stem": "MTG-D114-INVEST-19",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-19",
+      "RCA-2026-19",
+      "DEC-2026-19",
+      "SOP-UPI-RISK-030",
+      "RPT-D114-DAILY"
+    ]
+  },
+  "RCA-2026-19": {
+    "stem": "RCA-2026-19",
+    "category": "rca",
+    "refs": [
+      "INC-2026-19",
+      "DEC-2026-19",
+      "SOP-UPI-RISK-030",
+      "RPT-D114-DAILY",
+      "RPT-D117-DAILY"
+    ]
+  },
+  "DEC-2026-19": {
+    "stem": "DEC-2026-19",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-19",
+      "RCA-2026-19",
+      "SOP-UPI-RISK-030",
+      "RPT-D114-DAILY"
+    ]
+  },
+  "TASK-0044": {
+    "stem": "TASK-0044",
+    "category": "document",
+    "refs": [
+      "DEC-2026-19",
+      "RCA-2026-19",
+      "SOP-UPI-RISK-030"
+    ]
+  },
+  "TEAMS-D114-MON": {
+    "stem": "TEAMS-D114-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D114-DAILY",
+      "INC-2026-19"
+    ]
+  },
+  "RPT-D114-DAILY": {
+    "stem": "RPT-D114-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D114-MON",
+      "RPT-D113-DAILY",
+      "INC-2026-19",
+      "RCA-2026-19"
+    ]
+  },
+  "KPI-D114": {
+    "stem": "upi_kpis_day_114",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D114-DAILY"
+    ]
+  },
+  "TEAMS-D115-MON": {
+    "stem": "TEAMS-D115-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D115-DAILY",
+      "INC-2026-19"
+    ]
+  },
+  "RPT-D115-DAILY": {
+    "stem": "RPT-D115-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D115-MON",
+      "RPT-D114-DAILY",
+      "INC-2026-19",
+      "RCA-2026-19"
+    ]
+  },
+  "KPI-D115": {
+    "stem": "upi_kpis_day_115",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D115-DAILY"
+    ]
+  },
+  "TEAMS-D116-MON": {
+    "stem": "TEAMS-D116-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D116-DAILY",
+      "INC-2026-19"
+    ]
+  },
+  "RPT-D116-DAILY": {
+    "stem": "RPT-D116-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D116-MON",
+      "RPT-D115-DAILY",
+      "INC-2026-19",
+      "RCA-2026-19"
+    ]
+  },
+  "KPI-D116": {
+    "stem": "upi_kpis_day_116",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D116-DAILY"
+    ]
+  },
+  "INC-2026-08": {
+    "stem": "INC-2026-08-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D117-DAILY",
+      "RCA-2026-08",
+      "DEC-2026-08",
+      "TEAMS-D117-MON"
+    ]
+  },
+  "EMAIL-D117-001": {
+    "stem": "EMAIL-D117-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-08",
+      "RPT-D117-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D117-BRIDGE-08": {
+    "stem": "TEAMS-D117-BRIDGE-08",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-08",
+      "MTG-D117-BRIDGE-08",
+      "RCA-2026-08",
+      "RPT-D117-DAILY"
+    ]
+  },
+  "MTG-D117-BRIDGE-08": {
+    "stem": "MTG-D117-BRIDGE-08",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-08",
+      "RCA-2026-08",
+      "DEC-2026-08",
+      "RPT-D117-DAILY",
+      "TEAMS-D117-BRIDGE-08"
+    ]
+  },
+  "TASK-0045": {
+    "stem": "TASK-0045",
+    "category": "document",
+    "refs": [
+      "INC-2026-08",
+      "MTG-D117-BRIDGE-08",
+      "RCA-2026-08"
+    ]
+  },
+  "TASK-0046": {
+    "stem": "TASK-0046",
+    "category": "document",
+    "refs": [
+      "INC-2026-08",
+      "RPT-D117-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "EMAIL-D117-002": {
+    "stem": "EMAIL-D117-002-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-19",
+      "DEC-2026-19",
+      "RCA-2026-19",
+      "RPT-D117-DAILY"
+    ]
+  },
+  "TEAMS-D117-MON": {
+    "stem": "TEAMS-D117-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D117-DAILY",
+      "INC-2026-19",
+      "INC-2026-08"
+    ]
+  },
+  "RPT-D117-DAILY": {
+    "stem": "RPT-D117-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D117-MON",
+      "RPT-D116-DAILY",
+      "INC-2026-19",
+      "INC-2026-08",
+      "RCA-2026-19",
+      "RCA-2026-08"
+    ]
+  },
+  "KPI-D117": {
+    "stem": "upi_kpis_day_117",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D117-DAILY"
+    ]
+  },
+  "MTG-D118-INVEST-08": {
+    "stem": "MTG-D118-INVEST-08",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-08",
+      "RCA-2026-08",
+      "DEC-2026-08",
+      "SOP-UPI-PSP-LATENCY-018",
+      "RPT-D118-DAILY"
+    ]
+  },
+  "RCA-2026-08": {
+    "stem": "RCA-2026-08",
+    "category": "rca",
+    "refs": [
+      "INC-2026-08",
+      "DEC-2026-08",
+      "SOP-UPI-PSP-LATENCY-018",
+      "RPT-D118-DAILY",
+      "RPT-D120-DAILY"
+    ]
+  },
+  "DEC-2026-08": {
+    "stem": "DEC-2026-08",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-08",
+      "RCA-2026-08",
+      "SOP-UPI-PSP-LATENCY-018",
+      "RPT-D118-DAILY"
+    ]
+  },
+  "TASK-0047": {
+    "stem": "TASK-0047",
+    "category": "document",
+    "refs": [
+      "DEC-2026-08",
+      "RCA-2026-08",
+      "SOP-UPI-PSP-LATENCY-018"
+    ]
+  },
+  "TEAMS-D118-MON": {
+    "stem": "TEAMS-D118-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D118-DAILY",
+      "INC-2026-08"
+    ]
+  },
+  "RPT-D118-DAILY": {
+    "stem": "RPT-D118-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D118-MON",
+      "RPT-D117-DAILY",
+      "INC-2026-08",
+      "RCA-2026-08"
+    ]
+  },
+  "KPI-D118": {
+    "stem": "upi_kpis_day_118",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D118-DAILY"
+    ]
+  },
+  "TEAMS-D119-MON": {
+    "stem": "TEAMS-D119-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D119-DAILY",
+      "INC-2026-08"
+    ]
+  },
+  "RPT-D119-DAILY": {
+    "stem": "RPT-D119-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D119-MON",
+      "RPT-D118-DAILY",
+      "INC-2026-08",
+      "RCA-2026-08"
+    ]
+  },
+  "KPI-D119": {
+    "stem": "upi_kpis_day_119",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D119-DAILY"
+    ]
+  },
+  "RPT-W17-REVIEW": {
+    "stem": "RPT-W17-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D113-DAILY",
+      "RPT-D114-DAILY",
+      "RPT-D115-DAILY",
+      "RPT-D116-DAILY",
+      "INC-2026-19",
+      "INC-2026-08"
+    ]
+  },
+  "MTG-W17-REVIEW": {
+    "stem": "MTG-W17-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W17-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-19",
+      "INC-2026-08"
+    ]
+  },
+  "EMAIL-D120-001": {
+    "stem": "EMAIL-D120-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-08",
+      "DEC-2026-08",
+      "RCA-2026-08",
+      "RPT-D120-DAILY"
+    ]
+  },
+  "TEAMS-D120-MON": {
+    "stem": "TEAMS-D120-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D120-DAILY",
+      "INC-2026-08"
+    ]
+  },
+  "RPT-D120-DAILY": {
+    "stem": "RPT-D120-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D120-MON",
+      "RPT-D119-DAILY",
+      "INC-2026-08",
+      "RCA-2026-08"
+    ]
+  },
+  "KPI-D120": {
+    "stem": "upi_kpis_day_120",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D120-DAILY"
+    ]
+  },
+  "TEAMS-D121-MON": {
+    "stem": "TEAMS-D121-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D121-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D121-DAILY": {
+    "stem": "RPT-D121-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D121-MON",
+      "RPT-D120-DAILY"
+    ]
+  },
+  "KPI-D121": {
+    "stem": "upi_kpis_day_121",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D121-DAILY"
+    ]
+  },
+  "TEAMS-D122-MON": {
+    "stem": "TEAMS-D122-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D122-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D122-DAILY": {
+    "stem": "RPT-D122-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D122-MON",
+      "RPT-D121-DAILY"
+    ]
+  },
+  "KPI-D122": {
+    "stem": "upi_kpis_day_122",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D122-DAILY"
+    ]
+  },
+  "TEAMS-D123-MON": {
+    "stem": "TEAMS-D123-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D123-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D123-DAILY": {
+    "stem": "RPT-D123-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D123-MON",
+      "RPT-D122-DAILY"
+    ]
+  },
+  "KPI-D123": {
+    "stem": "upi_kpis_day_123",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D123-DAILY"
+    ]
+  },
+  "TEAMS-D124-MON": {
+    "stem": "TEAMS-D124-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D124-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D124-DAILY": {
+    "stem": "RPT-D124-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D124-MON",
+      "RPT-D123-DAILY"
+    ]
+  },
+  "KPI-D124": {
+    "stem": "upi_kpis_day_124",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D124-DAILY"
+    ]
+  },
+  "TEAMS-D125-MON": {
+    "stem": "TEAMS-D125-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D125-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D125-DAILY": {
+    "stem": "RPT-D125-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D125-MON",
+      "RPT-D124-DAILY"
+    ]
+  },
+  "KPI-D125": {
+    "stem": "upi_kpis_day_125",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D125-DAILY"
+    ]
+  },
+  "INC-2026-05": {
+    "stem": "INC-2026-05-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D126-DAILY",
+      "RCA-2026-05",
+      "DEC-2026-05",
+      "TEAMS-D126-MON"
+    ]
+  },
+  "EMAIL-D126-001": {
+    "stem": "EMAIL-D126-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-05",
+      "RPT-D126-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D126-BRIDGE-05": {
+    "stem": "TEAMS-D126-BRIDGE-05",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-05",
+      "MTG-D126-BRIDGE-05",
+      "RCA-2026-05",
+      "RPT-D126-DAILY"
+    ]
+  },
+  "MTG-D126-BRIDGE-05": {
+    "stem": "MTG-D126-BRIDGE-05",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-05",
+      "RCA-2026-05",
+      "DEC-2026-05",
+      "RPT-D126-DAILY",
+      "TEAMS-D126-BRIDGE-05"
+    ]
+  },
+  "TASK-0048": {
+    "stem": "TASK-0048",
+    "category": "document",
+    "refs": [
+      "INC-2026-05",
+      "MTG-D126-BRIDGE-05",
+      "RCA-2026-05"
+    ]
+  },
+  "TASK-0049": {
+    "stem": "TASK-0049",
+    "category": "document",
+    "refs": [
+      "INC-2026-05",
+      "RPT-D126-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D126-MON": {
+    "stem": "TEAMS-D126-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D126-DAILY",
+      "INC-2026-05"
+    ]
+  },
+  "RPT-D126-DAILY": {
+    "stem": "RPT-D126-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D126-MON",
+      "RPT-D125-DAILY",
+      "INC-2026-05",
+      "RCA-2026-05"
+    ]
+  },
+  "KPI-D126": {
+    "stem": "upi_kpis_day_126",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D126-DAILY"
+    ]
+  },
+  "RPT-W18-REVIEW": {
+    "stem": "RPT-W18-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D120-DAILY",
+      "RPT-D121-DAILY",
+      "RPT-D122-DAILY",
+      "RPT-D123-DAILY",
+      "INC-2026-08",
+      "INC-2026-05"
+    ]
+  },
+  "MTG-W18-REVIEW": {
+    "stem": "MTG-W18-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W18-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-08",
+      "INC-2026-05"
+    ]
+  },
+  "MTG-D127-INVEST-05": {
+    "stem": "MTG-D127-INVEST-05",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-05",
+      "RCA-2026-05",
+      "DEC-2026-05",
+      "SOP-UPI-BANK-FAILOVER-014",
+      "RPT-D127-DAILY"
+    ]
+  },
+  "RCA-2026-05": {
+    "stem": "RCA-2026-05",
+    "category": "rca",
+    "refs": [
+      "INC-2026-05",
+      "DEC-2026-05",
+      "SOP-UPI-BANK-FAILOVER-014",
+      "RPT-D127-DAILY",
+      "RPT-D130-DAILY"
+    ]
+  },
+  "DEC-2026-05": {
+    "stem": "DEC-2026-05",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-05",
+      "RCA-2026-05",
+      "SOP-UPI-BANK-FAILOVER-014",
+      "RPT-D127-DAILY"
+    ]
+  },
+  "TASK-0050": {
+    "stem": "TASK-0050",
+    "category": "document",
+    "refs": [
+      "DEC-2026-05",
+      "RCA-2026-05",
+      "SOP-UPI-BANK-FAILOVER-014"
+    ]
+  },
+  "TEAMS-D127-MON": {
+    "stem": "TEAMS-D127-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D127-DAILY",
+      "INC-2026-05"
+    ]
+  },
+  "RPT-D127-DAILY": {
+    "stem": "RPT-D127-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D127-MON",
+      "RPT-D126-DAILY",
+      "INC-2026-05",
+      "RCA-2026-05"
+    ]
+  },
+  "KPI-D127": {
+    "stem": "upi_kpis_day_127",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D127-DAILY"
+    ]
+  },
+  "TEAMS-D128-MON": {
+    "stem": "TEAMS-D128-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D128-DAILY",
+      "INC-2026-05"
+    ]
+  },
+  "RPT-D128-DAILY": {
+    "stem": "RPT-D128-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D128-MON",
+      "RPT-D127-DAILY",
+      "INC-2026-05",
+      "RCA-2026-05"
+    ]
+  },
+  "KPI-D128": {
+    "stem": "upi_kpis_day_128",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D128-DAILY"
+    ]
+  },
+  "INC-2026-24": {
+    "stem": "INC-2026-24-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D129-DAILY",
+      "RCA-2026-24",
+      "DEC-2026-24",
+      "TEAMS-D129-MON"
+    ]
+  },
+  "EMAIL-D129-001": {
+    "stem": "EMAIL-D129-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-24",
+      "RPT-D129-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D129-BRIDGE-24": {
+    "stem": "TEAMS-D129-BRIDGE-24",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-24",
+      "MTG-D129-BRIDGE-24",
+      "RCA-2026-24",
+      "RPT-D129-DAILY"
+    ]
+  },
+  "MTG-D129-BRIDGE-24": {
+    "stem": "MTG-D129-BRIDGE-24",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-24",
+      "RCA-2026-24",
+      "DEC-2026-24",
+      "RPT-D129-DAILY",
+      "TEAMS-D129-BRIDGE-24"
+    ]
+  },
+  "TASK-0051": {
+    "stem": "TASK-0051",
+    "category": "document",
+    "refs": [
+      "INC-2026-24",
+      "MTG-D129-BRIDGE-24",
+      "RCA-2026-24"
+    ]
+  },
+  "TASK-0052": {
+    "stem": "TASK-0052",
+    "category": "document",
+    "refs": [
+      "INC-2026-24",
+      "RPT-D129-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D129-MON": {
+    "stem": "TEAMS-D129-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D129-DAILY",
+      "INC-2026-05",
+      "INC-2026-24"
+    ]
+  },
+  "RPT-D129-DAILY": {
+    "stem": "RPT-D129-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D129-MON",
+      "RPT-D128-DAILY",
+      "INC-2026-05",
+      "INC-2026-24",
+      "RCA-2026-05",
+      "RCA-2026-24"
+    ]
+  },
+  "KPI-D129": {
+    "stem": "upi_kpis_day_129",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D129-DAILY"
+    ]
+  },
+  "MTG-D130-INVEST-24": {
+    "stem": "MTG-D130-INVEST-24",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-24",
+      "RCA-2026-24",
+      "DEC-2026-24",
+      "SOP-UPI-MERCHANT-025",
+      "RPT-D130-DAILY"
+    ]
+  },
+  "RCA-2026-24": {
+    "stem": "RCA-2026-24",
+    "category": "rca",
+    "refs": [
+      "INC-2026-24",
+      "DEC-2026-24",
+      "SOP-UPI-MERCHANT-025",
+      "RPT-D130-DAILY",
+      "RPT-D133-DAILY"
+    ]
+  },
+  "DEC-2026-24": {
+    "stem": "DEC-2026-24",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-24",
+      "RCA-2026-24",
+      "SOP-UPI-MERCHANT-025",
+      "RPT-D130-DAILY"
+    ]
+  },
+  "SOP-UPI-MERCHANT-025": {
+    "stem": "SOP-UPI-MERCHANT-025",
+    "category": "product_document",
+    "refs": [
+      "INC-2026-24",
+      "RCA-2026-24",
+      "DEC-2026-24"
+    ]
+  },
+  "TASK-0053": {
+    "stem": "TASK-0053",
+    "category": "document",
+    "refs": [
+      "DEC-2026-24",
+      "RCA-2026-24",
+      "SOP-UPI-MERCHANT-025"
+    ]
+  },
+  "EMAIL-D130-001": {
+    "stem": "EMAIL-D130-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-05",
+      "DEC-2026-05",
+      "RCA-2026-05",
+      "RPT-D130-DAILY"
+    ]
+  },
+  "TEAMS-D130-MON": {
+    "stem": "TEAMS-D130-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D130-DAILY",
+      "INC-2026-05",
+      "INC-2026-24"
+    ]
+  },
+  "RPT-D130-DAILY": {
+    "stem": "RPT-D130-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D130-MON",
+      "RPT-D129-DAILY",
+      "INC-2026-05",
+      "INC-2026-24",
+      "RCA-2026-05",
+      "RCA-2026-24"
+    ]
+  },
+  "KPI-D130": {
+    "stem": "upi_kpis_day_130",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D130-DAILY"
+    ]
+  },
+  "INC-2026-10": {
+    "stem": "INC-2026-10-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D131-DAILY",
+      "TEAMS-D131-MON"
+    ]
+  },
+  "EMAIL-D131-001": {
+    "stem": "EMAIL-D131-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-10",
+      "RPT-D131-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D131-BRIDGE-10": {
+    "stem": "TEAMS-D131-BRIDGE-10",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-10",
+      "MTG-D131-BRIDGE-10",
+      "RPT-D131-DAILY"
+    ]
+  },
+  "MTG-D131-BRIDGE-10": {
+    "stem": "MTG-D131-BRIDGE-10",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-10",
+      "RPT-D131-DAILY",
+      "TEAMS-D131-BRIDGE-10"
+    ]
+  },
+  "TASK-0054": {
+    "stem": "TASK-0054",
+    "category": "document",
+    "refs": [
+      "INC-2026-10",
+      "MTG-D131-BRIDGE-10",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TASK-0055": {
+    "stem": "TASK-0055",
+    "category": "document",
+    "refs": [
+      "INC-2026-10",
+      "RPT-D131-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D131-MON": {
+    "stem": "TEAMS-D131-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D131-DAILY",
+      "INC-2026-24",
+      "INC-2026-10"
+    ]
+  },
+  "RPT-D131-DAILY": {
+    "stem": "RPT-D131-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D131-MON",
+      "RPT-D130-DAILY",
+      "INC-2026-24",
+      "INC-2026-10",
+      "RCA-2026-24"
+    ]
+  },
+  "KPI-D131": {
+    "stem": "upi_kpis_day_131",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D131-DAILY"
+    ]
+  },
+  "EMAIL-D132-001": {
+    "stem": "EMAIL-D132-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-10",
+      "RPT-D132-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D132-MON": {
+    "stem": "TEAMS-D132-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D132-DAILY",
+      "INC-2026-24",
+      "INC-2026-10"
+    ]
+  },
+  "RPT-D132-DAILY": {
+    "stem": "RPT-D132-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D132-MON",
+      "RPT-D131-DAILY",
+      "INC-2026-24",
+      "INC-2026-10",
+      "RCA-2026-24"
+    ]
+  },
+  "KPI-D132": {
+    "stem": "upi_kpis_day_132",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D132-DAILY"
+    ]
+  },
+  "EMAIL-D133-001": {
+    "stem": "EMAIL-D133-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-24",
+      "DEC-2026-24",
+      "RCA-2026-24",
+      "RPT-D133-DAILY"
+    ]
+  },
+  "TEAMS-D133-MON": {
+    "stem": "TEAMS-D133-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D133-DAILY",
+      "INC-2026-24"
+    ]
+  },
+  "RPT-D133-DAILY": {
+    "stem": "RPT-D133-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D133-MON",
+      "RPT-D132-DAILY",
+      "INC-2026-24",
+      "RCA-2026-24"
+    ]
+  },
+  "KPI-D133": {
+    "stem": "upi_kpis_day_133",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D133-DAILY"
+    ]
+  },
+  "RPT-W19-REVIEW": {
+    "stem": "RPT-W19-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D127-DAILY",
+      "RPT-D128-DAILY",
+      "RPT-D129-DAILY",
+      "RPT-D130-DAILY",
+      "INC-2026-05",
+      "INC-2026-24",
+      "INC-2026-10"
+    ]
+  },
+  "MTG-W19-REVIEW": {
+    "stem": "MTG-W19-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W19-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-05",
+      "INC-2026-24",
+      "INC-2026-10"
+    ]
+  },
+  "TEAMS-D134-MON": {
+    "stem": "TEAMS-D134-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D134-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D134-DAILY": {
+    "stem": "RPT-D134-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D134-MON",
+      "RPT-D133-DAILY"
+    ]
+  },
+  "KPI-D134": {
+    "stem": "upi_kpis_day_134",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D134-DAILY"
+    ]
+  },
+  "INC-2026-20": {
+    "stem": "INC-2026-20-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D135-DAILY",
+      "TEAMS-D135-MON"
+    ]
+  },
+  "EMAIL-D135-001": {
+    "stem": "EMAIL-D135-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-20",
+      "RPT-D135-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D135-BRIDGE-20": {
+    "stem": "TEAMS-D135-BRIDGE-20",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-20",
+      "MTG-D135-BRIDGE-20",
+      "RPT-D135-DAILY"
+    ]
+  },
+  "MTG-D135-BRIDGE-20": {
+    "stem": "MTG-D135-BRIDGE-20",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-20",
+      "RPT-D135-DAILY",
+      "TEAMS-D135-BRIDGE-20"
+    ]
+  },
+  "TASK-0056": {
+    "stem": "TASK-0056",
+    "category": "document",
+    "refs": [
+      "INC-2026-20",
+      "MTG-D135-BRIDGE-20",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TASK-0057": {
+    "stem": "TASK-0057",
+    "category": "document",
+    "refs": [
+      "INC-2026-20",
+      "RPT-D135-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D135-MON": {
+    "stem": "TEAMS-D135-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D135-DAILY",
+      "INC-2026-20"
+    ]
+  },
+  "RPT-D135-DAILY": {
+    "stem": "RPT-D135-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D135-MON",
+      "RPT-D134-DAILY",
+      "INC-2026-20"
+    ]
+  },
+  "KPI-D135": {
+    "stem": "upi_kpis_day_135",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D135-DAILY"
+    ]
+  },
+  "EMAIL-D136-001": {
+    "stem": "EMAIL-D136-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-20",
+      "RPT-D136-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D136-MON": {
+    "stem": "TEAMS-D136-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D136-DAILY",
+      "INC-2026-20"
+    ]
+  },
+  "RPT-D136-DAILY": {
+    "stem": "RPT-D136-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D136-MON",
+      "RPT-D135-DAILY",
+      "INC-2026-20"
+    ]
+  },
+  "KPI-D136": {
+    "stem": "upi_kpis_day_136",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D136-DAILY"
+    ]
+  },
+  "MTG-D137-REVIEW": {
+    "stem": "MTG-D137-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D137-DAILY",
+      "TEAMS-D137-MON"
+    ]
+  },
+  "TEAMS-D137-MON": {
+    "stem": "TEAMS-D137-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D137-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D137-DAILY": {
+    "stem": "RPT-D137-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D137-MON",
+      "RPT-D136-DAILY"
+    ]
+  },
+  "KPI-D137": {
+    "stem": "upi_kpis_day_137",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D137-DAILY"
+    ]
+  },
+  "TEAMS-D138-MON": {
+    "stem": "TEAMS-D138-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D138-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D138-DAILY": {
+    "stem": "RPT-D138-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D138-MON",
+      "RPT-D137-DAILY"
+    ]
+  },
+  "KPI-D138": {
+    "stem": "upi_kpis_day_138",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D138-DAILY"
+    ]
+  },
+  "INC-2026-25": {
+    "stem": "INC-2026-25-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D139-DAILY",
+      "RCA-2026-25",
+      "DEC-2026-25",
+      "TEAMS-D139-MON"
+    ]
+  },
+  "EMAIL-D139-001": {
+    "stem": "EMAIL-D139-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-25",
+      "RPT-D139-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D139-BRIDGE-25": {
+    "stem": "TEAMS-D139-BRIDGE-25",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-25",
+      "MTG-D139-BRIDGE-25",
+      "RCA-2026-25",
+      "RPT-D139-DAILY"
+    ]
+  },
+  "MTG-D139-BRIDGE-25": {
+    "stem": "MTG-D139-BRIDGE-25",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-25",
+      "RCA-2026-25",
+      "DEC-2026-25",
+      "RPT-D139-DAILY",
+      "TEAMS-D139-BRIDGE-25"
+    ]
+  },
+  "TASK-0058": {
+    "stem": "TASK-0058",
+    "category": "document",
+    "refs": [
+      "INC-2026-25",
+      "MTG-D139-BRIDGE-25",
+      "RCA-2026-25"
+    ]
+  },
+  "TASK-0059": {
+    "stem": "TASK-0059",
+    "category": "document",
+    "refs": [
+      "INC-2026-25",
+      "RPT-D139-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D139-MON": {
+    "stem": "TEAMS-D139-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D139-DAILY",
+      "INC-2026-25"
+    ]
+  },
+  "RPT-D139-DAILY": {
+    "stem": "RPT-D139-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D139-MON",
+      "RPT-D138-DAILY",
+      "INC-2026-25",
+      "RCA-2026-25"
+    ]
+  },
+  "KPI-D139": {
+    "stem": "upi_kpis_day_139",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D139-DAILY"
+    ]
+  },
+  "MTG-D140-INVEST-25": {
+    "stem": "MTG-D140-INVEST-25",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-25",
+      "RCA-2026-25",
+      "DEC-2026-25",
+      "SOP-UPI-PSP-LATENCY-018",
+      "RPT-D140-DAILY"
+    ]
+  },
+  "RCA-2026-25": {
+    "stem": "RCA-2026-25",
+    "category": "rca",
+    "refs": [
+      "INC-2026-25",
+      "DEC-2026-25",
+      "SOP-UPI-PSP-LATENCY-018",
+      "RPT-D140-DAILY",
+      "RPT-D143-DAILY"
+    ]
+  },
+  "DEC-2026-25": {
+    "stem": "DEC-2026-25",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-25",
+      "RCA-2026-25",
+      "SOP-UPI-PSP-LATENCY-018",
+      "RPT-D140-DAILY"
+    ]
+  },
+  "TASK-0060": {
+    "stem": "TASK-0060",
+    "category": "document",
+    "refs": [
+      "DEC-2026-25",
+      "RCA-2026-25",
+      "SOP-UPI-PSP-LATENCY-018"
+    ]
+  },
+  "TEAMS-D140-MON": {
+    "stem": "TEAMS-D140-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D140-DAILY",
+      "INC-2026-25"
+    ]
+  },
+  "RPT-D140-DAILY": {
+    "stem": "RPT-D140-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D140-MON",
+      "RPT-D139-DAILY",
+      "INC-2026-25",
+      "RCA-2026-25"
+    ]
+  },
+  "KPI-D140": {
+    "stem": "upi_kpis_day_140",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D140-DAILY"
+    ]
+  },
+  "RPT-W20-REVIEW": {
+    "stem": "RPT-W20-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D134-DAILY",
+      "RPT-D135-DAILY",
+      "RPT-D136-DAILY",
+      "RPT-D137-DAILY",
+      "INC-2026-20",
+      "INC-2026-25"
+    ]
+  },
+  "MTG-W20-REVIEW": {
+    "stem": "MTG-W20-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W20-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-20",
+      "INC-2026-25"
+    ]
+  },
+  "TEAMS-D141-MON": {
+    "stem": "TEAMS-D141-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D141-DAILY",
+      "INC-2026-25"
+    ]
+  },
+  "RPT-D141-DAILY": {
+    "stem": "RPT-D141-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D141-MON",
+      "RPT-D140-DAILY",
+      "INC-2026-25",
+      "RCA-2026-25"
+    ]
+  },
+  "KPI-D141": {
+    "stem": "upi_kpis_day_141",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D141-DAILY"
+    ]
+  },
+  "TEAMS-D142-MON": {
+    "stem": "TEAMS-D142-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D142-DAILY",
+      "INC-2026-25"
+    ]
+  },
+  "RPT-D142-DAILY": {
+    "stem": "RPT-D142-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D142-MON",
+      "RPT-D141-DAILY",
+      "INC-2026-25",
+      "RCA-2026-25"
+    ]
+  },
+  "KPI-D142": {
+    "stem": "upi_kpis_day_142",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D142-DAILY"
+    ]
+  },
+  "EMAIL-D143-001": {
+    "stem": "EMAIL-D143-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-25",
+      "DEC-2026-25",
+      "RCA-2026-25",
+      "RPT-D143-DAILY"
+    ]
+  },
+  "TEAMS-D143-MON": {
+    "stem": "TEAMS-D143-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D143-DAILY",
+      "INC-2026-25"
+    ]
+  },
+  "RPT-D143-DAILY": {
+    "stem": "RPT-D143-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D143-MON",
+      "RPT-D142-DAILY",
+      "INC-2026-25",
+      "RCA-2026-25"
+    ]
+  },
+  "KPI-D143": {
+    "stem": "upi_kpis_day_143",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D143-DAILY"
+    ]
+  },
+  "TEAMS-D144-MON": {
+    "stem": "TEAMS-D144-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D144-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D144-DAILY": {
+    "stem": "RPT-D144-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D144-MON",
+      "RPT-D143-DAILY"
+    ]
+  },
+  "KPI-D144": {
+    "stem": "upi_kpis_day_144",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D144-DAILY"
+    ]
+  },
+  "INC-2026-17": {
+    "stem": "INC-2026-17-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D145-DAILY",
+      "RCA-2026-17",
+      "DEC-2026-17",
+      "TEAMS-D145-MON"
+    ]
+  },
+  "EMAIL-D145-001": {
+    "stem": "EMAIL-D145-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-17",
+      "RPT-D145-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D145-BRIDGE-17": {
+    "stem": "TEAMS-D145-BRIDGE-17",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-17",
+      "MTG-D145-BRIDGE-17",
+      "RCA-2026-17",
+      "RPT-D145-DAILY"
+    ]
+  },
+  "MTG-D145-BRIDGE-17": {
+    "stem": "MTG-D145-BRIDGE-17",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-17",
+      "RCA-2026-17",
+      "DEC-2026-17",
+      "RPT-D145-DAILY",
+      "TEAMS-D145-BRIDGE-17"
+    ]
+  },
+  "TASK-0061": {
+    "stem": "TASK-0061",
+    "category": "document",
+    "refs": [
+      "INC-2026-17",
+      "MTG-D145-BRIDGE-17",
+      "RCA-2026-17"
+    ]
+  },
+  "TASK-0062": {
+    "stem": "TASK-0062",
+    "category": "document",
+    "refs": [
+      "INC-2026-17",
+      "RPT-D145-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D145-MON": {
+    "stem": "TEAMS-D145-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D145-DAILY",
+      "INC-2026-17"
+    ]
+  },
+  "RPT-D145-DAILY": {
+    "stem": "RPT-D145-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D145-MON",
+      "RPT-D144-DAILY",
+      "INC-2026-17",
+      "RCA-2026-17"
+    ]
+  },
+  "KPI-D145": {
+    "stem": "upi_kpis_day_145",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D145-DAILY"
+    ]
+  },
+  "MTG-D146-INVEST-17": {
+    "stem": "MTG-D146-INVEST-17",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-17",
+      "RCA-2026-17",
+      "DEC-2026-17",
+      "SOP-UPI-SETTLEMENT-022",
+      "RPT-D146-DAILY"
+    ]
+  },
+  "RCA-2026-17": {
+    "stem": "RCA-2026-17",
+    "category": "rca",
+    "refs": [
+      "INC-2026-17",
+      "DEC-2026-17",
+      "SOP-UPI-SETTLEMENT-022",
+      "RPT-D146-DAILY",
+      "RPT-D148-DAILY"
+    ]
+  },
+  "DEC-2026-17": {
+    "stem": "DEC-2026-17",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-17",
+      "RCA-2026-17",
+      "SOP-UPI-SETTLEMENT-022",
+      "RPT-D146-DAILY"
+    ]
+  },
+  "TASK-0063": {
+    "stem": "TASK-0063",
+    "category": "document",
+    "refs": [
+      "DEC-2026-17",
+      "RCA-2026-17",
+      "SOP-UPI-SETTLEMENT-022"
+    ]
+  },
+  "TEAMS-D146-MON": {
+    "stem": "TEAMS-D146-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D146-DAILY",
+      "INC-2026-17"
+    ]
+  },
+  "RPT-D146-DAILY": {
+    "stem": "RPT-D146-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D146-MON",
+      "RPT-D145-DAILY",
+      "INC-2026-17",
+      "RCA-2026-17"
+    ]
+  },
+  "KPI-D146": {
+    "stem": "upi_kpis_day_146",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D146-DAILY"
+    ]
+  },
+  "INC-2026-26": {
+    "stem": "INC-2026-26-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D147-DAILY",
+      "RCA-2026-26",
+      "DEC-2026-26",
+      "TEAMS-D147-MON"
+    ]
+  },
+  "EMAIL-D147-001": {
+    "stem": "EMAIL-D147-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-26",
+      "RPT-D147-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D147-BRIDGE-26": {
+    "stem": "TEAMS-D147-BRIDGE-26",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-26",
+      "MTG-D147-BRIDGE-26",
+      "RCA-2026-26",
+      "RPT-D147-DAILY"
+    ]
+  },
+  "MTG-D147-BRIDGE-26": {
+    "stem": "MTG-D147-BRIDGE-26",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-26",
+      "RCA-2026-26",
+      "DEC-2026-26",
+      "RPT-D147-DAILY",
+      "TEAMS-D147-BRIDGE-26"
+    ]
+  },
+  "TASK-0064": {
+    "stem": "TASK-0064",
+    "category": "document",
+    "refs": [
+      "INC-2026-26",
+      "MTG-D147-BRIDGE-26",
+      "RCA-2026-26"
+    ]
+  },
+  "TASK-0065": {
+    "stem": "TASK-0065",
+    "category": "document",
+    "refs": [
+      "INC-2026-26",
+      "RPT-D147-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D147-MON": {
+    "stem": "TEAMS-D147-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D147-DAILY",
+      "INC-2026-17",
+      "INC-2026-26"
+    ]
+  },
+  "RPT-D147-DAILY": {
+    "stem": "RPT-D147-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D147-MON",
+      "RPT-D146-DAILY",
+      "INC-2026-17",
+      "INC-2026-26",
+      "RCA-2026-17",
+      "RCA-2026-26"
+    ]
+  },
+  "KPI-D147": {
+    "stem": "upi_kpis_day_147",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D147-DAILY"
+    ]
+  },
+  "RPT-W21-REVIEW": {
+    "stem": "RPT-W21-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D141-DAILY",
+      "RPT-D142-DAILY",
+      "RPT-D143-DAILY",
+      "RPT-D144-DAILY",
+      "INC-2026-25",
+      "INC-2026-17",
+      "INC-2026-26"
+    ]
+  },
+  "MTG-W21-REVIEW": {
+    "stem": "MTG-W21-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W21-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-25",
+      "INC-2026-17",
+      "INC-2026-26"
+    ]
+  },
+  "MTG-D148-INVEST-26": {
+    "stem": "MTG-D148-INVEST-26",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-26",
+      "RCA-2026-26",
+      "DEC-2026-26",
+      "SOP-UPI-RISK-030",
+      "RPT-D148-DAILY"
+    ]
+  },
+  "RCA-2026-26": {
+    "stem": "RCA-2026-26",
+    "category": "rca",
+    "refs": [
+      "INC-2026-26",
+      "DEC-2026-26",
+      "SOP-UPI-RISK-030",
+      "RPT-D148-DAILY",
+      "RPT-D149-DAILY"
+    ]
+  },
+  "DEC-2026-26": {
+    "stem": "DEC-2026-26",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-26",
+      "RCA-2026-26",
+      "SOP-UPI-RISK-030",
+      "RPT-D148-DAILY"
+    ]
+  },
+  "TASK-0066": {
+    "stem": "TASK-0066",
+    "category": "document",
+    "refs": [
+      "DEC-2026-26",
+      "RCA-2026-26",
+      "SOP-UPI-RISK-030"
+    ]
+  },
+  "EMAIL-D148-001": {
+    "stem": "EMAIL-D148-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-17",
+      "DEC-2026-17",
+      "RCA-2026-17",
+      "RPT-D148-DAILY"
+    ]
+  },
+  "TEAMS-D148-MON": {
+    "stem": "TEAMS-D148-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D148-DAILY",
+      "INC-2026-17",
+      "INC-2026-26"
+    ]
+  },
+  "RPT-D148-DAILY": {
+    "stem": "RPT-D148-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D148-MON",
+      "RPT-D147-DAILY",
+      "INC-2026-17",
+      "INC-2026-26",
+      "RCA-2026-17",
+      "RCA-2026-26"
+    ]
+  },
+  "KPI-D148": {
+    "stem": "upi_kpis_day_148",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D148-DAILY"
+    ]
+  },
+  "EMAIL-D149-001": {
+    "stem": "EMAIL-D149-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-26",
+      "DEC-2026-26",
+      "RCA-2026-26",
+      "RPT-D149-DAILY"
+    ]
+  },
+  "TEAMS-D149-MON": {
+    "stem": "TEAMS-D149-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D149-DAILY",
+      "INC-2026-26"
+    ]
+  },
+  "RPT-D149-DAILY": {
+    "stem": "RPT-D149-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D149-MON",
+      "RPT-D148-DAILY",
+      "INC-2026-26",
+      "RCA-2026-26"
+    ]
+  },
+  "KPI-D149": {
+    "stem": "upi_kpis_day_149",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D149-DAILY"
+    ]
+  },
+  "TEAMS-D150-MON": {
+    "stem": "TEAMS-D150-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D150-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D150-DAILY": {
+    "stem": "RPT-D150-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D150-MON",
+      "RPT-D149-DAILY"
+    ]
+  },
+  "KPI-D150": {
+    "stem": "upi_kpis_day_150",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D150-DAILY"
+    ]
+  },
+  "INC-2026-06": {
+    "stem": "INC-2026-06-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D151-DAILY",
+      "RCA-2026-06",
+      "DEC-2026-06",
+      "TEAMS-D151-MON"
+    ]
+  },
+  "EMAIL-D151-001": {
+    "stem": "EMAIL-D151-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-06",
+      "RPT-D151-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D151-BRIDGE-06": {
+    "stem": "TEAMS-D151-BRIDGE-06",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-06",
+      "MTG-D151-BRIDGE-06",
+      "RCA-2026-06",
+      "RPT-D151-DAILY"
+    ]
+  },
+  "MTG-D151-BRIDGE-06": {
+    "stem": "MTG-D151-BRIDGE-06",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-06",
+      "RCA-2026-06",
+      "DEC-2026-06",
+      "RPT-D151-DAILY",
+      "TEAMS-D151-BRIDGE-06"
+    ]
+  },
+  "TASK-0067": {
+    "stem": "TASK-0067",
+    "category": "document",
+    "refs": [
+      "INC-2026-06",
+      "MTG-D151-BRIDGE-06",
+      "RCA-2026-06"
+    ]
+  },
+  "TASK-0068": {
+    "stem": "TASK-0068",
+    "category": "document",
+    "refs": [
+      "INC-2026-06",
+      "RPT-D151-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D151-MON": {
+    "stem": "TEAMS-D151-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D151-DAILY",
+      "INC-2026-06"
+    ]
+  },
+  "RPT-D151-DAILY": {
+    "stem": "RPT-D151-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D151-MON",
+      "RPT-D150-DAILY",
+      "INC-2026-06",
+      "RCA-2026-06"
+    ]
+  },
+  "KPI-D151": {
+    "stem": "upi_kpis_day_151",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D151-DAILY"
+    ]
+  },
+  "MTG-D152-INVEST-06": {
+    "stem": "MTG-D152-INVEST-06",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-06",
+      "RCA-2026-06",
+      "DEC-2026-06",
+      "SOP-UPI-RISK-030",
+      "RPT-D152-DAILY"
+    ]
+  },
+  "RCA-2026-06": {
+    "stem": "RCA-2026-06",
+    "category": "rca",
+    "refs": [
+      "INC-2026-06",
+      "DEC-2026-06",
+      "SOP-UPI-RISK-030",
+      "RPT-D152-DAILY",
+      "RPT-D155-DAILY"
+    ]
+  },
+  "DEC-2026-06": {
+    "stem": "DEC-2026-06",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-06",
+      "RCA-2026-06",
+      "SOP-UPI-RISK-030",
+      "RPT-D152-DAILY"
+    ]
+  },
+  "TASK-0069": {
+    "stem": "TASK-0069",
+    "category": "document",
+    "refs": [
+      "DEC-2026-06",
+      "RCA-2026-06",
+      "SOP-UPI-RISK-030"
+    ]
+  },
+  "TEAMS-D152-MON": {
+    "stem": "TEAMS-D152-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D152-DAILY",
+      "INC-2026-06"
+    ]
+  },
+  "RPT-D152-DAILY": {
+    "stem": "RPT-D152-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D152-MON",
+      "RPT-D151-DAILY",
+      "INC-2026-06",
+      "RCA-2026-06"
+    ]
+  },
+  "KPI-D152": {
+    "stem": "upi_kpis_day_152",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D152-DAILY"
+    ]
+  },
+  "TEAMS-D153-MON": {
+    "stem": "TEAMS-D153-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D153-DAILY",
+      "INC-2026-06"
+    ]
+  },
+  "RPT-D153-DAILY": {
+    "stem": "RPT-D153-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D153-MON",
+      "RPT-D152-DAILY",
+      "INC-2026-06",
+      "RCA-2026-06"
+    ]
+  },
+  "KPI-D153": {
+    "stem": "upi_kpis_day_153",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D153-DAILY"
+    ]
+  },
+  "TEAMS-D154-MON": {
+    "stem": "TEAMS-D154-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D154-DAILY",
+      "INC-2026-06"
+    ]
+  },
+  "RPT-D154-DAILY": {
+    "stem": "RPT-D154-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D154-MON",
+      "RPT-D153-DAILY",
+      "INC-2026-06",
+      "RCA-2026-06"
+    ]
+  },
+  "KPI-D154": {
+    "stem": "upi_kpis_day_154",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D154-DAILY"
+    ]
+  },
+  "RPT-W22-REVIEW": {
+    "stem": "RPT-W22-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D148-DAILY",
+      "RPT-D149-DAILY",
+      "RPT-D150-DAILY",
+      "RPT-D151-DAILY",
+      "INC-2026-17",
+      "INC-2026-26",
+      "INC-2026-06"
+    ]
+  },
+  "MTG-W22-REVIEW": {
+    "stem": "MTG-W22-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W22-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-17",
+      "INC-2026-26",
+      "INC-2026-06"
+    ]
+  },
+  "EMAIL-D155-001": {
+    "stem": "EMAIL-D155-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-06",
+      "DEC-2026-06",
+      "RCA-2026-06",
+      "RPT-D155-DAILY"
+    ]
+  },
+  "TEAMS-D155-MON": {
+    "stem": "TEAMS-D155-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D155-DAILY",
+      "INC-2026-06"
+    ]
+  },
+  "RPT-D155-DAILY": {
+    "stem": "RPT-D155-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D155-MON",
+      "RPT-D154-DAILY",
+      "INC-2026-06",
+      "RCA-2026-06"
+    ]
+  },
+  "KPI-D155": {
+    "stem": "upi_kpis_day_155",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D155-DAILY"
+    ]
+  },
+  "TEAMS-D156-MON": {
+    "stem": "TEAMS-D156-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D156-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D156-DAILY": {
+    "stem": "RPT-D156-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D156-MON",
+      "RPT-D155-DAILY"
+    ]
+  },
+  "KPI-D156": {
+    "stem": "upi_kpis_day_156",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D156-DAILY"
+    ]
+  },
+  "TEAMS-D157-MON": {
+    "stem": "TEAMS-D157-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D157-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D157-DAILY": {
+    "stem": "RPT-D157-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D157-MON",
+      "RPT-D156-DAILY"
+    ]
+  },
+  "KPI-D157": {
+    "stem": "upi_kpis_day_157",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D157-DAILY"
+    ]
+  },
+  "TEAMS-D158-MON": {
+    "stem": "TEAMS-D158-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D158-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D158-DAILY": {
+    "stem": "RPT-D158-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D158-MON",
+      "RPT-D157-DAILY"
+    ]
+  },
+  "KPI-D158": {
+    "stem": "upi_kpis_day_158",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D158-DAILY"
+    ]
+  },
+  "TEAMS-D159-MON": {
+    "stem": "TEAMS-D159-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D159-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D159-DAILY": {
+    "stem": "RPT-D159-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D159-MON",
+      "RPT-D158-DAILY"
+    ]
+  },
+  "KPI-D159": {
+    "stem": "upi_kpis_day_159",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D159-DAILY"
+    ]
+  },
+  "TEAMS-D160-MON": {
+    "stem": "TEAMS-D160-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D160-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D160-DAILY": {
+    "stem": "RPT-D160-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D160-MON",
+      "RPT-D159-DAILY"
+    ]
+  },
+  "KPI-D160": {
+    "stem": "upi_kpis_day_160",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D160-DAILY"
+    ]
+  },
+  "INC-2026-22": {
+    "stem": "INC-2026-22-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D161-DAILY",
+      "TEAMS-D161-MON"
+    ]
+  },
+  "EMAIL-D161-001": {
+    "stem": "EMAIL-D161-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-22",
+      "RPT-D161-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D161-BRIDGE-22": {
+    "stem": "TEAMS-D161-BRIDGE-22",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-22",
+      "MTG-D161-BRIDGE-22",
+      "RPT-D161-DAILY"
+    ]
+  },
+  "MTG-D161-BRIDGE-22": {
+    "stem": "MTG-D161-BRIDGE-22",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-22",
+      "RPT-D161-DAILY",
+      "TEAMS-D161-BRIDGE-22"
+    ]
+  },
+  "TASK-0070": {
+    "stem": "TASK-0070",
+    "category": "document",
+    "refs": [
+      "INC-2026-22",
+      "MTG-D161-BRIDGE-22",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TASK-0071": {
+    "stem": "TASK-0071",
+    "category": "document",
+    "refs": [
+      "INC-2026-22",
+      "RPT-D161-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D161-MON": {
+    "stem": "TEAMS-D161-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D161-DAILY",
+      "INC-2026-22"
+    ]
+  },
+  "RPT-D161-DAILY": {
+    "stem": "RPT-D161-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D161-MON",
+      "RPT-D160-DAILY",
+      "INC-2026-22"
+    ]
+  },
+  "KPI-D161": {
+    "stem": "upi_kpis_day_161",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D161-DAILY"
+    ]
+  },
+  "RPT-W23-REVIEW": {
+    "stem": "RPT-W23-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D155-DAILY",
+      "RPT-D156-DAILY",
+      "RPT-D157-DAILY",
+      "RPT-D158-DAILY",
+      "INC-2026-06",
+      "INC-2026-22"
+    ]
+  },
+  "MTG-W23-REVIEW": {
+    "stem": "MTG-W23-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W23-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-06",
+      "INC-2026-22"
+    ]
+  },
+  "EMAIL-D162-001": {
+    "stem": "EMAIL-D162-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-22",
+      "RPT-D162-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D162-MON": {
+    "stem": "TEAMS-D162-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D162-DAILY",
+      "INC-2026-22"
+    ]
+  },
+  "RPT-D162-DAILY": {
+    "stem": "RPT-D162-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D162-MON",
+      "RPT-D161-DAILY",
+      "INC-2026-22"
+    ]
+  },
+  "KPI-D162": {
+    "stem": "upi_kpis_day_162",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D162-DAILY"
+    ]
+  },
+  "TEAMS-D163-MON": {
+    "stem": "TEAMS-D163-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D163-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D163-DAILY": {
+    "stem": "RPT-D163-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D163-MON",
+      "RPT-D162-DAILY"
+    ]
+  },
+  "KPI-D163": {
+    "stem": "upi_kpis_day_163",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D163-DAILY"
+    ]
+  },
+  "TEAMS-D164-MON": {
+    "stem": "TEAMS-D164-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D164-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D164-DAILY": {
+    "stem": "RPT-D164-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D164-MON",
+      "RPT-D163-DAILY"
+    ]
+  },
+  "KPI-D164": {
+    "stem": "upi_kpis_day_164",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D164-DAILY"
+    ]
+  },
+  "TEAMS-D165-MON": {
+    "stem": "TEAMS-D165-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D165-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D165-DAILY": {
+    "stem": "RPT-D165-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D165-MON",
+      "RPT-D164-DAILY"
+    ]
+  },
+  "KPI-D165": {
+    "stem": "upi_kpis_day_165",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D165-DAILY"
+    ]
+  },
+  "INC-2026-21": {
+    "stem": "INC-2026-21-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D166-DAILY",
+      "RCA-2026-21",
+      "DEC-2026-21",
+      "TEAMS-D166-MON"
+    ]
+  },
+  "EMAIL-D166-001": {
+    "stem": "EMAIL-D166-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-21",
+      "RPT-D166-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D166-BRIDGE-21": {
+    "stem": "TEAMS-D166-BRIDGE-21",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-21",
+      "MTG-D166-BRIDGE-21",
+      "RCA-2026-21",
+      "RPT-D166-DAILY"
+    ]
+  },
+  "MTG-D166-BRIDGE-21": {
+    "stem": "MTG-D166-BRIDGE-21",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-21",
+      "RCA-2026-21",
+      "DEC-2026-21",
+      "RPT-D166-DAILY",
+      "TEAMS-D166-BRIDGE-21"
+    ]
+  },
+  "TASK-0072": {
+    "stem": "TASK-0072",
+    "category": "document",
+    "refs": [
+      "INC-2026-21",
+      "MTG-D166-BRIDGE-21",
+      "RCA-2026-21"
+    ]
+  },
+  "TASK-0073": {
+    "stem": "TASK-0073",
+    "category": "document",
+    "refs": [
+      "INC-2026-21",
+      "RPT-D166-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D166-MON": {
+    "stem": "TEAMS-D166-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D166-DAILY",
+      "INC-2026-21"
+    ]
+  },
+  "RPT-D166-DAILY": {
+    "stem": "RPT-D166-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D166-MON",
+      "RPT-D165-DAILY",
+      "INC-2026-21",
+      "RCA-2026-21"
+    ]
+  },
+  "KPI-D166": {
+    "stem": "upi_kpis_day_166",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D166-DAILY"
+    ]
+  },
+  "MTG-D167-INVEST-21": {
+    "stem": "MTG-D167-INVEST-21",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-21",
+      "RCA-2026-21",
+      "DEC-2026-21",
+      "SOP-UPI-FEATURE-011",
+      "RPT-D167-DAILY"
+    ]
+  },
+  "RCA-2026-21": {
+    "stem": "RCA-2026-21",
+    "category": "rca",
+    "refs": [
+      "INC-2026-21",
+      "DEC-2026-21",
+      "SOP-UPI-FEATURE-011",
+      "RPT-D167-DAILY",
+      "RPT-D170-DAILY"
+    ]
+  },
+  "DEC-2026-21": {
+    "stem": "DEC-2026-21",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-21",
+      "RCA-2026-21",
+      "SOP-UPI-FEATURE-011",
+      "RPT-D167-DAILY"
+    ]
+  },
+  "TASK-0074": {
+    "stem": "TASK-0074",
+    "category": "document",
+    "refs": [
+      "DEC-2026-21",
+      "RCA-2026-21",
+      "SOP-UPI-FEATURE-011"
+    ]
+  },
+  "TEAMS-D167-MON": {
+    "stem": "TEAMS-D167-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D167-DAILY",
+      "INC-2026-21"
+    ]
+  },
+  "RPT-D167-DAILY": {
+    "stem": "RPT-D167-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D167-MON",
+      "RPT-D166-DAILY",
+      "INC-2026-21",
+      "RCA-2026-21"
+    ]
+  },
+  "KPI-D167": {
+    "stem": "upi_kpis_day_167",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D167-DAILY"
+    ]
+  },
+  "TEAMS-D168-MON": {
+    "stem": "TEAMS-D168-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D168-DAILY",
+      "INC-2026-21"
+    ]
+  },
+  "RPT-D168-DAILY": {
+    "stem": "RPT-D168-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D168-MON",
+      "RPT-D167-DAILY",
+      "INC-2026-21",
+      "RCA-2026-21"
+    ]
+  },
+  "KPI-D168": {
+    "stem": "upi_kpis_day_168",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D168-DAILY"
+    ]
+  },
+  "RPT-W24-REVIEW": {
+    "stem": "RPT-W24-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D162-DAILY",
+      "RPT-D163-DAILY",
+      "RPT-D164-DAILY",
+      "RPT-D165-DAILY",
+      "INC-2026-22",
+      "INC-2026-21"
+    ]
+  },
+  "MTG-W24-REVIEW": {
+    "stem": "MTG-W24-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W24-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-22",
+      "INC-2026-21"
+    ]
+  },
+  "TEAMS-D169-MON": {
+    "stem": "TEAMS-D169-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D169-DAILY",
+      "INC-2026-21"
+    ]
+  },
+  "RPT-D169-DAILY": {
+    "stem": "RPT-D169-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D169-MON",
+      "RPT-D168-DAILY",
+      "INC-2026-21",
+      "RCA-2026-21"
+    ]
+  },
+  "KPI-D169": {
+    "stem": "upi_kpis_day_169",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D169-DAILY"
+    ]
+  },
+  "EMAIL-D170-001": {
+    "stem": "EMAIL-D170-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-21",
+      "DEC-2026-21",
+      "RCA-2026-21",
+      "RPT-D170-DAILY"
+    ]
+  },
+  "TEAMS-D170-MON": {
+    "stem": "TEAMS-D170-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D170-DAILY",
+      "INC-2026-21"
+    ]
+  },
+  "RPT-D170-DAILY": {
+    "stem": "RPT-D170-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D170-MON",
+      "RPT-D169-DAILY",
+      "INC-2026-21",
+      "RCA-2026-21"
+    ]
+  },
+  "KPI-D170": {
+    "stem": "upi_kpis_day_170",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D170-DAILY"
+    ]
+  },
+  "INC-2026-15": {
+    "stem": "INC-2026-15-record",
+    "category": "rca",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D171-DAILY",
+      "RCA-2026-15",
+      "DEC-2026-15",
+      "TEAMS-D171-MON"
+    ]
+  },
+  "EMAIL-D171-001": {
+    "stem": "EMAIL-D171-001-anomaly",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-15",
+      "RPT-D171-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D171-BRIDGE-15": {
+    "stem": "TEAMS-D171-BRIDGE-15",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-15",
+      "MTG-D171-BRIDGE-15",
+      "RCA-2026-15",
+      "RPT-D171-DAILY"
+    ]
+  },
+  "MTG-D171-BRIDGE-15": {
+    "stem": "MTG-D171-BRIDGE-15",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-15",
+      "RCA-2026-15",
+      "DEC-2026-15",
+      "RPT-D171-DAILY",
+      "TEAMS-D171-BRIDGE-15"
+    ]
+  },
+  "TASK-0075": {
+    "stem": "TASK-0075",
+    "category": "document",
+    "refs": [
+      "INC-2026-15",
+      "MTG-D171-BRIDGE-15",
+      "RCA-2026-15"
+    ]
+  },
+  "TASK-0076": {
+    "stem": "TASK-0076",
+    "category": "document",
+    "refs": [
+      "INC-2026-15",
+      "RPT-D171-DAILY",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "TEAMS-D171-MON": {
+    "stem": "TEAMS-D171-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D171-DAILY",
+      "INC-2026-15"
+    ]
+  },
+  "RPT-D171-DAILY": {
+    "stem": "RPT-D171-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D171-MON",
+      "RPT-D170-DAILY",
+      "INC-2026-15",
+      "RCA-2026-15"
+    ]
+  },
+  "KPI-D171": {
+    "stem": "upi_kpis_day_171",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D171-DAILY"
+    ]
+  },
+  "MTG-D172-INVEST-15": {
+    "stem": "MTG-D172-INVEST-15",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-15",
+      "RCA-2026-15",
+      "DEC-2026-15",
+      "SOP-UPI-SETTLEMENT-022",
+      "RPT-D172-DAILY"
+    ]
+  },
+  "RCA-2026-15": {
+    "stem": "RCA-2026-15",
+    "category": "rca",
+    "refs": [
+      "INC-2026-15",
+      "DEC-2026-15",
+      "SOP-UPI-SETTLEMENT-022",
+      "RPT-D172-DAILY",
+      "RPT-D174-DAILY"
+    ]
+  },
+  "DEC-2026-15": {
+    "stem": "DEC-2026-15",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-15",
+      "RCA-2026-15",
+      "SOP-UPI-SETTLEMENT-022",
+      "RPT-D172-DAILY"
+    ]
+  },
+  "TASK-0077": {
+    "stem": "TASK-0077",
+    "category": "document",
+    "refs": [
+      "DEC-2026-15",
+      "RCA-2026-15",
+      "SOP-UPI-SETTLEMENT-022"
+    ]
+  },
+  "TEAMS-D172-MON": {
+    "stem": "TEAMS-D172-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D172-DAILY",
+      "INC-2026-15"
+    ]
+  },
+  "RPT-D172-DAILY": {
+    "stem": "RPT-D172-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D172-MON",
+      "RPT-D171-DAILY",
+      "INC-2026-15",
+      "RCA-2026-15"
+    ]
+  },
+  "KPI-D172": {
+    "stem": "upi_kpis_day_172",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D172-DAILY"
+    ]
+  },
+  "TEAMS-D173-MON": {
+    "stem": "TEAMS-D173-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D173-DAILY",
+      "INC-2026-15"
+    ]
+  },
+  "RPT-D173-DAILY": {
+    "stem": "RPT-D173-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D173-MON",
+      "RPT-D172-DAILY",
+      "INC-2026-15",
+      "RCA-2026-15"
+    ]
+  },
+  "KPI-D173": {
+    "stem": "upi_kpis_day_173",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D173-DAILY"
+    ]
+  },
+  "EMAIL-D174-001": {
+    "stem": "EMAIL-D174-001-recovery",
+    "category": "meeting",
+    "refs": [
+      "INC-2026-15",
+      "DEC-2026-15",
+      "RCA-2026-15",
+      "RPT-D174-DAILY"
+    ]
+  },
+  "TEAMS-D174-MON": {
+    "stem": "TEAMS-D174-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D174-DAILY",
+      "INC-2026-15"
+    ]
+  },
+  "RPT-D174-DAILY": {
+    "stem": "RPT-D174-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D174-MON",
+      "RPT-D173-DAILY",
+      "INC-2026-15",
+      "RCA-2026-15"
+    ]
+  },
+  "KPI-D174": {
+    "stem": "upi_kpis_day_174",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D174-DAILY"
+    ]
+  },
+  "TEAMS-D175-MON": {
+    "stem": "TEAMS-D175-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D175-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D175-DAILY": {
+    "stem": "RPT-D175-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D175-MON",
+      "RPT-D174-DAILY"
+    ]
+  },
+  "KPI-D175": {
+    "stem": "upi_kpis_day_175",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D175-DAILY"
+    ]
+  },
+  "RPT-W25-REVIEW": {
+    "stem": "RPT-W25-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D169-DAILY",
+      "RPT-D170-DAILY",
+      "RPT-D171-DAILY",
+      "RPT-D172-DAILY",
+      "INC-2026-21",
+      "INC-2026-15"
+    ]
+  },
+  "MTG-W25-REVIEW": {
+    "stem": "MTG-W25-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W25-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "INC-2026-21",
+      "INC-2026-15"
+    ]
+  },
+  "TEAMS-D176-MON": {
+    "stem": "TEAMS-D176-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D176-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D176-DAILY": {
+    "stem": "RPT-D176-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D176-MON",
+      "RPT-D175-DAILY"
+    ]
+  },
+  "KPI-D176": {
+    "stem": "upi_kpis_day_176",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D176-DAILY"
+    ]
+  },
+  "TEAMS-D177-MON": {
+    "stem": "TEAMS-D177-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D177-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D177-DAILY": {
+    "stem": "RPT-D177-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D177-MON",
+      "RPT-D176-DAILY"
+    ]
+  },
+  "KPI-D177": {
+    "stem": "upi_kpis_day_177",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D177-DAILY"
+    ]
+  },
+  "MTG-D178-REVIEW": {
+    "stem": "MTG-D178-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D178-DAILY",
+      "TEAMS-D178-MON"
+    ]
+  },
+  "TEAMS-D178-MON": {
+    "stem": "TEAMS-D178-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D178-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D178-DAILY": {
+    "stem": "RPT-D178-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D178-MON",
+      "RPT-D177-DAILY"
+    ]
+  },
+  "KPI-D178": {
+    "stem": "upi_kpis_day_178",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D178-DAILY"
+    ]
+  },
+  "TEAMS-D179-MON": {
+    "stem": "TEAMS-D179-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D179-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D179-DAILY": {
+    "stem": "RPT-D179-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D179-MON",
+      "RPT-D178-DAILY"
+    ]
+  },
+  "KPI-D179": {
+    "stem": "upi_kpis_day_179",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D179-DAILY"
+    ]
+  },
+  "TEAMS-D180-MON": {
+    "stem": "TEAMS-D180-monitoring",
+    "category": "meeting",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D180-DAILY",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "RPT-D180-DAILY": {
+    "stem": "RPT-D180-daily",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "TEAMS-D180-MON",
+      "RPT-D179-DAILY"
+    ]
+  },
+  "KPI-D180": {
+    "stem": "upi_kpis_day_180",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D180-DAILY"
+    ]
+  },
+  "RPT-W26-REVIEW": {
+    "stem": "RPT-W26-review",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-D176-DAILY",
+      "RPT-D177-DAILY",
+      "RPT-D178-DAILY",
+      "RPT-D179-DAILY"
+    ]
+  },
+  "MTG-W26-REVIEW": {
+    "stem": "MTG-W26-REVIEW",
+    "category": "meeting",
+    "refs": [
+      "RPT-W26-REVIEW",
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "RPT-MONTHLY-EXEC": {
+    "stem": "RPT-MONTHLY-exec",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W1-REVIEW",
+      "RPT-W2-REVIEW",
+      "RPT-W3-REVIEW",
+      "RPT-W4-REVIEW",
+      "RPT-W5-REVIEW",
+      "RPT-W6-REVIEW",
+      "RPT-W7-REVIEW",
+      "RPT-W8-REVIEW",
+      "RPT-W9-REVIEW",
+      "RPT-W10-REVIEW",
+      "RPT-W11-REVIEW",
+      "RPT-W12-REVIEW",
+      "RPT-W13-REVIEW",
+      "RPT-W14-REVIEW",
+      "RPT-W15-REVIEW",
+      "RPT-W16-REVIEW",
+      "RPT-W17-REVIEW",
+      "RPT-W18-REVIEW",
+      "RPT-W19-REVIEW",
+      "RPT-W20-REVIEW",
+      "RPT-W21-REVIEW",
+      "RPT-W22-REVIEW",
+      "RPT-W23-REVIEW",
+      "RPT-W24-REVIEW",
+      "RPT-W25-REVIEW",
+      "RPT-W26-REVIEW",
+      "RCA-2026-01",
+      "RCA-2026-13",
+      "RCA-2026-16",
+      "INC-2026-01",
+      "INC-2026-13"
+    ]
+  },
+  "MTG-MONTHLY-EXEC": {
+    "stem": "MTG-MONTHLY-EXEC",
+    "category": "meeting",
+    "refs": [
+      "RPT-MONTHLY-EXEC",
+      "upi_kpis_month.xlsx",
+      "RPT-W26-REVIEW",
+      "RCA-2026-01",
+      "RCA-2026-13"
+    ]
+  },
+  "MTG-MONTHLY-BOARD": {
+    "stem": "MTG-MONTHLY-BOARD",
+    "category": "meeting",
+    "refs": [
+      "RPT-MONTHLY-EXEC",
+      "MTG-MONTHLY-EXEC",
+      "upi_kpis_month.xlsx"
+    ]
+  },
+  "DEC-MONTHLY-01": {
+    "stem": "DEC-MONTHLY-01",
+    "category": "meeting",
+    "refs": [
+      "RPT-MONTHLY-EXEC",
+      "MTG-MONTHLY-EXEC",
+      "RCA-2026-01",
+      "RCA-2026-13"
+    ]
+  },
+  "BI-W1": {
+    "stem": "BI-W1-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W1-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W2": {
+    "stem": "BI-W2-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W2-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W3": {
+    "stem": "BI-W3-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W3-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W4": {
+    "stem": "BI-W4-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W4-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W5": {
+    "stem": "BI-W5-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W5-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W6": {
+    "stem": "BI-W6-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W6-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W7": {
+    "stem": "BI-W7-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W7-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W8": {
+    "stem": "BI-W8-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W8-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W9": {
+    "stem": "BI-W9-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W9-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W10": {
+    "stem": "BI-W10-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W10-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W11": {
+    "stem": "BI-W11-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W11-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W12": {
+    "stem": "BI-W12-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W12-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W13": {
+    "stem": "BI-W13-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W13-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W14": {
+    "stem": "BI-W14-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W14-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W15": {
+    "stem": "BI-W15-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W15-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W16": {
+    "stem": "BI-W16-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W16-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W17": {
+    "stem": "BI-W17-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W17-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W18": {
+    "stem": "BI-W18-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W18-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W19": {
+    "stem": "BI-W19-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W19-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W20": {
+    "stem": "BI-W20-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W20-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W21": {
+    "stem": "BI-W21-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W21-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W22": {
+    "stem": "BI-W22-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W22-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W23": {
+    "stem": "BI-W23-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W23-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W24": {
+    "stem": "BI-W24-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W24-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W25": {
+    "stem": "BI-W25-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W25-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "BI-W26": {
+    "stem": "BI-W26-findings",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-W26-REVIEW",
+      "RPT-MONTHLY-EXEC"
+    ]
+  },
+  "ANALYTICS-FEATURES": {
+    "stem": "ANALYTICS-features",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "ANALYTICS-BANKS-PSPS": {
+    "stem": "ANALYTICS-banks-psps",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "ANALYTICS-MARKET-MIX": {
+    "stem": "ANALYTICS-market-mix",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "ANALYTICS-FORECASTS": {
+    "stem": "ANALYTICS-forecasts",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "ORG-OVERVIEW"
+    ]
+  },
+  "ANALYTICS-EXEC-KPIS": {
+    "stem": "ANALYTICS-exec-kpis",
+    "category": "document",
+    "refs": [
+      "upi_kpis_month.xlsx",
+      "RPT-MONTHLY-EXEC",
+      "ORG-OVERVIEW"
+    ]
+  }
+}

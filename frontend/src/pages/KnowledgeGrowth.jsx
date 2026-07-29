@@ -33,7 +33,7 @@ export default function KnowledgeGrowth() {
             <div className="space-y-6">
               <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <StaggerItem><StatCard label="Things learned" value={s.learning?.events ?? 0}
-                  tone="text-emerald-400" spark={<Sparkline data={learnSeries.map((p) => p.v)} width={150} stroke="#34d399" />} /></StaggerItem>
+                  tone="fg-success" spark={<Sparkline data={learnSeries.map((p) => p.v)} width={150} stroke="#34d399" />} /></StaggerItem>
                 <StaggerItem><StatCard label="Graph nodes" value={g.node_count ?? 0} /></StaggerItem>
                 <StaggerItem><StatCard label="Graph connections" value={g.edge_count ?? 0} /></StaggerItem>
                 <StaggerItem><StatCard label="Decisions remembered" value={k.decisions ?? 0} tone="text-accent" /></StaggerItem>

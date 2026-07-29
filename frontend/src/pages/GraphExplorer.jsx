@@ -12,26 +12,28 @@ import {
   ExportMenu, FilterChips, Loader, PremiumHeader, SearchInput,
 } from '../components/premium'
 
-// A colour language per node kind — reads as one system with the rest of the app.
-const KIND = {
-  decision: { bg: '#3b1d4e', br: '#c084fc', fg: '#f3e8ff' },
-  product: { bg: '#0c2f4a', br: '#38bdf8', fg: '#e0f2fe' },
-  concept: { bg: '#064e3b', br: '#34d399', fg: '#d1fae5' },
-  kpi: { bg: '#78350f', br: '#fbbf24', fg: '#fef3c7' },
-  signal: { bg: '#701a30', br: '#fb7185', fg: '#ffe4e6' },
-  rca: { bg: '#7c2d12', br: '#fb923c', fg: '#ffedd5' },
-  sop: { bg: '#1e3a5f', br: '#60a5fa', fg: '#dbeafe' },
-  policy: { bg: '#334155', br: '#94a3b8', fg: '#e2e8f0' },
-  meeting: { bg: '#134e4a', br: '#2dd4bf', fg: '#ccfbf1' },
-  document: { bg: '#1f2937', br: '#6b7280', fg: '#e5e7eb' },
-  report: { bg: '#1e3a8a', br: '#4f8ef7', fg: '#dbeafe' },
-  project: { bg: '#4c1d95', br: '#a78bfa', fg: '#ede9fe' },
-  insight: { bg: '#065f46', br: '#10b981', fg: '#d1fae5' },
-  recommendation: { bg: '#854d0e', br: '#eab308', fg: '#fef9c3' },
-  dataset: { bg: '#1e3a8a', br: '#60a5fa', fg: '#dbeafe' },
-  default: { bg: '#111827', br: '#334155', fg: '#94a3b8' },
+// A colour language per node kind. Only the hue is fixed — it is what carries
+// the meaning. The fill is that hue at low alpha and the label uses the
+// theme's ink, so the same node reads correctly on both a dark and a light
+// canvas instead of being a dark chip stranded on white.
+const KIND_HUE = {
+  decision: '#c084fc', product: '#38bdf8', concept: '#34d399',
+  kpi: '#fbbf24', signal: '#fb7185', rca: '#fb923c',
+  sop: '#60a5fa', policy: '#94a3b8', meeting: '#2dd4bf',
+  document: '#6b7280', report: '#4f8ef7', project: '#a78bfa',
+  insight: '#10b981', recommendation: '#eab308', dataset: '#60a5fa',
+  default: '#64748b',
 }
-const styleFor = (k) => KIND[k] || KIND.default
+
+const tint = (hex, alpha) => {
+  const n = parseInt(hex.slice(1), 16)
+  return `rgba(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}, ${alpha})`
+}
+
+const styleFor = (k) => {
+  const hue = KIND_HUE[k] || KIND_HUE.default
+  return { br: hue, bg: tint(hue, 0.16), fg: 'var(--text-primary)' }
+}
 
 // Deterministic force-free layout: cluster by kind into a ring of clusters,
 // then spiral each cluster's nodes. Stable across renders, no physics cost.
@@ -98,7 +100,7 @@ function Explorer({ payload }) {
           id: n.id, position: { x: n.x, y: n.y }, data: { label: n.label || n.id },
           style: {
             background: s.bg, color: s.fg,
-            border: `${isSel ? 2 : 1}px solid ${isSel ? '#fff' : s.br}`,
+            border: `${isSel ? 2 : 1}px solid ${isSel ? 'rgb(var(--accent))' : s.br}`,
             borderRadius: 9, fontSize: 11, padding: '6px 9px', maxWidth: 180,
             boxShadow: isSel ? `0 0 0 3px ${s.br}55` : 'none',
           },

@@ -34,6 +34,7 @@ class AnalysisState(TypedDict, total=False):
     breakdowns: list
     signals: list
     forecasts: list
+    feasibility: dict              # which analyses the data actually supports
     quality: Any                   # QualityReport
     understanding: Any             # UnderstandingAssessment
     ml_results: list               # ml_prediction payload dicts (citable ids)

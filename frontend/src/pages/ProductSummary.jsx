@@ -14,41 +14,51 @@ const KIND_TONE = {
 
 export default function ProductSummary() {
   const { productId } = useParams()
+  const productName = decodeURIComponent(productId)
   const state = useAsync(async () => {
-    const [catalog, health, reviews, growth, recs] = await Promise.all([
+    const [catalog, health, reviews, growth, recs, kpis, reportsRes, decisionsRes] = await Promise.all([
       api.productCatalogItem(productId).catch(() => null),
       api.productHealth().catch(() => ({ health: [] })),
       api.productReviewsFor(productId, 1).catch(() => ({ reviews: [] })),
       api.productGrowth(productId).catch(() => ({ findings: [] })),
       api.productRecommendations(productId).catch(() => ({ recommendations: [] })),
+      api.executiveKpis().catch(() => null),
+      api.executiveReports().catch(() => ({ reports: [] })),
+      api.executiveDecisions().catch(() => ({ decisions: [] })),
     ])
     const healthRecord = (health.health || []).find((h) => h.product_id === productId) || null
+    const execProduct = (kpis?.health?.products || []).find((p) => p.product === productName) || null
     return {
       catalog,
       health: healthRecord,
+      execProduct,
       review: (reviews.reviews || [])[0] || null,
       findings: growth.findings || [],
       recommendations: recs.recommendations || [],
+      reports: (reportsRes.reports || []).filter((r) => (r.related_products || []).includes(productName)),
+      decisions: (decisionsRes.decisions || []).filter((d) => (d.affected_products || []).includes(productName)),
     }
   }, [productId])
 
   return (
     <AsyncSection state={state} empty="This product has no data yet.">
-      {({ catalog, health, review, findings, recommendations }) => {
-        const name = catalog?.name || review?.product || productId
+      {({ catalog, health, execProduct, review, findings, recommendations, reports, decisions }) => {
+        const name = catalog?.name || execProduct?.product || review?.product || productName
         const scores = health?.scores || {}
         return (
           <>
             <div className="text-xs text-slate-500 mb-3">
-              <Link to="/portfolio" className="hover:text-accent">Portfolio</Link> <span className="mx-1">/</span> {name}
+              <Link to="/products" className="hover:text-accent">Products</Link> <span className="mx-1">/</span> {name}
             </div>
             <PageHeader title={name}
                         subtitle={[catalog?.owner && `Owned by ${catalog.owner}`,
-                                   catalog?.business_unit, catalog?.lifecycle]
+                                   catalog?.business_unit, catalog?.lifecycle,
+                                   !catalog && execProduct?.owner && `Owned by ${execProduct.owner}`,
+                                   !catalog && execProduct?.team]
                           .filter(Boolean).join(' · ') || 'Executive summary'} />
             <div className="space-y-5">
               <div className="card-pad flex flex-wrap items-center gap-6 lg:gap-10">
-                <HealthRing score={health?.health_score} size={88} label="health" />
+                <HealthRing score={health?.health_score ?? execProduct?.health} size={88} label="status" />
                 <div className="flex-1 min-w-[220px] grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                   {['growth', 'risk', 'revenue', 'engagement'].filter((k) => scores[k] != null).map((k) => (
                     <div key={k}>
@@ -128,6 +138,30 @@ export default function ProductSummary() {
                     <ul className="space-y-2">
                       {review.action_items.map((a, i) => (
                         <li key={i} className="text-sm text-slate-300">• {typeof a === 'string' ? a : a.action || a.title}</li>
+                      ))}
+                    </ul>
+                  )}
+                </Panel>
+
+                <Panel title="Recent reports">
+                  {reports.length === 0 ? <PanelEmpty text="No reports for this product yet." /> : (
+                    <ul className="space-y-2">
+                      {reports.slice(0, 6).map((r) => (
+                        <li key={r.report_id} className="text-sm text-slate-300 truncate">
+                          <Badge tone="default">{r.category}</Badge> {r.title}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </Panel>
+
+                <Panel title="Recent decisions">
+                  {decisions.length === 0 ? <PanelEmpty text="No decisions for this product yet." /> : (
+                    <ul className="space-y-2">
+                      {decisions.slice(0, 6).map((d) => (
+                        <li key={d.decision_id} className="text-sm text-slate-300 truncate">
+                          <Badge tone={d.status === 'executed' ? 'success' : 'warn'}>{d.status}</Badge> {d.title}
+                        </li>
                       ))}
                     </ul>
                   )}

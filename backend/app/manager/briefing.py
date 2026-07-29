@@ -29,13 +29,57 @@ class DailyBriefGenerator:
         self.notifications = notifications
         self.tasks = tasks
         self.portfolio = portfolio
+        self.executive = None  # ExecutiveIntelligence (V3.1), set by container
 
     def today(self) -> dict:
         """Today's brief — generated on first access, cached per day."""
         date = datetime.now(timezone.utc).date().isoformat()
         existing = next((b for b in self.store.read("daily_briefs")
                          if b.get("date") == date), None)
-        return existing or self.generate()
+        brief = existing or self.generate()
+        return self._overlay_executive(dict(brief))
+
+    def _overlay_executive(self, brief: dict) -> dict:
+        """V3.1: fill any empty brief panel from the Executive Intelligence
+        layer, so the dashboard's AI Executive Brief reflects the ingested
+        enterprise. Never overrides real project data (fills only blanks)."""
+        ei = self.executive
+        if ei is None or not getattr(ei, "available", False):
+            return brief
+        try:
+            ex = ei.executive_brief()
+        except Exception:  # noqa: BLE001 — brief never breaks on overlay
+            return brief
+        health = ex.get("health", {})
+        if not brief.get("high_priority_issues"):
+            brief["high_priority_issues"] = [
+                {"title": e["event"], "detail": e["detail"],
+                 "kind": "critical_risk", "project_id": "", "at": ""}
+                for e in ex.get("critical_events", [])]
+        if not brief.get("business_risks"):
+            brief["business_risks"] = [
+                {"insight": f"{r['risk']} — {r['detail']}", "project_id": ""}
+                for r in ex.get("risk_assessment", {}).get("top_risks", [])]
+        if not brief.get("recommendations"):
+            brief["recommendations"] = [
+                {"action": r["title"], "priority":
+                 1 if r["priority"] == "high" else 3, "project_id": ""}
+                for r in ex.get("recommended_actions", [])]
+        if not brief.get("important_reports"):
+            brief["important_reports"] = [
+                {"title": d["title"], "project_id": d["decision_id"],
+                 "health_score": None}
+                for d in ex.get("major_decisions", [])]
+        if not brief.get("upcoming_deadlines"):
+            brief["upcoming_deadlines"] = [
+                {"task_id": d.get("task_id", ""), "title": d["task"],
+                 "due_date": d.get("due", "")}
+                for d in ex.get("upcoming_deadlines", [])]
+        if brief.get("portfolio_health", {}).get("average_health_score") is None:
+            brief.setdefault("portfolio_health", {})["average_health_score"] = \
+                health.get("portfolio")
+        brief["executive"] = ex   # the full brief for premium consumers
+        return brief
 
     def generate(self) -> dict:
         """(Re)generate today's brief from current Brain state."""

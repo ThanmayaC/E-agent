@@ -179,8 +179,13 @@ def build_nodes(ctx: NodeContext) -> dict:
         breakdowns = engine.warehouse(pid, state["profiles"], frames)
         signals = engine.signals(pid, kpis, breakdowns)
         forecasts = engine.forecasts(pid, kpis)
+        # What the data can actually support — computed here, while the period
+        # coverage from KPI discovery is still in hand, and carried through the
+        # run so the context builder and the report both gate on the same facts.
+        feasibility = engine.feasibility(state["profiles"], kpis)
         return {"kpis": kpis, "breakdowns": breakdowns,
-                "signals": signals, "forecasts": forecasts}
+                "signals": signals, "forecasts": forecasts,
+                "feasibility": feasibility}
 
     @ctx.staged("graph_build", [PipelineStage.KNOWLEDGE_GRAPH])
     def graph_build(state: AnalysisState) -> dict:
@@ -246,7 +251,8 @@ def build_nodes(ctx: NodeContext) -> dict:
             pid, state.get("project_name") or pid, state["profiles"],
             state["relationships"], state["kpis"], state["signals"],
             state["forecasts"], state["quality"],
-            understanding=_understanding_context(ctx, assessment))
+            understanding=_understanding_context(ctx, assessment),
+            feasibility=state.get("feasibility"))
         ml_results = state.get("ml_results") or []
         if ml_results:
             business_context["ml_predictions"] = ml_results

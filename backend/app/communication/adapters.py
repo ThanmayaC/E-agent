@@ -158,6 +158,125 @@ class OutlookEmailAdapter(EmailProvider):
                 "channel": "outlook"}
 
 
+GMAIL_AUTH_ENV = "EDIP_GMAIL_AUTH"          # OAuth2 access token (Bearer)
+GMAIL_SENDER_ENV = "EDIP_GMAIL_SENDER"      # "From" address; empty = the token's own address
+GMAIL_API = "https://gmail.googleapis.com/gmail/v1/users/me"
+
+
+class GmailEmailAdapter(EmailProvider):
+    """Reads, searches, drafts and sends approved email through the Gmail REST
+    API. Same contract and summary shape as :class:`OutlookEmailAdapter`, so the
+    Enterprise Brain and the workspace treat Gmail as just another email source
+    and the Action Queue is still the only path to an actual send.
+
+    Configured purely by environment reference — never a stored credential:
+
+        EDIP_GMAIL_AUTH    an OAuth2 access token (Bearer) for the mailbox
+        EDIP_GMAIL_SENDER  optional display "From" address
+
+    Absent configuration ⇒ ``available = False`` and nothing is contacted."""
+
+    name = "gmail"
+
+    def __init__(self, auth_env: str = GMAIL_AUTH_ENV,
+                 sender_env: str = GMAIL_SENDER_ENV, timeout: float = 20.0):
+        self._auth_env = auth_env
+        self._sender_env = sender_env
+        self._timeout = timeout
+        self._drafts: dict[str, dict] = {}
+
+    @property
+    def available(self) -> bool:
+        return bool(os.environ.get(self._auth_env))
+
+    @property
+    def unavailable_reason(self) -> str:
+        if self.available:
+            return ""
+        return (f"set {self._auth_env} to a Gmail OAuth2 access token "
+                f"to enable Gmail")
+
+    def describe(self) -> dict:
+        return {**super().describe(),
+                "capabilities": ["read", "search", "draft", "send"]}
+
+    # -- HTTP helpers ----------------------------------------------------
+    def _headers(self) -> dict:
+        token = os.environ.get(self._auth_env, "")
+        if not token:
+            raise ProviderNotConfigured(self.unavailable_reason)
+        return {"Authorization": f"Bearer {token}",
+                "Accept": "application/json"}
+
+    def _get(self, path: str, params: dict | None = None) -> dict:
+        r = httpx.get(f"{GMAIL_API}{path}", headers=self._headers(),
+                      params=params, timeout=self._timeout)
+        r.raise_for_status()
+        return r.json()
+
+    def _post(self, path: str, payload: dict) -> dict:
+        r = httpx.post(f"{GMAIL_API}{path}", headers=self._headers(),
+                       json=payload, timeout=self._timeout)
+        r.raise_for_status()
+        return r.json()
+
+    # -- read-only knowledge source -------------------------------------
+    def read_messages(self, folder: str = "inbox", top: int = 25) -> list[dict]:
+        """Recent messages from a Gmail label (``inbox`` by default). Read-only
+        — another knowledge source for the Brain; it never sends."""
+        return self._list_and_hydrate(f"in:{folder or 'inbox'}", top)
+
+    def search_messages(self, query: str, top: int = 25) -> list[dict]:
+        """Search historical mail with Gmail's native query syntax."""
+        if not str(query).strip():
+            raise ValueError("a search needs a query")
+        return self._list_and_hydrate(query, top)
+
+    def _list_and_hydrate(self, q: str, top: int) -> list[dict]:
+        listing = self._get("/messages",
+                            {"q": q, "maxResults": min(int(top), 100)})
+        out: list[dict] = []
+        for stub in (listing.get("messages") or [])[:int(top)]:
+            msg = self._get(f"/messages/{stub['id']}",
+                            {"format": "metadata",
+                             "metadataHeaders": ["Subject", "From", "Date"]})
+            out.append(_gmail_summary(msg))
+        return out
+
+    def get_message(self, message_id: str) -> dict:
+        """One message with its plain-text body — for a grounded reply."""
+        msg = self._get(f"/messages/{message_id}", {"format": "full"})
+        summary = _gmail_summary(msg)
+        summary["body"] = _gmail_extract_body(msg.get("payload") or {})[:8000]
+        return summary
+
+    # -- draft / approved send ------------------------------------------
+    def draft(self, to: list[str], subject: str, body: str) -> dict:
+        draft = {"draft_id": f"draft_{uuid.uuid4().hex[:10]}", "to": to,
+                 "subject": subject, "body": body}
+        self._drafts[draft["draft_id"]] = draft
+        return draft
+
+    def send(self, draft_id: str) -> dict:
+        draft = self._drafts.get(draft_id)
+        if draft is None:
+            raise KeyError(f"Unknown draft: {draft_id}")
+        result = self.send_direct(draft["to"], draft["subject"], draft["body"])
+        self._drafts.pop(draft_id, None)
+        return result
+
+    def send_direct(self, to: list[str], subject: str, body: str) -> dict:
+        """One approved send. The Action Queue is the only caller."""
+        if not to:
+            raise ValueError("email needs at least one recipient")
+        self._post("/messages/send", {"raw": _gmail_raw(
+            to, subject, body, os.environ.get(self._sender_env, ""))})
+        logger.info("Sent email '%s' to %d recipient(s) via Gmail",
+                    subject[:60], len(to))
+        return {"sent": True, "to": to, "subject": subject[:120],
+                "channel": "gmail"}
+
+
 class TeamsMessagingAdapter(MessagingProvider):
     """Posts approved messages to a Teams channel via an incoming webhook."""
 
@@ -380,6 +499,65 @@ def _email_summary(message: dict) -> dict:
     }
 
 
+def _gmail_header(headers: list[dict], name: str) -> str:
+    for h in headers or []:
+        if str(h.get("name", "")).lower() == name.lower():
+            return str(h.get("value", ""))
+    return ""
+
+
+def _gmail_summary(message: dict) -> dict:
+    """Normalize a Gmail message into the same compact shape as Outlook's, so
+    downstream code is provider-agnostic."""
+    payload = message.get("payload") or {}
+    headers = payload.get("headers") or []
+    label_ids = message.get("labelIds") or []
+    return {
+        "id": message.get("id", ""),
+        "subject": _gmail_header(headers, "Subject"),
+        "from": _gmail_header(headers, "From"),
+        "received": _gmail_header(headers, "Date"),
+        "preview": str(message.get("snippet", ""))[:500],
+        "is_read": "UNREAD" not in label_ids,
+        "channel": "gmail",
+    }
+
+
+def _gmail_extract_body(payload: dict) -> str:
+    """Depth-first walk of a Gmail MIME tree for the first text/plain part."""
+    import base64
+
+    def _decode(data: str) -> str:
+        try:
+            return base64.urlsafe_b64decode(data.encode()).decode(
+                "utf-8", "replace")
+        except Exception:  # noqa: BLE001 — malformed part, skip it
+            return ""
+
+    if payload.get("mimeType") == "text/plain":
+        return _decode((payload.get("body") or {}).get("data", ""))
+    for part in payload.get("parts") or []:
+        text = _gmail_extract_body(part)
+        if text:
+            return text
+    # fall back to any body data present on the root
+    return _decode((payload.get("body") or {}).get("data", ""))
+
+
+def _gmail_raw(to: list[str], subject: str, body: str, sender: str) -> str:
+    """Build an RFC-2822 message and base64url-encode it for Gmail's API."""
+    import base64
+    from email.message import EmailMessage
+
+    msg = EmailMessage()
+    msg["To"] = ", ".join(to)
+    msg["Subject"] = subject[:250]
+    if sender:
+        msg["From"] = sender
+    msg.set_content(body)
+    return base64.urlsafe_b64encode(msg.as_bytes()).decode()
+
+
 def _teams_message_summary(message: dict) -> dict:
     from_user = (((message.get("from") or {}).get("user")) or {})
     body = (message.get("body") or {})
@@ -396,5 +574,5 @@ def build_default_adapters() -> list[Any]:
     """The V2/V2.2 communication adapters, ready to register. Availability is
     each adapter's own report — registration is unconditional so the
     Settings surface can show what is configured and what is missing."""
-    return [OutlookEmailAdapter(), TeamsMessagingAdapter(),
+    return [OutlookEmailAdapter(), GmailEmailAdapter(), TeamsMessagingAdapter(),
             SharePointDocumentAdapter(), RestApiAdapter(), WebhookAdapter()]

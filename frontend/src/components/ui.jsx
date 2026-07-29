@@ -15,15 +15,16 @@ export function PageHeader({ title, subtitle, children }) {
 
 export function Badge({ tone = 'default', children }) {
   const tones = {
-    default: 'bg-surface-overlay text-slate-300',
-    success: 'bg-emerald-500/15 text-emerald-400',
-    danger: 'bg-rose-500/15 text-rose-400',
-    warn: 'bg-amber-500/15 text-amber-400',
-    info: 'bg-sky-500/15 text-sky-400',
-    accent: 'bg-accent/15 text-accent',
+    default: 'chip-neutral',
+    success: 'chip-success',
+    danger: 'chip-danger',
+    warn: 'chip-warn',
+    info: 'chip-info',
+    ai: 'chip-ai',
+    accent: 'chip-accent',
   }
   return (
-    <span className={`inline-block px-2 py-0.5 rounded-md text-[11px] font-medium ${tones[tone] || tones.default}`}>
+    <span className={`chip ${tones[tone] || tones.default}`}>
       {children}
     </span>
   )
@@ -79,13 +80,19 @@ export function AsyncSection({ state, children, empty = 'No data — run an anal
 // Executive design language: metric stats, health rings, trends, panels.
 
 export const healthTone = (h) =>
-  h == null ? 'text-slate-500' : h >= 70 ? 'text-emerald-400' : h >= 50 ? 'text-amber-400' : 'text-rose-400'
+  h == null ? 'fg-muted' : h >= 70 ? 'fg-success' : h >= 50 ? 'fg-warn' : 'fg-danger'
 
-export function Stat({ label, value, tone = 'text-slate-100', hint }) {
+export function Stat({ label, value, tone = 'fg-primary', hint }) {
+  // Guard: React throws if a value is an object/array. Coerce non-primitives to
+  // a count/string so one bad field can never blank the page.
+  const shown = value == null ? '—'
+    : Array.isArray(value) ? value.length
+    : typeof value === 'object' ? JSON.stringify(value)
+    : value
   return (
     <div className="card-pad">
       <div className="eyebrow">{label}</div>
-      <div className={`metric mt-1.5 ${tone}`}>{value ?? '—'}</div>
+      <div className={`metric mt-1.5 ${tone}`}>{shown}</div>
       {hint && <div className="text-xs text-slate-500 mt-1">{hint}</div>}
     </div>
   )

@@ -5,7 +5,9 @@ const THEME_KEY = 'edip.theme'
 const ADMIN_KEY = 'edip.admin'
 const NOTIFY_KEY = 'edip.notify-prefs'
 
-export const getTheme = () => localStorage.getItem(THEME_KEY) || 'midnight'
+// V12: the workspace defaults to the light 'daylight' theme; the dark themes
+// (midnight/graphite) remain available via the header toggle and Settings.
+export const getTheme = () => localStorage.getItem(THEME_KEY) || 'daylight'
 
 export function setTheme(theme) {
   localStorage.setItem(THEME_KEY, theme)

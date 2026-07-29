@@ -131,26 +131,56 @@ class ProviderRegistry:
     show what will become available."""
 
     def __init__(self) -> None:
-        self._providers: dict[str, BaseProvider] = {}
+        # A kind may now have several providers (e.g. both Outlook and Gmail
+        # for "email"); registration order is preserved.
+        self._providers: dict[str, list[BaseProvider]] = {}
 
     def register(self, provider: BaseProvider) -> None:
         if provider.kind not in PROVIDER_KINDS:
             raise ValueError(f"Unknown provider kind: {provider.kind}")
-        self._providers[provider.kind] = provider
+        self._providers.setdefault(provider.kind, []).append(provider)
 
     def get(self, kind: str) -> BaseProvider:
-        provider = self._providers.get(kind)
-        if provider is None or not provider.available:
-            raise ProviderNotConfigured(
-                f"No {kind} provider configured (Version 2)")
-        return provider
+        """The active provider for a kind: the first *configured* one, falling
+        back to the first registered so describe/unavailable_reason still work.
+        Preserves V1/V2 behaviour when only one provider exists per kind."""
+        providers = self._providers.get(kind) or []
+        for provider in providers:
+            if provider.available:
+                return provider
+        if providers:
+            raise ProviderNotConfigured(providers[0].unavailable_reason)
+        raise ProviderNotConfigured(f"No {kind} provider configured (Version 2)")
+
+    def get_by_name(self, kind: str, name: str) -> BaseProvider:
+        """A specific provider by name (e.g. email/'gmail')."""
+        for provider in self._providers.get(kind) or []:
+            if provider.name == name:
+                return provider
+        raise ProviderNotConfigured(f"No {kind} provider named '{name}'")
+
+    def all(self, kind: str) -> list[BaseProvider]:
+        return list(self._providers.get(kind) or [])
 
     def describe(self) -> list[dict[str, Any]]:
+        """One entry per kind (the active provider), preserving the original
+        shape existing callers depend on."""
         out = []
         for kind in PROVIDER_KINDS:
-            provider = self._providers.get(kind)
-            out.append(provider.describe() if provider else {
+            providers = self._providers.get(kind) or []
+            active = next((p for p in providers if p.available),
+                          providers[0] if providers else None)
+            out.append(active.describe() if active else {
                 "kind": kind, "name": "", "available": False,
                 "unavailable_reason": "no external provider configured "
                                       "(Version 2)"})
+        return out
+
+    def describe_all(self) -> list[dict[str, Any]]:
+        """Every registered provider across all kinds — the richer view the
+        Communications surface uses to list Outlook, Gmail, Teams, etc."""
+        out: list[dict[str, Any]] = []
+        for kind in PROVIDER_KINDS:
+            for provider in self._providers.get(kind) or []:
+                out.append(provider.describe())
         return out

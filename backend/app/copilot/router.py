@@ -20,6 +20,7 @@ degrades, the platform does not substitute template narrative.
 """
 from __future__ import annotations
 
+import time
 from typing import Any
 
 from app.core.logging import get_logger
@@ -38,9 +39,32 @@ class LLMRouter:
     """Routes a generated prompt to the configured provider."""
 
     def __init__(self, provider: BaseLLMProvider | None,
-                 fallback: BaseLLMProvider | None = None):
+                 fallback: BaseLLMProvider | None = None,
+                 governance=None, latency=None):
         self._provider = provider
         self._fallback = fallback
+        # Optional — when wired, every call is recorded for the Admin
+        # console's LLM usage metrics (governance) and processing-latency
+        # dashboard (latency).
+        self._governance = governance
+        self._latency = latency
+
+    def _record_usage(self, provider: BaseLLMProvider, duration_ms: float,
+                      status: str) -> None:
+        if self._latency is not None:
+            self._latency.record("llm_chat", duration_ms)
+        if self._governance is None:
+            return
+        usage = getattr(provider, "last_usage", None) or {}
+        try:
+            self._governance.record_model_usage(
+                provider=provider.name,
+                model=getattr(provider, "model", provider.config.model),
+                tokens_in=usage.get("tokens_in", 0),
+                tokens_out=usage.get("tokens_out", 0),
+                duration_ms=int(duration_ms), status=status)
+        except Exception:  # noqa: BLE001 — usage tracking must never break the copilot
+            logger.exception("Recording model usage failed")
 
     @property
     def available(self) -> bool:
@@ -75,10 +99,13 @@ class LLMRouter:
                     ChatMessage("user", prompt.user)]
         last_error = ""
         for provider in [p for p in (self._provider, self._fallback) if p]:
+            started = time.monotonic()
             try:
                 raw = provider.chat_json(messages)
+                self._record_usage(provider, (time.monotonic() - started) * 1000, "ok")
                 return self._normalize(raw, provider)
             except (LLMError, Exception) as exc:  # noqa: BLE001 — must degrade
+                self._record_usage(provider, (time.monotonic() - started) * 1000, "failed")
                 logger.exception("Copilot reasoning failed on provider %s",
                                  provider.name)
                 last_error = f"{provider.name}: {str(exc)[:300]}"

@@ -76,11 +76,11 @@ export default function WorkflowMonitor() {
             <div className="space-y-6">
               <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <StaggerItem><StatCard label="Running now" value={running.length}
-                  tone={running.length ? 'text-accent' : 'text-slate-100'} /></StaggerItem>
+                  tone={running.length ? 'text-accent' : 'fg-primary'} /></StaggerItem>
                 <StaggerItem><StatCard label="Executions (recent)" value={total} /></StaggerItem>
-                <StaggerItem><StatCard label="Completed" value={ok} tone="text-emerald-400" /></StaggerItem>
+                <StaggerItem><StatCard label="Completed" value={ok} tone="fg-success" /></StaggerItem>
                 <StaggerItem><StatCard label="Failed" value={failed}
-                  tone={failed ? 'text-rose-400' : 'text-slate-100'} /></StaggerItem>
+                  tone={failed ? 'fg-danger' : 'fg-primary'} /></StaggerItem>
               </Stagger>
 
               {running.length > 0 && (

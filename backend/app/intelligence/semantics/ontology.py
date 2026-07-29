@@ -8,18 +8,32 @@ from app.domain.enums import BusinessConcept
 
 # concept -> list of alias fragments (normalized snake_case, matched fuzzily too)
 CONCEPT_ALIASES: dict[BusinessConcept, list[str]] = {
+    # In payments schemas the paying party IS the customer — `payer`,
+    # `payeraddress` (a VPA) and `prdmobile` identify a person just as surely
+    # as `customer_id` does. Without these aliases the platform reports
+    # "no customer-level data" while holding 34k distinct payer identities.
     BusinessConcept.CUSTOMER: [
         "customer", "cust", "cust_id", "customer_id", "customer_no", "consumer",
         "cid", "client", "buyer", "shopper", "account_holder", "userid_customer",
+        "payer", "payer_address", "payeraddress", "payer_vpa", "vpa", "remitter",
+        "sender", "prdmobile", "msisdn", "mobile", "payer_mobile", "payer_bank",
     ],
     BusinessConcept.USER: ["user", "user_id", "userid", "uid", "member", "subscriber"],
     BusinessConcept.MERCHANT: [
         "merchant", "mid", "merchant_id", "seller", "vendor", "store", "shop",
         "retailer", "supplier", "partner",
+        # NB: MCC is a merchant *category*, not a merchant identity — it stays
+        # under CATEGORY so it is never counted as "active merchants".
+        "payee", "payee_name", "payeename", "payee_address", "payeeaddress",
+        "payee_merchant", "beneficiary",
     ],
     BusinessConcept.EMPLOYEE: ["employee", "emp", "emp_id", "staff", "agent", "worker"],
-    BusinessConcept.BANK: ["bank", "bank_name", "issuer", "acquirer", "ifsc", "branch"],
-    BusinessConcept.PSP: ["psp", "gateway", "payment_gateway", "aggregator", "processor"],
+    BusinessConcept.BANK: ["bank", "bank_name", "issuer", "acquirer", "ifsc", "branch",
+                           "payer_bank", "payerbank", "payee_bank", "payeebank",
+                           "remitter_org", "remitterorgid", "beneficiary_bank"],
+    BusinessConcept.PSP: ["psp", "gateway", "payment_gateway", "aggregator", "processor",
+                          "payer_psp", "payerpsp", "payee_psp", "payeepsp",
+                          "psp_org", "psporgid", "initiator_psp"],
     BusinessConcept.REGION: [
         "region", "zone", "state", "country", "city", "territory", "geo",
         "location", "area", "district", "market",

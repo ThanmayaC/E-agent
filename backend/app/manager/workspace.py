@@ -49,6 +49,7 @@ class ManagerWorkspace:
         self.runtime = None          # AutonomyRuntime, assigned by container
         self.sync = None             # SynchronizationLayer, ditto
         self.product = None          # ProductIntelligenceLayer, ditto
+        self.executive = None        # ExecutiveIntelligence (V3.1), ditto
 
     # ------------------------------------------------------------ approvals
     def pending_approvals(self) -> list[dict]:
@@ -90,7 +91,7 @@ class ManagerWorkspace:
         brief = self.brief.today()
         overview = self.portfolio.overview()
         approvals = self.pending_approvals()
-        return {
+        payload = {
             "todays_summary": {
                 "date": brief["date"],
                 "portfolio_health": brief["portfolio_health"],
@@ -115,6 +116,65 @@ class ManagerWorkspace:
             "organization": self.organization(),
             "products": self.products(),
         }
+        self._overlay_executive(payload)
+        return payload
+
+    def _overlay_executive(self, payload: dict[str, Any]) -> None:
+        """V3.1: when the platform runs the ingested synthetic enterprise (no
+        analysis projects), fill the executive panels from the Executive
+        Intelligence layer so the dashboard shows real enterprise
+        intelligence instead of empty placeholders. Only empty panels are
+        filled — real project data always wins."""
+        ei = self.executive
+        if ei is None or not getattr(ei, "available", False):
+            return
+        try:
+            brief = ei.executive_brief()
+        except Exception:  # noqa: BLE001 — the workspace never breaks on overlay
+            return
+        health = brief.get("health", {})
+        if payload["portfolio_health"].get("average_health_score") is None:
+            payload["portfolio_health"]["average_health_score"] = \
+                health.get("portfolio")
+            payload["todays_summary"]["portfolio_health"] = health.get(
+                "portfolio")
+        if not payload["critical_risks"]:
+            payload["critical_risks"] = [
+                {"insight": f"{r['risk']} — {r['detail']}",
+                 "severity": r.get("severity", "high"), "project_id": ""}
+                for r in brief.get("risk_assessment", {}).get("top_risks", [])]
+        if not payload["recent_reports"]:
+            payload["recent_reports"] = [
+                {"title": e["title"], "project_id": e.get("decision_id", ""),
+                 "health_score": None}
+                for e in brief.get("major_decisions", [])]
+        if not payload["recent_decisions"]:
+            payload["recent_decisions"] = [
+                {"decision": d["title"], "context": d["business_value"],
+                 "status": d["status"]}
+                for d in ei.decisions()[:5]]
+        if not payload["suggested_actions"]:
+            payload["suggested_actions"] = [
+                {"task_id": f"rec-{i}", "title": r["title"],
+                 "detail": r["reason"], "status": "suggested",
+                 "priority": 1 if r["priority"] == "high" else 3}
+                for i, r in enumerate(brief.get("recommended_actions", []))]
+        if not payload["growth_opportunities"]:
+            payload["growth_opportunities"] = [
+                {"insight": r["expected_benefit"], "project_id": ""}
+                for r in brief.get("recommended_actions", [])[:3]]
+        # Products at risk (the Executive Dashboard also reads /manager/products).
+        payload["products"] = payload.get("products") or {}
+        if isinstance(payload["products"], dict):
+            payload["products"].setdefault("products", [])
+            if not payload["products"]["products"]:
+                payload["products"]["products"] = [
+                    {"name": p["product"], "health_score": p["health"],
+                     "status": p["status"], "owner": p.get("owner", ""),
+                     "recommendation": p.get("note", "")}
+                    for p in health.get("products", [])]
+        # Carry the full executive brief for premium consumers.
+        payload["executive"] = brief
 
     # ---------------------------------------------------- overnight (V2)
     def overnight_summary(self, hours: int = 16) -> dict[str, Any]:

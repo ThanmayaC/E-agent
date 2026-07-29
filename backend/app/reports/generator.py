@@ -62,9 +62,15 @@ class ReportAssembler:
             },
             # ---- deterministic confidence model (documented formula) ---------
             "report_confidence": report_confidence or {},
+            # ---- what this data can actually support, decided before any
+            # narrative was generated. Anything marked unsupported was withheld
+            # from the reasoning model entirely, not merely discouraged.
+            "analysis_feasibility": business_context.get("analysis_feasibility", {}),
             # ---- narrative: 100% AI-generated -------------------------------
             "executive_summary": {
                 "overall_health_score": health_score,  # deterministic metric
+                "health_score_breakdown": (business_context.get("executive_metrics") or {})
+                    .get("health_score_breakdown", {}),
                 "summary": ai.executive_summary,
                 "portfolio_health": ai.portfolio_health,
                 "management_commentary": ai.management_commentary,
@@ -121,9 +127,27 @@ class ReportAssembler:
                     "sparkline_labels": k.sparkline_labels,
                     "forecast": self._forecast_row(k, forecasts),
                     "confidence": k.confidence,
+                    # provenance: what the number describes and how it was derived
+                    "basis": k.basis,
+                    "current_period": k.current_period_label,
+                    "previous_period": k.previous_period_label,
+                    "excluded_periods": k.excluded_periods,
+                    "comparison_unavailable_reason": k.comparison_unavailable_reason,
+                    "calculation": k.calculation,
                 }
                 for k in kpis
             ],
+            # Every printed number, traced to its formula and inputs.
+            "calculation_provenance": {
+                "kpis": [
+                    {"name": k.name, **(k.calculation or {})} for k in kpis
+                ],
+                "health_score": (business_context.get("executive_metrics") or {})
+                    .get("health_score_breakdown", {}),
+                "confidence": report_confidence or {},
+                "excluded_columns": (business_context.get("data_limitations") or {})
+                    .get("excluded_columns", []),
+            },
             "signals": [s.model_dump() for s in signals],
             "predictive_analytics": {
                 "forecasts": [f.model_dump() for f in forecasts[:10]],

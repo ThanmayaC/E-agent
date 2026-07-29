@@ -14,6 +14,7 @@ class VectorStore(Protocol):
     def upsert(self, ids: list[str], vectors: list[list[float]], payloads: list[dict]) -> None: ...
     def search(self, vector: list[float], top_k: int = 8, kind: str | None = None) -> list[dict]: ...
     def persist(self) -> None: ...
+    def stats(self) -> dict[str, Any]: ...
 
 
 class MemoryVectorStore:
@@ -55,6 +56,11 @@ class MemoryVectorStore:
             {"ids": self._ids, "vectors": self._vectors, "payloads": self._payloads}
         ), encoding="utf-8")
 
+    def stats(self) -> dict[str, Any]:
+        return {"backend": "memory", "vectors": len(self._ids),
+                "dimensions": len(self._vectors[0]) if self._vectors else 0,
+                "path": str(self.path), "persisted": self.path.exists()}
+
 
 class PgVectorStore:
     """pgvector-backed store. Requires EDIP_PGVECTOR_URL and the pgvector extension."""
@@ -94,6 +100,18 @@ class PgVectorStore:
 
     def persist(self) -> None:  # pgvector persists transactionally
         pass
+
+    def stats(self) -> dict[str, Any]:
+        sa = self._sa
+        try:
+            with self._engine.begin() as conn:
+                count = conn.execute(
+                    sa.text(f"SELECT COUNT(*) FROM {self._table}")).scalar()
+        except Exception as exc:  # noqa: BLE001 — diagnostics never raise
+            return {"backend": "pgvector", "vectors": 0,
+                    "error": f"{type(exc).__name__}: {exc}"[:200]}
+        return {"backend": "pgvector", "vectors": int(count or 0),
+                "table": self._table}
 
 
 def create_vector_store(backend: str, *, path: Path, pg_url: str = "", dim: int = 256,

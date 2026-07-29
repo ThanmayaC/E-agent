@@ -1,0 +1,23 @@
+team,lead_emp_id,lead_name,headcount
+UPI Core,EMP-1006,Deepak Ghosh,3
+UPI Autopay,EMP-1009,Rekha Joshi,4
+UPI Lite,EMP-1013,Yash Gupta,3
+UPI Lite X,EMP-1016,Deepak Patel,4
+UPI Credit,EMP-1020,Kavya Nanda,3
+UPI International,EMP-1023,Ishaan Verma,4
+Merchant Products,EMP-1027,Sunil Pillai,4
+QR Payments,EMP-1031,Deepak Rao,2
+Product Management,EMP-1033,Rekha Rao,4
+Product Strategy,EMP-1003,Nikhil Subramanian,4
+Product Analytics,EMP-1040,Farhan Subramanian,2
+Product Operations,EMP-1005,Harsh Nanda,2
+Operations,EMP-1043,Kavya Shetty,5
+Technology,EMP-1048,Karthik Mahajan,3
+Engineering,EMP-1051,Aditi Sharma,3
+Business,EMP-1054,Lakshmi Singh,3
+Merchant Success,EMP-1057,Meera Bhat,4
+Customer Experience,EMP-1061,Meera Nair,5
+Risk & Compliance,EMP-1004,Harsh Pillai,3
+Compliance,EMP-1068,Rohan Pillai,1
+PSP Integration,EMP-1069,Sanjay Patel,3
+AI & Innovation,EMP-1072,Neha Singh,3

@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import hashlib
 import tempfile
+import time
 from pathlib import Path
 from typing import Any
 
@@ -46,7 +47,8 @@ class DocumentIntelligence:
     def __init__(self, store: DocumentStore, parser: DocumentParser,
                  chunk_chars: int = 1600, chunk_overlap: int = 200,
                  embedder=None, vector_store_for=None, knowledge=None,
-                 organization=None, bus=None, graph_client_for=None):
+                 organization=None, bus=None, graph_client_for=None,
+                 latency=None, embedding_model: str = ""):
         self._store = store
         self._parser = parser
         self._chunk_chars = chunk_chars
@@ -58,6 +60,11 @@ class DocumentIntelligence:
         self._bus = bus
         # source dict -> GraphClient, for remote documents (SharePoint)
         self._graph_client_for = graph_client_for
+        # Optional — retrieval timing for the RAG diagnostics panel, and the
+        # configured embedding model name so the UI can state honestly
+        # whether embeddings are semantic or the built-in hash fallback.
+        self._latency = latency
+        self._embedding_model = embedding_model
 
     def attach_bus(self, bus) -> None:
         self._bus = bus
@@ -247,16 +254,48 @@ class DocumentIntelligence:
         """Semantic search over document chunks."""
         if self._embedder is None or self._vector_store_for is None:
             return []
+        started = time.monotonic()
         try:
             vector = self._embedder.embed([query])[0]
             store = self._vector_store_for(VECTOR_COLLECTION)
-            return store.search(vector, limit)
+            hits = store.search(vector, limit)
         except Exception:  # noqa: BLE001
             logger.exception("Document search failed")
             return []
+        if self._latency is not None:
+            self._latency.record("rag_retrieval",
+                                 (time.monotonic() - started) * 1000)
+        return hits
+
+    def retrieval_stats(self) -> dict:
+        """What the retrieval layer actually holds — the numbers the RAG
+        diagnostics page reports, read from the live vector store rather
+        than counted at ingestion time."""
+        model = self._embedding_model or "unknown"
+        stats: dict[str, Any] = {
+            "embedding_model": model,
+            # The built-in "hash" embedder is a deterministic feature-hash
+            # vector, not a trained semantic model. Saying so is the
+            # difference between an honest diagnostic and a badge.
+            "semantic": model not in ("", "hash", "unknown"),
+            "embedder_available": self._embedder is not None,
+            "vector_store_available": self._vector_store_for is not None,
+        }
+        if self._vector_store_for is None:
+            stats["vectors"] = 0
+            stats["reason"] = "No vector store is configured in this deployment"
+            return stats
+        try:
+            store = self._vector_store_for(VECTOR_COLLECTION)
+            stats.update(store.stats())
+        except Exception as exc:  # noqa: BLE001 — diagnostics never raise
+            stats["vectors"] = 0
+            stats["reason"] = f"{type(exc).__name__}: {exc}"[:200]
+        return stats
 
     def status(self) -> dict:
         return {"enabled": True, "formats": DocumentParser.formats(),
+                "retrieval": self.retrieval_stats(),
                 **self._store.stats()}
 
 

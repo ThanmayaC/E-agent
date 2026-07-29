@@ -28,4 +28,8 @@ class AnthropicProvider(BaseLLMProvider):
             timeout=self.config.timeout_s,
         )
         resp.raise_for_status()
-        return "".join(b.get("text", "") for b in resp.json().get("content", []))
+        data = resp.json()
+        usage = data.get("usage") or {}
+        self.last_usage = {"tokens_in": int(usage.get("input_tokens", 0)),
+                           "tokens_out": int(usage.get("output_tokens", 0))}
+        return "".join(b.get("text", "") for b in data.get("content", []))

@@ -38,7 +38,11 @@ class OpenAIProvider(BaseLLMProvider):
                           json=self._payload(messages, json_mode),
                           timeout=self.config.timeout_s)
         resp.raise_for_status()
-        return resp.json()["choices"][0]["message"]["content"]
+        data = resp.json()
+        usage = data.get("usage") or {}
+        self.last_usage = {"tokens_in": int(usage.get("prompt_tokens", 0)),
+                           "tokens_out": int(usage.get("completion_tokens", 0))}
+        return data["choices"][0]["message"]["content"]
 
     def stream(self, messages: list[ChatMessage]) -> Iterator[str]:
         import json as _json

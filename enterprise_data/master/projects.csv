@@ -1,0 +1,6 @@
+project_id,name,product,status
+PROG-UPI-101,Autopay & Core Resilience,UPI Autopay,active
+PROG-UPI-102,Settlement Reliability,Merchant Products,active
+PROG-UPI-103,Decline Reduction,UPI Core,active
+PROG-UPI-104,Capacity & Peak Readiness,UPI Core,active
+PROG-UPI-105,Fraud & Risk Hardening,UPI Credit,active

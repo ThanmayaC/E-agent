@@ -5,13 +5,24 @@ import 'reactflow/dist/style.css'
 import { api } from '../api/client'
 import { AsyncSection, Badge, PageHeader, useAsync } from '../components/ui'
 
-const KIND_STYLE = {
-  dataset: { background: '#1e3a8a', border: '1px solid #4f8ef7', color: '#e2e8f0' },
-  concept: { background: '#064e3b', border: '1px solid #34d399', color: '#d1fae5' },
-  kpi: { background: '#78350f', border: '1px solid #fbbf24', color: '#fef3c7' },
-  signal: { background: '#701a30', border: '1px solid #f87171', color: '#fee2e2' },
-  column: { background: '#111827', border: '1px solid #232f45', color: '#94a3b8' },
+// The hue carries the node's kind; the fill is that hue at low alpha and the
+// label uses the theme's ink, so nodes read correctly on a light canvas too.
+const KIND_HUE = {
+  dataset: '#4f8ef7', concept: '#34d399', kpi: '#fbbf24',
+  signal: '#f87171', column: '#64748b',
 }
+
+const tint = (hex, alpha) => {
+  const n = parseInt(hex.slice(1), 16)
+  return `rgba(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}, ${alpha})`
+}
+
+const KIND_STYLE = Object.fromEntries(
+  Object.entries(KIND_HUE).map(([kind, hue]) => [kind, {
+    background: tint(hue, 0.16),
+    border: `1px solid ${hue}`,
+    color: 'var(--text-primary)',
+  }]))
 
 function layout(nodes) {
   // simple concentric layout by kind ring

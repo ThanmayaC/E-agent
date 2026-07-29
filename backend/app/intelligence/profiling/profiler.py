@@ -12,7 +12,22 @@ from app.intelligence.connectors.excel import ExtractedTable
 
 CURRENCY_HINTS = re.compile(r"(amount|amt|value|revenue|price|cost|fee|gmv|spend|salary|charge|settle)", re.I)
 PERCENT_HINTS = re.compile(r"(pct|percent|rate|ratio|share|%)", re.I)
-ID_HINTS = re.compile(r"(^id$|_id$|^id_|_id_|_no$|_num$|number$|_code$|^code|uuid|guid)", re.I)
+# Identifier hints must not depend on snake_case: real schemas write
+# `purposecode`, `payerseqnum`, `prdmobile` with no separators, and an
+# underscore-anchored pattern silently lets those through as "measures".
+ID_HINTS = re.compile(
+    r"(^id$|_id$|^id_|_id_|_no$|_num$|num$|number$|_code$|code$|^code|uuid|guid"
+    r"|seq|mcc|mobile|msisdn|phone|msid|imei|vpa|refno|reference$|addr|mode$)", re.I)
+# Names that genuinely denote something additive. Used to protect real
+# measures from the low-cardinality heuristic below (an order `qty` of 1-20 is
+# a measure; a `purposecode` of 13 values is not).
+MEASURE_HINTS = re.compile(
+    r"(amount|amt|qty|quantity|units?|count|total|sum|value|price|cost|fee|revenue"
+    r"|spend|score|duration|seconds|minutes|hours|days|weight|size|balance|volume"
+    r"|gmv|salary|charge|settle|income|profit|margin|discount|tax)", re.I)
+# A numeric column with at most this many distinct values, and no measure-like
+# name, is a coded dimension rather than something worth summing.
+MAX_CODE_CARDINALITY = 50
 DATE_HINTS = re.compile(r"(date|_dt$|^dt_|time|month|year|week|day|period|timestamp)", re.I)
 STATUS_HINTS = re.compile(r"(status|state|flag|result|outcome)", re.I)
 GEO_HINTS = re.compile(r"(country|region|state|city|zone|territory|geo|location|pincode|zip)", re.I)
@@ -30,6 +45,7 @@ class ColumnProfiler:
     def __init__(self, sample_rows: int = 50000, pk_threshold: float = 0.99):
         self.sample_rows = sample_rows
         self.pk_threshold = pk_threshold
+        self._last_exclusion = ""
 
     def profile_table(self, table: ExtractedTable, dataset_id: str) -> TableProfile:
         df = table.df.head(self.sample_rows)
@@ -48,6 +64,7 @@ class ColumnProfiler:
     # ---------------------------------------------------------------- column
     def _profile_column(self, df: pd.DataFrame, col: str) -> ColumnProfile:
         series = df[col]
+        self._last_exclusion = ""
         coerced, sem_type = self._coerce(series, col)
         non_null = coerced.dropna()
         n = max(len(series), 1)
@@ -71,6 +88,7 @@ class ColumnProfiler:
         elif sem_type in (SemanticType.DATE, SemanticType.DATETIME) and len(non_null):
             profile.min_value = str(non_null.min())
             profile.max_value = str(non_null.max())
+        profile.exclusion_reason = self._last_exclusion
         profile.role = self._infer_role(profile)
         return profile
 
@@ -101,11 +119,23 @@ class ColumnProfiler:
             has_pct = PERCENT_HINTS.search(name) or non_null.astype(str).str.endswith("%").mean() > 0.5
             has_currency = CURRENCY_HINTS.search(name) or non_null.astype(str).str.match(CURRENCY_SYMBOL.pattern).mean() > 0.5
             if ID_HINTS.search(name) and (full.dropna() % 1 == 0).all():
+                hint = ID_HINTS.search(name).group(0)
+                self._last_exclusion = (
+                    f"name matches the identifier/code pattern '{hint}' and every "
+                    f"value is a whole number — treated as an identifier, not summed")
                 return full, SemanticType.IDENTIFIER
             if has_pct:
                 return full, SemanticType.PERCENTAGE
             if has_currency:
                 return full, SemanticType.CURRENCY
+            # Not every number is a quantity. Summing phone numbers, category
+            # codes or sequence numbers produces confident nonsense, so a
+            # column must look additive before it is treated as a measure.
+            demoted = self._non_additive(full.dropna(), name)
+            if demoted is not None:
+                sem_type, reason = demoted
+                self._last_exclusion = reason
+                return full, sem_type
             return full, SemanticType.MEASURE
 
         # booleans
@@ -115,6 +145,9 @@ class ColumnProfiler:
 
         # strings
         if ID_HINTS.search(name):
+            self._last_exclusion = (
+                f"name matches the identifier/code pattern "
+                f"'{ID_HINTS.search(name).group(0)}' — treated as an identifier")
             return series, SemanticType.IDENTIFIER
         if STATUS_HINTS.search(name) and lowered.nunique() <= 20:
             return series, SemanticType.STATUS
@@ -126,6 +159,51 @@ class ColumnProfiler:
         if uniq > 0.9 and lowered.str.match(r"^[A-Z0-9\-_/]+$", case=False).mean() > 0.8:
             return series, SemanticType.CODE
         return series, SemanticType.TEXT
+
+    @staticmethod
+    def _non_additive(values: pd.Series, name: str) -> tuple[SemanticType, str] | None:
+        """Decide whether a numeric column is really a measure.
+
+        Returns the type to demote to plus the reason, or None to keep it as a
+        measure. Deliberately conservative: anything whose *name* says it is a
+        quantity stays a measure, so the heuristics below can only catch
+        columns that look like identifiers or codes on both name and values.
+        """
+        if values.empty:
+            return None
+        distinct = int(values.nunique())
+        if distinct <= 1:
+            return (SemanticType.CATEGORY,
+                    f"constant value ({values.iloc[0]!s}) — nothing to aggregate")
+
+        integral = bool((values % 1 == 0).all())
+        measure_named = bool(MEASURE_HINTS.search(name))
+
+        if integral and not measure_named:
+            lo, hi = float(values.min()), float(values.max())
+            digits = len(str(int(abs(hi))))
+            unique_ratio = distinct / max(len(values), 1)
+
+            # Phone / MSISDN / account-style numbers: fixed long width, many
+            # distinct values, and no arithmetic meaning.
+            if 9 <= digits <= 15 and lo >= 1e8 and distinct > 50:
+                return (SemanticType.IDENTIFIER,
+                        f"{digits}-digit integers with {distinct:,} distinct values — "
+                        f"an identifier (phone/account/reference), not a quantity")
+
+            # Near-unique integers behave like keys, not amounts.
+            if unique_ratio > 0.95 and distinct > 100:
+                return (SemanticType.IDENTIFIER,
+                        f"{unique_ratio:.0%} of values are unique — behaves like an "
+                        f"identifier, not a quantity")
+
+            # A small closed set of integers is a coded dimension.
+            if distinct <= MAX_CODE_CARDINALITY:
+                return (SemanticType.CATEGORY,
+                        f"only {distinct} distinct integer value(s) and no "
+                        f"quantity-like name — a coded dimension, not an additive measure")
+
+        return None
 
     @staticmethod
     def _looks_datelike(non_null: pd.Series) -> bool:

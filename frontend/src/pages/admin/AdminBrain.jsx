@@ -17,7 +17,7 @@ export default function AdminBrain() {
           <div className="space-y-5">
             <div className="grid gap-4 md:grid-cols-4">
               <Stat label="State" value={status.state}
-                    tone={status.state === 'ready' ? 'text-emerald-400' : 'text-amber-400'} />
+                    tone={status.state === 'ready' ? 'fg-success' : 'fg-warn'} />
               <Stat label="Knowledge entries"
                     value={Object.values(stats.knowledge || {}).reduce((a, b) => a + b, 0)} />
               <Stat label="Graph"

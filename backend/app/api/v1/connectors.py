@@ -44,12 +44,87 @@ def _require(service, connector_id: str) -> dict:
     return record
 
 
+# --------------------------------------------------- the other source registry
+# The platform has two registries that both hold enterprise data sources: this
+# framework's own store, and the older Synchronization Layer's
+# ``DataSourceRegistry`` (which is what the enterprise-demo bootstrap and every
+# document folder register into). They are deliberately not merged in storage —
+# the sync layer owns its ingestion path and re-registering its folders here
+# would ingest every document twice. But an administrator asking "what data
+# sources does this platform have?" must be told about all of them, so the
+# *read* side reports both, each tagged with where it came from.
+
+def _sync_registry(c: Container):
+    sync = getattr(c, "sync", None)
+    return getattr(sync, "registry", None) if sync is not None else None
+
+
+def _as_source_record(source: dict) -> dict:
+    """Present a Synchronization Layer source in the shape this API's clients
+    already consume, without pretending it is a connector — ``read_only``
+    says the connector actions (test/discover/sync/delete) do not apply."""
+    return {
+        "connector_id": source.get("source_id", ""),
+        "name": source.get("name", ""),
+        "kind": source.get("kind", ""),
+        "location": source.get("location", ""),
+        "description": source.get("description", ""),
+        "cadence": source.get("cadence", ""),
+        "enabled": source.get("enabled", True),
+        "health": source.get("health", "unknown"),
+        "health_detail": source.get("health_detail", ""),
+        "last_synced_at": source.get("last_synced_at", ""),
+        "last_sync_status": source.get("last_sync_status", ""),
+        "items_total": source.get("records_total", 0),
+        "origin": "sync_layer",
+        "read_only": True,
+    }
+
+
+def _merged_status(c: Container) -> dict:
+    """Data-source totals across both registries.
+
+    A count that ignores half the platform's sources is worse than no count:
+    it reads as "nothing is connected" while the Brain is answering questions
+    from 70 ingested folders.
+    """
+    service = _service(c)
+    status = dict(service.status())
+    status["by_origin"] = {"connector_framework": status["total"]}
+
+    registry = _sync_registry(c)
+    if registry is None:
+        return status
+
+    sync_sources = registry.sources()
+    sync_status = registry.status()
+    status["by_origin"]["sync_layer"] = len(sync_sources)
+    status["total"] += len(sync_sources)
+    status["enabled"] += sum(1 for s in sync_sources if s.get("enabled"))
+    status["healthy"] += sync_status.get("connected", 0)
+    status["needs_attention"] += sync_status.get("needs_attention", 0)
+    status["items_total"] += sync_status.get("records_total", 0)
+    for bucket, counts in (("by_health", sync_status.get("by_health", {})),
+                           ("by_kind", sync_status.get("by_kind", {}))):
+        merged = dict(status.get(bucket, {}))
+        for key, value in counts.items():
+            merged[key] = merged.get(key, 0) + value
+        status[bucket] = merged
+    last = [t for t in (status.get("last_sync_at"),
+                        sync_status.get("last_sync_at")) if t]
+    status["last_sync_at"] = max(last) if last else ""
+    return status
+
+
 # ------------------------------------------------------------- catalogue
 @router.get("")
 def overview(c: Container = Depends(container)):
     """Everything the Admin console needs on one call: what is connected,
-    how healthy it is, and what else could be connected."""
-    return _framework(c).status()
+    how healthy it is, and what else could be connected.
+
+    Counts span both source registries — see ``_merged_status``."""
+    status = _framework(c).status()
+    return {**status, "sources": _merged_status(c)}
 
 
 @router.get("/catalogue")
@@ -91,10 +166,22 @@ class SourceUpdate(BaseModel):
 @router.get("/sources")
 def sources(kind: str = "", health: str = "",
             c: Container = Depends(container)):
-    """Every configured enterprise data source (credentials never included)."""
+    """Every configured enterprise data source (credentials never included).
+
+    Includes the Synchronization Layer's sources, tagged ``origin`` and
+    ``read_only`` — they are real, ingesting sources, they simply are not
+    administered through this framework's actions."""
     service = _service(c)
-    return {"sources": service.sources(kind=kind, health=health),
-            "status": service.status()}
+    own = [{**s, "origin": "connector_framework", "read_only": False}
+           for s in service.sources(kind=kind, health=health)]
+
+    registry = _sync_registry(c)
+    if registry is None:
+        return {"sources": own, "status": _merged_status(c)}
+
+    merged = own + [_as_source_record(s)
+                    for s in registry.sources(kind=kind, health=health)]
+    return {"sources": merged, "status": _merged_status(c)}
 
 
 @router.post("/sources", status_code=201)

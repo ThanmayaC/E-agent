@@ -147,13 +147,33 @@ cd frontend && npm install && npm run dev          # :5173
 Generate demo workbooks: `cd backend && python scripts/generate_sample_data.py`
 then upload `sample_data/*.xlsx` in the UI.
 
-**Enterprise Brain demo (V2.3):** `cd backend && python
-scripts/bootstrap_enterprise_demo.py` generates a synthetic enterprise (SOPs,
-RCAs, policies, meetings, product docs, reports, emails, Teams, Excel KPIs),
-registers the folders as sources, and ingests everything into the Brain. Then
-ask it a cross-source question — *"Why did settlement success dip in March and
-what did we do about it?"* — and the answer combines the RCA, the incident
-meeting, the KPI numbers, the decision log, and the SOP. See
+**Synthetic enterprise (V3.0):** one deterministic command generates an entire
+fictional organization — *NPCI (Synthetic Demonstration) / UPI Products* — and
+one connected business week of its activity:
+
+```bash
+python generate_enterprise.py --days 7 --seed 2026
+```
+
+This writes `enterprise_data/` (master data + `day_01`…`day_07` + `scenarios`):
+employees, products, merchants, banks, PSPs, Outlook threads, Teams
+conversations, meetings, RCAs, SOPs, BRDs/PRDs, Excel KPI workbooks, daily and
+executive reports, decisions and tasks — all one company, all cross-referenced,
+with a single KPI source of truth (a UPI Autopay mandate-failure incident that
+is detected Monday and resolved by Friday). The same seed always produces the
+same organization; a different seed a different but internally consistent one.
+
+Ingest it into the Brain (reuses the existing sync → document-intelligence →
+Brain pipeline, no backend change):
+
+```bash
+cd backend && python scripts/bootstrap_enterprise_demo.py
+```
+
+Then ask a cross-source question — *"Why did UPI Autopay success dip this week
+and what did we do about it?"* — and the answer combines the incident record,
+the RCA, the KPI numbers, the decision, and the SOP. See
+[docs/SYNTHETIC_ENTERPRISE.md](docs/SYNTHETIC_ENTERPRISE.md) and
 [docs/ENTERPRISE_BRAIN.md](docs/ENTERPRISE_BRAIN.md).
 
 ## Stack
@@ -225,8 +245,12 @@ backend/
                     brain, manager, runtime, sync, product, copilot,
                     documents, connectors)
   app/workers       optional Celery tasks
-  scripts/          sample data generator; V2.3 enterprise corpus generator
-                    + Enterprise Brain demo bootstrap
+  scripts/          sample data generator; Enterprise Brain bootstrap
+                    (registers enterprise_data/ folders + ingests them)
+generate_enterprise.py   V3.0 synthetic enterprise generator (root): builds
+                    enterprise_data/ — one NPCI UPI Products company, one week
+enterprise_data/    generated synthetic organization (master + day_01..07 +
+                    scenarios); the corpus the Enterprise Brain ingests
   tests/            unit + full end-to-end integration suite
 frontend/src        Executive Experience: business-only workspace (Home,
                     Executive Dashboard, Portfolio, Reports, AI Copilot,
@@ -246,6 +270,8 @@ docs/               ARCHITECTURE.md (diagrams) · API.md · INSTALLATION.md ·
 - [Executive Experience](docs/EXECUTIVE_EXPERIENCE.md) — the production UI: executive workspace, Admin Console, routes
 - [Enterprise Brain](docs/ENTERPRISE_BRAIN.md) — V2.3: the synthetic enterprise corpus, ingestion, cross-source Q&A, and the autonomous daily cycle
 - [Decision Intelligence](docs/DECISION_INTELLIGENCE.md) — V2.4: the Brain reasoning about the organization and proposing decisions proactively — lifecycle, decision graph, ranking, learning, reports, and the executive workspace
+- [Synthetic Enterprise](docs/SYNTHETIC_ENTERPRISE.md) — V3.0: the deterministic NPCI UPI Products generator, its one-week storyline, and ingestion
+- [Executive Intelligence](docs/EXECUTIVE_INTELLIGENCE.md) — V3.1: connecting the Brain into an AI-Product-Head layer — executive brief, priorities, KPI intelligence, ranked decisions, the business-entity graph, and the reasoning Copilot
 
 ## Testing
 
