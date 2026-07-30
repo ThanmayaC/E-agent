@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { api } from '../../api/client'
 import {
-  AsyncSection, Badge, PageHeader, Panel, PanelEmpty, useAsync, when,
+  AsyncSection, Badge, Notice, PageHeader, Panel, PanelEmpty, useAsync, when,
 } from '../../components/ui'
 
 const statusTone = { completed: 'success', running: 'info', failed: 'danger' }
@@ -29,7 +29,7 @@ export default function AdminJobs() {
   return (
     <>
       <PageHeader title="Jobs" subtitle="Scheduled job registry and execution history" />
-      {error && <div className="card-pad border-rose-500/40 text-rose-300 text-sm mb-4">{error}</div>}
+      {error && <div className="mb-4"><Notice tone="danger" onDismiss={() => setError('')}>{error}</Notice></div>}
       <AsyncSection state={state} empty="No jobs registered.">
         {({ jobs, executions }) => {
           const jobList = jobs?.jobs || (Array.isArray(jobs) ? jobs : [])
@@ -71,7 +71,7 @@ export default function AdminJobs() {
                         <span className="text-slate-300 min-w-0 truncate">
                           <Badge tone={statusTone[e.status] || 'default'}>{e.status}</Badge>{' '}
                           <span className="font-mono text-xs">{e.job}</span>
-                          {e.error && <span className="text-rose-400 text-xs ml-2">{String(e.error).slice(0, 80)}</span>}
+                          {e.error && <span className="fg-danger text-xs ml-2">{String(e.error).slice(0, 80)}</span>}
                         </span>
                         <span className="text-slate-500 text-xs shrink-0">{when(e.started_at)}</span>
                       </li>

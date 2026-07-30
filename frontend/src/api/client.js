@@ -353,6 +353,59 @@ export const api = {
   opsMemoryLifecycle: () => request('/ops/memory/lifecycle'),
   opsWorkflows: () => request('/ops/workflows'),
   opsRunWorkflow: (id) => request(`/ops/workflows/${id}/run`, { method: 'POST' }),
+
+  // ── Enterprise Intelligence (V11) — the raw-transaction warehouse surface.
+  // Every method below answers from individual payments: analytics is SQL over
+  // transactions, ML is the backtested pipeline, and the product / ecosystem /
+  // MCC / admin views are compositions of those. `q` is a slice object
+  // ({ product, bank, psp, mcc, last_days, start, end, ... }); see Filters.
+  intelStatus: () => request('/intel/status'),
+  intelKpis: (q) => request(`/intel/analytics/kpis${qs(q)}`),
+  intelSeries: (q) => request(`/intel/analytics/series${qs(q)}`),
+  intelMonthly: (q) => request(`/intel/analytics/monthly${qs(q)}`),
+  intelProfile: (q) => request(`/intel/analytics/profile${qs(q)}`),
+  intelDimension: (dim, q) => request(`/intel/analytics/dimension/${dim}${qs(q)}`),
+  intelDimensionSeries: (dim, q) =>
+    request(`/intel/analytics/dimension/${dim}/series${qs(q)}`),
+  intelFailures: (q) => request(`/intel/analytics/failures${qs(q)}`),
+  intelRetry: (q) => request(`/intel/analytics/retry${qs(q)}`),
+  intelAdjustments: (q) => request(`/intel/analytics/adjustments${qs(q)}`),
+  intelCustomers: (q) => request(`/intel/analytics/customers${qs(q)}`),
+  intelCohorts: (q) => request(`/intel/analytics/cohorts${qs(q)}`),
+  intelConcentration: (q) => request(`/intel/analytics/concentration${qs(q)}`),
+  intelGeography: (q) => request(`/intel/analytics/geography${qs(q)}`),
+  intelMandates: (q) => request(`/intel/analytics/mandates${qs(q)}`),
+  intelIncidents: (q) => request(`/intel/analytics/incidents${qs(q)}`),
+  // ML
+  intelForecast: (q) => request(`/intel/ml/forecast${qs(q)}`),
+  intelEda: (q) => request(`/intel/ml/eda${qs(q)}`),
+  intelAnomalies: (q) => request(`/intel/ml/anomalies${qs(q)}`),
+  intelSegments: (q) => request(`/intel/ml/segments${qs(q)}`),
+  intelMerchantHealth: (q) => request(`/intel/ml/merchant-health${qs(q)}`),
+  intelForecastable: () => request('/intel/ml/forecastable'),
+  // Products
+  intelProducts: (q) => request(`/intel/products${qs(q)}`),
+  intelProduct: (code, q) =>
+    request(`/intel/products/${encodeURIComponent(code)}${qs(q)}`),
+  // Ecosystem + MCC
+  intelGraph: (q) => request(`/intel/ecosystem/graph${qs(q)}`),
+  intelNode: (type, id, q) =>
+    request(`/intel/ecosystem/node/${type}/${encodeURIComponent(id)}${qs(q)}`),
+  intelMcc: (q) => request(`/intel/mcc${qs(q)}`),
+  intelMccDetail: (code, q) =>
+    request(`/intel/mcc/${encodeURIComponent(code)}${qs(q)}`),
+  // Admin
+  intelSubsystems: () => request('/intel/admin/subsystems'),
+  intelAdminWarehouse: () => request('/intel/admin/warehouse'),
+}
+
+// Build a query string from a slice object, dropping empty values.
+function qs(q) {
+  if (!q) return ''
+  const parts = Object.entries(q)
+    .filter(([, v]) => v !== null && v !== undefined && v !== '')
+    .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
+  return parts.length ? `?${parts.join('&')}` : ''
 }
 
 export const fmt = {

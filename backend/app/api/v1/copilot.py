@@ -89,6 +89,20 @@ def suggestions(limit: int = Query(6, ge=1, le=20),
     return {"suggestions": _layer(c).copilot.suggested_questions(limit)}
 
 
+# ----------------------------------------------------- orchestration (V11)
+@router.get("/copilot/orchestration")
+def orchestration(q: str = "", c: Container = Depends(container)):
+    """The Enterprise AI Orchestrator's plan for a question: the query
+    classification, the engines it would run, and — per engine — the SQL it
+    would execute, the ML/forecast model it would call, the documents it would
+    retrieve, and the timing. Phase 14 observability, without narrating an
+    answer. With no q, returns the registered engines and query categories."""
+    layer = _layer(c)
+    if not q:
+        return layer.copilot.orchestrator_overview()
+    return layer.copilot.orchestration_for(q)
+
+
 # --------------------------------------------------------- conversations
 @router.get("/copilot/conversations")
 def conversations(pinned: bool = False, owner: str = "",

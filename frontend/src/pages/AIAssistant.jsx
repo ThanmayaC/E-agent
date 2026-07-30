@@ -50,6 +50,96 @@ const SUGGESTED_QUESTIONS = [
   "Predict next week's focus areas.",
 ]
 
+// Phase 14 — the execution graph, shown on demand. Turns the black-box answer
+// into an auditable one: which engines ran, the SQL an analytics query issued,
+// the ML/forecast model called, the documents retrieved, and the timings.
+const ENGINE_ICON = {
+  analytics: '📊', knowledge: '📚', ml: '🧠', forecast: '📈',
+  recommendation: '🎯', report: '📄',
+}
+const STATUS_TONE = { ok: 'success', empty: 'warn', unavailable: 'default', error: 'danger' }
+
+function EngineDetail({ engine }) {
+  const d = engine.detail || {}
+  if (engine.engine === 'analytics' && d.sql) {
+    return (
+      <div className="mt-1">
+        {d.window?.label && <div className="text-[10px] text-slate-500">window: {d.window.label} · {d.rows_scanned} rows</div>}
+        <code className="block text-[10px] text-emerald-300/80 bg-black/30 rounded px-2 py-1 mt-1 overflow-x-auto whitespace-pre">{d.sql}</code>
+      </div>
+    )
+  }
+  if (engine.engine === 'ml' && d.models_run) {
+    return <div className="text-[10px] text-slate-500 mt-1">models: {(d.models_run || []).join(', ') || '—'}</div>
+  }
+  if (engine.engine === 'forecast') {
+    return <div className="text-[10px] text-slate-500 mt-1">model: {d.model} · horizon {d.horizon_days}d · {(d.kpis || []).join(', ')}</div>
+  }
+  if (engine.engine === 'knowledge') {
+    return <div className="text-[10px] text-slate-500 mt-1">retrieved {d.documents_retrieved || 0} passage(s){d.titles?.length ? ` · ${d.titles.slice(0, 2).join('; ')}` : ''}</div>
+  }
+  if (d.titles?.length) return <div className="text-[10px] text-slate-500 mt-1">{d.titles.slice(0, 3).join(' · ')}</div>
+  return null
+}
+
+function OrchestrationPanel({ orch }) {
+  const [open, setOpen] = useState(false)
+  if (!orch || orch.enabled === false) return null
+  const cls = orch.classification || {}
+  const engines = orch.engines || []
+  const graph = orch.graph || []
+  return (
+    <div className="mt-3 pt-3 border-t border-surface-border">
+      <button onClick={() => setOpen((o) => !o)}
+              className="text-[11px] text-slate-500 hover:text-accent flex items-center gap-1.5">
+        <span>{open ? '▾' : '▸'}</span> How this was answered
+        <span className="text-slate-600">· {(orch.engines_run || []).length || engines.filter((e) => e.status === 'ok').length} engine(s) · {Math.round(orch.latency_ms || 0)}ms</span>
+      </button>
+      {open && (
+        <div className="mt-2 space-y-3">
+          {/* classification */}
+          <div className="flex flex-wrap items-center gap-1.5">
+            <span className="text-[10px] text-slate-600">intent</span>
+            <Badge tone="default">{cls.intent}</Badge>
+            <span className="text-[10px] text-slate-600 ml-1">route</span>
+            {(cls.categories || []).map((c) => <Badge key={c} tone="accent">{ENGINE_ICON[c] || ''} {c}</Badge>)}
+            {cls.hybrid && <Badge tone="info">hybrid</Badge>}
+            {cls.time_range?.label && <span className="text-[10px] text-slate-500">🗓 {cls.time_range.label}</span>}
+            {(cls.kpi_hints || []).map((k) => <span key={k} className="text-[10px] text-slate-500">· {k}</span>)}
+          </div>
+          {/* execution graph */}
+          {graph.length > 0 && (
+            <div className="flex flex-wrap items-center gap-1 text-[10px] text-slate-500">
+              {graph.map((n, i) => (
+                <span key={n.node} className="flex items-center gap-1">
+                  <span className="bg-surface border border-surface-border rounded px-1.5 py-0.5">{n.label}</span>
+                  {i < graph.length - 1 && <span className="text-slate-700">→</span>}
+                </span>
+              ))}
+              <span className="text-slate-700">→</span>
+              <span className="bg-surface border border-surface-border rounded px-1.5 py-0.5">LLM</span>
+            </div>
+          )}
+          {/* engines */}
+          <div className="space-y-2">
+            {engines.map((e) => (
+              <div key={e.engine} className="bg-surface/60 rounded border border-surface-border px-2.5 py-1.5">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-xs text-slate-300">{ENGINE_ICON[e.engine] || '•'} {e.label}</span>
+                  <Badge tone={STATUS_TONE[e.status] || 'default'}>{e.status}</Badge>
+                  <span className="text-[10px] text-slate-600 tabular-nums">{Math.round(e.latency_ms || 0)}ms · {e.evidence_count} evidence</span>
+                </div>
+                <EngineDetail engine={e} />
+                {e.note && e.status !== 'ok' && <div className="text-[10px] text-slate-600 mt-1">{e.note}</div>}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
 function AnswerCard({ m }) {
   const actions = m.recommended_actions || []
   const steps = m.next_steps || []
@@ -103,6 +193,8 @@ function AnswerCard({ m }) {
       {(m.limitations || []).length > 0 && (
         <div className="mt-3 text-[11px] text-slate-600">{m.limitations.join(' · ')}</div>
       )}
+
+      <OrchestrationPanel orch={m.orchestration} />
     </div>
   )
 }
@@ -202,9 +294,9 @@ export default function AIAssistant() {
                    c.conversation_id === conversationId ? 'bg-surface-overlay text-slate-100' : 'text-slate-400 hover:bg-surface-overlay/50'}`}
                  onClick={() => openThread(c.conversation_id)}>
               <span className="flex-1 truncate">{c.pinned && '★ '}{c.title || 'Untitled'}</span>
-              <button title={c.pinned ? 'Unpin' : 'Pin'} className="opacity-0 group-hover:opacity-100 text-xs text-slate-500 hover:text-amber-400"
+              <button title={c.pinned ? 'Unpin' : 'Pin'} className="opacity-0 group-hover:opacity-100 text-xs text-slate-500 hv-warn"
                       onClick={(e) => { e.stopPropagation(); pinThread(c.conversation_id, !c.pinned) }}>★</button>
-              <button title="Delete" className="opacity-0 group-hover:opacity-100 text-xs text-slate-500 hover:text-rose-400"
+              <button title="Delete" className="opacity-0 group-hover:opacity-100 text-xs text-slate-500 hv-danger"
                       onClick={(e) => { e.stopPropagation(); removeThread(c.conversation_id) }}>✕</button>
             </div>
           ))}

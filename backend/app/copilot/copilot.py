@@ -50,7 +50,7 @@ class EnterpriseCopilot:
                  router: LLMRouter, validator: ResponseValidator,
                  conversations: ConversationMemory,
                  actions: SuggestedActionsBuilder, prompt_agent,
-                 product=None, search=None, bus=None):
+                 product=None, search=None, bus=None, orchestrator=None):
         self._intent = intent
         self._planner = planner
         self._context = context
@@ -63,6 +63,14 @@ class EnterpriseCopilot:
         self._product = product
         self._search = search
         self._bus = bus
+        # The Enterprise AI Orchestrator (V11). When wired, it classifies the
+        # question and routes it to the analytics/ML/forecast/recommendation
+        # engines, merging their evidence into the set the model reasons over.
+        # None = the copilot behaves exactly as before (per-intent evidence).
+        self._orchestrator = orchestrator
+
+    def attach_orchestrator(self, orchestrator) -> None:
+        self._orchestrator = orchestrator
 
     def attach_bus(self, bus) -> None:
         self._bus = bus
@@ -86,6 +94,17 @@ class EnterpriseCopilot:
         context = self._context.build(plan, conversation_id=conversation_id)
         # 4. Evidence (always before the model) --------------------------
         evidence = self._evidence.collect(plan, message)
+
+        # 4b. Orchestrate — classify the question and route it to the engines
+        #     that actually own the answer (analytics/ML/forecast/…), merging
+        #     their evidence into the set the model reasons over. This is what
+        #     lets "UPI trends July 1-20" answer from the KPI series instead of
+        #     returning "no evidence found". Only for LLM-narrated answers;
+        #     deterministic outputs (approvals, tasks) do not need engines.
+        orchestration = None
+        if (self._orchestrator is not None and plan.needs_llm
+                and plan.expected_output not in DETERMINISTIC_OUTPUTS):
+            orchestration = self._orchestrate(evidence, message, intent)
 
         # 5-7. Prompt → LLM → validate -----------------------------------
         if plan.needs_llm and plan.expected_output not in DETERMINISTIC_OUTPUTS:
@@ -118,6 +137,7 @@ class EnterpriseCopilot:
             "context_gaps": context.get("unavailable", []),
             "provider": {"provider": response.get("provider", ""),
                          "model": response.get("model", "")},
+            "orchestration": orchestration,
             **suggestions,
             "answered_at": now_iso(),
         }
@@ -126,6 +146,47 @@ class EnterpriseCopilot:
         self._remember(conversation_id, message, answer, intent)
         self._announce(answer)
         return answer
+
+    # ------------------------------------------------------- orchestrate
+    def _orchestrate(self, evidence, message: str, intent) -> dict | None:
+        """Run the Enterprise AI Orchestrator and merge its engine evidence
+        into ``evidence`` (deduped by id, so a document the plan already pulled
+        is not added twice). Returns the observability record for the answer;
+        never fails the chat — a broken engine degrades to no extra evidence."""
+        try:
+            result = self._orchestrator.run(message, intent)
+        except Exception:  # noqa: BLE001 — orchestration never fails an answer
+            logger.exception("Orchestrator run failed")
+            return None
+        existing = evidence.ids
+        added_ids: list[str] = []
+        for item in result.evidence:
+            item_id = item.get("id")
+            if not item_id or item_id in existing:
+                continue
+            payload = {k: v for k, v in item.items()
+                       if k not in ("id", "kind", "summary")}
+            evidence.add(item["kind"], item_id, item.get("summary", ""),
+                         payload)
+            existing.add(item_id)
+            added_ids.append(item_id)
+
+        # The routed engines produced the evidence most directly relevant to the
+        # question — the analytics KPI series, the forecast, the ML result. The
+        # prompt is budgeted front-first, so this evidence must LEAD, or it is
+        # dropped behind ~90 background facts and the model answers "no data"
+        # despite holding the series. Move the merged engine items to the front,
+        # preserving the router's engine order (analytics first).
+        if added_ids:
+            order = {eid: i for i, eid in enumerate(added_ids)}
+            lead = sorted((it for it in evidence.items
+                           if it["id"] in order), key=lambda it: order[it["id"]])
+            rest = [it for it in evidence.items if it["id"] not in order]
+            evidence.items = lead + rest
+
+        record = result.describe()
+        record["evidence_merged"] = len(added_ids)
+        return record
 
     # ------------------------------------------------------------ reason
     def _reason(self, message: str, plan, context: dict, evidence,
@@ -263,10 +324,28 @@ class EnterpriseCopilot:
                             "reason": "executive summary"})
         return suggestions[:limit]
 
+    def orchestration_for(self, message: str) -> dict[str, Any]:
+        """What the orchestrator would do with this question — the classified
+        query, the engines it would run, each with its SQL/model/documents and
+        timing. The /copilot/orchestration surface (Phase 14)."""
+        if self._orchestrator is None:
+            return {"enabled": False,
+                    "note": "the Enterprise AI Orchestrator is disabled"}
+        intent = self._intent.classify(message or "what is our position?")
+        record = self._orchestrator.context_for(message, intent)
+        return {"enabled": True, "intent": intent.describe(), **record}
+
+    def orchestrator_overview(self) -> dict[str, Any]:
+        """The registered engines and query categories, for the UI."""
+        if self._orchestrator is None:
+            return {"enabled": False}
+        return {"enabled": True, **self._orchestrator.describe()}
+
     def stats(self) -> dict[str, Any]:
         return {"conversations": self._conversations.stats(),
                 "provider": self._router.describe(),
-                "intents": len(self._intent.vocabulary())}
+                "intents": len(self._intent.vocabulary()),
+                "orchestrator": self._orchestrator is not None}
 
 
 def _narrow(context: dict) -> dict:

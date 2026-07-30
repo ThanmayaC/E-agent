@@ -4,21 +4,24 @@ import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { isAdmin } from '../lib/prefs'
 import ErrorBoundary from './ErrorBoundary'
 
+// The admin nav names real subsystems only. Each entry is a live operational
+// surface backed by genuine runtime metrics — no vanity pages.
 const NAV = [
-  { to: '/admin', label: 'Overview', icon: '◈', end: true },
-  { to: '/admin/operating', label: 'AI Operating', icon: '⬡' },
+  { section: 'Console' },
+  { to: '/admin', label: 'Subsystems', icon: '◈', end: true },
+  { section: 'Data & Intelligence' },
+  { to: '/admin/warehouse', label: 'Warehouse', icon: '▦' },
+  { to: '/admin/models', label: 'ML Engine', icon: '∴' },
+  { to: '/admin/brain', label: 'Enterprise Brain', icon: '◉' },
+  { to: '/admin/graph', label: 'Knowledge Graph', icon: '✦' },
+  { to: '/admin/llm', label: 'LLM', icon: '◆' },
+  { section: 'Integration' },
+  { to: '/admin/data-sources', label: 'Connectors', icon: '⊞' },
+  { to: '/admin/sync', label: 'Sync & Ingestion', icon: '⇄' },
+  { section: 'Operations' },
   { to: '/admin/runtime', label: 'Runtime', icon: '⟳' },
-  { to: '/admin/brain', label: 'Brain', icon: '◉' },
-  { to: '/admin/scheduler', label: 'Scheduler', icon: '◷' },
-  { to: '/admin/jobs', label: 'Jobs', icon: '≡' },
-  { to: '/admin/data-sources', label: 'Data sources', icon: '⊞' },
-  { to: '/admin/sync', label: 'Sync', icon: '⇄' },
-  { to: '/admin/documents', label: 'Documents', icon: '▣' },
-  { to: '/admin/knowledge', label: 'Knowledge', icon: '✦' },
-  { to: '/admin/logs', label: 'Logs', icon: '▤' },
+  { to: '/admin/jobs', label: 'Jobs & Queues', icon: '≡' },
   { to: '/admin/diagnostics', label: 'Diagnostics', icon: '✓' },
-  { to: '/admin/models', label: 'Model status', icon: '∴' },
-  { to: '/data', label: 'Data workbench', icon: '▦' },
 ]
 
 export default function AdminLayout() {
@@ -44,20 +47,25 @@ export default function AdminLayout() {
 
   return (
     <div className="flex min-h-screen">
-      <aside className="w-[212px] shrink-0 border-r border-surface-border bg-surface-raised/50 flex flex-col">
+      <aside className="w-[212px] shrink-0 border-r border-surface-border bg-surface-raised/50 flex flex-col
+                        lg:sticky lg:top-0 lg:h-screen">
         <Link to="/" className="px-5 py-4 border-b border-surface-border block">
           <div className="text-[15px] font-bold text-slate-100 tracking-tight">
-            Enterprise Agent <span className="ml-1 text-[10px] align-middle px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-400 font-semibold tracking-wide">ADMIN</span>
+            Enterprise Agent <span className="ml-1 align-middle chip chip-warn font-semibold tracking-wide">ADMIN</span>
           </div>
           <div className="text-[11px] text-slate-500 mt-0.5">← Back to workspace</div>
         </Link>
         <nav className="flex-1 overflow-y-auto py-3 space-y-0.5">
-          {NAV.map((item) => (
-            <NavLink key={item.to} to={item.to} end={item.end}
-                     className={({ isActive }) => `nav-item ${isActive ? 'nav-item-active' : 'nav-item-idle'}`}>
-              <span className="w-4 text-center opacity-70">{item.icon}</span>
-              {item.label}
-            </NavLink>
+          {NAV.map((item, i) => (
+            item.section ? (
+              <div key={`s-${i}`} className="nav-section">{item.section}</div>
+            ) : (
+              <NavLink key={item.to} to={item.to} end={item.end}
+                       className={({ isActive }) => `nav-item ${isActive ? 'nav-item-active' : 'nav-item-idle'}`}>
+                <span className="w-4 text-center opacity-70">{item.icon}</span>
+                {item.label}
+              </NavLink>
+            )
           ))}
         </nav>
         <div className="px-5 py-3 border-t border-surface-border text-[11px] text-slate-600">

@@ -4,13 +4,13 @@ import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { api } from '../api/client'
 import {
-  AsyncSection, Badge, PageHeader, Panel, PanelEmpty, Tabs, useAsync,
+  AsyncSection, Badge, Notice, PageHeader, Panel, PanelEmpty, Tabs, useAsync,
 } from '../components/ui'
 
 const dueTone = (d) => {
-  if (!d) return 'text-slate-600'
+  if (!d) return 'fg-muted'
   const days = (new Date(d) - Date.now()) / 86400000
-  return days < 0 ? 'text-rose-400' : days <= 3 ? 'text-amber-400' : 'text-slate-500'
+  return days < 0 ? 'fg-danger' : days <= 3 ? 'fg-warn' : 'fg-muted'
 }
 
 export default function Tasks() {
@@ -47,7 +47,7 @@ export default function Tasks() {
   return (
     <>
       <PageHeader title="Tasks" subtitle="Approvals, action items, and deadlines — everything waiting on you" />
-      {error && <div className="card-pad border-rose-500/40 text-rose-300 text-sm mb-4">{error}</div>}
+      {error && <div className="mb-4"><Notice tone="danger" onDismiss={() => setError('')}>{error}</Notice></div>}
       <AsyncSection state={state} empty="No tasks yet.">
         {({ tasks, stats, approvals }) => (
           <TaskBoard tasks={tasks || []} stats={stats || {}} approvals={approvals}
@@ -95,7 +95,7 @@ function TaskBoard({ tasks, stats, approvals, tab, setTab, title, setTitle, due,
                   </div>
                   {a.kind === 'action_approval' ? (
                     <span className="shrink-0 space-x-2.5 text-xs">
-                      <button onClick={() => approve(a.ref)} className="text-emerald-400 hover:underline">Approve</button>
+                      <button onClick={() => approve(a.ref)} className="fg-success hover:underline">Approve</button>
                       <button onClick={() => reject(a.ref)} className="text-slate-500 hover:underline">Reject</button>
                     </span>
                   ) : (
@@ -155,7 +155,7 @@ function TaskBoard({ tasks, stats, approvals, tab, setTab, title, setTitle, due,
                 <span className="shrink-0 space-x-2.5 text-xs">
                   {tab === 'open' && (
                     <>
-                      <button onClick={() => setStatus(t.task_id, 'completed')} className="text-emerald-400 hover:underline">Done ✓</button>
+                      <button onClick={() => setStatus(t.task_id, 'completed')} className="fg-success hover:underline">Done ✓</button>
                       <button onClick={() => setStatus(t.task_id, 'dismissed')} className="text-slate-500 hover:underline">Dismiss</button>
                     </>
                   )}

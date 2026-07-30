@@ -55,7 +55,7 @@ export default function AdminRuntime() {
                           {a.detail && <div className="text-slate-500 text-xs mt-0.5">{a.detail}</div>}
                         </div>
                         <span className="shrink-0 space-x-2.5 text-xs">
-                          <button onClick={() => approve(a.action_id)} className="text-emerald-400 hover:underline">Approve</button>
+                          <button onClick={() => approve(a.action_id)} className="fg-success hover:underline">Approve</button>
                           <button onClick={() => reject(a.action_id)} className="text-slate-500 hover:underline">Reject</button>
                         </span>
                       </li>
@@ -76,7 +76,7 @@ export default function AdminRuntime() {
                           </span>
                         </div>
                         <div className="h-1.5 w-full rounded bg-surface-overlay mt-1">
-                          <div className={`h-1.5 rounded ${g.progress >= 0.75 ? 'bg-emerald-500' : g.progress >= 0.4 ? 'bg-amber-500' : 'bg-rose-500'}`}
+                          <div className={`h-1.5 rounded ${g.progress >= 0.75 ? 'bg-[var(--status-success-fg)]' : g.progress >= 0.4 ? 'bg-[var(--status-warn-fg)]' : 'bg-[var(--status-danger-fg)]'}`}
                                style={{ width: `${Math.round((g.progress || 0) * 100)}%` }} />
                         </div>
                         {g.status === 'at_risk' && <Badge tone="danger">at risk</Badge>}

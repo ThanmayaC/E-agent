@@ -156,6 +156,15 @@ class Settings(BaseSettings):
     copilot_keep_conversations: int = 200   # pinned threads are never pruned
     copilot_prune_cron: str = "0 4 * * *"   # nightly maintenance
 
+    # --- Enterprise AI Orchestrator (V11) ---
+    # The central intelligence layer: classify every question, route it to the
+    # engines that actually own the answer (Analytics/Knowledge/ML/Forecast/
+    # Recommendation/Report), run them in parallel, merge their outputs into the
+    # evidence the LLM reasons over, and record an execution graph for
+    # observability. Off = the copilot falls back to exactly its prior behaviour
+    # (per-intent evidence only); no other surface is affected.
+    orchestrator_enabled: bool = True
+
     # --- V2: Document Intelligence (unified document pipeline) ---
     # Consumes document-source sync deltas: metadata → parse (+OCR fallback)
     # → chunk → embed → Brain update → version tracking. Off = document

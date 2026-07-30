@@ -1,171 +1,185 @@
-// Product executive summary — one product, explained in business terms:
-// health, growth signals, risks, and the recommended next moves.
+// Product Intelligence Dashboard — one NPCI product, fully derived from its
+// raw transactions: overview, daily/monthly trends, banks, PSPs, merchants,
+// MCCs, failures, ML forecast (with confidence, drivers, risks, actions), and
+// a grounded AI summary. Nothing here is a stored dashboard — every figure is
+// a live query over /intel/products/{code}.
+import { useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { api } from '../api/client'
-import {
-  AsyncSection, Badge, HealthRing, PageHeader, Panel, PanelEmpty, Trend,
-  severityTone, useAsync,
-} from '../components/ui'
+import { api, fmt } from '../api/client'
+import { AsyncSection, Badge, PageHeader, Panel, PanelEmpty, Stat, useAsync } from '../components/ui'
+import EChart from '../components/EChart'
+import { MLForecastPanel } from '../components/MLForecast'
+import AskAI from '../components/AskAI'
+import DimensionTable from '../components/DimensionTable'
 
-const KIND_TONE = {
-  growth_opportunity: 'success', expansion: 'success', cross_sell: 'info',
-  declining_product: 'danger', cannibalization: 'warn', gap: 'warn',
+const inr = (v) => `₹${fmt.num(v)}`
+const KPI_ORDER = ['attempts', 'successful', 'success_rate', 'value_inr',
+  'avg_ticket_inr', 'active_customers', 'p95_latency_ms', 'retry_rate_pct']
+
+function DailyChart({ daily }) {
+  const METRICS = [
+    ['attempts', 'Attempts'], ['success_rate', 'Success rate %'],
+    ['value_inr', 'Settled value'], ['technical_decline_pct', 'Technical decline %'],
+    ['retry_rate_pct', 'Retry rate %'], ['p95_latency_ms', 'p95 latency (ms)'],
+  ]
+  const [metric, setMetric] = useState('attempts')
+  const label = METRICS.find(([k]) => k === metric)?.[1] || metric
+  const option = useMemo(() => ({
+    tooltip: { trigger: 'axis' },
+    grid: { left: 56, right: 20, top: 20, bottom: 32 },
+    xAxis: { type: 'category', data: daily.map((d) => d.date),
+             axisLabel: { rotate: 45, fontSize: 10, interval: Math.floor(daily.length / 20) } },
+    yAxis: { type: 'value', axisLabel: { fontSize: 10 } },
+    series: [{ type: 'line', data: daily.map((d) => d[metric]), symbol: 'none', smooth: 0.15,
+               areaStyle: { opacity: 0.08 } }],
+  }), [daily, metric])
+
+  return (
+    <Panel title="Daily trend"
+           action={
+             <select className="input !py-1 !text-xs" value={metric}
+                     onChange={(e) => setMetric(e.target.value)}>
+               {METRICS.map(([k, l]) => <option key={k} value={k}>{l}</option>)}
+             </select>
+           }>
+      <EChart option={option} height={260} />
+      <div className="text-[11px] fg-muted mt-1">{label} · {daily.length} day(s)</div>
+    </Panel>
+  )
+}
+
+function MonthlyTable({ monthly }) {
+  if (!monthly.length) return null
+  return (
+    <Panel title="Monthly trend">
+      <div className="overflow-x-auto">
+        <table className="table-base">
+          <thead>
+            <tr><th>Month</th><th>Attempts</th><th>Success %</th><th>Value</th><th>Active customers</th></tr>
+          </thead>
+          <tbody>
+            {monthly.map((m) => (
+              <tr key={m.month}>
+                <td className="text-xs font-mono">{m.month}</td>
+                <td className="text-xs tabular-nums">{fmt.num(m.attempts)}</td>
+                <td className="text-xs tabular-nums">{m.success_rate}%</td>
+                <td className="text-xs tabular-nums">{inr(m.value_inr)}</td>
+                <td className="text-xs tabular-nums">{fmt.num(m.active_customers)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </Panel>
+  )
+}
+
+function FailuresPanel({ failures }) {
+  const byCode = failures?.by_code || []
+  const byOwner = failures?.by_owner || []
+  const byBank = failures?.by_bank || []
+  return (
+    <div className="grid lg:grid-cols-2 gap-4">
+      <Panel title="Top failure reasons">
+        {byCode.length === 0 ? <PanelEmpty text="No failures in this window." /> : (
+          <div className="overflow-x-auto">
+            <table className="table-base">
+              <thead><tr><th>Code</th><th>Reason</th><th>Owner</th><th>Share</th></tr></thead>
+              <tbody>
+                {byCode.slice(0, 10).map((f) => (
+                  <tr key={f.code}>
+                    <td className="text-xs font-mono">{f.code}</td>
+                    <td className="text-xs">{f.reason}</td>
+                    <td className="text-xs"><Badge tone={f.retryable ? 'warn' : 'danger'}>{f.owner}</Badge></td>
+                    <td className="text-xs tabular-nums">{f.share_pct}%</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </Panel>
+      <Panel title="Failure ownership & top failing banks">
+        <div className="flex flex-wrap gap-2 mb-3">
+          {byOwner.map((o) => (
+            <Badge key={o.owner} tone="default">{o.owner}: {o.share_pct}%</Badge>
+          ))}
+        </div>
+        {byBank.length === 0 ? <PanelEmpty text="No bank-level failures." /> : (
+          <div className="overflow-x-auto">
+            <table className="table-base">
+              <thead><tr><th>Bank</th><th>Failure rate</th><th>Technical %</th></tr></thead>
+              <tbody>
+                {byBank.slice(0, 8).map((b) => (
+                  <tr key={b.bank}>
+                    <td className="text-xs">{b.bank}</td>
+                    <td className="text-xs tabular-nums">{b.failure_rate_pct}%</td>
+                    <td className="text-xs tabular-nums">{b.technical_pct}%</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </Panel>
+    </div>
+  )
 }
 
 export default function ProductSummary() {
   const { productId } = useParams()
-  const productName = decodeURIComponent(productId)
-  const state = useAsync(async () => {
-    const [catalog, health, reviews, growth, recs, kpis, reportsRes, decisionsRes] = await Promise.all([
-      api.productCatalogItem(productId).catch(() => null),
-      api.productHealth().catch(() => ({ health: [] })),
-      api.productReviewsFor(productId, 1).catch(() => ({ reviews: [] })),
-      api.productGrowth(productId).catch(() => ({ findings: [] })),
-      api.productRecommendations(productId).catch(() => ({ recommendations: [] })),
-      api.executiveKpis().catch(() => null),
-      api.executiveReports().catch(() => ({ reports: [] })),
-      api.executiveDecisions().catch(() => ({ decisions: [] })),
-    ])
-    const healthRecord = (health.health || []).find((h) => h.product_id === productId) || null
-    const execProduct = (kpis?.health?.products || []).find((p) => p.product === productName) || null
-    return {
-      catalog,
-      health: healthRecord,
-      execProduct,
-      review: (reviews.reviews || [])[0] || null,
-      findings: growth.findings || [],
-      recommendations: recs.recommendations || [],
-      reports: (reportsRes.reports || []).filter((r) => (r.related_products || []).includes(productName)),
-      decisions: (decisionsRes.decisions || []).filter((d) => (d.affected_products || []).includes(productName)),
-    }
-  }, [productId])
+  const state = useAsync(() => api.intelProduct(productId, { horizon: 14 }), [productId])
 
   return (
-    <AsyncSection state={state} empty="This product has no data yet.">
-      {({ catalog, health, execProduct, review, findings, recommendations, reports, decisions }) => {
-        const name = catalog?.name || execProduct?.product || review?.product || productName
-        const scores = health?.scores || {}
+    <AsyncSection state={state} empty="This product has no transactions in the warehouse.">
+      {(d) => {
+        const p = d.product
+        const kpiByKey = Object.fromEntries((d.kpis || []).map((k) => [k.key, k]))
         return (
           <>
             <div className="text-xs text-slate-500 mb-3">
-              <Link to="/products" className="hover:text-accent">Products</Link> <span className="mx-1">/</span> {name}
+              <Link to="/products" className="hover:text-accent">Products</Link>
+              <span className="mx-1">/</span> {p.product_name}
             </div>
-            <PageHeader title={name}
-                        subtitle={[catalog?.owner && `Owned by ${catalog.owner}`,
-                                   catalog?.business_unit, catalog?.lifecycle,
-                                   !catalog && execProduct?.owner && `Owned by ${execProduct.owner}`,
-                                   !catalog && execProduct?.team]
-                          .filter(Boolean).join(' · ') || 'Executive summary'} />
+            <PageHeader title={p.product_name}
+                        subtitle={[p.product_code, p.family, p.owning_team, p.lifecycle]
+                          .filter(Boolean).join(' · ')} />
+            {p.description && <p className="text-sm fg-muted -mt-3 mb-5">{p.description}</p>}
+
             <div className="space-y-5">
-              <div className="card-pad flex flex-wrap items-center gap-6 lg:gap-10">
-                <HealthRing score={health?.health_score ?? execProduct?.health} size={88} label="status" />
-                <div className="flex-1 min-w-[220px] grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                  {['growth', 'risk', 'revenue', 'engagement'].filter((k) => scores[k] != null).map((k) => (
-                    <div key={k}>
-                      <div className="eyebrow capitalize">{k}</div>
-                      <div className="metric !text-xl mt-1">{Math.round(scores[k])}</div>
-                    </div>
-                  ))}
-                  <div>
-                    <div className="eyebrow">Trend</div>
-                    <div className="mt-2"><Trend change={health?.change} suffix=" pts" /></div>
-                  </div>
-                  {health?.band && (
-                    <div>
-                      <div className="eyebrow">Standing</div>
-                      <div className="mt-2"><Badge tone={health.band === 'healthy' ? 'success' : health.band === 'watch' ? 'warn' : 'danger'}>{health.band}</Badge></div>
-                    </div>
-                  )}
-                </div>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {KPI_ORDER.filter((k) => kpiByKey[k]).map((k) => {
+                  const kpi = kpiByKey[k]
+                  return (
+                    <Stat key={k} label={kpi.label}
+                          value={kpi.unit === '₹' ? inr(kpi.value)
+                                 : kpi.unit === '%' ? `${kpi.value}%` : fmt.num(kpi.value)}
+                          hint={kpi.change_pct != null ? fmt.pct(kpi.change_pct) : undefined} />
+                  )
+                })}
               </div>
 
-              {review?.executive_summary && (
-                <Panel title="Executive summary"
-                       action={review.generated_at &&
-                         <span className="text-xs text-slate-600">{new Date(review.generated_at).toLocaleDateString()}</span>}>
-                  <p className="text-sm text-slate-300 leading-relaxed whitespace-pre-wrap">{review.executive_summary}</p>
-                </Panel>
-              )}
+              <DailyChart daily={d.daily} />
+              <MonthlyTable monthly={d.monthly} />
 
-              <div className="grid gap-5 lg:grid-cols-2">
-                <Panel title="Risks">
-                  {((review?.risks || []).filter((r) => r.severity !== 'none')).length === 0
-                    ? <PanelEmpty text="No open risks for this product." />
-                    : <ul className="space-y-2.5">
-                        {review.risks.filter((r) => r.severity !== 'none').map((r, i) => (
-                          <li key={i} className="text-sm text-slate-300 flex gap-2 items-start">
-                            <Badge tone={severityTone(r.severity)}>{r.severity}</Badge>
-                            <span>{r.risk || r.summary || r.detail}</span>
-                          </li>
-                        ))}
-                      </ul>}
-                </Panel>
+              <div className="grid lg:grid-cols-2 gap-4">
+                <DimensionTable title="Banks" rows={d.banks} nameLabel="Bank" />
+                <DimensionTable title="PSPs" rows={d.psps} nameLabel="PSP" />
+              </div>
+              <div className="grid lg:grid-cols-2 gap-4">
+                <DimensionTable title="Top merchants" rows={d.top_merchants} nameLabel="Merchant" />
+                <DimensionTable title="Top MCCs" rows={d.top_mccs} nameLabel="MCC subcategory" />
+              </div>
+              <DimensionTable title="Customer segments" rows={d.segments} nameLabel="Segment" />
 
-                <Panel title="Growth signals">
-                  {findings.length === 0 ? <PanelEmpty text="No growth signals yet." /> : (
-                    <ul className="space-y-2.5">
-                      {findings.slice(0, 8).map((f, i) => (
-                        <li key={i} className="text-sm text-slate-300 flex gap-2 items-start">
-                          <Badge tone={KIND_TONE[f.kind] || 'default'}>{(f.kind || 'signal').replace(/_/g, ' ')}</Badge>
-                          <span>{f.summary || f.finding || f.detail}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </Panel>
+              <FailuresPanel failures={d.failures} />
 
-                <Panel title="Recommended actions">
-                  {recommendations.length === 0 ? <PanelEmpty text="No open recommendations." /> : (
-                    <ul className="space-y-3">
-                      {recommendations.slice(0, 8).map((r, i) => (
-                        <li key={i} className="text-sm">
-                          <div className="text-slate-200">
-                            {r.priority && <Badge tone="accent">P{r.priority}</Badge>} {r.action || r.recommendation}
-                          </div>
-                          {(r.impact || r.effort) && (
-                            <div className="text-xs text-slate-500 mt-0.5">
-                              {r.impact && <>impact: {r.impact}</>}{r.impact && r.effort && ' · '}{r.effort && <>effort: {r.effort}</>}
-                            </div>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </Panel>
+              <AskAI title="AI summary"
+                     question={`Summarize ${p.product_name}'s performance, growth, risks, and recommended actions using the real transaction data.`} />
 
-                <Panel title="Action items from the latest review">
-                  {(review?.action_items || []).length === 0 ? <PanelEmpty text="No action items recorded." /> : (
-                    <ul className="space-y-2">
-                      {review.action_items.map((a, i) => (
-                        <li key={i} className="text-sm text-slate-300">• {typeof a === 'string' ? a : a.action || a.title}</li>
-                      ))}
-                    </ul>
-                  )}
-                </Panel>
-
-                <Panel title="Recent reports">
-                  {reports.length === 0 ? <PanelEmpty text="No reports for this product yet." /> : (
-                    <ul className="space-y-2">
-                      {reports.slice(0, 6).map((r) => (
-                        <li key={r.report_id} className="text-sm text-slate-300 truncate">
-                          <Badge tone="default">{r.category}</Badge> {r.title}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </Panel>
-
-                <Panel title="Recent decisions">
-                  {decisions.length === 0 ? <PanelEmpty text="No decisions for this product yet." /> : (
-                    <ul className="space-y-2">
-                      {decisions.slice(0, 6).map((d) => (
-                        <li key={d.decision_id} className="text-sm text-slate-300 truncate">
-                          <Badge tone={d.status === 'executed' ? 'success' : 'warn'}>{d.status}</Badge> {d.title}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </Panel>
+              <div>
+                <div className="h-sub mb-2">Forecast</div>
+                <MLForecastPanel d={d.forecast} compact />
               </div>
             </div>
           </>

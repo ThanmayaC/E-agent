@@ -8,8 +8,8 @@ from fastapi.responses import JSONResponse
 
 from app.api.v1 import (
     analyst, artifacts, brain, communication, connectors, copilot, documents,
-    executive, knowledge, manager, operating, platform, product, projects,
-    runtime, sync, workspace,
+    executive, intelligence, knowledge, manager, operating, platform, product,
+    projects, runtime, sync, workspace,
 )
 from app.core.config import get_settings
 from app.core.logging import configure_logging, get_logger
@@ -109,6 +109,7 @@ def create_app() -> FastAPI:
     app.include_router(workspace.router, prefix=settings.api_prefix)
     app.include_router(analyst.router, prefix=settings.api_prefix)
     app.include_router(communication.router, prefix=settings.api_prefix)
+    app.include_router(intelligence.router, prefix=settings.api_prefix)
 
     @app.get("/health")
     def health():

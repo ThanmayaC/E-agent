@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import { api } from '../api/client'
-import { Badge, Spinner } from '../components/ui'
+import { Badge, Empty, Notice, PageHeader, Panel, Spinner } from '../components/ui'
 
 const STAGE_LABELS = {
   file_discovery: 'File Discovery', worksheet_discovery: 'Worksheet Discovery',
@@ -146,18 +145,15 @@ export default function Projects() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto py-12 px-6">
-      <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
-        <h1 className="text-3xl font-bold text-slate-100 tracking-tight">Business data</h1>
-        <p className="text-slate-500 mt-2 max-w-2xl">
-          Upload any Excel files — 1 or 1,000. The platform understands the business meaning,
-          relationships, and KPIs automatically, then delivers insights, forecasts, and an
-          executive report. No mapping. No configuration.
-        </p>
-      </motion.div>
+    <div className="max-w-4xl mx-auto">
+      <PageHeader
+        title="Business data"
+        eyebrow="Projects"
+        subtitle="Upload any Excel files — 1 or 1,000. The platform understands the business meaning,
+                  relationships, and KPIs automatically, then delivers insights, forecasts, and an
+                  executive report. No mapping. No configuration." />
 
-      <div className="card-pad mt-8 space-y-4">
-        <div className="h-sub">New analysis</div>
+      <Panel title="New analysis" className="space-y-4">
         <input className="input" placeholder="Project name, e.g. Q3 Payments Portfolio"
                value={name} onChange={(e) => setName(e.target.value)} />
         <label className="block border-2 border-dashed border-surface-border rounded-xl p-8 text-center cursor-pointer hover:border-accent/60 transition-colors">
@@ -187,8 +183,8 @@ export default function Projects() {
             </div>
           </div>
         )}
-        {error && <div className="text-sm text-rose-400">{error}</div>}
-      </div>
+        {error && <Notice tone="danger" onDismiss={() => setError(null)}>{error}</Notice>}
+      </Panel>
 
       {active && (
         <div className="card-pad mt-6">
@@ -202,13 +198,13 @@ export default function Projects() {
             {(active.stages || []).map((s) => (
               <div key={s.stage} className="flex items-center gap-2 text-sm py-1">
                 <span className={
-                  s.status === 'completed' ? 'text-emerald-400' :
+                  s.status === 'completed' ? 'fg-success' :
                   s.status === 'running' ? 'text-accent animate-pulse' :
-                  s.status === 'failed' ? 'text-rose-400' : 'text-slate-600'
+                  s.status === 'failed' ? 'fg-danger' : 'text-slate-500'
                 }>
                   {s.status === 'completed' ? '●' : s.status === 'running' ? '◐' : s.status === 'failed' ? '✕' : '○'}
                 </span>
-                <span className={s.status === 'pending' ? 'text-slate-600' : 'text-slate-300'}>
+                <span className={s.status === 'pending' ? 'text-slate-500' : 'text-slate-300'}>
                   {STAGE_LABELS[s.stage] || s.stage}
                 </span>
               </div>
@@ -218,7 +214,7 @@ export default function Projects() {
       )}
 
       {active && active.status === 'awaiting_clarification' && clarify && (
-        <div className="card-pad mt-6 border border-amber-500/30">
+        <div className="card-pad mt-6" style={{ borderColor: 'var(--status-warn-fg)' }}>
           <div className="flex items-center justify-between mb-2">
             <div className="h-title">I need your help to understand this data</div>
             <Badge tone="warn">confidence {Math.round((clarify.confidence || 0) * 100)}%</Badge>
@@ -233,7 +229,7 @@ export default function Projects() {
                     <span>{CATEGORY_LABELS[k] || k}</span><span>{Math.round(v * 100)}%</span>
                   </div>
                   <div className="h-1.5 rounded bg-surface-border overflow-hidden">
-                    <div className={`h-full rounded ${v >= 0.55 ? 'bg-emerald-500' : 'bg-amber-500'}`}
+                    <div className={`h-full rounded ${v >= 0.55 ? 'bg-[var(--status-success-fg)]' : 'bg-[var(--status-warn-fg)]'}`}
                          style={{ width: `${Math.round(v * 100)}%` }} />
                   </div>
                 </div>
@@ -280,7 +276,8 @@ export default function Projects() {
       <div className="mt-10">
         <div className="h-sub mb-3">Recent projects</div>
         {!projects ? <Spinner /> : projects.length === 0 ? (
-          <div className="text-sm text-slate-600">No projects yet.</div>
+          <Empty title="No projects yet" icon="▤"
+                 hint="Name an analysis and drop in a spreadsheet above — the first report takes a couple of minutes." />
         ) : (
           <div className="grid md:grid-cols-2 gap-3">
             {projects.map((p, i) => {
@@ -313,7 +310,7 @@ export default function Projects() {
                       {!orphaned && (
                         <button title="Delete project"
                                 onClick={(e) => { e.stopPropagation(); setConfirmDelete(rowKey) }}
-                                className="w-6 h-6 rounded flex items-center justify-center text-slate-600 hover:text-rose-400 hover:bg-rose-500/10 transition-colors">
+                                className="w-6 h-6 rounded flex items-center justify-center text-slate-500 hv-danger transition-colors">
                           ✕
                         </button>
                       )}
@@ -330,25 +327,25 @@ export default function Projects() {
                     </div>
                   )}
                   {orphaned && (
-                    <div className="text-xs text-amber-500/80 mt-1">
+                    <div className="text-xs fg-warn mt-1">
                       Incomplete record — this project has no id and cannot be opened or deleted.
                     </div>
                   )}
                   {confirmDelete === rowKey && !orphaned && (
-                    <div className="mt-3 p-3 rounded-lg border border-rose-500/30 bg-rose-500/5"
-                         onClick={(e) => e.stopPropagation()}>
+                    <div className="mt-3 p-3 rounded-lg" onClick={(e) => e.stopPropagation()}
+                         style={{ border: '1px solid var(--status-danger-fg)', background: 'var(--status-danger-bg)' }}>
                       <div className="text-sm text-slate-300">
                         Delete <span className="font-medium">{p.name || p.project_id}</span> and all its data
                         (uploads, datasets, analytics, reports, embeddings, knowledge graph)?
                         This cannot be undone.
                       </div>
                       <div className="flex gap-2 mt-2">
-                        <button className="px-3 py-1.5 rounded-lg bg-rose-500/20 text-rose-300 text-xs font-medium hover:bg-rose-500/30 transition-colors"
+                        <button className="btn-danger btn-sm"
                                 disabled={deleting === p.project_id}
                                 onClick={() => removeProject(p.project_id)}>
                           {deleting === p.project_id ? 'Deleting…' : 'Delete permanently'}
                         </button>
-                        <button className="px-3 py-1.5 rounded-lg border border-surface-border text-slate-400 text-xs hover:border-accent/50 transition-colors"
+                        <button className="btn-ghost btn-sm"
                                 onClick={() => setConfirmDelete(null)}>
                           Cancel
                         </button>

@@ -141,7 +141,7 @@ export default function Files() {
                       <Badge tone="info">{f.type}</Badge>
                       <span className="flex-1 truncate text-sm text-slate-200">{f.file}</span>
                       <span className="text-xs text-slate-600 tabular-nums">{fmt.num(f.size_bytes)} B</span>
-                      <button onClick={(e) => del(f.id, e)} className="text-xs text-slate-600 hover:text-rose-400">✕</button>
+                      <button onClick={(e) => del(f.id, e)} className="text-xs text-slate-500 hv-danger">✕</button>
                     </div>
                     {open === f.id && (
                       <div className="ml-2 pl-4 border-l border-surface-border py-2">

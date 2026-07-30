@@ -6,7 +6,8 @@
 import { useState } from 'react'
 import { api } from '../../api/client'
 import {
-  AsyncSection, Badge, PageHeader, Panel, PanelEmpty, Stat, useAsync, when,
+  AsyncSection, Badge, ListControls, Notice, PageHeader, Pager, Panel, PanelEmpty,
+  Stat, TableWrap, useAsync, usePaged, when,
 } from '../../components/ui'
 
 const CADENCES = ['startup', '15m', 'hourly', 'daily', 'weekly', 'manual']
@@ -99,8 +100,8 @@ export default function AdminConnectors() {
         </button>
       </PageHeader>
 
-      {error && <div className="card-pad border-rose-500/40 text-rose-300 text-sm mb-4">{error}</div>}
-      {notice && <div className="card-pad border-emerald-500/40 text-emerald-300 text-sm mb-4">{notice}</div>}
+      {error && <div className="mb-4"><Notice tone="danger" onDismiss={() => setError('')}>{error}</Notice></div>}
+      {notice && <div className="mb-4"><Notice tone="success" onDismiss={() => setNotice('')}>{notice}</Notice></div>}
 
       <AsyncSection state={state}
                     empty="The Enterprise Connector Framework is disabled in this deployment.">
@@ -186,18 +187,62 @@ export default function AdminConnectors() {
                 </Panel>
               )}
 
-              <Panel title="Connected sources">
-                {list.length === 0 ? <PanelEmpty text="No data sources registered yet." /> : (
-                  <div className="overflow-x-auto">
-                    <table className="table-base">
+              <Panel title="Connected sources" subtitle={`${list.length} registered`}>
+                {list.length === 0
+                  ? <PanelEmpty text="No data sources registered yet." />
+                  : <ConnectedSources list={list} act={act} busy={busy} />}
+              </Panel>
+
+              <div className="grid gap-5 lg:grid-cols-2">
+                <Panel title="Recent synchronizations">
+                  {runList.length === 0 ? <PanelEmpty text="No synchronizations recorded." /> : (
+                    <ul className="space-y-2 text-sm">
+                      {runList.slice(0, 12).map((r) => (
+                        <li key={r.run_id} className="flex items-center justify-between gap-3">
+                          <span className="text-slate-300 min-w-0 truncate">{r.connector}</span>
+                          <span className="flex items-center gap-2 shrink-0">
+                            <span className="text-[11px] text-slate-500">
+                              {r.mode} · {r.packages ?? 0} pkg
+                            </span>
+                            <Badge tone={STATUS_TONE[r.status] || 'default'}>{r.status}</Badge>
+                            <span className="text-[11px] text-slate-500">{when(r.finished_at)}</span>
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </Panel>
+                <LegacyPanels failureList={failureList} catalogue={catalogue} />
+              </div>
+            </div>
+          )
+        }}
+      </AsyncSection>
+    </>
+  )
+}
+
+// The connected-source table, filtered and paged. Each row carries five action
+// buttons, so rendering ~1,000 of them at once built a quarter-megabyte page
+// that could not be scanned or searched.
+function ConnectedSources({ list, act, busy }) {
+  const paged = usePaged(list, {
+    pageSize: 20,
+    fields: ['name', 'kind', 'location', 'health', 'cadence', 'origin'],
+  })
+  return (
+    <>
+      <ListControls paged={paged} placeholder="Filter sources by name, connector or health…" />
+      <TableWrap>
+        <table className="table-base">
                       <thead>
                         <tr>
                           <th>Source</th><th>Connector</th><th>Health</th>
-                          <th>Last sync</th><th>Items</th><th>Actions</th>
+                          <th>Last sync</th><th className="cell-num">Items</th><th>Actions</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {list.map((s) => (
+                        {paged.rows.map((s) => (
                           <tr key={s.connector_id}>
                             <td>
                               <div className="text-slate-200">{s.name}</div>
@@ -268,71 +313,57 @@ export default function AdminConnectors() {
                           </tr>
                         ))}
                       </tbody>
-                    </table>
+        </table>
+      </TableWrap>
+      {paged.matched === 0 && (
+        <p className="text-xs text-slate-500 py-3">No source matches “{paged.query}”.</p>
+      )}
+      <Pager paged={paged} />
+    </>
+  )
+}
+
+// Failures and the connector catalogue. Failures are capped: an unhealthy
+// deployment can report thousands, and the first dozen tell the same story.
+function LegacyPanels({ failureList, catalogue }) {
+  return (
+    <>
+      <Panel title="Failures"
+             subtitle={failureList.length > 12 ? `showing 12 of ${failureList.length}` : undefined}>
+        {failureList.length === 0
+          ? <PanelEmpty text="No failures — every source is synchronizing." />
+          : (
+            <ul className="space-y-2 text-sm">
+              {failureList.slice(0, 12).map((f) => (
+                <li key={f.failure_id}>
+                  <div className="flex justify-between gap-2">
+                    <span className="text-slate-300">{f.connector}</span>
+                    <span className="text-[11px] text-slate-500">{when(f.at)}</span>
                   </div>
-                )}
-              </Panel>
+                  <div className="text-[11px] fg-danger opacity-80 mt-0.5">{f.error}</div>
+                </li>
+              ))}
+            </ul>
+          )}
+      </Panel>
 
-              <div className="grid gap-5 lg:grid-cols-2">
-                <Panel title="Recent synchronizations">
-                  {runList.length === 0 ? <PanelEmpty text="No synchronizations recorded." /> : (
-                    <ul className="space-y-2 text-sm">
-                      {runList.map((r) => (
-                        <li key={r.run_id} className="flex items-center justify-between gap-3">
-                          <span className="text-slate-300 min-w-0 truncate">{r.connector}</span>
-                          <span className="flex items-center gap-2 shrink-0">
-                            <span className="text-[11px] text-slate-600">
-                              {r.mode} · {r.packages ?? 0} pkg
-                            </span>
-                            <Badge tone={STATUS_TONE[r.status] || 'default'}>{r.status}</Badge>
-                            <span className="text-[11px] text-slate-600">{when(r.finished_at)}</span>
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </Panel>
-
-                <Panel title="Failures">
-                  {failureList.length === 0
-                    ? <PanelEmpty text="No failures — every source is synchronizing." />
-                    : (
-                      <ul className="space-y-2 text-sm">
-                        {failureList.map((f) => (
-                          <li key={f.failure_id}>
-                            <div className="flex justify-between gap-2">
-                              <span className="text-slate-300">{f.connector}</span>
-                              <span className="text-[11px] text-slate-600">{when(f.at)}</span>
-                            </div>
-                            <div className="text-[11px] text-rose-300/80 mt-0.5">{f.error}</div>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                </Panel>
-              </div>
-
-              <Panel title="Connector catalogue">
-                <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 text-sm">
-                  {catalogue.map((c) => (
-                    <div key={c.kind} className="flex items-start justify-between gap-2">
-                      <div className="min-w-0">
-                        <div className="text-slate-300">{c.title || c.kind}</div>
-                        <div className="text-[11px] text-slate-600 truncate">
-                          {c.description || c.unavailable_reason || '—'}
-                        </div>
-                      </div>
-                      <Badge tone={c.available ? 'success' : 'default'}>
-                        {c.available ? 'available' : 'planned'}
-                      </Badge>
-                    </div>
-                  ))}
+      <Panel title="Connector catalogue" className="lg:col-span-2">
+        <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3 text-sm">
+          {catalogue.map((c) => (
+            <div key={c.kind} className="inset px-3 py-2 flex items-start justify-between gap-2">
+              <div className="min-w-0">
+                <div className="text-slate-300">{c.title || c.kind}</div>
+                <div className="text-[11px] text-slate-500 truncate">
+                  {c.description || c.unavailable_reason || '—'}
                 </div>
-              </Panel>
+              </div>
+              <Badge tone={c.available ? 'success' : 'default'}>
+                {c.available ? 'available' : 'planned'}
+              </Badge>
             </div>
-          )
-        }}
-      </AsyncSection>
+          ))}
+        </div>
+      </Panel>
     </>
   )
 }

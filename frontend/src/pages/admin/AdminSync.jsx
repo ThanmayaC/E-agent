@@ -3,8 +3,44 @@
 import { useState } from 'react'
 import { api } from '../../api/client'
 import {
-  AsyncSection, Badge, PageHeader, Panel, PanelEmpty, Stat, useAsync, when,
+  AsyncSection, Badge, ListControls, Notice, PageHeader, Pager, Panel, PanelEmpty,
+  Stat, TableWrap, useAsync, usePaged, when,
 } from '../../components/ui'
+
+// The source table is filtered and paged rather than rendered whole: this
+// deployment reports ~1,000 connected sources, and one row each produced a page
+// too large to paint smoothly and impossible to search by eye.
+function SourceTable({ sources }) {
+  const paged = usePaged(sources, { pageSize: 25, fields: ['name', 'source_id', 'kind', 'connector', 'status'] })
+  return (
+    <>
+      <ListControls paged={paged} placeholder="Filter sources by name, kind or status…" />
+      <TableWrap>
+        <table className="table-base">
+          <thead><tr><th>Source</th><th>Kind</th><th>Status</th><th>Last sync</th></tr></thead>
+          <tbody>
+            {paged.rows.map((s, i) => (
+              <tr key={s.source_id || i}>
+                <td className="text-slate-200">{s.name || s.source_id}</td>
+                <td className="text-xs font-mono">{s.kind || s.connector || '—'}</td>
+                <td>
+                  <Badge tone={{ healthy: 'success', connected: 'success', degraded: 'warn', failed: 'danger' }[s.status] || 'default'}>
+                    {s.status || 'unknown'}
+                  </Badge>
+                </td>
+                <td className="text-xs">{when(s.last_synced_at || s.last_sync_at)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </TableWrap>
+      {paged.matched === 0 && (
+        <p className="text-xs text-slate-500 py-3">No source matches “{paged.query}”.</p>
+      )}
+      <Pager paged={paged} />
+    </>
+  )
+}
 
 export default function AdminSync() {
   const [refresh, setRefresh] = useState(0)
@@ -32,7 +68,7 @@ export default function AdminSync() {
       <PageHeader title="Sync" subtitle="Connected sources and the enterprise model built from them">
         <button className="btn" onClick={syncNow} disabled={busy}>{busy ? 'Synchronizing…' : 'Sync all sources'}</button>
       </PageHeader>
-      {error && <div className="card-pad border-rose-500/40 text-rose-300 text-sm mb-4">{error}</div>}
+      {error && <div className="mb-4"><Notice tone="danger" onDismiss={() => setError('')}>{error}</Notice></div>}
       <AsyncSection state={state} empty="The synchronization layer is not active.">
         {({ sources, overview, refreshes }) => {
           const sourceList = sources?.sources || (Array.isArray(sources) ? sources : [])
@@ -48,25 +84,10 @@ export default function AdminSync() {
                   ? when(overview.knowledge_freshness.last_updated_at) : '—'} />
               </div>
 
-              <Panel title="Sources">
-                {sourceList.length === 0 ? <PanelEmpty text="No sources registered." /> : (
-                  <div className="overflow-x-auto">
-                    <table className="table-base">
-                      <thead><tr><th>Source</th><th>Kind</th><th>Status</th><th>Last sync</th></tr></thead>
-                      <tbody>
-                        {sourceList.map((s, i) => (
-                          <tr key={s.source_id || i}>
-                            <td className="text-slate-200">{s.name || s.source_id}</td>
-                            <td className="text-xs font-mono">{s.kind || s.connector || '—'}</td>
-                            <td><Badge tone={{ healthy: 'success', connected: 'success', degraded: 'warn', failed: 'danger' }[s.status] || 'default'}>
-                              {s.status || 'unknown'}</Badge></td>
-                            <td className="text-xs">{when(s.last_synced_at || s.last_sync_at)}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                )}
+              <Panel title="Sources" subtitle={`${sourceList.length} registered`}>
+                {sourceList.length === 0
+                  ? <PanelEmpty text="No sources registered." />
+                  : <SourceTable sources={sourceList} />}
               </Panel>
 
               <div className="grid gap-5 lg:grid-cols-2">

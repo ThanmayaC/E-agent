@@ -70,6 +70,7 @@ class CopilotLayer:
         self._knowledge = knowledge
         self._product = product
         self._bus = None
+        self.orchestrator = None   # set by the container via attach_orchestrator
 
     # ------------------------------------------------------------- wiring
     def attach_bus(self, bus) -> None:
@@ -77,6 +78,13 @@ class CopilotLayer:
         runtime — which is built after this layer."""
         self._bus = bus
         self.copilot.attach_bus(bus)
+
+    def attach_orchestrator(self, orchestrator) -> None:
+        """Wire the Enterprise AI Orchestrator, built in the container after
+        this layer (it federates the analytics/ML/forecast engines, which are
+        assembled later). Off = the copilot keeps its prior behaviour."""
+        self.orchestrator = orchestrator
+        self.copilot.attach_orchestrator(orchestrator)
 
     def register_jobs(self, scheduler, JobDefinition, RetryPolicy) -> None:
         """Register copilot work on the existing Enterprise Scheduler. The

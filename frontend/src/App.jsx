@@ -1,11 +1,10 @@
-import { Navigate, Route, Routes, useParams } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import ExecLayout from './components/ExecLayout'
 import AdminLayout from './components/AdminLayout'
-import Layout from './components/Layout'
 
-// Executive Workspace — business surfaces only (Home/Reports/Products/
-// Decisions/AI Assistant/Timeline). Technical surfaces live under Admin.
-import PMHome from './pages/PMHome'
+// Executive Workspace — business surfaces only. Every route below is reachable
+// from the rail in ExecLayout or from the header; nothing is mounted that the
+// user cannot navigate to.
 import AIHome from './pages/AIHome'
 import Files from './pages/Files'
 import Search from './pages/Search'
@@ -25,77 +24,26 @@ import Notifications from './pages/Notifications'
 import Settings from './pages/Settings'
 import Projects from './pages/Projects'
 
-// Admin Console — engineering surfaces, administrators only
+// Admin Console — engineering surfaces, administrators only. Every route here
+// maps to a real subsystem in AdminLayout's NAV.
 import AdminOverview from './pages/admin/AdminOverview'
 import AdminRuntime from './pages/admin/AdminRuntime'
 import AdminBrain from './pages/admin/AdminBrain'
-import AdminScheduler from './pages/admin/AdminScheduler'
 import AdminJobs from './pages/admin/AdminJobs'
 import AdminConnectors from './pages/admin/AdminConnectors'
-import AdminOperating from './pages/admin/AdminOperating'
 import AdminSync from './pages/admin/AdminSync'
-import AdminDocuments from './pages/admin/AdminDocuments'
-import AdminLogs from './pages/admin/AdminLogs'
 import AdminDiagnostics from './pages/admin/AdminDiagnostics'
 import AdminModels from './pages/admin/AdminModels'
-import Knowledge from './pages/Knowledge'
+import AdminLLM from './pages/admin/AdminLLM'
+import AdminWarehouse from './pages/admin/AdminWarehouse'
 import GraphExplorer from './pages/GraphExplorer'
-import DecisionAnalytics from './pages/DecisionAnalytics'
-import WorkflowMonitor from './pages/WorkflowMonitor'
-import AgentActivity from './pages/AgentActivity'
-import KnowledgeGrowth from './pages/KnowledgeGrowth'
-import ecosystem from './pages/EcosystemDashboard'
-// Per-project analyst workbench (backwards compatible, linked from Admin)
-import Dashboard from './pages/Dashboard'
-import Datasets from './pages/Datasets'
-import SchemaExplorer from './pages/SchemaExplorer'
-import Relationships from './pages/Relationships'
-import KnowledgeGraph from './pages/KnowledgeGraph'
-import Analytics from './pages/Analytics'
-import KPIs from './pages/KPIs'
-import Insights from './pages/Insights'
-import Predictions from './pages/Predictions'
-import Recommendations from './pages/Recommendations'
-import Copilot from './pages/Copilot'
-import Reports from './pages/Reports'
-import DataQuality from './pages/DataQuality'
-import Workflows from './pages/Workflows'
-import Admin from './pages/Admin'
-
-function ProjectShell() {
-  const { projectId } = useParams()
-  return (
-    <Layout projectId={projectId}>
-      <Routes>
-        <Route index element={<Dashboard />} />
-        <Route path="datasets" element={<Datasets />} />
-        <Route path="schema" element={<SchemaExplorer />} />
-        <Route path="relationships" element={<Relationships />} />
-        <Route path="graph" element={<KnowledgeGraph />} />
-        <Route path="analytics" element={<Analytics />} />
-        <Route path="kpis" element={<KPIs />} />
-        <Route path="insights" element={<Insights />} />
-        <Route path="predictions" element={<Predictions />} />
-        <Route path="recommendations" element={<Recommendations />} />
-        <Route path="copilot" element={<Copilot />} />
-        <Route path="reports" element={<Reports />} />
-        <Route path="quality" element={<DataQuality />} />
-        <Route path="knowledge" element={<Knowledge />} />
-        <Route path="workflows" element={<Workflows />} />
-        <Route path="admin" element={<Admin />} />
-        <Route path="ecosystem" element={<EcosystemDashboard />} />
-      </Routes>
-    </Layout>
-  )
-}
 
 export default function App() {
   return (
     <Routes>
-      {/* Product Manager Workspace — the production experience */}
+      {/* Executive Workspace — the production experience */}
       <Route element={<ExecLayout />}>
         <Route path="/" element={<AIHome />} />
-        <Route path="/pm-home" element={<PMHome />} />
         <Route path="/files" element={<Files />} />
         <Route path="/search" element={<Search />} />
         <Route path="/reports" element={<ReportsHub />} />
@@ -118,30 +66,28 @@ export default function App() {
       {/* Admin Console — engineering surfaces, administrators only */}
       <Route path="/admin" element={<AdminLayout />}>
         <Route index element={<AdminOverview />} />
-        <Route path="runtime" element={<AdminRuntime />} />
+        <Route path="warehouse" element={<AdminWarehouse />} />
+        <Route path="models" element={<AdminModels />} />
         <Route path="brain" element={<AdminBrain />} />
-        <Route path="scheduler" element={<AdminScheduler />} />
-        <Route path="jobs" element={<AdminJobs />} />
-        <Route path="operating" element={<AdminOperating />} />
+        <Route path="graph" element={<GraphExplorer />} />
+        <Route path="llm" element={<AdminLLM />} />
         <Route path="data-sources" element={<AdminConnectors />} />
         <Route path="sync" element={<AdminSync />} />
-        <Route path="documents" element={<AdminDocuments />} />
-        <Route path="knowledge" element={<Knowledge />} />
-        <Route path="logs" element={<AdminLogs />} />
+        <Route path="runtime" element={<AdminRuntime />} />
+        <Route path="jobs" element={<AdminJobs />} />
         <Route path="diagnostics" element={<AdminDiagnostics />} />
-        <Route path="models" element={<AdminModels />} />
-        <Route path="graph" element={<GraphExplorer />} />
-        <Route path="decision-analytics" element={<DecisionAnalytics />} />
-        <Route path="workflow-monitor" element={<WorkflowMonitor />} />
-        <Route path="agent-activity" element={<AgentActivity />} />
-        <Route path="knowledge-growth" element={<KnowledgeGrowth />} />
       </Route>
 
-      {/* Per-project analyst workbench (unchanged URLs) */}
-      <Route path="/p/:projectId/*" element={<ProjectShell />} />
-
-      {/* Legacy routes from the earlier executive-workspace / developer
-          workspace layouts, kept as redirects so old links still resolve. */}
+      {/* Legacy routes kept as redirects so old links still resolve.
+          `/p/*` was a per-project analyst workbench (datasets, schema, KPIs,
+          insights, predictions, quality, …). It had no inbound link from any
+          nav — only its own internal one — and every surface in it now has a
+          live equivalent: the warehouse and graph under Admin, the numbers
+          under Analytics and Evolution, the write-up under /reports/:id. The
+          shell and its sixteen pages are gone; the URLs land on the report
+          list, which is what the workbench was reached for. */}
+      <Route path="/p/:projectId/*" element={<Navigate to="/reports" replace />} />
+      <Route path="/pm-home" element={<Navigate to="/" replace />} />
       <Route path="/autonomy" element={<Navigate to="/admin/runtime" replace />} />
       <Route path="/reviews" element={<Navigate to="/reports" replace />} />
       <Route path="/projects" element={<Navigate to="/data" replace />} />
@@ -152,10 +98,10 @@ export default function App() {
       <Route path="/portfolio/product/:productId" element={<Navigate to="/products" replace />} />
       <Route path="/copilot" element={<Navigate to="/assistant" replace />} />
       <Route path="/graph" element={<Navigate to="/admin/graph" replace />} />
-      <Route path="/analytics/decisions" element={<Navigate to="/admin/decision-analytics" replace />} />
-      <Route path="/analytics/workflows" element={<Navigate to="/admin/workflow-monitor" replace />} />
-      <Route path="/analytics/agents" element={<Navigate to="/admin/agent-activity" replace />} />
-      <Route path="/analytics/knowledge" element={<Navigate to="/admin/knowledge-growth" replace />} />
+      <Route path="/analytics/decisions" element={<Navigate to="/admin" replace />} />
+      <Route path="/analytics/workflows" element={<Navigate to="/admin/jobs" replace />} />
+      <Route path="/analytics/agents" element={<Navigate to="/admin" replace />} />
+      <Route path="/analytics/knowledge" element={<Navigate to="/admin/graph" replace />} />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   )

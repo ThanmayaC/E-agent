@@ -7,6 +7,10 @@
 // these are presentation primitives the dashboards compose.
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+// The shared shapes live in ui.jsx; this module adds motion on top of them.
+// The dependency runs one way only (premium → ui) so there is one definition of
+// a header, a panel and an empty state rather than two that drift apart.
+import { Empty, ErrorBox, PageHeader, Panel } from './ui'
 
 // --------------------------------------------------------------- motion
 // One easing/limit vocabulary, so entrances feel deliberate, never busy.
@@ -45,8 +49,8 @@ export function StaggerItem({ children, className = '', y = 14 }) {
 // ------------------------------------------------------- loading states
 // Shimmering skeletons that mirror the shape of what's loading, so the page
 // never jumps when data arrives.
-export function Skeleton({ className = '' }) {
-  return <div className={`animate-pulse rounded-md bg-surface-overlay/70 ${className}`} />
+export function Skeleton({ className = '', style }) {
+  return <div className={`skeleton ${className}`} style={style} />
 }
 
 export function SkeletonCard({ lines = 3 }) {
@@ -55,7 +59,28 @@ export function SkeletonCard({ lines = 3 }) {
       <Skeleton className="h-3 w-24" />
       <Skeleton className="h-8 w-20" />
       {Array.from({ length: lines }).map((_, i) => (
+        // Ragged widths so the placeholder reads as text, not as bars. Skeleton
+        // has to forward `style` for this to have any effect.
         <Skeleton key={i} className="h-3" style={{ width: `${90 - i * 15}%` }} />
+      ))}
+    </div>
+  )
+}
+
+// Placeholder shaped like a table, for list/table surfaces where a grid of
+// stat cards would be the wrong silhouette.
+export function SkeletonTable({ rows = 6, cols = 4 }) {
+  return (
+    <div className="card p-4 space-y-2.5">
+      <div className="flex gap-3">
+        {Array.from({ length: cols }).map((_, i) => <Skeleton key={i} className="h-2.5 flex-1" />)}
+      </div>
+      {Array.from({ length: rows }).map((_, r) => (
+        <div key={r} className="flex gap-3">
+          {Array.from({ length: cols }).map((_, c) => (
+            <Skeleton key={c} className="h-3.5 flex-1" style={{ opacity: 1 - r * 0.1 }} />
+          ))}
+        </div>
       ))}
     </div>
   )
@@ -69,19 +94,14 @@ export function SkeletonGrid({ count = 4 }) {
   )
 }
 
-// Async gate with premium skeletons instead of a bare spinner.
+// Async gate with premium skeletons instead of a bare spinner. Error and empty
+// rendering is delegated so it matches AsyncSection's exactly.
 export function Loader({ state, skeleton, children, empty = 'Nothing here yet.' }) {
   if (state.loading) return skeleton || <SkeletonGrid />
-  if (state.error) {
-    return (
-      <div className="card-pad border-rose-500/40 text-rose-300 text-sm">
-        {String(state.error.message || state.error)}
-      </div>
-    )
-  }
+  if (state.error) return <ErrorBox error={state.error.message || state.error} />
   const d = state.data
   const isEmpty = !d || (Array.isArray(d) && d.length === 0)
-  if (isEmpty) return <div className="card-pad text-center py-12 text-slate-500 text-sm">{empty}</div>
+  if (isEmpty) return <Empty title={empty} />
   return children(d)
 }
 
@@ -177,7 +197,7 @@ export function TrendRow({ trend, unit = '' }) {
 
 // ------------------------------------------------------------ sparkline
 // Dependency-free inline SVG spark — for stat cards and dense tables.
-export function Sparkline({ data = [], width = 120, height = 32, stroke = '#4f8ef7', fill = true }) {
+export function Sparkline({ data = [], width = 120, height = 32, stroke = 'var(--chart-1)', fill = true }) {
   const pts = useMemo(() => {
     const nums = data.map(Number).filter((n) => !Number.isNaN(n))
     if (nums.length < 2) return null
@@ -332,7 +352,11 @@ function FactorBar({ label, value, weight }) {
 export function ScoreGauge({ score, size = 64 }) {
   const pct = Math.max(0, Math.min(1, Number(score) || 0))
   const r = (size - 8) / 2, c = 2 * Math.PI * r
-  const color = pct >= 0.66 ? '#f87171' : pct >= 0.4 ? '#fbbf24' : '#34d399'
+  // A high score here means "needs attention", so the scale runs the other way
+  // from HealthRing's. Both read the same status tokens.
+  const color = pct >= 0.66 ? 'var(--status-danger-fg)'
+    : pct >= 0.4 ? 'var(--status-warn-fg)'
+    : 'var(--status-success-fg)'
   return (
     <div className="relative shrink-0" style={{ width: size, height: size }}>
       <svg width={size} height={size} className="-rotate-90">
@@ -464,33 +488,19 @@ function MenuItem({ onClick, children }) {
 }
 
 // ---------------------------------------------------------- page header
-export function PremiumHeader({ title, subtitle, badge, children }) {
+// The same header as every other page, revealed on entry.
+export function PremiumHeader({ title, subtitle, badge, eyebrow, children }) {
   return (
-    <Reveal className="flex items-end justify-between mb-6 gap-4 flex-wrap">
-      <div>
-        <div className="flex items-center gap-2.5">
-          <h1 className="text-2xl font-bold text-slate-100 tracking-tight">{title}</h1>
-          {badge && <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-accent/15 text-accent uppercase tracking-wider">{badge}</span>}
-        </div>
-        {subtitle && <p className="text-sm text-slate-500 mt-1">{subtitle}</p>}
-      </div>
-      {children && <div className="flex items-center gap-2">{children}</div>}
+    <Reveal>
+      <PageHeader title={title} subtitle={subtitle} badge={badge} eyebrow={eyebrow}>
+        {children}
+      </PageHeader>
     </Reveal>
   )
 }
 
-// A soft-glow panel used for the flagship cockpit sections.
-export function GlowPanel({ title, action, children, className = '', accent = false }) {
-  return (
-    <section className={`card-pad relative ${accent ? 'border-accent/30' : ''} ${className}`}>
-      {accent && <div className="absolute -inset-px rounded-xl bg-gradient-to-b from-accent/10 to-transparent pointer-events-none -z-10" />}
-      {(title || action) && (
-        <div className="flex items-center justify-between mb-3 gap-3">
-          {title && <h2 className="text-sm font-semibold text-slate-200">{title}</h2>}
-          {action}
-        </div>
-      )}
-      {children}
-    </section>
-  )
+// Kept as a name the cockpit pages already use; the box itself is the shared
+// Panel, so a "glow" panel and a plain one are the same object.
+export function GlowPanel(props) {
+  return <Panel {...props} />
 }

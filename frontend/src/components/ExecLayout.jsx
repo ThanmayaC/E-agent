@@ -7,26 +7,36 @@ import { getTheme, isAdmin, setTheme } from '../lib/prefs'
 import AISidebar from './AISidebar'
 import ErrorBoundary from './ErrorBoundary'
 
-// A single flat nav for the Product Manager workspace. Technical/engineering
-// surfaces (graph, workflow monitor, agent activity, knowledge growth,
-// decision analytics) live under Admin, not here — see App.jsx.
-// Phase 2 #15: eight work-oriented destinations (Settings lives in the footer).
-// Search stays in the header bar; Products, Ecosystem, Evolution, Timeline and
-// Decisions remain reachable by URL (see App.jsx) and are surfaced as tabs/cards
-// inside Workspace, Analytics and Products — demoted from the rail, not removed.
+// The workspace rail, grouped by what the user is trying to do rather than by
+// which subsystem serves it. Technical/engineering surfaces live under Admin —
+// see App.jsx.
+//
+// Grouping replaced a flat nine-item list. The flat list had no room for
+// Decisions, Tasks, Timeline or Evolution, so those four surfaces were only
+// reachable by typing the URL; sections give every live surface a home and make
+// the rail scannable at the same time.
 const NAV = [
+  { section: 'Overview' },
   { to: '/', label: 'Workspace', icon: '✦', end: true },
-  { to: '/assistant', label: 'AI Analyst', icon: '💬' },
-  { to: '/ecosystem', label: 'Ecosystem', icon: '🌍' },
-  { to: '/files', label: 'Files', icon: '📎' },
-  { to: '/reports', label: 'Reports', icon: '▣' },
-  { to: '/intelligence', label: 'Analytics', icon: '⚛' },
-  { to: '/communications', label: 'Communications', icon: '✉' },
+  { to: '/assistant', label: 'AI Analyst', icon: '✧' },
+  { section: 'Analyse' },
+  { to: '/ecosystem', label: 'Ecosystem', icon: '◎' },
   { to: '/products', label: 'Products', icon: '▦' },
+  { to: '/intelligence', label: 'Analytics', icon: '⚛' },
+  { to: '/evolution', label: 'Evolution', icon: '◈' },
+  { section: 'Act' },
+  { to: '/decisions', label: 'Decisions', icon: '⚖' },
+  { to: '/tasks', label: 'Tasks', icon: '☑' },
+  { to: '/timeline', label: 'Timeline', icon: '≡' },
+  { section: 'Library' },
+  { to: '/reports', label: 'Reports', icon: '▣' },
+  { to: '/communications', label: 'Communications', icon: '✉' },
+  { to: '/files', label: 'Files', icon: '⎘' },
   { to: '/data', label: 'Projects', icon: '▤' },
 ]
 
-const NAV_INTEL = []
+// Flat list for the mobile strip, where section labels have no room.
+const NAV_FLAT = NAV.filter((i) => i.to)
 
 // Light theme leads; dark themes remain available via the header toggle.
 const THEMES = ['daylight', 'graphite', 'midnight']
@@ -112,7 +122,7 @@ function NotificationBell() {
           className="relative w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-slate-200 hover:bg-surface-overlay transition-colors">
       ◔
       {unread > 0 && (
-        <span className="absolute -top-0.5 -right-0.5 min-w-[16px] h-4 px-1 rounded-full bg-rose-500 text-white text-[10px] font-semibold flex items-center justify-center tabular-nums">
+        <span className="absolute -top-0.5 -right-0.5 min-w-[16px] h-4 px-1 rounded-full bg-[var(--status-danger-fg)] text-white text-[10px] font-semibold flex items-center justify-center tabular-nums">
           {unread > 99 ? '99+' : unread}
         </span>
       )}
@@ -132,19 +142,26 @@ export default function ExecLayout() {
 
   return (
     <div className="flex min-h-screen">
+      {/* The rail stays put while a long page scrolls — losing the nav after one
+          screen of a dashboard was the main navigation complaint. */}
       <aside className="w-[232px] shrink-0 border-r border-surface-border bg-surface-raised/50 flex flex-col
+                        lg:sticky lg:top-0 lg:h-screen
                         max-lg:fixed max-lg:inset-y-0 max-lg:left-0 max-lg:z-40 max-lg:hidden lg:flex">
         <button onClick={() => navigate('/')} className="px-5 py-4 border-b border-surface-border text-left">
           <div className="text-[15px] font-bold text-slate-100 tracking-tight">Enterprise Agent</div>
           <div className="text-[11px] text-slate-500 mt-0.5">Executive Workspace</div>
         </button>
-        <nav className="flex-1 overflow-y-auto py-3 space-y-0.5">
-          {NAV.map((item) => (
-            <NavLink key={item.to} to={item.to} end={item.end}
-                     className={({ isActive }) => `nav-item ${isActive ? 'nav-item-active' : 'nav-item-idle'}`}>
-              <span className="w-4 text-center opacity-70">{item.icon}</span>
-              {item.label}
-            </NavLink>
+        <nav className="flex-1 overflow-y-auto py-2 space-y-0.5">
+          {NAV.map((item, i) => (
+            item.section ? (
+              <div key={`s-${i}`} className="nav-section">{item.section}</div>
+            ) : (
+              <NavLink key={item.to} to={item.to} end={item.end}
+                       className={({ isActive }) => `nav-item ${isActive ? 'nav-item-active' : 'nav-item-idle'}`}>
+                <span className="w-4 text-center opacity-70">{item.icon}</span>
+                {item.label}
+              </NavLink>
+            )
           ))}
         </nav>
         <div className="py-2 border-t border-surface-border">
@@ -164,7 +181,8 @@ export default function ExecLayout() {
       </aside>
 
       <div className="flex-1 min-w-0 flex flex-col">
-        <header className="h-14 shrink-0 border-b border-surface-border bg-surface-raised/30 flex items-center gap-4 px-4 lg:px-6">
+        <header className="h-14 shrink-0 sticky top-0 z-30 border-b border-surface-border
+                           bg-surface-raised/80 backdrop-blur-md flex items-center gap-4 px-4 lg:px-6 no-print">
           <div className="lg:hidden text-sm font-bold text-slate-100">Enterprise Agent</div>
           <GlobalSearch />
           <div className="flex-1" />
@@ -178,11 +196,11 @@ export default function ExecLayout() {
 
         {/* Mobile nav — the sidebar collapses into a scrollable strip */}
         <nav className="lg:hidden flex gap-1 overflow-x-auto border-b border-surface-border px-2 py-1.5 bg-surface-raised/30">
-          {[...NAV, ...NAV_INTEL].map((item) => (
+          {NAV_FLAT.map((item) => (
             <NavLink key={item.to} to={item.to} end={item.end}
                      className={({ isActive }) =>
-                       `px-3 py-1.5 rounded-lg text-xs whitespace-nowrap ${
-                         isActive ? 'bg-surface-overlay text-white' : 'text-slate-400'}`}>
+                       `px-3 py-1.5 rounded-lg text-xs whitespace-nowrap transition-colors ${
+                         isActive ? 'bg-surface-overlay text-slate-100 font-medium' : 'text-slate-400'}`}>
               {item.label}
             </NavLink>
           ))}

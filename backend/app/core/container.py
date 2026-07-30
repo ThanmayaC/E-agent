@@ -347,6 +347,20 @@ class Container:
         # Shares the ecosystem reader (one cache over the same cube directory).
         self.evolution = EvolutionIntelligence(_eco_reader)
 
+        # V11.0: the raw-transaction warehouse — a DuckDB SQL surface over the
+        # multi-product parquet corpus (millions of individual payments), the
+        # analytics engine that derives every KPI from those rows, and the ML
+        # pipeline (EDA → features → train → backtest → forecast → explain).
+        # There is no aggregate table anywhere below this line: a number on a
+        # screen is always a query. If the corpus has not been generated the
+        # layer reports itself unavailable and the rest of the app is unaffected.
+        from app.warehouse import TransactionAnalytics, get_warehouse
+        from app.warehouse.ml import MLPipeline
+        self.warehouse = get_warehouse(
+            str(settings.enterprise_data_dir / "warehouse"))
+        self.tx_analytics = TransactionAnalytics(self.warehouse)
+        self.ml_pipeline = MLPipeline(self.tx_analytics)
+
         # Phase 2 #12: email intelligence. Emails from any configured provider
         # (Gmail/Outlook) become searchable enterprise knowledge — categorised
         # and linked to the same business entities the rest of the Brain uses.
@@ -398,6 +412,18 @@ class Container:
         # questions are answered by reasoning, not document retrieval alone.
         self.copilot_layer.context._executive = self.executive
         self.copilot_layer.evidence._executive = self.executive
+
+        # V11: the Enterprise AI Orchestrator — the copilot's central
+        # intelligence layer. Built here, last, because it federates every
+        # engine above it (analytics/ecosystem, evolution, ML, insight, RAG).
+        # It classifies each question and routes it to the engines that own the
+        # answer, merging their evidence into the copilot pipeline. Gated by
+        # settings.orchestrator_enabled — off, the copilot behaves as before.
+        self.ai_orchestrator = None
+        if settings.orchestrator_enabled and self.copilot_layer is not None:
+            from app.orchestrator import build_orchestrator
+            self.ai_orchestrator = build_orchestrator(self)
+            self.copilot_layer.attach_orchestrator(self.ai_orchestrator)
 
         # Admin-only observability, composed from every layer's own status.
         # self.latency was built earlier, alongside the LLM layer, so every

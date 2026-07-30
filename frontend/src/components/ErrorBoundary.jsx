@@ -29,7 +29,7 @@ export default class ErrorBoundary extends Component {
     if (this.state.error) {
       return (
         <div className="card-pad max-w-xl">
-          <div className="text-sm font-semibold text-rose-400">This page hit an error</div>
+          <div className="text-sm font-semibold fg-danger">This page hit an error</div>
           <div className="text-sm text-slate-400 mt-2">
             {String(this.state.error?.message || this.state.error)}
           </div>

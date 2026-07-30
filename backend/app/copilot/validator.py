@@ -127,23 +127,34 @@ class ResponseValidator:
 
     def _check_kpis(self, answer: str, evidence,
                     validation: Validation) -> None:
-        """A KPI the evidence never mentioned is a KPI the model invented."""
+        """A KPI the evidence never mentioned is a KPI the model invented.
+
+        The match is on the metric's **core words**, not its surface form: an
+        executive-facing model writes "the Success Rate", "Success Rate (%)",
+        and "success rate" interchangeably, and all three name the same KPI the
+        evidence holds. Comparing raw strings rejected the first two — a false
+        alarm that depends only on how the model phrased a real, evidenced
+        metric. So both sides are normalised (articles, unit suffixes like
+        "(%)"/"(M/day)", and punctuation stripped) and compared on their
+        significant words. A phrase only fails when it shares no core term with
+        any evidenced KPI — i.e. it names something genuinely absent.
+        """
         known = evidence.kpi_names()
         if not known:
             return
-        lowered = answer.lower()
-        # Only flag names that *look* like KPI references the model asserted:
-        # a capitalised metric phrase followed by a figure.
+        # Only a Title-Case phrase stated next to a figure is a candidate KPI
+        # *claim* — capturing lowercase continuation words grabs sentence
+        # fragments ("Rate showed an overall"), not metric names.
         for match in re.finditer(r"\b([A-Z][A-Za-z]+(?: [A-Z][A-Za-z]+){0,3})\b"
                                  r"(?=[^.]{0,40}?\d)", answer):
             phrase = match.group(1).strip()
-            if len(phrase) < 6 or phrase.lower() in lowered[:0]:
-                continue
             if not _looks_like_metric(phrase):
                 continue
-            if phrase.lower() not in known and not any(
-                    phrase.lower() in name or name in phrase.lower()
-                    for name in known):
+            # A phrase with no identifying word (only generic terms like "Rate",
+            # "The Total") cannot be judged invented — skip rather than reject.
+            if not _key_tokens(_normalize_metric(phrase)):
+                continue
+            if not _metric_in_evidence(phrase, known):
                 validation.rejections.append(
                     f"the answer names a KPI that is not in the evidence: "
                     f"'{phrase}'")
@@ -269,6 +280,53 @@ def _matches_any(value: float, known: set[float]) -> bool:
         # A model may quote 0.82 as 82 (a rate stated as a percentage).
         if candidate and abs(abs(candidate * 100) - abs(value)) / max(
                 abs(value), 1.0) <= ROUNDING_TOLERANCE:
+            return True
+    return False
+
+
+# Generic measurement words that do not, on their own, identify a metric —
+# "rate", "total", "average" describe many KPIs, so a shared "rate" is not
+# evidence that two phrases name the same one.
+_METRIC_GENERIC = {"the", "a", "an", "of", "per", "and", "for", "over", "in",
+                   "rate", "ratio", "total", "avg", "average", "percent",
+                   "percentage", "pct", "score", "number", "count", "level"}
+
+
+def _normalize_metric(phrase: str) -> str:
+    """Lower-case, drop unit parentheticals ("(%)", "(M/day)") and punctuation,
+    collapse whitespace — the surface noise that makes the same metric look
+    like three different names."""
+    s = phrase.lower()
+    s = re.sub(r"\([^)]*\)", " ", s)     # unit suffixes: (%), (Mn), (M/day)
+    s = re.sub(r"[^a-z0-9 ]", " ", s)    # slashes, %, ₹, punctuation
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def _key_tokens(norm: str) -> set[str]:
+    """The words that actually identify a metric — significant, non-generic."""
+    return {t for t in norm.split() if len(t) > 2 and t not in _METRIC_GENERIC}
+
+
+def _metric_in_evidence(phrase: str, known: set[str]) -> bool:
+    """Whether a named metric matches one the evidence holds, comparing core
+    words rather than surface form. True (do not reject) when the phrase equals,
+    is contained in, contains, or shares an identifying word with any evidenced
+    KPI; False only when it names something with no core term in the evidence."""
+    norm = _normalize_metric(phrase)
+    if not norm:
+        return True
+    ptok = set(norm.split())
+    pkey = _key_tokens(norm)
+    for name in known:
+        kn = _normalize_metric(name)
+        if not kn:
+            continue
+        if norm == kn or norm in kn or kn in norm:
+            return True
+        ktok = set(kn.split())
+        if ptok and (ptok <= ktok or ktok <= ptok):
+            return True
+        if pkey and _key_tokens(kn) & pkey:
             return True
     return False
 

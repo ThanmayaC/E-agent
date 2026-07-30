@@ -74,9 +74,9 @@ function Insights() {
             ) : (
               <>
                 <button onClick={() => feedback(i.id, 'accepted')}
-                  className="text-[11px] px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-400 hover:bg-emerald-500/25">Accept</button>
+                  className="chip chip-success hover:brightness-125">Accept</button>
                 <button onClick={() => feedback(i.id, 'rejected')}
-                  className="text-[11px] px-2 py-0.5 rounded bg-rose-500/15 text-rose-400 hover:bg-rose-500/25">Dismiss</button>
+                  className="chip chip-danger hover:brightness-125">Dismiss</button>
               </>
             )}
           </div>

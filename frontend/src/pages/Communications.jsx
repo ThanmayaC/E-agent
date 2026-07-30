@@ -176,7 +176,7 @@ export default function Communications() {
             <div className="flex flex-wrap gap-2 mb-4">
               {channels.map((p, i) => (
                 <span key={i} className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-lg bg-surface-raised border border-surface-border">
-                  <span className={`w-1.5 h-1.5 rounded-full ${p.available ? 'bg-emerald-400' : 'bg-slate-500'}`} />
+                  <span className={`w-1.5 h-1.5 rounded-full ${p.available ? 'bg-[var(--status-success-fg)]' : 'bg-surface-border'}`} />
                   {p.name} <span className="text-slate-500">{p.available ? 'connected' : 'not configured'}</span>
                 </span>
               ))}

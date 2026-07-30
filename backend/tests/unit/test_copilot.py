@@ -307,6 +307,29 @@ def test_small_numbers_in_prose_are_not_treated_as_claims(validator,
     assert validation.verdict != "rejected", validation.rejections
 
 
+def test_a_real_kpi_named_with_an_article_or_unit_is_not_rejected(validator,
+                                                                  evidence):
+    """The model writes "the Transaction Revenue" and "Transaction Revenue (%)"
+    for the KPI the evidence calls "Transaction Revenue". Matching on surface
+    form rejected those — a false alarm that depended only on phrasing, and the
+    reason a grounded answer failed intermittently for the same question."""
+    for phrasing in ("The Transaction Revenue is 120000.",
+                     "Transaction Revenue (amount) is 120000.",
+                     "the transaction revenue rose to 120000."):
+        _, validation = validator.validate(_response(phrasing), evidence)
+        assert validation.verdict != "rejected", (phrasing, validation.rejections)
+
+
+def test_a_generic_metric_word_is_not_treated_as_an_invented_kpi(validator,
+                                                                 evidence):
+    """A phrase with no identifying word ("The Total", "Rate") cannot be judged
+    invented, so it must not trigger a KPI rejection — only a grounded-number
+    check applies to it."""
+    _, validation = validator.validate(
+        _response("The Total reached 120000 this period."), evidence)
+    assert validation.verdict != "rejected", validation.rejections
+
+
 def test_an_invented_kpi_is_rejected(validator, evidence):
     checked, validation = validator.validate(
         _response("Customer Churn Rate is 12%, which is concerning."),

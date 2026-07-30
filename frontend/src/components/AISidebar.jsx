@@ -6,11 +6,16 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { api } from '../api/client'
 import { Badge } from './ui'
 
+// Every routed surface, so the panel can always name where the user is. The
+// copilot is told this page name, so a gap here degrades the answer, not just
+// the label.
 const PAGE_LABEL = {
-  '/': 'AI Home', '/assistant': 'Chat', '/files': 'Files', '/search': 'Search',
+  '/': 'Workspace', '/assistant': 'AI Analyst', '/files': 'Files', '/search': 'Search',
   '/reports': 'Reports', '/products': 'Products', '/ecosystem': 'Ecosystem',
   '/evolution': 'Evolution', '/decisions': 'Decisions', '/timeline': 'Timeline',
-  '/pm-home': 'Dashboard',
+  '/intelligence': 'Analytics', '/communications': 'Communications',
+  '/tasks': 'Tasks', '/notifications': 'Notifications', '/settings': 'Settings',
+  '/data': 'Projects', '/admin': 'Admin Console',
 }
 
 function pageName(path) {

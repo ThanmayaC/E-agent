@@ -13,7 +13,7 @@ import {
 
 const CATS = {
   decision: { label: 'Decisions', dot: 'bg-purple-400', tone: 'text-purple-300' },
-  learning: { label: 'Learning', dot: 'bg-emerald-400', tone: 'text-emerald-300' },
+  learning: { label: 'Learning', dot: 'bg-[var(--status-success-fg)]', tone: 'fg-success' },
   event: { label: 'Events', dot: 'bg-accent', tone: 'text-accent' },
 }
 

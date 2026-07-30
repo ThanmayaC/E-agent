@@ -11,6 +11,13 @@
   --surface-2: 23 28 39;
   --surface-border: 34 41 56;
   --accent: 82 139 255;
+
+  /* Elevation. Dark themes carry depth with a lifted hairline plus a soft
+     ambient shadow; paper carries it with shadow alone (see daylight). */
+  --elev-1: 0 1px 2px rgb(0 0 0 / 0.28);
+  --elev-2: 0 4px 16px -4px rgb(0 0 0 / 0.45);
+  --elev-3: 0 18px 48px -12px rgb(0 0 0 / 0.6);
+  --hairline: inset 0 1px 0 rgb(255 255 255 / 0.04);
 }
 
 [data-theme='graphite'] {
@@ -67,6 +74,16 @@
   --surface-2: 237 240 246;
   --surface-border: 214 220 230;
   --accent: 37 99 235;
+
+  /* On paper, depth is shadow — the dark themes' inset highlight would read as
+     a smudge, so it is neutralised. It must stay a *valid shadow* rather than
+     `none`: these tokens are composed into one `box-shadow` list, and a `none`
+     anywhere in that list invalidates the whole declaration, which silently
+     left light-theme cards completely flat. */
+  --elev-1: 0 1px 2px rgb(15 23 42 / 0.06);
+  --elev-2: 0 4px 14px -6px rgb(15 23 42 / 0.12);
+  --elev-3: 0 18px 44px -14px rgb(15 23 42 / 0.2);
+  --hairline: 0 0 0 0 rgb(0 0 0 / 0);
 
   /* Ink on paper. The status foregrounds drop to the 600/700 range because
      the 400s that read well on near-black fail contrast on near-white. */
@@ -132,27 +149,94 @@
 }
 
 @layer components {
-  .card { @apply bg-surface-raised border border-surface-border rounded-xl; }
+  /* ---------------------------------------------------------------- surfaces
+     One card recipe, used everywhere. Depth comes from the elevation tokens so
+     a theme switch changes depth correctly instead of leaving dark-tuned
+     shadows on paper. */
+  .card {
+    @apply bg-surface-raised border border-surface-border rounded-xl;
+    box-shadow: var(--elev-1), var(--hairline);
+  }
   .card-pad { @apply card p-5; }
-  .card-hover { @apply hover:border-accent/40 transition-colors; }
+  .card-hover {
+    @apply hover:border-accent/40 transition-[border-color,box-shadow,transform] duration-200;
+  }
+  .card-hover:hover { box-shadow: var(--elev-2), var(--hairline); transform: translateY(-1px); }
+  /* A quieter recessed surface for nested blocks inside a card. */
+  .inset { @apply bg-surface-overlay/40 border border-surface-border/60 rounded-lg; }
+
+  /* ------------------------------------------------------------- typography
+     A fixed scale. Pages pick a step, never a one-off size. */
+  .h-page { @apply text-2xl font-bold text-slate-100 tracking-tight; }
   .h-title { @apply text-lg font-semibold text-slate-100 tracking-tight; }
+  .h-panel { @apply text-sm font-semibold text-slate-200; }
   .h-sub { @apply text-xs uppercase tracking-wider text-slate-500 font-medium; }
   .eyebrow { @apply text-[11px] uppercase tracking-[0.14em] text-slate-500 font-medium; }
+  .prose-sm { @apply text-sm text-slate-400 leading-relaxed; }
   /* Executive numerals: large, tight, tabular — the workspace's typographic voice */
   .metric { @apply text-[28px] leading-9 font-semibold tracking-tight text-slate-100 tabular-nums; }
-  .btn { @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium
-         bg-accent text-white hover:bg-blue-500 transition-colors disabled:opacity-40 disabled:cursor-not-allowed; }
-  .btn-ghost { @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm
-         border border-surface-border text-slate-300 hover:bg-surface-overlay transition-colors; }
-  .btn-quiet { @apply text-xs text-slate-500 hover:text-slate-300 transition-colors; }
+  .metric-sm { @apply text-lg leading-6 font-semibold tracking-tight text-slate-100 tabular-nums; }
+  .metric-lg { @apply text-[40px] leading-[46px] font-bold tracking-tight text-slate-100 tabular-nums; }
+  .num { @apply tabular-nums; }
+
+  /* ----------------------------------------------------------------- controls */
+  /* The transition is scoped to the properties that actually animate. With
+     `transition-all` the elevation shadow is transitioned too, and a shadow
+     that comes from a themed custom property then sticks at its previous
+     theme's value when the theme switches — light-theme shadows stayed on the
+     dark buttons. */
+  .btn { @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium
+         bg-accent text-white hover:brightness-110 active:brightness-95
+         transition-[filter,background-color,opacity] duration-150
+         disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:brightness-100; }
+  .btn { box-shadow: var(--elev-1); }
+  .btn-ghost { @apply inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-lg text-sm
+         border border-surface-border text-slate-300 transition-colors
+         hover:bg-surface-overlay hover:text-slate-100 hover:border-slate-500
+         disabled:opacity-40 disabled:cursor-not-allowed; }
+  .btn-sm { @apply !px-2.5 !py-1 !text-xs; }
+  .btn-danger { @apply inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium
+         transition-colors; color: var(--status-danger-fg); background: var(--status-danger-bg); }
+  .btn-danger:hover { filter: brightness(1.15); }
+  .btn-quiet { @apply text-xs text-slate-500 hover:text-accent transition-colors; }
   .input { @apply bg-surface border border-surface-border rounded-lg px-3 py-2 text-sm
-         text-slate-200 placeholder-slate-500 focus:outline-none focus:border-accent w-full; }
+         text-slate-200 placeholder-slate-500 w-full transition-colors
+         focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20; }
+  .link { @apply text-accent hover:underline underline-offset-2 decoration-accent/40; }
+
+  /* Segmented control — the shared shape for mutually exclusive view switches. */
+  .segmented { @apply inline-flex items-center gap-0.5 p-0.5 rounded-lg bg-surface-overlay/60 border border-surface-border; }
+  .segmented > button { @apply px-2.5 py-1 rounded-md text-xs font-medium text-slate-400 transition-colors whitespace-nowrap; }
+  .segmented > button:hover { @apply text-slate-200; }
+  .segmented > button[aria-selected='true'] { @apply bg-surface-raised text-slate-100; box-shadow: var(--elev-1); }
+
+  /* ------------------------------------------------------------------ tables
+     Wide tables scroll inside .scroll-x so the page body never scrolls
+     sideways; the header stays put while the rows move. */
+  .scroll-x { @apply overflow-x-auto -mx-1 px-1; }
   .table-base { @apply w-full text-sm; }
-  .table-base th { @apply text-left h-sub px-3 py-2 border-b border-surface-border sticky top-0 bg-surface-raised; }
+  .table-base th { @apply text-left h-sub px-3 py-2 border-b border-surface-border sticky top-0 bg-surface-raised z-10 whitespace-nowrap; }
   .table-base td { @apply px-3 py-2 border-b border-surface-border/50 text-slate-300; }
-  .nav-item { @apply flex items-center gap-3 mx-2 px-3 py-[7px] rounded-lg text-sm transition-colors; }
-  .nav-item-active { @apply text-white bg-surface-overlay; }
+  .table-base tbody tr { @apply transition-colors; }
+  .table-base tbody tr:hover { @apply bg-surface-overlay/40; }
+  .table-base tbody tr:last-child td { @apply border-b-0; }
+  .table-base .cell-num { @apply text-right tabular-nums; }
+
+  /* --------------------------------------------------------------------- nav
+     The active rail item is marked by an accent bar, not colour alone — it
+     survives both themes and reads at a glance. */
+  .nav-item { @apply relative flex items-center gap-3 mx-2 px-3 py-[7px] rounded-lg text-sm transition-colors; }
+  .nav-item-active { @apply text-white bg-surface-overlay font-medium; }
+  .nav-item-active::before {
+    content: ''; @apply absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-4 rounded-r bg-accent;
+    margin-left: -8px;
+  }
   .nav-item-idle { @apply text-slate-400 hover:text-slate-200 hover:bg-surface-overlay/60; }
+  .nav-section { @apply px-5 pt-4 pb-1 text-[10px] uppercase tracking-[0.14em] text-slate-600 font-semibold; }
+
+  /* ------------------------------------------------------------ empty / load */
+  .skeleton { @apply animate-pulse rounded-md bg-surface-overlay/70; }
+  .empty-state { @apply flex flex-col items-center justify-center text-center py-12 px-6 text-sm text-slate-500; }
   /* V2.5: subtle grid backdrop for the flagship cockpit */
   .grid-backdrop {
     background-image: radial-gradient(rgb(var(--surface-border) / 0.5) 1px, transparent 1px);
@@ -177,6 +261,13 @@
   .fg-ai      { color: var(--status-ai-fg); }
   .fg-muted   { color: var(--text-muted); }
   .fg-primary { color: var(--text-primary); }
+
+  /* Hover counterparts. `hover:fg-danger` cannot work — Tailwind's variant
+     prefix only applies to utilities it generates, not to classes declared
+     here — so destructive/affirmative hovers get their own class. */
+  .hv-danger:hover  { color: var(--status-danger-fg); }
+  .hv-warn:hover    { color: var(--status-warn-fg); }
+  .hv-success:hover { color: var(--status-success-fg); }
 }
 
 /* V2.5 Export → Print / Save-as-PDF: strip the shell and let a single

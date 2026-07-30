@@ -31,6 +31,14 @@ MAX_PER_KIND = 10
 # Figures embedded in a retrieved passage are sourced — the passage IS the
 # evidence the model was shown, so a number inside it is not an invention.
 _NUMBER_IN_TEXT = re.compile(r"-?\d[\d,]*\.?\d*")
+# A raw spreadsheet dump: a wide table of date columns. Retrieved and truncated,
+# its cell values are unreliable evidence (see _document_chunks).
+_DATE_COL = re.compile(r"\d{1,2}-(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|"
+                       r"Nov|Dec)", re.I)
+
+
+def _is_data_dump(text: str) -> bool:
+    return len(_DATE_COL.findall(text)) >= 6 or text.count("|") >= 12
 # Below this many evidence items, an answer's confidence is capped — a
 # conclusion drawn from almost nothing is a guess wearing a number.
 WEAK_EVIDENCE = 3
@@ -65,25 +73,54 @@ class Evidence:
         model's figures against. This includes figures written inside a
         retrieved passage's ``text``: a document chunk carries its numbers in
         prose (a 94.2% success rate, a March 2026 date), and a number the model
-        quotes from the passage it was given is sourced, not invented."""
+        quotes from the passage it was given is sourced, not invented.
+
+        It also recurses into nested structures (an analytics KPI's day-by-day
+        ``series``, a forecast's per-day intervals): a 20+ day trend cannot
+        write every point into ``text`` without becoming unreadable, so a
+        model citing a specific day's value must still be able to ground it
+        against the structured payload the evidence actually carries."""
         found: set[float] = set()
+
+        def _walk(value: Any, key: str | None) -> None:
+            if isinstance(value, bool):
+                return
+            if isinstance(value, (int, float)):
+                found.add(round(float(value), 4))
+            elif isinstance(value, str) and key == "text":
+                for raw in _NUMBER_IN_TEXT.findall(value):
+                    try:
+                        found.add(round(float(raw.replace(",", "")), 4))
+                    except ValueError:
+                        continue
+            elif isinstance(value, dict):
+                for k, v in value.items():
+                    _walk(v, k)
+            elif isinstance(value, (list, tuple)):
+                for v in value:
+                    _walk(v, key)
+
         for item in self.items:
             for key, value in item.items():
-                if isinstance(value, bool):
-                    continue
-                if isinstance(value, (int, float)):
-                    found.add(round(float(value), 4))
-                elif isinstance(value, str) and key == "text":
-                    for raw in _NUMBER_IN_TEXT.findall(value):
-                        try:
-                            found.add(round(float(raw.replace(",", "")), 4))
-                        except ValueError:
-                            continue
+                _walk(value, key)
         return found
 
+    #: Every evidence kind that carries a KPI name. The validator grounds a KPI
+    #: the model names against this set, so all of them must count — the
+    #: executive layer's ``executive_kpi`` (e.g. "UPI Transactions (M/day)") and
+    #: the orchestrator's ``analytics_kpi`` are as much "a KPI the evidence
+    #: mentioned" as a project ``kpi`` is. Omitting them made the validator
+    #: reject answers that named a real, evidenced KPI.
+    _KPI_KINDS = ("kpi", "analytics_kpi", "executive_kpi")
+
     def kpi_names(self) -> set[str]:
-        return {str(i.get("name", "")).strip().lower()
-                for i in self.by_kind.get("kpi", []) if i.get("name")}
+        names: set[str] = set()
+        for kind in self._KPI_KINDS:
+            for i in self.by_kind.get(kind, []):
+                name = str(i.get("name", "")).strip().lower()
+                if name:
+                    names.add(name)
+        return names
 
     def describe(self) -> dict:
         return {"total": len(self.items),
@@ -502,6 +539,12 @@ class EvidenceCollector:
             payload = match.get("payload") or match
             text = str(payload.get("text") or "").strip()
             if not text:
+                continue
+            # A truncated wide-table spreadsheet dump ("01-Jul | 02-Jul | …") is
+            # unreliable evidence: the model quotes a cell whose value sits past
+            # the truncation and the validator rejects it. Skip it — the KPI
+            # series (analytics) is the authoritative source of those numbers.
+            if _is_data_dump(text):
                 continue
             document = str(payload.get("document") or "document")
             category = str(payload.get("category") or "document")
