@@ -1,71 +1,151 @@
-source_type,source,relation,target_type,target,weight,note
-merchant,BharatKart,settles_via,psp,iMobile Pay,70571,E-commerce / Mid
-merchant,BharatKart,in_region,region,South,70571,
-merchant,FreshBasket,settles_via,psp,Navi,116500,Grocery / Mid
-merchant,FreshBasket,in_region,region,Central,116500,
-merchant,MetroRide,settles_via,psp,iMobile Pay,71444,Mobility / Mid
-merchant,MetroRide,in_region,region,Central,71444,
-merchant,FlixStream,settles_via,psp,iMobile Pay,71697,OTT / Subscriptions / Mid
-merchant,FlixStream,in_region,region,East,71697,
-merchant,EduPrime,settles_via,psp,Paytm,118895,EdTech / Large
-merchant,EduPrime,in_region,region,West,118895,
-merchant,HealthFirst,settles_via,psp,Paytm,118799,Pharmacy / Small
-merchant,HealthFirst,in_region,region,East,118799,
-merchant,TravelGo,settles_via,psp,FamApp,79486,Travel / Small
-merchant,TravelGo,in_region,region,South,79486,
-merchant,StyleHub,settles_via,psp,Amazon Pay,71626,Fashion / Mid
-merchant,StyleHub,in_region,region,Central,71626,
-merchant,QuickBite,settles_via,psp,YONO SBI,80868,Food Delivery / Small
-merchant,QuickBite,in_region,region,South,80868,
-merchant,PowerPay Utilities,settles_via,psp,Amazon Pay,71613,Utilities / Large
-merchant,PowerPay Utilities,in_region,region,East,71613,
-merchant,InsureWell,settles_via,psp,Axis Mobile,77039,Insurance / Small
-merchant,InsureWell,in_region,region,East,77039,
-merchant,GadgetZone,settles_via,psp,iMobile Pay,70895,Electronics / Large
-merchant,GadgetZone,in_region,region,North,70895,
-merchant,DailyMart,settles_via,psp,iMobile Pay,70897,Retail / Large
-merchant,DailyMart,in_region,region,South,70897,
-merchant,WealthGrow,settles_via,psp,WhatsApp Pay,76716,Wealth / SIP / Small
-merchant,WealthGrow,in_region,region,South,76716,
-merchant,CityFuel,settles_via,psp,Amazon Pay,71182,Fuel / Small
-merchant,CityFuel,in_region,region,North,71182,
-psp,PhonePe,sponsored_by,bank,IndusInd Bank,0,
-psp,Google Pay,sponsored_by,bank,HDFC Bank,0,
-psp,Paytm,sponsored_by,bank,Union Bank of India,0,
-psp,BHIM,sponsored_by,bank,Federal Bank,0,
-psp,Amazon Pay,sponsored_by,bank,Canara Bank,0,
-psp,CRED,sponsored_by,bank,State Bank of India,0,
-psp,WhatsApp Pay,sponsored_by,bank,HDFC Bank,0,
-psp,Navi,sponsored_by,bank,HDFC Bank,0,
-psp,FamApp,sponsored_by,bank,ICICI Bank,0,
-psp,SuperMoney,sponsored_by,bank,IDFC First Bank,0,
-psp,Axis Mobile,sponsored_by,bank,Kotak Mahindra Bank,0,
-psp,YONO SBI,sponsored_by,bank,Union Bank of India,0,
-psp,iMobile Pay,sponsored_by,bank,Canara Bank,0,
-psp,HDFC MobileBanking,sponsored_by,bank,Union Bank of India,0,
-feature,Person to Merchant,part_of,product,UPI Core,0,
-feature,Person to Person,part_of,product,UPI Core,0,
-feature,Collect Requests,part_of,product,UPI Core,0,
-feature,Intent Payments,part_of,product,UPI Core,0,
-feature,UPI Autopay,part_of,product,UPI Autopay,0,
-feature,UPI Lite,part_of,product,UPI Lite,0,
-feature,UPI Lite X,part_of,product,UPI Lite X,0,
-feature,UPI 123Pay,part_of,product,UPI 123Pay,0,
-feature,UPI Credit Line,part_of,product,UPI Credit,0,
-feature,RuPay Credit on UPI,part_of,product,UPI Credit,0,
-feature,UPI International,part_of,product,UPI International,0,
-feature,QR Payments,part_of,product,QR Payments,0,
-feature,QR Payments,part_of,product,Merchant Products,0,
-feature,Person to Merchant,part_of,product,Merchant Products,0,
-feature,Person to Merchant,drives_growth,business,UPI volume,618234,-10.6% over the period
-feature,UPI Autopay,drives_growth,business,UPI volume,102345,+179.5% over the period
-feature,UPI Lite,drives_growth,business,UPI volume,135355,+128.2% over the period
-feature,Person to Person,drives_growth,business,UPI volume,463902,-46.5% over the period
-feature,Collect Requests,drives_growth,business,UPI volume,21420,-55.0% over the period
-feature,QR Payments,drives_growth,business,UPI volume,181820,+19.4% over the period
-feature,Intent Payments,drives_growth,business,UPI volume,44444,-14.3% over the period
-feature,UPI International,drives_growth,business,UPI volume,29789,+276.1% over the period
-feature,UPI Lite X,drives_growth,business,UPI volume,79383,+1081.8% over the period
-feature,RuPay Credit on UPI,drives_growth,business,UPI volume,49859,+422.2% over the period
-feature,UPI 123Pay,drives_growth,business,UPI volume,7093,-43.2% over the period
-feature,UPI Credit Line,drives_growth,business,UPI volume,71232,+546.1% over the period
+source_type,source,relation,target_type,target,weight,note,success_rate,value_inr
+merchant,Rapid Bazaar,settles_via,psp,BHIM,75905,Retail,96.81,31855721.0
+merchant,Girnar Connect,settles_via,psp,PhonePe,34812,Bills,96.22,15628374.0
+merchant,Tejas Bites,settles_via,psp,PhonePe,30481,Food & Beverage,96.95,7817417.0
+merchant,Sarita Kitchen,settles_via,psp,iMobile Pay,24055,Food & Beverage,97.11,6318423.0
+merchant,Swift Mart 1738,settles_via,psp,Google Pay,21745,Retail,96.9,8830697.0
+merchant,Hampi Stores 2298,settles_via,psp,Google Pay,21650,Retail,96.07,17039109.0
+merchant,Urban Boutique,settles_via,psp,Navi,20688,Retail,96.04,14237903.0
+merchant,Swift Tiffin,settles_via,psp,Google Pay,18599,Food & Beverage,97.06,4720170.0
+merchant,Shakti Stores 1531,settles_via,psp,PhonePe,16802,Retail,97.01,7125445.0
+merchant,Aravalli Pharmacy,settles_via,psp,PhonePe,16258,Healthcare,96.84,9871329.0
+merchant,Yamuna Restaurant,settles_via,psp,PhonePe,14736,Food & Beverage,96.19,16553708.0
+merchant,Vasant Wardrobe,settles_via,psp,Google Pay,14671,Retail,94.98,35800371.0
+merchant,Dhruva Supermart,settles_via,psp,PhonePe,11658,Retail,96.44,4894089.0
+merchant,Malabar Supermart 1818,settles_via,psp,PhonePe,11278,Retail,96.69,4908481.0
+merchant,Indus Connect,settles_via,psp,PhonePe,11221,Bills,96.33,5076966.0
+merchant,Kalinga Supermart,settles_via,psp,Google Pay,10284,Retail,96.66,4218958.0
+merchant,Kaveri Trading,settles_via,psp,Google Pay,9999,Retail,96.19,8097318.0
+merchant,Deccan Foods,settles_via,psp,PhonePe,9969,Food & Beverage,97.07,2529616.0
+merchant,Bharati Mobile,settles_via,psp,Navi,9787,Bills,96.59,4562285.0
+merchant,Ujjwal Water Board,settles_via,psp,Axis Mobile,9581,Bills,95.07,21814469.0
+merchant,Urban Tiffin,settles_via,psp,Google Pay,9026,Food & Beverage,96.95,2280245.0
+merchant,Kaveri Bazaar 1824,settles_via,psp,iMobile Pay,8741,Retail,96.64,3730931.0
+merchant,Bharat Fresh,settles_via,psp,BHIM,8009,Retail,97.04,3345190.0
+merchant,Prime Kitchen,settles_via,psp,Google Pay,7855,Food & Beverage,97.36,2038486.0
+merchant,Deccan Bazaar 2333,settles_via,psp,PhonePe,7500,Retail,96.65,3112334.0
+merchant,Ashoka Mart 1899,settles_via,psp,Paytm,7299,Retail,96.9,3120403.0
+merchant,Sahyadri Mobility,settles_via,psp,Navi,6960,Mobility,97.3,2118192.0
+merchant,Vindhya Kitchen 1606,settles_via,psp,PhonePe,6912,Food & Beverage,97.06,1794586.0
+merchant,Sundar Express,settles_via,psp,PhonePe,6686,Food & Beverage,97.23,1647942.0
+merchant,Konark Boutique,settles_via,psp,Paytm,6649,Retail,95.74,4722335.0
+merchant,Tejas Supermart,settles_via,psp,PhonePe,6625,Retail,96.62,3059218.0
+merchant,Kaveri Emporium,settles_via,psp,Google Pay,6495,Retail,96.3,5095719.0
+merchant,Zenith Mart 1521,settles_via,psp,Google Pay,6381,Retail,96.58,2713677.0
+merchant,Tejas Connect,settles_via,psp,Google Pay,6375,Bills,96.05,3030377.0
+merchant,Chola Express,settles_via,psp,Google Pay,6367,Food & Beverage,96.98,1643874.0
+merchant,Metro Pharmacy,settles_via,psp,PhonePe,6359,Healthcare,96.89,3827778.0
+merchant,Vega Kitchen,settles_via,psp,Paytm,6310,Food & Beverage,97.24,1597983.0
+merchant,Vega Electronics,settles_via,psp,PhonePe,6290,Retail,93.88,46072720.0
+merchant,Kalinga Bazaar,settles_via,psp,Google Pay,6284,Retail,97.09,2794448.0
+merchant,Nova Chemists,settles_via,psp,PhonePe,6203,Healthcare,96.74,3621407.0
+bank,State Bank of India,routes_through,psp,PhonePe,405426,Central,95.77,496519916.0
+bank,State Bank of India,routes_through,psp,Google Pay,277850,Central,95.69,352270509.0
+bank,HDFC Bank,routes_through,psp,PhonePe,135716,Central,95.96,172180341.0
+bank,HDFC Bank,routes_through,psp,Google Pay,101068,Central,95.95,125423675.0
+bank,Bank of Baroda,routes_through,psp,PhonePe,98869,Central,95.69,120315528.0
+bank,Union Bank of India,routes_through,psp,PhonePe,90399,Central,95.35,113161421.0
+bank,ICICI Bank,routes_through,psp,PhonePe,79657,Central,96.1,97511810.0
+bank,Axis Bank,routes_through,psp,PhonePe,79252,Central,95.84,102467953.0
+bank,Punjab National Bank,routes_through,psp,PhonePe,76683,Central,95.59,94600180.0
+bank,State Bank of India,routes_through,psp,Paytm,71238,Central,95.7,89134473.0
+bank,Canara Bank,routes_through,psp,PhonePe,70004,Central,95.51,85256009.0
+bank,Bank of Baroda,routes_through,psp,Google Pay,69222,Central,95.77,83902053.0
+bank,Union Bank of India,routes_through,psp,Google Pay,62633,Central,95.74,77625159.0
+bank,Punjab National Bank,routes_through,psp,Google Pay,56607,Central,95.37,69325119.0
+bank,Axis Bank,routes_through,psp,Google Pay,55166,Central,95.95,69129421.0
+bank,ICICI Bank,routes_through,psp,Google Pay,53017,Central,96.08,67190308.0
+bank,Canara Bank,routes_through,psp,Google Pay,50049,Central,95.79,63741668.0
+bank,Kotak Mahindra Bank,routes_through,psp,PhonePe,46164,Central,96.02,57522256.0
+bank,Yes Bank,routes_through,psp,PhonePe,45084,Central,95.88,55634362.0
+bank,Indian Bank,routes_through,psp,PhonePe,39613,Central,95.45,48193163.0
+bank,IDFC First Bank,routes_through,psp,PhonePe,34675,Central,96.0,44735987.0
+bank,State Bank of India,routes_through,psp,Navi,34407,Central,95.68,43711036.0
+bank,Yes Bank,routes_through,psp,Google Pay,34246,Central,95.6,41303908.0
+bank,Federal Bank,routes_through,psp,PhonePe,32423,Central,95.51,38409839.0
+bank,Kotak Mahindra Bank,routes_through,psp,Google Pay,31162,Central,96.05,40694810.0
+bank,IndusInd Bank,routes_through,psp,PhonePe,27902,Central,95.9,36338874.0
+bank,Indian Bank,routes_through,psp,Google Pay,27049,Central,95.37,33695887.0
+bank,HDFC Bank,routes_through,psp,Paytm,25239,Central,96.03,28738964.0
+bank,IDFC First Bank,routes_through,psp,Google Pay,23403,Central,95.78,31711562.0
+bank,Federal Bank,routes_through,psp,Google Pay,23118,Central,95.69,30761866.0
+bank,IndusInd Bank,routes_through,psp,Google Pay,20107,Central,95.68,26972315.0
+bank,AU Small Finance Bank,routes_through,psp,PhonePe,17628,Central,95.14,20350335.0
+bank,State Bank of India,routes_through,psp,SuperMoney,16770,Central,95.68,21803754.0
+bank,Bank of Baroda,routes_through,psp,Paytm,16567,Central,95.66,20407963.0
+bank,Union Bank of India,routes_through,psp,Paytm,13835,Central,95.42,18418283.0
+bank,Punjab National Bank,routes_through,psp,Paytm,13688,Central,95.26,19459617.0
+bank,Axis Bank,routes_through,psp,Paytm,13209,Central,95.87,17019588.0
+bank,AU Small Finance Bank,routes_through,psp,Google Pay,12923,Central,95.33,14264802.0
+bank,Canara Bank,routes_through,psp,Paytm,12711,Central,95.58,15485965.0
+bank,ICICI Bank,routes_through,psp,Paytm,12443,Central,96.3,16268134.0
+product,UPI Person to Merchant,acquires_in,mcc_category,Retail,349044,UPI,95.74,386956286.0
+product,UPI QR Payments,acquires_in,mcc_category,Retail,178795,UPI,96.46,67530183.0
+product,UPI Person to Merchant,acquires_in,mcc_category,Food & Beverage,171961,UPI,96.11,94513049.0
+product,UPI QR Payments,acquires_in,mcc_category,Food & Beverage,127851,UPI,96.37,43261401.0
+product,UPI QR Payments,acquires_in,mcc_category,Mobility,120774,UPI,96.24,71234361.0
+product,UPI Person to Merchant,acquires_in,mcc_category,Bills,115884,UPI,96.05,159881402.0
+product,UPI Lite,acquires_in,mcc_category,Food & Beverage,98301,UPI,98.7,7023952.0
+product,UPI Lite,acquires_in,mcc_category,Retail,93120,UPI,98.67,9401911.0
+product,UPI Lite,acquires_in,mcc_category,Mobility,64715,UPI,98.71,6205437.0
+product,Credit on UPI,acquires_in,mcc_category,Retail,43328,Credit,95.6,202026466.0
+product,UPI Person to Merchant,acquires_in,mcc_category,Healthcare,41165,UPI,96.13,31371031.0
+product,UPI Circle,acquires_in,mcc_category,Retail,36886,UPI,96.86,28479885.0
+product,RuPay Credit on UPI,acquires_in,mcc_category,Retail,28675,Credit,95.32,115120209.0
+product,UPI Lite,acquires_in,mcc_category,Bills,25198,UPI,98.76,2088176.0
+product,UPI QR Payments,acquires_in,mcc_category,Healthcare,24946,UPI,96.62,12553513.0
+product,UPI AutoPay,acquires_in,mcc_category,Digital,24167,Mandates,90.84,8853887.0
+product,UPI Person to Merchant,acquires_in,mcc_category,Digital,24103,UPI,96.1,16770952.0
+product,UPI Circle,acquires_in,mcc_category,Food & Beverage,21097,UPI,96.81,11629247.0
+product,UPI AutoPay,acquires_in,mcc_category,Bills,20707,Mandates,90.64,17427859.0
+product,UPI Person to Merchant,acquires_in,mcc_category,Services,19036,UPI,95.18,24078287.0
+product,UPI Lite Auto Top-Up,acquires_in,mcc_category,Bills,18391,UPI,96.17,19576202.0
+product,UPI Lite,acquires_in,mcc_category,Healthcare,17549,UPI,98.64,2534252.0
+product,UPI AutoPay,acquires_in,mcc_category,Financial Services,16929,Mandates,85.52,86597468.0
+product,Recurring Payments,acquires_in,mcc_category,Financial Services,14989,Mandates,86.66,85020618.0
+product,RuPay Credit on UPI,acquires_in,mcc_category,Mobility,11739,Credit,96.41,28388466.0
+product,UPI International,acquires_in,mcc_category,Retail,11395,UPI,95.4,46845936.0
+product,UPI Circle,acquires_in,mcc_category,Mobility,10194,UPI,96.82,8763938.0
+product,UPI Circle,acquires_in,mcc_category,Bills,9846,UPI,97.28,6206637.0
+product,UPI International,acquires_in,mcc_category,Travel,9480,UPI,93.73,324742933.0
+product,RuPay Credit on UPI,acquires_in,mcc_category,Food & Beverage,8969,Credit,96.34,13685788.0
+product,RuPay Credit on UPI,acquires_in,mcc_category,Travel,8604,Credit,93.77,164391073.0
+product,UPI 123Pay,acquires_in,mcc_category,Bills,8125,UPI,94.92,5888439.0
+product,UPI International,acquires_in,mcc_category,Food & Beverage,7216,UPI,95.43,24847617.0
+product,UPI Circle,acquires_in,mcc_category,Healthcare,6540,UPI,97.31,7190658.0
+product,UPI 123Pay,acquires_in,mcc_category,Retail,6431,UPI,95.32,1862771.0
+product,Credit on UPI,acquires_in,mcc_category,Food & Beverage,6079,Credit,95.62,16068639.0
+product,Recurring Payments,acquires_in,mcc_category,Bills,5031,Mandates,90.8,10094250.0
+product,UPI AutoPay,acquires_in,mcc_category,Education,4274,Mandates,88.86,5028406.0
+product,Credit on UPI,acquires_in,mcc_category,Travel,2846,Credit,93.5,86658806.0
+product,UPI Circle,acquires_in,mcc_category,Education,2835,UPI,95.41,12951571.0
+region,South,transacts_on,product,UPI Person to Person,266101,Andhra Pradesh,94.98,283515792.0
+region,North,transacts_on,product,UPI Person to Person,227775,Chandigarh,95.01,242561415.0
+region,West,transacts_on,product,UPI Person to Person,224707,Gujarat,94.89,237527848.0
+region,South,transacts_on,product,UPI Person to Merchant,210208,Andhra Pradesh,95.96,196734454.0
+region,North,transacts_on,product,UPI Person to Merchant,180267,Chandigarh,95.8,184691831.0
+region,West,transacts_on,product,UPI Person to Merchant,174360,Gujarat,95.85,179576850.0
+region,South,transacts_on,product,UPI QR Payments,128551,Andhra Pradesh,96.47,54737839.0
+region,North,transacts_on,product,UPI QR Payments,118698,Chandigarh,96.35,51340287.0
+region,West,transacts_on,product,UPI QR Payments,107520,Gujarat,96.31,45720301.0
+region,East,transacts_on,product,UPI Person to Person,105016,Assam,95.01,110252315.0
+region,East,transacts_on,product,UPI Person to Merchant,88491,Assam,95.97,93493898.0
+region,South,transacts_on,product,UPI Lite,88148,Andhra Pradesh,98.7,7944525.0
+region,North,transacts_on,product,UPI Lite,75587,Chandigarh,98.66,6889300.0
+region,West,transacts_on,product,UPI Lite,74407,Gujarat,98.7,6862442.0
+region,Central,transacts_on,product,UPI Person to Merchant,67867,Madhya Pradesh,95.97,59073974.0
+region,Central,transacts_on,product,UPI Person to Person,65519,Madhya Pradesh,94.91,71557301.0
+region,East,transacts_on,product,UPI QR Payments,51770,Assam,96.45,23086263.0
+region,Central,transacts_on,product,UPI QR Payments,45827,Madhya Pradesh,96.35,19694768.0
+region,East,transacts_on,product,UPI Lite,33798,Assam,98.61,3072496.0
+region,Central,transacts_on,product,UPI Lite,26943,Madhya Pradesh,98.89,2484965.0
+region,South,transacts_on,product,UPI Circle,25585,Andhra Pradesh,96.87,21433472.0
+region,North,transacts_on,product,UPI Circle,22318,Chandigarh,96.64,21163459.0
+region,West,transacts_on,product,UPI Circle,21253,Gujarat,96.93,17698753.0
+region,South,transacts_on,product,UPI AutoPay,21243,Andhra Pradesh,89.45,34849311.0
+region,South,transacts_on,product,RuPay Credit on UPI,17779,Andhra Pradesh,95.42,100726947.0
+region,South,transacts_on,product,Credit on UPI,17582,Andhra Pradesh,95.05,159631950.0
+region,West,transacts_on,product,UPI AutoPay,17401,Gujarat,89.32,30315087.0
+region,North,transacts_on,product,UPI AutoPay,16917,Chandigarh,89.11,30184300.0
+region,West,transacts_on,product,RuPay Credit on UPI,14219,Gujarat,95.28,85897332.0
+region,North,transacts_on,product,RuPay Credit on UPI,13925,Chandigarh,95.76,74255122.0

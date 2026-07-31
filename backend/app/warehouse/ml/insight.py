@@ -43,17 +43,37 @@ def confidence(bt: BacktestResult | None, eda: dict, n_obs: int) -> dict:
                "history": 0.18, "regularity": 0.22}
     score = sum(comps[k] * weights[k] for k in weights) * 100
     band = ("high" if score >= 72 else "moderate" if score >= 50 else "low")
+
+    # A model that loses to seasonal-naive may not call itself high-confidence,
+    # however small its absolute error. A near-flat series (success rate sits at
+    # ~99% all year) scores well on accuracy and regularity and would otherwise
+    # reach "high" while being beaten by "assume next week looks like this one"
+    # — and the high-confidence wording asserts it beat that baseline, which
+    # would then be false. Cap the band and say what actually happened.
+    lost_to_naive = bool(bt and bt.skill_vs_naive is not None
+                         and bt.skill_vs_naive < 0)
+    if lost_to_naive and band == "high":
+        band = "moderate"
     return {
         "score": round(score, 1),
         "band": band,
         "components": {k: round(v, 3) for k, v in comps.items()},
         "weights": weights,
-        "interpretation": _confidence_text(band, bt)}
+        "beat_naive_baseline": None if not bt or bt.skill_vs_naive is None
+        else not lost_to_naive,
+        "interpretation": _confidence_text(band, bt, lost_to_naive)}
 
 
-def _confidence_text(band: str, bt: BacktestResult | None) -> str:
+def _confidence_text(band: str, bt: BacktestResult | None,
+                     lost_to_naive: bool = False) -> str:
     mape = f"{bt.mape:.1f}% backtest error" if bt and bt.mape is not None \
         else "limited validation history"
+    if lost_to_naive:
+        skill = abs(bt.skill_vs_naive) if bt and bt.skill_vs_naive else 0.0
+        return (f"Moderate confidence — the model tracks the series closely "
+                f"({mape}) but did not beat a seasonal-naive baseline "
+                f"(worse by {skill:.0f}%), so the series is better read as "
+                f"stable than as modelled. Use the level, not the movement.")
     if band == "high":
         return (f"High confidence — the model held up out-of-sample "
                 f"({mape}) and beat a seasonal-naive baseline.")
@@ -65,10 +85,69 @@ def _confidence_text(band: str, bt: BacktestResult | None) -> str:
 
 
 # --------------------------------------------------------------- supporting
+def anomaly_impact(dates: list | None, series: list[float] | None,
+                   anomalies: dict | None) -> dict | None:
+    """How much the anomalous days moved the level the forecast starts from.
+
+    A forecast trained through an outage inherits it. Quantifying that is the
+    difference between "15 anomalies were detected" — which tells a reader
+    nothing actionable — and "excluding them the series sits 0.8% higher, so
+    the projection is anchored to a depressed baseline", which tells them
+    whether to trust the number they are about to plan against.
+    """
+    if not series or not dates or not anomalies \
+            or not anomalies.get("available"):
+        return None
+    flagged = {str(p.get("date")) for key in ("seasonal_anomalies",
+                                              "multivariate_anomalies")
+               for p in (anomalies.get(key) or [])
+               if isinstance(p, dict) and p.get("date")}
+    if not flagged:
+        return None
+    clean = [v for d, v in zip(dates, series) if str(d)[:10] not in flagged]
+    if len(clean) < 10 or len(clean) == len(series):
+        return None
+    with_mean = sum(series) / len(series)
+    without_mean = sum(clean) / len(clean)
+    if with_mean == 0:
+        return None
+    shift_pct = (without_mean - with_mean) / abs(with_mean) * 100
+    n_flagged = len(series) - len(clean)
+    return {
+        "anomalous_days": n_flagged,
+        "share_of_window_pct": round(n_flagged / len(series) * 100, 1),
+        "mean_with_anomalies": round(with_mean, 4),
+        "mean_excluding_anomalies": round(without_mean, 4),
+        "baseline_shift_pct": round(shift_pct, 3),
+        "interpretation": (
+            f"Removing the {n_flagged} anomalous day(s) moves the window mean "
+            f"by {shift_pct:+.2f}%. "
+            + ("That is small enough that the forecast is not meaningfully "
+               "anchored to them."
+               if abs(shift_pct) < 0.5 else
+               "The forecast starts from a baseline those days have "
+               f"{'depressed' if shift_pct > 0 else 'inflated'}, so treat the "
+               "projected level as carrying that distortion.")),
+    }
+
+
 def supporting_factors(eda: dict, importances: list[dict],
-                       target: str) -> list[dict]:
+                       target: str, anomaly_effect: dict | None = None
+                       ) -> list[dict]:
     """The measured signals behind the forecast, each with its evidence."""
     factors: list[dict] = []
+    if anomaly_effect:
+        factors.append({
+            "factor": "anomaly impact",
+            "finding": anomaly_effect["interpretation"],
+            "evidence": (
+                f"{anomaly_effect['anomalous_days']} flagged day(s) "
+                f"({anomaly_effect['share_of_window_pct']}% of the window); "
+                f"mean {anomaly_effect['mean_with_anomalies']} with vs "
+                f"{anomaly_effect['mean_excluding_anomalies']} without"),
+            "strength": "strong"
+            if abs(anomaly_effect["baseline_shift_pct"]) >= 0.5
+            else "weak"})
     trend = eda.get("trend", {}) if eda else {}
     if trend.get("detected"):
         factors.append({
@@ -143,8 +222,24 @@ def business_reason(eda: dict, forecast: list[dict], bt: BacktestResult | None,
         bits[-1] += f" over the next {horizon} days"
 
     if trend.get("detected"):
-        bits.append(f"the underlying trend is {trend['direction']} and "
-                    f"statistically real (p={trend.get('p_value')})")
+        # Reconcile the two explicitly when they disagree. A paragraph that
+        # says "projected to decline" and "the trend is increasing" in
+        # consecutive sentences reads as a contradiction and costs the reader
+        # their confidence in the whole output, when in fact it is the single
+        # most useful thing the model has to say.
+        rising = trend["direction"] == "increasing"
+        opposed = (change < -1 and rising) or (change > 1 and not rising)
+        if opposed:
+            bits.append(
+                f"this runs against the underlying trend, which is "
+                f"{trend['direction']} and statistically real "
+                f"(p={trend.get('p_value')}) — so the move is a short-horizon "
+                f"effect (weekday mix, calendar or a recent level shift) "
+                f"rather than a change of direction")
+        else:
+            bits.append(f"consistent with an underlying trend that is "
+                        f"{trend['direction']} and statistically real "
+                        f"(p={trend.get('p_value')})")
     wk = eda.get("weekly_seasonality", {}) if eda else {}
     if wk.get("detected"):
         bits.append(f"with the usual weekly rhythm peaking {wk.get('peak_day')} "
@@ -172,6 +267,14 @@ def potential_risks(eda: dict, bt: BacktestResult | None,
     if bt and bt.coverage_80 is not None and bt.coverage_80 < 70:
         risks.append(f"Backtest interval coverage is only {bt.coverage_80:.0f}% "
                      f"vs an 80% target — intervals may be optimistic.")
+    elif bt and bt.coverage_80 is not None and bt.coverage_80 > 90:
+        # Over-coverage is a real defect, not a bonus: it means the band is
+        # so wide it excludes almost nothing, so planning against it is
+        # planning against a range that carries little information.
+        risks.append(f"Backtest interval coverage is {bt.coverage_80:.0f}% "
+                     f"against an 80% target — the prediction band is wider "
+                     f"than the data warrants, so treat the interval as "
+                     f"conservative rather than as a tight planning range.")
     if bt and bt.skill_vs_naive is not None and bt.skill_vs_naive < 0:
         risks.append("The model does not beat a seasonal-naive baseline here; "
                      "the extra machinery is not earning its keep on this slice.")

@@ -50,6 +50,9 @@ def resolve_window(time_range: dict | None, corpus: tuple[str, str]) -> dict:
     if not time_range:
         return _relative("last_ndays", 30, first, last, "the last 30 days")
 
+    if time_range.get("kind") == "month":
+        return _whole_month(time_range, first, last)
+
     if time_range.get("kind") == "explicit":
         if time_range.get("start_iso"):
             return {"start": max(first, time_range["start_iso"]),
@@ -87,6 +90,37 @@ def _relative(token: str, n, first: str, last: str, label) -> dict:
     shown = (f"recent actuals (last {days} days)" if forward
              else label or f"the last {days} days")
     return {"start": start, "end": last, "label": shown, "forward": forward}
+
+
+def _whole_month(tr: dict, first: str, last: str) -> dict:
+    """The full calendar month a question named, clamped to the corpus.
+
+    A month with no year resolves to the most recent occurrence the corpus
+    actually covers, so "in May" means the May there is data for rather than a
+    year the platform has never seen.
+    """
+    month = int(tr.get("month") or 1)
+    year = tr.get("year")
+    if not year:
+        year = int(last[:4])
+        # Walk back a year if that month has not happened yet in the corpus.
+        if date(year, month, 1).isoformat() > last:
+            year -= 1
+    start = date(year, month, 1)
+    end = date(year, month, _days_in(year, month))
+    lo, hi = max(first, start.isoformat()), min(last, end.isoformat())
+    label = tr.get("label") or start.strftime("%B %Y")
+    if lo > hi:
+        # The named month lies entirely outside the corpus. Say so rather than
+        # silently answering about some other period.
+        return {"start": first, "end": last,
+                "label": f"{label} (outside the available history "
+                         f"{first}..{last})",
+                "forward": False, "out_of_range": True}
+    partial = lo > start.isoformat() or hi < end.isoformat()
+    return {"start": lo, "end": hi,
+            "label": f"{label} (partial: {lo}..{hi})" if partial else label,
+            "forward": False}
 
 
 def _resolve_md(md, first: str, last: str, which: str) -> str:
@@ -129,9 +163,12 @@ def entity_filters(request, analytics) -> dict:
         if m:
             out["merchant"] = None  # name filtering handled by caller if needed
     if products:
-        code = _match_product(analytics, products)
-        if code:
-            out["product"] = code
+        codes = match_products(analytics, products)
+        # A single code stays a scalar so `describe()` and existing consumers
+        # read the same as before; two or more become a list, which
+        # `Filters.where()` renders as `IN (...)`.
+        if codes:
+            out["product"] = codes[0] if len(codes) == 1 else codes
     return {k: v for k, v in out.items() if v}
 
 
@@ -151,19 +188,40 @@ def _match_names(analytics, col: str, wanted: list[str]) -> list[str]:
     return hit
 
 
-def _match_product(analytics, wanted: list[str]) -> str | None:
+def match_products(analytics, wanted: list[str]) -> list[str]:
+    """Every product the question named, in the order it named them.
+
+    This used to return on the first match. "Compare UPI AutoPay and UPI Lite"
+    therefore resolved to AutoPay alone and the platform answered a question
+    about one product as though it were the question asked about two — with no
+    warning that half the request had been dropped.
+    """
     try:
         prods = analytics.products()
     except Exception:  # noqa: BLE001
         return []
+    codes: list[str] = []
     for w in wanted:
-        wl = str(w).lower()
+        wl = str(w).lower().strip()
         for p in prods:
-            if wl in (str(p.get("product_name", "")).lower(),
-                      str(p.get("product_code", "")).lower(),
-                      str(p.get("product_family", "")).lower()):
-                return p.get("product_code")
-    return None
+            name = str(p.get("product_name", "")).lower()
+            code = str(p.get("product_code", "")).lower()
+            family = str(p.get("product_family", "")).lower()
+            # Exact match first, then a contained match so "upi lite" finds
+            # "UPI Lite" without also swallowing "UPI Lite Auto Top-Up".
+            if wl in (name, code, family):
+                got = p.get("product_code")
+                if got and got not in codes:
+                    codes.append(got)
+                break
+        else:
+            for p in prods:
+                if wl and wl in str(p.get("product_name", "")).lower():
+                    got = p.get("product_code")
+                    if got and got not in codes:
+                        codes.append(got)
+                    break
+    return codes
 
 
 def build_filters(request, analytics) -> tuple[Filters, dict]:

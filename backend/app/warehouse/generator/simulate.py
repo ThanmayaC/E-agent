@@ -30,6 +30,26 @@ from app.warehouse.generator.events import Event
 
 _BUCKETS = ("technical", "business", "risk", "timeout")
 
+# How each incident kind expresses itself in the failure taxonomy. An event
+# declares its impact as a single number of percentage points; this is how
+# those points land across (technical, business, risk, timeout). A bank outage
+# produces U30/U28 declines, a fraud ring produces U16/K1, a settlement delay
+# pushes mandates outside their permitted window — the split is what makes the
+# failure-code table downstream tell the truth about the cause.
+_EVENT_SPLIT: dict[str, tuple[float, float, float, float]] = {
+    "bank_outage":         (0.62, 0.06, 0.02, 0.30),
+    "maintenance_window":  (0.74, 0.04, 0.01, 0.21),
+    "psp_degradation":     (0.54, 0.07, 0.03, 0.36),
+    "network_latency":     (0.22, 0.02, 0.02, 0.74),
+    "settlement_delay":    (0.28, 0.54, 0.02, 0.16),
+    "fraud_spike":         (0.08, 0.12, 0.72, 0.08),
+    "adoption_surge":      (0.20, 0.62, 0.10, 0.08),
+    "merchant_onboarding": (0.46, 0.34, 0.08, 0.12),
+    "corridor_launch":     (0.46, 0.22, 0.14, 0.18),
+    "merchant_campaign":   (0.18, 0.46, 0.16, 0.20),
+}
+_DEFAULT_SPLIT = (0.38, 0.40, 0.08, 0.14)
+
 # Intraday shape by product family. Real UPI has a double hump (late-morning
 # and evening); mandates fire in the overnight batch; 123Pay skews to daytime.
 _HOUR_PROFILES: dict[str, list[float]] = {
@@ -177,6 +197,17 @@ class TransactionSimulator:
         self._scheduled: dict[int, list[dict]] = {}
         self._retry_carry: dict[int, list[tuple]] = {}
         self._mandate_retry: dict[int, list[tuple[int, int]]] = {}
+        self._storm_cache: tuple[int, tuple] = (-1, ({}, {}, {}, 0.0))
+
+    def _hour_share(self, code: str, window: tuple[int, int] | None) -> float:
+        """Share of a product's daily volume falling inside an hour window."""
+        if window is None:
+            return 1.0
+        prof = np.diff(self._hour_cum[code], prepend=0.0)
+        lo, hi = window
+        sel = (np.arange(24) >= lo) & (np.arange(24) < hi) if lo < hi else \
+            (np.arange(24) >= lo) | (np.arange(24) < hi)
+        return float(prof[sel].sum())
 
     def _ar1(self, n: int, rho: float, sigma: float) -> np.ndarray:
         """n independent AR(1) paths of length self.days."""
@@ -208,7 +239,10 @@ class TransactionSimulator:
             if w > 0 and ev.matches(product=product.code) and not (
                     ev.scope.get("bank") or ev.scope.get("psp")
                     or ev.scope.get("mcc") or ev.scope.get("region")):
-                ev_vol *= 1.0 + ev.volume_impact * w
+                # An event confined to a few hours can only move the share of
+                # the day's volume that falls inside them.
+                ev_vol *= 1.0 + ev.volume_impact * w * self._hour_share(
+                    product.code, ev.hour_window)
 
         noise = math.exp(self._prod_noise[product.code][d]
                          + self._shocks[product.code][d])
@@ -307,7 +341,7 @@ class TransactionSimulator:
         # ---- outcome ------------------------------------------------------
         status, fail_ix, bucket_ix, fraud = self._outcome(
             d, product, n, t, payer_bank, payer_psp, mcc_ix, ticket, cal,
-            region, attempt)
+            region, attempt, hours)
 
         latency, switch_ms, issuer_ms = self._latency(
             d, product, n, payer_bank, payer_psp, hours, status, region)
@@ -391,70 +425,122 @@ class TransactionSimulator:
             amt = np.minimum(amt, product.ticket_cap)
         return amt
 
+    def _event_mask(self, ev, n: int, hours: np.ndarray,
+                    bank_names: np.ndarray, psp_names: np.ndarray,
+                    region: np.ndarray, mcc_ix: np.ndarray,
+                    live: np.ndarray) -> np.ndarray | None:
+        """Which of this batch's attempts an event can actually touch."""
+        m = np.ones(n, dtype=bool)
+        if ev.scope.get("bank"):
+            m &= bank_names == ev.scope["bank"]
+        if ev.scope.get("psp"):
+            m &= psp_names == ev.scope["psp"]
+        if ev.scope.get("region"):
+            m &= region == ev.scope["region"]
+        if ev.scope.get("mcc"):
+            code = ev.scope["mcc"]
+            m &= live & (self._mcc_code[np.where(live, mcc_ix, 0)] == code)
+        hm = ev.hour_mask(hours)
+        if hm is not None:
+            m &= hm
+        return m
+
     def _outcome(self, d: int, product, n: int, t: float,
                  payer_bank: np.ndarray, payer_psp: np.ndarray,
                  mcc_ix: np.ndarray, amount: np.ndarray, cal: DayContext,
-                 region: np.ndarray, attempt: int):
-        rng = self.rng
-        p = np.full(n, product.base_success + product.success_drift * t)
-        p += (self._bank_success[payer_bank] - 98.42) * 0.75
-        p += self._bank_drift[payer_bank, d]
-        p += self._psp_drift[payer_psp, d]
-        live = mcc_ix >= 0
-        if live.any():
-            p[live] += self._mcc_succ[mcc_ix[live]]
-        # Large tickets fail more (limits, balances, risk rules).
-        p -= np.clip(np.log10(np.maximum(amount, 1.0)) - 2.6, 0, None) * 0.92
-        # A retry of a previously failed payment succeeds less often.
-        p -= attempt * 6.5
+                 region: np.ndarray, attempt: int, hours: np.ndarray):
+        """Resolve each attempt as four independent competing failure hazards.
 
+        Every bucket carries its own probability of killing the payment,
+        driven by the thing that actually causes it: technical by issuer and
+        PSP health, business by the payer's balance and limits, risk by the
+        fraud engine, timeout by latency. A failed transaction's bucket is
+        therefore *the hazard that fired* rather than a label drawn afterwards
+        from a fixed mix, so a per-bank or per-MCC failure breakdown carries
+        real signal instead of reproducing the same ratio everywhere.
+        """
+        rng = self.rng
+        hz = np.asarray(product.decline_hazards, dtype=float)
+        haz = np.repeat(hz[:, None], n, axis=1)          # (4, n), percent
+        live = mcc_ix >= 0
+
+        # ---- how healthy the issuer and the app are today ------------------
+        # A bank sitting a point below the ecosystem mean carries
+        # proportionally more infrastructure declines; the AR(1) drift moves
+        # that penalty day to day so no issuer is permanently good or bad.
+        bank_pen = ((98.42 - self._bank_success[payer_bank])
+                    - self._bank_drift[payer_bank, d])
+        psp_pen = -self._psp_drift[payer_psp, d]
+        haz[0] *= np.exp(np.clip(0.62 * bank_pen + 0.34 * psp_pen, -1.4, 2.2))
+        haz[3] *= np.exp(np.clip(0.30 * bank_pen + 0.58 * psp_pen, -1.4, 2.2))
+
+        # ---- whether the payer can actually pay ----------------------------
+        # The pre-salary trough is exactly when balances run out, and
+        # spend_mult is below 1 exactly then.
+        haz[1] *= 1.0 + 0.95 * max(0.0, 1.12 - cal.spend_mult)
+        # A payment well above the product's own median strains balances,
+        # per-transaction caps and risk rules together.
+        rel = np.log10(np.maximum(amount, 1.0)
+                       / max(1.0, product.ticket_median))
+        haz[1] *= 1.0 + 0.58 * np.clip(rel, 0.0, 2.2)
+        haz[2] *= 1.0 + 0.42 * np.clip(rel, 0.0, 2.2)
+
+        # ---- the merchant category -----------------------------------------
+        if live.any():
+            edge = np.ones(n)
+            edge[live] = np.exp(-0.55 * self._mcc_succ[mcc_ix[live]])
+            haz[0] *= edge
+            haz[1] *= edge
+            risky = np.ones(n)
+            risky[live] = 1.0 + 2.4 * self._mcc_risk[mcc_ix[live]]
+            haz[2] *= risky
+
+        # ---- the rail matures across the window ----------------------------
+        # success_drift is documented as percentage points gained over the
+        # window, so honour it literally: take that many points of hazard out.
+        haz *= max(0.30, 1.0 - (product.success_drift * t)
+                   / max(0.4, float(hz.sum())))
+
+        # ---- a re-presented payment is a worse bet -------------------------
+        if attempt:
+            haz *= 1.0 + 0.85 * attempt
+
+        # ---- incidents ------------------------------------------------------
         fraud = np.zeros(n)
         bank_names = self._bank_names[payer_bank]
         psp_names = self._psp_names[payer_psp]
-        tech_boost = np.ones(n)
-        time_boost = np.ones(n)
         for ev in self.events:
             w = ev.intensity(d)
-            if w <= 0:
+            if w <= 0 or not ev.matches(product=product.code):
                 continue
-            if not ev.matches(product=product.code):
-                continue
-            m = np.ones(n, dtype=bool)
-            if ev.scope.get("bank"):
-                m &= bank_names == ev.scope["bank"]
-            if ev.scope.get("psp"):
-                m &= psp_names == ev.scope["psp"]
-            if ev.scope.get("region"):
-                m &= region == ev.scope["region"]
-            if ev.scope.get("mcc"):
-                code = ev.scope["mcc"]
-                m &= live & (self._mcc_code[np.where(live, mcc_ix, 0)] == code)
+            m = self._event_mask(ev, n, hours, bank_names, psp_names, region,
+                                 mcc_ix, live)
             if not m.any():
                 continue
-            p[m] += ev.success_impact * w
             fraud[m] += ev.fraud_impact * w
-            if ev.kind in ("bank_outage", "psp_degradation"):
-                tech_boost[m] *= 1.0 + 5.0 * w
-            if ev.kind == "network_latency":
-                time_boost[m] *= 1.0 + 4.0 * w
+            pp = -ev.success_impact * w      # positive = the event costs points
+            if pp == 0.0:
+                continue
+            split = _EVENT_SPLIT.get(ev.kind, _DEFAULT_SPLIT)
+            for b in range(4):
+                haz[b][m] += pp * split[b]
+        haz[2] *= 1.0 + 0.30 * fraud
 
-        p = np.clip(p + 0.34, 55.0, 99.94)
-        u = rng.random(n)
-        ok = u < (p / 100.0)
+        haz = np.clip(haz, 0.0, 92.0)
+
+        # ---- competing risks ------------------------------------------------
+        surv = np.prod(1.0 - haz / 100.0, axis=0)
+        ok = rng.random(n) < surv
+        bucket_ix = np.zeros(n, dtype=np.int64)
+        failed = np.flatnonzero(~ok)
+        if len(failed):
+            w = haz[:, failed]
+            cums = np.cumsum(
+                w / np.maximum(w.sum(axis=0, keepdims=True), 1e-12), axis=0)
+            r = rng.random(len(failed))
+            bucket_ix[failed] = (r[None, :] > cums).sum(axis=0).clip(0, 3)
         # A thin slice never resolves within the day — genuinely pending.
         pending = (~ok) & (rng.random(n) < 0.028)
-
-        fm = product.failure_mix
-        w_tech = fm[0] * tech_boost
-        w_biz = np.full(n, fm[1]) * (1.0 + 0.55 * max(
-            0.0, 1.12 - cal.spend_mult))
-        w_risk = fm[2] * (1.0 + fraud)
-        w_time = fm[3] * time_boost
-        stack = np.vstack([w_tech, w_biz, w_risk, w_time])
-        stack /= stack.sum(axis=0, keepdims=True)
-        cums = np.cumsum(stack, axis=0)
-        r = rng.random(n)
-        bucket_ix = (r[None, :] > cums).sum(axis=0).clip(0, 3)
 
         fail_ix = np.full(n, -1, dtype=np.int64)
         for bi, bucket in enumerate(_BUCKETS):
@@ -491,19 +577,18 @@ class TransactionSimulator:
 
         bank_names = self._bank_names[payer_bank]
         psp_names = self._psp_names[payer_psp]
+        no_mcc = np.full(n, -1, dtype=np.int64)
+        no_live = np.zeros(n, dtype=bool)
         for ev in self.events:
             w = ev.intensity(d)
             if w <= 0 or ev.latency_impact == 1.0:
                 continue
             if not ev.matches(product=product.code):
                 continue
-            m = np.ones(n, dtype=bool)
-            if ev.scope.get("bank"):
-                m &= bank_names == ev.scope["bank"]
-            if ev.scope.get("psp"):
-                m &= psp_names == ev.scope["psp"]
-            if ev.scope.get("region"):
-                m &= region == ev.scope["region"]
+            if ev.scope.get("mcc"):
+                continue        # latency is not an MCC-scoped property
+            m = self._event_mask(ev, n, hours, bank_names, psp_names, region,
+                                 no_mcc, no_live)
             lat[m] *= 1.0 + (ev.latency_impact - 1.0) * w
 
         # Timeouts are slow by definition; declines resolve fast.
@@ -628,19 +713,69 @@ class TransactionSimulator:
         return rows
 
     # ---------------------------------------------- retries / refunds / etc.
+    def _storm_state(self, d: int) -> tuple[dict, dict, dict, float]:
+        """Today's retry pressure, by issuer, by app, and ecosystem-wide.
+
+        A reliability incident does not just fail more payments — it changes
+        *behaviour*. Customers re-tap, PSPs re-present, and the retry queue
+        drains back into the switch, which is why an outage shows up in the
+        data as a volume spike of low-quality attempts rather than a clean
+        dip. Announced maintenance is the opposite case and is tracked
+        separately: PSPs hold their queues until the window closes.
+        """
+        if self._storm_cache[0] == d:
+            return self._storm_cache[1]
+        banks: dict[str, float] = {}
+        psps: dict[str, float] = {}
+        maint: dict[str, float] = {}
+        net = 0.0
+        for ev in self.events:
+            w = ev.intensity(d)
+            if w <= 0:
+                continue
+            if ev.kind == "maintenance_window":
+                b = ev.scope.get("bank")
+                if b:
+                    maint[b] = max(maint.get(b, 0.0), w)
+                continue
+            if ev.kind not in ("bank_outage", "psp_degradation",
+                               "network_latency", "settlement_delay"):
+                continue
+            b, p = ev.scope.get("bank"), ev.scope.get("psp")
+            if b:
+                banks[b] = max(banks.get(b, 0.0), w)
+            elif p:
+                psps[p] = max(psps.get(p, 0.0), w)
+            else:
+                net = max(net, w)
+        state = (banks, psps, maint, net)
+        self._storm_cache = (d, state)
+        return state
+
     def _schedule_followups(self, d: int, rows: list[dict], product,
                             retryable: np.ndarray, has_fail: np.ndarray
                             ) -> None:
         rng = self.rng
+        banks, psps, maint, net = self._storm_state(d)
         for i, r in enumerate(rows):
-            if r["attempt_no"] >= 2:
-                continue
             if r["status"] == "FAILED" and has_fail[i] and retryable[i]:
-                if rng.random() < 0.63:
-                    when = d if rng.random() < 0.74 else d + 1
+                storm = min(1.0, net + banks.get(r["payer_bank"], 0.0)
+                            + psps.get(r["payer_psp"], 0.0))
+                held = maint.get(r["payer_bank"], 0.0)
+                # Depth: an ordinary failure is re-presented at most twice, but
+                # under a live incident the queue goes deeper before it gives up.
+                cap = 3 if storm > 0.25 else 2
+                if r["attempt_no"] >= cap:
+                    continue
+                p_retry = min(0.94, 0.58 + 0.42 * storm) * (1.0 - 0.75 * held)
+                if rng.random() < p_retry:
+                    same_day = min(0.96, 0.74 + 0.22 * storm)
+                    when = d if rng.random() < same_day else d + 1
                     if when < self.days:
                         self._retry_carry.setdefault(when, []).append(
-                            (product.code, r))
+                            (product.code, r, storm))
+            if r["attempt_no"] >= 2:
+                continue
             # A timeout means the debit landed but the credit did not confirm,
             # so the money is auto-reversed — independently of any retry.
             if r["status"] == "FAILED" and r["failure_bucket"] == "timeout" \
@@ -656,7 +791,11 @@ class TransactionSimulator:
                     if when < self.days:
                         self._scheduled.setdefault(when, []).append(
                             self._derived_row(r, "REFUND", when))
-                elif rng.random() < 0.0004 + 0.0032 * risk:
+                # Disputes are rare per transaction but the platform has to be
+                # able to break them down by MCC, issuer and merchant, so the
+                # rate is set to leave a usable panel rather than a handful of
+                # rows a day. Risky categories dominate it, as they do in life.
+                elif rng.random() < 0.0011 + 0.0125 * risk:
                     when = d + int(rng.integers(5, 46))
                     if when < self.days:
                         self._scheduled.setdefault(when, []).append(
@@ -706,17 +845,27 @@ class TransactionSimulator:
             return []
         rng = self.rng
         out: list[dict] = []
-        by_product: dict[str, list[dict]] = {}
-        for code, parent in carried:
-            by_product.setdefault(code, []).append(parent)
+        banks, psps, _maint, net = self._storm_state(d)
+        by_product: dict[str, list[tuple[dict, float]]] = {}
+        for code, parent, storm in carried:
+            by_product.setdefault(code, []).append((parent, storm))
         for code, parents in by_product.items():
             product = next(p for p in PRODUCTS if p.code == code)
-            for parent in parents:
+            for parent, _prior_storm in parents:
                 self._txn_seq += 1
                 attempt = parent["attempt_no"] + 1
                 # A retry keeps every dimension of the original attempt; only
-                # the outcome and the clock move.
+                # the outcome and the clock move. It succeeds less often each
+                # time, and hardly at all while the incident that caused the
+                # original failure is still live — which is what turns a
+                # retry wave into a storm instead of a recovery.
+                storm = min(1.0, net + banks.get(parent["payer_bank"], 0.0)
+                            + psps.get(parent["payer_psp"], 0.0))
                 p_succ = min(96.0, product.base_success - 6.5 * attempt + 4.0)
+                p_succ *= 1.0 - 0.55 * storm
+                if parent["failure_bucket"] == "business":
+                    # Nothing about re-presenting fixes an empty account.
+                    p_succ *= 0.42
                 ok = rng.random() < p_succ / 100.0
                 row = dict(parent)
                 row["txn_id"] = f"R{cal.day:%y%m%d}{self._txn_seq:07d}"
@@ -746,10 +895,11 @@ class TransactionSimulator:
                 row["switch_ms"] = int(row["latency_ms"] * 0.25)
                 row["issuer_ms"] = row["latency_ms"] - row["switch_ms"]
                 out.append(row)
-                if not ok and attempt < 2 and rng.random() < 0.4 \
-                        and d + 1 < self.days:
+                cap = 3 if storm > 0.25 else 2
+                if not ok and attempt < cap and d + 1 < self.days \
+                        and rng.random() < 0.4 + 0.35 * storm:
                     self._retry_carry.setdefault(d + 1, []).append(
-                        (code, row))
+                        (code, row, storm))
         return out
 
     # ------------------------------------------------------------- mandates
@@ -808,7 +958,7 @@ class TransactionSimulator:
 
         status, fail_ix, bucket_ix, fraud = self._outcome(
             d, product, n, t, payer_bank, payer_psp, mcc_ix, amount, cal,
-            region, attempt)
+            region, attempt, hours)
         # Mandates fail overwhelmingly on balance, not on technology — and the
         # pre-salary trough is exactly when balances run out.
         if cal.day.day in (24, 25, 26, 27, 28):

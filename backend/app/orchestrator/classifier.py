@@ -115,6 +115,12 @@ KPI_ALIASES: tuple[tuple[str, str], ...] = (
 
 MONTHS = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6,
           "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12}
+# The regexes capture only the three-letter stem, so a label built from the
+# match reads "Mar 2026". Answers quote these labels back to the user, so the
+# full name is rendered from the month number instead.
+MONTH_NAMES = {1: "January", 2: "February", 3: "March", 4: "April", 5: "May",
+               6: "June", 7: "July", 8: "August", 9: "September",
+               10: "October", 11: "November", 12: "December"}
 _MONTH_RE = "|".join(MONTHS)
 
 # "July 1 to July 20", "July 1 - 20", "from July 1 through July 20"
@@ -128,6 +134,16 @@ _RANGE_ISO = re.compile(
     r"(\d{4}-\d{2}-\d{2})\b", re.I)
 _SINGLE_MONTHDAY = re.compile(rf"\b(?:since|from|after)\s+({_MONTH_RE})[a-z]*"
                               rf"\s+(\d{{1,2}})\b", re.I)
+# A whole named month: "May 2026", "in the month of May", "during May".
+# Matched only *after* the day-bearing patterns above, so "July 1 to July 20"
+# is still a day range rather than the whole of July. The trailing guard stops
+# "May 12" being read as the month of May.
+_MONTH_YEAR = re.compile(
+    rf"\b(?:in|during|for|throughout)?\s*(?:the\s+)?(?:month\s+of\s+)?"
+    rf"({_MONTH_RE})[a-z]*\s+(\d{{4}})\b", re.I)
+_MONTH_ONLY = re.compile(
+    rf"\b(?:in|during|for|throughout)\s+(?:the\s+)?(?:month\s+of\s+)?"
+    rf"({_MONTH_RE})[a-z]*\b(?!\s*\d)", re.I)
 _RELATIVE = (
     (re.compile(r"\blast\s+(\d{1,3})\s*days?\b", re.I), "last_ndays"),
     (re.compile(r"\bpast\s+(\d{1,3})\s*days?\b", re.I), "last_ndays"),
@@ -271,6 +287,21 @@ class QueryClassifier:
             return {"kind": "explicit", "start_md": (mon, int(m.group(2))),
                     "end_md": None,
                     "label": f"since {m.group(1).title()} {m.group(2)}"}
+        # A whole calendar month. Without this, "in the month of May 2026" fell
+        # through to the relative patterns, matched none of them, and silently
+        # became the default trailing 30 days — the answer then covered a
+        # completely different period than the question asked about and said so
+        # only in the fine print.
+        m = _MONTH_YEAR.search(message)
+        if m:
+            mon = MONTHS[m.group(1).lower()[:3]]
+            return {"kind": "month", "month": mon, "year": int(m.group(2)),
+                    "label": f"{MONTH_NAMES[mon]} {m.group(2)}"}
+        m = _MONTH_ONLY.search(message)
+        if m:
+            mon = MONTHS[m.group(1).lower()[:3]]
+            return {"kind": "month", "month": mon, "year": None,
+                    "label": MONTH_NAMES[mon]}
         for rx, token in _RELATIVE:
             rm = rx.search(message)
             if rm:

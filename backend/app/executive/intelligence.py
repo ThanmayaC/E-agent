@@ -170,12 +170,20 @@ class ExecutiveIntelligence:
         recovered = sr[end] >= max(sr) - 0.05
         sev_m = re.search(r"Severity:\**\s*(Sev-\d)", inc.text) if inc else None
         severity = sev_m.group(1) if sev_m else "Sev-2"
+        # The level the incident dropped *from*, so the brief can state a real
+        # movement. Without it the summary compared the week's trough with the
+        # last day of the whole series and could report "fell to 96.31% and
+        # recovered to 96.31%" — a sentence that describes nothing.
+        pre = sr[max(0, low_day - 7):low_day]
+        baseline = round(sum(pre) / len(pre), 2) if pre else sr[low_day]
         return {
             "incident_id": inc.art_id if inc else "",
             "rca_id": rca.art_id if rca else "",
             "product": product,
             "bank": bank, "psp": psp, "merchants": [m for m in merchants if m],
             "low_day": _day_label(low_day), "low_day_index": low_day,
+            "baseline_success_rate": baseline,
+            "dip_pp": round(baseline - sr[low_day], 2),
             "low_success_rate": sr[low_day],
             "current_success_rate": sr[end],
             "recovered": recovered,
@@ -627,13 +635,27 @@ class ExecutiveIntelligence:
         decisions = self.decisions()
         sr = ent.kpis.get("Success Rate (%)", [])
         entity = inc.get("bank") or inc.get("psp") or "a bank/PSP dependency"
+        dip = inc.get("dip_pp") or 0.0
+        low, now = inc.get("low_success_rate"), inc.get("current_success_rate")
+        if dip >= 0.1 and low is not None:
+            movement = (
+                f"Success Rate fell {dip:.2f}pp to {low}% on "
+                f"{inc.get('low_day','')} from a "
+                f"{inc.get('baseline_success_rate')}% baseline, and the rail "
+                f"now sits at {now}%")
+        elif low is not None:
+            # Say so plainly rather than dressing a flat week as a recovery.
+            movement = (
+                f"Success Rate held through it — the weakest day was {low}% "
+                f"on {inc.get('low_day','')}, inside normal variation, and "
+                f"the rail now sits at {now}%")
+        else:
+            movement = "Success Rate movement could not be measured"
         summary = (
             f"UPI Products ran a full incident lifecycle this period. "
             f"{inc.get('product','UPI Payments')} saw a "
             f"{inc.get('severity','Sev-2')} incident "
-            f"({inc.get('incident_id','')}) linked to {entity}; Success Rate fell "
-            f"to {inc.get('low_success_rate','')}% on {inc.get('low_day','')} and "
-            f"recovered to {inc.get('current_success_rate','')}% after the fix. "
+            f"({inc.get('incident_id','')}) linked to {entity}. {movement}. "
             f"Portfolio health is {health['portfolio']}.")
         critical_events = []
         if inc.get("incident_id"):

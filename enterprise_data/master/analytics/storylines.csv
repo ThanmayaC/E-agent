@@ -1,151 +1,487 @@
-week,week_start,step_no,stage,actor_team,event,entity,linked_kpi,sr_start,sr_end,has_incident
-1,2026-01-05,1,Signal,Product Analytics,Transaction monitoring flags bank timeout / 5xx spike on Punjab National Bank,Punjab National Bank,Success Rate (%),99.13,99.69,True
-1,2026-01-05,2,Impact,Operations,Sev-2 incident INC-2026-01 opened; complaints and declines rise,Punjab National Bank,Customer Complaints,99.13,99.69,True
-1,2026-01-05,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Punjab National Bank,Response Time (ms),99.13,99.69,True
-1,2026-01-05,4,Action,UPI Products leadership,Executive approves the Bank Coordination remediation (DEC-2026-01),Punjab National Bank,Risk Score,99.13,99.69,True
-1,2026-01-05,5,Outcome,Product Operations,Success Rate recovers to 99.69% by week end,Punjab National Bank,Success Rate (%),99.13,99.69,True
-2,2026-01-12,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),98.78,99.03,False
-2,2026-01-12,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),98.78,99.03,False
-2,2026-01-12,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),98.78,99.03,False
-2,2026-01-12,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),98.78,99.03,False
-2,2026-01-12,5,Outcome,Product Operations,"Steady week; success rate 99.03%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),98.78,99.03,False
-3,2026-01-19,1,Signal,Product Analytics,Transaction monitoring flags feature-level degradation on UPI Lite,UPI Lite,Success Rate (%),98.78,98.79,True
-3,2026-01-19,2,Impact,Operations,Sev-3 incident INC-2026-24 opened; complaints and declines rise,UPI Lite,Customer Complaints,98.78,98.79,True
-3,2026-01-19,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,UPI Lite,Response Time (ms),98.78,98.79,True
-3,2026-01-19,4,Action,UPI Products leadership,Executive approves the Core Engineering remediation (DEC-2026-24),UPI Lite,Risk Score,98.78,98.79,True
-3,2026-01-19,5,Outcome,Product Operations,Success Rate recovers to 98.79% by week end,UPI Lite,Success Rate (%),98.78,98.79,True
-4,2026-01-26,1,Signal,Product Analytics,Transaction monitoring flags fraud / risk spike on FamApp,FamApp,Success Rate (%),98.09,99.98,True
-4,2026-01-26,2,Impact,Operations,Sev-2 incident INC-2026-15 opened; complaints and declines rise,FamApp,Customer Complaints,98.09,99.98,True
-4,2026-01-26,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,FamApp,Response Time (ms),98.09,99.98,True
-4,2026-01-26,4,Action,UPI Products leadership,Executive approves the Risk and Compliance remediation (DEC-2026-15),FamApp,Risk Score,98.09,99.98,True
-4,2026-01-26,5,Outcome,Product Operations,Success Rate recovers to 99.98% by week end,FamApp,Success Rate (%),98.09,99.98,True
-5,2026-02-02,1,Signal,Product Analytics,Transaction monitoring flags fraud / risk spike on HDFC MobileBanking,HDFC MobileBanking,Success Rate (%),98.48,99.66,True
-5,2026-02-02,2,Impact,Operations,Sev-2 incident INC-2026-02 opened; complaints and declines rise,HDFC MobileBanking,Customer Complaints,98.48,99.66,True
-5,2026-02-02,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,HDFC MobileBanking,Response Time (ms),98.48,99.66,True
-5,2026-02-02,4,Action,UPI Products leadership,Executive approves the Risk and Compliance remediation (DEC-2026-02),HDFC MobileBanking,Risk Score,98.48,99.66,True
-5,2026-02-02,5,Outcome,Product Operations,Success Rate recovers to 99.66% by week end,HDFC MobileBanking,Success Rate (%),98.48,99.66,True
-6,2026-02-09,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),98.95,98.55,False
-6,2026-02-09,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),98.95,98.55,False
-6,2026-02-09,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),98.95,98.55,False
-6,2026-02-09,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),98.95,98.55,False
-6,2026-02-09,5,Outcome,Product Operations,"Steady week; success rate 98.55%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),98.95,98.55,False
-7,2026-02-16,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),98.87,99.61,False
-7,2026-02-16,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),98.87,99.61,False
-7,2026-02-16,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),98.87,99.61,False
-7,2026-02-16,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),98.87,99.61,False
-7,2026-02-16,5,Outcome,Product Operations,"Steady week; success rate 99.61%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),98.87,99.61,False
-8,2026-02-23,1,Signal,Product Analytics,Transaction monitoring flags fraud / risk spike on Google Pay,Google Pay,Success Rate (%),99.36,98.4,True
-8,2026-02-23,2,Impact,Operations,Sev-2 incident INC-2026-19 opened; complaints and declines rise,Google Pay,Customer Complaints,99.36,98.4,True
-8,2026-02-23,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Google Pay,Response Time (ms),99.36,98.4,True
-8,2026-02-23,4,Action,UPI Products leadership,Executive approves the Risk and Compliance remediation (DEC-2026-19),Google Pay,Risk Score,99.36,98.4,True
-8,2026-02-23,5,Outcome,Product Operations,Success Rate recovers to 98.4% by week end,Google Pay,Success Rate (%),99.36,98.4,True
-9,2026-03-02,1,Signal,Product Analytics,Transaction monitoring flags fraud / risk spike on Navi,Navi,Success Rate (%),98.6,98.57,True
-9,2026-03-02,2,Impact,Operations,Sev-2 incident INC-2026-03 opened; complaints and declines rise,Navi,Customer Complaints,98.6,98.57,True
-9,2026-03-02,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Navi,Response Time (ms),98.6,98.57,True
-9,2026-03-02,4,Action,UPI Products leadership,Executive approves the Risk and Compliance remediation (DEC-2026-03),Navi,Risk Score,98.6,98.57,True
-9,2026-03-02,5,Outcome,Product Operations,Success Rate recovers to 98.57% by week end,Navi,Success Rate (%),98.6,98.57,True
-10,2026-03-09,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.8,98.5,False
-10,2026-03-09,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.8,98.5,False
-10,2026-03-09,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.8,98.5,False
-10,2026-03-09,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.8,98.5,False
-10,2026-03-09,5,Outcome,Product Operations,"Steady week; success rate 98.5%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),99.8,98.5,False
-11,2026-03-16,1,Signal,Product Analytics,Transaction monitoring flags PSP callback latency increase on YONO SBI,YONO SBI,Success Rate (%),99.41,99.63,True
-11,2026-03-16,2,Impact,Operations,Sev-3 incident INC-2026-17 opened; complaints and declines rise,YONO SBI,Customer Complaints,99.41,99.63,True
-11,2026-03-16,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,YONO SBI,Response Time (ms),99.41,99.63,True
-11,2026-03-16,4,Action,UPI Products leadership,Executive approves the PSP Integration remediation (DEC-2026-17),YONO SBI,Risk Score,99.41,99.63,True
-11,2026-03-16,5,Outcome,Product Operations,Success Rate recovers to 99.63% by week end,YONO SBI,Success Rate (%),99.41,99.63,True
-12,2026-03-23,1,Signal,Product Analytics,Transaction monitoring flags PSP callback latency increase on BHIM,BHIM,Success Rate (%),98.71,99.6,True
-12,2026-03-23,2,Impact,Operations,Sev-3 incident INC-2026-12 opened; complaints and declines rise,BHIM,Customer Complaints,98.71,99.6,True
-12,2026-03-23,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,BHIM,Response Time (ms),98.71,99.6,True
-12,2026-03-23,4,Action,UPI Products leadership,Executive approves the PSP Integration remediation (INC-2026-12),BHIM,Risk Score,98.71,99.6,True
-12,2026-03-23,5,Outcome,Product Operations,Success Rate recovers to 99.6% by week end,BHIM,Success Rate (%),98.71,99.6,True
-13,2026-03-30,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),98.55,99.98,False
-13,2026-03-30,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),98.55,99.98,False
-13,2026-03-30,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),98.55,99.98,False
-13,2026-03-30,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),98.55,99.98,False
-13,2026-03-30,5,Outcome,Product Operations,"Steady week; success rate 99.98%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),98.55,99.98,False
-14,2026-04-06,1,Signal,Product Analytics,Transaction monitoring flags bank timeout / 5xx spike on State Bank of India,State Bank of India,Success Rate (%),98.17,98.65,True
-14,2026-04-06,2,Impact,Operations,Sev-2 incident INC-2026-04 opened; complaints and declines rise,State Bank of India,Customer Complaints,98.17,98.65,True
-14,2026-04-06,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,State Bank of India,Response Time (ms),98.17,98.65,True
-14,2026-04-06,4,Action,UPI Products leadership,Executive approves the Bank Coordination remediation (DEC-2026-04),State Bank of India,Risk Score,98.17,98.65,True
-14,2026-04-06,5,Outcome,Product Operations,Success Rate recovers to 98.65% by week end,State Bank of India,Success Rate (%),98.17,98.65,True
-15,2026-04-13,1,Signal,Product Analytics,Transaction monitoring flags merchant settlement delay on Kotak Mahindra Bank,Kotak Mahindra Bank,Success Rate (%),99.98,99.41,True
-15,2026-04-13,2,Impact,Operations,Sev-3 incident INC-2026-20 opened; complaints and declines rise,Kotak Mahindra Bank,Customer Complaints,99.98,99.41,True
-15,2026-04-13,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Kotak Mahindra Bank,Response Time (ms),99.98,99.41,True
-15,2026-04-13,4,Action,UPI Products leadership,Executive approves the Merchant Success remediation (DEC-2026-20),Kotak Mahindra Bank,Risk Score,99.98,99.41,True
-15,2026-04-13,5,Outcome,Product Operations,Success Rate recovers to 99.41% by week end,Kotak Mahindra Bank,Success Rate (%),99.98,99.41,True
-16,2026-04-20,1,Signal,Product Analytics,"Transaction monitoring flags merchant decline-rate spike on PowerPay Utilities, MetroRide","PowerPay Utilities, MetroRide",Success Rate (%),99.98,99.7,True
-16,2026-04-20,2,Impact,Operations,Sev-3 incident INC-2026-23 opened; complaints and declines rise,"PowerPay Utilities, MetroRide",Customer Complaints,99.98,99.7,True
-16,2026-04-20,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,"PowerPay Utilities, MetroRide",Response Time (ms),99.98,99.7,True
-16,2026-04-20,4,Action,UPI Products leadership,Executive approves the Merchant Success remediation (DEC-2026-23),"PowerPay Utilities, MetroRide",Risk Score,99.98,99.7,True
-16,2026-04-20,5,Outcome,Product Operations,Success Rate recovers to 99.7% by week end,"PowerPay Utilities, MetroRide",Success Rate (%),99.98,99.7,True
-17,2026-04-27,1,Signal,Product Analytics,Transaction monitoring flags bank timeout / 5xx spike on Bank of Baroda,Bank of Baroda,Success Rate (%),99.49,99.98,True
-17,2026-04-27,2,Impact,Operations,Sev-3 incident INC-2026-11 opened; complaints and declines rise,Bank of Baroda,Customer Complaints,99.49,99.98,True
-17,2026-04-27,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Bank of Baroda,Response Time (ms),99.49,99.98,True
-17,2026-04-27,4,Action,UPI Products leadership,Executive approves the Bank Coordination remediation (INC-2026-11),Bank of Baroda,Risk Score,99.49,99.98,True
-17,2026-04-27,5,Outcome,Product Operations,Success Rate recovers to 99.98% by week end,Bank of Baroda,Success Rate (%),99.49,99.98,True
-18,2026-05-04,1,Signal,Product Analytics,Transaction monitoring flags merchant settlement delay on AU Small Finance Bank,AU Small Finance Bank,Success Rate (%),99.94,99.59,True
-18,2026-05-04,2,Impact,Operations,Sev-3 incident INC-2026-26 opened; complaints and declines rise,AU Small Finance Bank,Customer Complaints,99.94,99.59,True
-18,2026-05-04,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,AU Small Finance Bank,Response Time (ms),99.94,99.59,True
-18,2026-05-04,4,Action,UPI Products leadership,Executive approves the Merchant Success remediation (DEC-2026-26),AU Small Finance Bank,Risk Score,99.94,99.59,True
-18,2026-05-04,5,Outcome,Product Operations,Success Rate recovers to 99.59% by week end,AU Small Finance Bank,Success Rate (%),99.94,99.59,True
-19,2026-05-11,1,Signal,Product Analytics,"Transaction monitoring flags merchant decline-rate spike on TravelGo, InsureWell","TravelGo, InsureWell",Success Rate (%),99.69,99.98,True
-19,2026-05-11,2,Impact,Operations,Sev-3 incident INC-2026-13 opened; complaints and declines rise,"TravelGo, InsureWell",Customer Complaints,99.69,99.98,True
-19,2026-05-11,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,"TravelGo, InsureWell",Response Time (ms),99.69,99.98,True
-19,2026-05-11,4,Action,UPI Products leadership,Executive approves the Merchant Success remediation (DEC-2026-13),"TravelGo, InsureWell",Risk Score,99.69,99.98,True
-19,2026-05-11,5,Outcome,Product Operations,Success Rate recovers to 99.98% by week end,"TravelGo, InsureWell",Success Rate (%),99.69,99.98,True
-20,2026-05-18,1,Signal,Product Analytics,Transaction monitoring flags merchant settlement delay on ICICI Bank,ICICI Bank,Success Rate (%),98.9,99.63,True
-20,2026-05-18,2,Impact,Operations,Sev-3 incident INC-2026-25 opened; complaints and declines rise,ICICI Bank,Customer Complaints,98.9,99.63,True
-20,2026-05-18,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,ICICI Bank,Response Time (ms),98.9,99.63,True
-20,2026-05-18,4,Action,UPI Products leadership,Executive approves the Merchant Success remediation (INC-2026-25),ICICI Bank,Risk Score,98.9,99.63,True
-20,2026-05-18,5,Outcome,Product Operations,Success Rate recovers to 99.63% by week end,ICICI Bank,Success Rate (%),98.9,99.63,True
-21,2026-05-25,1,Signal,Product Analytics,Transaction monitoring flags PSP callback latency increase on BHIM,BHIM,Success Rate (%),99.02,99.2,True
-21,2026-05-25,2,Impact,Operations,Sev-3 incident INC-2026-14 opened; complaints and declines rise,BHIM,Customer Complaints,99.02,99.2,True
-21,2026-05-25,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,BHIM,Response Time (ms),99.02,99.2,True
-21,2026-05-25,4,Action,UPI Products leadership,Executive approves the PSP Integration remediation (DEC-2026-14),BHIM,Risk Score,99.02,99.2,True
-21,2026-05-25,5,Outcome,Product Operations,Success Rate recovers to 99.2% by week end,BHIM,Success Rate (%),99.02,99.2,True
-22,2026-06-01,1,Signal,Product Analytics,Transaction monitoring flags bank timeout / 5xx spike on Punjab National Bank,Punjab National Bank,Success Rate (%),99.5,99.11,True
-22,2026-06-01,2,Impact,Operations,Sev-2 incident INC-2026-06 opened; complaints and declines rise,Punjab National Bank,Customer Complaints,99.5,99.11,True
-22,2026-06-01,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,Punjab National Bank,Response Time (ms),99.5,99.11,True
-22,2026-06-01,4,Action,UPI Products leadership,Executive approves the Bank Coordination remediation (DEC-2026-06),Punjab National Bank,Risk Score,99.5,99.11,True
-22,2026-06-01,5,Outcome,Product Operations,Success Rate recovers to 99.11% by week end,Punjab National Bank,Success Rate (%),99.5,99.11,True
-23,2026-06-08,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.78,99.98,False
-23,2026-06-08,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.78,99.98,False
-23,2026-06-08,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.78,99.98,False
-23,2026-06-08,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.78,99.98,False
-23,2026-06-08,5,Outcome,Product Operations,"Steady week; success rate 99.98%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),99.78,99.98,False
-24,2026-06-15,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.28,99.98,False
-24,2026-06-15,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.28,99.98,False
-24,2026-06-15,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.28,99.98,False
-24,2026-06-15,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.28,99.98,False
-24,2026-06-15,5,Outcome,Product Operations,"Steady week; success rate 99.98%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),99.28,99.98,False
-25,2026-06-22,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.98,99.98,False
-25,2026-06-22,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.98,99.98,False
-25,2026-06-22,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.98,99.98,False
-25,2026-06-22,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.98,99.98,False
-25,2026-06-22,5,Outcome,Product Operations,"Steady week; success rate 99.98%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),99.98,99.98,False
-26,2026-06-29,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.55,99.8,False
-26,2026-06-29,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.55,99.8,False
-26,2026-06-29,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.55,99.8,False
-26,2026-06-29,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.55,99.8,False
-26,2026-06-29,5,Outcome,Product Operations,"Steady week; success rate 99.8%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),99.55,99.8,False
-27,2026-07-06,1,Signal,Product Analytics,Transaction monitoring flags feature-level degradation on UPI 123Pay,UPI 123Pay,Success Rate (%),99.98,99.98,True
-27,2026-07-06,2,Impact,Operations,Sev-3 incident INC-2026-10 opened; complaints and declines rise,UPI 123Pay,Customer Complaints,99.98,99.98,True
-27,2026-07-06,3,Discussion,Engineering,Incident bridge convenes; root cause isolated and mitigation deployed,UPI 123Pay,Response Time (ms),99.98,99.98,True
-27,2026-07-06,4,Action,UPI Products leadership,Executive approves the Core Engineering remediation (DEC-2026-10),UPI 123Pay,Risk Score,99.98,99.98,True
-27,2026-07-06,5,Outcome,Product Operations,Success Rate recovers to 99.98% by week end,UPI 123Pay,Success Rate (%),99.98,99.98,True
-28,2026-07-13,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.55,99.07,False
-28,2026-07-13,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.55,99.07,False
-28,2026-07-13,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.55,99.07,False
-28,2026-07-13,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.55,99.07,False
-28,2026-07-13,5,Outcome,Product Operations,"Steady week; success rate 99.07%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),99.55,99.07,False
-29,2026-07-20,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.98,99.28,False
-29,2026-07-20,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.98,99.28,False
-29,2026-07-20,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.98,99.28,False
-29,2026-07-20,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.98,99.28,False
-29,2026-07-20,5,Outcome,Product Operations,"Steady week; success rate 99.28%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),99.98,99.28,False
-30,2026-07-27,1,Signal,Product Analytics,Person to Merchant leads volume; adoption and merchant growth continue,Person to Merchant,UPI Transactions (M/day),99.98,99.98,False
-30,2026-07-27,2,Impact,Merchant Success,Merchant onboarding and QR acceptance expand,QR Payments,Merchant Adoption (M),99.98,99.98,False
-30,2026-07-27,3,Discussion,Product Strategy,Capacity and adoption reviewed against forecast,Person to Merchant,UPI Lite Adoption (M),99.98,99.98,False
-30,2026-07-27,4,Action,UPI Products leadership,Executive endorses continued scaling; no incident this week,Person to Merchant,Autopay Registrations (K/day),99.98,99.98,False
-30,2026-07-27,5,Outcome,Product Operations,"Steady week; success rate 99.98%, lowest bank IDFC First Bank at 98.92%",IDFC First Bank,Success Rate (%),99.98,99.98,False
+incident_id,week_start,step_no,stage,actor_team,event,entity,linked_kpi,sr_start,sr_end,has_incident
+INC-PSP-0023,2026-01-10,1,Signal,Product Analytics,Operational calendar records an app-side regression on FamApp,FamApp,Success Rate (%),94.65,94.69,False
+INC-PSP-0023,2026-01-10,2,Triage,UPI Operations,Operations opens INC-PSP-0023 at Sev-3 and scopes it to FamApp,FamApp,Success Rate (%),94.65,94.69,False
+INC-PSP-0023,2026-01-10,3,Diagnosis,Platform Engineering,Measured impact is inside FamApp's normal daily variation — success held at 95.54% against a 94.65% baseline,FamApp,Success Rate (%),94.65,94.69,False
+INC-PSP-0023,2026-01-10,4,Mitigation,UPI Operations,No mitigation required; 266 attempts were exposed with no detectable degradation,FamApp,Success Rate (%),94.65,94.69,False
+INC-PSP-0023,2026-01-10,5,Recovery,UPI Operations,FamApp closes the window at 94.69%,FamApp,Success Rate (%),94.65,94.69,False
+INC-PSP-0023,2026-01-10,6,Review,Product Analytics,INC-PSP-0023 closed as no-impact; retained for trend context,FamApp,Success Rate (%),94.65,94.69,False
+INC-BANK-0017,2026-01-12,1,Signal,Product Analytics,Transaction monitoring flags an issuer decline spike on State Bank of India,State Bank of India,Success Rate (%),95.22,94.61,True
+INC-BANK-0017,2026-01-12,2,Triage,UPI Operations,Operations opens INC-BANK-0017 at Sev-2 and scopes the blast radius to State Bank of India,State Bank of India,Success Rate (%),95.22,94.61,True
+INC-BANK-0017,2026-01-12,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to issuer-side U30/U28 declines,State Bank of India,Success Rate (%),95.22,94.61,True
+INC-BANK-0017,2026-01-12,4,Mitigation,UPI Operations,"Mitigation applied; success on State Bank of India troughs at 94.09% against a 95.22% baseline, a 1.13pp dip",State Bank of India,Success Rate (%),95.22,94.61,True
+INC-BANK-0017,2026-01-12,5,Recovery,UPI Operations,State Bank of India recovers to 94.61% over the following week,State Bank of India,Success Rate (%),95.22,94.61,True
+INC-BANK-0017,2026-01-12,6,Review,Product Analytics,"Post-incident review closes INC-BANK-0017; 10,245 attempts were exposed",State Bank of India,Success Rate (%),95.22,94.61,True
+INC-PSP-0034,2026-01-12,1,Signal,Product Analytics,Transaction monitoring flags an app-side regression on PhonePe,PhonePe,Success Rate (%),95.3,94.85,True
+INC-PSP-0034,2026-01-12,2,Triage,UPI Operations,Operations opens INC-PSP-0034 at Sev-2 and scopes the blast radius to PhonePe,PhonePe,Success Rate (%),95.3,94.85,True
+INC-PSP-0034,2026-01-12,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to PSP-side YA declines and callback timeouts,PhonePe,Success Rate (%),95.3,94.85,True
+INC-PSP-0034,2026-01-12,4,Mitigation,UPI Operations,"Mitigation applied; success on PhonePe troughs at 94.07% against a 95.30% baseline, a 1.22pp dip",PhonePe,Success Rate (%),95.3,94.85,True
+INC-PSP-0034,2026-01-12,5,Recovery,UPI Operations,PhonePe recovers to 94.85% over the following week,PhonePe,Success Rate (%),95.3,94.85,True
+INC-PSP-0034,2026-01-12,6,Review,Product Analytics,"Post-incident review closes INC-PSP-0034; 19,772 attempts were exposed",PhonePe,Success Rate (%),95.3,94.85,True
+INC-BANK-0016,2026-01-21,1,Signal,Product Analytics,Transaction monitoring flags an issuer decline spike on ICICI Bank,ICICI Bank,Success Rate (%),95.99,95.89,True
+INC-BANK-0016,2026-01-21,2,Triage,UPI Operations,Operations opens INC-BANK-0016 at Sev-1 and scopes the blast radius to ICICI Bank,ICICI Bank,Success Rate (%),95.99,95.89,True
+INC-BANK-0016,2026-01-21,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to issuer-side U30/U28 declines,ICICI Bank,Success Rate (%),95.99,95.89,True
+INC-BANK-0016,2026-01-21,4,Mitigation,UPI Operations,"Mitigation applied; success on ICICI Bank troughs at 95.71% against a 95.99% baseline, a 0.28pp dip",ICICI Bank,Success Rate (%),95.99,95.89,True
+INC-BANK-0016,2026-01-21,5,Recovery,UPI Operations,ICICI Bank recovers to 95.89% over the following week,ICICI Bank,Success Rate (%),95.99,95.89,True
+INC-BANK-0016,2026-01-21,6,Review,Product Analytics,Post-incident review closes INC-BANK-0016; 606 attempts were exposed,ICICI Bank,Success Rate (%),95.99,95.89,True
+INC-FRAUD-0047,2026-01-25,1,Signal,Product Analytics,Transaction monitoring flags a coordinated fraud pattern on RUPAY_CREDIT,RUPAY_CREDIT,Success Rate (%),94.98,95.08,True
+INC-FRAUD-0047,2026-01-25,2,Triage,UPI Operations,Operations opens INC-FRAUD-0047 at Sev-1 and scopes the blast radius to RUPAY_CREDIT,RUPAY_CREDIT,Success Rate (%),94.98,95.08,True
+INC-FRAUD-0047,2026-01-25,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to risk-engine blocks (U16/K1),RUPAY_CREDIT,Success Rate (%),94.98,95.08,True
+INC-FRAUD-0047,2026-01-25,4,Mitigation,UPI Operations,"Mitigation applied; success on RUPAY_CREDIT troughs at 84.21% against a 94.98% baseline, a 10.77pp dip",RUPAY_CREDIT,Success Rate (%),94.98,95.08,True
+INC-FRAUD-0047,2026-01-25,5,Recovery,UPI Operations,RUPAY_CREDIT recovers to 95.08% over the following week,RUPAY_CREDIT,Success Rate (%),94.98,95.08,True
+INC-FRAUD-0047,2026-01-25,6,Review,Product Analytics,Post-incident review closes INC-FRAUD-0047; 123 attempts were exposed,RUPAY_CREDIT,Success Rate (%),94.98,95.08,True
+ONBRD-0090,2026-01-25,1,Signal,Product Analytics,Transaction monitoring flags an acquiring cohort step-in on 5541,5541,Success Rate (%),95.78,95.52,False
+ONBRD-0090,2026-01-25,2,Triage,UPI Operations,Operations opens ONBRD-0090 at Sev-3 and scopes the blast radius to 5541,5541,Success Rate (%),95.78,95.52,False
+ONBRD-0090,2026-01-25,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,5541,Success Rate (%),95.78,95.52,False
+ONBRD-0090,2026-01-25,4,Mitigation,UPI Operations,"Mitigation applied; success on 5541 troughs at 89.66% against a 95.78% baseline, a 6.12pp dip",5541,Success Rate (%),95.78,95.52,False
+ONBRD-0090,2026-01-25,5,Recovery,UPI Operations,5541 recovers to 95.52% over the following week,5541,Success Rate (%),95.78,95.52,False
+ONBRD-0090,2026-01-25,6,Review,Product Analytics,"Post-incident review closes ONBRD-0090; 7,542 attempts were exposed",5541,Success Rate (%),95.78,95.52,False
+INC-PSP-0025,2026-01-28,1,Signal,Product Analytics,Transaction monitoring flags an app-side regression on Navi,Navi,Success Rate (%),96.3,96.07,True
+INC-PSP-0025,2026-01-28,2,Triage,UPI Operations,Operations opens INC-PSP-0025 at Sev-2 and scopes the blast radius to Navi,Navi,Success Rate (%),96.3,96.07,True
+INC-PSP-0025,2026-01-28,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to PSP-side YA declines and callback timeouts,Navi,Success Rate (%),96.3,96.07,True
+INC-PSP-0025,2026-01-28,4,Mitigation,UPI Operations,"Mitigation applied; success on Navi troughs at 95.61% against a 96.30% baseline, a 0.69pp dip",Navi,Success Rate (%),96.3,96.07,True
+INC-PSP-0025,2026-01-28,5,Recovery,UPI Operations,Navi recovers to 96.07% over the following week,Navi,Success Rate (%),96.3,96.07,True
+INC-PSP-0025,2026-01-28,6,Review,Product Analytics,"Post-incident review closes INC-PSP-0025; 1,030 attempts were exposed",Navi,Success Rate (%),96.3,96.07,True
+INC-BANK-0015,2026-01-29,1,Signal,Product Analytics,Operational calendar records an issuer decline spike on Union Bank of India,Union Bank of India,Success Rate (%),94.5,95.38,False
+INC-BANK-0015,2026-01-29,2,Triage,UPI Operations,Operations opens INC-BANK-0015 at Sev-3 and scopes it to Union Bank of India,Union Bank of India,Success Rate (%),94.5,95.38,False
+INC-BANK-0015,2026-01-29,3,Diagnosis,Platform Engineering,Measured impact is inside Union Bank of India's normal daily variation — success held at 95.10% against a 94.50% baseline,Union Bank of India,Success Rate (%),94.5,95.38,False
+INC-BANK-0015,2026-01-29,4,Mitigation,UPI Operations,"No mitigation required; 1,330 attempts were exposed with no detectable degradation",Union Bank of India,Success Rate (%),94.5,95.38,False
+INC-BANK-0015,2026-01-29,5,Recovery,UPI Operations,Union Bank of India closes the window at 95.38%,Union Bank of India,Success Rate (%),94.5,95.38,False
+INC-BANK-0015,2026-01-29,6,Review,Product Analytics,INC-BANK-0015 closed as no-impact; retained for trend context,Union Bank of India,Success Rate (%),94.5,95.38,False
+INC-FRAUD-0049,2026-02-02,1,Signal,Product Analytics,Transaction monitoring flags a coordinated fraud pattern on UPI_CREDIT_LINE,UPI_CREDIT_LINE,Success Rate (%),82.14,100.0,True
+INC-FRAUD-0049,2026-02-02,2,Triage,UPI Operations,Operations opens INC-FRAUD-0049 at Sev-2 and scopes the blast radius to UPI_CREDIT_LINE,UPI_CREDIT_LINE,Success Rate (%),82.14,100.0,True
+INC-FRAUD-0049,2026-02-02,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to risk-engine blocks (U16/K1),UPI_CREDIT_LINE,Success Rate (%),82.14,100.0,True
+INC-FRAUD-0049,2026-02-02,4,Mitigation,UPI Operations,"Mitigation applied; success on UPI_CREDIT_LINE troughs at 71.43% against a 82.14% baseline, a 10.71pp dip",UPI_CREDIT_LINE,Success Rate (%),82.14,100.0,True
+INC-FRAUD-0049,2026-02-02,5,Recovery,UPI Operations,UPI_CREDIT_LINE recovers to 100.00% over the following week,UPI_CREDIT_LINE,Success Rate (%),82.14,100.0,True
+INC-FRAUD-0049,2026-02-02,6,Review,Product Analytics,Post-incident review closes INC-FRAUD-0049; 68 attempts were exposed,UPI_CREDIT_LINE,Success Rate (%),82.14,100.0,True
+INC-BANK-0021,2026-02-09,1,Signal,Product Analytics,Transaction monitoring flags an issuer decline spike on Bank of Baroda,Bank of Baroda,Success Rate (%),95.44,95.58,True
+INC-BANK-0021,2026-02-09,2,Triage,UPI Operations,Operations opens INC-BANK-0021 at Sev-2 and scopes the blast radius to Bank of Baroda,Bank of Baroda,Success Rate (%),95.44,95.58,True
+INC-BANK-0021,2026-02-09,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to issuer-side U30/U28 declines,Bank of Baroda,Success Rate (%),95.44,95.58,True
+INC-BANK-0021,2026-02-09,4,Mitigation,UPI Operations,"Mitigation applied; success on Bank of Baroda troughs at 93.60% against a 95.44% baseline, a 1.84pp dip",Bank of Baroda,Success Rate (%),95.44,95.58,True
+INC-BANK-0021,2026-02-09,5,Recovery,UPI Operations,Bank of Baroda recovers to 95.58% over the following week,Bank of Baroda,Success Rate (%),95.44,95.58,True
+INC-BANK-0021,2026-02-09,6,Review,Product Analytics,"Post-incident review closes INC-BANK-0021; 2,284 attempts were exposed",Bank of Baroda,Success Rate (%),95.44,95.58,True
+INC-NET-0038,2026-02-10,1,Signal,Product Analytics,Transaction monitoring flags switch latency degradation on the ecosystem,the ecosystem,Success Rate (%),95.79,95.58,True
+INC-NET-0038,2026-02-10,2,Triage,UPI Operations,Operations opens INC-NET-0038 at Sev-1 and scopes the blast radius to the ecosystem,the ecosystem,Success Rate (%),95.79,95.58,True
+INC-NET-0038,2026-02-10,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to NPCI switch timeouts (BT/U54),the ecosystem,Success Rate (%),95.79,95.58,True
+INC-NET-0038,2026-02-10,4,Mitigation,UPI Operations,"Mitigation applied; success on the ecosystem troughs at 91.71% against a 95.79% baseline, a 4.08pp dip",the ecosystem,Success Rate (%),95.79,95.58,True
+INC-NET-0038,2026-02-10,5,Recovery,UPI Operations,the ecosystem recovers to 95.58% over the following week,the ecosystem,Success Rate (%),95.79,95.58,True
+INC-NET-0038,2026-02-10,6,Review,Product Analytics,"Post-incident review closes INC-NET-0038; 29,040 attempts were exposed",the ecosystem,Success Rate (%),95.79,95.58,True
+INC-BANK-0004,2026-02-13,1,Signal,Product Analytics,Transaction monitoring flags an issuer decline spike on State Bank of India,State Bank of India,Success Rate (%),94.94,95.69,True
+INC-BANK-0004,2026-02-13,2,Triage,UPI Operations,Operations opens INC-BANK-0004 at Sev-2 and scopes the blast radius to State Bank of India,State Bank of India,Success Rate (%),94.94,95.69,True
+INC-BANK-0004,2026-02-13,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to issuer-side U30/U28 declines,State Bank of India,Success Rate (%),94.94,95.69,True
+INC-BANK-0004,2026-02-13,4,Mitigation,UPI Operations,"Mitigation applied; success on State Bank of India troughs at 94.48% against a 94.94% baseline, a 0.47pp dip",State Bank of India,Success Rate (%),94.94,95.69,True
+INC-BANK-0004,2026-02-13,5,Recovery,UPI Operations,State Bank of India recovers to 95.69% over the following week,State Bank of India,Success Rate (%),94.94,95.69,True
+INC-BANK-0004,2026-02-13,6,Review,Product Analytics,"Post-incident review closes INC-BANK-0004; 3,258 attempts were exposed",State Bank of India,Success Rate (%),94.94,95.69,True
+INC-BANK-0006,2026-02-19,1,Signal,Product Analytics,Transaction monitoring flags an issuer decline spike on Punjab National Bank,Punjab National Bank,Success Rate (%),94.21,94.59,True
+INC-BANK-0006,2026-02-19,2,Triage,UPI Operations,Operations opens INC-BANK-0006 at Sev-1 and scopes the blast radius to Punjab National Bank,Punjab National Bank,Success Rate (%),94.21,94.59,True
+INC-BANK-0006,2026-02-19,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to issuer-side U30/U28 declines,Punjab National Bank,Success Rate (%),94.21,94.59,True
+INC-BANK-0006,2026-02-19,4,Mitigation,UPI Operations,"Mitigation applied; success on Punjab National Bank troughs at 92.95% against a 94.21% baseline, a 1.26pp dip",Punjab National Bank,Success Rate (%),94.21,94.59,True
+INC-BANK-0006,2026-02-19,5,Recovery,UPI Operations,Punjab National Bank recovers to 94.59% over the following week,Punjab National Bank,Success Rate (%),94.21,94.59,True
+INC-BANK-0006,2026-02-19,6,Review,Product Analytics,"Post-incident review closes INC-BANK-0006; 1,230 attempts were exposed",Punjab National Bank,Success Rate (%),94.21,94.59,True
+INC-BANK-0011,2026-02-19,1,Signal,Product Analytics,Transaction monitoring flags an issuer decline spike on State Bank of India,State Bank of India,Success Rate (%),95.5,95.11,True
+INC-BANK-0011,2026-02-19,2,Triage,UPI Operations,Operations opens INC-BANK-0011 at Sev-2 and scopes the blast radius to State Bank of India,State Bank of India,Success Rate (%),95.5,95.11,True
+INC-BANK-0011,2026-02-19,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to issuer-side U30/U28 declines,State Bank of India,Success Rate (%),95.5,95.11,True
+INC-BANK-0011,2026-02-19,4,Mitigation,UPI Operations,"Mitigation applied; success on State Bank of India troughs at 95.12% against a 95.50% baseline, a 0.38pp dip",State Bank of India,Success Rate (%),95.5,95.11,True
+INC-BANK-0011,2026-02-19,5,Recovery,UPI Operations,State Bank of India recovers to 95.11% over the following week,State Bank of India,Success Rate (%),95.5,95.11,True
+INC-BANK-0011,2026-02-19,6,Review,Product Analytics,"Post-incident review closes INC-BANK-0011; 3,196 attempts were exposed",State Bank of India,Success Rate (%),95.5,95.11,True
+ADOPT-0075,2026-02-24,1,Signal,Product Analytics,Transaction monitoring flags an onboarding surge on UPI_CREDIT_LINE,UPI_CREDIT_LINE,Success Rate (%),94.22,95.71,False
+ADOPT-0075,2026-02-24,2,Triage,UPI Operations,Operations opens ADOPT-0075 at Sev-3 and scopes the blast radius to UPI_CREDIT_LINE,UPI_CREDIT_LINE,Success Rate (%),94.22,95.71,False
+ADOPT-0075,2026-02-24,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,UPI_CREDIT_LINE,Success Rate (%),94.22,95.71,False
+ADOPT-0075,2026-02-24,4,Mitigation,UPI Operations,"Mitigation applied; success on UPI_CREDIT_LINE troughs at 91.91% against a 94.22% baseline, a 2.31pp dip",UPI_CREDIT_LINE,Success Rate (%),94.22,95.71,False
+ADOPT-0075,2026-02-24,5,Recovery,UPI Operations,UPI_CREDIT_LINE recovers to 95.71% over the following week,UPI_CREDIT_LINE,Success Rate (%),94.22,95.71,False
+ADOPT-0075,2026-02-24,6,Review,Product Analytics,"Post-incident review closes ADOPT-0075; 1,778 attempts were exposed",UPI_CREDIT_LINE,Success Rate (%),94.22,95.71,False
+INC-SETL-0081,2026-02-24,1,Signal,Product Analytics,"Transaction monitoring flags a mandate batch delay on UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),95.41,95.81,True
+INC-SETL-0081,2026-02-24,2,Triage,UPI Operations,"Operations opens INC-SETL-0081 at Sev-2 and scopes the blast radius to UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),95.41,95.81,True
+INC-SETL-0081,2026-02-24,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to mandates presented outside their window (UX),"UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),95.41,95.81,True
+INC-SETL-0081,2026-02-24,4,Mitigation,UPI Operations,"Mitigation applied; success on UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU troughs at 94.51% against a 95.41% baseline, a 0.90pp dip","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),95.41,95.81,True
+INC-SETL-0081,2026-02-24,5,Recovery,UPI Operations,"UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU recovers to 95.81% over the following week","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),95.41,95.81,True
+INC-SETL-0081,2026-02-24,6,Review,Product Analytics,"Post-incident review closes INC-SETL-0081; 30,202 attempts were exposed","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),95.41,95.81,True
+INC-PSP-0031,2026-03-01,1,Signal,Product Analytics,Operational calendar records an app-side regression on HDFC MobileBanking,HDFC MobileBanking,Success Rate (%),94.74,95.71,False
+INC-PSP-0031,2026-03-01,2,Triage,UPI Operations,Operations opens INC-PSP-0031 at Sev-3 and scopes it to HDFC MobileBanking,HDFC MobileBanking,Success Rate (%),94.74,95.71,False
+INC-PSP-0031,2026-03-01,3,Diagnosis,Platform Engineering,Measured impact is inside HDFC MobileBanking's normal daily variation — success held at 96.59% against a 94.74% baseline,HDFC MobileBanking,Success Rate (%),94.74,95.71,False
+INC-PSP-0031,2026-03-01,4,Mitigation,UPI Operations,No mitigation required; 151 attempts were exposed with no detectable degradation,HDFC MobileBanking,Success Rate (%),94.74,95.71,False
+INC-PSP-0031,2026-03-01,5,Recovery,UPI Operations,HDFC MobileBanking closes the window at 95.71%,HDFC MobileBanking,Success Rate (%),94.74,95.71,False
+INC-PSP-0031,2026-03-01,6,Review,Product Analytics,INC-PSP-0031 closed as no-impact; retained for trend context,HDFC MobileBanking,Success Rate (%),94.74,95.71,False
+INC-BANK-0009,2026-03-02,1,Signal,Product Analytics,Operational calendar records an issuer decline spike on State Bank of India,State Bank of India,Success Rate (%),95.03,95.45,False
+INC-BANK-0009,2026-03-02,2,Triage,UPI Operations,Operations opens INC-BANK-0009 at Sev-3 and scopes it to State Bank of India,State Bank of India,Success Rate (%),95.03,95.45,False
+INC-BANK-0009,2026-03-02,3,Diagnosis,Platform Engineering,Measured impact is inside State Bank of India's normal daily variation — success held at 95.39% against a 95.03% baseline,State Bank of India,Success Rate (%),95.03,95.45,False
+INC-BANK-0009,2026-03-02,4,Mitigation,UPI Operations,"No mitigation required; 22,999 attempts were exposed with no detectable degradation",State Bank of India,Success Rate (%),95.03,95.45,False
+INC-BANK-0009,2026-03-02,5,Recovery,UPI Operations,State Bank of India closes the window at 95.45%,State Bank of India,Success Rate (%),95.03,95.45,False
+INC-BANK-0009,2026-03-02,6,Review,Product Analytics,INC-BANK-0009 closed as no-impact; retained for trend context,State Bank of India,Success Rate (%),95.03,95.45,False
+INC-PSP-0026,2026-03-02,1,Signal,Product Analytics,Transaction monitoring flags an app-side regression on YONO SBI,YONO SBI,Success Rate (%),94.95,95.88,True
+INC-PSP-0026,2026-03-02,2,Triage,UPI Operations,Operations opens INC-PSP-0026 at Sev-2 and scopes the blast radius to YONO SBI,YONO SBI,Success Rate (%),94.95,95.88,True
+INC-PSP-0026,2026-03-02,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to PSP-side YA declines and callback timeouts,YONO SBI,Success Rate (%),94.95,95.88,True
+INC-PSP-0026,2026-03-02,4,Mitigation,UPI Operations,"Mitigation applied; success on YONO SBI troughs at 94.31% against a 94.95% baseline, a 0.64pp dip",YONO SBI,Success Rate (%),94.95,95.88,True
+INC-PSP-0026,2026-03-02,5,Recovery,UPI Operations,YONO SBI recovers to 95.88% over the following week,YONO SBI,Success Rate (%),94.95,95.88,True
+INC-PSP-0026,2026-03-02,6,Review,Product Analytics,Post-incident review closes INC-PSP-0026; 470 attempts were exposed,YONO SBI,Success Rate (%),94.95,95.88,True
+CMP-0058,2026-03-07,1,Signal,Product Analytics,Transaction monitoring flags a category volume surge on 5411,5411,Success Rate (%),96.68,96.34,False
+CMP-0058,2026-03-07,2,Triage,UPI Operations,Operations opens CMP-0058 at Sev-3 and scopes the blast radius to 5411,5411,Success Rate (%),96.68,96.34,False
+CMP-0058,2026-03-07,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,5411,Success Rate (%),96.68,96.34,False
+CMP-0058,2026-03-07,4,Mitigation,UPI Operations,"Mitigation applied; success on 5411 troughs at 96.38% against a 96.68% baseline, a 0.29pp dip",5411,Success Rate (%),96.68,96.34,False
+CMP-0058,2026-03-07,5,Recovery,UPI Operations,5411 recovers to 96.34% over the following week,5411,Success Rate (%),96.68,96.34,False
+CMP-0058,2026-03-07,6,Review,Product Analytics,"Post-incident review closes CMP-0058; 7,924 attempts were exposed",5411,Success Rate (%),96.68,96.34,False
+ONBRD-0088,2026-03-08,1,Signal,Product Analytics,Transaction monitoring flags an acquiring cohort step-in on 5411,5411,Success Rate (%),96.79,96.08,False
+ONBRD-0088,2026-03-08,2,Triage,UPI Operations,Operations opens ONBRD-0088 at Sev-3 and scopes the blast radius to 5411,5411,Success Rate (%),96.79,96.08,False
+ONBRD-0088,2026-03-08,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,5411,Success Rate (%),96.79,96.08,False
+ONBRD-0088,2026-03-08,4,Mitigation,UPI Operations,"Mitigation applied; success on 5411 troughs at 94.83% against a 96.79% baseline, a 1.96pp dip",5411,Success Rate (%),96.79,96.08,False
+ONBRD-0088,2026-03-08,5,Recovery,UPI Operations,5411 recovers to 96.08% over the following week,5411,Success Rate (%),96.79,96.08,False
+ONBRD-0088,2026-03-08,6,Review,Product Analytics,"Post-incident review closes ONBRD-0088; 36,109 attempts were exposed",5411,Success Rate (%),96.79,96.08,False
+CMP-0065,2026-03-10,1,Signal,Product Analytics,Transaction monitoring flags a category volume surge on 5815,5815,Success Rate (%),94.25,94.41,False
+CMP-0065,2026-03-10,2,Triage,UPI Operations,Operations opens CMP-0065 at Sev-3 and scopes the blast radius to 5815,5815,Success Rate (%),94.25,94.41,False
+CMP-0065,2026-03-10,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,5815,Success Rate (%),94.25,94.41,False
+CMP-0065,2026-03-10,4,Mitigation,UPI Operations,"Mitigation applied; success on 5815 troughs at 89.74% against a 94.25% baseline, a 4.50pp dip",5815,Success Rate (%),94.25,94.41,False
+CMP-0065,2026-03-10,5,Recovery,UPI Operations,5815 recovers to 94.41% over the following week,5815,Success Rate (%),94.25,94.41,False
+CMP-0065,2026-03-10,6,Review,Product Analytics,"Post-incident review closes CMP-0065; 1,257 attempts were exposed",5815,Success Rate (%),94.25,94.41,False
+INC-NET-0037,2026-03-11,1,Signal,Product Analytics,Transaction monitoring flags switch latency degradation on the ecosystem,the ecosystem,Success Rate (%),95.98,95.6,True
+INC-NET-0037,2026-03-11,2,Triage,UPI Operations,Operations opens INC-NET-0037 at Sev-2 and scopes the blast radius to the ecosystem,the ecosystem,Success Rate (%),95.98,95.6,True
+INC-NET-0037,2026-03-11,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to NPCI switch timeouts (BT/U54),the ecosystem,Success Rate (%),95.98,95.6,True
+INC-NET-0037,2026-03-11,4,Mitigation,UPI Operations,"Mitigation applied; success on the ecosystem troughs at 94.55% against a 95.98% baseline, a 1.43pp dip",the ecosystem,Success Rate (%),95.98,95.6,True
+INC-NET-0037,2026-03-11,5,Recovery,UPI Operations,the ecosystem recovers to 95.60% over the following week,the ecosystem,Success Rate (%),95.98,95.6,True
+INC-NET-0037,2026-03-11,6,Review,Product Analytics,"Post-incident review closes INC-NET-0037; 11,139 attempts were exposed",the ecosystem,Success Rate (%),95.98,95.6,True
+DORM-0073,2026-03-16,1,Signal,Product Analytics,Transaction monitoring flags a regional demand fall on the ecosystem,the ecosystem,Success Rate (%),95.48,95.24,False
+DORM-0073,2026-03-16,2,Triage,UPI Operations,Operations opens DORM-0073 at Sev-3 and scopes the blast radius to the ecosystem,the ecosystem,Success Rate (%),95.48,95.24,False
+DORM-0073,2026-03-16,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,the ecosystem,Success Rate (%),95.48,95.24,False
+DORM-0073,2026-03-16,4,Mitigation,UPI Operations,"Mitigation applied; success on the ecosystem troughs at 90.12% against a 95.48% baseline, a 5.36pp dip",the ecosystem,Success Rate (%),95.48,95.24,False
+DORM-0073,2026-03-16,5,Recovery,UPI Operations,the ecosystem recovers to 95.24% over the following week,the ecosystem,Success Rate (%),95.48,95.24,False
+DORM-0073,2026-03-16,6,Review,Product Analytics,"Post-incident review closes DORM-0073; 247,603 attempts were exposed",the ecosystem,Success Rate (%),95.48,95.24,False
+CMP-0057,2026-03-25,1,Signal,Product Analytics,Transaction monitoring flags a category volume surge on 5411,5411,Success Rate (%),96.84,96.14,False
+CMP-0057,2026-03-25,2,Triage,UPI Operations,Operations opens CMP-0057 at Sev-3 and scopes the blast radius to 5411,5411,Success Rate (%),96.84,96.14,False
+CMP-0057,2026-03-25,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,5411,Success Rate (%),96.84,96.14,False
+CMP-0057,2026-03-25,4,Mitigation,UPI Operations,"Mitigation applied; success on 5411 troughs at 91.52% against a 96.84% baseline, a 5.31pp dip",5411,Success Rate (%),96.84,96.14,False
+CMP-0057,2026-03-25,5,Recovery,UPI Operations,5411 recovers to 96.14% over the following week,5411,Success Rate (%),96.84,96.14,False
+CMP-0057,2026-03-25,6,Review,Product Analytics,"Post-incident review closes CMP-0057; 14,120 attempts were exposed",5411,Success Rate (%),96.84,96.14,False
+INC-NET-0035,2026-03-26,1,Signal,Product Analytics,Transaction monitoring flags switch latency degradation on the ecosystem,the ecosystem,Success Rate (%),95.77,95.97,True
+INC-NET-0035,2026-03-26,2,Triage,UPI Operations,Operations opens INC-NET-0035 at Sev-1 and scopes the blast radius to the ecosystem,the ecosystem,Success Rate (%),95.77,95.97,True
+INC-NET-0035,2026-03-26,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to NPCI switch timeouts (BT/U54),the ecosystem,Success Rate (%),95.77,95.97,True
+INC-NET-0035,2026-03-26,4,Mitigation,UPI Operations,"Mitigation applied; success on the ecosystem troughs at 90.12% against a 95.77% baseline, a 5.66pp dip",the ecosystem,Success Rate (%),95.77,95.97,True
+INC-NET-0035,2026-03-26,5,Recovery,UPI Operations,the ecosystem recovers to 95.97% over the following week,the ecosystem,Success Rate (%),95.77,95.97,True
+INC-NET-0035,2026-03-26,6,Review,Product Analytics,"Post-incident review closes INC-NET-0035; 22,537 attempts were exposed",the ecosystem,Success Rate (%),95.77,95.97,True
+ADOPT-0076,2026-03-30,1,Signal,Product Analytics,Operational calendar records an onboarding surge on UPI_AUTOPAY,UPI_AUTOPAY,Success Rate (%),85.59,89.43,False
+ADOPT-0076,2026-03-30,2,Triage,UPI Operations,Operations opens ADOPT-0076 at Sev-3 and scopes it to UPI_AUTOPAY,UPI_AUTOPAY,Success Rate (%),85.59,89.43,False
+ADOPT-0076,2026-03-30,3,Diagnosis,Platform Engineering,Measured impact is inside UPI_AUTOPAY's normal daily variation — success held at 86.59% against a 85.59% baseline,UPI_AUTOPAY,Success Rate (%),85.59,89.43,False
+ADOPT-0076,2026-03-30,4,Mitigation,UPI Operations,"No mitigation required; 4,533 attempts were exposed with no detectable degradation",UPI_AUTOPAY,Success Rate (%),85.59,89.43,False
+ADOPT-0076,2026-03-30,5,Recovery,UPI Operations,UPI_AUTOPAY closes the window at 89.43%,UPI_AUTOPAY,Success Rate (%),85.59,89.43,False
+ADOPT-0076,2026-03-30,6,Review,Product Analytics,ADOPT-0076 closed as no-impact; retained for trend context,UPI_AUTOPAY,Success Rate (%),85.59,89.43,False
+MKT-0078,2026-03-31,1,Signal,Product Analytics,"Transaction monitoring flags a discretionary spend pull-back on UPI_CREDIT_LINE,RUPAY_CREDIT,UPI_P2M,UPI_INTL","UPI_CREDIT_LINE,RUPAY_CREDIT,UPI_P2M,UPI_INTL",Success Rate (%),94.81,94.61,False
+MKT-0078,2026-03-31,2,Triage,UPI Operations,"Operations opens MKT-0078 at Sev-3 and scopes the blast radius to UPI_CREDIT_LINE,RUPAY_CREDIT,UPI_P2M,UPI_INTL","UPI_CREDIT_LINE,RUPAY_CREDIT,UPI_P2M,UPI_INTL",Success Rate (%),94.81,94.61,False
+MKT-0078,2026-03-31,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,"UPI_CREDIT_LINE,RUPAY_CREDIT,UPI_P2M,UPI_INTL",Success Rate (%),94.81,94.61,False
+MKT-0078,2026-03-31,4,Mitigation,UPI Operations,"Mitigation applied; success on UPI_CREDIT_LINE,RUPAY_CREDIT,UPI_P2M,UPI_INTL troughs at 90.38% against a 94.81% baseline, a 4.44pp dip","UPI_CREDIT_LINE,RUPAY_CREDIT,UPI_P2M,UPI_INTL",Success Rate (%),94.81,94.61,False
+MKT-0078,2026-03-31,5,Recovery,UPI Operations,"UPI_CREDIT_LINE,RUPAY_CREDIT,UPI_P2M,UPI_INTL recovers to 94.61% over the following week","UPI_CREDIT_LINE,RUPAY_CREDIT,UPI_P2M,UPI_INTL",Success Rate (%),94.81,94.61,False
+MKT-0078,2026-03-31,6,Review,Product Analytics,"Post-incident review closes MKT-0078; 144,230 attempts were exposed","UPI_CREDIT_LINE,RUPAY_CREDIT,UPI_P2M,UPI_INTL",Success Rate (%),94.81,94.61,False
+INC-PSP-0028,2026-04-02,1,Signal,Product Analytics,Transaction monitoring flags an app-side regression on Axis Mobile,Axis Mobile,Success Rate (%),95.76,93.95,False
+INC-PSP-0028,2026-04-02,2,Triage,UPI Operations,Operations opens INC-PSP-0028 at Sev-3 and scopes the blast radius to Axis Mobile,Axis Mobile,Success Rate (%),95.76,93.95,False
+INC-PSP-0028,2026-04-02,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to PSP-side YA declines and callback timeouts,Axis Mobile,Success Rate (%),95.76,93.95,False
+INC-PSP-0028,2026-04-02,4,Mitigation,UPI Operations,"Mitigation applied; success on Axis Mobile troughs at 92.86% against a 95.76% baseline, a 2.90pp dip",Axis Mobile,Success Rate (%),95.76,93.95,False
+INC-PSP-0028,2026-04-02,5,Recovery,UPI Operations,Axis Mobile recovers to 93.95% over the following week,Axis Mobile,Success Rate (%),95.76,93.95,False
+INC-PSP-0028,2026-04-02,6,Review,Product Analytics,Post-incident review closes INC-PSP-0028; 328 attempts were exposed,Axis Mobile,Success Rate (%),95.76,93.95,False
+CMP-0051,2026-04-04,1,Signal,Product Analytics,Transaction monitoring flags a category volume surge on 5812,5812,Success Rate (%),96.22,95.68,False
+CMP-0051,2026-04-04,2,Triage,UPI Operations,Operations opens CMP-0051 at Sev-3 and scopes the blast radius to 5812,5812,Success Rate (%),96.22,95.68,False
+CMP-0051,2026-04-04,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,5812,Success Rate (%),96.22,95.68,False
+CMP-0051,2026-04-04,4,Mitigation,UPI Operations,"Mitigation applied; success on 5812 troughs at 89.03% against a 96.22% baseline, a 7.18pp dip",5812,Success Rate (%),96.22,95.68,False
+CMP-0051,2026-04-04,5,Recovery,UPI Operations,5812 recovers to 95.68% over the following week,5812,Success Rate (%),96.22,95.68,False
+CMP-0051,2026-04-04,6,Review,Product Analytics,"Post-incident review closes CMP-0051; 4,266 attempts were exposed",5812,Success Rate (%),96.22,95.68,False
+INC-NET-0039,2026-04-05,1,Signal,Product Analytics,Transaction monitoring flags switch latency degradation on the ecosystem,the ecosystem,Success Rate (%),95.95,95.95,True
+INC-NET-0039,2026-04-05,2,Triage,UPI Operations,Operations opens INC-NET-0039 at Sev-2 and scopes the blast radius to the ecosystem,the ecosystem,Success Rate (%),95.95,95.95,True
+INC-NET-0039,2026-04-05,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to NPCI switch timeouts (BT/U54),the ecosystem,Success Rate (%),95.95,95.95,True
+INC-NET-0039,2026-04-05,4,Mitigation,UPI Operations,"Mitigation applied; success on the ecosystem troughs at 90.38% against a 95.95% baseline, a 5.58pp dip",the ecosystem,Success Rate (%),95.95,95.95,True
+INC-NET-0039,2026-04-05,5,Recovery,UPI Operations,the ecosystem recovers to 95.95% over the following week,the ecosystem,Success Rate (%),95.95,95.95,True
+INC-NET-0039,2026-04-05,6,Review,Product Analytics,"Post-incident review closes INC-NET-0039; 12,563 attempts were exposed",the ecosystem,Success Rate (%),95.95,95.95,True
+INC-NET-0043,2026-04-05,1,Signal,Product Analytics,Transaction monitoring flags switch latency degradation on the ecosystem,the ecosystem,Success Rate (%),95.95,95.95,True
+INC-NET-0043,2026-04-05,2,Triage,UPI Operations,Operations opens INC-NET-0043 at Sev-1 and scopes the blast radius to the ecosystem,the ecosystem,Success Rate (%),95.95,95.95,True
+INC-NET-0043,2026-04-05,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to NPCI switch timeouts (BT/U54),the ecosystem,Success Rate (%),95.95,95.95,True
+INC-NET-0043,2026-04-05,4,Mitigation,UPI Operations,"Mitigation applied; success on the ecosystem troughs at 90.38% against a 95.95% baseline, a 5.58pp dip",the ecosystem,Success Rate (%),95.95,95.95,True
+INC-NET-0043,2026-04-05,5,Recovery,UPI Operations,the ecosystem recovers to 95.95% over the following week,the ecosystem,Success Rate (%),95.95,95.95,True
+INC-NET-0043,2026-04-05,6,Review,Product Analytics,"Post-incident review closes INC-NET-0043; 12,563 attempts were exposed",the ecosystem,Success Rate (%),95.95,95.95,True
+CHURN-0091,2026-04-06,1,Signal,Product Analytics,Transaction monitoring flags category attrition on 5541,5541,Success Rate (%),95.15,97.08,True
+CHURN-0091,2026-04-06,2,Triage,UPI Operations,Operations opens CHURN-0091 at Sev-2 and scopes the blast radius to 5541,5541,Success Rate (%),95.15,97.08,True
+CHURN-0091,2026-04-06,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,5541,Success Rate (%),95.15,97.08,True
+CHURN-0091,2026-04-06,4,Mitigation,UPI Operations,"Mitigation applied; success on 5541 troughs at 91.98% against a 95.15% baseline, a 3.17pp dip",5541,Success Rate (%),95.15,97.08,True
+CHURN-0091,2026-04-06,5,Recovery,UPI Operations,5541 recovers to 97.08% over the following week,5541,Success Rate (%),95.15,97.08,True
+CHURN-0091,2026-04-06,6,Review,Product Analytics,"Post-incident review closes CHURN-0091; 8,222 attempts were exposed",5541,Success Rate (%),95.15,97.08,True
+INC-PSP-0030,2026-04-14,1,Signal,Product Analytics,Transaction monitoring flags an app-side regression on PhonePe,PhonePe,Success Rate (%),95.84,95.01,True
+INC-PSP-0030,2026-04-14,2,Triage,UPI Operations,Operations opens INC-PSP-0030 at Sev-2 and scopes the blast radius to PhonePe,PhonePe,Success Rate (%),95.84,95.01,True
+INC-PSP-0030,2026-04-14,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to PSP-side YA declines and callback timeouts,PhonePe,Success Rate (%),95.84,95.01,True
+INC-PSP-0030,2026-04-14,4,Mitigation,UPI Operations,"Mitigation applied; success on PhonePe troughs at 95.31% against a 95.84% baseline, a 0.52pp dip",PhonePe,Success Rate (%),95.84,95.01,True
+INC-PSP-0030,2026-04-14,5,Recovery,UPI Operations,PhonePe recovers to 95.01% over the following week,PhonePe,Success Rate (%),95.84,95.01,True
+INC-PSP-0030,2026-04-14,6,Review,Product Analytics,"Post-incident review closes INC-PSP-0030; 16,185 attempts were exposed",PhonePe,Success Rate (%),95.84,95.01,True
+CMP-0053,2026-04-14,1,Signal,Product Analytics,Transaction monitoring flags a category volume surge on 4900,4900,Success Rate (%),95.27,94.47,False
+CMP-0053,2026-04-14,2,Triage,UPI Operations,Operations opens CMP-0053 at Sev-3 and scopes the blast radius to 4900,4900,Success Rate (%),95.27,94.47,False
+CMP-0053,2026-04-14,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,4900,Success Rate (%),95.27,94.47,False
+CMP-0053,2026-04-14,4,Mitigation,UPI Operations,"Mitigation applied; success on 4900 troughs at 87.17% against a 95.27% baseline, a 8.09pp dip",4900,Success Rate (%),95.27,94.47,False
+CMP-0053,2026-04-14,5,Recovery,UPI Operations,4900 recovers to 94.47% over the following week,4900,Success Rate (%),95.27,94.47,False
+CMP-0053,2026-04-14,6,Review,Product Analytics,"Post-incident review closes CMP-0053; 2,407 attempts were exposed",4900,Success Rate (%),95.27,94.47,False
+INC-PSP-0033,2026-04-15,1,Signal,Product Analytics,Transaction monitoring flags an app-side regression on SuperMoney,SuperMoney,Success Rate (%),95.91,95.49,True
+INC-PSP-0033,2026-04-15,2,Triage,UPI Operations,Operations opens INC-PSP-0033 at Sev-1 and scopes the blast radius to SuperMoney,SuperMoney,Success Rate (%),95.91,95.49,True
+INC-PSP-0033,2026-04-15,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to PSP-side YA declines and callback timeouts,SuperMoney,Success Rate (%),95.91,95.49,True
+INC-PSP-0033,2026-04-15,4,Mitigation,UPI Operations,"Mitigation applied; success on SuperMoney troughs at 90.82% against a 95.91% baseline, a 5.09pp dip",SuperMoney,Success Rate (%),95.91,95.49,True
+INC-PSP-0033,2026-04-15,5,Recovery,UPI Operations,SuperMoney recovers to 95.49% over the following week,SuperMoney,Success Rate (%),95.91,95.49,True
+INC-PSP-0033,2026-04-15,6,Review,Product Analytics,Post-incident review closes INC-PSP-0033; 921 attempts were exposed,SuperMoney,Success Rate (%),95.91,95.49,True
+CMP-0054,2026-04-15,1,Signal,Product Analytics,Transaction monitoring flags a category volume surge on 4814,4814,Success Rate (%),96.2,95.76,False
+CMP-0054,2026-04-15,2,Triage,UPI Operations,Operations opens CMP-0054 at Sev-3 and scopes the blast radius to 4814,4814,Success Rate (%),96.2,95.76,False
+CMP-0054,2026-04-15,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,4814,Success Rate (%),96.2,95.76,False
+CMP-0054,2026-04-15,4,Mitigation,UPI Operations,"Mitigation applied; success on 4814 troughs at 89.51% against a 96.20% baseline, a 6.69pp dip",4814,Success Rate (%),96.2,95.76,False
+CMP-0054,2026-04-15,5,Recovery,UPI Operations,4814 recovers to 95.76% over the following week,4814,Success Rate (%),96.2,95.76,False
+CMP-0054,2026-04-15,6,Review,Product Analytics,"Post-incident review closes CMP-0054; 4,032 attempts were exposed",4814,Success Rate (%),96.2,95.76,False
+INC-NET-0042,2026-04-17,1,Signal,Product Analytics,Transaction monitoring flags switch latency degradation on the ecosystem,the ecosystem,Success Rate (%),95.56,95.54,True
+INC-NET-0042,2026-04-17,2,Triage,UPI Operations,Operations opens INC-NET-0042 at Sev-1 and scopes the blast radius to the ecosystem,the ecosystem,Success Rate (%),95.56,95.54,True
+INC-NET-0042,2026-04-17,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to NPCI switch timeouts (BT/U54),the ecosystem,Success Rate (%),95.56,95.54,True
+INC-NET-0042,2026-04-17,4,Mitigation,UPI Operations,"Mitigation applied; success on the ecosystem troughs at 89.53% against a 95.56% baseline, a 6.03pp dip",the ecosystem,Success Rate (%),95.56,95.54,True
+INC-NET-0042,2026-04-17,5,Recovery,UPI Operations,the ecosystem recovers to 95.54% over the following week,the ecosystem,Success Rate (%),95.56,95.54,True
+INC-NET-0042,2026-04-17,6,Review,Product Analytics,"Post-incident review closes INC-NET-0042; 28,521 attempts were exposed",the ecosystem,Success Rate (%),95.56,95.54,True
+CMP-0062,2026-04-20,1,Signal,Product Analytics,Operational calendar records a category volume surge on 5814,5814,Success Rate (%),95.72,96.92,False
+CMP-0062,2026-04-20,2,Triage,UPI Operations,Operations opens CMP-0062 at Sev-3 and scopes it to 5814,5814,Success Rate (%),95.72,96.92,False
+CMP-0062,2026-04-20,3,Diagnosis,Platform Engineering,Measured impact is inside 5814's normal daily variation — success held at 96.79% against a 95.72% baseline,5814,Success Rate (%),95.72,96.92,False
+CMP-0062,2026-04-20,4,Mitigation,UPI Operations,"No mitigation required; 4,287 attempts were exposed with no detectable degradation",5814,Success Rate (%),95.72,96.92,False
+CMP-0062,2026-04-20,5,Recovery,UPI Operations,5814 closes the window at 96.92%,5814,Success Rate (%),95.72,96.92,False
+CMP-0062,2026-04-20,6,Review,Product Analytics,CMP-0062 closed as no-impact; retained for trend context,5814,Success Rate (%),95.72,96.92,False
+CMP-0056,2026-04-24,1,Signal,Product Analytics,Transaction monitoring flags a category volume surge on 8299,8299,Success Rate (%),91.3,92.08,False
+CMP-0056,2026-04-24,2,Triage,UPI Operations,Operations opens CMP-0056 at Sev-3 and scopes the blast radius to 8299,8299,Success Rate (%),91.3,92.08,False
+CMP-0056,2026-04-24,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,8299,Success Rate (%),91.3,92.08,False
+CMP-0056,2026-04-24,4,Mitigation,UPI Operations,"Mitigation applied; success on 8299 troughs at 68.18% against a 91.30% baseline, a 23.11pp dip",8299,Success Rate (%),91.3,92.08,False
+CMP-0056,2026-04-24,5,Recovery,UPI Operations,8299 recovers to 92.08% over the following week,8299,Success Rate (%),91.3,92.08,False
+CMP-0056,2026-04-24,6,Review,Product Analytics,Post-incident review closes CMP-0056; 237 attempts were exposed,8299,Success Rate (%),91.3,92.08,False
+INC-BANK-0018,2026-04-27,1,Signal,Product Analytics,Transaction monitoring flags an issuer decline spike on Union Bank of India,Union Bank of India,Success Rate (%),94.52,95.24,True
+INC-BANK-0018,2026-04-27,2,Triage,UPI Operations,Operations opens INC-BANK-0018 at Sev-2 and scopes the blast radius to Union Bank of India,Union Bank of India,Success Rate (%),94.52,95.24,True
+INC-BANK-0018,2026-04-27,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to issuer-side U30/U28 declines,Union Bank of India,Success Rate (%),94.52,95.24,True
+INC-BANK-0018,2026-04-27,4,Mitigation,UPI Operations,"Mitigation applied; success on Union Bank of India troughs at 93.71% against a 94.52% baseline, a 0.81pp dip",Union Bank of India,Success Rate (%),94.52,95.24,True
+INC-BANK-0018,2026-04-27,5,Recovery,UPI Operations,Union Bank of India recovers to 95.24% over the following week,Union Bank of India,Success Rate (%),94.52,95.24,True
+INC-BANK-0018,2026-04-27,6,Review,Product Analytics,Post-incident review closes INC-BANK-0018; 858 attempts were exposed,Union Bank of India,Success Rate (%),94.52,95.24,True
+INC-PSP-0027,2026-04-27,1,Signal,Product Analytics,Transaction monitoring flags an app-side regression on PhonePe,PhonePe,Success Rate (%),95.74,96.02,True
+INC-PSP-0027,2026-04-27,2,Triage,UPI Operations,Operations opens INC-PSP-0027 at Sev-2 and scopes the blast radius to PhonePe,PhonePe,Success Rate (%),95.74,96.02,True
+INC-PSP-0027,2026-04-27,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to PSP-side YA declines and callback timeouts,PhonePe,Success Rate (%),95.74,96.02,True
+INC-PSP-0027,2026-04-27,4,Mitigation,UPI Operations,"Mitigation applied; success on PhonePe troughs at 94.83% against a 95.74% baseline, a 0.91pp dip",PhonePe,Success Rate (%),95.74,96.02,True
+INC-PSP-0027,2026-04-27,5,Recovery,UPI Operations,PhonePe recovers to 96.02% over the following week,PhonePe,Success Rate (%),95.74,96.02,True
+INC-PSP-0027,2026-04-27,6,Review,Product Analytics,"Post-incident review closes INC-PSP-0027; 24,451 attempts were exposed",PhonePe,Success Rate (%),95.74,96.02,True
+CMP-0050,2026-04-27,1,Signal,Product Analytics,Transaction monitoring flags a category volume surge on 5814,5814,Success Rate (%),97.11,97.35,False
+CMP-0050,2026-04-27,2,Triage,UPI Operations,Operations opens CMP-0050 at Sev-3 and scopes the blast radius to 5814,5814,Success Rate (%),97.11,97.35,False
+CMP-0050,2026-04-27,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,5814,Success Rate (%),97.11,97.35,False
+CMP-0050,2026-04-27,4,Mitigation,UPI Operations,"Mitigation applied; success on 5814 troughs at 95.95% against a 97.11% baseline, a 1.17pp dip",5814,Success Rate (%),97.11,97.35,False
+CMP-0050,2026-04-27,5,Recovery,UPI Operations,5814 recovers to 97.35% over the following week,5814,Success Rate (%),97.11,97.35,False
+CMP-0050,2026-04-27,6,Review,Product Analytics,"Post-incident review closes CMP-0050; 6,170 attempts were exposed",5814,Success Rate (%),97.11,97.35,False
+INC-PSP-0032,2026-04-29,1,Signal,Product Analytics,Transaction monitoring flags an app-side regression on Google Pay,Google Pay,Success Rate (%),94.96,96.05,False
+INC-PSP-0032,2026-04-29,2,Triage,UPI Operations,Operations opens INC-PSP-0032 at Sev-3 and scopes the blast radius to Google Pay,Google Pay,Success Rate (%),94.96,96.05,False
+INC-PSP-0032,2026-04-29,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to PSP-side YA declines and callback timeouts,Google Pay,Success Rate (%),94.96,96.05,False
+INC-PSP-0032,2026-04-29,4,Mitigation,UPI Operations,"Mitigation applied; success on Google Pay troughs at 94.18% against a 94.96% baseline, a 0.78pp dip",Google Pay,Success Rate (%),94.96,96.05,False
+INC-PSP-0032,2026-04-29,5,Recovery,UPI Operations,Google Pay recovers to 96.05% over the following week,Google Pay,Success Rate (%),94.96,96.05,False
+INC-PSP-0032,2026-04-29,6,Review,Product Analytics,"Post-incident review closes INC-PSP-0032; 9,201 attempts were exposed",Google Pay,Success Rate (%),94.96,96.05,False
+INC-NET-0041,2026-04-30,1,Signal,Product Analytics,Transaction monitoring flags switch latency degradation on the ecosystem,the ecosystem,Success Rate (%),95.34,96.08,True
+INC-NET-0041,2026-04-30,2,Triage,UPI Operations,Operations opens INC-NET-0041 at Sev-2 and scopes the blast radius to the ecosystem,the ecosystem,Success Rate (%),95.34,96.08,True
+INC-NET-0041,2026-04-30,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to NPCI switch timeouts (BT/U54),the ecosystem,Success Rate (%),95.34,96.08,True
+INC-NET-0041,2026-04-30,4,Mitigation,UPI Operations,"Mitigation applied; success on the ecosystem troughs at 94.50% against a 95.34% baseline, a 0.84pp dip",the ecosystem,Success Rate (%),95.34,96.08,True
+INC-NET-0041,2026-04-30,5,Recovery,UPI Operations,the ecosystem recovers to 96.08% over the following week,the ecosystem,Success Rate (%),95.34,96.08,True
+INC-NET-0041,2026-04-30,6,Review,Product Analytics,"Post-incident review closes INC-NET-0041; 28,736 attempts were exposed",the ecosystem,Success Rate (%),95.34,96.08,True
+CMP-0055,2026-04-30,1,Signal,Product Analytics,Transaction monitoring flags a category volume surge on 5912,5912,Success Rate (%),96.5,96.68,False
+CMP-0055,2026-04-30,2,Triage,UPI Operations,Operations opens CMP-0055 at Sev-3 and scopes the blast radius to 5912,5912,Success Rate (%),96.5,96.68,False
+CMP-0055,2026-04-30,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,5912,Success Rate (%),96.5,96.68,False
+CMP-0055,2026-04-30,4,Mitigation,UPI Operations,"Mitigation applied; success on 5912 troughs at 94.87% against a 96.50% baseline, a 1.63pp dip",5912,Success Rate (%),96.5,96.68,False
+CMP-0055,2026-04-30,5,Recovery,UPI Operations,5912 recovers to 96.68% over the following week,5912,Success Rate (%),96.5,96.68,False
+CMP-0055,2026-04-30,6,Review,Product Analytics,"Post-incident review closes CMP-0055; 5,191 attempts were exposed",5912,Success Rate (%),96.5,96.68,False
+INC-PSP-0029,2026-05-02,1,Signal,Product Analytics,Operational calendar records an app-side regression on PhonePe,PhonePe,Success Rate (%),95.43,96.0,True
+INC-PSP-0029,2026-05-02,2,Triage,UPI Operations,Operations opens INC-PSP-0029 at Sev-2 and scopes it to PhonePe,PhonePe,Success Rate (%),95.43,96.0,True
+INC-PSP-0029,2026-05-02,3,Diagnosis,Platform Engineering,Measured impact is inside PhonePe's normal daily variation — success held at 95.89% against a 95.43% baseline,PhonePe,Success Rate (%),95.43,96.0,True
+INC-PSP-0029,2026-05-02,4,Mitigation,UPI Operations,"No mitigation required; 22,371 attempts were exposed with no detectable degradation",PhonePe,Success Rate (%),95.43,96.0,True
+INC-PSP-0029,2026-05-02,5,Recovery,UPI Operations,PhonePe closes the window at 96.00%,PhonePe,Success Rate (%),95.43,96.0,True
+INC-PSP-0029,2026-05-02,6,Review,Product Analytics,INC-PSP-0029 closed as no-impact; retained for trend context,PhonePe,Success Rate (%),95.43,96.0,True
+INC-BANK-0013,2026-05-04,1,Signal,Product Analytics,Operational calendar records an issuer decline spike on Yes Bank,Yes Bank,Success Rate (%),95.5,95.64,True
+INC-BANK-0013,2026-05-04,2,Triage,UPI Operations,Operations opens INC-BANK-0013 at Sev-1 and scopes it to Yes Bank,Yes Bank,Success Rate (%),95.5,95.64,True
+INC-BANK-0013,2026-05-04,3,Diagnosis,Platform Engineering,Measured impact is inside Yes Bank's normal daily variation — success held at 96.15% against a 95.50% baseline,Yes Bank,Success Rate (%),95.5,95.64,True
+INC-BANK-0013,2026-05-04,4,Mitigation,UPI Operations,No mitigation required; 545 attempts were exposed with no detectable degradation,Yes Bank,Success Rate (%),95.5,95.64,True
+INC-BANK-0013,2026-05-04,5,Recovery,UPI Operations,Yes Bank closes the window at 95.64%,Yes Bank,Success Rate (%),95.5,95.64,True
+INC-BANK-0013,2026-05-04,6,Review,Product Analytics,INC-BANK-0013 closed as no-impact; retained for trend context,Yes Bank,Success Rate (%),95.5,95.64,True
+INC-BANK-0008,2026-05-05,1,Signal,Product Analytics,Transaction monitoring flags an issuer decline spike on Canara Bank,Canara Bank,Success Rate (%),94.67,95.46,False
+INC-BANK-0008,2026-05-05,2,Triage,UPI Operations,Operations opens INC-BANK-0008 at Sev-3 and scopes the blast radius to Canara Bank,Canara Bank,Success Rate (%),94.67,95.46,False
+INC-BANK-0008,2026-05-05,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to issuer-side U30/U28 declines,Canara Bank,Success Rate (%),94.67,95.46,False
+INC-BANK-0008,2026-05-05,4,Mitigation,UPI Operations,"Mitigation applied; success on Canara Bank troughs at 94.03% against a 94.67% baseline, a 0.64pp dip",Canara Bank,Success Rate (%),94.67,95.46,False
+INC-BANK-0008,2026-05-05,5,Recovery,UPI Operations,Canara Bank recovers to 95.46% over the following week,Canara Bank,Success Rate (%),94.67,95.46,False
+INC-BANK-0008,2026-05-05,6,Review,Product Analytics,"Post-incident review closes INC-BANK-0008; 2,565 attempts were exposed",Canara Bank,Success Rate (%),94.67,95.46,False
+INC-BANK-0001,2026-05-08,1,Signal,Product Analytics,Transaction monitoring flags an issuer decline spike on Yes Bank,Yes Bank,Success Rate (%),95.8,95.38,False
+INC-BANK-0001,2026-05-08,2,Triage,UPI Operations,Operations opens INC-BANK-0001 at Sev-3 and scopes the blast radius to Yes Bank,Yes Bank,Success Rate (%),95.8,95.38,False
+INC-BANK-0001,2026-05-08,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to issuer-side U30/U28 declines,Yes Bank,Success Rate (%),95.8,95.38,False
+INC-BANK-0001,2026-05-08,4,Mitigation,UPI Operations,"Mitigation applied; success on Yes Bank troughs at 94.30% against a 95.80% baseline, a 1.50pp dip",Yes Bank,Success Rate (%),95.8,95.38,False
+INC-BANK-0001,2026-05-08,5,Recovery,UPI Operations,Yes Bank recovers to 95.38% over the following week,Yes Bank,Success Rate (%),95.8,95.38,False
+INC-BANK-0001,2026-05-08,6,Review,Product Analytics,"Post-incident review closes INC-BANK-0001; 2,781 attempts were exposed",Yes Bank,Success Rate (%),95.8,95.38,False
+INC-SETL-0080,2026-05-09,1,Signal,Product Analytics,"Transaction monitoring flags a mandate batch delay on UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),96.08,95.63,True
+INC-SETL-0080,2026-05-09,2,Triage,UPI Operations,"Operations opens INC-SETL-0080 at Sev-2 and scopes the blast radius to UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),96.08,95.63,True
+INC-SETL-0080,2026-05-09,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to mandates presented outside their window (UX),"UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),96.08,95.63,True
+INC-SETL-0080,2026-05-09,4,Mitigation,UPI Operations,"Mitigation applied; success on UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU troughs at 95.64% against a 96.08% baseline, a 0.44pp dip","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),96.08,95.63,True
+INC-SETL-0080,2026-05-09,5,Recovery,UPI Operations,"UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU recovers to 95.63% over the following week","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),96.08,95.63,True
+INC-SETL-0080,2026-05-09,6,Review,Product Analytics,"Post-incident review closes INC-SETL-0080; 30,106 attempts were exposed","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),96.08,95.63,True
+CMP-0061,2026-05-12,1,Signal,Product Analytics,Transaction monitoring flags a category volume surge on 6211,6211,Success Rate (%),87.77,87.55,False
+CMP-0061,2026-05-12,2,Triage,UPI Operations,Operations opens CMP-0061 at Sev-3 and scopes the blast radius to 6211,6211,Success Rate (%),87.77,87.55,False
+CMP-0061,2026-05-12,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,6211,Success Rate (%),87.77,87.55,False
+CMP-0061,2026-05-12,4,Mitigation,UPI Operations,"Mitigation applied; success on 6211 troughs at 82.89% against a 87.77% baseline, a 4.87pp dip",6211,Success Rate (%),87.77,87.55,False
+CMP-0061,2026-05-12,5,Recovery,UPI Operations,6211 recovers to 87.55% over the following week,6211,Success Rate (%),87.77,87.55,False
+CMP-0061,2026-05-12,6,Review,Product Analytics,Post-incident review closes CMP-0061; 406 attempts were exposed,6211,Success Rate (%),87.77,87.55,False
+CMP-0067,2026-05-12,1,Signal,Product Analytics,Transaction monitoring flags a category volume surge on 5691,5691,Success Rate (%),95.67,95.84,False
+CMP-0067,2026-05-12,2,Triage,UPI Operations,Operations opens CMP-0067 at Sev-3 and scopes the blast radius to 5691,5691,Success Rate (%),95.67,95.84,False
+CMP-0067,2026-05-12,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,5691,Success Rate (%),95.67,95.84,False
+CMP-0067,2026-05-12,4,Mitigation,UPI Operations,"Mitigation applied; success on 5691 troughs at 92.75% against a 95.67% baseline, a 2.92pp dip",5691,Success Rate (%),95.67,95.84,False
+CMP-0067,2026-05-12,5,Recovery,UPI Operations,5691 recovers to 95.84% over the following week,5691,Success Rate (%),95.67,95.84,False
+CMP-0067,2026-05-12,6,Review,Product Analytics,"Post-incident review closes CMP-0067; 3,874 attempts were exposed",5691,Success Rate (%),95.67,95.84,False
+INC-NET-0036,2026-05-15,1,Signal,Product Analytics,Transaction monitoring flags switch latency degradation on the ecosystem,the ecosystem,Success Rate (%),96.1,96.04,True
+INC-NET-0036,2026-05-15,2,Triage,UPI Operations,Operations opens INC-NET-0036 at Sev-1 and scopes the blast radius to the ecosystem,the ecosystem,Success Rate (%),96.1,96.04,True
+INC-NET-0036,2026-05-15,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to NPCI switch timeouts (BT/U54),the ecosystem,Success Rate (%),96.1,96.04,True
+INC-NET-0036,2026-05-15,4,Mitigation,UPI Operations,"Mitigation applied; success on the ecosystem troughs at 92.99% against a 96.10% baseline, a 3.12pp dip",the ecosystem,Success Rate (%),96.1,96.04,True
+INC-NET-0036,2026-05-15,5,Recovery,UPI Operations,the ecosystem recovers to 96.04% over the following week,the ecosystem,Success Rate (%),96.1,96.04,True
+INC-NET-0036,2026-05-15,6,Review,Product Analytics,"Post-incident review closes INC-NET-0036; 14,232 attempts were exposed",the ecosystem,Success Rate (%),96.1,96.04,True
+INC-SETL-0083,2026-05-16,1,Signal,Product Analytics,"Operational calendar records a mandate batch delay on UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),95.65,96.1,True
+INC-SETL-0083,2026-05-16,2,Triage,UPI Operations,"Operations opens INC-SETL-0083 at Sev-2 and scopes it to UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),95.65,96.1,True
+INC-SETL-0083,2026-05-16,3,Diagnosis,Platform Engineering,"Measured impact is inside UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU's normal daily variation — success held at 95.60% against a 95.65% baseline","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),95.65,96.1,True
+INC-SETL-0083,2026-05-16,4,Mitigation,UPI Operations,"No mitigation required; 17,220 attempts were exposed with no detectable degradation","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),95.65,96.1,True
+INC-SETL-0083,2026-05-16,5,Recovery,UPI Operations,"UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU closes the window at 96.10%","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),95.65,96.1,True
+INC-SETL-0083,2026-05-16,6,Review,Product Analytics,INC-SETL-0083 closed as no-impact; retained for trend context,"UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),95.65,96.1,True
+CMP-0063,2026-05-17,1,Signal,Product Analytics,Transaction monitoring flags a category volume surge on 5812,5812,Success Rate (%),96.37,95.88,False
+CMP-0063,2026-05-17,2,Triage,UPI Operations,Operations opens CMP-0063 at Sev-3 and scopes the blast radius to 5812,5812,Success Rate (%),96.37,95.88,False
+CMP-0063,2026-05-17,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,5812,Success Rate (%),96.37,95.88,False
+CMP-0063,2026-05-17,4,Mitigation,UPI Operations,"Mitigation applied; success on 5812 troughs at 95.37% against a 96.37% baseline, a 0.99pp dip",5812,Success Rate (%),96.37,95.88,False
+CMP-0063,2026-05-17,5,Recovery,UPI Operations,5812 recovers to 95.88% over the following week,5812,Success Rate (%),96.37,95.88,False
+CMP-0063,2026-05-17,6,Review,Product Analytics,"Post-incident review closes CMP-0063; 4,250 attempts were exposed",5812,Success Rate (%),96.37,95.88,False
+CMP-0066,2026-05-17,1,Signal,Product Analytics,Transaction monitoring flags a category volume surge on 5411,5411,Success Rate (%),96.6,96.92,False
+CMP-0066,2026-05-17,2,Triage,UPI Operations,Operations opens CMP-0066 at Sev-3 and scopes the blast radius to 5411,5411,Success Rate (%),96.6,96.92,False
+CMP-0066,2026-05-17,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,5411,Success Rate (%),96.6,96.92,False
+CMP-0066,2026-05-17,4,Mitigation,UPI Operations,"Mitigation applied; success on 5411 troughs at 95.97% against a 96.60% baseline, a 0.63pp dip",5411,Success Rate (%),96.6,96.92,False
+CMP-0066,2026-05-17,5,Recovery,UPI Operations,5411 recovers to 96.92% over the following week,5411,Success Rate (%),96.6,96.92,False
+CMP-0066,2026-05-17,6,Review,Product Analytics,"Post-incident review closes CMP-0066; 12,144 attempts were exposed",5411,Success Rate (%),96.6,96.92,False
+INC-PSP-0024,2026-05-21,1,Signal,Product Analytics,Transaction monitoring flags an app-side regression on PhonePe,PhonePe,Success Rate (%),95.79,96.26,False
+INC-PSP-0024,2026-05-21,2,Triage,UPI Operations,Operations opens INC-PSP-0024 at Sev-3 and scopes the blast radius to PhonePe,PhonePe,Success Rate (%),95.79,96.26,False
+INC-PSP-0024,2026-05-21,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to PSP-side YA declines and callback timeouts,PhonePe,Success Rate (%),95.79,96.26,False
+INC-PSP-0024,2026-05-21,4,Mitigation,UPI Operations,"Mitigation applied; success on PhonePe troughs at 95.46% against a 95.79% baseline, a 0.33pp dip",PhonePe,Success Rate (%),95.79,96.26,False
+INC-PSP-0024,2026-05-21,5,Recovery,UPI Operations,PhonePe recovers to 96.26% over the following week,PhonePe,Success Rate (%),95.79,96.26,False
+INC-PSP-0024,2026-05-21,6,Review,Product Analytics,"Post-incident review closes INC-PSP-0024; 25,788 attempts were exposed",PhonePe,Success Rate (%),95.79,96.26,False
+INC-FRAUD-0045,2026-05-24,1,Signal,Product Analytics,Transaction monitoring flags a coordinated fraud pattern on RUPAY_CREDIT,RUPAY_CREDIT,Success Rate (%),95.22,94.59,True
+INC-FRAUD-0045,2026-05-24,2,Triage,UPI Operations,Operations opens INC-FRAUD-0045 at Sev-2 and scopes the blast radius to RUPAY_CREDIT,RUPAY_CREDIT,Success Rate (%),95.22,94.59,True
+INC-FRAUD-0045,2026-05-24,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to risk-engine blocks (U16/K1),RUPAY_CREDIT,Success Rate (%),95.22,94.59,True
+INC-FRAUD-0045,2026-05-24,4,Mitigation,UPI Operations,"Mitigation applied; success on RUPAY_CREDIT troughs at 89.58% against a 95.22% baseline, a 5.64pp dip",RUPAY_CREDIT,Success Rate (%),95.22,94.59,True
+INC-FRAUD-0045,2026-05-24,5,Recovery,UPI Operations,RUPAY_CREDIT recovers to 94.59% over the following week,RUPAY_CREDIT,Success Rate (%),95.22,94.59,True
+INC-FRAUD-0045,2026-05-24,6,Review,Product Analytics,Post-incident review closes INC-FRAUD-0045; 364 attempts were exposed,RUPAY_CREDIT,Success Rate (%),95.22,94.59,True
+CMP-0059,2026-05-25,1,Signal,Product Analytics,Transaction monitoring flags a category volume surge on 7230,7230,Success Rate (%),93.47,94.42,False
+CMP-0059,2026-05-25,2,Triage,UPI Operations,Operations opens CMP-0059 at Sev-3 and scopes the blast radius to 7230,7230,Success Rate (%),93.47,94.42,False
+CMP-0059,2026-05-25,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,7230,Success Rate (%),93.47,94.42,False
+CMP-0059,2026-05-25,4,Mitigation,UPI Operations,"Mitigation applied; success on 7230 troughs at 92.86% against a 93.47% baseline, a 0.62pp dip",7230,Success Rate (%),93.47,94.42,False
+CMP-0059,2026-05-25,5,Recovery,UPI Operations,7230 recovers to 94.42% over the following week,7230,Success Rate (%),93.47,94.42,False
+CMP-0059,2026-05-25,6,Review,Product Analytics,Post-incident review closes CMP-0059; 952 attempts were exposed,7230,Success Rate (%),93.47,94.42,False
+CHURN-0092,2026-05-25,1,Signal,Product Analytics,Transaction monitoring flags category attrition on 4814,4814,Success Rate (%),96.32,96.3,True
+CHURN-0092,2026-05-25,2,Triage,UPI Operations,Operations opens CHURN-0092 at Sev-2 and scopes the blast radius to 4814,4814,Success Rate (%),96.32,96.3,True
+CHURN-0092,2026-05-25,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,4814,Success Rate (%),96.32,96.3,True
+CHURN-0092,2026-05-25,4,Mitigation,UPI Operations,"Mitigation applied; success on 4814 troughs at 92.95% against a 96.32% baseline, a 3.37pp dip",4814,Success Rate (%),96.32,96.3,True
+CHURN-0092,2026-05-25,5,Recovery,UPI Operations,4814 recovers to 96.30% over the following week,4814,Success Rate (%),96.32,96.3,True
+CHURN-0092,2026-05-25,6,Review,Product Analytics,"Post-incident review closes CHURN-0092; 32,963 attempts were exposed",4814,Success Rate (%),96.32,96.3,True
+DORM-0072,2026-05-28,1,Signal,Product Analytics,Transaction monitoring flags a regional demand fall on the ecosystem,the ecosystem,Success Rate (%),95.99,96.17,False
+DORM-0072,2026-05-28,2,Triage,UPI Operations,Operations opens DORM-0072 at Sev-3 and scopes the blast radius to the ecosystem,the ecosystem,Success Rate (%),95.99,96.17,False
+DORM-0072,2026-05-28,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,the ecosystem,Success Rate (%),95.99,96.17,False
+DORM-0072,2026-05-28,4,Mitigation,UPI Operations,"Mitigation applied; success on the ecosystem troughs at 95.59% against a 95.99% baseline, a 0.40pp dip",the ecosystem,Success Rate (%),95.99,96.17,False
+DORM-0072,2026-05-28,5,Recovery,UPI Operations,the ecosystem recovers to 96.17% over the following week,the ecosystem,Success Rate (%),95.99,96.17,False
+DORM-0072,2026-05-28,6,Review,Product Analytics,"Post-incident review closes DORM-0072; 256,383 attempts were exposed",the ecosystem,Success Rate (%),95.99,96.17,False
+ONBRD-0089,2026-05-30,1,Signal,Product Analytics,Transaction monitoring flags an acquiring cohort step-in on 5411,5411,Success Rate (%),96.98,97.25,False
+ONBRD-0089,2026-05-30,2,Triage,UPI Operations,Operations opens ONBRD-0089 at Sev-3 and scopes the blast radius to 5411,5411,Success Rate (%),96.98,97.25,False
+ONBRD-0089,2026-05-30,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,5411,Success Rate (%),96.98,97.25,False
+ONBRD-0089,2026-05-30,4,Mitigation,UPI Operations,"Mitigation applied; success on 5411 troughs at 96.61% against a 96.98% baseline, a 0.38pp dip",5411,Success Rate (%),96.98,97.25,False
+ONBRD-0089,2026-05-30,5,Recovery,UPI Operations,5411 recovers to 97.25% over the following week,5411,Success Rate (%),96.98,97.25,False
+ONBRD-0089,2026-05-30,6,Review,Product Analytics,"Post-incident review closes ONBRD-0089; 65,954 attempts were exposed",5411,Success Rate (%),96.98,97.25,False
+INC-BANK-0014,2026-06-04,1,Signal,Product Analytics,Transaction monitoring flags an issuer decline spike on Punjab National Bank,Punjab National Bank,Success Rate (%),96.58,95.94,False
+INC-BANK-0014,2026-06-04,2,Triage,UPI Operations,Operations opens INC-BANK-0014 at Sev-3 and scopes the blast radius to Punjab National Bank,Punjab National Bank,Success Rate (%),96.58,95.94,False
+INC-BANK-0014,2026-06-04,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to issuer-side U30/U28 declines,Punjab National Bank,Success Rate (%),96.58,95.94,False
+INC-BANK-0014,2026-06-04,4,Mitigation,UPI Operations,"Mitigation applied; success on Punjab National Bank troughs at 96.28% against a 96.58% baseline, a 0.30pp dip",Punjab National Bank,Success Rate (%),96.58,95.94,False
+INC-BANK-0014,2026-06-04,5,Recovery,UPI Operations,Punjab National Bank recovers to 95.94% over the following week,Punjab National Bank,Success Rate (%),96.58,95.94,False
+INC-BANK-0014,2026-06-04,6,Review,Product Analytics,"Post-incident review closes INC-BANK-0014; 1,842 attempts were exposed",Punjab National Bank,Success Rate (%),96.58,95.94,False
+INC-BANK-0002,2026-06-08,1,Signal,Product Analytics,Operational calendar records an issuer decline spike on Yes Bank,Yes Bank,Success Rate (%),96.48,95.6,True
+INC-BANK-0002,2026-06-08,2,Triage,UPI Operations,Operations opens INC-BANK-0002 at Sev-2 and scopes it to Yes Bank,Yes Bank,Success Rate (%),96.48,95.6,True
+INC-BANK-0002,2026-06-08,3,Diagnosis,Platform Engineering,Measured impact is inside Yes Bank's normal daily variation — success held at 96.32% against a 96.48% baseline,Yes Bank,Success Rate (%),96.48,95.6,True
+INC-BANK-0002,2026-06-08,4,Mitigation,UPI Operations,"No mitigation required; 1,630 attempts were exposed with no detectable degradation",Yes Bank,Success Rate (%),96.48,95.6,True
+INC-BANK-0002,2026-06-08,5,Recovery,UPI Operations,Yes Bank closes the window at 95.60%,Yes Bank,Success Rate (%),96.48,95.6,True
+INC-BANK-0002,2026-06-08,6,Review,Product Analytics,INC-BANK-0002 closed as no-impact; retained for trend context,Yes Bank,Success Rate (%),96.48,95.6,True
+INC-BANK-0007,2026-06-08,1,Signal,Product Analytics,Transaction monitoring flags an issuer decline spike on Punjab National Bank,Punjab National Bank,Success Rate (%),96.75,96.28,True
+INC-BANK-0007,2026-06-08,2,Triage,UPI Operations,Operations opens INC-BANK-0007 at Sev-2 and scopes the blast radius to Punjab National Bank,Punjab National Bank,Success Rate (%),96.75,96.28,True
+INC-BANK-0007,2026-06-08,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to issuer-side U30/U28 declines,Punjab National Bank,Success Rate (%),96.75,96.28,True
+INC-BANK-0007,2026-06-08,4,Mitigation,UPI Operations,"Mitigation applied; success on Punjab National Bank troughs at 95.32% against a 96.75% baseline, a 1.43pp dip",Punjab National Bank,Success Rate (%),96.75,96.28,True
+INC-BANK-0007,2026-06-08,5,Recovery,UPI Operations,Punjab National Bank recovers to 96.28% over the following week,Punjab National Bank,Success Rate (%),96.75,96.28,True
+INC-BANK-0007,2026-06-08,6,Review,Product Analytics,"Post-incident review closes INC-BANK-0007; 1,914 attempts were exposed",Punjab National Bank,Success Rate (%),96.75,96.28,True
+CMP-0060,2026-06-11,1,Signal,Product Analytics,Transaction monitoring flags a category volume surge on 5815,5815,Success Rate (%),94.8,92.78,False
+CMP-0060,2026-06-11,2,Triage,UPI Operations,Operations opens CMP-0060 at Sev-3 and scopes the blast radius to 5815,5815,Success Rate (%),94.8,92.78,False
+CMP-0060,2026-06-11,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,5815,Success Rate (%),94.8,92.78,False
+CMP-0060,2026-06-11,4,Mitigation,UPI Operations,"Mitigation applied; success on 5815 troughs at 92.63% against a 94.80% baseline, a 2.17pp dip",5815,Success Rate (%),94.8,92.78,False
+CMP-0060,2026-06-11,5,Recovery,UPI Operations,5815 recovers to 92.78% over the following week,5815,Success Rate (%),94.8,92.78,False
+CMP-0060,2026-06-11,6,Review,Product Analytics,"Post-incident review closes CMP-0060; 1,494 attempts were exposed",5815,Success Rate (%),94.8,92.78,False
+INC-BANK-0005,2026-06-13,1,Signal,Product Analytics,Transaction monitoring flags an issuer decline spike on AU Small Finance Bank,AU Small Finance Bank,Success Rate (%),96.35,95.36,True
+INC-BANK-0005,2026-06-13,2,Triage,UPI Operations,Operations opens INC-BANK-0005 at Sev-2 and scopes the blast radius to AU Small Finance Bank,AU Small Finance Bank,Success Rate (%),96.35,95.36,True
+INC-BANK-0005,2026-06-13,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to issuer-side U30/U28 declines,AU Small Finance Bank,Success Rate (%),96.35,95.36,True
+INC-BANK-0005,2026-06-13,4,Mitigation,UPI Operations,"Mitigation applied; success on AU Small Finance Bank troughs at 95.05% against a 96.35% baseline, a 1.30pp dip",AU Small Finance Bank,Success Rate (%),96.35,95.36,True
+INC-BANK-0005,2026-06-13,5,Recovery,UPI Operations,AU Small Finance Bank recovers to 95.36% over the following week,AU Small Finance Bank,Success Rate (%),96.35,95.36,True
+INC-BANK-0005,2026-06-13,6,Review,Product Analytics,Post-incident review closes INC-BANK-0005; 202 attempts were exposed,AU Small Finance Bank,Success Rate (%),96.35,95.36,True
+MKT-0077,2026-06-17,1,Signal,Product Analytics,"Transaction monitoring flags a discretionary spend pull-back on UPI_CREDIT_LINE,RUPAY_CREDIT,UPI_P2M,UPI_INTL","UPI_CREDIT_LINE,RUPAY_CREDIT,UPI_P2M,UPI_INTL",Success Rate (%),96.2,96.26,False
+MKT-0077,2026-06-17,2,Triage,UPI Operations,"Operations opens MKT-0077 at Sev-3 and scopes the blast radius to UPI_CREDIT_LINE,RUPAY_CREDIT,UPI_P2M,UPI_INTL","UPI_CREDIT_LINE,RUPAY_CREDIT,UPI_P2M,UPI_INTL",Success Rate (%),96.2,96.26,False
+MKT-0077,2026-06-17,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,"UPI_CREDIT_LINE,RUPAY_CREDIT,UPI_P2M,UPI_INTL",Success Rate (%),96.2,96.26,False
+MKT-0077,2026-06-17,4,Mitigation,UPI Operations,"Mitigation applied; success on UPI_CREDIT_LINE,RUPAY_CREDIT,UPI_P2M,UPI_INTL troughs at 95.42% against a 96.20% baseline, a 0.79pp dip","UPI_CREDIT_LINE,RUPAY_CREDIT,UPI_P2M,UPI_INTL",Success Rate (%),96.2,96.26,False
+MKT-0077,2026-06-17,5,Recovery,UPI Operations,"UPI_CREDIT_LINE,RUPAY_CREDIT,UPI_P2M,UPI_INTL recovers to 96.26% over the following week","UPI_CREDIT_LINE,RUPAY_CREDIT,UPI_P2M,UPI_INTL",Success Rate (%),96.2,96.26,False
+MKT-0077,2026-06-17,6,Review,Product Analytics,"Post-incident review closes MKT-0077; 131,802 attempts were exposed","UPI_CREDIT_LINE,RUPAY_CREDIT,UPI_P2M,UPI_INTL",Success Rate (%),96.2,96.26,False
+ADOPT-0074,2026-06-22,1,Signal,Product Analytics,Transaction monitoring flags an onboarding surge on UPI_LITE,UPI_LITE,Success Rate (%),98.85,99.0,False
+ADOPT-0074,2026-06-22,2,Triage,UPI Operations,Operations opens ADOPT-0074 at Sev-3 and scopes the blast radius to UPI_LITE,UPI_LITE,Success Rate (%),98.85,99.0,False
+ADOPT-0074,2026-06-22,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,UPI_LITE,Success Rate (%),98.85,99.0,False
+ADOPT-0074,2026-06-22,4,Mitigation,UPI Operations,"Mitigation applied; success on UPI_LITE troughs at 95.18% against a 98.85% baseline, a 3.67pp dip",UPI_LITE,Success Rate (%),98.85,99.0,False
+ADOPT-0074,2026-06-22,5,Recovery,UPI Operations,UPI_LITE recovers to 99.00% over the following week,UPI_LITE,Success Rate (%),98.85,99.0,False
+ADOPT-0074,2026-06-22,6,Review,Product Analytics,"Post-incident review closes ADOPT-0074; 38,550 attempts were exposed",UPI_LITE,Success Rate (%),98.85,99.0,False
+INC-BANK-0010,2026-06-25,1,Signal,Product Analytics,Transaction monitoring flags an issuer decline spike on Kotak Mahindra Bank,Kotak Mahindra Bank,Success Rate (%),96.65,96.69,True
+INC-BANK-0010,2026-06-25,2,Triage,UPI Operations,Operations opens INC-BANK-0010 at Sev-2 and scopes the blast radius to Kotak Mahindra Bank,Kotak Mahindra Bank,Success Rate (%),96.65,96.69,True
+INC-BANK-0010,2026-06-25,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to issuer-side U30/U28 declines,Kotak Mahindra Bank,Success Rate (%),96.65,96.69,True
+INC-BANK-0010,2026-06-25,4,Mitigation,UPI Operations,"Mitigation applied; success on Kotak Mahindra Bank troughs at 95.26% against a 96.65% baseline, a 1.39pp dip",Kotak Mahindra Bank,Success Rate (%),96.65,96.69,True
+INC-BANK-0010,2026-06-25,5,Recovery,UPI Operations,Kotak Mahindra Bank recovers to 96.69% over the following week,Kotak Mahindra Bank,Success Rate (%),96.65,96.69,True
+INC-BANK-0010,2026-06-25,6,Review,Product Analytics,"Post-incident review closes INC-BANK-0010; 1,583 attempts were exposed",Kotak Mahindra Bank,Success Rate (%),96.65,96.69,True
+INC-SETL-0079,2026-06-30,1,Signal,Product Analytics,"Operational calendar records a mandate batch delay on UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),95.99,95.98,True
+INC-SETL-0079,2026-06-30,2,Triage,UPI Operations,"Operations opens INC-SETL-0079 at Sev-2 and scopes it to UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),95.99,95.98,True
+INC-SETL-0079,2026-06-30,3,Diagnosis,Platform Engineering,"Measured impact is inside UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU's normal daily variation — success held at 95.94% against a 95.99% baseline","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),95.99,95.98,True
+INC-SETL-0079,2026-06-30,4,Mitigation,UPI Operations,"No mitigation required; 17,361 attempts were exposed with no detectable degradation","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),95.99,95.98,True
+INC-SETL-0079,2026-06-30,5,Recovery,UPI Operations,"UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU closes the window at 95.98%","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),95.99,95.98,True
+INC-SETL-0079,2026-06-30,6,Review,Product Analytics,INC-SETL-0079 closed as no-impact; retained for trend context,"UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),95.99,95.98,True
+INC-NET-0040,2026-07-04,1,Signal,Product Analytics,Transaction monitoring flags switch latency degradation on the ecosystem,the ecosystem,Success Rate (%),96.38,96.29,True
+INC-NET-0040,2026-07-04,2,Triage,UPI Operations,Operations opens INC-NET-0040 at Sev-1 and scopes the blast radius to the ecosystem,the ecosystem,Success Rate (%),96.38,96.29,True
+INC-NET-0040,2026-07-04,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to NPCI switch timeouts (BT/U54),the ecosystem,Success Rate (%),96.38,96.29,True
+INC-NET-0040,2026-07-04,4,Mitigation,UPI Operations,"Mitigation applied; success on the ecosystem troughs at 92.84% against a 96.38% baseline, a 3.53pp dip",the ecosystem,Success Rate (%),96.38,96.29,True
+INC-NET-0040,2026-07-04,5,Recovery,UPI Operations,the ecosystem recovers to 96.29% over the following week,the ecosystem,Success Rate (%),96.38,96.29,True
+INC-NET-0040,2026-07-04,6,Review,Product Analytics,"Post-incident review closes INC-NET-0040; 52,722 attempts were exposed",the ecosystem,Success Rate (%),96.38,96.29,True
+CMP-0052,2026-07-04,1,Signal,Product Analytics,Transaction monitoring flags a category volume surge on 8062,8062,Success Rate (%),94.73,95.58,False
+CMP-0052,2026-07-04,2,Triage,UPI Operations,Operations opens CMP-0052 at Sev-3 and scopes the blast radius to 8062,8062,Success Rate (%),94.73,95.58,False
+CMP-0052,2026-07-04,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,8062,Success Rate (%),94.73,95.58,False
+CMP-0052,2026-07-04,4,Mitigation,UPI Operations,"Mitigation applied; success on 8062 troughs at 83.33% against a 94.73% baseline, a 11.40pp dip",8062,Success Rate (%),94.73,95.58,False
+CMP-0052,2026-07-04,5,Recovery,UPI Operations,8062 recovers to 95.58% over the following week,8062,Success Rate (%),94.73,95.58,False
+CMP-0052,2026-07-04,6,Review,Product Analytics,Post-incident review closes CMP-0052; 70 attempts were exposed,8062,Success Rate (%),94.73,95.58,False
+INC-BANK-0022,2026-07-08,1,Signal,Product Analytics,Operational calendar records an issuer decline spike on State Bank of India,State Bank of India,Success Rate (%),95.91,96.21,False
+INC-BANK-0022,2026-07-08,2,Triage,UPI Operations,Operations opens INC-BANK-0022 at Sev-3 and scopes it to State Bank of India,State Bank of India,Success Rate (%),95.91,96.21,False
+INC-BANK-0022,2026-07-08,3,Diagnosis,Platform Engineering,Measured impact is inside State Bank of India's normal daily variation — success held at 96.19% against a 95.91% baseline,State Bank of India,Success Rate (%),95.91,96.21,False
+INC-BANK-0022,2026-07-08,4,Mitigation,UPI Operations,"No mitigation required; 10,074 attempts were exposed with no detectable degradation",State Bank of India,Success Rate (%),95.91,96.21,False
+INC-BANK-0022,2026-07-08,5,Recovery,UPI Operations,State Bank of India closes the window at 96.21%,State Bank of India,Success Rate (%),95.91,96.21,False
+INC-BANK-0022,2026-07-08,6,Review,Product Analytics,INC-BANK-0022 closed as no-impact; retained for trend context,State Bank of India,Success Rate (%),95.91,96.21,False
+INC-SETL-0082,2026-07-10,1,Signal,Product Analytics,"Operational calendar records a mandate batch delay on UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),96.0,96.24,True
+INC-SETL-0082,2026-07-10,2,Triage,UPI Operations,"Operations opens INC-SETL-0082 at Sev-2 and scopes it to UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),96.0,96.24,True
+INC-SETL-0082,2026-07-10,3,Diagnosis,Platform Engineering,"Measured impact is inside UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU's normal daily variation — success held at 95.88% against a 96.00% baseline","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),96.0,96.24,True
+INC-SETL-0082,2026-07-10,4,Mitigation,UPI Operations,"No mitigation required; 48,104 attempts were exposed with no detectable degradation","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),96.0,96.24,True
+INC-SETL-0082,2026-07-10,5,Recovery,UPI Operations,"UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU closes the window at 96.24%","UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),96.0,96.24,True
+INC-SETL-0082,2026-07-10,6,Review,Product Analytics,INC-SETL-0082 closed as no-impact; retained for trend context,"UPI_AUTOPAY,UPI_RECURRING,UPI_LITE_ATU",Success Rate (%),96.0,96.24,True
+INC-BANK-0003,2026-07-11,1,Signal,Product Analytics,Transaction monitoring flags an issuer decline spike on Axis Bank,Axis Bank,Success Rate (%),95.93,96.56,True
+INC-BANK-0003,2026-07-11,2,Triage,UPI Operations,Operations opens INC-BANK-0003 at Sev-2 and scopes the blast radius to Axis Bank,Axis Bank,Success Rate (%),95.93,96.56,True
+INC-BANK-0003,2026-07-11,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to issuer-side U30/U28 declines,Axis Bank,Success Rate (%),95.93,96.56,True
+INC-BANK-0003,2026-07-11,4,Mitigation,UPI Operations,"Mitigation applied; success on Axis Bank troughs at 94.93% against a 95.93% baseline, a 1.00pp dip",Axis Bank,Success Rate (%),95.93,96.56,True
+INC-BANK-0003,2026-07-11,5,Recovery,UPI Operations,Axis Bank recovers to 96.56% over the following week,Axis Bank,Success Rate (%),95.93,96.56,True
+INC-BANK-0003,2026-07-11,6,Review,Product Analytics,Post-incident review closes INC-BANK-0003; 966 attempts were exposed,Axis Bank,Success Rate (%),95.93,96.56,True
+INC-BANK-0020,2026-07-17,1,Signal,Product Analytics,Operational calendar records an issuer decline spike on Federal Bank,Federal Bank,Success Rate (%),95.51,96.43,True
+INC-BANK-0020,2026-07-17,2,Triage,UPI Operations,Operations opens INC-BANK-0020 at Sev-2 and scopes it to Federal Bank,Federal Bank,Success Rate (%),95.51,96.43,True
+INC-BANK-0020,2026-07-17,3,Diagnosis,Platform Engineering,Measured impact is inside Federal Bank's normal daily variation — success held at 95.83% against a 95.51% baseline,Federal Bank,Success Rate (%),95.51,96.43,True
+INC-BANK-0020,2026-07-17,4,Mitigation,UPI Operations,"No mitigation required; 1,147 attempts were exposed with no detectable degradation",Federal Bank,Success Rate (%),95.51,96.43,True
+INC-BANK-0020,2026-07-17,5,Recovery,UPI Operations,Federal Bank closes the window at 96.43%,Federal Bank,Success Rate (%),95.51,96.43,True
+INC-BANK-0020,2026-07-17,6,Review,Product Analytics,INC-BANK-0020 closed as no-impact; retained for trend context,Federal Bank,Success Rate (%),95.51,96.43,True
+INC-BANK-0012,2026-07-20,1,Signal,Product Analytics,Operational calendar records an issuer decline spike on Federal Bank,Federal Bank,Success Rate (%),95.82,95.14,False
+INC-BANK-0012,2026-07-20,2,Triage,UPI Operations,Operations opens INC-BANK-0012 at Sev-3 and scopes it to Federal Bank,Federal Bank,Success Rate (%),95.82,95.14,False
+INC-BANK-0012,2026-07-20,3,Diagnosis,Platform Engineering,Measured impact is inside Federal Bank's normal daily variation — success held at 96.12% against a 95.82% baseline,Federal Bank,Success Rate (%),95.82,95.14,False
+INC-BANK-0012,2026-07-20,4,Mitigation,UPI Operations,"No mitigation required; 1,332 attempts were exposed with no detectable degradation",Federal Bank,Success Rate (%),95.82,95.14,False
+INC-BANK-0012,2026-07-20,5,Recovery,UPI Operations,Federal Bank closes the window at 95.14%,Federal Bank,Success Rate (%),95.82,95.14,False
+INC-BANK-0012,2026-07-20,6,Review,Product Analytics,INC-BANK-0012 closed as no-impact; retained for trend context,Federal Bank,Success Rate (%),95.82,95.14,False
+CMP-0064,2026-07-22,1,Signal,Product Analytics,Transaction monitoring flags a category volume surge on 7230,7230,Success Rate (%),94.97,96.34,False
+CMP-0064,2026-07-22,2,Triage,UPI Operations,Operations opens CMP-0064 at Sev-3 and scopes the blast radius to 7230,7230,Success Rate (%),94.97,96.34,False
+CMP-0064,2026-07-22,3,Diagnosis,Platform Engineering,Decline-code analysis attributes the drop to a mix of decline classes,7230,Success Rate (%),94.97,96.34,False
+CMP-0064,2026-07-22,4,Mitigation,UPI Operations,"Mitigation applied; success on 7230 troughs at 91.51% against a 94.97% baseline, a 3.46pp dip",7230,Success Rate (%),94.97,96.34,False
+CMP-0064,2026-07-22,5,Recovery,UPI Operations,7230 recovers to 96.34% over the following week,7230,Success Rate (%),94.97,96.34,False
+CMP-0064,2026-07-22,6,Review,Product Analytics,Post-incident review closes CMP-0064; 662 attempts were exposed,7230,Success Rate (%),94.97,96.34,False
+INC-BANK-0019,2026-07-25,1,Signal,Product Analytics,Operational calendar records an issuer decline spike on Yes Bank,Yes Bank,Success Rate (%),95.15,96.57,True
+INC-BANK-0019,2026-07-25,2,Triage,UPI Operations,Operations opens INC-BANK-0019 at Sev-2 and scopes it to Yes Bank,Yes Bank,Success Rate (%),95.15,96.57,True
+INC-BANK-0019,2026-07-25,3,Diagnosis,Platform Engineering,Measured impact is inside Yes Bank's normal daily variation — success held at 94.93% against a 95.15% baseline,Yes Bank,Success Rate (%),95.15,96.57,True
+INC-BANK-0019,2026-07-25,4,Mitigation,UPI Operations,"No mitigation required; 1,709 attempts were exposed with no detectable degradation",Yes Bank,Success Rate (%),95.15,96.57,True
+INC-BANK-0019,2026-07-25,5,Recovery,UPI Operations,Yes Bank closes the window at 96.57%,Yes Bank,Success Rate (%),95.15,96.57,True
+INC-BANK-0019,2026-07-25,6,Review,Product Analytics,INC-BANK-0019 closed as no-impact; retained for trend context,Yes Bank,Success Rate (%),95.15,96.57,True

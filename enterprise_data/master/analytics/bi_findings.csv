@@ -1,18 +1,11 @@
 category,severity,finding,entity,metric,value
-growing_features,info,Fastest-growing feature: UPI Lite X (+1081.8% m/m).,UPI Lite X,txns,1081.8
-declining_features,watch,Weakest feature: Collect Requests (-55.0% m/m).,Collect Requests,txns,-55.0
-fastest_growing_bank,info,Fastest-growing bank by volume: Kotak Mahindra Bank (+25.2%).,Kotak Mahindra Bank,txns,25.2
-psp_share_loss,watch,PSP losing share: FamApp (3.1% m/m).,FamApp,txns,3.1
-high_risk_bank,watch,IDFC First Bank lowest avg success (99.22%).,IDFC First Bank,success_rate,99.22
-high_risk_bank,watch,Federal Bank lowest avg success (99.22%).,Federal Bank,success_rate,99.22
-high_risk_bank,watch,AU Small Finance Bank lowest avg success (99.26%).,AU Small Finance Bank,success_rate,99.26
-anomaly,high,"Success-rate anomaly on day 10 (98.265%, z=-2.2).",day 10,success_rate,98.265
-anomaly,high,"Success-rate anomaly on day 13 (98.346%, z=-2.0).",day 13,success_rate,98.346
-anomaly,high,"Success-rate anomaly on day 17 (98.335%, z=-2.0).",day 17,success_rate,98.335
-anomaly,high,"Success-rate anomaly on day 22 (98.092%, z=-2.5).",day 22,success_rate,98.092
-anomaly,high,"Success-rate anomaly on day 54 (98.343%, z=-2.0).",day 54,success_rate,98.343
-anomaly,high,"Success-rate anomaly on day 55 (98.206%, z=-2.3).",day 55,success_rate,98.206
-anomaly,high,"Success-rate anomaly on day 60 (98.255%, z=-2.2).",day 60,success_rate,98.255
-anomaly,high,"Success-rate anomaly on day 92 (98.172%, z=-2.4).",day 92,success_rate,98.172
-anomaly,high,"Success-rate anomaly on day 94 (98.309%, z=-2.1).",day 94,success_rate,98.309
-regional_growth,info,Fastest-growing city: Mumbai (+27.6%).,Mumbai,txns,27.6
+growing_features,info,Fastest-growing product: UPI Circle (+807.7% first month to last).,UPI Circle,txns_growth_pct,807.75
+declining_features,info,"Slowest-growing product: UPI Person to Person (+22.7% first month to last) — still expanding, just behind the pack.",UPI Person to Person,txns_growth_pct,22.74
+reliability,warning,"AU Small Finance Bank settles at 95.25% against an ecosystem 95.72% across 37,219 attempts — a 0.47pp reliability gap.",AU Small Finance Bank,success_rate,95.25
+concentration,info,The top five issuers carry 63.2% of all attempts.,issuer concentration,top5_share_pct,63.23
+failure_ownership,info,"Customer owns 65.7% of all declines (73,964 attempts).",Customer,decline_share_pct,65.74
+failure_ownership,info,"Issuer owns 23.4% of all declines (26,345 attempts).",Issuer,decline_share_pct,23.41
+failure_ownership,info,"PSP owns 5.5% of all declines (6,218 attempts).",PSP,decline_share_pct,5.53
+disputes,warning,"Services runs a 0.197% dispute rate (40 disputes on 20,301 settled payments) — the highest of any category.",Services,dispute_rate_pct,0.2
+disputes,warning,"Travel runs a 0.184% dispute rate (36 disputes on 19,615 settled payments) — the second-highest of any category.",Travel,dispute_rate_pct,0.18
+retries,info,Re-presented payments are 1.37% of all attempts and recover 63.1% of the time.,retry path,retry_share_pct,1.37

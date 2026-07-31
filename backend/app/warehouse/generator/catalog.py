@@ -39,8 +39,19 @@ class Product:
     settlement_sensitive: bool  # suppressed on bank holidays
     weekend_bias: float         # >1 = skews to weekends (consumer/discretionary)
     description: str
-    # Failure taxonomy weights (technical, business, risk, timeout)
-    failure_mix: tuple[float, float, float, float] = (0.42, 0.34, 0.10, 0.14)
+    # Baseline decline *hazards* in percent, one per failure bucket:
+    # (technical, business, risk, timeout). These are independent competing
+    # risks, not a mix that sums to one — each is the standalone probability
+    # that this class of failure kills the attempt, before any bank, ticket,
+    # calendar or incident modifier. A bucket is therefore always caused by
+    # something rather than drawn from a fixed distribution after the fact.
+    #
+    # Calibrated to published UPI behaviour: technical declines run well under
+    # 1%, business declines (insufficient funds, wrong PIN, limits) dominate,
+    # and mandate products fail several times more often than consumer ones
+    # because a scheduled debit cannot wait for the payer to top up.
+    decline_hazards: tuple[float, float, float, float] = (
+        0.50, 2.80, 0.11, 0.34)
 
 
 PRODUCTS: list[Product] = [
@@ -49,74 +60,74 @@ PRODUCTS: list[Product] = [
         ("P2P", "P2P-Collect"), 0.3350, "mature", 1.14,
         520.0, 1.25, 100_000, 98.72, 0.55, 340, 1180, False, False, 1.06,
         "Core account-to-account real-time transfers between individuals.",
-        (0.46, 0.28, 0.08, 0.18)),
+        (0.55, 3.10, 0.10, 0.38)),
     Product(
         "UPI_P2M", "UPI Person to Merchant", "UPI", "UPI Core",
         ("P2M", "P2M-Intent", "P2M-Collect"), 0.2620, "mature", 1.21,
         286.0, 1.42, 200_000, 99.02, 0.42, 295, 940, True, False, 1.10,
         "Merchant payments over UPI intent, collect and deep-link flows.",
-        (0.40, 0.36, 0.09, 0.15)),
+        (0.48, 2.55, 0.12, 0.32)),
     Product(
         "UPI_QR", "UPI QR Payments", "UPI", "QR Payments",
         ("P2M-QR-Static", "P2M-QR-Dynamic"), 0.1480, "growth", 1.46,
         174.0, 1.30, 200_000, 99.15, 0.38, 268, 860, True, False, 1.14,
         "Interoperable static and dynamic QR acceptance at physical merchants.",
-        (0.38, 0.38, 0.08, 0.16)),
+        (0.42, 2.30, 0.10, 0.30)),
     Product(
         "UPI_LITE", "UPI Lite", "UPI", "UPI Lite",
         ("P2M-Lite", "P2P-Lite"), 0.0610, "hyper", 2.95,
         64.0, 0.82, 1_000, 99.62, 0.22, 118, 340, True, False, 1.18,
         "On-device low-value payments with no PIN and no core-banking hop.",
-        (0.24, 0.52, 0.04, 0.20)),
+        (0.16, 0.86, 0.03, 0.12)),
     Product(
         "UPI_LITE_ATU", "UPI Lite Auto Top-Up", "UPI", "UPI Lite",
         ("Lite-AutoTopUp",), 0.0125, "hyper", 4.20,
         1_000.0, 0.34, 2_000, 99.28, 0.48, 402, 1240, False, True, 0.82,
         "Automatic replenishment of the on-device Lite balance via a mandate.",
-        (0.48, 0.30, 0.06, 0.16)),
+        (0.52, 2.10, 0.05, 0.30)),
     Product(
         "UPI_AUTOPAY", "UPI AutoPay", "Mandates", "UPI Autopay",
         ("Mandate-Execution", "Mandate-Retry"), 0.0415, "growth", 1.92,
         1_240.0, 1.05, 1_500_000, 96.84, 1.35, 610, 2350, True, True, 0.58,
         "Recurring e-mandate debits for subscriptions, SIPs, EMIs and bills.",
-        (0.34, 0.44, 0.07, 0.15)),
+        (0.90, 6.80, 0.12, 0.55)),
     Product(
         "UPI_CIRCLE", "UPI Circle", "UPI", "UPI Core",
         ("Circle-Delegated", "Circle-Full"), 0.0085, "hyper", 6.40,
         410.0, 1.18, 15_000, 98.34, 1.80, 388, 1320, True, False, 1.22,
         "Delegated payments where a primary user authorises secondary users.",
-        (0.44, 0.32, 0.12, 0.12)),
+        (0.70, 2.60, 0.30, 0.35)),
     Product(
         "UPI_INTL", "UPI International", "UPI", "UPI International",
         ("Cross-Border-P2M", "Cross-Border-Remit"), 0.0072, "growth", 2.35,
         3_450.0, 1.34, 200_000, 96.10, 1.95, 1_180, 3_900, True, True, 1.28,
         "Cross-border UPI acceptance for Indian travellers and inbound NRIs.",
-        (0.52, 0.22, 0.14, 0.12)),
+        (1.60, 2.20, 0.45, 0.90)),
     Product(
         "UPI_CREDIT_LINE", "Credit on UPI", "Credit", "UPI Credit",
         ("CreditLine-P2M",), 0.0128, "hyper", 3.60,
         2_180.0, 1.16, 500_000, 97.42, 1.62, 520, 1_780, True, True, 0.94,
         "Pre-sanctioned bank credit lines drawn down through a UPI handle.",
-        (0.36, 0.46, 0.09, 0.09)),
+        (0.60, 3.40, 0.22, 0.28)),
     Product(
         "RUPAY_CREDIT", "RuPay Credit on UPI", "Credit", "UPI Credit",
         ("RuPayCredit-P2M", "RuPayCredit-QR"), 0.0176, "growth", 2.28,
         1_640.0, 1.22, 500_000, 98.16, 0.92, 465, 1_540, True, True, 1.02,
         "RuPay credit cards tokenised onto UPI for QR and merchant payments.",
-        (0.33, 0.48, 0.10, 0.09)),
+        (0.55, 2.80, 0.26, 0.26)),
     Product(
         "UPI_RECURRING", "Recurring Payments", "Mandates", "UPI Autopay",
         ("Recurring-SIP", "Recurring-Bill", "Recurring-EMI"), 0.0089,
         "growth", 1.74,
         4_600.0, 1.02, 1_500_000, 97.55, 1.10, 690, 2_580, True, True, 0.44,
         "Scheduled SIP, insurance premium, EMI and utility bill collections.",
-        (0.31, 0.47, 0.06, 0.16)),
+        (0.85, 7.40, 0.10, 0.60)),
     Product(
         "UPI_123PAY", "UPI 123Pay", "UPI", "UPI 123Pay",
         ("IVR", "MissedCall", "SoundBox-123"), 0.0050, "growth", 1.38,
         238.0, 1.05, 10_000, 95.90, 1.40, 2_450, 7_800, True, False, 0.90,
         "Feature-phone UPI over IVR, missed call and sound-based flows.",
-        (0.58, 0.24, 0.05, 0.13)),
+        (2.10, 1.90, 0.10, 1.10)),
 ]
 
 PRODUCT_BY_CODE = {p.code: p for p in PRODUCTS}

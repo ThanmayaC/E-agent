@@ -17,7 +17,7 @@ from __future__ import annotations
 
 from app.orchestrator.base import Engine, EngineRequest, EngineResult
 from app.orchestrator.engines import _slice
-from app.warehouse.analytics import KPI_META
+from app.warehouse.analytics import KPI_META, kpi_label
 
 
 def _num(v, default: float = 0.0) -> float:
@@ -90,24 +90,129 @@ class AnalyticsEngine(Engine):
 
         # The KPIs the question named (or the headline three), each as a trend.
         for tgt in self._pick_targets(request, target):
-            self._trend_evidence(res, tgt, series, window, filters)
+            self._trend_evidence(res, tgt, series, window, filters,
+                                 asked_as=_asked_as(request, tgt))
+
+        # "Compare A and B" is not one blended series — it is one series each,
+        # side by side. Without this the engine filtered to both products at
+        # once and emitted a single merged trend, which cannot answer the
+        # question however good the model reading it is.
+        self._comparison_evidence(res, request, target, filters, window)
 
         # "Why did X change" needs more than the aggregate trend — it needs
         # which entities drove it. Root-cause is what "explanation"/"analysis"
         # questions are actually asking for.
         if request.intent in ("explanation", "analysis"):
-            self._root_cause_movers(res, target, filters, window)
+            self._root_cause_movers(res, target, filters, window,
+                                    asked_as=_asked_as(request, target))
         return res
+
+    # Entity kinds a question can compare across, mapped to the Filters field
+    # that isolates one of them.
+    _COMPARABLE = (("product", "product"), ("bank", "bank"), ("psp", "psp"))
+
+    def _comparison_evidence(self, res: EngineResult, request: EngineRequest,
+                             target: str, filters, window: dict) -> None:
+        """One metric block per named entity, plus the head-to-head verdict.
+
+        Emitted whenever a question names two or more entities of the same kind
+        — not only on `comparison` intent, because "how did AutoPay and Lite do
+        in May" classifies as a question and still needs both sides.
+        """
+        for ent_kind, field in self._COMPARABLE:
+            named = (getattr(request, "entities", {}) or {}).get(ent_kind) or []
+            if len(named) < 2:
+                continue
+            resolved = getattr(filters, field, None)
+            values = list(resolved) if isinstance(resolved, (list, tuple)) \
+                else ([resolved] if resolved else [])
+            if len(values) < 2:
+                continue
+
+            sides = []
+            for value in values:
+                one = filters.with_(**{field: value})
+                try:
+                    summary = self._a.summary(one)
+                except Exception:  # noqa: BLE001 - one bad side must not sink the answer
+                    continue
+                cur = (summary or {}).get("current") or summary or {}
+                sides.append({
+                    "entity": value,
+                    "attempts": _num(cur.get("attempts")),
+                    "value_inr": _num(cur.get("value_inr")),
+                    "success_rate": _num(cur.get("success_rate")),
+                    "avg_ticket_inr": _num(cur.get("avg_ticket_inr")),
+                    "active_customers": _num(cur.get("active_customers")),
+                })
+            if len(sides) < 2:
+                continue
+
+            for s in sides:
+                res.add(
+                    "analytics_comparison_side",
+                    f"analytics:compare:{ent_kind}:{s['entity']}:{window['start']}",
+                    f"{s['entity']} over {window['label']}",
+                    {"name": s["entity"], "dimension": ent_kind,
+                     "window": window["label"], **s,
+                     "text": (
+                         f"{s['entity']} over {window['label']} "
+                         f"({window['start']} to {window['end']}): "
+                         f"{int(s['attempts']):,} attempts, "
+                         f"₹{int(s['value_inr']):,} settled value, "
+                         f"{round(s['success_rate'], 2)}% success rate, "
+                         f"₹{round(s['avg_ticket_inr'], 2)} average ticket, "
+                         f"{int(s['active_customers']):,} active customers.")})
+
+            self._comparison_verdict(res, sides, ent_kind, target, window)
+            return  # one comparison dimension per answer is enough
+
+    def _comparison_verdict(self, res: EngineResult, sides: list[dict],
+                            ent_kind: str, target: str, window: dict) -> None:
+        """The explicit head-to-head, so the answer does not have to do the
+        arithmetic itself — and the validator can ground the ratio."""
+        metric = target if target in sides[0] else "attempts"
+        ranked = sorted(sides, key=lambda s: s.get(metric) or 0.0, reverse=True)
+        top, bottom = ranked[0], ranked[-1]
+        label = KPI_META.get(metric, {}).get("label", metric)
+        lo = bottom.get(metric) or 0.0
+        ratio = ((top.get(metric) or 0.0) / lo) if lo else None
+        gap = (top.get(metric) or 0.0) - lo
+
+        lines = [f"{s['entity']}: {label} {round(s.get(metric) or 0.0, 2)}, "
+                 f"success rate {round(s['success_rate'], 2)}%, "
+                 f"average ticket ₹{round(s['avg_ticket_inr'], 2)}"
+                 for s in ranked]
+        verdict = (f"{top['entity']} leads {bottom['entity']} on {label} over "
+                   f"{window['label']} by {round(gap, 2)}"
+                   + (f" ({round(ratio, 2)}x)" if ratio else "") + ".")
+        best_sr = max(sides, key=lambda s: s["success_rate"])
+        res.add(
+            "analytics_comparison",
+            f"analytics:compare:{ent_kind}:{window['start']}",
+            f"Head-to-head across {len(sides)} {ent_kind}(s) over {window['label']}",
+            {"dimension": ent_kind, "metric": metric, "window": window["label"],
+             "entities": [s["entity"] for s in ranked], "sides": ranked,
+             "leader": top["entity"], "laggard": bottom["entity"],
+             "gap": round(gap, 2), "ratio": round(ratio, 2) if ratio else None,
+             "text": (f"Comparison over {window['label']} "
+                      f"({window['start']} to {window['end']}). "
+                      + " | ".join(lines) + f" {verdict} "
+                      f"Highest success rate: {best_sr['entity']} at "
+                      f"{round(best_sr['success_rate'], 2)}%.")})
 
     _ROOT_CAUSE_DIMS = ("bank", "psp", "product", "mcc_category")
 
     def _root_cause_movers(self, res: EngineResult, target: str,
-                           filters, window: dict) -> None:
+                           filters, window: dict,
+                           asked_as: str | None = None) -> None:
         """Which entities in each dimension moved the target the most versus
         the equally-long prior period — the breakdown that actually answers
         "why", as opposed to the aggregate trend alone."""
         meta = KPI_META.get(target, {})
-        label = meta.get("label", target.replace("_", " "))
+        # Name the metric the way the question did, or the model will not
+        # recognise this breakdown as an answer to it.
+        label = kpi_label(target, asked_as) or target.replace("_", " ")
         unit = meta.get("unit", "")
         growth_key = "value_growth_pct" if target == "value_inr" else "growth_pct"
 
@@ -171,7 +276,8 @@ class AnalyticsEngine(Engine):
         return targets
 
     def _trend_evidence(self, res: EngineResult, target: str,
-                        series: list[dict], window: dict, filters) -> None:
+                        series: list[dict], window: dict, filters,
+                        asked_as: str | None = None) -> None:
         meta = KPI_META.get(target, {})
         pts = [(str(r.get("date")), _num(r.get(target)))
                for r in series if r.get(target) is not None]
@@ -192,7 +298,7 @@ class AnalyticsEngine(Engine):
         verdict = ("steady" if direction == "flat"
                    else "improving" if improving else "worsening")
         unit = meta.get("unit", "")
-        label = meta.get("label", target.replace("_", " "))
+        label = kpi_label(target, asked_as) or target.replace("_", " ")
         res.add(
             "analytics_kpi", f"analytics:{target}:{window['start']}",
             f"{label} {verdict} over {window['label']}: "
@@ -210,3 +316,17 @@ class AnalyticsEngine(Engine):
                       f"Range {round(lo, 3)}–{round(hi, 3)}{unit}, average "
                       f"{round(mean, 3)}{unit} across {len(values)} day(s). "
                       f"Trend is {direction} and {verdict}.")})
+
+
+def _asked_as(request: EngineRequest, target: str) -> str | None:
+    """The phrase the question used for ``target``, if it named one.
+
+    The classifier reports KPI hints as its own canonical names
+    ("Transaction Value (₹ Cr)"). Only the hint that actually resolves to this
+    target is returned, so a multi-KPI question cannot label one metric's
+    evidence with another metric's name.
+    """
+    for hint in request.kpi_hints or ():
+        if _slice.KPI_TO_TARGET.get(hint) == target:
+            return hint
+    return None

@@ -37,6 +37,12 @@ _SHAPES = {
 }
 
 
+def _peak_window(rng: random.Random) -> tuple[int, int]:
+    """An hour window sitting over one of the two daily UPI peaks."""
+    lo = rng.choice([10, 11, 12, 18, 19, 20])
+    return lo, min(24, lo + rng.randint(2, 5))
+
+
 @dataclass
 class Event:
     event_id: str
@@ -54,17 +60,47 @@ class Event:
     narrative: str = ""
     detected_day: int | None = None
     resolved_day: int | None = None
+    # Hour-of-day window the impact is confined to, inclusive-exclusive and
+    # allowed to wrap past midnight (e.g. (23, 4) is a night maintenance
+    # slot). ``None`` means the event applies to the whole day. Real outages
+    # last hours, not days — without this every incident smears itself flat
+    # across 24 hours and disappears from the hourly distribution.
+    hour_window: tuple[int, int] | None = None
+    # A recurring event fires again every ``repeat_every`` days from its
+    # start, for ``duration`` days each time, until ``repeat_until``.
+    # Scheduled maintenance is the motivating case: it is the one operational
+    # pattern a forecaster should genuinely be able to learn.
+    repeat_every: int | None = None
+    repeat_until: int = 0
 
     @property
     def end_day(self) -> int:
+        if self.repeat_every:
+            return self.repeat_until
         return self.start_day + self.duration - 1
+
+    def hour_mask(self, hours):
+        """Boolean array selecting the transactions this event can touch."""
+        if self.hour_window is None:
+            return None
+        lo, hi = self.hour_window
+        return ((hours >= lo) & (hours < hi)) if lo < hi else (
+            (hours >= lo) | (hours < hi))
 
     def intensity(self, day: int) -> float:
         """0..1 impact weight for a given day of the simulation."""
         if not (self.start_day <= day <= self.end_day):
             return 0.0
-        t = (day - self.start_day) / max(1, self.duration - 1) \
-            if self.duration > 1 else 0.0
+        if self.repeat_every:
+            # Position within the current occurrence; days between
+            # occurrences carry no impact at all.
+            offset = (day - self.start_day) % self.repeat_every
+            if offset >= self.duration:
+                return 0.0
+            elapsed = offset
+        else:
+            elapsed = day - self.start_day
+        t = elapsed / max(1, self.duration - 1) if self.duration > 1 else 0.0
         sev = {"Sev-1": 1.0, "Sev-2": 0.66, "Sev-3": 0.38}[self.severity]
         return sev * max(0.0, _SHAPES[self.shape](t))
 
@@ -92,8 +128,10 @@ class Event:
         return {
             "event_id": self.event_id,
             "kind": self.kind,
+            "shape": self.shape,
             "title": self.title,
             "severity": self.severity,
+            "duration_days_each": self.duration,
             "start_date": str(start_date + timedelta(days=self.start_day)),
             "end_date": str(start_date + timedelta(days=self.end_day)),
             "duration_days": self.duration,
@@ -106,6 +144,9 @@ class Event:
             "volume_impact_pct": round(self.volume_impact * 100, 2),
             "success_impact_pp": round(self.success_impact, 3),
             "latency_impact_x": round(self.latency_impact, 3),
+            "hour_from": self.hour_window[0] if self.hour_window else None,
+            "hour_to": self.hour_window[1] if self.hour_window else None,
+            "recurs_every_days": self.repeat_every,
             "detected_date": str(start_date + timedelta(days=self.detected_day))
             if self.detected_day is not None else None,
             "narrative": self.narrative,
@@ -146,8 +187,87 @@ class EventPlanner:
         self._adoption_surges()
         self._market_corrections()
         self._settlement_incidents()
+        self._maintenance_windows()
+        self._merchant_onboarding_waves()
         self.events.sort(key=lambda e: e.start_day)
         return self.events
+
+    # ------------------------------------------------------ maintenance
+    def _maintenance_windows(self) -> None:
+        """Planned issuer maintenance — the one *predictable* outage class.
+
+        Unlike an incident this is announced, recurs on a fixed cadence and
+        lands in the small hours. It matters for the platform because it is
+        the pattern a forecaster should be able to learn and an anomaly
+        detector should learn *not* to page on.
+        """
+        rng = self.rng
+        # The four largest issuers each run a monthly CBS maintenance slot.
+        for bank in sorted(BANKS, key=lambda b: -b["share"])[:4]:
+            cadence = rng.choice([28, 30, 35])
+            start = rng.randint(2, cadence)
+            lo = rng.choice([0, 1, 2])
+            self._add(
+                event_id=self._id("MAINT"), kind="maintenance_window",
+                shape="step",
+                title=f"{bank['name']} scheduled CBS maintenance",
+                start_day=start, duration=1, severity="Sev-3",
+                scope={"bank": bank["name"]},
+                hour_window=(lo, lo + rng.randint(2, 4)),
+                repeat_every=cadence, repeat_until=self.days - 1,
+                volume_impact=-0.55,
+                success_impact=-38.0,
+                latency_impact=1.35,
+                narrative=(
+                    f"{bank['name']} runs its announced core-banking "
+                    f"maintenance slot every {cadence} days in the overnight "
+                    f"window. Remitter debits are rejected outright for the "
+                    f"duration and PSPs suppress retries until it closes, so "
+                    f"the dip is expected and should not be paged on."))
+
+    # ---------------------------------------------- merchant lifecycle waves
+    def _merchant_onboarding_waves(self) -> None:
+        """Acquirer-led onboarding pushes and the churn that follows them."""
+        rng = self.rng
+        for _ in range(max(2, self.days // 60)):
+            mcc = rng.choices(MCCS, weights=[m.share for m in MCCS])[0]
+            dur = rng.randint(14, 30)
+            start = rng.randint(0, max(0, self.days - dur - 1))
+            self._add(
+                event_id=self._id("ONBRD"), kind="merchant_onboarding",
+                shape="campaign",
+                title=f"{mcc.subcategory} acquirer onboarding drive",
+                start_day=start, duration=dur, severity="Sev-3",
+                scope={"mcc": mcc.code},
+                volume_impact=rng.uniform(0.14, 0.34),
+                success_impact=-rng.uniform(0.4, 1.1),
+                latency_impact=1.02,
+                narrative=(
+                    f"An acquiring push signed a cohort of new "
+                    f"{mcc.subcategory} merchants. Newly onboarded terminals "
+                    f"carry configuration errors and unfamiliar staff, so "
+                    f"volume rises while the category's success rate dips "
+                    f"until the cohort settles."))
+        # Churn: a category loses merchants to a competing acquirer.
+        for _ in range(max(1, self.days // 90)):
+            mcc = rng.choices(MCCS, weights=[m.share for m in MCCS])[0]
+            dur = rng.randint(20, 45)
+            start = rng.randint(int(self.days * 0.3),
+                                max(int(self.days * 0.3) + 1,
+                                    self.days - dur - 1))
+            self._add(
+                event_id=self._id("CHURN"), kind="merchant_churn",
+                shape="decay",
+                title=f"{mcc.subcategory} merchant attrition to competing acquirer",
+                start_day=start, duration=dur, severity="Sev-2",
+                scope={"mcc": mcc.code},
+                volume_impact=-rng.uniform(0.18, 0.36),
+                success_impact=0.08, latency_impact=1.0,
+                narrative=(
+                    f"A rival acquirer won a block of {mcc.subcategory} "
+                    f"merchants on pricing. Category volume decays steadily "
+                    f"with no reliability degradation — a commercial loss, "
+                    f"not an operational one."))
 
     # ---------------------------------------------------------- bank outages
     def _bank_outages(self) -> None:
@@ -164,14 +284,22 @@ class EventPlanner:
             drop = {"Sev-1": rng.uniform(0.34, 0.62),
                     "Sev-2": rng.uniform(0.14, 0.32),
                     "Sev-3": rng.uniform(0.04, 0.12)}[sev]
+            # Issuer incidents are hour-bounded. Most break under peak load;
+            # a minority are overnight batch problems that clear by morning.
+            if rng.random() < 0.72:
+                lo = rng.choice([9, 10, 11, 17, 18, 19, 20])
+                hw = (lo, min(24, lo + rng.randint(3, 7)))
+            else:
+                hw = (rng.choice([22, 23, 0, 1]), rng.randint(5, 8))
             self._add(
                 event_id=self._id("INC-BANK"), kind="bank_outage",
                 shape="outage",
                 title=f"{bank['name']} issuer decline spike",
                 start_day=start, duration=dur, severity=sev,
                 scope={"bank": bank["name"]},
+                hour_window=hw,
                 volume_impact=-drop * 0.55,
-                success_impact=-drop * 26.0,
+                success_impact=-drop * 62.0,
                 latency_impact=1.0 + drop * 1.9,
                 narrative=(
                     f"{bank['name']} core banking reported elevated U30/U28 "
@@ -197,8 +325,10 @@ class EventPlanner:
                 title=f"{psp['name']} app release regression",
                 start_day=start, duration=dur, severity=sev,
                 scope={"psp": psp["name"]},
+                # App releases ship in the evening and break at once.
+                hour_window=(rng.choice([16, 17, 18, 19]), 23),
                 volume_impact=-drop * 0.72,
-                success_impact=-drop * 18.0,
+                success_impact=-drop * 46.0,
                 latency_impact=1.0 + drop * 2.6,
                 narrative=(
                     f"A {psp['name']} client release degraded the collect and "
@@ -219,8 +349,10 @@ class EventPlanner:
                 start_day=start, duration=dur,
                 severity="Sev-1" if mag > 2.8 else "Sev-2",
                 scope={},
+                # Switch congestion is a peak-load failure by definition.
+                hour_window=_peak_window(rng),
                 volume_impact=-0.06 * (mag - 1),
-                success_impact=-1.8 * (mag - 1),
+                success_impact=-6.5 * (mag - 1),
                 latency_impact=mag,
                 narrative=(
                     "Central switch p95 response time degraded across all "

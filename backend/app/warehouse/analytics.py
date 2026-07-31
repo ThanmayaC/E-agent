@@ -52,10 +52,13 @@ _METRICS = """
 
 # Direction and unit metadata for the KPI cards; 'higher' says which way is good.
 KPI_META: dict[str, dict] = {
-    "attempts": {"label": "Transaction attempts", "unit": "txns", "higher": True},
+    "attempts": {"label": "Transaction attempts", "unit": "txns", "higher": True,
+                 "aliases": ("transactions", "transaction volume", "volume",
+                             "txns", "attempts")},
     "successful": {"label": "Successful transactions", "unit": "txns",
                    "higher": True},
-    "success_rate": {"label": "Success rate", "unit": "%", "higher": True},
+    "success_rate": {"label": "Success rate", "unit": "%", "higher": True,
+                     "aliases": ("success rate", "approval rate", "sr")},
     "technical_decline_pct": {"label": "Technical declines", "unit": "%",
                               "higher": False},
     "business_decline_pct": {"label": "Business declines", "unit": "%",
@@ -63,8 +66,20 @@ KPI_META: dict[str, dict] = {
     "risk_decline_pct": {"label": "Risk declines", "unit": "%",
                          "higher": False},
     "timeout_pct": {"label": "Timeouts", "unit": "%", "higher": False},
-    "value_inr": {"label": "Settled value", "unit": "₹", "higher": True},
-    "avg_ticket_inr": {"label": "Average ticket", "unit": "₹", "higher": True},
+    # `aliases` exists because the warehouse and the query classifier grew
+    # separate vocabularies for the same measure. A user asking "why did
+    # transaction value change?" produced evidence labelled "Settled value",
+    # and the answering model — correctly, on the words alone — reported that
+    # the evidence covered a *different* metric than the one asked about, then
+    # answered "no information" while holding a verified root-cause breakdown.
+    # Any KPI whose everyday name differs from its warehouse label needs its
+    # everyday names listed here. See `kpi_label()`.
+    "value_inr": {"label": "Settled value", "unit": "₹", "higher": True,
+                  "aliases": ("transaction value", "txn value", "value",
+                              "settled value", "gmv", "throughput value")},
+    "avg_ticket_inr": {"label": "Average ticket", "unit": "₹", "higher": True,
+                       "aliases": ("average ticket", "ticket size",
+                                   "average transaction size", "atv")},
     "active_customers": {"label": "Active customers", "unit": "users",
                          "higher": True},
     "active_merchants": {"label": "Active merchants", "unit": "merchants",
@@ -72,6 +87,41 @@ KPI_META: dict[str, dict] = {
     "p95_latency_ms": {"label": "p95 latency", "unit": "ms", "higher": False},
     "retry_rate_pct": {"label": "Retry rate", "unit": "%", "higher": False},
 }
+
+
+def kpi_label(target: str, asked_as: str | None = None) -> str:
+    """The name to show for ``target``, reconciled with how it was asked about.
+
+    Evidence handed to the answering model must be recognisable as an answer to
+    the question that was asked. When the question used a different word for the
+    metric than the warehouse does, both names are returned — "Settled value
+    (transaction value)" — so the model can see they are the same measure
+    instead of treating the evidence as being about something else.
+    """
+    meta = KPI_META.get(target) or {}
+    label = meta.get("label", target)
+    if not asked_as:
+        return label
+    # Compare on words alone: the classifier's canonical names carry units and
+    # currency symbols ("Transaction Value (₹ Cr)") that the warehouse labels
+    # never do.
+    norm = "".join(ch for ch in asked_as.lower() if ch.isalnum() or ch == " ")
+    norm = " ".join(norm.split())
+    if not norm or norm == label.lower():
+        return label
+    # Only annotate when the phrase is a *known* name for this KPI. An unknown
+    # phrase is more likely a mis-parse than a synonym, and asserting it as one
+    # would tell the model two different metrics are the same.
+    #
+    # The matched alias is what gets shown, not the caller's raw phrase: the
+    # classifier's canonical names carry units ("Transaction Value (₹ Cr)")
+    # which normalise into noise ("transaction value inr cr"). The alias is
+    # already the clean everyday name.
+    for alias in meta.get("aliases", ()):
+        low = alias.lower()
+        if low in norm or norm in low:
+            return label if low == label.lower() else f"{label} ({alias})"
+    return label
 
 
 def _pct_change(now, prior) -> float | None:

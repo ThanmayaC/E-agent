@@ -940,6 +940,19 @@ class TransactionEngine:
     def names(self) -> list[str]:
         return list(self.series.keys())
 
+    def date_at(self, di: int):
+        """The calendar date for a day index, clamped to the horizon.
+
+        Incident windows are drawn with a recovery tail that can extend past the
+        last generated day on a short run. Indexing `dates` directly then threw
+        IndexError and killed the whole generation, so narrative code that may
+        reference a future day uses this instead and describes the incident as
+        still open at the horizon — which is what actually happened.
+        """
+        if not self.dates:
+            raise ValueError("calendar is empty")
+        return self.dates[max(0, min(di, len(self.dates) - 1))]
+
     def value(self, kpi: str, di: int):
         return self.series[kpi][di]
 
@@ -1334,6 +1347,20 @@ merchant {k.fmt('Merchant Complaints', di)}. Full numbers in {ops.report_id(di)}
 
 def emit_daily_report(c: Corpus, org: Org, k: TransactionEngine, ops: Ops,
                       di: int, monitor_ref: str) -> str:
+    """Scaffold report — SUPERSEDED, and overwritten later in the pipeline.
+
+    What this writes is a summary of ``TransactionEngine``'s own asserted KPI
+    series, not of any transaction. The real daily report is built from the
+    warehouse corpus by ``app.warehouse.reporting.daily``, which runs *after*
+    this generator (see the ``data`` target in the Makefile) and replaces every
+    file written here.
+
+    It is kept, rather than deleted, because the generator's reference-
+    integrity pass requires the artifact ID to exist and be linkable from the
+    monitoring notes, meetings and weekly reviews that cite it. If you are
+    looking for the report content, look in the reporting package — editing
+    the prose below has no effect on what ends up on disk.
+    """
     gd = di + 1
     rid = ops.report_id(di)
     ana = org.lead("Product Analytics")
@@ -1459,6 +1486,13 @@ def emit_issue_open(c: Corpus, org: Org, k: TransactionEngine, ops: Ops,
     merch = org.lead("Merchant Success")
     entity = iss.entity_label()
     rep = ops.report_id(di)
+    # An incident's recovery window can run past the last generated day on a
+    # short horizon (`--days 14` or fewer), which made the narrative below index
+    # off the end of the calendar and crash the whole run. Clamp to the last day
+    # the corpus actually has: the incident is then described as still open at
+    # the horizon, which is true, rather than referencing a date that does not
+    # exist.
+    end_di = min(iss.end, len(k.dates) - 1)
 
     # Incident record ------------------------------------------------------
     c.doc(gd, "incidents", f"{iss.inc_id}-record.md", iss.inc_id, "incident",
@@ -1476,7 +1510,7 @@ Response Time p95 {k.fmt('Response Time (ms)', di)}. Customer Complaints
 
 ## Impact
 {('Affected merchants: ' + ', '.join(m['name'] for m in iss.merchants) + '.') if iss.merchants else 'Impact concentrated on the ' + iss.product + ' path.'}
-Expected active window: {k.dates[di].strftime('%d %b')} - {k.dates[iss.end].strftime('%d %b')}.
+Expected active window: {k.dates[di].strftime('%d %b')} - {k.date_at(end_di).strftime('%d %b')}.
 
 ## Timeline (day 1)
 - 06:25 — first elevated failures on {iss.product}.
@@ -1603,7 +1637,8 @@ def emit_issue_midlife(c: Corpus, org: Org, k: TransactionEngine, ops: Ops,
           _pad([iss.inc_id, iss.rca_id, iss.dec_id, sop_id, rep], ops))
 
     # RCA (lives in incidents/, filename RCA-* so the reader tags it 'rca')
-    recovery_day = iss.end
+    # May sit past the horizon on a short run — see date_at().
+    recovery_day = min(iss.end, k.days - 1)
     c.doc(gd, "incidents", f"{iss.rca_id}.md", iss.rca_id, "rca", ops.when(di, 15, 0),
           f"RCA — {iss.rca_id} {iss.product} {spec['label']}",
           f"""**RCA ID:** {iss.rca_id}  ·  **Incident:** {iss.inc_id}  ·  **Author:** {prod_owner.name}
@@ -1623,7 +1658,7 @@ Success Rate to a low of {k.fmt('Success Rate (%)', iss.start)}.
 - Permanent: {iss.dec_id} — tune failover/retry and add alerting.
 
 ## Recovery
-KPIs return to trend by {k.dates[recovery_day].strftime('%d %b')}; validated in
+KPIs return to trend by {k.date_at(recovery_day).strftime('%d %b')}; validated in
 {ops.report_id(recovery_day)}.""",
           _pad([iss.inc_id, iss.dec_id, sop_id, rep, ops.report_id(recovery_day)], ops))
 
@@ -1997,12 +2032,14 @@ class Ledger:
     aggregate cubes that make the corpus analysable. Deterministic."""
 
     def __init__(self, org: Org, k: TransactionEngine, ops: Ops,
-                 rng: random.Random, size: int = 10000):
+                 rng: random.Random, size: int = 10000,
+                 write_csv: bool = False):
         self.org = org
         self.k = k
         self.ops = ops
         self.rng = rng
         self.size = size
+        self.write_csv = write_csv
         self.cubes: dict[str, list] = {}
 
     def build(self, out: Path) -> dict[str, list]:
@@ -2187,13 +2224,25 @@ class Ledger:
                 mm["txns"] += 1; mm["value"] += amount
                 seen_customers.add(cust["customer_id"])
 
-            # write the per-day ledger CSV (data — not ingested/embedded)
-            lpath = out / f"day_{d+1:02d}" / "ledger" / f"txns_day_{d+1:02d}.csv"
-            lpath.parent.mkdir(parents=True, exist_ok=True)
-            with lpath.open("w", newline="", encoding="utf-8") as f:
-                w = _csvmod.writer(f)
-                w.writerow(LEDGER_FIELDS)
-                w.writerows(rows)
+            # The per-day ledger CSV is opt-in (--write-ledger-csv).
+            #
+            # These rows are only ever used *in memory* to build the aggregate
+            # cubes below. Nothing in the backend reads the files: the one
+            # walker that passes through this tree removes the directory
+            # explicitly ("raw ledger is never read here",
+            # app/executive/reader.py). Writing them cost 410 MB of repository
+            # weight across 206 days for no consumer, so the dump now has to be
+            # asked for. The raw transaction corpus that *is* read lives in
+            # enterprise_data/warehouse/ and is written by
+            # app/warehouse/generator/build.py.
+            if self.write_csv:
+                lpath = (out / f"day_{d+1:02d}" / "ledger"
+                         / f"txns_day_{d+1:02d}.csv")
+                lpath.parent.mkdir(parents=True, exist_ok=True)
+                with lpath.open("w", newline="", encoding="utf-8") as f:
+                    w = _csvmod.writer(f)
+                    w.writerow(LEDGER_FIELDS)
+                    w.writerows(rows)
 
             # per-day active customers
             day_customers = {r[20] for r in rows}
@@ -3703,8 +3752,15 @@ def main() -> None:
     parser.add_argument("--no-clean", action="store_true",
                         help="do not delete an existing output directory first")
     parser.add_argument("--ledger-size", type=int, default=10000,
-                        help="sampled transactions per day for the ledger "
-                             "(default 10000)")
+                        help="sampled transactions per day used in memory to "
+                             "build the aggregate cubes (default 10000)")
+    parser.add_argument("--write-ledger-csv", action="store_true",
+                        help="also dump the sampled rows to "
+                             "day_NN/ledger/*.csv. Off by default: nothing in "
+                             "the platform reads those files and they cost "
+                             "~410 MB across a 206-day run. The transaction "
+                             "corpus the platform does read is built by "
+                             "app.warehouse.generator.build.")
     args = parser.parse_args()
 
     out = Path(args.out).resolve()
@@ -3749,7 +3805,8 @@ def main() -> None:
     # forecasts -> ingestible analytics docs. The ledger is the ground truth;
     # the cubes and every analytics document roll up from it.
     print("  simulating transaction ledger + analytics ...")
-    ledger = Ledger(org, k, ops, rng, size=args.ledger_size)
+    ledger = Ledger(org, k, ops, rng, size=args.ledger_size,
+                    write_csv=args.write_ledger_csv)
     cubes = ledger.build(out)
     trends = build_trends(cubes, k)
     bi = build_bi(cubes, trends, k)

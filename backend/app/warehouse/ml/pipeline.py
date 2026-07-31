@@ -76,6 +76,10 @@ class MLPipeline:
 
         conf = insight.confidence(bt, eda, len(frame))
         meta = KPI_META.get(target, {})
+        # What the anomalous days did to the level the forecast starts from.
+        anom_effect = insight.anomaly_impact(
+            frame["date"].astype(str).tolist() if "date" in frame else None,
+            frame[target].tolist() if target in frame else None, anomalies)
         result = {
             "available": True,
             "target": target,
@@ -90,7 +94,8 @@ class MLPipeline:
             "confidence": conf,
             "most_influential_features": importances,
             "supporting_factors": insight.supporting_factors(
-                eda, importances, target),
+                eda, importances, target, anom_effect),
+            "anomaly_impact": anom_effect,
             "business_reason": insight.business_reason(
                 eda, forecast, bt, target, meta),
             "potential_risks": insight.potential_risks(

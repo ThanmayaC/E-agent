@@ -176,6 +176,9 @@ class ResponseValidator:
         known = evidence.numbers() | _numbers_in(business_rules)
         if not known:
             return
+        # Every figure the answer itself states — the operand pool a derived
+        # figure has to show its work against.
+        stated = _numbers_in([answer])
         for raw in NUMBER_PATTERN.findall(answer):
             try:
                 value = float(raw.replace(",", ""))
@@ -183,11 +186,19 @@ class ResponseValidator:
                 continue
             if abs(value) <= TRIVIAL_NUMBER:
                 continue  # ordinary prose, not a claim about the business
-            if not _matches_any(value, known):
-                validation.rejections.append(
-                    f"the answer states a figure that is not in the "
-                    f"evidence: {raw}")
-                return
+            if _matches_any(value, known):
+                continue
+            # A delta or ratio of two sourced figures is arithmetic on the
+            # evidence, not a new claim about the business.
+            if _is_derived(value, known, stated):
+                validation.warnings.append(
+                    f"figure {raw} is derived from the evidence rather than "
+                    f"quoted from it")
+                continue
+            validation.rejections.append(
+                f"the answer states a figure that is not in the "
+                f"evidence: {raw}")
+            return
 
     def _check_rules(self, answer: str, business_rules: list[str],
                      validation: Validation) -> None:
@@ -281,6 +292,48 @@ def _matches_any(value: float, known: set[float]) -> bool:
         if candidate and abs(abs(candidate * 100) - abs(value)) / max(
                 abs(value), 1.0) <= ROUNDING_TOLERANCE:
             return True
+    return False
+
+
+def _is_derived(value: float, known: set[float],
+                stated: set[float]) -> bool:
+    """Whether ``value`` is arithmetic the answer *shows its work* for.
+
+    "Value fell from ₹28,338,086 to ₹20,290,416" invites exactly one follow-up:
+    *by how much*. Answering "a fall of ₹8,047,670" quotes a figure that appears
+    nowhere in the evidence, and the numeric gate rejected the whole answer for
+    it — so the most useful sentence an analyst can write was the one most
+    likely to be blocked.
+
+    The operands must be sourced from the evidence **and stated in the answer
+    itself**. That restriction is the whole point: allowing any pair of evidence
+    figures to justify a third makes the gate meaningless, because n evidence
+    numbers generate n² sums and differences that blanket the number line — a
+    genuinely invented figure then almost always finds an accidental pair that
+    "explains" it. Requiring the answer to show both operands keeps the claim
+    checkable by a reader, which is the property this gate exists to protect.
+    """
+    if not known or len(stated) < 2:
+        return False
+    operands = [s for s in stated if _matches_any(s, known)]
+    if len(operands) < 2:
+        return False
+    target = abs(value)
+
+    def close(x: float) -> bool:
+        return abs(abs(x) - target) / max(target, 1.0) <= ROUNDING_TOLERANCE
+
+    for i, a in enumerate(operands):
+        for b in operands[i + 1:]:
+            if close(a - b) or close(a + b):
+                return True
+            # Percentage change and share-of-total: the two ratios an executive
+            # answer restates most often.
+            if b and (close(100.0 * (a - b) / abs(b))
+                      or close(100.0 * a / abs(b))):
+                return True
+            if a and close(100.0 * b / abs(a)):
+                return True
     return False
 
 

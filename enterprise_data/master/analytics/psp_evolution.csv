@@ -1,421 +1,421 @@
-psp,sponsor_bank,week,week_index,txns,value_inr,market_share_pct,success_rate,wow_growth_pct,new_users_k,satisfaction,is_market_leader
-Amazon Pay,Canara Bank,W1,1,182,287046,0.32,98.57,,0.0,97.1,False
-Amazon Pay,Canara Bank,W2,2,203,337396,0.36,99.13,11.5,6.3,97.6,False
-Amazon Pay,Canara Bank,W3,3,181,271775,0.32,99.45,-10.8,0.0,98.0,False
-Amazon Pay,Canara Bank,W4,4,216,395115,0.35,100.0,19.3,10.2,98.5,False
-Amazon Pay,Canara Bank,W5,5,209,306983,0.37,99.58,-3.2,0.0,98.1,False
-Amazon Pay,Canara Bank,W6,6,192,320006,0.34,99.32,-8.1,0.0,97.8,False
-Amazon Pay,Canara Bank,W7,7,218,346819,0.38,98.8,13.5,7.7,97.3,False
-Amazon Pay,Canara Bank,W8,8,234,365849,0.36,98.8,7.3,4.0,97.3,False
-Amazon Pay,Canara Bank,W9,9,212,316551,0.37,99.04,-9.4,0.0,97.5,False
-Amazon Pay,Canara Bank,W10,10,245,378775,0.4,98.7,15.6,9.2,97.2,False
-Amazon Pay,Canara Bank,W11,11,195,268298,0.33,100.0,-20.4,0.0,98.5,False
-Amazon Pay,Canara Bank,W12,12,247,354284,0.39,99.61,26.7,15.7,98.1,False
-Amazon Pay,Canara Bank,W13,13,257,412214,0.41,99.27,4.0,2.4,97.8,False
-Amazon Pay,Canara Bank,W14,14,221,349890,0.37,98.13,-14.0,0.0,96.6,False
-Amazon Pay,Canara Bank,W15,15,212,282061,0.36,99.55,-4.1,0.0,98.1,False
-Amazon Pay,Canara Bank,W16,16,227,331794,0.38,99.43,7.1,4.1,97.9,False
-Amazon Pay,Canara Bank,W17,17,234,350226,0.37,100.0,3.1,1.7,98.5,False
-Amazon Pay,Canara Bank,W18,18,232,335112,0.39,99.61,-0.9,0.0,98.1,False
-Amazon Pay,Canara Bank,W19,19,210,273426,0.35,100.0,-9.5,0.0,98.5,False
-Amazon Pay,Canara Bank,W20,20,223,327072,0.36,100.0,6.2,3.3,98.5,False
-Amazon Pay,Canara Bank,W21,21,256,382010,0.38,99.34,14.8,8.4,97.8,False
-Amazon Pay,Canara Bank,W22,22,210,314272,0.34,100.0,-18.0,0.0,98.5,False
-Amazon Pay,Canara Bank,W23,23,210,288562,0.33,99.06,0.0,0.0,97.6,False
-Amazon Pay,Canara Bank,W24,24,259,357413,0.42,100.0,23.3,14.6,98.5,False
-Amazon Pay,Canara Bank,W25,25,250,390135,0.37,99.07,-3.5,0.0,97.6,False
-Amazon Pay,Canara Bank,W26,26,226,352075,0.35,100.0,-9.6,0.0,98.5,False
-Amazon Pay,Canara Bank,W27,27,258,407921,0.4,99.7,14.2,8.5,98.2,False
-Amazon Pay,Canara Bank,W28,28,208,299256,0.33,99.55,-19.4,0.0,98.1,False
-Amazon Pay,Canara Bank,W29,29,238,331136,0.37,100.0,14.4,8.1,98.5,False
-Amazon Pay,Canara Bank,W30,30,125,223455,0.39,100.0,22.5,13.3,98.5,False
-Axis Mobile,Kotak Mahindra Bank,W1,1,328,479053,0.58,99.67,,0.0,98.2,False
-Axis Mobile,Kotak Mahindra Bank,W2,2,323,498235,0.58,99.46,-1.5,0.0,98.0,False
-Axis Mobile,Kotak Mahindra Bank,W3,3,323,493002,0.58,98.67,0.0,0.0,97.2,False
-Axis Mobile,Kotak Mahindra Bank,W4,4,351,468429,0.57,99.7,8.7,7.5,98.2,False
-Axis Mobile,Kotak Mahindra Bank,W5,5,349,499882,0.61,99.71,-0.6,0.0,98.2,False
-Axis Mobile,Kotak Mahindra Bank,W6,6,322,487608,0.57,98.44,-7.7,0.0,96.9,False
-Axis Mobile,Kotak Mahindra Bank,W7,7,345,529996,0.6,99.74,7.1,6.4,98.2,False
-Axis Mobile,Kotak Mahindra Bank,W8,8,370,560072,0.57,99.73,7.2,6.2,98.2,False
-Axis Mobile,Kotak Mahindra Bank,W9,9,324,495633,0.56,99.1,-12.4,0.0,97.6,False
-Axis Mobile,Kotak Mahindra Bank,W10,10,355,477388,0.57,99.77,9.6,8.2,98.3,False
-Axis Mobile,Kotak Mahindra Bank,W11,11,335,494427,0.57,99.3,-5.6,0.0,97.8,False
-Axis Mobile,Kotak Mahindra Bank,W12,12,351,552563,0.56,99.73,4.8,4.0,98.2,False
-Axis Mobile,Kotak Mahindra Bank,W13,13,361,485501,0.57,98.97,2.8,2.4,97.5,False
-Axis Mobile,Kotak Mahindra Bank,W14,14,340,433281,0.57,98.77,-5.8,0.0,97.3,False
-Axis Mobile,Kotak Mahindra Bank,W15,15,332,485373,0.56,99.73,-2.4,0.0,98.2,False
-Axis Mobile,Kotak Mahindra Bank,W16,16,353,482368,0.59,99.39,6.3,5.6,97.9,False
-Axis Mobile,Kotak Mahindra Bank,W17,17,341,472009,0.54,99.7,-3.4,0.0,98.2,False
-Axis Mobile,Kotak Mahindra Bank,W18,18,348,460691,0.58,99.74,2.1,1.8,98.2,False
-Axis Mobile,Kotak Mahindra Bank,W19,19,311,360231,0.52,99.55,-10.6,0.0,98.1,False
-Axis Mobile,Kotak Mahindra Bank,W20,20,354,480365,0.57,99.67,13.8,11.7,98.2,False
-Axis Mobile,Kotak Mahindra Bank,W21,21,398,480676,0.59,99.53,12.4,11.0,98.0,False
-Axis Mobile,Kotak Mahindra Bank,W22,22,341,382352,0.55,99.37,-14.3,0.0,97.9,False
-Axis Mobile,Kotak Mahindra Bank,W23,23,365,502932,0.57,99.44,7.0,6.0,97.9,False
-Axis Mobile,Kotak Mahindra Bank,W24,24,373,519982,0.6,100.0,2.2,2.0,98.5,False
-Axis Mobile,Kotak Mahindra Bank,W25,25,365,447456,0.54,100.0,-2.1,0.0,98.5,False
-Axis Mobile,Kotak Mahindra Bank,W26,26,378,504525,0.58,99.55,3.6,3.1,98.0,False
-Axis Mobile,Kotak Mahindra Bank,W27,27,392,483616,0.61,99.74,3.7,3.4,98.2,False
-Axis Mobile,Kotak Mahindra Bank,W28,28,367,493416,0.58,99.72,-6.4,0.0,98.2,False
-Axis Mobile,Kotak Mahindra Bank,W29,29,347,422924,0.55,99.74,-5.4,0.0,98.2,False
-Axis Mobile,Kotak Mahindra Bank,W30,30,172,172580,0.54,100.0,15.7,12.7,98.5,False
-BHIM,Federal Bank,W1,1,562,874616,0.99,99.46,,0.0,98.0,False
-BHIM,Federal Bank,W2,2,565,913131,1.01,99.66,0.5,0.8,98.2,False
-BHIM,Federal Bank,W3,3,597,976069,1.07,98.89,5.7,9.1,97.4,False
-BHIM,Federal Bank,W4,4,619,963012,1.01,99.65,3.7,5.6,98.2,False
-BHIM,Federal Bank,W5,5,569,835842,1.0,99.43,-8.1,0.0,97.9,False
-BHIM,Federal Bank,W6,6,558,912614,0.98,99.37,-1.9,0.0,97.9,False
-BHIM,Federal Bank,W7,7,546,872808,0.95,99.54,-2.2,0.0,98.0,False
-BHIM,Federal Bank,W8,8,640,966595,0.99,99.43,17.2,25.5,97.9,False
-BHIM,Federal Bank,W9,9,600,915568,1.04,99.15,-6.3,0.0,97.7,False
-BHIM,Federal Bank,W10,10,652,1007447,1.05,98.98,8.7,13.7,97.5,False
-BHIM,Federal Bank,W11,11,621,940890,1.07,99.38,-4.8,0.0,97.9,False
-BHIM,Federal Bank,W12,12,663,993521,1.05,99.27,6.8,10.7,97.8,False
-BHIM,Federal Bank,W13,13,634,934867,1.01,99.59,-4.4,0.0,98.1,False
-BHIM,Federal Bank,W14,14,618,922295,1.04,99.18,-2.5,0.0,97.7,False
-BHIM,Federal Bank,W15,15,628,938657,1.05,99.08,1.6,2.5,97.6,False
-BHIM,Federal Bank,W16,16,566,773537,0.95,99.28,-9.9,0.0,97.8,False
-BHIM,Federal Bank,W17,17,636,875546,1.01,99.85,12.4,18.9,98.3,False
-BHIM,Federal Bank,W18,18,640,1040378,1.07,99.81,0.6,1.0,98.3,False
-BHIM,Federal Bank,W19,19,621,977790,1.03,99.83,-3.0,0.0,98.3,False
-BHIM,Federal Bank,W20,20,633,928501,1.01,99.53,1.9,2.9,98.0,False
-BHIM,Federal Bank,W21,21,750,1115096,1.11,98.85,18.5,30.8,97.3,False
-BHIM,Federal Bank,W22,22,627,848819,1.02,99.53,-16.4,0.0,98.0,False
-BHIM,Federal Bank,W23,23,693,987329,1.08,99.6,10.5,17.0,98.1,False
-BHIM,Federal Bank,W24,24,644,927826,1.04,99.27,-7.1,0.0,97.8,False
-BHIM,Federal Bank,W25,25,645,956221,0.96,99.36,0.2,0.3,97.9,False
-BHIM,Federal Bank,W26,26,600,807919,0.92,99.77,-7.0,0.0,98.3,False
-BHIM,Federal Bank,W27,27,661,1025511,1.02,99.58,10.2,15.6,98.1,False
-BHIM,Federal Bank,W28,28,650,994734,1.03,99.69,-1.7,0.0,98.2,False
-BHIM,Federal Bank,W29,29,692,1047079,1.09,99.5,6.5,10.6,98.0,False
-BHIM,Federal Bank,W30,30,333,449584,1.05,100.0,12.3,19.3,98.5,False
-CRED,State Bank of India,W1,1,348,547905,0.61,98.97,,0.0,97.5,False
-CRED,State Bank of India,W2,2,323,496955,0.58,98.82,-7.2,0.0,97.3,False
-CRED,State Bank of India,W3,3,351,547389,0.63,99.07,8.7,8.2,97.6,False
-CRED,State Bank of India,W4,4,405,693555,0.66,99.52,15.4,15.2,98.0,False
-CRED,State Bank of India,W5,5,394,627126,0.69,99.25,-2.7,0.0,97.8,False
-CRED,State Bank of India,W6,6,342,487373,0.6,99.58,-13.2,0.0,98.1,False
-CRED,State Bank of India,W7,7,337,462912,0.59,99.39,-1.5,0.0,97.9,False
-CRED,State Bank of India,W8,8,368,529341,0.57,99.1,9.2,7.8,97.6,False
-CRED,State Bank of India,W9,9,346,508245,0.6,99.7,-6.0,0.0,98.2,False
-CRED,State Bank of India,W10,10,402,590888,0.65,99.39,16.2,15.8,97.9,False
-CRED,State Bank of India,W11,11,367,535731,0.63,99.48,-8.7,0.0,98.0,False
-CRED,State Bank of India,W12,12,395,538994,0.63,99.16,7.6,7.1,97.7,False
-CRED,State Bank of India,W13,13,382,623204,0.61,99.49,-3.3,0.0,98.0,False
-CRED,State Bank of India,W14,14,403,579845,0.68,99.05,5.5,5.6,97.5,False
-CRED,State Bank of India,W15,15,376,533626,0.63,99.51,-6.7,0.0,98.0,False
-CRED,State Bank of India,W16,16,373,504442,0.63,98.94,-0.8,0.0,97.4,False
-CRED,State Bank of India,W17,17,370,482605,0.59,99.72,-0.8,0.0,98.2,False
-CRED,State Bank of India,W18,18,403,592143,0.67,99.08,8.9,9.0,97.6,False
-CRED,State Bank of India,W19,19,393,551729,0.65,99.42,-2.5,0.0,97.9,False
-CRED,State Bank of India,W20,20,393,585350,0.63,99.42,0.0,0.0,97.9,False
-CRED,State Bank of India,W21,21,419,598432,0.62,99.04,6.6,6.1,97.5,False
-CRED,State Bank of India,W22,22,393,559827,0.64,98.71,-6.2,0.0,97.2,False
-CRED,State Bank of India,W23,23,379,554910,0.59,99.72,-3.6,0.0,98.2,False
-CRED,State Bank of India,W24,24,436,730193,0.7,99.8,15.0,15.8,98.3,False
-CRED,State Bank of India,W25,25,432,638904,0.64,99.47,-0.9,0.0,98.0,False
-CRED,State Bank of India,W26,26,423,658205,0.65,99.5,-2.1,0.0,98.0,False
-CRED,State Bank of India,W27,27,381,596769,0.59,99.52,-9.9,0.0,98.0,False
-CRED,State Bank of India,W28,28,377,530640,0.6,99.4,-1.0,0.0,97.9,False
-CRED,State Bank of India,W29,29,417,642890,0.66,99.78,10.6,10.4,98.3,False
-CRED,State Bank of India,W30,30,219,350534,0.69,100.0,22.5,23.2,98.5,False
-FamApp,ICICI Bank,W1,1,454,633725,0.8,99.82,,0.0,98.3,False
-FamApp,ICICI Bank,W2,2,408,572628,0.73,99.26,-10.1,0.0,97.8,False
-FamApp,ICICI Bank,W3,3,424,554817,0.76,98.46,3.9,4.4,97.0,False
-FamApp,ICICI Bank,W4,4,475,702779,0.77,99.07,12.0,13.9,97.6,False
-FamApp,ICICI Bank,W5,5,445,710761,0.78,99.31,-6.3,0.0,97.8,False
-FamApp,ICICI Bank,W6,6,418,570769,0.74,99.73,-6.1,0.0,98.2,False
-FamApp,ICICI Bank,W7,7,439,603365,0.77,99.55,5.0,5.7,98.1,False
-FamApp,ICICI Bank,W8,8,461,603745,0.71,99.13,5.0,5.3,97.6,False
-FamApp,ICICI Bank,W9,9,458,651634,0.79,99.68,-0.7,0.0,98.2,False
-FamApp,ICICI Bank,W10,10,453,624861,0.73,99.35,-1.1,0.0,97.9,False
-FamApp,ICICI Bank,W11,11,399,573555,0.68,99.37,-11.9,0.0,97.9,False
-FamApp,ICICI Bank,W12,12,420,614770,0.67,99.12,5.3,5.3,97.6,False
-FamApp,ICICI Bank,W13,13,436,621625,0.69,99.08,3.8,3.9,97.6,False
-FamApp,ICICI Bank,W14,14,471,574470,0.8,98.41,8.0,9.6,96.9,False
-FamApp,ICICI Bank,W15,15,403,484195,0.68,99.01,-14.4,0.0,97.5,False
-FamApp,ICICI Bank,W16,16,423,574105,0.71,99.54,5.0,5.3,98.0,False
-FamApp,ICICI Bank,W17,17,455,557564,0.73,99.71,7.6,8.3,98.2,False
-FamApp,ICICI Bank,W18,18,431,549010,0.72,99.61,-5.3,0.0,98.1,False
-FamApp,ICICI Bank,W19,19,438,592777,0.73,99.54,1.6,1.7,98.0,False
-FamApp,ICICI Bank,W20,20,460,618188,0.74,99.39,5.0,5.5,97.9,False
-FamApp,ICICI Bank,W21,21,486,619279,0.72,99.59,5.7,6.2,98.1,False
-FamApp,ICICI Bank,W22,22,446,560548,0.72,99.54,-8.2,0.0,98.0,False
-FamApp,ICICI Bank,W23,23,473,650777,0.74,99.61,6.1,6.7,98.1,False
-FamApp,ICICI Bank,W24,24,425,507517,0.69,99.46,-10.1,0.0,98.0,False
-FamApp,ICICI Bank,W25,25,489,641786,0.73,99.62,15.1,16.5,98.1,False
-FamApp,ICICI Bank,W26,26,502,605703,0.77,99.64,2.7,3.1,98.1,False
-FamApp,ICICI Bank,W27,27,456,542363,0.71,99.29,-9.2,0.0,97.8,False
-FamApp,ICICI Bank,W28,28,504,662266,0.8,99.19,10.5,12.6,97.7,False
-FamApp,ICICI Bank,W29,29,421,543991,0.66,99.4,-16.5,0.0,97.9,False
-FamApp,ICICI Bank,W30,30,258,360720,0.81,100.0,43.0,52.3,98.5,False
-Google Pay,HDFC Bank,W1,1,18853,29541531,33.07,99.33,,0.0,97.8,False
-Google Pay,HDFC Bank,W2,2,18477,29018054,33.08,98.99,-2.0,0.0,97.5,False
-Google Pay,HDFC Bank,W3,3,18357,28425981,32.84,98.78,-0.6,0.0,97.3,False
-Google Pay,HDFC Bank,W4,4,20313,31507575,33.1,99.45,10.7,531.2,98.0,False
-Google Pay,HDFC Bank,W5,5,18731,28726896,32.92,99.18,-7.8,0.0,97.7,False
-Google Pay,HDFC Bank,W6,6,18710,28788558,32.95,99.27,-0.1,0.0,97.8,False
-Google Pay,HDFC Bank,W7,7,18856,29102708,32.88,99.39,0.8,39.5,97.9,False
-Google Pay,HDFC Bank,W8,8,21196,31843249,32.74,98.82,12.4,609.0,97.3,False
-Google Pay,HDFC Bank,W9,9,19090,28946180,32.99,99.36,-9.9,0.0,97.9,False
-Google Pay,HDFC Bank,W10,10,20304,30554492,32.75,99.28,6.4,314.4,97.8,False
-Google Pay,HDFC Bank,W11,11,19049,28500117,32.68,99.5,-6.2,0.0,98.0,False
-Google Pay,HDFC Bank,W12,12,20927,31470332,33.19,99.31,9.9,492.8,97.8,False
-Google Pay,HDFC Bank,W13,13,20868,31235070,33.08,99.27,-0.3,0.0,97.8,False
-Google Pay,HDFC Bank,W14,14,19512,28698453,32.97,98.79,-6.5,0.0,97.3,False
-Google Pay,HDFC Bank,W15,15,19562,29282880,32.86,99.42,0.3,14.8,97.9,False
-Google Pay,HDFC Bank,W16,16,19686,29087881,33.02,99.4,0.6,29.7,97.9,False
-Google Pay,HDFC Bank,W17,17,20715,30895293,33.01,99.7,5.2,257.5,98.2,False
-Google Pay,HDFC Bank,W18,18,19561,28619854,32.6,99.63,-5.6,0.0,98.1,False
-Google Pay,HDFC Bank,W19,19,20039,29644907,33.26,99.76,2.4,119.7,98.3,False
-Google Pay,HDFC Bank,W20,20,20528,30348023,32.91,99.27,2.4,118.5,97.8,False
-Google Pay,HDFC Bank,W21,21,22116,32115987,32.78,99.28,7.7,378.6,97.8,False
-Google Pay,HDFC Bank,W22,22,20290,29816775,32.93,99.29,-8.3,0.0,97.8,False
-Google Pay,HDFC Bank,W23,23,21315,31011250,33.21,99.75,5.1,254.0,98.3,False
-Google Pay,HDFC Bank,W24,24,20380,29948304,32.85,99.64,-4.4,0.0,98.1,False
-Google Pay,HDFC Bank,W25,25,22212,32805603,33.04,99.52,9.0,446.1,98.0,False
-Google Pay,HDFC Bank,W26,26,21506,31637331,33.01,99.69,-3.2,0.0,98.2,False
-Google Pay,HDFC Bank,W27,27,21227,31426614,32.82,99.6,-1.3,0.0,98.1,False
-Google Pay,HDFC Bank,W28,28,20797,30779064,32.91,99.57,-2.0,0.0,98.1,False
-Google Pay,HDFC Bank,W29,29,20872,30948328,32.84,99.59,0.4,19.7,98.1,False
-Google Pay,HDFC Bank,W30,30,10447,15486654,32.85,99.99,16.8,827.8,98.5,False
-HDFC MobileBanking,Union Bank of India,W1,1,332,531659,0.58,99.03,,0.0,97.5,False
-HDFC MobileBanking,Union Bank of India,W2,2,334,532528,0.6,98.47,0.6,0.5,97.0,False
-HDFC MobileBanking,Union Bank of India,W3,3,344,587661,0.62,98.73,3.0,2.8,97.2,False
-HDFC MobileBanking,Union Bank of India,W4,4,375,588327,0.61,99.73,9.0,8.2,98.2,False
-HDFC MobileBanking,Union Bank of India,W5,5,353,539662,0.62,99.66,-5.9,0.0,98.2,False
-HDFC MobileBanking,Union Bank of India,W6,6,305,428573,0.54,98.86,-13.6,0.0,97.4,False
-HDFC MobileBanking,Union Bank of India,W7,7,350,524185,0.61,99.71,14.8,13.6,98.2,False
-HDFC MobileBanking,Union Bank of India,W8,8,348,453416,0.54,98.4,-0.6,0.0,96.9,False
-HDFC MobileBanking,Union Bank of India,W9,9,345,536865,0.6,99.39,-0.9,0.0,97.9,False
-HDFC MobileBanking,Union Bank of India,W10,10,341,533241,0.55,98.81,-1.2,0.0,97.3,False
-HDFC MobileBanking,Union Bank of India,W11,11,327,468958,0.56,100.0,-4.1,0.0,98.5,False
-HDFC MobileBanking,Union Bank of India,W12,12,376,621289,0.6,100.0,15.0,13.4,98.5,False
-HDFC MobileBanking,Union Bank of India,W13,13,381,542740,0.6,99.1,1.3,1.2,97.6,False
-HDFC MobileBanking,Union Bank of India,W14,14,354,502264,0.6,98.81,-7.1,0.0,97.3,False
-HDFC MobileBanking,Union Bank of India,W15,15,355,477831,0.6,99.26,0.3,0.3,97.8,False
-HDFC MobileBanking,Union Bank of India,W16,16,332,515373,0.56,99.11,-6.5,0.0,97.6,False
-HDFC MobileBanking,Union Bank of India,W17,17,390,636470,0.62,99.73,17.5,16.3,98.2,False
-HDFC MobileBanking,Union Bank of India,W18,18,358,593550,0.6,99.75,-8.2,0.0,98.2,False
-HDFC MobileBanking,Union Bank of India,W19,19,356,530776,0.59,100.0,-0.6,0.0,98.5,False
-HDFC MobileBanking,Union Bank of India,W20,20,394,617680,0.63,99.56,10.7,10.1,98.1,False
-HDFC MobileBanking,Union Bank of India,W21,21,387,605498,0.57,99.56,-1.8,0.0,98.1,False
-HDFC MobileBanking,Union Bank of India,W22,22,356,545182,0.58,98.86,-8.0,0.0,97.4,False
-HDFC MobileBanking,Union Bank of India,W23,23,340,506150,0.53,100.0,-4.5,0.0,98.5,False
-HDFC MobileBanking,Union Bank of India,W24,24,384,566918,0.62,99.7,12.9,12.0,98.2,False
-HDFC MobileBanking,Union Bank of India,W25,25,351,502183,0.52,99.75,-8.6,0.0,98.3,False
-HDFC MobileBanking,Union Bank of India,W26,26,369,484069,0.57,100.0,5.1,4.3,98.5,False
-HDFC MobileBanking,Union Bank of India,W27,27,381,559028,0.59,99.21,3.3,2.9,97.7,False
-HDFC MobileBanking,Union Bank of India,W28,28,355,592130,0.56,99.68,-6.8,0.0,98.2,False
-HDFC MobileBanking,Union Bank of India,W29,29,365,488778,0.57,99.7,2.8,2.4,98.2,False
-HDFC MobileBanking,Union Bank of India,W30,30,180,279850,0.57,100.0,15.1,12.8,98.5,False
-Navi,HDFC Bank,W1,1,2052,3156166,3.6,99.48,,0.0,98.0,False
-Navi,HDFC Bank,W2,2,2084,3285457,3.73,99.01,1.6,9.0,97.5,False
-Navi,HDFC Bank,W3,3,2100,3370439,3.76,98.82,0.8,4.5,97.3,False
-Navi,HDFC Bank,W4,4,2310,3641329,3.76,99.7,10.0,56.5,98.2,False
-Navi,HDFC Bank,W5,5,2182,3340482,3.83,99.26,-5.5,0.0,97.8,False
-Navi,HDFC Bank,W6,6,2201,3384245,3.88,99.05,0.9,5.2,97.5,False
-Navi,HDFC Bank,W7,7,2204,3446780,3.84,99.56,0.1,0.6,98.1,False
-Navi,HDFC Bank,W8,8,2419,3662030,3.74,98.48,9.8,54.9,97.0,False
-Navi,HDFC Bank,W9,9,2121,3153011,3.67,99.27,-12.3,0.0,97.8,False
-Navi,HDFC Bank,W10,10,2411,3738384,3.89,99.09,13.7,79.9,97.6,False
-Navi,HDFC Bank,W11,11,2274,3548204,3.9,98.93,-5.7,0.0,97.4,False
-Navi,HDFC Bank,W12,12,2336,3470480,3.7,99.64,2.7,15.0,98.1,False
-Navi,HDFC Bank,W13,13,2396,3578284,3.8,99.1,2.6,14.8,97.6,False
-Navi,HDFC Bank,W14,14,2263,3366770,3.82,98.49,-5.6,0.0,97.0,False
-Navi,HDFC Bank,W15,15,2283,3389265,3.83,99.35,0.9,5.2,97.9,False
-Navi,HDFC Bank,W16,16,2282,3387269,3.83,99.37,-0.0,0.0,97.9,False
-Navi,HDFC Bank,W17,17,2462,3771611,3.92,99.8,7.9,46.5,98.3,False
-Navi,HDFC Bank,W18,18,2318,3548165,3.86,99.73,-5.8,0.0,98.2,False
-Navi,HDFC Bank,W19,19,2329,3339324,3.87,99.75,0.5,2.9,98.2,False
-Navi,HDFC Bank,W20,20,2364,3503413,3.79,99.35,1.5,8.5,97.8,False
-Navi,HDFC Bank,W21,21,2472,3560155,3.66,99.47,4.6,25.3,98.0,False
-Navi,HDFC Bank,W22,22,2351,3415070,3.82,99.37,-4.9,0.0,97.9,False
-Navi,HDFC Bank,W23,23,2403,3790428,3.74,99.77,2.2,12.4,98.3,False
-Navi,HDFC Bank,W24,24,2306,3528852,3.72,99.55,-4.0,0.0,98.0,False
-Navi,HDFC Bank,W25,25,2493,3818293,3.71,99.57,8.1,45.1,98.1,False
-Navi,HDFC Bank,W26,26,2490,3720211,3.82,99.57,-0.1,0.0,98.1,False
-Navi,HDFC Bank,W27,27,2388,3427851,3.69,99.79,-4.1,0.0,98.3,False
-Navi,HDFC Bank,W28,28,2454,3805887,3.88,99.75,2.8,16.3,98.3,False
-Navi,HDFC Bank,W29,29,2411,3401079,3.79,99.48,-1.8,0.0,98.0,False
-Navi,HDFC Bank,W30,30,1229,1808138,3.86,100.0,18.9,109.6,98.5,False
-Paytm,Union Bank of India,W1,1,4548,7292759,7.98,99.42,,0.0,97.9,False
-Paytm,Union Bank of India,W2,2,4444,6882525,7.96,98.82,-2.3,0.0,97.3,False
-Paytm,Union Bank of India,W3,3,4411,6942270,7.89,98.43,-0.7,0.0,96.9,False
-Paytm,Union Bank of India,W4,4,4940,7952179,8.05,99.46,12.0,144.9,98.0,False
-Paytm,Union Bank of India,W5,5,4481,6830895,7.87,99.24,-9.3,0.0,97.7,False
-Paytm,Union Bank of India,W6,6,4660,7356730,8.21,99.43,4.0,49.2,97.9,False
-Paytm,Union Bank of India,W7,7,4602,7057988,8.03,99.47,-1.2,0.0,98.0,False
-Paytm,Union Bank of India,W8,8,5267,8067032,8.14,98.75,14.5,177.0,97.2,False
-Paytm,Union Bank of India,W9,9,4611,7136394,7.97,99.05,-12.5,0.0,97.6,False
-Paytm,Union Bank of India,W10,10,4952,7697234,7.99,99.4,7.4,88.7,97.9,False
-Paytm,Union Bank of India,W11,11,4681,7201389,8.03,99.39,-5.5,0.0,97.9,False
-Paytm,Union Bank of India,W12,12,4983,7690878,7.9,99.28,6.5,77.1,97.8,False
-Paytm,Union Bank of India,W13,13,4986,7718122,7.9,99.16,0.1,1.2,97.7,False
-Paytm,Union Bank of India,W14,14,4631,7084049,7.83,98.77,-7.1,0.0,97.3,False
-Paytm,Union Bank of India,W15,15,4741,6958933,7.96,99.22,2.4,28.7,97.7,False
-Paytm,Union Bank of India,W16,16,4716,7168552,7.91,99.51,-0.5,0.0,98.0,False
-Paytm,Union Bank of India,W17,17,4954,7405315,7.89,99.71,5.0,59.2,98.2,False
-Paytm,Union Bank of India,W18,18,4778,7397182,7.96,99.76,-3.6,0.0,98.3,False
-Paytm,Union Bank of India,W19,19,4667,6977351,7.75,99.73,-2.3,0.0,98.2,False
-Paytm,Union Bank of India,W20,20,5018,7586548,8.04,99.29,7.5,90.5,97.8,False
-Paytm,Union Bank of India,W21,21,5427,8144547,8.04,99.43,8.2,98.9,97.9,False
-Paytm,Union Bank of India,W22,22,4953,7535318,8.04,99.44,-8.7,0.0,97.9,False
-Paytm,Union Bank of India,W23,23,5201,7882782,8.1,99.75,5.0,60.8,98.2,False
-Paytm,Union Bank of India,W24,24,4980,7386623,8.03,99.73,-4.2,0.0,98.2,False
-Paytm,Union Bank of India,W25,25,5454,8204455,8.11,99.56,9.5,115.6,98.1,False
-Paytm,Union Bank of India,W26,26,5192,7798619,7.97,99.77,-4.8,0.0,98.3,False
-Paytm,Union Bank of India,W27,27,5139,7748933,7.95,99.76,-1.0,0.0,98.3,False
-Paytm,Union Bank of India,W28,28,4992,7590997,7.9,99.58,-2.9,0.0,98.1,False
-Paytm,Union Bank of India,W29,29,5087,7317550,8.0,99.55,1.9,22.8,98.0,False
-Paytm,Union Bank of India,W30,30,2606,3822850,8.19,100.0,19.5,239.7,98.5,False
-PhonePe,IndusInd Bank,W1,1,27088,43160033,47.52,99.41,,0.0,97.9,True
-PhonePe,IndusInd Bank,W2,2,26591,41569476,47.61,98.93,-1.8,0.0,97.4,True
-PhonePe,IndusInd Bank,W3,3,26642,41358806,47.66,98.76,0.2,14.3,97.3,True
-PhonePe,IndusInd Bank,W4,4,29045,45017742,47.32,99.45,9.0,638.9,98.0,True
-PhonePe,IndusInd Bank,W5,5,27021,41238973,47.49,99.21,-7.0,0.0,97.7,True
-PhonePe,IndusInd Bank,W6,6,26916,41689302,47.4,99.34,-0.4,0.0,97.8,True
-PhonePe,IndusInd Bank,W7,7,27157,41354977,47.36,99.37,0.9,63.9,97.9,True
-PhonePe,IndusInd Bank,W8,8,30914,46719258,47.76,99.05,13.8,988.6,97.5,True
-PhonePe,IndusInd Bank,W9,9,27548,41945471,47.6,99.25,-10.9,0.0,97.8,True
-PhonePe,IndusInd Bank,W10,10,29466,44448490,47.53,99.35,7.0,499.0,97.8,True
-PhonePe,IndusInd Bank,W11,11,27801,41660832,47.69,99.43,-5.7,0.0,97.9,True
-PhonePe,IndusInd Bank,W12,12,29854,44626866,47.35,99.31,7.4,525.5,97.8,True
-PhonePe,IndusInd Bank,W13,13,29938,44790639,47.46,99.24,0.3,21.4,97.7,True
-PhonePe,IndusInd Bank,W14,14,28141,41961402,47.55,98.79,-6.0,0.0,97.3,True
-PhonePe,IndusInd Bank,W15,15,28386,42558584,47.68,99.47,0.9,64.4,98.0,True
-PhonePe,IndusInd Bank,W16,16,28368,41852293,47.58,99.51,-0.1,0.0,98.0,True
-PhonePe,IndusInd Bank,W17,17,29695,44379011,47.32,99.79,4.7,333.6,98.3,True
-PhonePe,IndusInd Bank,W18,18,28716,42561403,47.86,99.64,-3.3,0.0,98.1,True
-PhonePe,IndusInd Bank,W19,19,28594,42222851,47.45,99.81,-0.4,0.0,98.3,True
-PhonePe,IndusInd Bank,W20,20,29680,43528314,47.58,99.21,3.8,271.2,97.7,True
-PhonePe,IndusInd Bank,W21,21,32200,46876902,47.72,99.28,8.5,608.4,97.8,True
-PhonePe,IndusInd Bank,W22,22,29259,43343649,47.49,99.22,-9.1,0.0,97.7,True
-PhonePe,IndusInd Bank,W23,23,30322,44505896,47.24,99.72,3.6,255.1,98.2,True
-PhonePe,IndusInd Bank,W24,24,29510,43696510,47.56,99.6,-2.7,0.0,98.1,True
-PhonePe,IndusInd Bank,W25,25,31952,46970506,47.53,99.54,8.3,591.8,98.0,True
-PhonePe,IndusInd Bank,W26,26,30934,45816095,47.48,99.7,-3.2,0.0,98.2,True
-PhonePe,IndusInd Bank,W27,27,31003,45846700,47.93,99.67,0.2,14.4,98.2,True
-PhonePe,IndusInd Bank,W28,28,30089,44277070,47.61,99.49,-2.9,0.0,98.0,True
-PhonePe,IndusInd Bank,W29,29,30308,44333609,47.68,99.6,0.7,50.1,98.1,True
-PhonePe,IndusInd Bank,W30,30,14955,22029648,47.03,99.96,15.1,1065.2,98.5,True
-SuperMoney,IDFC First Bank,W1,1,1101,1707438,1.93,99.74,,0.0,98.2,False
-SuperMoney,IDFC First Bank,W2,2,1000,1536658,1.79,99.22,-9.2,0.0,97.7,False
-SuperMoney,IDFC First Bank,W3,3,999,1554423,1.79,98.34,-0.1,0.0,96.8,False
-SuperMoney,IDFC First Bank,W4,4,1112,1781683,1.81,99.12,11.3,30.7,97.6,False
-SuperMoney,IDFC First Bank,W5,5,1069,1684406,1.88,99.36,-3.9,0.0,97.9,False
-SuperMoney,IDFC First Bank,W6,6,1040,1488035,1.83,99.62,-2.7,0.0,98.1,False
-SuperMoney,IDFC First Bank,W7,7,1053,1605739,1.84,99.63,1.2,3.3,98.1,False
-SuperMoney,IDFC First Bank,W8,8,1182,1723146,1.83,98.73,12.3,33.7,97.2,False
-SuperMoney,IDFC First Bank,W9,9,1032,1631418,1.78,99.4,-12.7,0.0,97.9,False
-SuperMoney,IDFC First Bank,W10,10,1159,1749483,1.87,99.32,12.3,34.5,97.8,False
-SuperMoney,IDFC First Bank,W11,11,1049,1581429,1.8,99.65,-9.5,0.0,98.1,False
-SuperMoney,IDFC First Bank,W12,12,1171,1770077,1.86,99.58,11.6,32.3,98.1,False
-SuperMoney,IDFC First Bank,W13,13,1149,1708766,1.82,99.3,-1.9,0.0,97.8,False
-SuperMoney,IDFC First Bank,W14,14,1073,1612018,1.81,99.55,-6.6,0.0,98.0,False
-SuperMoney,IDFC First Bank,W15,15,1076,1648459,1.81,99.7,0.3,0.8,98.2,False
-SuperMoney,IDFC First Bank,W16,16,1093,1604913,1.83,99.23,1.6,4.4,97.7,False
-SuperMoney,IDFC First Bank,W17,17,1202,1759382,1.92,99.82,10.0,28.7,98.3,False
-SuperMoney,IDFC First Bank,W18,18,1066,1415645,1.78,99.48,-11.3,0.0,98.0,False
-SuperMoney,IDFC First Bank,W19,19,1106,1670662,1.84,99.74,3.8,10.5,98.2,False
-SuperMoney,IDFC First Bank,W20,20,1101,1645955,1.76,99.07,-0.5,0.0,97.6,False
-SuperMoney,IDFC First Bank,W21,21,1212,1761648,1.8,99.53,10.1,27.2,98.0,False
-SuperMoney,IDFC First Bank,W22,22,1127,1635139,1.83,99.21,-7.0,0.0,97.7,False
-SuperMoney,IDFC First Bank,W23,23,1194,1839929,1.86,99.74,5.9,16.5,98.2,False
-SuperMoney,IDFC First Bank,W24,24,1116,1639780,1.8,99.83,-6.5,0.0,98.3,False
-SuperMoney,IDFC First Bank,W25,25,1227,1795859,1.83,99.54,9.9,27.1,98.0,False
-SuperMoney,IDFC First Bank,W26,26,1299,1907518,1.99,99.68,5.9,17.6,98.2,False
-SuperMoney,IDFC First Bank,W27,27,1155,1662081,1.79,99.92,-11.1,0.0,98.4,False
-SuperMoney,IDFC First Bank,W28,28,1143,1662005,1.81,99.52,-1.0,0.0,98.0,False
-SuperMoney,IDFC First Bank,W29,29,1189,1763515,1.87,99.68,4.0,11.2,98.2,False
-SuperMoney,IDFC First Bank,W30,30,589,927427,1.85,100.0,15.6,43.3,98.5,False
-WhatsApp Pay,HDFC Bank,W1,1,321,472574,0.56,99.51,,0.0,98.0,False
-WhatsApp Pay,HDFC Bank,W2,2,319,445815,0.57,98.69,-0.6,0.0,97.2,False
-WhatsApp Pay,HDFC Bank,W3,3,352,510835,0.63,97.31,10.3,9.7,95.8,False
-WhatsApp Pay,HDFC Bank,W4,4,387,565404,0.63,99.74,9.9,9.4,98.2,False
-WhatsApp Pay,HDFC Bank,W5,5,337,537385,0.59,100.0,-12.9,0.0,98.5,False
-WhatsApp Pay,HDFC Bank,W6,6,342,522342,0.6,98.81,1.5,1.4,97.3,False
-WhatsApp Pay,HDFC Bank,W7,7,349,455328,0.61,100.0,2.0,1.8,98.5,False
-WhatsApp Pay,HDFC Bank,W8,8,371,572252,0.57,99.71,6.3,5.4,98.2,False
-WhatsApp Pay,HDFC Bank,W9,9,342,470623,0.59,99.54,-7.8,0.0,98.0,False
-WhatsApp Pay,HDFC Bank,W10,10,372,568656,0.6,98.64,8.8,7.9,97.1,False
-WhatsApp Pay,HDFC Bank,W11,11,366,482044,0.63,99.46,-1.6,0.0,98.0,False
-WhatsApp Pay,HDFC Bank,W12,12,401,564667,0.64,99.77,9.6,9.2,98.3,False
-WhatsApp Pay,HDFC Bank,W13,13,373,557453,0.59,99.57,-7.0,0.0,98.1,False
-WhatsApp Pay,HDFC Bank,W14,14,345,448768,0.58,98.8,-7.5,0.0,97.3,False
-WhatsApp Pay,HDFC Bank,W15,15,375,482083,0.63,99.7,8.7,8.2,98.2,False
-WhatsApp Pay,HDFC Bank,W16,16,346,452840,0.58,99.71,-7.7,0.0,98.2,False
-WhatsApp Pay,HDFC Bank,W17,17,365,481379,0.58,100.0,5.5,4.8,98.5,False
-WhatsApp Pay,HDFC Bank,W18,18,319,414459,0.53,99.42,-12.6,0.0,97.9,False
-WhatsApp Pay,HDFC Bank,W19,19,337,416692,0.56,99.68,5.6,4.7,98.2,False
-WhatsApp Pay,HDFC Bank,W20,20,337,419662,0.54,99.49,0.0,0.0,98.0,False
-WhatsApp Pay,HDFC Bank,W21,21,402,520145,0.6,100.0,19.3,17.2,98.5,False
-WhatsApp Pay,HDFC Bank,W22,22,362,428094,0.59,98.83,-10.0,0.0,97.3,False
-WhatsApp Pay,HDFC Bank,W23,23,367,513650,0.57,99.39,1.4,1.2,97.9,False
-WhatsApp Pay,HDFC Bank,W24,24,343,450888,0.55,100.0,-6.5,0.0,98.5,False
-WhatsApp Pay,HDFC Bank,W25,25,417,536724,0.62,99.34,21.6,20.1,97.8,False
-WhatsApp Pay,HDFC Bank,W26,26,353,450805,0.54,99.05,-15.3,0.0,97.6,False
-WhatsApp Pay,HDFC Bank,W27,27,360,516053,0.56,99.74,2.0,1.7,98.2,False
-WhatsApp Pay,HDFC Bank,W28,28,397,544876,0.63,100.0,10.3,9.7,98.5,False
-WhatsApp Pay,HDFC Bank,W29,29,376,514207,0.59,100.0,-5.3,0.0,98.5,False
-WhatsApp Pay,HDFC Bank,W30,30,185,256294,0.58,100.0,14.8,12.9,98.5,False
-YONO SBI,Union Bank of India,W1,1,509,776811,0.89,99.58,,0.0,98.1,False
-YONO SBI,Union Bank of India,W2,2,479,731166,0.86,98.67,-5.9,0.0,97.2,False
-YONO SBI,Union Bank of India,W3,3,490,764082,0.88,99.04,2.3,3.0,97.5,False
-YONO SBI,Union Bank of India,W4,4,502,708298,0.82,99.41,2.4,2.9,97.9,False
-YONO SBI,Union Bank of India,W5,5,482,712212,0.85,99.21,-4.0,0.0,97.7,False
-YONO SBI,Union Bank of India,W6,6,493,684875,0.87,98.37,2.3,3.0,96.9,False
-YONO SBI,Union Bank of India,W7,7,538,684490,0.94,99.52,9.1,12.8,98.0,False
-YONO SBI,Union Bank of India,W8,8,576,800070,0.89,99.12,7.1,9.5,97.6,False
-YONO SBI,Union Bank of India,W9,9,514,752089,0.89,99.59,-10.8,0.0,98.1,False
-YONO SBI,Union Bank of India,W10,10,530,788101,0.85,99.27,3.1,4.0,97.8,False
-YONO SBI,Union Bank of India,W11,11,520,703092,0.89,99.64,-1.9,0.0,98.1,False
-YONO SBI,Union Bank of India,W12,12,565,767134,0.9,100.0,8.7,11.7,98.5,False
-YONO SBI,Union Bank of India,W13,13,567,725192,0.9,99.13,0.4,0.5,97.6,False
-YONO SBI,Union Bank of India,W14,14,508,626611,0.86,99.45,-10.4,0.0,98.0,False
-YONO SBI,Union Bank of India,W15,15,516,717288,0.87,99.07,1.6,2.1,97.6,False
-YONO SBI,Union Bank of India,W16,16,545,723660,0.91,99.6,5.6,7.7,98.1,False
-YONO SBI,Union Bank of India,W17,17,557,711651,0.89,99.81,2.2,2.9,98.3,False
-YONO SBI,Union Bank of India,W18,18,486,621701,0.81,99.84,-12.7,0.0,98.3,False
-YONO SBI,Union Bank of India,W19,19,530,765518,0.88,99.57,9.1,12.0,98.1,False
-YONO SBI,Union Bank of India,W20,20,559,700333,0.9,99.3,5.5,7.4,97.8,False
-YONO SBI,Union Bank of India,W21,21,591,730384,0.88,99.37,5.7,7.5,97.9,False
-YONO SBI,Union Bank of India,W22,22,553,700711,0.9,99.05,-6.4,0.0,97.5,False
-YONO SBI,Union Bank of India,W23,23,570,785754,0.89,99.84,3.1,4.1,98.3,False
-YONO SBI,Union Bank of India,W24,24,571,801246,0.92,99.65,0.2,0.3,98.2,False
-YONO SBI,Union Bank of India,W25,25,569,790023,0.85,99.51,-0.4,0.0,98.0,False
-YONO SBI,Union Bank of India,W26,26,556,671448,0.85,99.84,-2.3,0.0,98.3,False
-YONO SBI,Union Bank of India,W27,27,540,670510,0.83,99.64,-2.9,0.0,98.1,False
-YONO SBI,Union Bank of India,W28,28,551,725492,0.87,99.42,2.0,2.6,97.9,False
-YONO SBI,Union Bank of India,W29,29,526,627585,0.83,98.56,-4.5,0.0,97.1,False
-YONO SBI,Union Bank of India,W30,30,308,458901,0.97,100.0,36.6,53.2,98.5,False
-iMobile Pay,Canara Bank,W1,1,331,523691,0.58,100.0,,0.0,98.5,False
-iMobile Pay,Canara Bank,W2,2,302,553369,0.54,98.88,-8.8,0.0,97.4,False
-iMobile Pay,Canara Bank,W3,3,332,482230,0.59,98.54,9.9,8.8,97.0,False
-iMobile Pay,Canara Bank,W4,4,326,595689,0.53,99.29,-1.8,0.0,97.8,False
-iMobile Pay,Canara Bank,W5,5,282,429900,0.5,98.35,-13.5,0.0,96.8,False
-iMobile Pay,Canara Bank,W6,6,291,488705,0.51,99.67,3.2,2.5,98.2,False
-iMobile Pay,Canara Bank,W7,7,346,524006,0.6,99.79,18.9,17.1,98.3,False
-iMobile Pay,Canara Bank,W8,8,386,607702,0.6,99.41,11.6,10.4,97.9,False
-iMobile Pay,Canara Bank,W9,9,328,567512,0.57,99.18,-15.0,0.0,97.7,False
-iMobile Pay,Canara Bank,W10,10,356,530227,0.57,100.0,8.5,7.3,98.5,False
-iMobile Pay,Canara Bank,W11,11,314,483829,0.54,99.06,-11.8,0.0,97.6,False
-iMobile Pay,Canara Bank,W12,12,366,557708,0.58,98.94,16.6,14.5,97.4,False
-iMobile Pay,Canara Bank,W13,13,350,500126,0.55,99.12,-4.4,0.0,97.6,False
-iMobile Pay,Canara Bank,W14,14,299,459092,0.51,98.87,-14.6,0.0,97.4,False
-iMobile Pay,Canara Bank,W15,15,295,447505,0.5,100.0,-1.3,0.0,98.5,False
-iMobile Pay,Canara Bank,W16,16,309,443104,0.52,100.0,4.7,3.7,98.5,False
-iMobile Pay,Canara Bank,W17,17,373,591844,0.59,100.0,20.7,18.5,98.5,False
-iMobile Pay,Canara Bank,W18,18,344,521683,0.57,99.71,-7.8,0.0,98.2,False
-iMobile Pay,Canara Bank,W19,19,325,518718,0.54,98.92,-5.5,0.0,97.4,False
-iMobile Pay,Canara Bank,W20,20,337,515705,0.54,98.88,3.7,3.0,97.4,False
-iMobile Pay,Canara Bank,W21,21,362,539452,0.54,99.25,7.4,6.0,97.7,False
-iMobile Pay,Canara Bank,W22,22,345,494873,0.56,99.49,-4.7,0.0,98.0,False
-iMobile Pay,Canara Bank,W23,23,353,499961,0.55,100.0,2.3,1.9,98.5,False
-iMobile Pay,Canara Bank,W24,24,316,525840,0.51,99.23,-10.5,0.0,97.7,False
-iMobile Pay,Canara Bank,W25,25,367,638527,0.55,99.69,16.1,13.2,98.2,False
-iMobile Pay,Canara Bank,W26,26,327,509621,0.5,99.74,-10.9,0.0,98.2,False
-iMobile Pay,Canara Bank,W27,27,339,562646,0.52,100.0,3.7,2.9,98.5,False
-iMobile Pay,Canara Bank,W28,28,319,452556,0.5,99.38,-5.9,0.0,97.9,False
-iMobile Pay,Canara Bank,W29,29,316,573020,0.5,99.78,-0.9,0.0,98.3,False
-iMobile Pay,Canara Bank,W30,30,195,301556,0.61,100.0,44.0,40.5,98.5,False
+psp,tier,week,week_index,date,txns,value_inr,market_share_pct,success_rate,p95_latency_ms,wow_growth_pct,incidents,health_score,health_grade
+Amazon Pay,Tier 3,W1,1,2026-01-05,306,403081.0,0.42,95.42,1131,,0,97.1,Healthy
+Amazon Pay,Tier 3,W2,2,2026-01-12,314,333635.0,0.44,94.9,1133,2.61,0,96.8,Healthy
+Amazon Pay,Tier 3,W3,3,2026-01-19,306,257121.0,0.4,93.46,1424,-2.55,0,83.6,Watch
+Amazon Pay,Tier 3,W4,4,2026-01-26,291,267840.0,0.41,95.53,1147,-4.9,0,97.3,Healthy
+Amazon Pay,Tier 3,W5,5,2026-02-02,323,430914.0,0.4,95.05,1415,11.0,0,90.0,Healthy
+Amazon Pay,Tier 3,W6,6,2026-02-09,299,302643.0,0.42,95.32,1326,-7.43,0,95.3,Healthy
+Amazon Pay,Tier 3,W7,7,2026-02-16,322,330574.0,0.44,95.96,1202,7.69,0,96.6,Healthy
+Amazon Pay,Tier 3,W8,8,2026-02-23,353,483815.0,0.43,94.05,1334,9.63,0,88.4,Watch
+Amazon Pay,Tier 3,W9,9,2026-03-02,437,574539.0,0.45,95.42,1182,23.8,0,94.8,Healthy
+Amazon Pay,Tier 3,W10,10,2026-03-09,353,380254.0,0.45,95.75,1187,-19.22,0,96.8,Healthy
+Amazon Pay,Tier 3,W11,11,2026-03-16,370,389422.0,0.41,97.3,1378,4.82,0,94.7,Healthy
+Amazon Pay,Tier 3,W12,12,2026-03-23,358,371406.0,0.46,94.69,1640,-3.24,0,91.8,Healthy
+Amazon Pay,Tier 3,W13,13,2026-03-30,354,431318.0,0.38,96.05,1394,-1.12,0,94.5,Healthy
+Amazon Pay,Tier 3,W14,14,2026-04-06,382,445743.0,0.43,95.03,1253,7.91,0,90.1,Healthy
+Amazon Pay,Tier 3,W15,15,2026-04-13,368,714991.0,0.42,95.11,1525,-3.66,0,93.1,Healthy
+Amazon Pay,Tier 3,W16,16,2026-04-20,408,523728.0,0.47,95.83,1113,10.87,0,97.6,Healthy
+Amazon Pay,Tier 3,W17,17,2026-04-27,398,658272.0,0.4,97.49,1118,-2.45,0,97.6,Healthy
+Amazon Pay,Tier 3,W18,18,2026-05-04,401,566033.0,0.37,98.5,1265,0.75,0,95.9,Healthy
+Amazon Pay,Tier 3,W19,19,2026-05-11,427,679867.0,0.42,95.32,1343,6.48,0,94.3,Healthy
+Amazon Pay,Tier 3,W20,20,2026-05-18,377,407063.0,0.38,95.49,1342,-11.71,0,90.3,Healthy
+Amazon Pay,Tier 3,W21,21,2026-05-25,397,472767.0,0.38,97.98,1270,5.31,0,95.9,Healthy
+Amazon Pay,Tier 3,W22,22,2026-06-01,399,456684.0,0.36,97.49,1117,0.5,0,97.6,Healthy
+Amazon Pay,Tier 3,W23,23,2026-06-08,404,660408.0,0.4,97.03,1213,1.25,0,96.5,Healthy
+Amazon Pay,Tier 3,W24,24,2026-06-15,404,633074.0,0.38,96.78,1180,0.0,0,96.9,Healthy
+Amazon Pay,Tier 3,W25,25,2026-06-22,375,329447.0,0.38,97.6,1145,-7.18,0,97.3,Healthy
+Amazon Pay,Tier 3,W26,26,2026-06-29,467,543090.0,0.37,96.15,1407,24.53,0,94.4,Healthy
+Amazon Pay,Tier 3,W27,27,2026-07-06,452,584514.0,0.4,96.68,1419,-3.21,0,94.2,Healthy
+Amazon Pay,Tier 3,W28,28,2026-07-13,401,366193.0,0.38,96.51,1203,-11.28,0,96.6,Healthy
+Amazon Pay,Tier 3,W29,29,2026-07-20,372,708186.0,0.37,94.89,1079,-7.23,0,90.6,Healthy
+Amazon Pay,Tier 3,W30,30,2026-07-27,174,260457.0,0.38,94.83,1246,-53.23,0,86.8,Watch
+Axis Mobile,Tier 3,W1,1,2026-01-05,447,450120.0,0.62,96.2,1258,,0,96.0,Healthy
+Axis Mobile,Tier 3,W2,2,2026-01-12,435,579735.0,0.61,95.63,1315,-2.68,0,95.4,Healthy
+Axis Mobile,Tier 3,W3,3,2026-01-19,454,461578.0,0.6,96.48,1873,4.37,0,89.2,Watch
+Axis Mobile,Tier 3,W4,4,2026-01-26,465,412250.0,0.66,92.69,1284,2.42,0,81.0,Watch
+Axis Mobile,Tier 3,W5,5,2026-02-02,513,466693.0,0.64,96.3,1463,10.32,0,93.7,Healthy
+Axis Mobile,Tier 3,W6,6,2026-02-09,495,505428.0,0.69,95.76,1789,-3.51,0,90.1,Healthy
+Axis Mobile,Tier 3,W7,7,2026-02-16,463,433391.0,0.64,94.82,1345,-6.46,0,91.6,Healthy
+Axis Mobile,Tier 3,W8,8,2026-02-23,517,569527.0,0.63,95.36,1381,11.66,0,94.7,Healthy
+Axis Mobile,Tier 3,W9,9,2026-03-02,590,744860.0,0.6,96.61,1252,14.12,0,96.1,Healthy
+Axis Mobile,Tier 3,W10,10,2026-03-09,524,554025.0,0.66,94.85,1363,-11.19,0,93.7,Healthy
+Axis Mobile,Tier 3,W11,11,2026-03-16,526,498713.0,0.58,95.06,1433,0.38,0,88.4,Watch
+Axis Mobile,Tier 3,W12,12,2026-03-23,478,498444.0,0.62,96.44,1713,-9.13,0,91.0,Healthy
+Axis Mobile,Tier 3,W13,13,2026-03-30,576,573037.0,0.62,96.7,1865,20.5,1,83.3,Watch
+Axis Mobile,Tier 3,W14,14,2026-04-06,551,742433.0,0.61,94.01,1367,-4.34,0,82.7,Watch
+Axis Mobile,Tier 3,W15,15,2026-04-13,569,745856.0,0.64,94.9,1717,3.27,0,90.9,Healthy
+Axis Mobile,Tier 3,W16,16,2026-04-20,550,1041108.0,0.63,96.91,1382,-3.34,0,94.6,Healthy
+Axis Mobile,Tier 3,W17,17,2026-04-27,623,1052852.0,0.63,97.27,1691,13.27,0,91.2,Healthy
+Axis Mobile,Tier 3,W18,18,2026-05-04,679,1053628.0,0.63,96.47,1206,8.99,0,96.6,Healthy
+Axis Mobile,Tier 3,W19,19,2026-05-11,671,756880.0,0.66,96.13,1455,-1.18,0,93.8,Healthy
+Axis Mobile,Tier 3,W20,20,2026-05-18,609,1169554.0,0.61,95.4,1236,-9.24,0,90.9,Healthy
+Axis Mobile,Tier 3,W21,21,2026-05-25,688,646724.0,0.67,95.93,1478,12.97,0,90.0,Healthy
+Axis Mobile,Tier 3,W22,22,2026-06-01,723,911449.0,0.65,96.27,1524,5.09,0,91.1,Healthy
+Axis Mobile,Tier 3,W23,23,2026-06-08,667,819753.0,0.67,96.1,1452,-7.75,0,92.1,Healthy
+Axis Mobile,Tier 3,W24,24,2026-06-15,707,864117.0,0.67,95.9,1541,6.0,0,91.4,Healthy
+Axis Mobile,Tier 3,W25,25,2026-06-22,624,709072.0,0.64,96.47,1455,-11.74,0,93.8,Healthy
+Axis Mobile,Tier 3,W26,26,2026-06-29,861,1049966.0,0.69,96.4,1718,37.98,0,90.9,Healthy
+Axis Mobile,Tier 3,W27,27,2026-07-06,795,1070434.0,0.7,96.35,1450,-7.67,0,93.9,Healthy
+Axis Mobile,Tier 3,W28,28,2026-07-13,692,1091366.0,0.65,97.4,1337,-12.96,0,95.1,Healthy
+Axis Mobile,Tier 3,W29,29,2026-07-20,694,1171848.0,0.69,95.1,1476,0.29,0,87.5,Watch
+Axis Mobile,Tier 3,W30,30,2026-07-27,280,312128.0,0.62,97.86,1096,-59.65,0,97.8,Healthy
+BHIM,Tier 2,W1,1,2026-01-05,754,712885.0,1.04,94.83,1472,,0,89.7,Watch
+BHIM,Tier 2,W2,2,2026-01-12,752,754486.0,1.05,95.48,1403,-0.27,0,94.4,Healthy
+BHIM,Tier 2,W3,3,2026-01-19,815,795786.0,1.08,94.6,1431,8.38,0,90.3,Healthy
+BHIM,Tier 2,W4,4,2026-01-26,771,865162.0,1.1,94.03,1444,-5.4,0,87.3,Watch
+BHIM,Tier 2,W5,5,2026-02-02,821,837245.0,1.02,95.49,1568,6.49,0,91.0,Healthy
+BHIM,Tier 2,W6,6,2026-02-09,766,887019.0,1.06,95.04,1575,-6.7,0,92.5,Healthy
+BHIM,Tier 2,W7,7,2026-02-16,733,996543.0,1.01,95.5,1562,-4.31,0,92.6,Healthy
+BHIM,Tier 2,W8,8,2026-02-23,831,971532.0,1.02,94.46,1752,13.37,0,86.2,Watch
+BHIM,Tier 3,W9,9,2026-03-02,972,1214673.0,0.99,94.55,1568,16.97,0,85.3,Watch
+BHIM,Tier 2,W10,10,2026-03-09,824,976207.0,1.04,94.54,1318,-15.23,0,92.4,Healthy
+BHIM,Tier 3,W11,11,2026-03-16,861,898460.0,0.95,96.05,1337,4.49,0,95.1,Healthy
+BHIM,Tier 2,W12,12,2026-03-23,820,970937.0,1.06,95.49,1515,-4.76,0,93.2,Healthy
+BHIM,Tier 3,W13,13,2026-03-30,927,1250740.0,1.0,95.79,1621,13.05,0,92.0,Healthy
+BHIM,Tier 3,W14,14,2026-04-06,893,925345.0,1.0,96.86,1657,-3.67,0,91.6,Healthy
+BHIM,Tier 3,W15,15,2026-04-13,869,1018081.0,0.98,92.52,1593,-2.69,0,78.0,Watch
+BHIM,Tier 2,W16,16,2026-04-20,884,1009512.0,1.02,96.04,1466,1.73,0,93.7,Healthy
+BHIM,Tier 3,W17,17,2026-04-27,957,1347267.0,0.97,94.88,1547,8.26,0,87.4,Watch
+BHIM,Tier 2,W18,18,2026-05-04,1096,1547051.0,1.01,95.8,1671,14.52,0,88.8,Watch
+BHIM,Tier 3,W19,19,2026-05-11,1008,1664242.0,1.0,95.44,1764,-8.03,0,90.4,Healthy
+BHIM,Tier 2,W20,20,2026-05-18,994,1494263.0,1.0,96.98,1482,-1.39,0,93.5,Healthy
+BHIM,Tier 3,W21,21,2026-05-25,969,1568314.0,0.94,95.98,1507,-2.52,0,90.0,Healthy
+BHIM,Tier 2,W22,22,2026-06-01,1130,1424963.0,1.02,94.87,1526,16.62,0,82.7,Watch
+BHIM,Tier 3,W23,23,2026-06-08,971,1282708.0,0.97,95.88,1690,-14.07,0,88.1,Watch
+BHIM,Tier 3,W24,24,2026-06-15,1000,1820844.0,0.95,94.9,1600,2.99,0,84.7,Watch
+BHIM,Tier 2,W25,25,2026-06-22,1027,1125721.0,1.05,96.98,1608,2.7,0,92.1,Healthy
+BHIM,Tier 3,W26,26,2026-06-29,1239,2219849.0,0.99,95.56,1476,20.64,0,92.5,Healthy
+BHIM,Tier 3,W27,27,2026-07-06,1126,1420160.0,0.99,95.29,1696,-9.12,0,85.0,Watch
+BHIM,Tier 3,W28,28,2026-07-13,1010,1309959.0,0.95,95.94,1576,-10.3,0,89.7,Watch
+BHIM,Tier 2,W29,29,2026-07-20,1027,1505885.0,1.02,95.62,1470,1.68,0,90.6,Healthy
+BHIM,Tier 2,W30,30,2026-07-27,487,721428.0,1.07,95.69,1336,-52.58,0,91.0,Healthy
+CRED,Tier 3,W1,1,2026-01-05,430,452092.0,0.59,95.35,1286,,0,94.9,Healthy
+CRED,Tier 3,W2,2,2026-01-12,406,478756.0,0.57,96.31,1281,-5.58,0,95.8,Healthy
+CRED,Tier 3,W3,3,2026-01-19,469,560278.0,0.62,94.46,1283,15.52,0,91.1,Healthy
+CRED,Tier 3,W4,4,2026-01-26,396,764526.0,0.56,95.71,1451,-15.57,0,93.9,Healthy
+CRED,Tier 3,W5,5,2026-02-02,427,449634.0,0.53,96.49,1246,7.83,0,96.2,Healthy
+CRED,Tier 3,W6,6,2026-02-09,391,426374.0,0.54,94.12,1316,-8.43,0,91.6,Healthy
+CRED,Tier 3,W7,7,2026-02-16,384,398733.0,0.53,95.57,1231,-1.79,0,96.3,Healthy
+CRED,Tier 3,W8,8,2026-02-23,454,493024.0,0.56,94.93,1183,18.23,0,95.3,Healthy
+CRED,Tier 3,W9,9,2026-03-02,548,618075.0,0.56,96.9,1333,20.7,0,95.2,Healthy
+CRED,Tier 3,W10,10,2026-03-09,498,456161.0,0.63,92.37,1562,-9.12,0,76.7,Watch
+CRED,Tier 3,W11,11,2026-03-16,526,469014.0,0.58,95.44,1101,5.62,0,94.3,Healthy
+CRED,Tier 3,W12,12,2026-03-23,475,524544.0,0.62,95.37,1409,-9.7,0,94.3,Healthy
+CRED,Tier 3,W13,13,2026-03-30,537,536195.0,0.58,95.53,1251,13.05,0,96.1,Healthy
+CRED,Tier 3,W14,14,2026-04-06,483,526931.0,0.54,96.48,1450,-10.06,0,93.9,Healthy
+CRED,Tier 3,W15,15,2026-04-13,536,649735.0,0.6,96.46,1494,10.97,0,93.4,Healthy
+CRED,Tier 3,W16,16,2026-04-20,514,750137.0,0.59,95.14,1216,-4.1,0,93.5,Healthy
+CRED,Tier 3,W17,17,2026-04-27,550,832862.0,0.56,95.64,1317,7.0,0,94.5,Healthy
+CRED,Tier 3,W18,18,2026-05-04,650,835028.0,0.6,97.38,1219,18.18,0,96.5,Healthy
+CRED,Tier 3,W19,19,2026-05-11,587,719454.0,0.58,92.84,1430,-9.69,0,78.5,Watch
+CRED,Tier 3,W20,20,2026-05-18,595,912700.0,0.6,97.65,1481,1.36,0,93.5,Healthy
+CRED,Tier 3,W21,21,2026-05-25,623,833723.0,0.6,97.11,1108,4.71,0,97.7,Healthy
+CRED,Tier 3,W22,22,2026-06-01,646,697645.0,0.58,95.98,1132,3.69,0,93.7,Healthy
+CRED,Tier 3,W23,23,2026-06-08,549,614918.0,0.55,96.17,1150,-15.02,0,95.9,Healthy
+CRED,Tier 3,W24,24,2026-06-15,615,838862.0,0.59,96.42,1411,12.02,0,94.3,Healthy
+CRED,Tier 3,W25,25,2026-06-22,604,620174.0,0.61,94.87,1169,-1.79,0,89.2,Watch
+CRED,Tier 3,W26,26,2026-06-29,728,1088551.0,0.58,96.98,1163,20.53,0,97.1,Healthy
+CRED,Tier 3,W27,27,2026-07-06,679,1130480.0,0.6,97.05,1244,-6.73,0,96.2,Healthy
+CRED,Tier 3,W28,28,2026-07-13,690,900991.0,0.65,96.09,1312,1.62,0,93.5,Healthy
+CRED,Tier 3,W29,29,2026-07-20,607,1049001.0,0.6,96.54,1376,-12.03,0,94.7,Healthy
+CRED,Tier 3,W30,30,2026-07-27,259,293517.0,0.57,96.53,1101,-57.33,0,97.8,Healthy
+FamApp,Tier 3,W1,1,2026-01-05,609,527329.0,0.84,95.24,1251,,1,88.6,Watch
+FamApp,Tier 3,W2,2,2026-01-12,609,545611.0,0.85,94.42,1304,0.0,1,85.9,Watch
+FamApp,Tier 3,W3,3,2026-01-19,624,572455.0,0.82,96.31,1209,2.46,0,96.6,Healthy
+FamApp,Tier 3,W4,4,2026-01-26,625,476074.0,0.89,94.88,1123,0.16,0,95.9,Healthy
+FamApp,Tier 3,W5,5,2026-02-02,719,690411.0,0.9,96.66,1239,15.04,0,96.2,Healthy
+FamApp,Tier 3,W6,6,2026-02-09,612,620689.0,0.85,95.92,1309,-14.88,0,95.5,Healthy
+FamApp,Tier 3,W7,7,2026-02-16,577,752222.0,0.79,96.19,1311,-5.72,0,95.4,Healthy
+FamApp,Tier 3,W8,8,2026-02-23,745,636445.0,0.91,96.24,1327,29.12,0,95.3,Healthy
+FamApp,Tier 3,W9,9,2026-03-02,861,1015186.0,0.88,94.77,1192,15.57,0,90.8,Healthy
+FamApp,Tier 3,W10,10,2026-03-09,670,576357.0,0.85,95.37,1340,-22.18,0,95.1,Healthy
+FamApp,Tier 3,W11,11,2026-03-16,757,796916.0,0.84,97.36,1304,12.99,0,95.5,Healthy
+FamApp,Tier 3,W12,12,2026-03-23,648,729779.0,0.84,95.06,1488,-14.4,0,93.5,Healthy
+FamApp,Tier 3,W13,13,2026-03-30,868,1305007.0,0.93,95.51,1477,33.95,0,93.6,Healthy
+FamApp,Tier 3,W14,14,2026-04-06,725,808141.0,0.81,96.41,1145,-16.47,0,97.3,Healthy
+FamApp,Tier 3,W15,15,2026-04-13,740,877156.0,0.83,93.92,1560,2.07,0,86.7,Watch
+FamApp,Tier 3,W16,16,2026-04-20,754,946610.0,0.87,96.02,1270,1.89,0,95.9,Healthy
+FamApp,Tier 3,W17,17,2026-04-27,847,825994.0,0.86,95.28,1288,12.33,0,92.7,Healthy
+FamApp,Tier 3,W18,18,2026-05-04,937,1440018.0,0.87,95.2,1158,10.63,0,90.9,Healthy
+FamApp,Tier 3,W19,19,2026-05-11,867,1419688.0,0.86,93.19,1347,-7.47,0,81.6,Watch
+FamApp,Tier 3,W20,20,2026-05-18,843,1295459.0,0.85,96.09,1447,-2.77,0,92.7,Healthy
+FamApp,Tier 3,W21,21,2026-05-25,839,1239501.0,0.81,96.54,1268,-0.47,0,95.9,Healthy
+FamApp,Tier 3,W22,22,2026-06-01,1046,1100755.0,0.94,97.04,1266,24.67,0,95.9,Healthy
+FamApp,Tier 3,W23,23,2026-06-08,872,1412301.0,0.87,96.67,1209,-16.63,0,96.6,Healthy
+FamApp,Tier 3,W24,24,2026-06-15,905,1224346.0,0.86,96.13,1266,3.78,0,95.8,Healthy
+FamApp,Tier 3,W25,25,2026-06-22,798,990527.0,0.81,98.25,1380,-11.82,0,94.7,Healthy
+FamApp,Tier 3,W26,26,2026-06-29,1051,1531577.0,0.84,94.96,1300,31.7,0,90.8,Healthy
+FamApp,Tier 3,W27,27,2026-07-06,837,978278.0,0.74,95.94,1405,-20.36,0,92.1,Healthy
+FamApp,Tier 3,W28,28,2026-07-13,871,1069366.0,0.82,97.36,1262,4.06,0,96.0,Healthy
+FamApp,Tier 3,W29,29,2026-07-20,866,2082480.0,0.86,97.23,1345,-0.57,0,95.1,Healthy
+FamApp,Tier 3,W30,30,2026-07-27,368,735490.0,0.81,97.55,1251,-57.51,0,96.1,Healthy
+Google Pay,Tier 1,W1,1,2026-01-05,24033,29558514.0,33.09,95.57,1201,,0,96.7,Healthy
+Google Pay,Tier 1,W2,2,2026-01-12,23752,26963796.0,33.07,94.72,1191,-1.17,0,95.0,Healthy
+Google Pay,Tier 1,W3,3,2026-01-19,24832,27969425.0,32.8,95.34,1184,4.55,0,96.8,Healthy
+Google Pay,Tier 1,W4,4,2026-01-26,23180,25643645.0,32.94,95.69,1213,-6.65,0,96.5,Healthy
+Google Pay,Tier 1,W5,5,2026-02-02,26154,30168119.0,32.61,95.75,1199,12.83,0,96.6,Healthy
+Google Pay,Tier 1,W6,6,2026-02-09,24037,26375905.0,33.4,95.02,1318,-8.09,0,95.4,Healthy
+Google Pay,Tier 1,W7,7,2026-02-16,24186,27106591.0,33.22,95.54,1225,0.62,0,96.4,Healthy
+Google Pay,Tier 1,W8,8,2026-02-23,26977,30363904.0,33.05,95.31,1217,11.54,0,96.5,Healthy
+Google Pay,Tier 1,W9,9,2026-03-02,32376,37333470.0,33.06,95.8,1191,20.01,0,96.8,Healthy
+Google Pay,Tier 1,W10,10,2026-03-09,26215,30063623.0,33.23,95.55,1235,-19.03,0,96.3,Healthy
+Google Pay,Tier 1,W11,11,2026-03-16,29940,33941344.0,33.18,95.86,1177,14.21,0,96.0,Healthy
+Google Pay,Tier 1,W12,12,2026-03-23,25218,28781685.0,32.75,94.89,1341,-15.77,0,95.1,Healthy
+Google Pay,Tier 1,W13,13,2026-03-30,31032,43911577.0,33.39,95.42,1313,23.05,0,95.3,Healthy
+Google Pay,Tier 1,W14,14,2026-04-06,29781,37608192.0,33.22,95.81,1214,-4.03,0,95.2,Healthy
+Google Pay,Tier 1,W15,15,2026-04-13,29368,36932407.0,33.13,94.69,1341,-1.39,0,93.8,Healthy
+Google Pay,Tier 1,W16,16,2026-04-20,28762,38384503.0,33.17,95.18,1201,-2.06,0,94.0,Healthy
+Google Pay,Tier 1,W17,17,2026-04-27,32695,43843258.0,33.21,95.73,1239,13.67,1,89.9,Watch
+Google Pay,Tier 1,W18,18,2026-05-04,35768,45439074.0,33.08,95.81,1209,9.4,0,94.0,Healthy
+Google Pay,Tier 1,W19,19,2026-05-11,33381,45066951.0,33.01,95.56,1323,-6.67,0,95.3,Healthy
+Google Pay,Tier 1,W20,20,2026-05-18,32625,47743800.0,32.89,95.99,1242,-2.26,0,94.4,Healthy
+Google Pay,Tier 1,W21,21,2026-05-25,34173,44937308.0,33.1,95.93,1223,4.74,0,92.8,Healthy
+Google Pay,Tier 1,W22,22,2026-06-01,36738,51504644.0,33.03,96.67,1220,7.51,0,96.4,Healthy
+Google Pay,Tier 1,W23,23,2026-06-08,33145,43567136.0,33.11,96.47,1235,-9.78,0,96.3,Healthy
+Google Pay,Tier 1,W24,24,2026-06-15,34870,45766544.0,33.19,96.24,1253,5.2,0,96.1,Healthy
+Google Pay,Tier 1,W25,25,2026-06-22,32339,38933353.0,32.91,95.88,1221,-7.26,0,94.7,Healthy
+Google Pay,Tier 1,W26,26,2026-06-29,41573,53374301.0,33.36,95.7,1304,28.55,0,95.3,Healthy
+Google Pay,Tier 1,W27,27,2026-07-06,37520,46881981.0,33.15,96.5,1203,-9.75,0,96.6,Healthy
+Google Pay,Tier 1,W28,28,2026-07-13,34944,46499855.0,33.03,96.25,1244,-6.87,0,95.3,Healthy
+Google Pay,Tier 1,W29,29,2026-07-20,33121,43463252.0,32.83,96.2,1218,-5.22,0,96.5,Healthy
+Google Pay,Tier 1,W30,30,2026-07-27,14885,19884905.0,32.82,96.13,1217,-55.06,0,94.9,Healthy
+HDFC MobileBanking,Tier 3,W1,1,2026-01-05,378,389443.0,0.52,96.3,1171,,0,97.0,Healthy
+HDFC MobileBanking,Tier 3,W2,2,2026-01-12,376,358726.0,0.52,93.88,1350,-0.53,0,88.2,Watch
+HDFC MobileBanking,Tier 3,W3,3,2026-01-19,396,501320.0,0.52,93.69,1328,5.32,0,86.0,Watch
+HDFC MobileBanking,Tier 3,W4,4,2026-01-26,364,287771.0,0.52,93.68,1267,-8.08,0,87.1,Watch
+HDFC MobileBanking,Tier 3,W5,5,2026-02-02,422,435635.0,0.53,96.68,1479,15.93,0,93.6,Healthy
+HDFC MobileBanking,Tier 3,W6,6,2026-02-09,376,605112.0,0.52,94.41,1459,-10.9,0,91.8,Healthy
+HDFC MobileBanking,Tier 3,W7,7,2026-02-16,371,374598.0,0.51,94.07,1464,-1.33,0,85.8,Watch
+HDFC MobileBanking,Tier 3,W8,8,2026-02-23,386,376152.0,0.47,95.6,1245,4.04,1,90.2,Healthy
+HDFC MobileBanking,Tier 3,W9,9,2026-03-02,509,607355.0,0.52,96.66,1402,31.87,1,88.4,Watch
+HDFC MobileBanking,Tier 3,W10,10,2026-03-09,442,444572.0,0.56,95.7,1423,-13.16,0,94.2,Healthy
+HDFC MobileBanking,Tier 3,W11,11,2026-03-16,454,475280.0,0.5,96.26,1421,2.71,0,94.2,Healthy
+HDFC MobileBanking,Tier 3,W12,12,2026-03-23,446,492284.0,0.58,95.29,1977,-1.76,0,88.0,Watch
+HDFC MobileBanking,Tier 3,W13,13,2026-03-30,448,561595.0,0.48,94.2,1598,0.45,0,84.7,Watch
+HDFC MobileBanking,Tier 3,W14,14,2026-04-06,453,661971.0,0.51,97.35,1472,1.12,0,93.6,Healthy
+HDFC MobileBanking,Tier 3,W15,15,2026-04-13,446,437627.0,0.5,96.19,1671,-1.55,0,91.4,Healthy
+HDFC MobileBanking,Tier 3,W16,16,2026-04-20,468,533618.0,0.54,95.94,1436,4.93,0,94.0,Healthy
+HDFC MobileBanking,Tier 3,W17,17,2026-04-27,525,510418.0,0.53,95.24,1345,12.18,0,91.8,Healthy
+HDFC MobileBanking,Tier 3,W18,18,2026-05-04,556,564969.0,0.51,94.06,1300,5.9,0,82.5,Watch
+HDFC MobileBanking,Tier 3,W19,19,2026-05-11,538,623769.0,0.53,95.91,1468,-3.24,0,93.7,Healthy
+HDFC MobileBanking,Tier 3,W20,20,2026-05-18,545,754376.0,0.55,97.06,1365,1.3,0,94.8,Healthy
+HDFC MobileBanking,Tier 3,W21,21,2026-05-25,552,844718.0,0.53,96.56,1344,1.28,0,95.1,Healthy
+HDFC MobileBanking,Tier 3,W22,22,2026-06-01,627,789054.0,0.56,98.41,1327,13.59,0,95.3,Healthy
+HDFC MobileBanking,Tier 3,W23,23,2026-06-08,531,707961.0,0.53,96.99,1339,-15.31,0,95.1,Healthy
+HDFC MobileBanking,Tier 3,W24,24,2026-06-15,572,625476.0,0.54,95.45,1360,7.72,0,90.7,Healthy
+HDFC MobileBanking,Tier 3,W25,25,2026-06-22,516,600436.0,0.53,95.93,1366,-9.79,0,93.4,Healthy
+HDFC MobileBanking,Tier 3,W26,26,2026-06-29,613,682192.0,0.49,95.92,1411,18.8,0,94.3,Healthy
+HDFC MobileBanking,Tier 3,W27,27,2026-07-06,549,657491.0,0.49,97.45,1324,-10.44,0,95.3,Healthy
+HDFC MobileBanking,Tier 3,W28,28,2026-07-13,568,661674.0,0.54,96.83,1441,3.46,0,94.0,Healthy
+HDFC MobileBanking,Tier 3,W29,29,2026-07-20,544,826501.0,0.54,95.96,1383,-4.23,0,93.6,Healthy
+HDFC MobileBanking,Tier 3,W30,30,2026-07-27,228,290074.0,0.5,96.05,1551,-58.09,0,90.8,Healthy
+Navi,Tier 2,W1,1,2026-01-05,2562,2981682.0,3.53,95.24,1339,,0,93.6,Healthy
+Navi,Tier 2,W2,2,2026-01-12,2567,2967937.0,3.57,94.97,1235,0.2,0,96.1,Healthy
+Navi,Tier 2,W3,3,2026-01-19,2721,2776058.0,3.59,95.7,1234,6.0,0,96.3,Healthy
+Navi,Tier 2,W4,4,2026-01-26,2664,3285703.0,3.79,96.32,1233,-2.09,1,90.3,Healthy
+Navi,Tier 2,W5,5,2026-02-02,2929,3313520.0,3.65,95.8,1256,9.95,0,96.0,Healthy
+Navi,Tier 2,W6,6,2026-02-09,2619,2896787.0,3.64,93.85,1333,-10.58,0,89.8,Watch
+Navi,Tier 2,W7,7,2026-02-16,2683,3086012.0,3.68,94.78,1217,2.44,0,92.8,Healthy
+Navi,Tier 2,W8,8,2026-02-23,3055,3297686.0,3.74,95.84,1205,13.87,0,96.6,Healthy
+Navi,Tier 2,W9,9,2026-03-02,3648,4678980.0,3.72,96.08,1220,19.41,0,96.4,Healthy
+Navi,Tier 2,W10,10,2026-03-09,2840,3455032.0,3.6,95.07,1213,-22.15,0,96.5,Healthy
+Navi,Tier 2,W11,11,2026-03-16,3323,3492990.0,3.68,96.0,1170,17.01,0,96.9,Healthy
+Navi,Tier 2,W12,12,2026-03-23,2953,3195101.0,3.83,94.14,1521,-11.13,0,90.8,Healthy
+Navi,Tier 2,W13,13,2026-03-30,3413,3966280.0,3.67,95.55,1423,15.58,0,94.2,Healthy
+Navi,Tier 2,W14,14,2026-04-06,3226,4221399.0,3.6,97.06,1313,-5.48,0,95.4,Healthy
+Navi,Tier 2,W15,15,2026-04-13,3236,3740976.0,3.65,95.15,1531,0.31,0,93.0,Healthy
+Navi,Tier 2,W16,16,2026-04-20,3176,4726139.0,3.66,96.0,1416,-1.85,0,94.3,Healthy
+Navi,Tier 2,W17,17,2026-04-27,3601,4563626.0,3.66,95.47,1345,13.38,0,93.2,Healthy
+Navi,Tier 2,W18,18,2026-05-04,3884,5133313.0,3.59,95.55,1310,7.86,0,91.3,Healthy
+Navi,Tier 2,W19,19,2026-05-11,3693,4999815.0,3.65,95.21,1393,-4.92,0,93.1,Healthy
+Navi,Tier 2,W20,20,2026-05-18,3726,4749571.0,3.76,95.73,1254,0.89,0,92.7,Healthy
+Navi,Tier 2,W21,21,2026-05-25,3867,4606946.0,3.75,95.84,1297,3.78,0,91.5,Healthy
+Navi,Tier 2,W22,22,2026-06-01,4019,5573370.0,3.61,96.67,1343,3.93,0,95.1,Healthy
+Navi,Tier 2,W23,23,2026-06-08,3642,4150724.0,3.64,96.46,1268,-9.38,0,95.9,Healthy
+Navi,Tier 2,W24,24,2026-06-15,3881,4785976.0,3.69,96.5,1333,6.56,0,95.2,Healthy
+Navi,Tier 2,W25,25,2026-06-22,3613,4404652.0,3.68,95.96,1329,-6.91,0,94.0,Healthy
+Navi,Tier 2,W26,26,2026-06-29,4643,6776188.0,3.73,95.74,1405,28.51,0,94.3,Healthy
+Navi,Tier 2,W27,27,2026-07-06,4245,4836768.0,3.75,96.25,1310,-8.57,0,95.1,Healthy
+Navi,Tier 2,W28,28,2026-07-13,3865,5988788.0,3.65,96.71,1381,-8.95,0,94.7,Healthy
+Navi,Tier 2,W29,29,2026-07-20,3606,4728745.0,3.57,96.45,1347,-6.7,0,95.0,Healthy
+Navi,Tier 2,W30,30,2026-07-27,1697,2513915.0,3.74,95.93,1348,-52.94,0,92.3,Healthy
+Paytm,Tier 1,W1,1,2026-01-05,5860,6125710.0,8.07,95.31,1283,,0,94.7,Healthy
+Paytm,Tier 1,W2,2,2026-01-12,5830,6824754.0,8.12,94.7,1372,-0.51,0,92.9,Healthy
+Paytm,Tier 1,W3,3,2026-01-19,6108,7788025.0,8.07,94.7,1288,4.77,0,92.5,Healthy
+Paytm,Tier 1,W4,4,2026-01-26,5866,6195763.0,8.34,95.52,1306,-3.96,0,95.5,Healthy
+Paytm,Tier 1,W5,5,2026-02-02,6678,7913932.0,8.33,95.42,1317,13.84,0,93.3,Healthy
+Paytm,Tier 1,W6,6,2026-02-09,5820,6418884.0,8.09,94.48,1377,-12.85,0,93.1,Healthy
+Paytm,Tier 1,W7,7,2026-02-16,5993,6601476.0,8.23,95.39,1370,2.97,0,94.8,Healthy
+Paytm,Tier 1,W8,8,2026-02-23,6668,6705500.0,8.17,95.14,1290,11.26,0,95.4,Healthy
+Paytm,Tier 1,W9,9,2026-03-02,7972,8382070.0,8.14,95.82,1256,19.56,0,96.0,Healthy
+Paytm,Tier 1,W10,10,2026-03-09,6344,7867212.0,8.04,95.48,1351,-20.42,0,95.0,Healthy
+Paytm,Tier 1,W11,11,2026-03-16,7449,8003561.0,8.26,95.95,1297,17.42,0,95.2,Healthy
+Paytm,Tier 1,W12,12,2026-03-23,6328,7212899.0,8.22,95.05,1487,-15.05,0,93.5,Healthy
+Paytm,Tier 1,W13,13,2026-03-30,7470,10130265.0,8.04,95.56,1459,18.05,0,93.8,Healthy
+Paytm,Tier 1,W14,14,2026-04-06,7329,9948347.0,8.18,95.97,1331,-1.89,0,94.9,Healthy
+Paytm,Tier 1,W15,15,2026-04-13,7284,9580037.0,8.22,94.4,1510,-0.61,0,90.2,Healthy
+Paytm,Tier 1,W16,16,2026-04-20,7103,9720774.0,8.19,95.19,1326,-2.48,0,92.6,Healthy
+Paytm,Tier 1,W17,17,2026-04-27,8025,10717770.0,8.15,95.99,1375,12.98,0,94.7,Healthy
+Paytm,Tier 1,W18,18,2026-05-04,8707,13263682.0,8.05,96.3,1355,8.5,0,94.9,Healthy
+Paytm,Tier 1,W19,19,2026-05-11,8109,11784234.0,8.02,95.61,1428,-6.87,0,94.1,Healthy
+Paytm,Tier 1,W20,20,2026-05-18,8191,10794311.0,8.26,95.73,1365,1.01,0,91.4,Healthy
+Paytm,Tier 1,W21,21,2026-05-25,8550,11389212.0,8.28,95.95,1319,4.38,0,91.9,Healthy
+Paytm,Tier 1,W22,22,2026-06-01,9152,12746121.0,8.23,96.58,1334,7.04,0,95.1,Healthy
+Paytm,Tier 1,W23,23,2026-06-08,8283,10273432.0,8.27,96.11,1365,-9.5,0,93.1,Healthy
+Paytm,Tier 1,W24,24,2026-06-15,8801,11491149.0,8.38,96.23,1429,6.25,0,94.1,Healthy
+Paytm,Tier 1,W25,25,2026-06-22,8085,10025851.0,8.23,95.98,1412,-8.14,0,93.2,Healthy
+Paytm,Tier 1,W26,26,2026-06-29,10159,13852122.0,8.15,95.78,1422,25.65,0,94.2,Healthy
+Paytm,Tier 1,W27,27,2026-07-06,9229,13207609.0,8.15,96.49,1327,-9.15,0,95.3,Healthy
+Paytm,Tier 1,W28,28,2026-07-13,8799,11880655.0,8.32,95.93,1346,-4.66,0,92.2,Healthy
+Paytm,Tier 1,W29,29,2026-07-20,8256,12366985.0,8.18,96.41,1398,-6.17,0,94.5,Healthy
+Paytm,Tier 1,W30,30,2026-07-27,3708,4756852.0,8.18,96.25,1308,-55.09,0,94.6,Healthy
+PhonePe,Tier 1,W1,1,2026-01-05,34271,37999281.0,47.19,95.33,1239,,0,95.3,Healthy
+PhonePe,Tier 1,W2,2,2026-01-12,34024,37235982.0,47.38,95.12,1234,-0.72,1,90.3,Healthy
+PhonePe,Tier 1,W3,3,2026-01-19,35927,39478451.0,47.46,94.99,1243,5.59,0,94.8,Healthy
+PhonePe,Tier 1,W4,4,2026-01-26,32966,36502506.0,46.85,95.04,1243,-8.24,0,95.6,Healthy
+PhonePe,Tier 1,W5,5,2026-02-02,38057,45349659.0,47.45,95.8,1239,15.44,0,96.2,Healthy
+PhonePe,Tier 1,W6,6,2026-02-09,33819,36618157.0,46.99,95.1,1354,-11.14,0,95.0,Healthy
+PhonePe,Tier 1,W7,7,2026-02-16,34281,39452423.0,47.08,95.48,1230,1.37,0,96.3,Healthy
+PhonePe,Tier 1,W8,8,2026-02-23,38428,44071118.0,47.08,95.21,1251,12.1,0,96.1,Healthy
+PhonePe,Tier 1,W9,9,2026-03-02,46155,53089131.0,47.13,96.04,1210,20.11,0,96.6,Healthy
+PhonePe,Tier 1,W10,10,2026-03-09,37132,41276641.0,47.06,95.58,1271,-19.55,0,95.9,Healthy
+PhonePe,Tier 1,W11,11,2026-03-16,42489,45903146.0,47.09,96.0,1228,14.43,0,96.3,Healthy
+PhonePe,Tier 1,W12,12,2026-03-23,36265,44620039.0,47.09,94.91,1385,-14.65,0,94.6,Healthy
+PhonePe,Tier 1,W13,13,2026-03-30,43665,55531965.0,46.98,95.17,1380,20.41,0,93.0,Healthy
+PhonePe,Tier 1,W14,14,2026-04-06,42196,53227644.0,47.07,95.98,1254,-3.36,0,95.8,Healthy
+PhonePe,Tier 1,W15,15,2026-04-13,41894,51659935.0,47.26,94.78,1378,-0.72,1,87.9,Watch
+PhonePe,Tier 1,W16,16,2026-04-20,40793,52489264.0,47.05,95.78,1275,-2.63,0,95.8,Healthy
+PhonePe,Tier 1,W17,17,2026-04-27,46472,60433232.0,47.2,95.59,1290,13.92,2,82.5,Watch
+PhonePe,Tier 1,W18,18,2026-05-04,51305,69129332.0,47.45,95.98,1234,10.4,1,88.7,Watch
+PhonePe,Tier 1,W19,19,2026-05-11,47981,63055663.0,47.45,95.72,1354,-6.48,0,95.0,Healthy
+PhonePe,Tier 1,W20,20,2026-05-18,46914,62424845.0,47.29,96.1,1264,-2.22,1,88.8,Watch
+PhonePe,Tier 1,W21,21,2026-05-25,48635,62910345.0,47.1,96.28,1244,3.67,0,94.7,Healthy
+PhonePe,Tier 1,W22,22,2026-06-01,52294,72372776.0,47.02,96.48,1251,7.52,0,95.4,Healthy
+PhonePe,Tier 1,W23,23,2026-06-08,47207,58825064.0,47.16,96.13,1263,-9.73,0,94.3,Healthy
+PhonePe,Tier 1,W24,24,2026-06-15,49176,62938902.0,46.81,96.1,1254,4.17,0,95.8,Healthy
+PhonePe,Tier 1,W25,25,2026-06-22,46473,57231490.0,47.3,95.94,1282,-5.5,0,94.4,Healthy
+PhonePe,Tier 1,W26,26,2026-06-29,58352,73790657.0,46.82,95.89,1357,25.56,0,94.9,Healthy
+PhonePe,Tier 1,W27,27,2026-07-06,53284,67046492.0,47.08,96.27,1268,-8.69,0,95.6,Healthy
+PhonePe,Tier 1,W28,28,2026-07-13,49729,69582643.0,47.0,96.23,1280,-6.67,0,94.8,Healthy
+PhonePe,Tier 1,W29,29,2026-07-20,47840,61423014.0,47.42,95.9,1268,-3.8,0,94.6,Healthy
+PhonePe,Tier 1,W30,30,2026-07-27,21471,27528177.0,47.34,96.24,1258,-55.12,0,95.1,Healthy
+SuperMoney,Tier 2,W1,1,2026-01-05,1510,2042016.0,2.08,95.96,1182,,0,96.9,Healthy
+SuperMoney,Tier 2,W2,2,2026-01-12,1377,1682628.0,1.92,94.92,1351,-8.81,0,94.4,Healthy
+SuperMoney,Tier 2,W3,3,2026-01-19,1545,1613730.0,2.04,95.15,1330,12.2,0,94.7,Healthy
+SuperMoney,Tier 2,W4,4,2026-01-26,1391,1683846.0,1.98,95.83,1264,-9.97,0,96.0,Healthy
+SuperMoney,Tier 2,W5,5,2026-02-02,1555,1734890.0,1.94,96.4,1315,11.79,0,95.4,Healthy
+SuperMoney,Tier 2,W6,6,2026-02-09,1376,1406162.0,1.91,95.35,1458,-11.51,0,93.8,Healthy
+SuperMoney,Tier 2,W7,7,2026-02-16,1374,1415678.0,1.89,95.78,1336,-0.15,0,95.2,Healthy
+SuperMoney,Tier 2,W8,8,2026-02-23,1583,1883659.0,1.94,95.7,1403,15.21,0,94.4,Healthy
+SuperMoney,Tier 2,W9,9,2026-03-02,1914,2407886.0,1.95,96.34,1329,20.91,0,95.2,Healthy
+SuperMoney,Tier 2,W10,10,2026-03-09,1545,1898876.0,1.96,95.15,1429,-19.28,0,94.1,Healthy
+SuperMoney,Tier 2,W11,11,2026-03-16,1759,1742748.0,1.95,95.79,1361,13.85,0,93.6,Healthy
+SuperMoney,Tier 2,W12,12,2026-03-23,1506,1758329.0,1.96,93.43,1570,-14.38,0,86.0,Watch
+SuperMoney,Tier 2,W13,13,2026-03-30,1835,2213976.0,1.97,94.22,1429,21.85,0,86.8,Watch
+SuperMoney,Tier 2,W14,14,2026-04-06,1831,2294926.0,2.04,96.5,1437,-0.22,0,94.0,Healthy
+SuperMoney,Tier 2,W15,15,2026-04-13,1623,2791726.0,1.83,94.58,1514,-11.36,1,85.2,Watch
+SuperMoney,Tier 2,W16,16,2026-04-20,1626,2309061.0,1.88,95.63,1330,0.18,0,95.2,Healthy
+SuperMoney,Tier 2,W17,17,2026-04-27,1836,2710513.0,1.86,95.81,1385,12.92,0,94.6,Healthy
+SuperMoney,Tier 2,W18,18,2026-05-04,2028,2527645.0,1.88,95.76,1364,10.46,0,92.0,Healthy
+SuperMoney,Tier 2,W19,19,2026-05-11,1935,2536182.0,1.91,96.02,1520,-4.59,0,93.1,Healthy
+SuperMoney,Tier 2,W20,20,2026-05-18,1851,2486147.0,1.87,96.97,1247,-4.34,0,96.2,Healthy
+SuperMoney,Tier 2,W21,21,2026-05-25,1964,3302175.0,1.9,95.32,1440,6.1,0,86.8,Watch
+SuperMoney,Tier 2,W22,22,2026-06-01,2254,2755418.0,2.03,96.23,1466,14.77,0,91.5,Healthy
+SuperMoney,Tier 2,W23,23,2026-06-08,1775,2415189.0,1.77,96.0,1295,-21.25,0,93.2,Healthy
+SuperMoney,Tier 2,W24,24,2026-06-15,2051,2372299.0,1.95,96.29,1364,15.55,0,94.8,Healthy
+SuperMoney,Tier 2,W25,25,2026-06-22,1923,2158179.0,1.96,95.32,1277,-6.24,0,90.7,Healthy
+SuperMoney,Tier 2,W26,26,2026-06-29,2475,3571113.0,1.99,95.52,1568,28.71,0,91.2,Healthy
+SuperMoney,Tier 2,W27,27,2026-07-06,2225,2624991.0,1.97,96.94,1323,-10.1,0,95.3,Healthy
+SuperMoney,Tier 2,W28,28,2026-07-13,2059,2626497.0,1.95,96.94,1437,-7.46,0,94.0,Healthy
+SuperMoney,Tier 2,W29,29,2026-07-20,2058,2934124.0,2.04,96.02,1396,-0.05,0,93.8,Healthy
+SuperMoney,Tier 2,W30,30,2026-07-27,908,1045519.0,2.0,95.93,1413,-55.88,0,91.5,Healthy
+WhatsApp Pay,Tier 3,W1,1,2026-01-05,525,500944.0,0.72,95.81,1211,,0,96.5,Healthy
+WhatsApp Pay,Tier 3,W2,2,2026-01-12,485,583655.0,0.68,93.61,1134,-7.62,0,89.0,Watch
+WhatsApp Pay,Tier 3,W3,3,2026-01-19,534,606651.0,0.71,96.63,1247,10.1,0,96.1,Healthy
+WhatsApp Pay,Tier 3,W4,4,2026-01-26,489,670325.0,0.69,95.09,1253,-8.43,0,95.8,Healthy
+WhatsApp Pay,Tier 3,W5,5,2026-02-02,598,682906.0,0.75,95.48,1343,22.29,0,93.4,Healthy
+WhatsApp Pay,Tier 3,W6,6,2026-02-09,494,603065.0,0.69,94.74,1469,-17.39,0,93.6,Healthy
+WhatsApp Pay,Tier 3,W7,7,2026-02-16,502,430522.0,0.69,96.22,1168,1.62,0,97.0,Healthy
+WhatsApp Pay,Tier 3,W8,8,2026-02-23,598,750733.0,0.73,95.32,1360,19.12,0,94.9,Healthy
+WhatsApp Pay,Tier 3,W9,9,2026-03-02,688,693787.0,0.7,94.91,1225,15.05,0,91.3,Healthy
+WhatsApp Pay,Tier 3,W10,10,2026-03-09,550,524468.0,0.7,93.09,1374,-20.06,0,83.1,Watch
+WhatsApp Pay,Tier 3,W11,11,2026-03-16,591,641439.0,0.66,95.94,1170,7.45,0,96.6,Healthy
+WhatsApp Pay,Tier 3,W12,12,2026-03-23,538,517209.0,0.7,94.24,1334,-8.97,0,93.4,Healthy
+WhatsApp Pay,Tier 3,W13,13,2026-03-30,586,1136729.0,0.63,96.25,1405,8.92,0,94.4,Healthy
+WhatsApp Pay,Tier 3,W14,14,2026-04-06,618,647992.0,0.69,94.98,1335,5.46,0,88.9,Watch
+WhatsApp Pay,Tier 3,W15,15,2026-04-13,604,753781.0,0.68,95.03,1281,-2.27,0,95.8,Healthy
+WhatsApp Pay,Tier 3,W16,16,2026-04-20,595,687707.0,0.69,94.96,1331,-1.49,0,91.2,Healthy
+WhatsApp Pay,Tier 3,W17,17,2026-04-27,631,575476.0,0.64,96.35,1345,6.05,0,95.1,Healthy
+WhatsApp Pay,Tier 3,W18,18,2026-05-04,705,917675.0,0.65,96.31,1300,11.73,0,95.6,Healthy
+WhatsApp Pay,Tier 3,W19,19,2026-05-11,676,755898.0,0.67,96.75,1393,-4.11,0,94.5,Healthy
+WhatsApp Pay,Tier 3,W20,20,2026-05-18,648,731369.0,0.65,96.14,1415,-4.14,0,93.4,Healthy
+WhatsApp Pay,Tier 3,W21,21,2026-05-25,711,809166.0,0.69,97.19,1303,9.72,0,95.5,Healthy
+WhatsApp Pay,Tier 3,W22,22,2026-06-01,784,932950.0,0.7,95.15,1360,10.27,0,86.3,Watch
+WhatsApp Pay,Tier 3,W23,23,2026-06-08,735,870098.0,0.73,97.14,1211,-6.25,0,96.5,Healthy
+WhatsApp Pay,Tier 3,W24,24,2026-06-15,694,699823.0,0.66,95.39,1348,-5.58,0,90.5,Healthy
+WhatsApp Pay,Tier 3,W25,25,2026-06-22,641,847481.0,0.65,95.48,1220,-7.64,0,92.3,Healthy
+WhatsApp Pay,Tier 3,W26,26,2026-06-29,825,998239.0,0.66,95.27,1370,28.71,0,91.9,Healthy
+WhatsApp Pay,Tier 3,W27,27,2026-07-06,774,1268568.0,0.68,95.99,1228,-6.18,0,94.4,Healthy
+WhatsApp Pay,Tier 3,W28,28,2026-07-13,758,940665.0,0.72,95.65,1389,-2.07,0,90.0,Healthy
+WhatsApp Pay,Tier 3,W29,29,2026-07-20,675,890564.0,0.67,97.33,1177,-10.95,0,96.9,Healthy
+WhatsApp Pay,Tier 3,W30,30,2026-07-27,321,353401.0,0.71,96.26,1501,-52.44,0,92.6,Healthy
+YONO SBI,Tier 3,W1,1,2026-01-05,608,578990.0,0.84,96.05,1578,,0,92.5,Healthy
+YONO SBI,Tier 3,W2,2,2026-01-12,567,518007.0,0.79,95.59,1569,-6.74,0,92.6,Healthy
+YONO SBI,Tier 3,W3,3,2026-01-19,627,1000697.0,0.83,95.22,1458,10.58,0,93.7,Healthy
+YONO SBI,Tier 3,W4,4,2026-01-26,567,455193.0,0.81,95.94,1431,-9.57,0,94.1,Healthy
+YONO SBI,Tier 3,W5,5,2026-02-02,640,1065813.0,0.8,94.69,1391,12.87,0,88.1,Watch
+YONO SBI,Tier 3,W6,6,2026-02-09,555,532810.0,0.77,93.15,1818,-13.28,0,80.2,Watch
+YONO SBI,Tier 3,W7,7,2026-02-16,616,720342.0,0.85,95.78,1602,10.99,0,92.2,Healthy
+YONO SBI,Tier 3,W8,8,2026-02-23,649,664977.0,0.8,94.92,1570,5.36,0,90.9,Healthy
+YONO SBI,Tier 3,W9,9,2026-03-02,778,906920.0,0.79,95.37,1627,19.88,1,83.6,Watch
+YONO SBI,Tier 3,W10,10,2026-03-09,630,764126.0,0.8,96.19,1562,-19.02,0,92.6,Healthy
+YONO SBI,Tier 3,W11,11,2026-03-16,738,689540.0,0.82,96.34,1593,17.14,0,92.3,Healthy
+YONO SBI,Tier 3,W12,12,2026-03-23,599,603434.0,0.78,93.99,1762,-18.83,0,87.2,Watch
+YONO SBI,Tier 3,W13,13,2026-03-30,766,959942.0,0.82,94.91,1978,27.88,0,84.8,Watch
+YONO SBI,Tier 3,W14,14,2026-04-06,763,1013133.0,0.85,95.02,1585,-0.39,0,86.4,Watch
+YONO SBI,Tier 3,W15,15,2026-04-13,709,1539437.0,0.8,95.2,1734,-7.08,0,90.7,Healthy
+YONO SBI,Tier 3,W16,16,2026-04-20,679,816522.0,0.78,95.58,1576,-4.23,0,92.2,Healthy
+YONO SBI,Tier 3,W17,17,2026-04-27,812,1011186.0,0.82,94.46,1647,19.59,0,83.8,Watch
+YONO SBI,Tier 3,W18,18,2026-05-04,875,1117580.0,0.81,97.6,1621,7.76,0,92.0,Healthy
+YONO SBI,Tier 3,W19,19,2026-05-11,789,1188211.0,0.78,96.45,1609,-9.83,0,92.1,Healthy
+YONO SBI,Tier 3,W20,20,2026-05-18,830,1184398.0,0.84,96.75,1778,5.2,0,90.2,Healthy
+YONO SBI,Tier 3,W21,21,2026-05-25,843,752561.0,0.82,96.32,1925,1.57,0,87.4,Watch
+YONO SBI,Tier 3,W22,22,2026-06-01,907,1287993.0,0.82,96.47,1534,7.59,0,92.2,Healthy
+YONO SBI,Tier 3,W23,23,2026-06-08,814,1028427.0,0.81,95.82,1603,-10.25,0,88.7,Watch
+YONO SBI,Tier 3,W24,24,2026-06-15,860,1370290.0,0.82,96.28,1730,5.65,0,90.8,Healthy
+YONO SBI,Tier 3,W25,25,2026-06-22,743,725488.0,0.76,95.96,1761,-13.6,0,89.2,Watch
+YONO SBI,Tier 3,W26,26,2026-06-29,1052,1032506.0,0.84,95.91,1713,41.59,0,91.0,Healthy
+YONO SBI,Tier 3,W27,27,2026-07-06,887,920847.0,0.78,95.72,1775,-15.68,0,86.7,Watch
+YONO SBI,Tier 3,W28,28,2026-07-13,865,1583092.0,0.82,95.03,1699,-2.48,0,82.9,Watch
+YONO SBI,Tier 3,W29,29,2026-07-20,749,750788.0,0.74,95.46,1481,-13.41,0,89.6,Watch
+YONO SBI,Tier 3,W30,30,2026-07-27,374,529688.0,0.82,96.26,1600,-50.07,0,91.4,Healthy
+iMobile Pay,Tier 3,W1,1,2026-01-05,327,365793.0,0.45,94.19,1209,,0,88.8,Watch
+iMobile Pay,Tier 3,W2,2,2026-01-12,319,300632.0,0.44,95.92,1365,-2.45,0,94.8,Healthy
+iMobile Pay,Tier 3,W3,3,2026-01-19,339,402084.0,0.45,96.46,1547,6.27,0,92.8,Healthy
+iMobile Pay,Tier 3,W4,4,2026-01-26,329,471349.0,0.47,96.05,1492,-2.95,0,93.4,Healthy
+iMobile Pay,Tier 3,W5,5,2026-02-02,370,581042.0,0.46,94.59,1469,12.46,0,86.7,Watch
+iMobile Pay,Tier 3,W6,6,2026-02-09,315,301270.0,0.44,94.29,1517,-14.86,0,90.3,Healthy
+iMobile Pay,Tier 3,W7,7,2026-02-16,326,476018.0,0.45,94.48,1582,3.49,0,86.9,Watch
+iMobile Pay,Tier 3,W8,8,2026-02-23,383,512884.0,0.47,94.52,1560,17.48,0,88.7,Watch
+iMobile Pay,Tier 3,W9,9,2026-03-02,485,543204.0,0.5,95.46,1142,26.63,0,95.5,Healthy
+iMobile Pay,Tier 3,W10,10,2026-03-09,331,543824.0,0.42,95.77,1369,-31.75,0,94.8,Healthy
+iMobile Pay,Tier 3,W11,11,2026-03-16,439,399206.0,0.49,94.76,1279,32.63,0,88.3,Watch
+iMobile Pay,Tier 3,W12,12,2026-03-23,374,426234.0,0.49,90.37,1529,-14.81,0,68.1,At Risk
+iMobile Pay,Tier 3,W13,13,2026-03-30,461,625061.0,0.5,95.44,1226,23.26,0,96.4,Healthy
+iMobile Pay,Tier 3,W14,14,2026-04-06,410,490118.0,0.46,96.83,1314,-11.06,0,95.4,Healthy
+iMobile Pay,Tier 3,W15,15,2026-04-13,405,431328.0,0.46,95.8,1622,-1.22,0,92.0,Healthy
+iMobile Pay,Tier 3,W16,16,2026-04-20,392,622678.0,0.45,94.64,1376,-3.21,0,88.8,Watch
+iMobile Pay,Tier 3,W17,17,2026-04-27,490,660410.0,0.5,95.71,1527,25.0,0,92.6,Healthy
+iMobile Pay,Tier 3,W18,18,2026-05-04,530,719265.0,0.49,96.6,1246,8.16,0,96.2,Healthy
+iMobile Pay,Tier 3,W19,19,2026-05-11,453,580041.0,0.45,96.03,1444,-14.53,0,94.0,Healthy
+iMobile Pay,Tier 3,W20,20,2026-05-18,454,717767.0,0.46,96.04,1340,0.22,0,93.6,Healthy
+iMobile Pay,Tier 3,W21,21,2026-05-25,439,541911.0,0.43,98.41,1480,-3.3,0,93.6,Healthy
+iMobile Pay,Tier 3,W22,22,2026-06-01,503,986119.0,0.45,98.01,1246,14.58,0,96.2,Healthy
+iMobile Pay,Tier 3,W23,23,2026-06-08,508,567768.0,0.51,96.65,1346,0.99,0,95.0,Healthy
+iMobile Pay,Tier 3,W24,24,2026-06-15,510,583619.0,0.49,97.45,1438,0.39,0,94.0,Healthy
+iMobile Pay,Tier 3,W25,25,2026-06-22,493,462282.0,0.5,95.74,1646,-3.33,0,89.1,Watch
+iMobile Pay,Tier 3,W26,26,2026-06-29,580,749262.0,0.47,94.66,1344,17.65,0,88.5,Watch
+iMobile Pay,Tier 3,W27,27,2026-07-06,584,546117.0,0.52,95.55,1411,0.69,0,89.7,Watch
+iMobile Pay,Tier 3,W28,28,2026-07-13,553,646287.0,0.52,96.75,1325,-5.31,0,95.3,Healthy
+iMobile Pay,Tier 3,W29,29,2026-07-20,473,842743.0,0.47,96.62,1591,-14.47,0,92.3,Healthy
+iMobile Pay,Tier 3,W30,30,2026-07-27,194,339793.0,0.43,97.94,1634,-58.99,0,91.8,Healthy
